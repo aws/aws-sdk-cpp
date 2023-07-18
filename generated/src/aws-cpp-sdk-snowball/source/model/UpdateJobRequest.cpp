@@ -24,7 +24,8 @@ UpdateJobRequest::UpdateJobRequest() :
     m_descriptionHasBeenSet(false),
     m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
     m_snowballCapacityPreferenceHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false)
+    m_forwardingAddressIdHasBeenSet(false),
+    m_pickupDetailsHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,12 @@ Aws::String UpdateJobRequest::SerializePayload() const
   if(m_forwardingAddressIdHasBeenSet)
   {
    payload.WithString("ForwardingAddressId", m_forwardingAddressId);
+
+  }
+
+  if(m_pickupDetailsHasBeenSet)
+  {
+   payload.WithObject("PickupDetails", m_pickupDetails.Jsonize());
 
   }
 

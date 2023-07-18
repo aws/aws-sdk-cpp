@@ -34,7 +34,10 @@ CreateJobRequest::CreateJobRequest() :
     m_deviceConfigurationHasBeenSet(false),
     m_remoteManagement(RemoteManagement::NOT_SET),
     m_remoteManagementHasBeenSet(false),
-    m_longTermPricingIdHasBeenSet(false)
+    m_longTermPricingIdHasBeenSet(false),
+    m_impactLevel(ImpactLevel::NOT_SET),
+    m_impactLevelHasBeenSet(false),
+    m_pickupDetailsHasBeenSet(false)
 {
 }
 
@@ -136,6 +139,17 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_longTermPricingIdHasBeenSet)
   {
    payload.WithString("LongTermPricingId", m_longTermPricingId);
+
+  }
+
+  if(m_impactLevelHasBeenSet)
+  {
+   payload.WithString("ImpactLevel", ImpactLevelMapper::GetNameForImpactLevel(m_impactLevel));
+  }
+
+  if(m_pickupDetailsHasBeenSet)
+  {
+   payload.WithObject("PickupDetails", m_pickupDetails.Jsonize());
 
   }
 

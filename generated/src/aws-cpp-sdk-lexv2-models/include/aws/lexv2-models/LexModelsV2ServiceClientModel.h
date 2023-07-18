@@ -72,8 +72,13 @@
 #include <aws/lexv2-models/model/ListCustomVocabularyItemsResult.h>
 #include <aws/lexv2-models/model/ListExportsResult.h>
 #include <aws/lexv2-models/model/ListImportsResult.h>
+#include <aws/lexv2-models/model/ListIntentMetricsResult.h>
+#include <aws/lexv2-models/model/ListIntentPathsResult.h>
+#include <aws/lexv2-models/model/ListIntentStageMetricsResult.h>
 #include <aws/lexv2-models/model/ListIntentsResult.h>
 #include <aws/lexv2-models/model/ListRecommendedIntentsResult.h>
+#include <aws/lexv2-models/model/ListSessionAnalyticsDataResult.h>
+#include <aws/lexv2-models/model/ListSessionMetricsResult.h>
 #include <aws/lexv2-models/model/ListSlotTypesResult.h>
 #include <aws/lexv2-models/model/ListSlotsResult.h>
 #include <aws/lexv2-models/model/ListTagsForResourceResult.h>
@@ -81,6 +86,8 @@
 #include <aws/lexv2-models/model/ListTestExecutionsResult.h>
 #include <aws/lexv2-models/model/ListTestSetRecordsResult.h>
 #include <aws/lexv2-models/model/ListTestSetsResult.h>
+#include <aws/lexv2-models/model/ListUtteranceAnalyticsDataResult.h>
+#include <aws/lexv2-models/model/ListUtteranceMetricsResult.h>
 #include <aws/lexv2-models/model/SearchAssociatedTranscriptsResult.h>
 #include <aws/lexv2-models/model/StartBotRecommendationResult.h>
 #include <aws/lexv2-models/model/StartImportResult.h>
@@ -198,8 +205,13 @@ namespace Aws
       class ListCustomVocabularyItemsRequest;
       class ListExportsRequest;
       class ListImportsRequest;
+      class ListIntentMetricsRequest;
+      class ListIntentPathsRequest;
+      class ListIntentStageMetricsRequest;
       class ListIntentsRequest;
       class ListRecommendedIntentsRequest;
+      class ListSessionAnalyticsDataRequest;
+      class ListSessionMetricsRequest;
       class ListSlotTypesRequest;
       class ListSlotsRequest;
       class ListTagsForResourceRequest;
@@ -207,6 +219,8 @@ namespace Aws
       class ListTestExecutionsRequest;
       class ListTestSetRecordsRequest;
       class ListTestSetsRequest;
+      class ListUtteranceAnalyticsDataRequest;
+      class ListUtteranceMetricsRequest;
       class SearchAssociatedTranscriptsRequest;
       class StartBotRecommendationRequest;
       class StartImportRequest;
@@ -286,8 +300,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListCustomVocabularyItemsResult, LexModelsV2Error> ListCustomVocabularyItemsOutcome;
       typedef Aws::Utils::Outcome<ListExportsResult, LexModelsV2Error> ListExportsOutcome;
       typedef Aws::Utils::Outcome<ListImportsResult, LexModelsV2Error> ListImportsOutcome;
+      typedef Aws::Utils::Outcome<ListIntentMetricsResult, LexModelsV2Error> ListIntentMetricsOutcome;
+      typedef Aws::Utils::Outcome<ListIntentPathsResult, LexModelsV2Error> ListIntentPathsOutcome;
+      typedef Aws::Utils::Outcome<ListIntentStageMetricsResult, LexModelsV2Error> ListIntentStageMetricsOutcome;
       typedef Aws::Utils::Outcome<ListIntentsResult, LexModelsV2Error> ListIntentsOutcome;
       typedef Aws::Utils::Outcome<ListRecommendedIntentsResult, LexModelsV2Error> ListRecommendedIntentsOutcome;
+      typedef Aws::Utils::Outcome<ListSessionAnalyticsDataResult, LexModelsV2Error> ListSessionAnalyticsDataOutcome;
+      typedef Aws::Utils::Outcome<ListSessionMetricsResult, LexModelsV2Error> ListSessionMetricsOutcome;
       typedef Aws::Utils::Outcome<ListSlotTypesResult, LexModelsV2Error> ListSlotTypesOutcome;
       typedef Aws::Utils::Outcome<ListSlotsResult, LexModelsV2Error> ListSlotsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, LexModelsV2Error> ListTagsForResourceOutcome;
@@ -295,6 +314,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTestExecutionsResult, LexModelsV2Error> ListTestExecutionsOutcome;
       typedef Aws::Utils::Outcome<ListTestSetRecordsResult, LexModelsV2Error> ListTestSetRecordsOutcome;
       typedef Aws::Utils::Outcome<ListTestSetsResult, LexModelsV2Error> ListTestSetsOutcome;
+      typedef Aws::Utils::Outcome<ListUtteranceAnalyticsDataResult, LexModelsV2Error> ListUtteranceAnalyticsDataOutcome;
+      typedef Aws::Utils::Outcome<ListUtteranceMetricsResult, LexModelsV2Error> ListUtteranceMetricsOutcome;
       typedef Aws::Utils::Outcome<SearchAssociatedTranscriptsResult, LexModelsV2Error> SearchAssociatedTranscriptsOutcome;
       typedef Aws::Utils::Outcome<StartBotRecommendationResult, LexModelsV2Error> StartBotRecommendationOutcome;
       typedef Aws::Utils::Outcome<StartImportResult, LexModelsV2Error> StartImportOutcome;
@@ -374,8 +395,13 @@ namespace Aws
       typedef std::future<ListCustomVocabularyItemsOutcome> ListCustomVocabularyItemsOutcomeCallable;
       typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
       typedef std::future<ListImportsOutcome> ListImportsOutcomeCallable;
+      typedef std::future<ListIntentMetricsOutcome> ListIntentMetricsOutcomeCallable;
+      typedef std::future<ListIntentPathsOutcome> ListIntentPathsOutcomeCallable;
+      typedef std::future<ListIntentStageMetricsOutcome> ListIntentStageMetricsOutcomeCallable;
       typedef std::future<ListIntentsOutcome> ListIntentsOutcomeCallable;
       typedef std::future<ListRecommendedIntentsOutcome> ListRecommendedIntentsOutcomeCallable;
+      typedef std::future<ListSessionAnalyticsDataOutcome> ListSessionAnalyticsDataOutcomeCallable;
+      typedef std::future<ListSessionMetricsOutcome> ListSessionMetricsOutcomeCallable;
       typedef std::future<ListSlotTypesOutcome> ListSlotTypesOutcomeCallable;
       typedef std::future<ListSlotsOutcome> ListSlotsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -383,6 +409,8 @@ namespace Aws
       typedef std::future<ListTestExecutionsOutcome> ListTestExecutionsOutcomeCallable;
       typedef std::future<ListTestSetRecordsOutcome> ListTestSetRecordsOutcomeCallable;
       typedef std::future<ListTestSetsOutcome> ListTestSetsOutcomeCallable;
+      typedef std::future<ListUtteranceAnalyticsDataOutcome> ListUtteranceAnalyticsDataOutcomeCallable;
+      typedef std::future<ListUtteranceMetricsOutcome> ListUtteranceMetricsOutcomeCallable;
       typedef std::future<SearchAssociatedTranscriptsOutcome> SearchAssociatedTranscriptsOutcomeCallable;
       typedef std::future<StartBotRecommendationOutcome> StartBotRecommendationOutcomeCallable;
       typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
@@ -465,8 +493,13 @@ namespace Aws
     typedef std::function<void(const LexModelsV2Client*, const Model::ListCustomVocabularyItemsRequest&, const Model::ListCustomVocabularyItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomVocabularyItemsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListExportsRequest&, const Model::ListExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListImportsRequest&, const Model::ListImportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportsResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListIntentMetricsRequest&, const Model::ListIntentMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntentMetricsResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListIntentPathsRequest&, const Model::ListIntentPathsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntentPathsResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListIntentStageMetricsRequest&, const Model::ListIntentStageMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntentStageMetricsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListIntentsRequest&, const Model::ListIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntentsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListRecommendedIntentsRequest&, const Model::ListRecommendedIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendedIntentsResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListSessionAnalyticsDataRequest&, const Model::ListSessionAnalyticsDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSessionAnalyticsDataResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListSessionMetricsRequest&, const Model::ListSessionMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSessionMetricsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListSlotTypesRequest&, const Model::ListSlotTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSlotTypesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListSlotsRequest&, const Model::ListSlotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSlotsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -474,6 +507,8 @@ namespace Aws
     typedef std::function<void(const LexModelsV2Client*, const Model::ListTestExecutionsRequest&, const Model::ListTestExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestExecutionsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListTestSetRecordsRequest&, const Model::ListTestSetRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestSetRecordsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListTestSetsRequest&, const Model::ListTestSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestSetsResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListUtteranceAnalyticsDataRequest&, const Model::ListUtteranceAnalyticsDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUtteranceAnalyticsDataResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListUtteranceMetricsRequest&, const Model::ListUtteranceMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUtteranceMetricsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::SearchAssociatedTranscriptsRequest&, const Model::SearchAssociatedTranscriptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAssociatedTranscriptsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::StartBotRecommendationRequest&, const Model::StartBotRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBotRecommendationResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;

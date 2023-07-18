@@ -12,6 +12,7 @@
 #include <aws/snowball/model/OnDeviceServiceConfiguration.h>
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/SnowballCapacity.h>
+#include <aws/snowball/model/PickupDetails.h>
 #include <utility>
 
 namespace Aws
@@ -504,6 +505,25 @@ namespace Model
      */
     inline UpdateJobRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
+
+    
+    inline const PickupDetails& GetPickupDetails() const{ return m_pickupDetails; }
+
+    
+    inline bool PickupDetailsHasBeenSet() const { return m_pickupDetailsHasBeenSet; }
+
+    
+    inline void SetPickupDetails(const PickupDetails& value) { m_pickupDetailsHasBeenSet = true; m_pickupDetails = value; }
+
+    
+    inline void SetPickupDetails(PickupDetails&& value) { m_pickupDetailsHasBeenSet = true; m_pickupDetails = std::move(value); }
+
+    
+    inline UpdateJobRequest& WithPickupDetails(const PickupDetails& value) { SetPickupDetails(value); return *this;}
+
+    
+    inline UpdateJobRequest& WithPickupDetails(PickupDetails&& value) { SetPickupDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -535,6 +555,9 @@ namespace Model
 
     Aws::String m_forwardingAddressId;
     bool m_forwardingAddressIdHasBeenSet = false;
+
+    PickupDetails m_pickupDetails;
+    bool m_pickupDetailsHasBeenSet = false;
   };
 
 } // namespace Model

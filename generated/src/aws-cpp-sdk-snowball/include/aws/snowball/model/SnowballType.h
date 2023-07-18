@@ -24,7 +24,8 @@ namespace Model
     SNC1_HDD,
     SNC1_SSD,
     V3_5C,
-    V3_5S
+    V3_5S,
+    RACK_5U_C
   };
 
 namespace SnowballTypeMapper
