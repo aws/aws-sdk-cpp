@@ -85,7 +85,7 @@ namespace Aws
                     return;
                 }
 
-                for(const auto it : *s_registry)
+                for(const auto& it : *s_registry)
                 {
                     if (it.second.TerminateFn) {
                         it.second.TerminateFn(it.first, -1);
