@@ -22,12 +22,7 @@ namespace Model
 {
 
   /**
-   *  <p>We are retiring EC2-Classic. We recommend that you migrate from
-   * EC2-Classic to a VPC. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-   * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-   * Guide</i>.</p>  <p>Describes the VPC peering connection
-   * options.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the VPC peering connection options.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcPeeringConnectionOptionsDescription">AWS
    * API Reference</a></p>
    */
@@ -68,51 +63,43 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether a local ClassicLink connection can communicate with the
-     * peer VPC over the VPC peering connection.</p>
+     * <p>Deprecated.</p>
      */
     inline bool GetAllowEgressFromLocalClassicLinkToRemoteVpc() const{ return m_allowEgressFromLocalClassicLinkToRemoteVpc; }
 
     /**
-     * <p>Indicates whether a local ClassicLink connection can communicate with the
-     * peer VPC over the VPC peering connection.</p>
+     * <p>Deprecated.</p>
      */
     inline bool AllowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet() const { return m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet; }
 
     /**
-     * <p>Indicates whether a local ClassicLink connection can communicate with the
-     * peer VPC over the VPC peering connection.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetAllowEgressFromLocalClassicLinkToRemoteVpc(bool value) { m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = true; m_allowEgressFromLocalClassicLinkToRemoteVpc = value; }
 
     /**
-     * <p>Indicates whether a local ClassicLink connection can communicate with the
-     * peer VPC over the VPC peering connection.</p>
+     * <p>Deprecated.</p>
      */
     inline VpcPeeringConnectionOptionsDescription& WithAllowEgressFromLocalClassicLinkToRemoteVpc(bool value) { SetAllowEgressFromLocalClassicLinkToRemoteVpc(value); return *this;}
 
 
     /**
-     * <p>Indicates whether a local VPC can communicate with a ClassicLink connection
-     * in the peer VPC over the VPC peering connection.</p>
+     * <p>Deprecated.</p>
      */
     inline bool GetAllowEgressFromLocalVpcToRemoteClassicLink() const{ return m_allowEgressFromLocalVpcToRemoteClassicLink; }
 
     /**
-     * <p>Indicates whether a local VPC can communicate with a ClassicLink connection
-     * in the peer VPC over the VPC peering connection.</p>
+     * <p>Deprecated.</p>
      */
     inline bool AllowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet() const { return m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet; }
 
     /**
-     * <p>Indicates whether a local VPC can communicate with a ClassicLink connection
-     * in the peer VPC over the VPC peering connection.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetAllowEgressFromLocalVpcToRemoteClassicLink(bool value) { m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = true; m_allowEgressFromLocalVpcToRemoteClassicLink = value; }
 
     /**
-     * <p>Indicates whether a local VPC can communicate with a ClassicLink connection
-     * in the peer VPC over the VPC peering connection.</p>
+     * <p>Deprecated.</p>
      */
     inline VpcPeeringConnectionOptionsDescription& WithAllowEgressFromLocalVpcToRemoteClassicLink(bool value) { SetAllowEgressFromLocalVpcToRemoteClassicLink(value); return *this;}
 

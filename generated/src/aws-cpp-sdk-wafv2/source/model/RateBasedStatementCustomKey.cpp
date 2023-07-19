@@ -26,7 +26,8 @@ RateBasedStatementCustomKey::RateBasedStatementCustomKey() :
     m_hTTPMethodHasBeenSet(false),
     m_forwardedIPHasBeenSet(false),
     m_iPHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false)
+    m_labelNamespaceHasBeenSet(false),
+    m_uriPathHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ RateBasedStatementCustomKey::RateBasedStatementCustomKey(JsonView jsonValue) :
     m_hTTPMethodHasBeenSet(false),
     m_forwardedIPHasBeenSet(false),
     m_iPHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false)
+    m_labelNamespaceHasBeenSet(false),
+    m_uriPathHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ RateBasedStatementCustomKey& RateBasedStatementCustomKey::operator =(JsonView js
     m_labelNamespaceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UriPath"))
+  {
+    m_uriPath = jsonValue.GetObject("UriPath");
+
+    m_uriPathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue RateBasedStatementCustomKey::Jsonize() const
   if(m_labelNamespaceHasBeenSet)
   {
    payload.WithObject("LabelNamespace", m_labelNamespace.Jsonize());
+
+  }
+
+  if(m_uriPathHasBeenSet)
+  {
+   payload.WithObject("UriPath", m_uriPath.Jsonize());
 
   }
 

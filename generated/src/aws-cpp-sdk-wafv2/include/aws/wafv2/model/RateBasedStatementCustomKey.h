@@ -13,6 +13,7 @@
 #include <aws/wafv2/model/RateLimitForwardedIP.h>
 #include <aws/wafv2/model/RateLimitIP.h>
 #include <aws/wafv2/model/RateLimitLabelNamespace.h>
+#include <aws/wafv2/model/RateLimitUriPath.h>
 #include <utility>
 
 namespace Aws
@@ -492,6 +493,49 @@ namespace Model
      */
     inline RateBasedStatementCustomKey& WithLabelNamespace(RateLimitLabelNamespace&& value) { SetLabelNamespace(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Use the request's URI path as an aggregate key. Each distinct URI path
+     * contributes to the aggregation instance. If you use just the URI path as your
+     * custom key, then each URI path fully defines an aggregation instance. </p>
+     */
+    inline const RateLimitUriPath& GetUriPath() const{ return m_uriPath; }
+
+    /**
+     * <p>Use the request's URI path as an aggregate key. Each distinct URI path
+     * contributes to the aggregation instance. If you use just the URI path as your
+     * custom key, then each URI path fully defines an aggregation instance. </p>
+     */
+    inline bool UriPathHasBeenSet() const { return m_uriPathHasBeenSet; }
+
+    /**
+     * <p>Use the request's URI path as an aggregate key. Each distinct URI path
+     * contributes to the aggregation instance. If you use just the URI path as your
+     * custom key, then each URI path fully defines an aggregation instance. </p>
+     */
+    inline void SetUriPath(const RateLimitUriPath& value) { m_uriPathHasBeenSet = true; m_uriPath = value; }
+
+    /**
+     * <p>Use the request's URI path as an aggregate key. Each distinct URI path
+     * contributes to the aggregation instance. If you use just the URI path as your
+     * custom key, then each URI path fully defines an aggregation instance. </p>
+     */
+    inline void SetUriPath(RateLimitUriPath&& value) { m_uriPathHasBeenSet = true; m_uriPath = std::move(value); }
+
+    /**
+     * <p>Use the request's URI path as an aggregate key. Each distinct URI path
+     * contributes to the aggregation instance. If you use just the URI path as your
+     * custom key, then each URI path fully defines an aggregation instance. </p>
+     */
+    inline RateBasedStatementCustomKey& WithUriPath(const RateLimitUriPath& value) { SetUriPath(value); return *this;}
+
+    /**
+     * <p>Use the request's URI path as an aggregate key. Each distinct URI path
+     * contributes to the aggregation instance. If you use just the URI path as your
+     * custom key, then each URI path fully defines an aggregation instance. </p>
+     */
+    inline RateBasedStatementCustomKey& WithUriPath(RateLimitUriPath&& value) { SetUriPath(std::move(value)); return *this;}
+
   private:
 
     RateLimitHeader m_header;
@@ -517,6 +561,9 @@ namespace Model
 
     RateLimitLabelNamespace m_labelNamespace;
     bool m_labelNamespaceHasBeenSet = false;
+
+    RateLimitUriPath m_uriPath;
+    bool m_uriPathHasBeenSet = false;
   };
 
 } // namespace Model

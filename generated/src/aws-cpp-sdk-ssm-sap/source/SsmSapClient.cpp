@@ -35,6 +35,7 @@
 #include <aws/ssm-sap/model/ListTagsForResourceRequest.h>
 #include <aws/ssm-sap/model/PutResourcePermissionRequest.h>
 #include <aws/ssm-sap/model/RegisterApplicationRequest.h>
+#include <aws/ssm-sap/model/StartApplicationRefreshRequest.h>
 #include <aws/ssm-sap/model/TagResourceRequest.h>
 #include <aws/ssm-sap/model/UntagResourceRequest.h>
 #include <aws/ssm-sap/model/UpdateApplicationSettingsRequest.h>
@@ -549,6 +550,33 @@ RegisterApplicationOutcome SsmSapClient::RegisterApplication(const RegisterAppli
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/register-application");
       return RegisterApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartApplicationRefreshOutcome SsmSapClient::StartApplicationRefresh(const StartApplicationRefreshRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartApplicationRefresh);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartApplicationRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartApplicationRefresh, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartApplicationRefresh, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartApplicationRefresh",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartApplicationRefreshOutcome>(
+    [&]()-> StartApplicationRefreshOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartApplicationRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/start-application-refresh");
+      return StartApplicationRefreshOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

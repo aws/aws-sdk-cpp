@@ -130,58 +130,58 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name. For security groups in a
+     * nondefault VPC, you must specify the security group ID.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name. For security groups in a
+     * nondefault VPC, you must specify the security group ID.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name. For security groups in a
+     * nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name. For security groups in a
+     * nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name. For security groups in a
+     * nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name. For security groups in a
+     * nondefault VPC, you must specify the security group ID.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsIngressRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name. For security groups in a
+     * nondefault VPC, you must specify the security group ID.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsIngressRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name. For security groups in a
+     * nondefault VPC, you must specify the security group ID.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsIngressRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
@@ -236,50 +236,50 @@ namespace Model
 
 
     /**
-     * <p>[VPC only] The description for the ingress security group rules. You must
-     * specify either a description or IP permissions.</p>
+     * <p>The description for the ingress security group rules. You must specify either
+     * a description or IP permissions.</p>
      */
     inline const Aws::Vector<SecurityGroupRuleDescription>& GetSecurityGroupRuleDescriptions() const{ return m_securityGroupRuleDescriptions; }
 
     /**
-     * <p>[VPC only] The description for the ingress security group rules. You must
-     * specify either a description or IP permissions.</p>
+     * <p>The description for the ingress security group rules. You must specify either
+     * a description or IP permissions.</p>
      */
     inline bool SecurityGroupRuleDescriptionsHasBeenSet() const { return m_securityGroupRuleDescriptionsHasBeenSet; }
 
     /**
-     * <p>[VPC only] The description for the ingress security group rules. You must
-     * specify either a description or IP permissions.</p>
+     * <p>The description for the ingress security group rules. You must specify either
+     * a description or IP permissions.</p>
      */
     inline void SetSecurityGroupRuleDescriptions(const Aws::Vector<SecurityGroupRuleDescription>& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions = value; }
 
     /**
-     * <p>[VPC only] The description for the ingress security group rules. You must
-     * specify either a description or IP permissions.</p>
+     * <p>The description for the ingress security group rules. You must specify either
+     * a description or IP permissions.</p>
      */
     inline void SetSecurityGroupRuleDescriptions(Aws::Vector<SecurityGroupRuleDescription>&& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions = std::move(value); }
 
     /**
-     * <p>[VPC only] The description for the ingress security group rules. You must
-     * specify either a description or IP permissions.</p>
+     * <p>The description for the ingress security group rules. You must specify either
+     * a description or IP permissions.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsIngressRequest& WithSecurityGroupRuleDescriptions(const Aws::Vector<SecurityGroupRuleDescription>& value) { SetSecurityGroupRuleDescriptions(value); return *this;}
 
     /**
-     * <p>[VPC only] The description for the ingress security group rules. You must
-     * specify either a description or IP permissions.</p>
+     * <p>The description for the ingress security group rules. You must specify either
+     * a description or IP permissions.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsIngressRequest& WithSecurityGroupRuleDescriptions(Aws::Vector<SecurityGroupRuleDescription>&& value) { SetSecurityGroupRuleDescriptions(std::move(value)); return *this;}
 
     /**
-     * <p>[VPC only] The description for the ingress security group rules. You must
-     * specify either a description or IP permissions.</p>
+     * <p>The description for the ingress security group rules. You must specify either
+     * a description or IP permissions.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsIngressRequest& AddSecurityGroupRuleDescriptions(const SecurityGroupRuleDescription& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions.push_back(value); return *this; }
 
     /**
-     * <p>[VPC only] The description for the ingress security group rules. You must
-     * specify either a description or IP permissions.</p>
+     * <p>The description for the ingress security group rules. You must specify either
+     * a description or IP permissions.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsIngressRequest& AddSecurityGroupRuleDescriptions(SecurityGroupRuleDescription&& value) { m_securityGroupRuleDescriptionsHasBeenSet = true; m_securityGroupRuleDescriptions.push_back(std::move(value)); return *this; }
 

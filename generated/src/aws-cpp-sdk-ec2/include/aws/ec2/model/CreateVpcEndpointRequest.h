@@ -106,83 +106,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the VPC for the endpoint.</p>
+     * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of the VPC for the endpoint.</p>
+     * <p>The ID of the VPC.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>The ID of the VPC for the endpoint.</p>
+     * <p>The ID of the VPC.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The ID of the VPC for the endpoint.</p>
+     * <p>The ID of the VPC.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC for the endpoint.</p>
+     * <p>The ID of the VPC.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of the VPC for the endpoint.</p>
+     * <p>The ID of the VPC.</p>
      */
     inline CreateVpcEndpointRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC for the endpoint.</p>
+     * <p>The ID of the VPC.</p>
      */
     inline CreateVpcEndpointRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC for the endpoint.</p>
+     * <p>The ID of the VPC.</p>
      */
     inline CreateVpcEndpointRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the endpoint service.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the endpoint service.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the endpoint service.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the endpoint service.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the endpoint service.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the endpoint service.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the endpoint service.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The service name.</p>
+     * <p>The name of the endpoint service.</p>
      */
     inline CreateVpcEndpointRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 

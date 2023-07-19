@@ -16,7 +16,8 @@ GetTemplateSummaryRequest::GetTemplateSummaryRequest() :
     m_stackNameHasBeenSet(false),
     m_stackSetNameHasBeenSet(false),
     m_callAs(CallAs::NOT_SET),
-    m_callAsHasBeenSet(false)
+    m_callAsHasBeenSet(false),
+    m_templateSummaryConfigHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,11 @@ Aws::String GetTemplateSummaryRequest::SerializePayload() const
   if(m_callAsHasBeenSet)
   {
     ss << "CallAs=" << CallAsMapper::GetNameForCallAs(m_callAs) << "&";
+  }
+
+  if(m_templateSummaryConfigHasBeenSet)
+  {
+    m_templateSummaryConfig.OutputToStream(ss, "TemplateSummaryConfig");
   }
 
   ss << "Version=2010-05-15";

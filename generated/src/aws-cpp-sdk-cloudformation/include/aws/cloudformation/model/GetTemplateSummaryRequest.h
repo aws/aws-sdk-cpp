@@ -8,6 +8,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/CallAs.h>
+#include <aws/cloudformation/model/TemplateSummaryConfig.h>
 #include <utility>
 
 namespace Aws
@@ -469,6 +470,37 @@ namespace Model
      */
     inline GetTemplateSummaryRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+     */
+    inline const TemplateSummaryConfig& GetTemplateSummaryConfig() const{ return m_templateSummaryConfig; }
+
+    /**
+     * <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+     */
+    inline bool TemplateSummaryConfigHasBeenSet() const { return m_templateSummaryConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+     */
+    inline void SetTemplateSummaryConfig(const TemplateSummaryConfig& value) { m_templateSummaryConfigHasBeenSet = true; m_templateSummaryConfig = value; }
+
+    /**
+     * <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+     */
+    inline void SetTemplateSummaryConfig(TemplateSummaryConfig&& value) { m_templateSummaryConfigHasBeenSet = true; m_templateSummaryConfig = std::move(value); }
+
+    /**
+     * <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+     */
+    inline GetTemplateSummaryRequest& WithTemplateSummaryConfig(const TemplateSummaryConfig& value) { SetTemplateSummaryConfig(value); return *this;}
+
+    /**
+     * <p>Specifies options for the <code>GetTemplateSummary</code> API action.</p>
+     */
+    inline GetTemplateSummaryRequest& WithTemplateSummaryConfig(TemplateSummaryConfig&& value) { SetTemplateSummaryConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_templateBody;
@@ -485,6 +517,9 @@ namespace Model
 
     CallAs m_callAs;
     bool m_callAsHasBeenSet = false;
+
+    TemplateSummaryConfig m_templateSummaryConfig;
+    bool m_templateSummaryConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,10 +39,10 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
-     * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>accepter-vpc-info.cidr-block</code> -
+     * The IPv4 CIDR block of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services
+     * account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
@@ -70,10 +70,10 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
-     * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>accepter-vpc-info.cidr-block</code> -
+     * The IPv4 CIDR block of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services
+     * account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
@@ -101,10 +101,10 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
-     * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>accepter-vpc-info.cidr-block</code> -
+     * The IPv4 CIDR block of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services
+     * account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
@@ -132,10 +132,10 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
-     * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>accepter-vpc-info.cidr-block</code> -
+     * The IPv4 CIDR block of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services
+     * account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
@@ -163,10 +163,10 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
-     * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>accepter-vpc-info.cidr-block</code> -
+     * The IPv4 CIDR block of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services
+     * account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
@@ -194,10 +194,10 @@ namespace Model
     inline DescribeVpcPeeringConnectionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
-     * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>accepter-vpc-info.cidr-block</code> -
+     * The IPv4 CIDR block of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services
+     * account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
@@ -225,10 +225,10 @@ namespace Model
     inline DescribeVpcPeeringConnectionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
-     * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>accepter-vpc-info.cidr-block</code> -
+     * The IPv4 CIDR block of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services
+     * account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
@@ -256,10 +256,10 @@ namespace Model
     inline DescribeVpcPeeringConnectionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
-     * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the
-     * Amazon Web Services account that owns the accepter VPC.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>accepter-vpc-info.cidr-block</code> -
+     * The IPv4 CIDR block of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services
+     * account that owns the accepter VPC.</p> </li> <li> <p>
      * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
      * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
      * peering connection.</p> </li> <li> <p>
@@ -321,55 +321,55 @@ namespace Model
 
 
     /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * <p>The IDs of the VPC peering connections.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcPeeringConnectionIds() const{ return m_vpcPeeringConnectionIds; }
 
     /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * <p>The IDs of the VPC peering connections.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
     inline bool VpcPeeringConnectionIdsHasBeenSet() const { return m_vpcPeeringConnectionIdsHasBeenSet; }
 
     /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * <p>The IDs of the VPC peering connections.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
     inline void SetVpcPeeringConnectionIds(const Aws::Vector<Aws::String>& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds = value; }
 
     /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * <p>The IDs of the VPC peering connections.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
     inline void SetVpcPeeringConnectionIds(Aws::Vector<Aws::String>&& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds = std::move(value); }
 
     /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * <p>The IDs of the VPC peering connections.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
     inline DescribeVpcPeeringConnectionsRequest& WithVpcPeeringConnectionIds(const Aws::Vector<Aws::String>& value) { SetVpcPeeringConnectionIds(value); return *this;}
 
     /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * <p>The IDs of the VPC peering connections.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
     inline DescribeVpcPeeringConnectionsRequest& WithVpcPeeringConnectionIds(Aws::Vector<Aws::String>&& value) { SetVpcPeeringConnectionIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * <p>The IDs of the VPC peering connections.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
     inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(const Aws::String& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * <p>The IDs of the VPC peering connections.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
     inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(Aws::String&& value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * <p>The IDs of the VPC peering connections.</p> <p>Default: Describes all your
      * VPC peering connections.</p>
      */
     inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(const char* value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(value); return *this; }
