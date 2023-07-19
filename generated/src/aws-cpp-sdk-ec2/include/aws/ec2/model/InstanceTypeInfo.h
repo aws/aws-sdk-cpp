@@ -671,26 +671,34 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the instance type is a burstable performance instance
-     * type.</p>
+     * <p>Indicates whether the instance type is a burstable performance T instance
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * performance instances</a>.</p>
      */
     inline bool GetBurstablePerformanceSupported() const{ return m_burstablePerformanceSupported; }
 
     /**
-     * <p>Indicates whether the instance type is a burstable performance instance
-     * type.</p>
+     * <p>Indicates whether the instance type is a burstable performance T instance
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * performance instances</a>.</p>
      */
     inline bool BurstablePerformanceSupportedHasBeenSet() const { return m_burstablePerformanceSupportedHasBeenSet; }
 
     /**
-     * <p>Indicates whether the instance type is a burstable performance instance
-     * type.</p>
+     * <p>Indicates whether the instance type is a burstable performance T instance
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * performance instances</a>.</p>
      */
     inline void SetBurstablePerformanceSupported(bool value) { m_burstablePerformanceSupportedHasBeenSet = true; m_burstablePerformanceSupported = value; }
 
     /**
-     * <p>Indicates whether the instance type is a burstable performance instance
-     * type.</p>
+     * <p>Indicates whether the instance type is a burstable performance T instance
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * performance instances</a>.</p>
      */
     inline InstanceTypeInfo& WithBurstablePerformanceSupported(bool value) { SetBurstablePerformanceSupported(value); return *this;}
 

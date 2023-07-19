@@ -44,20 +44,30 @@ namespace Model
 
   /**
    * <p>The attributes for the instance types. When you specify instance attributes,
-   * Amazon EC2 will identify instance types with these attributes.</p> <p>When you
-   * specify multiple attributes, you get instance types that satisfy all of the
-   * specified attributes. If you specify multiple values for an attribute, you get
-   * instance types that satisfy any of the specified values.</p> <p>To limit the
-   * list of instance types from which Amazon EC2 can identify matching instance
+   * Amazon EC2 will identify instance types with these attributes.</p> <p>You must
+   * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+   * are optional. Any unspecified optional attribute is set to its default.</p>
+   * <p>When you specify multiple attributes, you get instance types that satisfy all
+   * of the specified attributes. If you specify multiple values for an attribute,
+   * you get instance types that satisfy any of the specified values.</p> <p>To limit
+   * the list of instance types from which Amazon EC2 can identify matching instance
    * types, you can use one of the following parameters, but not both in the same
    * request:</p> <ul> <li> <p> <code>AllowedInstanceTypes</code> - The instance
    * types to include in the list. All other instance types are ignored, even if they
    * match your specified attributes.</p> </li> <li> <p>
    * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the
-   * list, even if they match your specified attributes.</p> </li> </ul> 
-   * <p>You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other
-   * attributes are optional. Any unspecified optional attribute is set to its
-   * default.</p>  <p>For more information, see <a
+   * list, even if they match your specified attributes.</p> </li> </ul>  <p>If
+   * you specify <code>InstanceRequirements</code>, you can't specify
+   * <code>InstanceType</code>.</p> <p>Attribute-based instance type selection is
+   * only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to
+   * launch instances. If you plan to use the launch template in the <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
+   * instance wizard</a>, or with the <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+   * API or <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a>
+   * Amazon Web Services CloudFormation resource, you can't specify
+   * <code>InstanceRequirements</code>.</p>  <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
    * instance type selection for EC2 Fleet</a>, <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
@@ -1512,38 +1522,56 @@ namespace Model
 
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline const NetworkBandwidthGbpsRequest& GetNetworkBandwidthGbps() const{ return m_networkBandwidthGbps; }
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline bool NetworkBandwidthGbpsHasBeenSet() const { return m_networkBandwidthGbpsHasBeenSet; }
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline void SetNetworkBandwidthGbps(const NetworkBandwidthGbpsRequest& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = value; }
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline void SetNetworkBandwidthGbps(NetworkBandwidthGbpsRequest&& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = std::move(value); }
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirementsRequest& WithNetworkBandwidthGbps(const NetworkBandwidthGbpsRequest& value) { SetNetworkBandwidthGbps(value); return *this;}
 
     /**
-     * <p>The minimum and maximum amount of network bandwidth, in gigabits per second
-     * (Gbps).</p> <p>Default: No minimum or maximum limits</p>
+     * <p>The minimum and maximum amount of baseline network bandwidth, in gigabits per
+     * second (Gbps). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon
+     * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * <p>Default: No minimum or maximum limits</p>
      */
     inline InstanceRequirementsRequest& WithNetworkBandwidthGbps(NetworkBandwidthGbpsRequest&& value) { SetNetworkBandwidthGbps(std::move(value)); return *this;}
 

@@ -48,8 +48,8 @@ namespace Model
      * <p>The filter to use to identify the subset of cookies to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1",
-     * "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time",
+     * "session-id" ] }</code> </p>
      */
     inline const CookieMatchPattern& GetMatchPattern() const{ return m_matchPattern; }
 
@@ -57,8 +57,8 @@ namespace Model
      * <p>The filter to use to identify the subset of cookies to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1",
-     * "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time",
+     * "session-id" ] }</code> </p>
      */
     inline bool MatchPatternHasBeenSet() const { return m_matchPatternHasBeenSet; }
 
@@ -66,8 +66,8 @@ namespace Model
      * <p>The filter to use to identify the subset of cookies to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1",
-     * "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time",
+     * "session-id" ] }</code> </p>
      */
     inline void SetMatchPattern(const CookieMatchPattern& value) { m_matchPatternHasBeenSet = true; m_matchPattern = value; }
 
@@ -75,8 +75,8 @@ namespace Model
      * <p>The filter to use to identify the subset of cookies to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1",
-     * "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time",
+     * "session-id" ] }</code> </p>
      */
     inline void SetMatchPattern(CookieMatchPattern&& value) { m_matchPatternHasBeenSet = true; m_matchPattern = std::move(value); }
 
@@ -84,8 +84,8 @@ namespace Model
      * <p>The filter to use to identify the subset of cookies to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1",
-     * "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time",
+     * "session-id" ] }</code> </p>
      */
     inline Cookies& WithMatchPattern(const CookieMatchPattern& value) { SetMatchPattern(value); return *this;}
 
@@ -93,8 +93,8 @@ namespace Model
      * <p>The filter to use to identify the subset of cookies to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1",
-     * "KeyToInclude2", "KeyToInclude3"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time",
+     * "session-id" ] }</code> </p>
      */
     inline Cookies& WithMatchPattern(CookieMatchPattern&& value) { SetMatchPattern(std::move(value)); return *this;}
 

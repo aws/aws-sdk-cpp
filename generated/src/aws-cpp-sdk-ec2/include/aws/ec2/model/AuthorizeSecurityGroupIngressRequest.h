@@ -199,58 +199,58 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name in the request. For security groups
+     * in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name in the request. For security groups
+     * in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name in the request. For security groups
+     * in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name in the request. For security groups
+     * in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name in the request. For security groups
+     * in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name in the request. For security groups
+     * in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name in the request. For security groups
+     * in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the security group. You must specify
-     * either the security group ID or the security group name in the request. For
-     * security groups in a nondefault VPC, you must specify the security group ID.</p>
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name in the request. For security groups
+     * in a nondefault VPC, you must specify the security group ID.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
@@ -301,8 +301,8 @@ namespace Model
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-     * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
-     * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
+     * <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>
+     * or a protocol other than <code>tcp</code>, <code>udp</code>, or
      * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
      * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
      * rules and a description for the rule.</p>
@@ -314,8 +314,8 @@ namespace Model
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-     * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
-     * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
+     * <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>
+     * or a protocol other than <code>tcp</code>, <code>udp</code>, or
      * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
      * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
      * rules and a description for the rule.</p>
@@ -327,8 +327,8 @@ namespace Model
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-     * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
-     * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
+     * <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>
+     * or a protocol other than <code>tcp</code>, <code>udp</code>, or
      * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
      * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
      * rules and a description for the rule.</p>
@@ -340,8 +340,8 @@ namespace Model
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-     * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
-     * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
+     * <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>
+     * or a protocol other than <code>tcp</code>, <code>udp</code>, or
      * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
      * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
      * rules and a description for the rule.</p>
@@ -353,8 +353,8 @@ namespace Model
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-     * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
-     * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
+     * <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>
+     * or a protocol other than <code>tcp</code>, <code>udp</code>, or
      * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
      * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
      * rules and a description for the rule.</p>
@@ -366,8 +366,8 @@ namespace Model
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-     * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
-     * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
+     * <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>
+     * or a protocol other than <code>tcp</code>, <code>udp</code>, or
      * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
      * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
      * rules and a description for the rule.</p>
@@ -379,8 +379,8 @@ namespace Model
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-     * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
-     * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
+     * <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>
+     * or a protocol other than <code>tcp</code>, <code>udp</code>, or
      * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
      * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
      * rules and a description for the rule.</p>
@@ -392,8 +392,8 @@ namespace Model
      * or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-     * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
-     * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
+     * <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>
+     * or a protocol other than <code>tcp</code>, <code>udp</code>, or
      * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
      * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
      * rules and a description for the rule.</p>
@@ -402,88 +402,88 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
-     * specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the start of the port range, the IP protocol, and the end of the
-     * port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a
-     * rule with a specific IP protocol and port range, use a set of IP permissions
-     * instead. For EC2-VPC, the source security group must be in the same VPC.</p>
+     * <p>[Default VPC] The name of the source security group. You can't specify this
+     * parameter in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, the IP protocol, and the end of the port
+     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
+     * with a specific IP protocol and port range, use a set of IP permissions instead.
+     * The source security group must be in the same VPC.</p>
      */
     inline const Aws::String& GetSourceSecurityGroupName() const{ return m_sourceSecurityGroupName; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
-     * specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the start of the port range, the IP protocol, and the end of the
-     * port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a
-     * rule with a specific IP protocol and port range, use a set of IP permissions
-     * instead. For EC2-VPC, the source security group must be in the same VPC.</p>
+     * <p>[Default VPC] The name of the source security group. You can't specify this
+     * parameter in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, the IP protocol, and the end of the port
+     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
+     * with a specific IP protocol and port range, use a set of IP permissions instead.
+     * The source security group must be in the same VPC.</p>
      */
     inline bool SourceSecurityGroupNameHasBeenSet() const { return m_sourceSecurityGroupNameHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
-     * specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the start of the port range, the IP protocol, and the end of the
-     * port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a
-     * rule with a specific IP protocol and port range, use a set of IP permissions
-     * instead. For EC2-VPC, the source security group must be in the same VPC.</p>
+     * <p>[Default VPC] The name of the source security group. You can't specify this
+     * parameter in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, the IP protocol, and the end of the port
+     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
+     * with a specific IP protocol and port range, use a set of IP permissions instead.
+     * The source security group must be in the same VPC.</p>
      */
     inline void SetSourceSecurityGroupName(const Aws::String& value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName = value; }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
-     * specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the start of the port range, the IP protocol, and the end of the
-     * port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a
-     * rule with a specific IP protocol and port range, use a set of IP permissions
-     * instead. For EC2-VPC, the source security group must be in the same VPC.</p>
+     * <p>[Default VPC] The name of the source security group. You can't specify this
+     * parameter in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, the IP protocol, and the end of the port
+     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
+     * with a specific IP protocol and port range, use a set of IP permissions instead.
+     * The source security group must be in the same VPC.</p>
      */
     inline void SetSourceSecurityGroupName(Aws::String&& value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName = std::move(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
-     * specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the start of the port range, the IP protocol, and the end of the
-     * port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a
-     * rule with a specific IP protocol and port range, use a set of IP permissions
-     * instead. For EC2-VPC, the source security group must be in the same VPC.</p>
+     * <p>[Default VPC] The name of the source security group. You can't specify this
+     * parameter in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, the IP protocol, and the end of the port
+     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
+     * with a specific IP protocol and port range, use a set of IP permissions instead.
+     * The source security group must be in the same VPC.</p>
      */
     inline void SetSourceSecurityGroupName(const char* value) { m_sourceSecurityGroupNameHasBeenSet = true; m_sourceSecurityGroupName.assign(value); }
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
-     * specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the start of the port range, the IP protocol, and the end of the
-     * port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a
-     * rule with a specific IP protocol and port range, use a set of IP permissions
-     * instead. For EC2-VPC, the source security group must be in the same VPC.</p>
+     * <p>[Default VPC] The name of the source security group. You can't specify this
+     * parameter in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, the IP protocol, and the end of the port
+     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
+     * with a specific IP protocol and port range, use a set of IP permissions instead.
+     * The source security group must be in the same VPC.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithSourceSecurityGroupName(const Aws::String& value) { SetSourceSecurityGroupName(value); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
-     * specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the start of the port range, the IP protocol, and the end of the
-     * port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a
-     * rule with a specific IP protocol and port range, use a set of IP permissions
-     * instead. For EC2-VPC, the source security group must be in the same VPC.</p>
+     * <p>[Default VPC] The name of the source security group. You can't specify this
+     * parameter in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, the IP protocol, and the end of the port
+     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
+     * with a specific IP protocol and port range, use a set of IP permissions instead.
+     * The source security group must be in the same VPC.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithSourceSecurityGroupName(Aws::String&& value) { SetSourceSecurityGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic, default VPC] The name of the source security group. You can't
-     * specify this parameter in combination with the following parameters: the CIDR IP
-     * address range, the start of the port range, the IP protocol, and the end of the
-     * port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a
-     * rule with a specific IP protocol and port range, use a set of IP permissions
-     * instead. For EC2-VPC, the source security group must be in the same VPC.</p>
+     * <p>[Default VPC] The name of the source security group. You can't specify this
+     * parameter in combination with the following parameters: the CIDR IP address
+     * range, the start of the port range, the IP protocol, and the end of the port
+     * range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule
+     * with a specific IP protocol and port range, use a set of IP permissions instead.
+     * The source security group must be in the same VPC.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithSourceSecurityGroupName(const char* value) { SetSourceSecurityGroupName(value); return *this;}
 
 
     /**
-     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * <p>[Nondefault VPC] The Amazon Web Services account ID for the source security
      * group, if the source security group is in a different account. You can't specify
      * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
@@ -494,7 +494,7 @@ namespace Model
     inline const Aws::String& GetSourceSecurityGroupOwnerId() const{ return m_sourceSecurityGroupOwnerId; }
 
     /**
-     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * <p>[Nondefault VPC] The Amazon Web Services account ID for the source security
      * group, if the source security group is in a different account. You can't specify
      * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
@@ -505,7 +505,7 @@ namespace Model
     inline bool SourceSecurityGroupOwnerIdHasBeenSet() const { return m_sourceSecurityGroupOwnerIdHasBeenSet; }
 
     /**
-     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * <p>[Nondefault VPC] The Amazon Web Services account ID for the source security
      * group, if the source security group is in a different account. You can't specify
      * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
@@ -516,7 +516,7 @@ namespace Model
     inline void SetSourceSecurityGroupOwnerId(const Aws::String& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = value; }
 
     /**
-     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * <p>[Nondefault VPC] The Amazon Web Services account ID for the source security
      * group, if the source security group is in a different account. You can't specify
      * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
@@ -527,7 +527,7 @@ namespace Model
     inline void SetSourceSecurityGroupOwnerId(Aws::String&& value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId = std::move(value); }
 
     /**
-     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * <p>[Nondefault VPC] The Amazon Web Services account ID for the source security
      * group, if the source security group is in a different account. You can't specify
      * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
@@ -538,7 +538,7 @@ namespace Model
     inline void SetSourceSecurityGroupOwnerId(const char* value) { m_sourceSecurityGroupOwnerIdHasBeenSet = true; m_sourceSecurityGroupOwnerId.assign(value); }
 
     /**
-     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * <p>[Nondefault VPC] The Amazon Web Services account ID for the source security
      * group, if the source security group is in a different account. You can't specify
      * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
@@ -549,7 +549,7 @@ namespace Model
     inline AuthorizeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(const Aws::String& value) { SetSourceSecurityGroupOwnerId(value); return *this;}
 
     /**
-     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * <p>[Nondefault VPC] The Amazon Web Services account ID for the source security
      * group, if the source security group is in a different account. You can't specify
      * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port
@@ -560,7 +560,7 @@ namespace Model
     inline AuthorizeSecurityGroupIngressRequest& WithSourceSecurityGroupOwnerId(Aws::String&& value) { SetSourceSecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>[nondefault VPC] The Amazon Web Services account ID for the source security
+     * <p>[Nondefault VPC] The Amazon Web Services account ID for the source security
      * group, if the source security group is in a different account. You can't specify
      * this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port

@@ -1633,49 +1633,211 @@ namespace Model
 
     /**
      * <p>The attributes for the instance types. When you specify instance attributes,
-     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
-     * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceType</code>.</p>
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>You must
+     * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+     * are optional. Any unspecified optional attribute is set to its default.</p>
+     * <p>When you specify multiple attributes, you get instance types that satisfy all
+     * of the specified attributes. If you specify multiple values for an attribute,
+     * you get instance types that satisfy any of the specified values.</p> <p>To limit
+     * the list of instance types from which Amazon EC2 can identify matching instance
+     * types, you can use one of the following parameters, but not both in the same
+     * request:</p> <ul> <li> <p> <code>AllowedInstanceTypes</code> - The instance
+     * types to include in the list. All other instance types are ignored, even if they
+     * match your specified attributes.</p> </li> <li> <p>
+     * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the
+     * list, even if they match your specified attributes.</p> </li> </ul>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceType</code>.</p> <p>Attribute-based instance type selection is
+     * only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to
+     * launch instances. If you plan to use the launch template in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
+     * instance wizard</a>, or with the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * API or <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a>
+     * Amazon Web Services CloudFormation resource, you can't specify
+     * <code>InstanceRequirements</code>.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for EC2 Fleet</a>, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for Spot Fleet</a>, and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+     * placement score</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const InstanceRequirementsRequest& GetInstanceRequirements() const{ return m_instanceRequirements; }
 
     /**
      * <p>The attributes for the instance types. When you specify instance attributes,
-     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
-     * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceType</code>.</p>
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>You must
+     * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+     * are optional. Any unspecified optional attribute is set to its default.</p>
+     * <p>When you specify multiple attributes, you get instance types that satisfy all
+     * of the specified attributes. If you specify multiple values for an attribute,
+     * you get instance types that satisfy any of the specified values.</p> <p>To limit
+     * the list of instance types from which Amazon EC2 can identify matching instance
+     * types, you can use one of the following parameters, but not both in the same
+     * request:</p> <ul> <li> <p> <code>AllowedInstanceTypes</code> - The instance
+     * types to include in the list. All other instance types are ignored, even if they
+     * match your specified attributes.</p> </li> <li> <p>
+     * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the
+     * list, even if they match your specified attributes.</p> </li> </ul>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceType</code>.</p> <p>Attribute-based instance type selection is
+     * only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to
+     * launch instances. If you plan to use the launch template in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
+     * instance wizard</a>, or with the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * API or <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a>
+     * Amazon Web Services CloudFormation resource, you can't specify
+     * <code>InstanceRequirements</code>.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for EC2 Fleet</a>, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for Spot Fleet</a>, and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+     * placement score</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
 
     /**
      * <p>The attributes for the instance types. When you specify instance attributes,
-     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
-     * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceType</code>.</p>
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>You must
+     * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+     * are optional. Any unspecified optional attribute is set to its default.</p>
+     * <p>When you specify multiple attributes, you get instance types that satisfy all
+     * of the specified attributes. If you specify multiple values for an attribute,
+     * you get instance types that satisfy any of the specified values.</p> <p>To limit
+     * the list of instance types from which Amazon EC2 can identify matching instance
+     * types, you can use one of the following parameters, but not both in the same
+     * request:</p> <ul> <li> <p> <code>AllowedInstanceTypes</code> - The instance
+     * types to include in the list. All other instance types are ignored, even if they
+     * match your specified attributes.</p> </li> <li> <p>
+     * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the
+     * list, even if they match your specified attributes.</p> </li> </ul>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceType</code>.</p> <p>Attribute-based instance type selection is
+     * only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to
+     * launch instances. If you plan to use the launch template in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
+     * instance wizard</a>, or with the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * API or <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a>
+     * Amazon Web Services CloudFormation resource, you can't specify
+     * <code>InstanceRequirements</code>.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for EC2 Fleet</a>, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for Spot Fleet</a>, and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+     * placement score</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceRequirements(const InstanceRequirementsRequest& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
 
     /**
      * <p>The attributes for the instance types. When you specify instance attributes,
-     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
-     * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceType</code>.</p>
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>You must
+     * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+     * are optional. Any unspecified optional attribute is set to its default.</p>
+     * <p>When you specify multiple attributes, you get instance types that satisfy all
+     * of the specified attributes. If you specify multiple values for an attribute,
+     * you get instance types that satisfy any of the specified values.</p> <p>To limit
+     * the list of instance types from which Amazon EC2 can identify matching instance
+     * types, you can use one of the following parameters, but not both in the same
+     * request:</p> <ul> <li> <p> <code>AllowedInstanceTypes</code> - The instance
+     * types to include in the list. All other instance types are ignored, even if they
+     * match your specified attributes.</p> </li> <li> <p>
+     * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the
+     * list, even if they match your specified attributes.</p> </li> </ul>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceType</code>.</p> <p>Attribute-based instance type selection is
+     * only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to
+     * launch instances. If you plan to use the launch template in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
+     * instance wizard</a>, or with the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * API or <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a>
+     * Amazon Web Services CloudFormation resource, you can't specify
+     * <code>InstanceRequirements</code>.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for EC2 Fleet</a>, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for Spot Fleet</a>, and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+     * placement score</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceRequirements(InstanceRequirementsRequest&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
 
     /**
      * <p>The attributes for the instance types. When you specify instance attributes,
-     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
-     * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceType</code>.</p>
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>You must
+     * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+     * are optional. Any unspecified optional attribute is set to its default.</p>
+     * <p>When you specify multiple attributes, you get instance types that satisfy all
+     * of the specified attributes. If you specify multiple values for an attribute,
+     * you get instance types that satisfy any of the specified values.</p> <p>To limit
+     * the list of instance types from which Amazon EC2 can identify matching instance
+     * types, you can use one of the following parameters, but not both in the same
+     * request:</p> <ul> <li> <p> <code>AllowedInstanceTypes</code> - The instance
+     * types to include in the list. All other instance types are ignored, even if they
+     * match your specified attributes.</p> </li> <li> <p>
+     * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the
+     * list, even if they match your specified attributes.</p> </li> </ul>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceType</code>.</p> <p>Attribute-based instance type selection is
+     * only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to
+     * launch instances. If you plan to use the launch template in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
+     * instance wizard</a>, or with the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * API or <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a>
+     * Amazon Web Services CloudFormation resource, you can't specify
+     * <code>InstanceRequirements</code>.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for EC2 Fleet</a>, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for Spot Fleet</a>, and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+     * placement score</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceRequirements(const InstanceRequirementsRequest& value) { SetInstanceRequirements(value); return *this;}
 
     /**
      * <p>The attributes for the instance types. When you specify instance attributes,
-     * Amazon EC2 will identify instance types with these attributes.</p> <p>If you
-     * specify <code>InstanceRequirements</code>, you can't specify
-     * <code>InstanceType</code>.</p>
+     * Amazon EC2 will identify instance types with these attributes.</p> <p>You must
+     * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+     * are optional. Any unspecified optional attribute is set to its default.</p>
+     * <p>When you specify multiple attributes, you get instance types that satisfy all
+     * of the specified attributes. If you specify multiple values for an attribute,
+     * you get instance types that satisfy any of the specified values.</p> <p>To limit
+     * the list of instance types from which Amazon EC2 can identify matching instance
+     * types, you can use one of the following parameters, but not both in the same
+     * request:</p> <ul> <li> <p> <code>AllowedInstanceTypes</code> - The instance
+     * types to include in the list. All other instance types are ignored, even if they
+     * match your specified attributes.</p> </li> <li> <p>
+     * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the
+     * list, even if they match your specified attributes.</p> </li> </ul>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceType</code>.</p> <p>Attribute-based instance type selection is
+     * only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to
+     * launch instances. If you plan to use the launch template in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
+     * instance wizard</a>, or with the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+     * API or <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a>
+     * Amazon Web Services CloudFormation resource, you can't specify
+     * <code>InstanceRequirements</code>.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for EC2 Fleet</a>, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
+     * instance type selection for Spot Fleet</a>, and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+     * placement score</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceRequirements(InstanceRequirementsRequest&& value) { SetInstanceRequirements(std::move(value)); return *this;}
 

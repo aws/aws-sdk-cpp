@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateApplicationSettingsRequest::UpdateApplicationSettingsRequest() : 
     m_applicationIdHasBeenSet(false),
     m_credentialsToAddOrUpdateHasBeenSet(false),
-    m_credentialsToRemoveHasBeenSet(false)
+    m_credentialsToRemoveHasBeenSet(false),
+    m_backintHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String UpdateApplicationSettingsRequest::SerializePayload() const
      credentialsToRemoveJsonList[credentialsToRemoveIndex].AsObject(m_credentialsToRemove[credentialsToRemoveIndex].Jsonize());
    }
    payload.WithArray("CredentialsToRemove", std::move(credentialsToRemoveJsonList));
+
+  }
+
+  if(m_backintHasBeenSet)
+  {
+   payload.WithObject("Backint", m_backint.Jsonize());
 
   }
 

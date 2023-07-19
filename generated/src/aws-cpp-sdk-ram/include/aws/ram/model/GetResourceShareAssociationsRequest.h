@@ -241,7 +241,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
@@ -251,7 +251,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
@@ -261,7 +261,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
@@ -271,7 +271,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
@@ -281,7 +281,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
@@ -291,7 +291,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline GetResourceShareAssociationsRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
@@ -301,7 +301,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline GetResourceShareAssociationsRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
@@ -311,7 +311,7 @@ namespace Model
      * This can be an Amazon Web Services account ID, an organization ID, an
      * organizational unit ID, or the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Name (ARN)</a> of an individual IAM user or role.</p> <p>You cannot
+     * Resource Name (ARN)</a> of an individual IAM role or user.</p> <p>You cannot
      * specify this parameter if the association type is <code>RESOURCE</code>.</p>
      */
     inline GetResourceShareAssociationsRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}

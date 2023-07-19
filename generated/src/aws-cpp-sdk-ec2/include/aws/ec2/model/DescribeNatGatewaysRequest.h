@@ -72,8 +72,8 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
-     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
+     * <p>The filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID of the
+     * NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
@@ -91,8 +91,8 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
-     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
+     * <p>The filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID of the
+     * NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
@@ -110,8 +110,8 @@ namespace Model
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
-     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
+     * <p>The filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID of the
+     * NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
@@ -129,8 +129,8 @@ namespace Model
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
-     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
+     * <p>The filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID of the
+     * NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
@@ -148,8 +148,8 @@ namespace Model
     inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
-     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
+     * <p>The filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID of the
+     * NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
@@ -167,8 +167,8 @@ namespace Model
     inline DescribeNatGatewaysRequest& WithFilter(const Aws::Vector<Filter>& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
-     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
+     * <p>The filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID of the
+     * NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
@@ -186,8 +186,8 @@ namespace Model
     inline DescribeNatGatewaysRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
-     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
+     * <p>The filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID of the
+     * NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
@@ -205,8 +205,8 @@ namespace Model
     inline DescribeNatGatewaysRequest& AddFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID
-     * of the NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
+     * <p>The filters.</p> <ul> <li> <p> <code>nat-gateway-id</code> - The ID of the
+     * NAT gateway.</p> </li> <li> <p> <code>state</code> - The state of the NAT
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
@@ -258,47 +258,47 @@ namespace Model
 
 
     /**
-     * <p>One or more NAT gateway IDs.</p>
+     * <p>The IDs of the NAT gateways.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNatGatewayIds() const{ return m_natGatewayIds; }
 
     /**
-     * <p>One or more NAT gateway IDs.</p>
+     * <p>The IDs of the NAT gateways.</p>
      */
     inline bool NatGatewayIdsHasBeenSet() const { return m_natGatewayIdsHasBeenSet; }
 
     /**
-     * <p>One or more NAT gateway IDs.</p>
+     * <p>The IDs of the NAT gateways.</p>
      */
     inline void SetNatGatewayIds(const Aws::Vector<Aws::String>& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds = value; }
 
     /**
-     * <p>One or more NAT gateway IDs.</p>
+     * <p>The IDs of the NAT gateways.</p>
      */
     inline void SetNatGatewayIds(Aws::Vector<Aws::String>&& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds = std::move(value); }
 
     /**
-     * <p>One or more NAT gateway IDs.</p>
+     * <p>The IDs of the NAT gateways.</p>
      */
     inline DescribeNatGatewaysRequest& WithNatGatewayIds(const Aws::Vector<Aws::String>& value) { SetNatGatewayIds(value); return *this;}
 
     /**
-     * <p>One or more NAT gateway IDs.</p>
+     * <p>The IDs of the NAT gateways.</p>
      */
     inline DescribeNatGatewaysRequest& WithNatGatewayIds(Aws::Vector<Aws::String>&& value) { SetNatGatewayIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more NAT gateway IDs.</p>
+     * <p>The IDs of the NAT gateways.</p>
      */
     inline DescribeNatGatewaysRequest& AddNatGatewayIds(const Aws::String& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more NAT gateway IDs.</p>
+     * <p>The IDs of the NAT gateways.</p>
      */
     inline DescribeNatGatewaysRequest& AddNatGatewayIds(Aws::String&& value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more NAT gateway IDs.</p>
+     * <p>The IDs of the NAT gateways.</p>
      */
     inline DescribeNatGatewaysRequest& AddNatGatewayIds(const char* value) { m_natGatewayIdsHasBeenSet = true; m_natGatewayIds.push_back(value); return *this; }
 

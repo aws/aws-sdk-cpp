@@ -362,15 +362,10 @@ namespace Model
      * if this parameter is not specified, the default KMS key for EBS is used. If a
      * <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be
      * set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -391,15 +386,10 @@ namespace Model
      * if this parameter is not specified, the default KMS key for EBS is used. If a
      * <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be
      * set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -420,15 +410,10 @@ namespace Model
      * if this parameter is not specified, the default KMS key for EBS is used. If a
      * <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be
      * set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -449,15 +434,10 @@ namespace Model
      * if this parameter is not specified, the default KMS key for EBS is used. If a
      * <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be
      * set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -478,15 +458,10 @@ namespace Model
      * if this parameter is not specified, the default KMS key for EBS is used. If a
      * <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be
      * set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -507,15 +482,10 @@ namespace Model
      * if this parameter is not specified, the default KMS key for EBS is used. If a
      * <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be
      * set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -536,15 +506,10 @@ namespace Model
      * if this parameter is not specified, the default KMS key for EBS is used. If a
      * <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be
      * set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -565,15 +530,10 @@ namespace Model
      * if this parameter is not specified, the default KMS key for EBS is used. If a
      * <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be
      * set. </p> <p>The KMS key identifier may be provided in any of the following
-     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias. The alias ARN
-     * contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     * key, the Amazon Web Services account ID of the key owner, the <code>alias</code>
-     * namespace, and then the key alias. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p>
-     * </li> <li> <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code>
-     * namespace, followed by the Region of the key, the Amazon Web Services account ID
-     * of the key owner, the <code>key</code> namespace, and then the key ID. For
-     * example,
+     * formats: </p> <ul> <li> <p>Key ID</p> </li> <li> <p>Key alias</p> </li> <li>
+     * <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace,
+     * followed by the Region of the key, the Amazon Web Services account ID of the key
+     * owner, the <code>key</code> namespace, and then the key ID. For example,
      * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p>
      * </li> <li> <p>ARN using key alias. The alias ARN contains the
      * <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
@@ -719,49 +679,65 @@ namespace Model
 
 
     /**
-     * <p>The operating system of the virtual machine.</p> <p>Valid values:
+     * <p>The operating system of the virtual machine. If you import a VM that is
+     * compatible with Unified Extensible Firmware Interface (UEFI) using an EBS
+     * snapshot, you must specify a value for the platform.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The operating system of the virtual machine.</p> <p>Valid values:
+     * <p>The operating system of the virtual machine. If you import a VM that is
+     * compatible with Unified Extensible Firmware Interface (UEFI) using an EBS
+     * snapshot, you must specify a value for the platform.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The operating system of the virtual machine.</p> <p>Valid values:
+     * <p>The operating system of the virtual machine. If you import a VM that is
+     * compatible with Unified Extensible Firmware Interface (UEFI) using an EBS
+     * snapshot, you must specify a value for the platform.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The operating system of the virtual machine.</p> <p>Valid values:
+     * <p>The operating system of the virtual machine. If you import a VM that is
+     * compatible with Unified Extensible Firmware Interface (UEFI) using an EBS
+     * snapshot, you must specify a value for the platform.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The operating system of the virtual machine.</p> <p>Valid values:
+     * <p>The operating system of the virtual machine. If you import a VM that is
+     * compatible with Unified Extensible Firmware Interface (UEFI) using an EBS
+     * snapshot, you must specify a value for the platform.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * <p>The operating system of the virtual machine.</p> <p>Valid values:
+     * <p>The operating system of the virtual machine. If you import a VM that is
+     * compatible with Unified Extensible Firmware Interface (UEFI) using an EBS
+     * snapshot, you must specify a value for the platform.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline ImportImageRequest& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The operating system of the virtual machine.</p> <p>Valid values:
+     * <p>The operating system of the virtual machine. If you import a VM that is
+     * compatible with Unified Extensible Firmware Interface (UEFI) using an EBS
+     * snapshot, you must specify a value for the platform.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline ImportImageRequest& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * <p>The operating system of the virtual machine.</p> <p>Valid values:
+     * <p>The operating system of the virtual machine. If you import a VM that is
+     * compatible with Unified Extensible Firmware Interface (UEFI) using an EBS
+     * snapshot, you must specify a value for the platform.</p> <p>Valid values:
      * <code>Windows</code> | <code>Linux</code> </p>
      */
     inline ImportImageRequest& WithPlatform(const char* value) { SetPlatform(value); return *this;}

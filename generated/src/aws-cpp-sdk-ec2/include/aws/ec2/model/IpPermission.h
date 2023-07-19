@@ -82,8 +82,8 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
-     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * Numbers</a>).</p> <p>Use <code>-1</code> to specify all protocols. When
+     * authorizing security group rules, specifying <code>-1</code> or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
      * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
      * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
@@ -96,8 +96,8 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
-     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * Numbers</a>).</p> <p>Use <code>-1</code> to specify all protocols. When
+     * authorizing security group rules, specifying <code>-1</code> or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
      * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
      * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
@@ -110,8 +110,8 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
-     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * Numbers</a>).</p> <p>Use <code>-1</code> to specify all protocols. When
+     * authorizing security group rules, specifying <code>-1</code> or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
      * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
      * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
@@ -124,8 +124,8 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
-     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * Numbers</a>).</p> <p>Use <code>-1</code> to specify all protocols. When
+     * authorizing security group rules, specifying <code>-1</code> or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
      * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
      * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
@@ -138,8 +138,8 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
-     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * Numbers</a>).</p> <p>Use <code>-1</code> to specify all protocols. When
+     * authorizing security group rules, specifying <code>-1</code> or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
      * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
      * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
@@ -152,8 +152,8 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
-     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * Numbers</a>).</p> <p>Use <code>-1</code> to specify all protocols. When
+     * authorizing security group rules, specifying <code>-1</code> or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
      * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
      * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
@@ -166,8 +166,8 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
-     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * Numbers</a>).</p> <p>Use <code>-1</code> to specify all protocols. When
+     * authorizing security group rules, specifying <code>-1</code> or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
      * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
      * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
@@ -180,8 +180,8 @@ namespace Model
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-     * Numbers</a>).</p> <p>[VPC only] Use <code>-1</code> to specify all protocols.
-     * When authorizing security group rules, specifying <code>-1</code> or a protocol
+     * Numbers</a>).</p> <p>Use <code>-1</code> to specify all protocols. When
+     * authorizing security group rules, specifying <code>-1</code> or a protocol
      * number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or
      * <code>icmpv6</code> allows traffic on all ports, regardless of any port range
      * you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
@@ -233,83 +233,83 @@ namespace Model
 
 
     /**
-     * <p>[VPC only] The IPv6 ranges.</p>
+     * <p>The IPv6 ranges.</p>
      */
     inline const Aws::Vector<Ipv6Range>& GetIpv6Ranges() const{ return m_ipv6Ranges; }
 
     /**
-     * <p>[VPC only] The IPv6 ranges.</p>
+     * <p>The IPv6 ranges.</p>
      */
     inline bool Ipv6RangesHasBeenSet() const { return m_ipv6RangesHasBeenSet; }
 
     /**
-     * <p>[VPC only] The IPv6 ranges.</p>
+     * <p>The IPv6 ranges.</p>
      */
     inline void SetIpv6Ranges(const Aws::Vector<Ipv6Range>& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges = value; }
 
     /**
-     * <p>[VPC only] The IPv6 ranges.</p>
+     * <p>The IPv6 ranges.</p>
      */
     inline void SetIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges = std::move(value); }
 
     /**
-     * <p>[VPC only] The IPv6 ranges.</p>
+     * <p>The IPv6 ranges.</p>
      */
     inline IpPermission& WithIpv6Ranges(const Aws::Vector<Ipv6Range>& value) { SetIpv6Ranges(value); return *this;}
 
     /**
-     * <p>[VPC only] The IPv6 ranges.</p>
+     * <p>The IPv6 ranges.</p>
      */
     inline IpPermission& WithIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { SetIpv6Ranges(std::move(value)); return *this;}
 
     /**
-     * <p>[VPC only] The IPv6 ranges.</p>
+     * <p>The IPv6 ranges.</p>
      */
     inline IpPermission& AddIpv6Ranges(const Ipv6Range& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges.push_back(value); return *this; }
 
     /**
-     * <p>[VPC only] The IPv6 ranges.</p>
+     * <p>The IPv6 ranges.</p>
      */
     inline IpPermission& AddIpv6Ranges(Ipv6Range&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>[VPC only] The prefix list IDs.</p>
+     * <p>The prefix list IDs.</p>
      */
     inline const Aws::Vector<PrefixListId>& GetPrefixListIds() const{ return m_prefixListIds; }
 
     /**
-     * <p>[VPC only] The prefix list IDs.</p>
+     * <p>The prefix list IDs.</p>
      */
     inline bool PrefixListIdsHasBeenSet() const { return m_prefixListIdsHasBeenSet; }
 
     /**
-     * <p>[VPC only] The prefix list IDs.</p>
+     * <p>The prefix list IDs.</p>
      */
     inline void SetPrefixListIds(const Aws::Vector<PrefixListId>& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
 
     /**
-     * <p>[VPC only] The prefix list IDs.</p>
+     * <p>The prefix list IDs.</p>
      */
     inline void SetPrefixListIds(Aws::Vector<PrefixListId>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
 
     /**
-     * <p>[VPC only] The prefix list IDs.</p>
+     * <p>The prefix list IDs.</p>
      */
     inline IpPermission& WithPrefixListIds(const Aws::Vector<PrefixListId>& value) { SetPrefixListIds(value); return *this;}
 
     /**
-     * <p>[VPC only] The prefix list IDs.</p>
+     * <p>The prefix list IDs.</p>
      */
     inline IpPermission& WithPrefixListIds(Aws::Vector<PrefixListId>&& value) { SetPrefixListIds(std::move(value)); return *this;}
 
     /**
-     * <p>[VPC only] The prefix list IDs.</p>
+     * <p>The prefix list IDs.</p>
      */
     inline IpPermission& AddPrefixListIds(const PrefixListId& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
 
     /**
-     * <p>[VPC only] The prefix list IDs.</p>
+     * <p>The prefix list IDs.</p>
      */
     inline IpPermission& AddPrefixListIds(PrefixListId&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(std::move(value)); return *this; }
 

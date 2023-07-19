@@ -29,8 +29,8 @@ namespace Model
    * <p>The filter to use to identify the subset of cookies to inspect in a web
    * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
    * <code>IncludedCookies</code>, or <code>ExcludedCookies</code>.</p> <p>Example
-   * JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1",
-   * "KeyToInclude2", "KeyToInclude3"} }</code> </p><p><h3>See Also:</h3>   <a
+   * JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time",
+   * "session-id" ] }</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CookieMatchPattern">AWS
    * API Reference</a></p>
    */

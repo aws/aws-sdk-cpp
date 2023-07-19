@@ -622,6 +622,61 @@ namespace Model
      */
     inline CreateResourceShareRequest& AddPermissionArns(const char* value) { m_permissionArnsHasBeenSet = true; m_permissionArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline void SetSources(const Aws::Vector<Aws::String>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline void SetSources(Aws::Vector<Aws::String>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline CreateResourceShareRequest& WithSources(const Aws::Vector<Aws::String>& value) { SetSources(value); return *this;}
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline CreateResourceShareRequest& WithSources(Aws::Vector<Aws::String>&& value) { SetSources(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline CreateResourceShareRequest& AddSources(const Aws::String& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline CreateResourceShareRequest& AddSources(Aws::String&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies from which source accounts the service principal has access to the
+     * resources in this resource share.</p>
+     */
+    inline CreateResourceShareRequest& AddSources(const char* value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -644,6 +699,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_permissionArns;
     bool m_permissionArnsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_sources;
+    bool m_sourcesHasBeenSet = false;
   };
 
 } // namespace Model

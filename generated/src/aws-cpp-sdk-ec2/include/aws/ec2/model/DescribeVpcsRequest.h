@@ -39,9 +39,9 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
-     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. Must contain the slash
+     * <p>The filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4 CIDR
+     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
+     * block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
      * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
@@ -74,9 +74,9 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
-     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. Must contain the slash
+     * <p>The filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4 CIDR
+     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
+     * block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
      * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
@@ -109,9 +109,9 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
-     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. Must contain the slash
+     * <p>The filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4 CIDR
+     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
+     * block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
      * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
@@ -144,9 +144,9 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
-     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. Must contain the slash
+     * <p>The filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4 CIDR
+     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
+     * block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
      * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
@@ -179,9 +179,9 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
-     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. Must contain the slash
+     * <p>The filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4 CIDR
+     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
+     * block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
      * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
@@ -214,9 +214,9 @@ namespace Model
     inline DescribeVpcsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
-     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. Must contain the slash
+     * <p>The filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4 CIDR
+     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
+     * block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
      * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
@@ -249,9 +249,9 @@ namespace Model
     inline DescribeVpcsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
-     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. Must contain the slash
+     * <p>The filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4 CIDR
+     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
+     * block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
      * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
@@ -284,9 +284,9 @@ namespace Model
     inline DescribeVpcsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4
-     * CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's
-     * CIDR block for information to be returned for the VPC. Must contain the slash
+     * <p>The filters.</p> <ul> <li> <p> <code>cidr</code> - The primary IPv4 CIDR
+     * block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR
+     * block for information to be returned for the VPC. Must contain the slash
      * followed by one or two digits (for example, <code>/28</code>).</p> </li> <li>
      * <p> <code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
@@ -320,47 +320,47 @@ namespace Model
 
 
     /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     * <p>The IDs of the VPCs.</p> <p>Default: Describes all your VPCs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
 
     /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     * <p>The IDs of the VPCs.</p> <p>Default: Describes all your VPCs.</p>
      */
     inline bool VpcIdsHasBeenSet() const { return m_vpcIdsHasBeenSet; }
 
     /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     * <p>The IDs of the VPCs.</p> <p>Default: Describes all your VPCs.</p>
      */
     inline void SetVpcIds(const Aws::Vector<Aws::String>& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
 
     /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     * <p>The IDs of the VPCs.</p> <p>Default: Describes all your VPCs.</p>
      */
     inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
 
     /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     * <p>The IDs of the VPCs.</p> <p>Default: Describes all your VPCs.</p>
      */
     inline DescribeVpcsRequest& WithVpcIds(const Aws::Vector<Aws::String>& value) { SetVpcIds(value); return *this;}
 
     /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     * <p>The IDs of the VPCs.</p> <p>Default: Describes all your VPCs.</p>
      */
     inline DescribeVpcsRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     * <p>The IDs of the VPCs.</p> <p>Default: Describes all your VPCs.</p>
      */
     inline DescribeVpcsRequest& AddVpcIds(const Aws::String& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     * <p>The IDs of the VPCs.</p> <p>Default: Describes all your VPCs.</p>
      */
     inline DescribeVpcsRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more VPC IDs.</p> <p>Default: Describes all your VPCs.</p>
+     * <p>The IDs of the VPCs.</p> <p>Default: Describes all your VPCs.</p>
      */
     inline DescribeVpcsRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
 

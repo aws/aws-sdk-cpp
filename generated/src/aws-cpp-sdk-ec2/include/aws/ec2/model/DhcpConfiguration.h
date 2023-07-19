@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>One or more values for the DHCP option.</p>
+     * <p>The values for the DHCP option.</p>
      */
     inline const Aws::Vector<AttributeValue>& GetValues() const{ return m_values; }
 
     /**
-     * <p>One or more values for the DHCP option.</p>
+     * <p>The values for the DHCP option.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * <p>One or more values for the DHCP option.</p>
+     * <p>The values for the DHCP option.</p>
      */
     inline void SetValues(const Aws::Vector<AttributeValue>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>One or more values for the DHCP option.</p>
+     * <p>The values for the DHCP option.</p>
      */
     inline void SetValues(Aws::Vector<AttributeValue>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>One or more values for the DHCP option.</p>
+     * <p>The values for the DHCP option.</p>
      */
     inline DhcpConfiguration& WithValues(const Aws::Vector<AttributeValue>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>One or more values for the DHCP option.</p>
+     * <p>The values for the DHCP option.</p>
      */
     inline DhcpConfiguration& WithValues(Aws::Vector<AttributeValue>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>One or more values for the DHCP option.</p>
+     * <p>The values for the DHCP option.</p>
      */
     inline DhcpConfiguration& AddValues(const AttributeValue& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>One or more values for the DHCP option.</p>
+     * <p>The values for the DHCP option.</p>
      */
     inline DhcpConfiguration& AddValues(AttributeValue&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>[EC2-VPC only] Describes an IPv6 range.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an IPv6 range.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ipv6Range">AWS API
    * Reference</a></p>
    */

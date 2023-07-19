@@ -177,84 +177,42 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you change your
-     * EBS-backed instance type, instance restart or replacement behavior depends on
-     * the instance type compatibility between the old and new types. An instance
-     * that's backed by an instance store volume is always replaced. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change
-     * the instance type</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you change your
-     * EBS-backed instance type, instance restart or replacement behavior depends on
-     * the instance type compatibility between the old and new types. An instance
-     * that's backed by an instance store volume is always replaced. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change
-     * the instance type</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you change your
-     * EBS-backed instance type, instance restart or replacement behavior depends on
-     * the instance type compatibility between the old and new types. An instance
-     * that's backed by an instance store volume is always replaced. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change
-     * the instance type</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you change your
-     * EBS-backed instance type, instance restart or replacement behavior depends on
-     * the instance type compatibility between the old and new types. An instance
-     * that's backed by an instance store volume is always replaced. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change
-     * the instance type</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you change your
-     * EBS-backed instance type, instance restart or replacement behavior depends on
-     * the instance type compatibility between the old and new types. An instance
-     * that's backed by an instance store volume is always replaced. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change
-     * the instance type</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you change your
-     * EBS-backed instance type, instance restart or replacement behavior depends on
-     * the instance type compatibility between the old and new types. An instance
-     * that's backed by an instance store volume is always replaced. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html">Change
-     * the instance type</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>m1.small</code> </p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -2312,37 +2270,43 @@ namespace Model
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline const PrivateDnsNameOptionsRequest& GetPrivateDnsNameOptions() const{ return m_privateDnsNameOptions; }
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline bool PrivateDnsNameOptionsHasBeenSet() const { return m_privateDnsNameOptionsHasBeenSet; }
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline void SetPrivateDnsNameOptions(const PrivateDnsNameOptionsRequest& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = value; }
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline void SetPrivateDnsNameOptions(PrivateDnsNameOptionsRequest&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::move(value); }
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline RunInstancesRequest& WithPrivateDnsNameOptions(const PrivateDnsNameOptionsRequest& value) { SetPrivateDnsNameOptions(value); return *this;}
 
     /**
      * <p>The options for the instance hostname. The default values are inherited from
-     * the subnet.</p>
+     * the subnet. Applies only if creating a network interface, not attaching an
+     * existing one.</p>
      */
     inline RunInstancesRequest& WithPrivateDnsNameOptions(PrivateDnsNameOptionsRequest&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
 

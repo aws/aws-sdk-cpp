@@ -39,7 +39,7 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p>
      * <code>association.route-table-association-id</code> - The ID of an association
      * ID for the route table.</p> </li> <li> <p>
      * <code>association.route-table-id</code> - The ID of the route table involved in
@@ -88,7 +88,7 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p>
      * <code>association.route-table-association-id</code> - The ID of an association
      * ID for the route table.</p> </li> <li> <p>
      * <code>association.route-table-id</code> - The ID of the route table involved in
@@ -137,7 +137,7 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p>
      * <code>association.route-table-association-id</code> - The ID of an association
      * ID for the route table.</p> </li> <li> <p>
      * <code>association.route-table-id</code> - The ID of the route table involved in
@@ -186,7 +186,7 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p>
      * <code>association.route-table-association-id</code> - The ID of an association
      * ID for the route table.</p> </li> <li> <p>
      * <code>association.route-table-id</code> - The ID of the route table involved in
@@ -235,7 +235,7 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p>
      * <code>association.route-table-association-id</code> - The ID of an association
      * ID for the route table.</p> </li> <li> <p>
      * <code>association.route-table-id</code> - The ID of the route table involved in
@@ -284,7 +284,7 @@ namespace Model
     inline DescribeRouteTablesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p>
      * <code>association.route-table-association-id</code> - The ID of an association
      * ID for the route table.</p> </li> <li> <p>
      * <code>association.route-table-id</code> - The ID of the route table involved in
@@ -333,7 +333,7 @@ namespace Model
     inline DescribeRouteTablesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p>
      * <code>association.route-table-association-id</code> - The ID of an association
      * ID for the route table.</p> </li> <li> <p>
      * <code>association.route-table-id</code> - The ID of the route table involved in
@@ -382,7 +382,7 @@ namespace Model
     inline DescribeRouteTablesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p>
      * <code>association.route-table-association-id</code> - The ID of an association
      * ID for the route table.</p> </li> <li> <p>
      * <code>association.route-table-id</code> - The ID of the route table involved in
@@ -465,55 +465,55 @@ namespace Model
 
 
     /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * <p>The IDs of the route tables.</p> <p>Default: Describes all your route
      * tables.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
 
     /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * <p>The IDs of the route tables.</p> <p>Default: Describes all your route
      * tables.</p>
      */
     inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
 
     /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * <p>The IDs of the route tables.</p> <p>Default: Describes all your route
      * tables.</p>
      */
     inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
 
     /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * <p>The IDs of the route tables.</p> <p>Default: Describes all your route
      * tables.</p>
      */
     inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * <p>The IDs of the route tables.</p> <p>Default: Describes all your route
      * tables.</p>
      */
     inline DescribeRouteTablesRequest& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
 
     /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * <p>The IDs of the route tables.</p> <p>Default: Describes all your route
      * tables.</p>
      */
     inline DescribeRouteTablesRequest& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * <p>The IDs of the route tables.</p> <p>Default: Describes all your route
      * tables.</p>
      */
     inline DescribeRouteTablesRequest& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * <p>The IDs of the route tables.</p> <p>Default: Describes all your route
      * tables.</p>
      */
     inline DescribeRouteTablesRequest& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more route table IDs.</p> <p>Default: Describes all your route
+     * <p>The IDs of the route tables.</p> <p>Default: Describes all your route
      * tables.</p>
      */
     inline DescribeRouteTablesRequest& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }

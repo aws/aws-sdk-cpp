@@ -39,122 +39,114 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> -
-     * Whether the VPC is enabled for ClassicLink (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> - Whether
+     * the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> -
-     * Whether the VPC is enabled for ClassicLink (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> - Whether
+     * the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> -
-     * Whether the VPC is enabled for ClassicLink (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> - Whether
+     * the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> -
-     * Whether the VPC is enabled for ClassicLink (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> - Whether
+     * the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> -
-     * Whether the VPC is enabled for ClassicLink (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> - Whether
+     * the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeVpcClassicLinkRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> -
-     * Whether the VPC is enabled for ClassicLink (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> - Whether
+     * the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeVpcClassicLinkRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> -
-     * Whether the VPC is enabled for ClassicLink (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> - Whether
+     * the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeVpcClassicLinkRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> -
-     * Whether the VPC is enabled for ClassicLink (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
+     * <p>The filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> - Whether
+     * the VPC is enabled for ClassicLink (<code>true</code> | <code>false</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeVpcClassicLinkRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -193,47 +185,47 @@ namespace Model
 
 
     /**
-     * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+     * <p>The VPCs for which you want to describe the ClassicLink status.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
 
     /**
-     * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+     * <p>The VPCs for which you want to describe the ClassicLink status.</p>
      */
     inline bool VpcIdsHasBeenSet() const { return m_vpcIdsHasBeenSet; }
 
     /**
-     * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+     * <p>The VPCs for which you want to describe the ClassicLink status.</p>
      */
     inline void SetVpcIds(const Aws::Vector<Aws::String>& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
 
     /**
-     * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+     * <p>The VPCs for which you want to describe the ClassicLink status.</p>
      */
     inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
 
     /**
-     * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+     * <p>The VPCs for which you want to describe the ClassicLink status.</p>
      */
     inline DescribeVpcClassicLinkRequest& WithVpcIds(const Aws::Vector<Aws::String>& value) { SetVpcIds(value); return *this;}
 
     /**
-     * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+     * <p>The VPCs for which you want to describe the ClassicLink status.</p>
      */
     inline DescribeVpcClassicLinkRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+     * <p>The VPCs for which you want to describe the ClassicLink status.</p>
      */
     inline DescribeVpcClassicLinkRequest& AddVpcIds(const Aws::String& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+     * <p>The VPCs for which you want to describe the ClassicLink status.</p>
      */
     inline DescribeVpcClassicLinkRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+     * <p>The VPCs for which you want to describe the ClassicLink status.</p>
      */
     inline DescribeVpcClassicLinkRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
 

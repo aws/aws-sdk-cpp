@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm-sap/model/ApplicationType.h>
 #include <aws/ssm-sap/model/ApplicationStatus.h>
+#include <aws/ssm-sap/model/ApplicationDiscoveryStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -228,6 +229,37 @@ namespace Model
 
 
     /**
+     * <p>The latest discovery result for the application.</p>
+     */
+    inline const ApplicationDiscoveryStatus& GetDiscoveryStatus() const{ return m_discoveryStatus; }
+
+    /**
+     * <p>The latest discovery result for the application.</p>
+     */
+    inline bool DiscoveryStatusHasBeenSet() const { return m_discoveryStatusHasBeenSet; }
+
+    /**
+     * <p>The latest discovery result for the application.</p>
+     */
+    inline void SetDiscoveryStatus(const ApplicationDiscoveryStatus& value) { m_discoveryStatusHasBeenSet = true; m_discoveryStatus = value; }
+
+    /**
+     * <p>The latest discovery result for the application.</p>
+     */
+    inline void SetDiscoveryStatus(ApplicationDiscoveryStatus&& value) { m_discoveryStatusHasBeenSet = true; m_discoveryStatus = std::move(value); }
+
+    /**
+     * <p>The latest discovery result for the application.</p>
+     */
+    inline Application& WithDiscoveryStatus(const ApplicationDiscoveryStatus& value) { SetDiscoveryStatus(value); return *this;}
+
+    /**
+     * <p>The latest discovery result for the application.</p>
+     */
+    inline Application& WithDiscoveryStatus(ApplicationDiscoveryStatus&& value) { SetDiscoveryStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The components of the application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetComponents() const{ return m_components; }
@@ -360,6 +392,9 @@ namespace Model
 
     ApplicationStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    ApplicationDiscoveryStatus m_discoveryStatus;
+    bool m_discoveryStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_components;
     bool m_componentsHasBeenSet = false;

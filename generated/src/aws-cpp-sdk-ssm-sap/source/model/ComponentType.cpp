@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int HANA_HASH = HashingUtils::HashString("HANA");
+        static const int HANA_NODE_HASH = HashingUtils::HashString("HANA_NODE");
 
 
         ComponentType GetComponentTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == HANA_HASH)
           {
             return ComponentType::HANA;
+          }
+          else if (hashCode == HANA_NODE_HASH)
+          {
+            return ComponentType::HANA_NODE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ComponentType::HANA:
             return "HANA";
+          case ComponentType::HANA_NODE:
+            return "HANA_NODE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
