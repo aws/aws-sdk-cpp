@@ -278,7 +278,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline const Aws::Vector<IdeConfiguration>& GetIdes() const{ return m_ides; }
 
@@ -286,7 +286,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline bool IdesHasBeenSet() const { return m_idesHasBeenSet; }
 
@@ -294,7 +294,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline void SetIdes(const Aws::Vector<IdeConfiguration>& value) { m_idesHasBeenSet = true; m_ides = value; }
 
@@ -302,7 +302,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline void SetIdes(Aws::Vector<IdeConfiguration>&& value) { m_idesHasBeenSet = true; m_ides = std::move(value); }
 
@@ -310,7 +310,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline CreateDevEnvironmentRequest& WithIdes(const Aws::Vector<IdeConfiguration>& value) { SetIdes(value); return *this;}
 
@@ -318,7 +318,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline CreateDevEnvironmentRequest& WithIdes(Aws::Vector<IdeConfiguration>&& value) { SetIdes(std::move(value)); return *this;}
 
@@ -326,7 +326,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline CreateDevEnvironmentRequest& AddIdes(const IdeConfiguration& value) { m_idesHasBeenSet = true; m_ides.push_back(value); return *this; }
 
@@ -334,7 +334,7 @@ namespace Model
      * <p>Information about the integrated development environment (IDE) configured for
      * a Dev Environment.</p>  <p>An IDE is required to create a Dev Environment.
      * For Dev Environment creation, this field contains configuration information and
-     * must be provided.</p> 
+     * must be provided. </p> 
      */
     inline CreateDevEnvironmentRequest& AddIdes(IdeConfiguration&& value) { m_idesHasBeenSet = true; m_ides.push_back(std::move(value)); return *this; }
 

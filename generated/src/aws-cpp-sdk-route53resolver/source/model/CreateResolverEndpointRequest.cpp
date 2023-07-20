@@ -21,7 +21,9 @@ CreateResolverEndpointRequest::CreateResolverEndpointRequest() :
     m_ipAddressesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resolverEndpointType(ResolverEndpointType::NOT_SET),
-    m_resolverEndpointTypeHasBeenSet(false)
+    m_resolverEndpointTypeHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
+    m_preferredInstanceTypeHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,18 @@ Aws::String CreateResolverEndpointRequest::SerializePayload() const
   if(m_resolverEndpointTypeHasBeenSet)
   {
    payload.WithString("ResolverEndpointType", ResolverEndpointTypeMapper::GetNameForResolverEndpointType(m_resolverEndpointType));
+  }
+
+  if(m_outpostArnHasBeenSet)
+  {
+   payload.WithString("OutpostArn", m_outpostArn);
+
+  }
+
+  if(m_preferredInstanceTypeHasBeenSet)
+  {
+   payload.WithString("PreferredInstanceType", m_preferredInstanceType);
+
   }
 
   return payload.View().WriteReadable();

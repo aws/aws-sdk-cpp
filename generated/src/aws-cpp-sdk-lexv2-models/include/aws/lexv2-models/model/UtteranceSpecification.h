@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/lexv2-models/model/BotChannelType.h>
 #include <aws/lexv2-models/model/AnalyticsModality.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lexv2-models/model/IntentState.h>
@@ -212,7 +211,7 @@ namespace Model
      * <p>The channel that is integrated with the bot that the utterance was made
      * to.</p>
      */
-    inline const BotChannelType& GetChannel() const{ return m_channel; }
+    inline const Aws::String& GetChannel() const{ return m_channel; }
 
     /**
      * <p>The channel that is integrated with the bot that the utterance was made
@@ -224,25 +223,37 @@ namespace Model
      * <p>The channel that is integrated with the bot that the utterance was made
      * to.</p>
      */
-    inline void SetChannel(const BotChannelType& value) { m_channelHasBeenSet = true; m_channel = value; }
+    inline void SetChannel(const Aws::String& value) { m_channelHasBeenSet = true; m_channel = value; }
 
     /**
      * <p>The channel that is integrated with the bot that the utterance was made
      * to.</p>
      */
-    inline void SetChannel(BotChannelType&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
+    inline void SetChannel(Aws::String&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
 
     /**
      * <p>The channel that is integrated with the bot that the utterance was made
      * to.</p>
      */
-    inline UtteranceSpecification& WithChannel(const BotChannelType& value) { SetChannel(value); return *this;}
+    inline void SetChannel(const char* value) { m_channelHasBeenSet = true; m_channel.assign(value); }
 
     /**
      * <p>The channel that is integrated with the bot that the utterance was made
      * to.</p>
      */
-    inline UtteranceSpecification& WithChannel(BotChannelType&& value) { SetChannel(std::move(value)); return *this;}
+    inline UtteranceSpecification& WithChannel(const Aws::String& value) { SetChannel(value); return *this;}
+
+    /**
+     * <p>The channel that is integrated with the bot that the utterance was made
+     * to.</p>
+     */
+    inline UtteranceSpecification& WithChannel(Aws::String&& value) { SetChannel(std::move(value)); return *this;}
+
+    /**
+     * <p>The channel that is integrated with the bot that the utterance was made
+     * to.</p>
+     */
+    inline UtteranceSpecification& WithChannel(const char* value) { SetChannel(value); return *this;}
 
 
     /**
@@ -1069,7 +1080,7 @@ namespace Model
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    BotChannelType m_channel;
+    Aws::String m_channel;
     bool m_channelHasBeenSet = false;
 
     AnalyticsModality m_mode;

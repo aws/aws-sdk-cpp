@@ -35,7 +35,9 @@ ResolverEndpoint::ResolverEndpoint() :
     m_creationTimeHasBeenSet(false),
     m_modificationTimeHasBeenSet(false),
     m_resolverEndpointType(ResolverEndpointType::NOT_SET),
-    m_resolverEndpointTypeHasBeenSet(false)
+    m_resolverEndpointTypeHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
+    m_preferredInstanceTypeHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ ResolverEndpoint::ResolverEndpoint(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_modificationTimeHasBeenSet(false),
     m_resolverEndpointType(ResolverEndpointType::NOT_SET),
-    m_resolverEndpointTypeHasBeenSet(false)
+    m_resolverEndpointTypeHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
+    m_preferredInstanceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +161,20 @@ ResolverEndpoint& ResolverEndpoint::operator =(JsonView jsonValue)
     m_resolverEndpointTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OutpostArn"))
+  {
+    m_outpostArn = jsonValue.GetString("OutpostArn");
+
+    m_outpostArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreferredInstanceType"))
+  {
+    m_preferredInstanceType = jsonValue.GetString("PreferredInstanceType");
+
+    m_preferredInstanceTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -242,6 +260,18 @@ JsonValue ResolverEndpoint::Jsonize() const
   if(m_resolverEndpointTypeHasBeenSet)
   {
    payload.WithString("ResolverEndpointType", ResolverEndpointTypeMapper::GetNameForResolverEndpointType(m_resolverEndpointType));
+  }
+
+  if(m_outpostArnHasBeenSet)
+  {
+   payload.WithString("OutpostArn", m_outpostArn);
+
+  }
+
+  if(m_preferredInstanceTypeHasBeenSet)
+  {
+   payload.WithString("PreferredInstanceType", m_preferredInstanceType);
+
   }
 
   return payload;

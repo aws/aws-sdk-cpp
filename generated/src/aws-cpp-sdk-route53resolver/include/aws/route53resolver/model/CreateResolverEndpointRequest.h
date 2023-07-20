@@ -400,46 +400,144 @@ namespace Model
 
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline const ResolverEndpointType& GetResolverEndpointType() const{ return m_resolverEndpointType; }
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline bool ResolverEndpointTypeHasBeenSet() const { return m_resolverEndpointTypeHasBeenSet; }
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline void SetResolverEndpointType(const ResolverEndpointType& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = value; }
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline void SetResolverEndpointType(ResolverEndpointType&& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = std::move(value); }
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline CreateResolverEndpointRequest& WithResolverEndpointType(const ResolverEndpointType& value) { SetResolverEndpointType(value); return *this;}
 
     /**
-     * <p> For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A
+     * <p> For the endpoint type you can choose either IPv4, IPv6, or dual-stack. A
      * dual-stack endpoint means that it will resolve via both IPv4 and IPv6. This
      * endpoint type is applied to all IP addresses. </p>
      */
     inline CreateResolverEndpointRequest& WithResolverEndpointType(ResolverEndpointType&& value) { SetResolverEndpointType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline CreateResolverEndpointRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline CreateResolverEndpointRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must
+     * also specify a value for the <code>PreferredInstanceType</code>. </p>
+     */
+    inline CreateResolverEndpointRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline const Aws::String& GetPreferredInstanceType() const{ return m_preferredInstanceType; }
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline bool PreferredInstanceTypeHasBeenSet() const { return m_preferredInstanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline void SetPreferredInstanceType(const Aws::String& value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType = value; }
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline void SetPreferredInstanceType(Aws::String&& value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType = std::move(value); }
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline void SetPreferredInstanceType(const char* value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType.assign(value); }
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline CreateResolverEndpointRequest& WithPreferredInstanceType(const Aws::String& value) { SetPreferredInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline CreateResolverEndpointRequest& WithPreferredInstanceType(Aws::String&& value) { SetPreferredInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance type. If you specify this, you must also specify a value for the
+     * <code>OutpostArn</code>.</p>
+     */
+    inline CreateResolverEndpointRequest& WithPreferredInstanceType(const char* value) { SetPreferredInstanceType(value); return *this;}
 
   private:
 
@@ -463,6 +561,12 @@ namespace Model
 
     ResolverEndpointType m_resolverEndpointType;
     bool m_resolverEndpointTypeHasBeenSet = false;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet = false;
+
+    Aws::String m_preferredInstanceType;
+    bool m_preferredInstanceTypeHasBeenSet = false;
   };
 
 } // namespace Model

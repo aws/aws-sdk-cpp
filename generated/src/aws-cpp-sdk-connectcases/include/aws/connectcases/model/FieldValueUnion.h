@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
+#include <aws/connectcases/model/EmptyFieldValue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -88,6 +89,37 @@ namespace Model
 
 
     /**
+     * <p>An empty value.</p>
+     */
+    inline const EmptyFieldValue& GetEmptyValue() const{ return m_emptyValue; }
+
+    /**
+     * <p>An empty value.</p>
+     */
+    inline bool EmptyValueHasBeenSet() const { return m_emptyValueHasBeenSet; }
+
+    /**
+     * <p>An empty value.</p>
+     */
+    inline void SetEmptyValue(const EmptyFieldValue& value) { m_emptyValueHasBeenSet = true; m_emptyValue = value; }
+
+    /**
+     * <p>An empty value.</p>
+     */
+    inline void SetEmptyValue(EmptyFieldValue&& value) { m_emptyValueHasBeenSet = true; m_emptyValue = std::move(value); }
+
+    /**
+     * <p>An empty value.</p>
+     */
+    inline FieldValueUnion& WithEmptyValue(const EmptyFieldValue& value) { SetEmptyValue(value); return *this;}
+
+    /**
+     * <p>An empty value.</p>
+     */
+    inline FieldValueUnion& WithEmptyValue(EmptyFieldValue&& value) { SetEmptyValue(std::move(value)); return *this;}
+
+
+    /**
      * <p>String value type.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
@@ -134,6 +166,9 @@ namespace Model
 
     double m_doubleValue;
     bool m_doubleValueHasBeenSet = false;
+
+    EmptyFieldValue m_emptyValue;
+    bool m_emptyValueHasBeenSet = false;
 
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet = false;

@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The details for a Security Lake exception</p><p><h3>See Also:</h3>   <a
+   * <p>The details for an Amazon Security Lake exception.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DataLakeException">AWS
    * API Reference</a></p>
    */

@@ -1731,8 +1731,9 @@ namespace LexModelsV2
         }
 
         /**
-         * <p>Retrieves summary metrics for the intent stages in your bot. The following
-         * fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a
+         * <p>Retrieves summary metrics for the stages within intents in your bot. The
+         * following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list
+         * of <a
          * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a>
          * objects. In each object, use the <code>name</code> field to specify the metric
          * to calculate, the <code>statistic</code> field to specify whether to calculate
@@ -2084,16 +2085,23 @@ namespace LexModelsV2
         }
 
         /**
-         * <p>Retrieves a list of metadata for individual user utterances to your bot. The
-         * <code>startDateTime</code> and <code>endDateTime</code> fields are required.
-         * These fields define a time range for which you want to retrieve results. Of the
-         * optional fields, you can organize the results in the following ways:</p> <ul>
-         * <li> <p>Use the <code>filters</code> field to filter the results and the
-         * <code>sortBy</code> field to specify the values by which to sort the
-         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
-         * number of results to return in a single response and the <code>nextToken</code>
-         * field to return the next batch of results if the response does not return the
-         * full set of results.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         *  <p>To use this API operation, your IAM role must have permissions to
+         * perform the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, which provides access to utterance-related analytics. See <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing
+         * utterance statistics</a> for the IAM policy to apply to the IAM role.</p>
+         *  <p>Retrieves a list of metadata for individual user utterances to your
+         * bot. The following fields are required:</p> <ul> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results and the <code>sortBy</code>
+         * field to specify the values by which to sort the results.</p> </li> <li> <p>Use
+         * the <code>maxResults</code> field to limit the number of results to return in a
+         * single response and the <code>nextToken</code> field to return the next batch of
+         * results if the response does not return the full set of results.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData">AWS
          * API Reference</a></p>
          */
@@ -2118,8 +2126,15 @@ namespace LexModelsV2
         }
 
         /**
-         * <p>Retrieves summary metrics for the utterances in your bot. The following
-         * fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a
+         *  <p>To use this API operation, your IAM role must have permissions to
+         * perform the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, which provides access to utterance-related analytics. See <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing
+         * utterance statistics</a> for the IAM policy to apply to the IAM role.</p>
+         *  <p>Retrieves summary metrics for the utterances in your bot. The
+         * following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list
+         * of <a
          * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a>
          * objects. In each object, use the <code>name</code> field to specify the metric
          * to calculate, the <code>statistic</code> field to specify whether to calculate

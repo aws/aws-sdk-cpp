@@ -48,7 +48,8 @@ TranscriptionJob::TranscriptionJob() :
     m_languageCodesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_subtitlesHasBeenSet(false),
-    m_languageIdSettingsHasBeenSet(false)
+    m_languageIdSettingsHasBeenSet(false),
+    m_toxicityDetectionHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ TranscriptionJob::TranscriptionJob(JsonView jsonValue) :
     m_languageCodesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_subtitlesHasBeenSet(false),
-    m_languageIdSettingsHasBeenSet(false)
+    m_languageIdSettingsHasBeenSet(false),
+    m_toxicityDetectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -262,6 +264,16 @@ TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
     m_languageIdSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ToxicityDetection"))
+  {
+    Aws::Utils::Array<JsonView> toxicityDetectionJsonList = jsonValue.GetArray("ToxicityDetection");
+    for(unsigned toxicityDetectionIndex = 0; toxicityDetectionIndex < toxicityDetectionJsonList.GetLength(); ++toxicityDetectionIndex)
+    {
+      m_toxicityDetection.push_back(toxicityDetectionJsonList[toxicityDetectionIndex].AsObject());
+    }
+    m_toxicityDetectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -418,6 +430,17 @@ JsonValue TranscriptionJob::Jsonize() const
      languageIdSettingsJsonMap.WithObject(LanguageCodeMapper::GetNameForLanguageCode(languageIdSettingsItem.first), languageIdSettingsItem.second.Jsonize());
    }
    payload.WithObject("LanguageIdSettings", std::move(languageIdSettingsJsonMap));
+
+  }
+
+  if(m_toxicityDetectionHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> toxicityDetectionJsonList(m_toxicityDetection.size());
+   for(unsigned toxicityDetectionIndex = 0; toxicityDetectionIndex < toxicityDetectionJsonList.GetLength(); ++toxicityDetectionIndex)
+   {
+     toxicityDetectionJsonList[toxicityDetectionIndex].AsObject(m_toxicityDetection[toxicityDetectionIndex].Jsonize());
+   }
+   payload.WithArray("ToxicityDetection", std::move(toxicityDetectionJsonList));
 
   }
 

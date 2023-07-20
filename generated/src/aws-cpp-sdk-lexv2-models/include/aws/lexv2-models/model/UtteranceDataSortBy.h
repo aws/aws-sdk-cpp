@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The measure by which to sort the utterance analytics data.</p> <ul> <li> <p>
      * <code>Count</code> – The number of utterances.</p> </li> <li> <p>
-     * <code>UtteranceTimeStamp</code> – The date and time of the utterance.</p> </li>
+     * <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
      * </ul>
      */
     inline const AnalyticsUtteranceSortByName& GetName() const{ return m_name; }
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The measure by which to sort the utterance analytics data.</p> <ul> <li> <p>
      * <code>Count</code> – The number of utterances.</p> </li> <li> <p>
-     * <code>UtteranceTimeStamp</code> – The date and time of the utterance.</p> </li>
+     * <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
      * </ul>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>The measure by which to sort the utterance analytics data.</p> <ul> <li> <p>
      * <code>Count</code> – The number of utterances.</p> </li> <li> <p>
-     * <code>UtteranceTimeStamp</code> – The date and time of the utterance.</p> </li>
+     * <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
      * </ul>
      */
     inline void SetName(const AnalyticsUtteranceSortByName& value) { m_nameHasBeenSet = true; m_name = value; }
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>The measure by which to sort the utterance analytics data.</p> <ul> <li> <p>
      * <code>Count</code> – The number of utterances.</p> </li> <li> <p>
-     * <code>UtteranceTimeStamp</code> – The date and time of the utterance.</p> </li>
+     * <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
      * </ul>
      */
     inline void SetName(AnalyticsUtteranceSortByName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>The measure by which to sort the utterance analytics data.</p> <ul> <li> <p>
      * <code>Count</code> – The number of utterances.</p> </li> <li> <p>
-     * <code>UtteranceTimeStamp</code> – The date and time of the utterance.</p> </li>
+     * <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
      * </ul>
      */
     inline UtteranceDataSortBy& WithName(const AnalyticsUtteranceSortByName& value) { SetName(value); return *this;}
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>The measure by which to sort the utterance analytics data.</p> <ul> <li> <p>
      * <code>Count</code> – The number of utterances.</p> </li> <li> <p>
-     * <code>UtteranceTimeStamp</code> – The date and time of the utterance.</p> </li>
+     * <code>UtteranceTimestamp</code> – The date and time of the utterance.</p> </li>
      * </ul>
      */
     inline UtteranceDataSortBy& WithName(AnalyticsUtteranceSortByName&& value) { SetName(std::move(value)); return *this;}

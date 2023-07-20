@@ -23,7 +23,6 @@ UtteranceSpecification::UtteranceSpecification() :
     m_botVersionHasBeenSet(false),
     m_localeIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_channel(BotChannelType::NOT_SET),
     m_channelHasBeenSet(false),
     m_mode(AnalyticsModality::NOT_SET),
     m_modeHasBeenSet(false),
@@ -54,7 +53,6 @@ UtteranceSpecification::UtteranceSpecification(JsonView jsonValue) :
     m_botVersionHasBeenSet(false),
     m_localeIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_channel(BotChannelType::NOT_SET),
     m_channelHasBeenSet(false),
     m_mode(AnalyticsModality::NOT_SET),
     m_modeHasBeenSet(false),
@@ -113,7 +111,7 @@ UtteranceSpecification& UtteranceSpecification::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("channel"))
   {
-    m_channel = BotChannelTypeMapper::GetBotChannelTypeForName(jsonValue.GetString("channel"));
+    m_channel = jsonValue.GetString("channel");
 
     m_channelHasBeenSet = true;
   }
@@ -273,7 +271,8 @@ JsonValue UtteranceSpecification::Jsonize() const
 
   if(m_channelHasBeenSet)
   {
-   payload.WithString("channel", BotChannelTypeMapper::GetNameForBotChannelType(m_channel));
+   payload.WithString("channel", m_channel);
+
   }
 
   if(m_modeHasBeenSet)

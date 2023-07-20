@@ -208,7 +208,8 @@ namespace Model
      * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
      * data access</a> and <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
-     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
+     * Web Services Managed Policies</a> in the <i>Amazon Security Lake User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetTargetRoleArn() const{ return m_targetRoleArn; }
 
@@ -219,7 +220,8 @@ namespace Model
      * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
      * data access</a> and <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
-     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
+     * Web Services Managed Policies</a> in the <i>Amazon Security Lake User
+     * Guide</i>.</p>
      */
     inline bool TargetRoleArnHasBeenSet() const { return m_targetRoleArnHasBeenSet; }
 
@@ -230,7 +232,8 @@ namespace Model
      * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
      * data access</a> and <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
-     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
+     * Web Services Managed Policies</a> in the <i>Amazon Security Lake User
+     * Guide</i>.</p>
      */
     inline void SetTargetRoleArn(const Aws::String& value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn = value; }
 
@@ -241,7 +244,8 @@ namespace Model
      * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
      * data access</a> and <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
-     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
+     * Web Services Managed Policies</a> in the <i>Amazon Security Lake User
+     * Guide</i>.</p>
      */
     inline void SetTargetRoleArn(Aws::String&& value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn = std::move(value); }
 
@@ -252,7 +256,8 @@ namespace Model
      * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
      * data access</a> and <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
-     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
+     * Web Services Managed Policies</a> in the <i>Amazon Security Lake User
+     * Guide</i>.</p>
      */
     inline void SetTargetRoleArn(const char* value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn.assign(value); }
 
@@ -263,7 +268,8 @@ namespace Model
      * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
      * data access</a> and <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
-     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
+     * Web Services Managed Policies</a> in the <i>Amazon Security Lake User
+     * Guide</i>.</p>
      */
     inline HttpsNotificationConfiguration& WithTargetRoleArn(const Aws::String& value) { SetTargetRoleArn(value); return *this;}
 
@@ -274,7 +280,8 @@ namespace Model
      * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
      * data access</a> and <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
-     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
+     * Web Services Managed Policies</a> in the <i>Amazon Security Lake User
+     * Guide</i>.</p>
      */
     inline HttpsNotificationConfiguration& WithTargetRoleArn(Aws::String&& value) { SetTargetRoleArn(std::move(value)); return *this;}
 
@@ -285,7 +292,8 @@ namespace Model
      * href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
      * data access</a> and <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
-     * Web Services Managed Policies</a> in the Amazon Security Lake User Guide.</p>
+     * Web Services Managed Policies</a> in the <i>Amazon Security Lake User
+     * Guide</i>.</p>
      */
     inline HttpsNotificationConfiguration& WithTargetRoleArn(const char* value) { SetTargetRoleArn(value); return *this;}
 

@@ -17,7 +17,8 @@ CreateSubscriberRequest::CreateSubscriberRequest() :
     m_sourcesHasBeenSet(false),
     m_subscriberDescriptionHasBeenSet(false),
     m_subscriberIdentityHasBeenSet(false),
-    m_subscriberNameHasBeenSet(false)
+    m_subscriberNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,17 @@ Aws::String CreateSubscriberRequest::SerializePayload() const
   if(m_subscriberNameHasBeenSet)
   {
    payload.WithString("subscriberName", m_subscriberName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

@@ -19,6 +19,7 @@
 #include <aws/transcribe/model/Subtitles.h>
 #include <aws/transcribe/model/Tag.h>
 #include <aws/transcribe/model/LanguageIdSettings.h>
+#include <aws/transcribe/model/ToxicityDetectionSettings.h>
 #include <utility>
 
 namespace Aws
@@ -2063,6 +2064,87 @@ namespace Model
      */
     inline StartTranscriptionJobRequest& AddLanguageIdSettings(LanguageCode&& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), std::move(value)); return *this; }
 
+
+    /**
+     * <p>Enables toxic speech detection in your transcript. If you include
+     * <code>ToxicityDetection</code> in your request, you must also include
+     * <code>ToxicityCategories</code>.</p> <p>For information on the types of toxic
+     * speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
+     * toxic speech</a>.</p>
+     */
+    inline const Aws::Vector<ToxicityDetectionSettings>& GetToxicityDetection() const{ return m_toxicityDetection; }
+
+    /**
+     * <p>Enables toxic speech detection in your transcript. If you include
+     * <code>ToxicityDetection</code> in your request, you must also include
+     * <code>ToxicityCategories</code>.</p> <p>For information on the types of toxic
+     * speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
+     * toxic speech</a>.</p>
+     */
+    inline bool ToxicityDetectionHasBeenSet() const { return m_toxicityDetectionHasBeenSet; }
+
+    /**
+     * <p>Enables toxic speech detection in your transcript. If you include
+     * <code>ToxicityDetection</code> in your request, you must also include
+     * <code>ToxicityCategories</code>.</p> <p>For information on the types of toxic
+     * speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
+     * toxic speech</a>.</p>
+     */
+    inline void SetToxicityDetection(const Aws::Vector<ToxicityDetectionSettings>& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection = value; }
+
+    /**
+     * <p>Enables toxic speech detection in your transcript. If you include
+     * <code>ToxicityDetection</code> in your request, you must also include
+     * <code>ToxicityCategories</code>.</p> <p>For information on the types of toxic
+     * speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
+     * toxic speech</a>.</p>
+     */
+    inline void SetToxicityDetection(Aws::Vector<ToxicityDetectionSettings>&& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection = std::move(value); }
+
+    /**
+     * <p>Enables toxic speech detection in your transcript. If you include
+     * <code>ToxicityDetection</code> in your request, you must also include
+     * <code>ToxicityCategories</code>.</p> <p>For information on the types of toxic
+     * speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
+     * toxic speech</a>.</p>
+     */
+    inline StartTranscriptionJobRequest& WithToxicityDetection(const Aws::Vector<ToxicityDetectionSettings>& value) { SetToxicityDetection(value); return *this;}
+
+    /**
+     * <p>Enables toxic speech detection in your transcript. If you include
+     * <code>ToxicityDetection</code> in your request, you must also include
+     * <code>ToxicityCategories</code>.</p> <p>For information on the types of toxic
+     * speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
+     * toxic speech</a>.</p>
+     */
+    inline StartTranscriptionJobRequest& WithToxicityDetection(Aws::Vector<ToxicityDetectionSettings>&& value) { SetToxicityDetection(std::move(value)); return *this;}
+
+    /**
+     * <p>Enables toxic speech detection in your transcript. If you include
+     * <code>ToxicityDetection</code> in your request, you must also include
+     * <code>ToxicityCategories</code>.</p> <p>For information on the types of toxic
+     * speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
+     * toxic speech</a>.</p>
+     */
+    inline StartTranscriptionJobRequest& AddToxicityDetection(const ToxicityDetectionSettings& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection.push_back(value); return *this; }
+
+    /**
+     * <p>Enables toxic speech detection in your transcript. If you include
+     * <code>ToxicityDetection</code> in your request, you must also include
+     * <code>ToxicityCategories</code>.</p> <p>For information on the types of toxic
+     * speech Amazon Transcribe can detect, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html">Detecting
+     * toxic speech</a>.</p>
+     */
+    inline StartTranscriptionJobRequest& AddToxicityDetection(ToxicityDetectionSettings&& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -2121,6 +2203,9 @@ namespace Model
 
     Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
     bool m_languageIdSettingsHasBeenSet = false;
+
+    Aws::Vector<ToxicityDetectionSettings> m_toxicityDetection;
+    bool m_toxicityDetectionHasBeenSet = false;
   };
 
 } // namespace Model
