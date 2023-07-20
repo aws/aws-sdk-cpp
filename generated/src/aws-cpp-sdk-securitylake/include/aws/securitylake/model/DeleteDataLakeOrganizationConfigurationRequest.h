@@ -34,50 +34,50 @@ namespace Model
 
 
     /**
-     * <p>Removes the automatic enablement of configuration settings for new member
-     * accounts in Security Lake.</p>
+     * <p>Turns off automatic enablement of Security Lake for member accounts that are
+     * added to an organization.</p>
      */
     inline const Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>& GetAutoEnableNewAccount() const{ return m_autoEnableNewAccount; }
 
     /**
-     * <p>Removes the automatic enablement of configuration settings for new member
-     * accounts in Security Lake.</p>
+     * <p>Turns off automatic enablement of Security Lake for member accounts that are
+     * added to an organization.</p>
      */
     inline bool AutoEnableNewAccountHasBeenSet() const { return m_autoEnableNewAccountHasBeenSet; }
 
     /**
-     * <p>Removes the automatic enablement of configuration settings for new member
-     * accounts in Security Lake.</p>
+     * <p>Turns off automatic enablement of Security Lake for member accounts that are
+     * added to an organization.</p>
      */
     inline void SetAutoEnableNewAccount(const Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>& value) { m_autoEnableNewAccountHasBeenSet = true; m_autoEnableNewAccount = value; }
 
     /**
-     * <p>Removes the automatic enablement of configuration settings for new member
-     * accounts in Security Lake.</p>
+     * <p>Turns off automatic enablement of Security Lake for member accounts that are
+     * added to an organization.</p>
      */
     inline void SetAutoEnableNewAccount(Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>&& value) { m_autoEnableNewAccountHasBeenSet = true; m_autoEnableNewAccount = std::move(value); }
 
     /**
-     * <p>Removes the automatic enablement of configuration settings for new member
-     * accounts in Security Lake.</p>
+     * <p>Turns off automatic enablement of Security Lake for member accounts that are
+     * added to an organization.</p>
      */
     inline DeleteDataLakeOrganizationConfigurationRequest& WithAutoEnableNewAccount(const Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>& value) { SetAutoEnableNewAccount(value); return *this;}
 
     /**
-     * <p>Removes the automatic enablement of configuration settings for new member
-     * accounts in Security Lake.</p>
+     * <p>Turns off automatic enablement of Security Lake for member accounts that are
+     * added to an organization.</p>
      */
     inline DeleteDataLakeOrganizationConfigurationRequest& WithAutoEnableNewAccount(Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>&& value) { SetAutoEnableNewAccount(std::move(value)); return *this;}
 
     /**
-     * <p>Removes the automatic enablement of configuration settings for new member
-     * accounts in Security Lake.</p>
+     * <p>Turns off automatic enablement of Security Lake for member accounts that are
+     * added to an organization.</p>
      */
     inline DeleteDataLakeOrganizationConfigurationRequest& AddAutoEnableNewAccount(const DataLakeAutoEnableNewAccountConfiguration& value) { m_autoEnableNewAccountHasBeenSet = true; m_autoEnableNewAccount.push_back(value); return *this; }
 
     /**
-     * <p>Removes the automatic enablement of configuration settings for new member
-     * accounts in Security Lake.</p>
+     * <p>Turns off automatic enablement of Security Lake for member accounts that are
+     * added to an organization.</p>
      */
     inline DeleteDataLakeOrganizationConfigurationRequest& AddAutoEnableNewAccount(DataLakeAutoEnableNewAccountConfiguration&& value) { m_autoEnableNewAccountHasBeenSet = true; m_autoEnableNewAccount.push_back(std::move(value)); return *this; }
 

@@ -6651,6 +6651,33 @@ namespace SageMaker
         }
 
         /**
+         * <p> Lists Amazon SageMaker Catalogs based on given filters and orders. The
+         * maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListResourceCatalogs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceCatalogsOutcome ListResourceCatalogs(const Model::ListResourceCatalogsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceCatalogs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceCatalogsRequestT = Model::ListResourceCatalogsRequest>
+        Model::ListResourceCatalogsOutcomeCallable ListResourceCatalogsCallable(const ListResourceCatalogsRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::ListResourceCatalogs, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceCatalogs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceCatalogsRequestT = Model::ListResourceCatalogsRequest>
+        void ListResourceCatalogsAsync(const ListResourceCatalogsRequestT& request, const ListResourceCatalogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::ListResourceCatalogs, request, handler, context);
+        }
+
+        /**
          * <p>Lists spaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces">AWS
          * API Reference</a></p>
@@ -8065,7 +8092,18 @@ namespace SageMaker
         }
 
         /**
-         * <p>Updates the feature group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the feature group by either adding features or updating the online
+         * store configuration. Use one of the following request parameters at a time while
+         * using the <code>UpdateFeatureGroup</code> API.</p> <p>You can add features for
+         * your feature group using the <code>FeatureAdditions</code> request parameter.
+         * Features cannot be removed from a feature group.</p> <p>You can update the
+         * online store configuration by using the <code>OnlineStoreConfig</code> request
+         * parameter. If a <code>TtlDuration</code> is specified, the default
+         * <code>TtlDuration</code> applies for all records added to the feature group
+         * <i>after the feature group is updated</i>. If a record level
+         * <code>TtlDuration</code> exists from using the <code>PutRecord</code> API, the
+         * record level <code>TtlDuration</code> applies to that record instead of the
+         * default <code>TtlDuration</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup">AWS
          * API Reference</a></p>
          */

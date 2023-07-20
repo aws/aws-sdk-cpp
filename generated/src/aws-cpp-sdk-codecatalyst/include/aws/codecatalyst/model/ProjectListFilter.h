@@ -73,47 +73,47 @@ namespace Model
 
 
     /**
-     * <p>The value of the key.</p>
+     * <p>The values of the key.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>The value of the key.</p>
+     * <p>The values of the key.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * <p>The value of the key.</p>
+     * <p>The values of the key.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>The value of the key.</p>
+     * <p>The values of the key.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>The value of the key.</p>
+     * <p>The values of the key.</p>
      */
     inline ProjectListFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>The value of the key.</p>
+     * <p>The values of the key.</p>
      */
     inline ProjectListFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>The value of the key.</p>
+     * <p>The values of the key.</p>
      */
     inline ProjectListFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>The value of the key.</p>
+     * <p>The values of the key.</p>
      */
     inline ProjectListFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The value of the key.</p>
+     * <p>The values of the key.</p>
      */
     inline ProjectListFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

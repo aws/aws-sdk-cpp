@@ -44,7 +44,7 @@ namespace Model
      * number of utterances.</p> </li> <li> <p> <code>Missed</code> – The number of
      * utterances that Amazon Lex failed to recognize.</p> </li> <li> <p>
      * <code>Detected</code> – The number of utterances that Amazon Lex managed to
-     * detect.</p> </li> <li> <p> <code>UtteranceTimeStamp</code> – The date and time
+     * detect.</p> </li> <li> <p> <code>UtteranceTimestamp</code> – The date and time
      * of the utterance.</p> </li> </ul>
      */
     inline const AnalyticsUtteranceMetricName& GetName() const{ return m_name; }
@@ -54,7 +54,7 @@ namespace Model
      * number of utterances.</p> </li> <li> <p> <code>Missed</code> – The number of
      * utterances that Amazon Lex failed to recognize.</p> </li> <li> <p>
      * <code>Detected</code> – The number of utterances that Amazon Lex managed to
-     * detect.</p> </li> <li> <p> <code>UtteranceTimeStamp</code> – The date and time
+     * detect.</p> </li> <li> <p> <code>UtteranceTimestamp</code> – The date and time
      * of the utterance.</p> </li> </ul>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
      * number of utterances.</p> </li> <li> <p> <code>Missed</code> – The number of
      * utterances that Amazon Lex failed to recognize.</p> </li> <li> <p>
      * <code>Detected</code> – The number of utterances that Amazon Lex managed to
-     * detect.</p> </li> <li> <p> <code>UtteranceTimeStamp</code> – The date and time
+     * detect.</p> </li> <li> <p> <code>UtteranceTimestamp</code> – The date and time
      * of the utterance.</p> </li> </ul>
      */
     inline void SetName(const AnalyticsUtteranceMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
@@ -74,7 +74,7 @@ namespace Model
      * number of utterances.</p> </li> <li> <p> <code>Missed</code> – The number of
      * utterances that Amazon Lex failed to recognize.</p> </li> <li> <p>
      * <code>Detected</code> – The number of utterances that Amazon Lex managed to
-     * detect.</p> </li> <li> <p> <code>UtteranceTimeStamp</code> – The date and time
+     * detect.</p> </li> <li> <p> <code>UtteranceTimestamp</code> – The date and time
      * of the utterance.</p> </li> </ul>
      */
     inline void SetName(AnalyticsUtteranceMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
@@ -84,7 +84,7 @@ namespace Model
      * number of utterances.</p> </li> <li> <p> <code>Missed</code> – The number of
      * utterances that Amazon Lex failed to recognize.</p> </li> <li> <p>
      * <code>Detected</code> – The number of utterances that Amazon Lex managed to
-     * detect.</p> </li> <li> <p> <code>UtteranceTimeStamp</code> – The date and time
+     * detect.</p> </li> <li> <p> <code>UtteranceTimestamp</code> – The date and time
      * of the utterance.</p> </li> </ul>
      */
     inline AnalyticsUtteranceMetricResult& WithName(const AnalyticsUtteranceMetricName& value) { SetName(value); return *this;}
@@ -94,7 +94,7 @@ namespace Model
      * number of utterances.</p> </li> <li> <p> <code>Missed</code> – The number of
      * utterances that Amazon Lex failed to recognize.</p> </li> <li> <p>
      * <code>Detected</code> – The number of utterances that Amazon Lex managed to
-     * detect.</p> </li> <li> <p> <code>UtteranceTimeStamp</code> – The date and time
+     * detect.</p> </li> <li> <p> <code>UtteranceTimestamp</code> – The date and time
      * of the utterance.</p> </li> </ul>
      */
     inline AnalyticsUtteranceMetricResult& WithName(AnalyticsUtteranceMetricName&& value) { SetName(std::move(value)); return *this;}

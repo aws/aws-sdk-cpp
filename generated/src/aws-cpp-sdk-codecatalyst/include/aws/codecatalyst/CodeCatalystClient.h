@@ -18,52 +18,61 @@ namespace CodeCatalyst
   /**
    * <p>Welcome to the Amazon CodeCatalyst API reference. This reference provides
    * descriptions of operations and data types for Amazon CodeCatalyst. You can use
-   * the Amazon CodeCatalyst API to work with the following objects. </p> <p>Dev
-   * Environments and the Amazon Web Services Toolkits, by calling the following:</p>
-   * <ul> <li> <p> <a>CreateAccessToken</a>, which creates a personal access token
-   * (PAT) for the current user.</p> </li> <li> <p> <a>CreateDevEnvironment</a>,
-   * which creates a Dev Environment, where you can quickly work on the code stored
-   * in the source repositories of your project.</p> </li> <li> <p>
-   * <a>CreateProject</a> which creates a project in a specified space.</p> </li>
-   * <li> <p> <a>CreateSourceRepositoryBranch</a>, which creates a branch in a
-   * specified repository where you can work on code.</p> </li> <li> <p>
-   * <a>DeleteDevEnvironment</a>, which deletes a Dev Environment.</p> </li> <li> <p>
-   * <a>GetDevEnvironment</a>, which returns information about a Dev Environment.</p>
-   * </li> <li> <p> <a>GetProject</a>, which returns information about a project.</p>
-   * </li> <li> <p> <a>GetSourceRepositoryCloneUrls</a>, which returns information
-   * about the URLs that can be used with a Git client to clone a source
-   * repository.</p> </li> <li> <p> <a>GetSpace</a>, which returns information about
-   * a space.</p> </li> <li> <p> <a>GetSubscription</a>, which returns information
+   * the Amazon CodeCatalyst API to work with the following objects. </p> <p>Spaces,
+   * by calling the following:</p> <ul> <li> <p> <a>DeleteSpace</a>, which deletes a
+   * space.</p> </li> <li> <p> <a>GetSpace</a>, which returns information about a
+   * space.</p> </li> <li> <p> <a>GetSubscription</a>, which returns information
    * about the Amazon Web Services account used for billing purposes and the billing
-   * plan for the space.</p> </li> <li> <p> <a>GetUserDetails</a>, which returns
-   * information about a user in Amazon CodeCatalyst.</p> </li> <li> <p>
-   * <a>ListDevEnvironments</a>, which retrieves a list of Dev Environments in a
-   * project.</p> </li> <li> <p> <a>ListDevEnvironmentSessions</a>, which retrieves a
-   * list of active Dev Environment sessions in a project.</p> </li> <li> <p>
-   * <a>ListProjects</a>, which retrieves a list of projects in a space.</p> </li>
-   * <li> <p> <a>ListSourceRepositories</a>, which retrieves a list of source
-   * repositories in a project.</p> </li> <li> <p>
+   * plan for the space.</p> </li> <li> <p> <a>ListSpaces</a>, which retrieves a list
+   * of spaces.</p> </li> <li> <p> <a>UpdateSpace</a>, which hanges one or more
+   * values for a space.</p> </li> </ul> <p>Projects, by calling the following:</p>
+   * <ul> <li> <p> <a>CreateProject</a> which creates a project in a specified
+   * space.</p> </li> <li> <p> <a>GetProject</a>, which returns information about a
+   * project.</p> </li> <li> <p> <a>ListProjects</a>, which retrieves a list of
+   * projects in a space.</p> </li> </ul> <p>Users, by calling the following:</p>
+   * <ul> <li> <p> <a>GetUserDetails</a>, which returns information about a user in
+   * Amazon CodeCatalyst.</p> </li> </ul> <p>Source repositories, by calling the
+   * following:</p> <ul> <li> <p> <a>CreateSourceRepository</a>, which creates an
+   * empty Git-based source repository in a specified project.</p> </li> <li> <p>
+   * <a>CreateSourceRepositoryBranch</a>, which creates a branch in a specified
+   * repository where you can work on code.</p> </li> <li> <p>
+   * <a>DeleteSourceRepository</a>, which deletes a source repository.</p> </li> <li>
+   * <p> <a>GetSourceRepository</a>, which returns information about a source
+   * repository.</p> </li> <li> <p> <a>GetSourceRepositoryCloneUrls</a>, which
+   * returns information about the URLs that can be used with a Git client to clone a
+   * source repository.</p> </li> <li> <p> <a>ListSourceRepositories</a>, which
+   * retrieves a list of source repositories in a project.</p> </li> <li> <p>
    * <a>ListSourceRepositoryBranches</a>, which retrieves a list of branches in a
-   * source repository.</p> </li> <li> <p> <a>ListSpaces</a>, which retrieves a list
-   * of spaces.</p> </li> <li> <p> <a>StartDevEnvironment</a>, which starts a
-   * specified Dev Environment and puts it into an active state.</p> </li> <li> <p>
-   * <a>StartDevEnvironmentSession</a>, which starts a session to a specified Dev
-   * Environment.</p> </li> <li> <p> <a>StopDevEnvironment</a>, which stops a
-   * specified Dev Environment and puts it into an stopped state.</p> </li> <li> <p>
-   * <a>StopDevEnvironmentSession</a>, which stops a session for a specified Dev
-   * Environment.</p> </li> <li> <p> <a>UpdateDevEnvironment</a>, which changes one
-   * or more values for a Dev Environment.</p> </li> <li> <p> <a>VerifySession</a>,
-   * which verifies whether the calling user has a valid Amazon CodeCatalyst login
-   * and session.</p> </li> </ul> <p>Security, activity, and resource management in
+   * source repository.</p> </li> </ul> <p>Dev Environments and the Amazon Web
+   * Services Toolkits, by calling the following:</p> <ul> <li> <p>
+   * <a>CreateDevEnvironment</a>, which creates a Dev Environment, where you can
+   * quickly work on the code stored in the source repositories of your project.</p>
+   * </li> <li> <p> <a>DeleteDevEnvironment</a>, which deletes a Dev Environment.</p>
+   * </li> <li> <p> <a>GetDevEnvironment</a>, which returns information about a Dev
+   * Environment.</p> </li> <li> <p> <a>ListDevEnvironments</a>, which retrieves a
+   * list of Dev Environments in a project.</p> </li> <li> <p>
+   * <a>ListDevEnvironmentSessions</a>, which retrieves a list of active Dev
+   * Environment sessions in a project.</p> </li> <li> <p>
+   * <a>StartDevEnvironment</a>, which starts a specified Dev Environment and puts it
+   * into an active state.</p> </li> <li> <p> <a>StartDevEnvironmentSession</a>,
+   * which starts a session to a specified Dev Environment.</p> </li> <li> <p>
+   * <a>StopDevEnvironment</a>, which stops a specified Dev Environment and puts it
+   * into an stopped state.</p> </li> <li> <p> <a>StopDevEnvironmentSession</a>,
+   * which stops a session for a specified Dev Environment.</p> </li> <li> <p>
+   * <a>UpdateDevEnvironment</a>, which changes one or more values for a Dev
+   * Environment.</p> </li> </ul> <p>Security, activity, and resource management in
    * Amazon CodeCatalyst, by calling the following:</p> <ul> <li> <p>
-   * <a>DeleteAccessToken</a>, which deletes a specified personal access token
-   * (PAT).</p> </li> <li> <p> <a>ListAccessTokens</a>, which lists all personal
-   * access tokens (PATs) associated with a user.</p> </li> <li> <p>
-   * <a>ListEventLogs</a>, which retrieves a list of events that occurred during a
-   * specified time period in a space.</p> </li> </ul>  <p>If you are using the
-   * Amazon CodeCatalyst APIs with an SDK or the CLI, you must configure your
-   * computer to work with Amazon CodeCatalyst and single sign-on (SSO). For more
-   * information, see <a
+   * <a>CreateAccessToken</a>, which creates a personal access token (PAT) for the
+   * current user.</p> </li> <li> <p> <a>DeleteAccessToken</a>, which deletes a
+   * specified personal access token (PAT).</p> </li> <li> <p>
+   * <a>ListAccessTokens</a>, which lists all personal access tokens (PATs)
+   * associated with a user.</p> </li> <li> <p> <a>ListEventLogs</a>, which retrieves
+   * a list of events that occurred during a specified time period in a space.</p>
+   * </li> <li> <p> <a>VerifySession</a>, which verifies whether the calling user has
+   * a valid Amazon CodeCatalyst login and session.</p> </li> </ul>  <p>If you
+   * are using the Amazon CodeCatalyst APIs with an SDK or the CLI, you must
+   * configure your computer to work with Amazon CodeCatalyst and single sign-on
+   * (SSO). For more information, see <a
    * href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/set-up-cli.html">Setting
    * up to use the CLI with Amazon CodeCatalyst</a> and the SSO documentation for
    * your SDK.</p> 
@@ -186,6 +195,33 @@ namespace CodeCatalyst
         }
 
         /**
+         * <p>Creates an empty Git-based source repository in a specified project. The
+         * repository is created with an initial empty commit with a default branch named
+         * <code>main</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/CreateSourceRepository">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSourceRepositoryOutcome CreateSourceRepository(const Model::CreateSourceRepositoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSourceRepository that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSourceRepositoryRequestT = Model::CreateSourceRepositoryRequest>
+        Model::CreateSourceRepositoryOutcomeCallable CreateSourceRepositoryCallable(const CreateSourceRepositoryRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::CreateSourceRepository, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSourceRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSourceRepositoryRequestT = Model::CreateSourceRepositoryRequest>
+        void CreateSourceRepositoryAsync(const CreateSourceRepositoryRequestT& request, const CreateSourceRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::CreateSourceRepository, request, handler, context);
+        }
+
+        /**
          * <p>Creates a branch in a specified source repository in Amazon CodeCatalyst.
          * </p>  <p>This API only creates a branch in a source repository hosted in
          * Amazon CodeCatalyst. You cannot use this API to create a branch in a linked
@@ -265,6 +301,85 @@ namespace CodeCatalyst
         }
 
         /**
+         * <p>Deletes a project in a space.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteProject that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteProjectRequestT = Model::DeleteProjectRequest>
+        Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const DeleteProjectRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::DeleteProject, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteProjectRequestT = Model::DeleteProjectRequest>
+        void DeleteProjectAsync(const DeleteProjectRequestT& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::DeleteProject, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a source repository in Amazon CodeCatalyst. You cannot use this API
+         * to delete a linked repository. It can only be used to delete a Amazon
+         * CodeCatalyst source repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteSourceRepository">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSourceRepositoryOutcome DeleteSourceRepository(const Model::DeleteSourceRepositoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSourceRepository that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteSourceRepositoryRequestT = Model::DeleteSourceRepositoryRequest>
+        Model::DeleteSourceRepositoryOutcomeCallable DeleteSourceRepositoryCallable(const DeleteSourceRepositoryRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::DeleteSourceRepository, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteSourceRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteSourceRepositoryRequestT = Model::DeleteSourceRepositoryRequest>
+        void DeleteSourceRepositoryAsync(const DeleteSourceRepositoryRequestT& request, const DeleteSourceRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::DeleteSourceRepository, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a space.</p>  <p>Deleting a space cannot be undone.
+         * Additionally, since space names must be unique across Amazon CodeCatalyst, you
+         * cannot reuse names of deleted spaces.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DeleteSpace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSpaceOutcome DeleteSpace(const Model::DeleteSpaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSpace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteSpaceRequestT = Model::DeleteSpaceRequest>
+        Model::DeleteSpaceOutcomeCallable DeleteSpaceCallable(const DeleteSpaceRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::DeleteSpace, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteSpace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteSpaceRequestT = Model::DeleteSpaceRequest>
+        void DeleteSpaceAsync(const DeleteSpaceRequestT& request, const DeleteSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::DeleteSpace, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about a Dev Environment for a source repository in a
          * project. Dev Environments are specific to the user who creates
          * them.</p><p><h3>See Also:</h3>   <a
@@ -314,6 +429,31 @@ namespace CodeCatalyst
         void GetProjectAsync(const GetProjectRequestT& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeCatalystClient::GetProject, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a source repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/GetSourceRepository">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSourceRepositoryOutcome GetSourceRepository(const Model::GetSourceRepositoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSourceRepository that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSourceRepositoryRequestT = Model::GetSourceRepositoryRequest>
+        Model::GetSourceRepositoryOutcomeCallable GetSourceRepositoryCallable(const GetSourceRepositoryRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::GetSourceRepository, request);
+        }
+
+        /**
+         * An Async wrapper for GetSourceRepository that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSourceRepositoryRequestT = Model::GetSourceRepositoryRequest>
+        void GetSourceRepositoryAsync(const GetSourceRepositoryRequestT& request, const GetSourceRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::GetSourceRepository, request, handler, context);
         }
 
         /**
@@ -755,6 +895,56 @@ namespace CodeCatalyst
         void UpdateDevEnvironmentAsync(const UpdateDevEnvironmentRequestT& request, const UpdateDevEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeCatalystClient::UpdateDevEnvironment, request, handler, context);
+        }
+
+        /**
+         * <p>Changes one or more values for a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/UpdateProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateProject that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateProjectRequestT = Model::UpdateProjectRequest>
+        Model::UpdateProjectOutcomeCallable UpdateProjectCallable(const UpdateProjectRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::UpdateProject, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateProject that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateProjectRequestT = Model::UpdateProjectRequest>
+        void UpdateProjectAsync(const UpdateProjectRequestT& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::UpdateProject, request, handler, context);
+        }
+
+        /**
+         * <p>Changes one or more values for a space.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/UpdateSpace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSpaceOutcome UpdateSpace(const Model::UpdateSpaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSpace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSpaceRequestT = Model::UpdateSpaceRequest>
+        Model::UpdateSpaceOutcomeCallable UpdateSpaceCallable(const UpdateSpaceRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::UpdateSpace, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSpace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSpaceRequestT = Model::UpdateSpaceRequest>
+        void UpdateSpaceAsync(const UpdateSpaceRequestT& request, const UpdateSpaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::UpdateSpace, request, handler, context);
         }
 
         /**

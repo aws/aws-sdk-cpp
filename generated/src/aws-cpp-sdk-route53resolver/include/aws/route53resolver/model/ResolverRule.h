@@ -475,56 +475,56 @@ namespace Model
     /**
      * <p>An array that contains the IP addresses and ports that an outbound endpoint
      * forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers
-     * on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+     * on your network. </p>
      */
     inline const Aws::Vector<TargetAddress>& GetTargetIps() const{ return m_targetIps; }
 
     /**
      * <p>An array that contains the IP addresses and ports that an outbound endpoint
      * forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers
-     * on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+     * on your network. </p>
      */
     inline bool TargetIpsHasBeenSet() const { return m_targetIpsHasBeenSet; }
 
     /**
      * <p>An array that contains the IP addresses and ports that an outbound endpoint
      * forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers
-     * on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+     * on your network. </p>
      */
     inline void SetTargetIps(const Aws::Vector<TargetAddress>& value) { m_targetIpsHasBeenSet = true; m_targetIps = value; }
 
     /**
      * <p>An array that contains the IP addresses and ports that an outbound endpoint
      * forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers
-     * on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+     * on your network. </p>
      */
     inline void SetTargetIps(Aws::Vector<TargetAddress>&& value) { m_targetIpsHasBeenSet = true; m_targetIps = std::move(value); }
 
     /**
      * <p>An array that contains the IP addresses and ports that an outbound endpoint
      * forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers
-     * on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+     * on your network. </p>
      */
     inline ResolverRule& WithTargetIps(const Aws::Vector<TargetAddress>& value) { SetTargetIps(value); return *this;}
 
     /**
      * <p>An array that contains the IP addresses and ports that an outbound endpoint
      * forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers
-     * on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+     * on your network. </p>
      */
     inline ResolverRule& WithTargetIps(Aws::Vector<TargetAddress>&& value) { SetTargetIps(std::move(value)); return *this;}
 
     /**
      * <p>An array that contains the IP addresses and ports that an outbound endpoint
      * forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers
-     * on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+     * on your network. </p>
      */
     inline ResolverRule& AddTargetIps(const TargetAddress& value) { m_targetIpsHasBeenSet = true; m_targetIps.push_back(value); return *this; }
 
     /**
      * <p>An array that contains the IP addresses and ports that an outbound endpoint
      * forwards DNS queries to. Typically, these are the IP addresses of DNS resolvers
-     * on your network. Specify IPv4 addresses. IPv6 is not supported.</p>
+     * on your network. </p>
      */
     inline ResolverRule& AddTargetIps(TargetAddress&& value) { m_targetIpsHasBeenSet = true; m_targetIps.push_back(std::move(value)); return *this; }
 

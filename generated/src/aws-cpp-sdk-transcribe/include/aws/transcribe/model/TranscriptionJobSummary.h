@@ -14,6 +14,7 @@
 #include <aws/transcribe/model/ModelSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribe/model/LanguageCodeItem.h>
+#include <aws/transcribe/model/ToxicityDetectionSettings.h>
 #include <utility>
 
 namespace Aws
@@ -675,6 +676,55 @@ namespace Model
      */
     inline TranscriptionJobSummary& AddLanguageCodes(LanguageCodeItem&& value) { m_languageCodesHasBeenSet = true; m_languageCodes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether toxicity detection was enabled for the specified
+     * transcription job.</p>
+     */
+    inline const Aws::Vector<ToxicityDetectionSettings>& GetToxicityDetection() const{ return m_toxicityDetection; }
+
+    /**
+     * <p>Indicates whether toxicity detection was enabled for the specified
+     * transcription job.</p>
+     */
+    inline bool ToxicityDetectionHasBeenSet() const { return m_toxicityDetectionHasBeenSet; }
+
+    /**
+     * <p>Indicates whether toxicity detection was enabled for the specified
+     * transcription job.</p>
+     */
+    inline void SetToxicityDetection(const Aws::Vector<ToxicityDetectionSettings>& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection = value; }
+
+    /**
+     * <p>Indicates whether toxicity detection was enabled for the specified
+     * transcription job.</p>
+     */
+    inline void SetToxicityDetection(Aws::Vector<ToxicityDetectionSettings>&& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection = std::move(value); }
+
+    /**
+     * <p>Indicates whether toxicity detection was enabled for the specified
+     * transcription job.</p>
+     */
+    inline TranscriptionJobSummary& WithToxicityDetection(const Aws::Vector<ToxicityDetectionSettings>& value) { SetToxicityDetection(value); return *this;}
+
+    /**
+     * <p>Indicates whether toxicity detection was enabled for the specified
+     * transcription job.</p>
+     */
+    inline TranscriptionJobSummary& WithToxicityDetection(Aws::Vector<ToxicityDetectionSettings>&& value) { SetToxicityDetection(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether toxicity detection was enabled for the specified
+     * transcription job.</p>
+     */
+    inline TranscriptionJobSummary& AddToxicityDetection(const ToxicityDetectionSettings& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates whether toxicity detection was enabled for the specified
+     * transcription job.</p>
+     */
+    inline TranscriptionJobSummary& AddToxicityDetection(ToxicityDetectionSettings&& value) { m_toxicityDetectionHasBeenSet = true; m_toxicityDetection.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -718,6 +768,9 @@ namespace Model
 
     Aws::Vector<LanguageCodeItem> m_languageCodes;
     bool m_languageCodesHasBeenSet = false;
+
+    Aws::Vector<ToxicityDetectionSettings> m_toxicityDetection;
+    bool m_toxicityDetectionHasBeenSet = false;
   };
 
 } // namespace Model

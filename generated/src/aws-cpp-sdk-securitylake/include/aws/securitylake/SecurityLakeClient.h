@@ -113,8 +113,8 @@ namespace SecurityLake
          * Regions, based on the parameters you specify. You can choose any source type in
          * any Region for either accounts that are part of a trusted organization or
          * standalone accounts. Once you add an Amazon Web Service as a source, Security
-         * Lake starts collecting logs and events from it, </p> <p>You can use this API
-         * only to enable natively supported Amazon Web Services as a source. Use
+         * Lake starts collecting logs and events from it.</p> <p>You can use this API only
+         * to enable natively supported Amazon Web Services as a source. Use
          * <code>CreateCustomLogSource</code> to enable data collection from a custom
          * source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateAwsLogSource">AWS
@@ -175,20 +175,19 @@ namespace SecurityLake
         /**
          * <p>Initializes an Amazon Security Lake instance with the provided (or default)
          * configuration. You can enable Security Lake in Amazon Web Services Regions with
-         * customized settings before enabling log collection in Regions. By default, the
-         * <code>CreateDataLake</code> Security Lake in all Regions. To specify particular
-         * Regions, configure these Regions using the <code>configurations</code>
-         * parameter. If you have already enabled Security Lake in a Region when you call
-         * this command, the command will update the Region if you provide new
-         * configuration parameters. If you have not already enabled Security Lake in the
-         * Region when you call this API, it will set up the data lake in the Region with
-         * the specified configurations.</p> <p>When you enable Security Lake, it starts
-         * ingesting security data after the <code>CreateAwsLogSource</code> call. This
-         * includes ingesting security data from sources, storing data, and making data
-         * accessible to subscribers. Security Lake also enables all the existing settings
-         * and resources that it stores or maintains for your Amazon Web Services account
-         * in the current Region, including security log and event data. For more
-         * information, see the <a
+         * customized settings before enabling log collection in Regions. To specify
+         * particular Regions, configure these Regions using the
+         * <code>configurations</code> parameter. If you have already enabled Security Lake
+         * in a Region when you call this command, the command will update the Region if
+         * you provide new configuration parameters. If you have not already enabled
+         * Security Lake in the Region when you call this API, it will set up the data lake
+         * in the Region with the specified configurations.</p> <p>When you enable Security
+         * Lake, it starts ingesting security data after the
+         * <code>CreateAwsLogSource</code> call. This includes ingesting security data from
+         * sources, storing data, and making data accessible to subscribers. Security Lake
+         * also enables all the existing settings and resources that it stores or maintains
+         * for your Amazon Web Services account in the current Region, including security
+         * log and event data. For more information, see the <a
          * href="https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html">Amazon
          * Security Lake User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLake">AWS
@@ -441,12 +440,12 @@ namespace SecurityLake
         }
 
         /**
-         * <p>Removes automatic the enablement of configuration settings for new member
-         * accounts (but retains the settings for the delegated administrator) from Amazon
-         * Security Lake. You must run this API using the credentials of the delegated
-         * administrator. When you run this API, new member accounts that are added after
-         * the organization enables Security Lake won't contribute to the data
-         * lake.</p><p><h3>See Also:</h3>   <a
+         * <p>Turns off automatic enablement of Amazon Security Lake for member accounts
+         * that are added to an organization in Organizations. Only the delegated Security
+         * Lake administrator for an organization can perform this operation. If the
+         * delegated Security Lake administrator performs this operation, new member
+         * accounts won't automatically contribute data to the data lake.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
@@ -689,9 +688,8 @@ namespace SecurityLake
 
         /**
          * <p>Retrieves the Amazon Security Lake configuration object for the specified
-         * Amazon Web Services account ID. You can use the <code>ListDataLakes</code> API
-         * to know whether Security Lake is enabled for any region.</p><p><h3>See
-         * Also:</h3>   <a
+         * Amazon Web Services Regions. You can use this operation to determine whether
+         * Security Lake is enabled for a Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakes">AWS
          * API Reference</a></p>
          */
@@ -769,6 +767,34 @@ namespace SecurityLake
         }
 
         /**
+         * <p>Retrieves the tags (keys and values) that are associated with an Amazon
+         * Security Lake resource: a subscriber, or the data lake configuration for your
+         * Amazon Web Services account in a particular Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&SecurityLakeClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityLakeClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
          * <p>Designates the Amazon Security Lake delegated administrator account for the
          * organization. This API can only be called by the organization management
          * account. The organization management account cannot be the delegated
@@ -794,6 +820,70 @@ namespace SecurityLake
         void RegisterDataLakeDelegatedAdministratorAsync(const RegisterDataLakeDelegatedAdministratorRequestT& request, const RegisterDataLakeDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityLakeClient::RegisterDataLakeDelegatedAdministrator, request, handler, context);
+        }
+
+        /**
+         * <p>Adds or updates one or more tags that are associated with an Amazon Security
+         * Lake resource: a subscriber, or the data lake configuration for your Amazon Web
+         * Services account in a particular Amazon Web Services Region. A <i>tag</i> is a
+         * label that you can define and associate with Amazon Web Services resources. Each
+         * tag consists of a required <i>tag key</i> and an associated <i>tag value</i>. A
+         * <i>tag key</i> is a general label that acts as a category for a more specific
+         * tag value. A <i>tag value</i> acts as a descriptor for a tag key. Tags can help
+         * you identify, categorize, and manage resources in different ways, such as by
+         * owner, environment, or other criteria. For more information, see <a
+         * href="https://docs.aws.amazon.com/security-lake/latest/userguide/tagging-resources.html">Tagging
+         * Amazon Security Lake resources</a> in the <i>Amazon Security Lake User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&SecurityLakeClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityLakeClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Removes one or more tags (keys and values) from an Amazon Security Lake
+         * resource: a subscriber, or the data lake configuration for your Amazon Web
+         * Services account in a particular Amazon Web Services Region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&SecurityLakeClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityLakeClient::UntagResource, request, handler, context);
         }
 
         /**

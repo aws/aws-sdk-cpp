@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The output of Records that have been retrieved in a batch.</p><p><h3>See
+   * <p>The output of records that have been retrieved in a batch.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecordResultDetail">AWS
    * API Reference</a></p>

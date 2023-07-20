@@ -77,42 +77,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon CodeCatalyst service principal.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon CodeCatalyst service principal.</p>
      */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon CodeCatalyst service principal.</p>
      */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon CodeCatalyst service principal.</p>
      */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon CodeCatalyst service principal.</p>
      */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon CodeCatalyst service principal.</p>
      */
     inline UserIdentity& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon CodeCatalyst service principal.</p>
      */
     inline UserIdentity& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon CodeCatalyst service principal.</p>
      */
     inline UserIdentity& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 

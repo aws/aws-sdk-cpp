@@ -38,7 +38,8 @@ TranscriptionJobSummary::TranscriptionJobSummary() :
     m_identifyMultipleLanguagesHasBeenSet(false),
     m_identifiedLanguageScore(0.0),
     m_identifiedLanguageScoreHasBeenSet(false),
-    m_languageCodesHasBeenSet(false)
+    m_languageCodesHasBeenSet(false),
+    m_toxicityDetectionHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ TranscriptionJobSummary::TranscriptionJobSummary(JsonView jsonValue) :
     m_identifyMultipleLanguagesHasBeenSet(false),
     m_identifiedLanguageScore(0.0),
     m_identifiedLanguageScoreHasBeenSet(false),
-    m_languageCodesHasBeenSet(false)
+    m_languageCodesHasBeenSet(false),
+    m_toxicityDetectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +172,16 @@ TranscriptionJobSummary& TranscriptionJobSummary::operator =(JsonView jsonValue)
     m_languageCodesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ToxicityDetection"))
+  {
+    Aws::Utils::Array<JsonView> toxicityDetectionJsonList = jsonValue.GetArray("ToxicityDetection");
+    for(unsigned toxicityDetectionIndex = 0; toxicityDetectionIndex < toxicityDetectionJsonList.GetLength(); ++toxicityDetectionIndex)
+    {
+      m_toxicityDetection.push_back(toxicityDetectionJsonList[toxicityDetectionIndex].AsObject());
+    }
+    m_toxicityDetectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -257,6 +269,17 @@ JsonValue TranscriptionJobSummary::Jsonize() const
      languageCodesJsonList[languageCodesIndex].AsObject(m_languageCodes[languageCodesIndex].Jsonize());
    }
    payload.WithArray("LanguageCodes", std::move(languageCodesJsonList));
+
+  }
+
+  if(m_toxicityDetectionHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> toxicityDetectionJsonList(m_toxicityDetection.size());
+   for(unsigned toxicityDetectionIndex = 0; toxicityDetectionIndex < toxicityDetectionJsonList.GetLength(); ++toxicityDetectionIndex)
+   {
+     toxicityDetectionJsonList[toxicityDetectionIndex].AsObject(m_toxicityDetection[toxicityDetectionIndex].Jsonize());
+   }
+   payload.WithArray("ToxicityDetection", std::move(toxicityDetectionJsonList));
 
   }
 

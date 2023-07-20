@@ -26,7 +26,8 @@ namespace Model
     FAILED_RESOURCE_GONE,
     DELETING,
     DELETE_FAILED_FAS_EXPIRED,
-    UPDATING
+    UPDATING,
+    UPDATE_FAILED
   };
 
 namespace IpAddressStatusMapper

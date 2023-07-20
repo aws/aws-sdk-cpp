@@ -347,57 +347,65 @@ namespace Model
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the Amazon Security Lake User
-     * Guide.</p>
+     * Amazon Web Services. For more information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline const Aws::Vector<LogSourceResource>& GetSources() const{ return m_sources; }
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the Amazon Security Lake User
-     * Guide.</p>
+     * Amazon Web Services. For more information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the Amazon Security Lake User
-     * Guide.</p>
+     * Amazon Web Services. For more information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline void SetSources(const Aws::Vector<LogSourceResource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the Amazon Security Lake User
-     * Guide.</p>
+     * Amazon Web Services. For more information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline void SetSources(Aws::Vector<LogSourceResource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the Amazon Security Lake User
-     * Guide.</p>
+     * Amazon Web Services. For more information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline SubscriberResource& WithSources(const Aws::Vector<LogSourceResource>& value) { SetSources(value); return *this;}
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the Amazon Security Lake User
-     * Guide.</p>
+     * Amazon Web Services. For more information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline SubscriberResource& WithSources(Aws::Vector<LogSourceResource>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the Amazon Security Lake User
-     * Guide.</p>
+     * Amazon Web Services. For more information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline SubscriberResource& AddSources(const LogSourceResource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the Amazon Security Lake User
-     * Guide.</p>
+     * Amazon Web Services. For more information, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon
+     * Security Lake User Guide</a>.</p>
      */
     inline SubscriberResource& AddSources(LogSourceResource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
 

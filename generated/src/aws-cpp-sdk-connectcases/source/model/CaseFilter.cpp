@@ -21,14 +21,16 @@ namespace Model
 CaseFilter::CaseFilter() : 
     m_andAllHasBeenSet(false),
     m_fieldHasBeenSet(false),
-    m_notHasBeenSet(false)
+    m_notHasBeenSet(false),
+    m_orAllHasBeenSet(false)
 {
 }
 
 CaseFilter::CaseFilter(JsonView jsonValue) : 
     m_andAllHasBeenSet(false),
     m_fieldHasBeenSet(false),
-    m_notHasBeenSet(false)
+    m_notHasBeenSet(false),
+    m_orAllHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +68,16 @@ CaseFilter& CaseFilter::operator =(JsonView jsonValue)
     m_notHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("orAll"))
+  {
+    Aws::Utils::Array<JsonView> orAllJsonList = jsonValue.GetArray("orAll");
+    for(unsigned orAllIndex = 0; orAllIndex < orAllJsonList.GetLength(); ++orAllIndex)
+    {
+      m_orAll.push_back(orAllJsonList[orAllIndex].AsObject());
+    }
+    m_orAllHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +105,17 @@ JsonValue CaseFilter::Jsonize() const
   if(m_notHasBeenSet)
   {
    payload.WithObject("not", m_not->Jsonize());
+
+  }
+
+  if(m_orAllHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> orAllJsonList(m_orAll.size());
+   for(unsigned orAllIndex = 0; orAllIndex < orAllJsonList.GetLength(); ++orAllIndex)
+   {
+     orAllJsonList[orAllIndex].AsObject(m_orAll[orAllIndex].Jsonize());
+   }
+   payload.WithArray("orAll", std::move(orAllJsonList));
 
   }
 

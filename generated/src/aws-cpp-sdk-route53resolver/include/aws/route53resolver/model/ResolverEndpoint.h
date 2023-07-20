@@ -799,6 +799,88 @@ namespace Model
      */
     inline ResolverEndpoint& WithResolverEndpointType(ResolverEndpointType&& value) { SetResolverEndpointType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+     */
+    inline ResolverEndpoint& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+     */
+    inline ResolverEndpoint& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the Outpost.</p>
+     */
+    inline ResolverEndpoint& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
+
+    /**
+     * <p> The Amazon EC2 instance type. </p>
+     */
+    inline const Aws::String& GetPreferredInstanceType() const{ return m_preferredInstanceType; }
+
+    /**
+     * <p> The Amazon EC2 instance type. </p>
+     */
+    inline bool PreferredInstanceTypeHasBeenSet() const { return m_preferredInstanceTypeHasBeenSet; }
+
+    /**
+     * <p> The Amazon EC2 instance type. </p>
+     */
+    inline void SetPreferredInstanceType(const Aws::String& value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType = value; }
+
+    /**
+     * <p> The Amazon EC2 instance type. </p>
+     */
+    inline void SetPreferredInstanceType(Aws::String&& value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType = std::move(value); }
+
+    /**
+     * <p> The Amazon EC2 instance type. </p>
+     */
+    inline void SetPreferredInstanceType(const char* value) { m_preferredInstanceTypeHasBeenSet = true; m_preferredInstanceType.assign(value); }
+
+    /**
+     * <p> The Amazon EC2 instance type. </p>
+     */
+    inline ResolverEndpoint& WithPreferredInstanceType(const Aws::String& value) { SetPreferredInstanceType(value); return *this;}
+
+    /**
+     * <p> The Amazon EC2 instance type. </p>
+     */
+    inline ResolverEndpoint& WithPreferredInstanceType(Aws::String&& value) { SetPreferredInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon EC2 instance type. </p>
+     */
+    inline ResolverEndpoint& WithPreferredInstanceType(const char* value) { SetPreferredInstanceType(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -839,6 +921,12 @@ namespace Model
 
     ResolverEndpointType m_resolverEndpointType;
     bool m_resolverEndpointTypeHasBeenSet = false;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet = false;
+
+    Aws::String m_preferredInstanceType;
+    bool m_preferredInstanceTypeHasBeenSet = false;
   };
 
 } // namespace Model
