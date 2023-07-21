@@ -19,7 +19,7 @@ namespace smithy {
             enum class SMITHY_API TraceSpanStatus {
                 UNSET,
                 OK,
-                ERROR,
+                FAULT,
             };
 
             /**
