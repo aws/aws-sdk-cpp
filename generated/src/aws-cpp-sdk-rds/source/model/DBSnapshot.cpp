@@ -60,7 +60,8 @@ DBSnapshot::DBSnapshot() :
     m_snapshotDatabaseTimeHasBeenSet(false),
     m_snapshotTargetHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_dBSystemIdHasBeenSet(false)
 {
 }
 
@@ -104,7 +105,8 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_snapshotDatabaseTimeHasBeenSet(false),
     m_snapshotTargetHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_dBSystemIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -325,6 +327,12 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
       m_storageThroughputHasBeenSet = true;
     }
+    XmlNode dBSystemIdNode = resultNode.FirstChild("DBSystemId");
+    if(!dBSystemIdNode.IsNull())
+    {
+      m_dBSystemId = Aws::Utils::Xml::DecodeEscapedXmlText(dBSystemIdNode.GetText());
+      m_dBSystemIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -509,6 +517,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 
+  if(m_dBSystemIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
+  }
+
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -656,6 +669,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_storageThroughputHasBeenSet)
   {
       oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+  if(m_dBSystemIdHasBeenSet)
+  {
+      oStream << location << ".DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
   }
 }
 

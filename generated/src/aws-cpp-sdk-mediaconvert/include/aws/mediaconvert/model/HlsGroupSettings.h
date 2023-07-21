@@ -1323,28 +1323,28 @@ namespace Model
 
     /**
      * Specify the number of segments to write to a subdirectory before starting a new
-     * one. You must also set Directory structure to Subdirectory per stream for this
+     * one. You  must also set Directory structure to Subdirectory per stream for this
      * setting to have an effect.
      */
     inline int GetSegmentsPerSubdirectory() const{ return m_segmentsPerSubdirectory; }
 
     /**
      * Specify the number of segments to write to a subdirectory before starting a new
-     * one. You must also set Directory structure to Subdirectory per stream for this
+     * one. You  must also set Directory structure to Subdirectory per stream for this
      * setting to have an effect.
      */
     inline bool SegmentsPerSubdirectoryHasBeenSet() const { return m_segmentsPerSubdirectoryHasBeenSet; }
 
     /**
      * Specify the number of segments to write to a subdirectory before starting a new
-     * one. You must also set Directory structure to Subdirectory per stream for this
+     * one. You  must also set Directory structure to Subdirectory per stream for this
      * setting to have an effect.
      */
     inline void SetSegmentsPerSubdirectory(int value) { m_segmentsPerSubdirectoryHasBeenSet = true; m_segmentsPerSubdirectory = value; }
 
     /**
      * Specify the number of segments to write to a subdirectory before starting a new
-     * one. You must also set Directory structure to Subdirectory per stream for this
+     * one. You  must also set Directory structure to Subdirectory per stream for this
      * setting to have an effect.
      */
     inline HlsGroupSettings& WithSegmentsPerSubdirectory(int value) { SetSegmentsPerSubdirectory(value); return *this;}

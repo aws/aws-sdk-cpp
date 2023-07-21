@@ -1385,6 +1385,63 @@ namespace Model
      */
     inline DBSnapshot& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline const Aws::String& GetDBSystemId() const{ return m_dBSystemId; }
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline void SetDBSystemId(const Aws::String& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = value; }
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline void SetDBSystemId(Aws::String&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::move(value); }
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline void SetDBSystemId(const char* value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId.assign(value); }
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline DBSnapshot& WithDBSystemId(const Aws::String& value) { SetDBSystemId(value); return *this;}
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline DBSnapshot& WithDBSystemId(Aws::String&& value) { SetDBSystemId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Oracle system identifier (SID), which is the name of the Oracle database
+     * instance that manages your database files. The Oracle SID is also the name of
+     * your CDB.</p>
+     */
+    inline DBSnapshot& WithDBSystemId(const char* value) { SetDBSystemId(value); return *this;}
+
   private:
 
     Aws::String m_dBSnapshotIdentifier;
@@ -1485,6 +1542,9 @@ namespace Model
 
     int m_storageThroughput;
     bool m_storageThroughputHasBeenSet = false;
+
+    Aws::String m_dBSystemId;
+    bool m_dBSystemIdHasBeenSet = false;
   };
 
 } // namespace Model

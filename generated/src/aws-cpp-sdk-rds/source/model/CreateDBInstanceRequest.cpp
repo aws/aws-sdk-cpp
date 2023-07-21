@@ -88,7 +88,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_manageMasterUserPassword(false),
     m_manageMasterUserPasswordHasBeenSet(false),
     m_masterUserSecretKmsKeyIdHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false)
+    m_cACertificateIdentifierHasBeenSet(false),
+    m_dBSystemIdHasBeenSet(false)
 {
 }
 
@@ -423,6 +424,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_cACertificateIdentifierHasBeenSet)
   {
     ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+
+  if(m_dBSystemIdHasBeenSet)
+  {
+    ss << "DBSystemId=" << StringUtils::URLEncode(m_dBSystemId.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

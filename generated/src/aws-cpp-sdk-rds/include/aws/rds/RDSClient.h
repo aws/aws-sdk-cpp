@@ -1135,9 +1135,9 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
          * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS
          * User Guide</i> and <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-         * Using Amazon RDS Blue/Green Deployments for database updates</a> in the
-         * <i>Amazon Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+         * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
+         * Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteBlueGreenDeployment">AWS
          * API Reference</a></p>
          */
@@ -1703,8 +1703,8 @@ namespace Aws
         }
 
         /**
-         * <p>Returns information about blue/green deployments.</p> <p>For more
-         * information, see <a
+         * <p>Describes one or more blue/green deployments.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
          * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS
          * User Guide</i> and <a
@@ -4554,9 +4554,9 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
          * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS
          * User Guide</i> and <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-         * Using Amazon RDS Blue/Green Deployments for database updates</a> in the
-         * <i>Amazon Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+         * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
+         * Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverBlueGreenDeployment">AWS
          * API Reference</a></p>
          */
