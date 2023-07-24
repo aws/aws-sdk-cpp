@@ -71,6 +71,7 @@
 #include <aws/glue/model/AmazonRedshiftSource.h>
 #include <aws/glue/model/AmazonRedshiftTarget.h>
 #include <aws/glue/model/EvaluateDataQualityMultiFrame.h>
+#include <aws/glue/model/Recipe.h>
 #include <utility>
 
 namespace Aws
@@ -2353,6 +2354,37 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrame&& value) { SetEvaluateDataQualityMultiFrame(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline const Recipe& GetRecipe() const{ return m_recipe; }
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline bool RecipeHasBeenSet() const { return m_recipeHasBeenSet; }
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline void SetRecipe(const Recipe& value) { m_recipeHasBeenSet = true; m_recipe = value; }
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline void SetRecipe(Recipe&& value) { m_recipeHasBeenSet = true; m_recipe = std::move(value); }
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline CodeGenConfigurationNode& WithRecipe(const Recipe& value) { SetRecipe(value); return *this;}
+
+    /**
+     * <p>Specifies a Glue DataBrew recipe node.</p>
+     */
+    inline CodeGenConfigurationNode& WithRecipe(Recipe&& value) { SetRecipe(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -2552,6 +2584,9 @@ namespace Model
 
     EvaluateDataQualityMultiFrame m_evaluateDataQualityMultiFrame;
     bool m_evaluateDataQualityMultiFrameHasBeenSet = false;
+
+    Recipe m_recipe;
+    bool m_recipeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     DETAILED_STATUS,
-    LAST_OPERATION_ID
+    LAST_OPERATION_ID,
+    DRIFT_STATUS
   };
 
 namespace StackInstanceFilterNameMapper

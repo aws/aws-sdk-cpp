@@ -84,7 +84,8 @@ CodeGenConfigurationNode::CodeGenConfigurationNode() :
     m_s3DeltaDirectTargetHasBeenSet(false),
     m_amazonRedshiftSourceHasBeenSet(false),
     m_amazonRedshiftTargetHasBeenSet(false),
-    m_evaluateDataQualityMultiFrameHasBeenSet(false)
+    m_evaluateDataQualityMultiFrameHasBeenSet(false),
+    m_recipeHasBeenSet(false)
 {
 }
 
@@ -154,7 +155,8 @@ CodeGenConfigurationNode::CodeGenConfigurationNode(JsonView jsonValue) :
     m_s3DeltaDirectTargetHasBeenSet(false),
     m_amazonRedshiftSourceHasBeenSet(false),
     m_amazonRedshiftTargetHasBeenSet(false),
-    m_evaluateDataQualityMultiFrameHasBeenSet(false)
+    m_evaluateDataQualityMultiFrameHasBeenSet(false),
+    m_recipeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -623,6 +625,13 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_evaluateDataQualityMultiFrameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Recipe"))
+  {
+    m_recipe = jsonValue.GetObject("Recipe");
+
+    m_recipeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -1023,6 +1032,12 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
   if(m_evaluateDataQualityMultiFrameHasBeenSet)
   {
    payload.WithObject("EvaluateDataQualityMultiFrame", m_evaluateDataQualityMultiFrame.Jsonize());
+
+  }
+
+  if(m_recipeHasBeenSet)
+  {
+   payload.WithObject("Recipe", m_recipe.Jsonize());
 
   }
 

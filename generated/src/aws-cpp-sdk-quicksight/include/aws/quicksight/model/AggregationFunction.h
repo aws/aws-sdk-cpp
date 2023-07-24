@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/NumericalAggregationFunction.h>
 #include <aws/quicksight/model/CategoricalAggregationFunction.h>
 #include <aws/quicksight/model/DateAggregationFunction.h>
+#include <aws/quicksight/model/AttributeAggregationFunction.h>
 #include <utility>
 
 namespace Aws
@@ -175,6 +176,37 @@ namespace Model
      */
     inline AggregationFunction& WithDateAggregationFunction(DateAggregationFunction&& value) { SetDateAggregationFunction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Aggregation for attributes.</p>
+     */
+    inline const AttributeAggregationFunction& GetAttributeAggregationFunction() const{ return m_attributeAggregationFunction; }
+
+    /**
+     * <p>Aggregation for attributes.</p>
+     */
+    inline bool AttributeAggregationFunctionHasBeenSet() const { return m_attributeAggregationFunctionHasBeenSet; }
+
+    /**
+     * <p>Aggregation for attributes.</p>
+     */
+    inline void SetAttributeAggregationFunction(const AttributeAggregationFunction& value) { m_attributeAggregationFunctionHasBeenSet = true; m_attributeAggregationFunction = value; }
+
+    /**
+     * <p>Aggregation for attributes.</p>
+     */
+    inline void SetAttributeAggregationFunction(AttributeAggregationFunction&& value) { m_attributeAggregationFunctionHasBeenSet = true; m_attributeAggregationFunction = std::move(value); }
+
+    /**
+     * <p>Aggregation for attributes.</p>
+     */
+    inline AggregationFunction& WithAttributeAggregationFunction(const AttributeAggregationFunction& value) { SetAttributeAggregationFunction(value); return *this;}
+
+    /**
+     * <p>Aggregation for attributes.</p>
+     */
+    inline AggregationFunction& WithAttributeAggregationFunction(AttributeAggregationFunction&& value) { SetAttributeAggregationFunction(std::move(value)); return *this;}
+
   private:
 
     NumericalAggregationFunction m_numericalAggregationFunction;
@@ -185,6 +217,9 @@ namespace Model
 
     DateAggregationFunction m_dateAggregationFunction;
     bool m_dateAggregationFunctionHasBeenSet = false;
+
+    AttributeAggregationFunction m_attributeAggregationFunction;
+    bool m_attributeAggregationFunctionHasBeenSet = false;
   };
 
 } // namespace Model

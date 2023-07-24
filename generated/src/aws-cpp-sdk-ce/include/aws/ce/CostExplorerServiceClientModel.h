@@ -37,6 +37,7 @@
 #include <aws/ce/model/GetReservationPurchaseRecommendationResult.h>
 #include <aws/ce/model/GetReservationUtilizationResult.h>
 #include <aws/ce/model/GetRightsizingRecommendationResult.h>
+#include <aws/ce/model/GetSavingsPlanPurchaseRecommendationDetailsResult.h>
 #include <aws/ce/model/GetSavingsPlansCoverageResult.h>
 #include <aws/ce/model/GetSavingsPlansPurchaseRecommendationResult.h>
 #include <aws/ce/model/GetSavingsPlansUtilizationResult.h>
@@ -114,6 +115,7 @@ namespace Aws
       class GetReservationPurchaseRecommendationRequest;
       class GetReservationUtilizationRequest;
       class GetRightsizingRecommendationRequest;
+      class GetSavingsPlanPurchaseRecommendationDetailsRequest;
       class GetSavingsPlansCoverageRequest;
       class GetSavingsPlansPurchaseRecommendationRequest;
       class GetSavingsPlansUtilizationRequest;
@@ -154,6 +156,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetReservationPurchaseRecommendationResult, CostExplorerError> GetReservationPurchaseRecommendationOutcome;
       typedef Aws::Utils::Outcome<GetReservationUtilizationResult, CostExplorerError> GetReservationUtilizationOutcome;
       typedef Aws::Utils::Outcome<GetRightsizingRecommendationResult, CostExplorerError> GetRightsizingRecommendationOutcome;
+      typedef Aws::Utils::Outcome<GetSavingsPlanPurchaseRecommendationDetailsResult, CostExplorerError> GetSavingsPlanPurchaseRecommendationDetailsOutcome;
       typedef Aws::Utils::Outcome<GetSavingsPlansCoverageResult, CostExplorerError> GetSavingsPlansCoverageOutcome;
       typedef Aws::Utils::Outcome<GetSavingsPlansPurchaseRecommendationResult, CostExplorerError> GetSavingsPlansPurchaseRecommendationOutcome;
       typedef Aws::Utils::Outcome<GetSavingsPlansUtilizationResult, CostExplorerError> GetSavingsPlansUtilizationOutcome;
@@ -194,6 +197,7 @@ namespace Aws
       typedef std::future<GetReservationPurchaseRecommendationOutcome> GetReservationPurchaseRecommendationOutcomeCallable;
       typedef std::future<GetReservationUtilizationOutcome> GetReservationUtilizationOutcomeCallable;
       typedef std::future<GetRightsizingRecommendationOutcome> GetRightsizingRecommendationOutcomeCallable;
+      typedef std::future<GetSavingsPlanPurchaseRecommendationDetailsOutcome> GetSavingsPlanPurchaseRecommendationDetailsOutcomeCallable;
       typedef std::future<GetSavingsPlansCoverageOutcome> GetSavingsPlansCoverageOutcomeCallable;
       typedef std::future<GetSavingsPlansPurchaseRecommendationOutcome> GetSavingsPlansPurchaseRecommendationOutcomeCallable;
       typedef std::future<GetSavingsPlansUtilizationOutcome> GetSavingsPlansUtilizationOutcomeCallable;
@@ -237,6 +241,7 @@ namespace Aws
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationPurchaseRecommendationRequest&, const Model::GetReservationPurchaseRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationPurchaseRecommendationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationUtilizationRequest&, const Model::GetReservationUtilizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationUtilizationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetRightsizingRecommendationRequest&, const Model::GetRightsizingRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRightsizingRecommendationResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetSavingsPlanPurchaseRecommendationDetailsRequest&, const Model::GetSavingsPlanPurchaseRecommendationDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSavingsPlanPurchaseRecommendationDetailsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetSavingsPlansCoverageRequest&, const Model::GetSavingsPlansCoverageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSavingsPlansCoverageResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetSavingsPlansPurchaseRecommendationRequest&, const Model::GetSavingsPlansPurchaseRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSavingsPlansPurchaseRecommendationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetSavingsPlansUtilizationRequest&, const Model::GetSavingsPlansUtilizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSavingsPlansUtilizationResponseReceivedHandler;

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     PresenterOnly,
     Horizontal,
-    Vertical
+    Vertical,
+    ActiveSpeakerOnly
   };
 
 namespace ContentShareLayoutOptionMapper

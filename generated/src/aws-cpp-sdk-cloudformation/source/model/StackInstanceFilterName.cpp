@@ -22,6 +22,7 @@ namespace Aws
 
         static const int DETAILED_STATUS_HASH = HashingUtils::HashString("DETAILED_STATUS");
         static const int LAST_OPERATION_ID_HASH = HashingUtils::HashString("LAST_OPERATION_ID");
+        static const int DRIFT_STATUS_HASH = HashingUtils::HashString("DRIFT_STATUS");
 
 
         StackInstanceFilterName GetStackInstanceFilterNameForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == LAST_OPERATION_ID_HASH)
           {
             return StackInstanceFilterName::LAST_OPERATION_ID;
+          }
+          else if (hashCode == DRIFT_STATUS_HASH)
+          {
+            return StackInstanceFilterName::DRIFT_STATUS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "DETAILED_STATUS";
           case StackInstanceFilterName::LAST_OPERATION_ID:
             return "LAST_OPERATION_ID";
+          case StackInstanceFilterName::DRIFT_STATUS:
+            return "DRIFT_STATUS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

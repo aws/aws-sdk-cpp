@@ -31,7 +31,7 @@ namespace Model
    * monitor the state of your application during stack creation and updating, and to
    * roll back that operation if the application breaches the threshold of any of the
    * alarms you've specified. For more information, see <a
-   * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor
    * and Roll Back Stack Operations</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">AWS
    * API Reference</a></p>
