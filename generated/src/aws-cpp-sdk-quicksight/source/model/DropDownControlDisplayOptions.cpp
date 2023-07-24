@@ -20,13 +20,15 @@ namespace Model
 
 DropDownControlDisplayOptions::DropDownControlDisplayOptions() : 
     m_selectAllOptionsHasBeenSet(false),
-    m_titleOptionsHasBeenSet(false)
+    m_titleOptionsHasBeenSet(false),
+    m_infoIconLabelOptionsHasBeenSet(false)
 {
 }
 
 DropDownControlDisplayOptions::DropDownControlDisplayOptions(JsonView jsonValue) : 
     m_selectAllOptionsHasBeenSet(false),
-    m_titleOptionsHasBeenSet(false)
+    m_titleOptionsHasBeenSet(false),
+    m_infoIconLabelOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ DropDownControlDisplayOptions& DropDownControlDisplayOptions::operator =(JsonVie
     m_titleOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InfoIconLabelOptions"))
+  {
+    m_infoIconLabelOptions = jsonValue.GetObject("InfoIconLabelOptions");
+
+    m_infoIconLabelOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue DropDownControlDisplayOptions::Jsonize() const
   if(m_titleOptionsHasBeenSet)
   {
    payload.WithObject("TitleOptions", m_titleOptions.Jsonize());
+
+  }
+
+  if(m_infoIconLabelOptionsHasBeenSet)
+  {
+   payload.WithObject("InfoIconLabelOptions", m_infoIconLabelOptions.Jsonize());
 
   }
 

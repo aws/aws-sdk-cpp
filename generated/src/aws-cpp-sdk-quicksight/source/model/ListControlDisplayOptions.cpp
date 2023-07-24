@@ -21,14 +21,16 @@ namespace Model
 ListControlDisplayOptions::ListControlDisplayOptions() : 
     m_searchOptionsHasBeenSet(false),
     m_selectAllOptionsHasBeenSet(false),
-    m_titleOptionsHasBeenSet(false)
+    m_titleOptionsHasBeenSet(false),
+    m_infoIconLabelOptionsHasBeenSet(false)
 {
 }
 
 ListControlDisplayOptions::ListControlDisplayOptions(JsonView jsonValue) : 
     m_searchOptionsHasBeenSet(false),
     m_selectAllOptionsHasBeenSet(false),
-    m_titleOptionsHasBeenSet(false)
+    m_titleOptionsHasBeenSet(false),
+    m_infoIconLabelOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ ListControlDisplayOptions& ListControlDisplayOptions::operator =(JsonView jsonVa
     m_titleOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InfoIconLabelOptions"))
+  {
+    m_infoIconLabelOptions = jsonValue.GetObject("InfoIconLabelOptions");
+
+    m_infoIconLabelOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue ListControlDisplayOptions::Jsonize() const
   if(m_titleOptionsHasBeenSet)
   {
    payload.WithObject("TitleOptions", m_titleOptions.Jsonize());
+
+  }
+
+  if(m_infoIconLabelOptionsHasBeenSet)
+  {
+   payload.WithObject("InfoIconLabelOptions", m_infoIconLabelOptions.Jsonize());
 
   }
 

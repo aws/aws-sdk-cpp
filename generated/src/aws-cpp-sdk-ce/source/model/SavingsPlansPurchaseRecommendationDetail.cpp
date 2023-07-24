@@ -34,7 +34,8 @@ SavingsPlansPurchaseRecommendationDetail::SavingsPlansPurchaseRecommendationDeta
     m_estimatedMonthlySavingsAmountHasBeenSet(false),
     m_currentMinimumHourlyOnDemandSpendHasBeenSet(false),
     m_currentMaximumHourlyOnDemandSpendHasBeenSet(false),
-    m_currentAverageHourlyOnDemandSpendHasBeenSet(false)
+    m_currentAverageHourlyOnDemandSpendHasBeenSet(false),
+    m_recommendationDetailIdHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ SavingsPlansPurchaseRecommendationDetail::SavingsPlansPurchaseRecommendationDeta
     m_estimatedMonthlySavingsAmountHasBeenSet(false),
     m_currentMinimumHourlyOnDemandSpendHasBeenSet(false),
     m_currentMaximumHourlyOnDemandSpendHasBeenSet(false),
-    m_currentAverageHourlyOnDemandSpendHasBeenSet(false)
+    m_currentAverageHourlyOnDemandSpendHasBeenSet(false),
+    m_recommendationDetailIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -173,6 +175,13 @@ SavingsPlansPurchaseRecommendationDetail& SavingsPlansPurchaseRecommendationDeta
     m_currentAverageHourlyOnDemandSpendHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RecommendationDetailId"))
+  {
+    m_recommendationDetailId = jsonValue.GetString("RecommendationDetailId");
+
+    m_recommendationDetailIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -273,6 +282,12 @@ JsonValue SavingsPlansPurchaseRecommendationDetail::Jsonize() const
   if(m_currentAverageHourlyOnDemandSpendHasBeenSet)
   {
    payload.WithString("CurrentAverageHourlyOnDemandSpend", m_currentAverageHourlyOnDemandSpend);
+
+  }
+
+  if(m_recommendationDetailIdHasBeenSet)
+  {
+   payload.WithString("RecommendationDetailId", m_recommendationDetailId);
 
   }
 

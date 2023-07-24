@@ -803,6 +803,205 @@ namespace Model
      */
     inline AmazonTranscribeProcessorConfiguration& WithFilterPartialResults(bool value) { SetFilterPartialResults(value); return *this;}
 
+
+    /**
+     * <p>Turns language identification on or off.</p>
+     */
+    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+
+    /**
+     * <p>Turns language identification on or off.</p>
+     */
+    inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
+
+    /**
+     * <p>Turns language identification on or off.</p>
+     */
+    inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
+
+    /**
+     * <p>Turns language identification on or off.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
+
+
+    /**
+     * <p>The language options for the transcription, such as automatic language
+     * detection.</p>
+     */
+    inline const Aws::String& GetLanguageOptions() const{ return m_languageOptions; }
+
+    /**
+     * <p>The language options for the transcription, such as automatic language
+     * detection.</p>
+     */
+    inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
+
+    /**
+     * <p>The language options for the transcription, such as automatic language
+     * detection.</p>
+     */
+    inline void SetLanguageOptions(const Aws::String& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
+
+    /**
+     * <p>The language options for the transcription, such as automatic language
+     * detection.</p>
+     */
+    inline void SetLanguageOptions(Aws::String&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
+
+    /**
+     * <p>The language options for the transcription, such as automatic language
+     * detection.</p>
+     */
+    inline void SetLanguageOptions(const char* value) { m_languageOptionsHasBeenSet = true; m_languageOptions.assign(value); }
+
+    /**
+     * <p>The language options for the transcription, such as automatic language
+     * detection.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithLanguageOptions(const Aws::String& value) { SetLanguageOptions(value); return *this;}
+
+    /**
+     * <p>The language options for the transcription, such as automatic language
+     * detection.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithLanguageOptions(Aws::String&& value) { SetLanguageOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>The language options for the transcription, such as automatic language
+     * detection.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithLanguageOptions(const char* value) { SetLanguageOptions(value); return *this;}
+
+
+    /**
+     * <p>The preferred language for the transcription.</p>
+     */
+    inline const CallAnalyticsLanguageCode& GetPreferredLanguage() const{ return m_preferredLanguage; }
+
+    /**
+     * <p>The preferred language for the transcription.</p>
+     */
+    inline bool PreferredLanguageHasBeenSet() const { return m_preferredLanguageHasBeenSet; }
+
+    /**
+     * <p>The preferred language for the transcription.</p>
+     */
+    inline void SetPreferredLanguage(const CallAnalyticsLanguageCode& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
+
+    /**
+     * <p>The preferred language for the transcription.</p>
+     */
+    inline void SetPreferredLanguage(CallAnalyticsLanguageCode&& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = std::move(value); }
+
+    /**
+     * <p>The preferred language for the transcription.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithPreferredLanguage(const CallAnalyticsLanguageCode& value) { SetPreferredLanguage(value); return *this;}
+
+    /**
+     * <p>The preferred language for the transcription.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithPreferredLanguage(CallAnalyticsLanguageCode&& value) { SetPreferredLanguage(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The names of the custom vocabulary or vocabularies used during
+     * transcription.</p>
+     */
+    inline const Aws::String& GetVocabularyNames() const{ return m_vocabularyNames; }
+
+    /**
+     * <p>The names of the custom vocabulary or vocabularies used during
+     * transcription.</p>
+     */
+    inline bool VocabularyNamesHasBeenSet() const { return m_vocabularyNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the custom vocabulary or vocabularies used during
+     * transcription.</p>
+     */
+    inline void SetVocabularyNames(const Aws::String& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = value; }
+
+    /**
+     * <p>The names of the custom vocabulary or vocabularies used during
+     * transcription.</p>
+     */
+    inline void SetVocabularyNames(Aws::String&& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = std::move(value); }
+
+    /**
+     * <p>The names of the custom vocabulary or vocabularies used during
+     * transcription.</p>
+     */
+    inline void SetVocabularyNames(const char* value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames.assign(value); }
+
+    /**
+     * <p>The names of the custom vocabulary or vocabularies used during
+     * transcription.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithVocabularyNames(const Aws::String& value) { SetVocabularyNames(value); return *this;}
+
+    /**
+     * <p>The names of the custom vocabulary or vocabularies used during
+     * transcription.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithVocabularyNames(Aws::String&& value) { SetVocabularyNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names of the custom vocabulary or vocabularies used during
+     * transcription.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithVocabularyNames(const char* value) { SetVocabularyNames(value); return *this;}
+
+
+    /**
+     * <p>The names of the custom vocabulary filter or filters using during
+     * transcription.</p>
+     */
+    inline const Aws::String& GetVocabularyFilterNames() const{ return m_vocabularyFilterNames; }
+
+    /**
+     * <p>The names of the custom vocabulary filter or filters using during
+     * transcription.</p>
+     */
+    inline bool VocabularyFilterNamesHasBeenSet() const { return m_vocabularyFilterNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the custom vocabulary filter or filters using during
+     * transcription.</p>
+     */
+    inline void SetVocabularyFilterNames(const Aws::String& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = value; }
+
+    /**
+     * <p>The names of the custom vocabulary filter or filters using during
+     * transcription.</p>
+     */
+    inline void SetVocabularyFilterNames(Aws::String&& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = std::move(value); }
+
+    /**
+     * <p>The names of the custom vocabulary filter or filters using during
+     * transcription.</p>
+     */
+    inline void SetVocabularyFilterNames(const char* value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames.assign(value); }
+
+    /**
+     * <p>The names of the custom vocabulary filter or filters using during
+     * transcription.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithVocabularyFilterNames(const Aws::String& value) { SetVocabularyFilterNames(value); return *this;}
+
+    /**
+     * <p>The names of the custom vocabulary filter or filters using during
+     * transcription.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithVocabularyFilterNames(Aws::String&& value) { SetVocabularyFilterNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names of the custom vocabulary filter or filters using during
+     * transcription.</p>
+     */
+    inline AmazonTranscribeProcessorConfiguration& WithVocabularyFilterNames(const char* value) { SetVocabularyFilterNames(value); return *this;}
+
   private:
 
     CallAnalyticsLanguageCode m_languageCode;
@@ -840,6 +1039,21 @@ namespace Model
 
     bool m_filterPartialResults;
     bool m_filterPartialResultsHasBeenSet = false;
+
+    bool m_identifyLanguage;
+    bool m_identifyLanguageHasBeenSet = false;
+
+    Aws::String m_languageOptions;
+    bool m_languageOptionsHasBeenSet = false;
+
+    CallAnalyticsLanguageCode m_preferredLanguage;
+    bool m_preferredLanguageHasBeenSet = false;
+
+    Aws::String m_vocabularyNames;
+    bool m_vocabularyNamesHasBeenSet = false;
+
+    Aws::String m_vocabularyFilterNames;
+    bool m_vocabularyFilterNamesHasBeenSet = false;
   };
 
 } // namespace Model

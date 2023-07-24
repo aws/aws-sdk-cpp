@@ -1691,6 +1691,64 @@ namespace QuickSight
         }
 
         /**
+         * <p>Describes an existing snapshot job.</p> <p>Poll job descriptions after a job
+         * starts to know the status of the job. For information on available status codes,
+         * see <code>JobStatus</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDashboardSnapshotJobOutcome DescribeDashboardSnapshotJob(const Model::DescribeDashboardSnapshotJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDashboardSnapshotJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDashboardSnapshotJobRequestT = Model::DescribeDashboardSnapshotJobRequest>
+        Model::DescribeDashboardSnapshotJobOutcomeCallable DescribeDashboardSnapshotJobCallable(const DescribeDashboardSnapshotJobRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeDashboardSnapshotJob, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDashboardSnapshotJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDashboardSnapshotJobRequestT = Model::DescribeDashboardSnapshotJobRequest>
+        void DescribeDashboardSnapshotJobAsync(const DescribeDashboardSnapshotJobRequestT& request, const DescribeDashboardSnapshotJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeDashboardSnapshotJob, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the result of an existing snapshot job that has finished
+         * running.</p> <p>A finished snapshot job will return a <code>COMPLETED</code> or
+         * <code>FAILED</code> status when you poll the job with a
+         * <code>DescribeDashboardSnapshotJob</code> API call.</p> <p>If the job has not
+         * finished running, this operation returns a message that says <code>Dashboard
+         * Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal
+         * state.</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJobResult">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDashboardSnapshotJobResultOutcome DescribeDashboardSnapshotJobResult(const Model::DescribeDashboardSnapshotJobResultRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDashboardSnapshotJobResult that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDashboardSnapshotJobResultRequestT = Model::DescribeDashboardSnapshotJobResultRequest>
+        Model::DescribeDashboardSnapshotJobResultOutcomeCallable DescribeDashboardSnapshotJobResultCallable(const DescribeDashboardSnapshotJobResultRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeDashboardSnapshotJobResult, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDashboardSnapshotJobResult that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDashboardSnapshotJobResultRequestT = Model::DescribeDashboardSnapshotJobResultRequest>
+        void DescribeDashboardSnapshotJobResultAsync(const DescribeDashboardSnapshotJobResultRequestT& request, const DescribeDashboardSnapshotJobResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeDashboardSnapshotJobResult, request, handler, context);
+        }
+
+        /**
          * <p>Describes a dataset. This operation doesn't support datasets that include
          * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSet">AWS
@@ -3623,6 +3681,35 @@ namespace QuickSight
         void StartAssetBundleImportJobAsync(const StartAssetBundleImportJobRequestT& request, const StartAssetBundleImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::StartAssetBundleImportJob, request, handler, context);
+        }
+
+        /**
+         * <p>Starts an asynchronous job that generates a dashboard snapshot. You can
+         * request up to one paginated PDF and up to five CSVs per API call.</p> <p>Poll
+         * job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once
+         * the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to
+         * obtain the download URIs that the job generates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDashboardSnapshotJobOutcome StartDashboardSnapshotJob(const Model::StartDashboardSnapshotJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDashboardSnapshotJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDashboardSnapshotJobRequestT = Model::StartDashboardSnapshotJobRequest>
+        Model::StartDashboardSnapshotJobOutcomeCallable StartDashboardSnapshotJobCallable(const StartDashboardSnapshotJobRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::StartDashboardSnapshotJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartDashboardSnapshotJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDashboardSnapshotJobRequestT = Model::StartDashboardSnapshotJobRequest>
+        void StartDashboardSnapshotJobAsync(const StartDashboardSnapshotJobRequestT& request, const StartDashboardSnapshotJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::StartDashboardSnapshotJob, request, handler, context);
         }
 
         /**

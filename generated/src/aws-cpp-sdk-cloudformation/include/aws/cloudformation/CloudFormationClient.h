@@ -1491,6 +1491,34 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Returns drift information for resources in a stack instance.</p>  <p>
+         * <code>ListStackInstanceResourceDrifts</code> returns drift information for the
+         * most recent drift detection operation. If an operation is in progress, it may
+         * only return partial results.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackInstanceResourceDrifts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStackInstanceResourceDriftsOutcome ListStackInstanceResourceDrifts(const Model::ListStackInstanceResourceDriftsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStackInstanceResourceDrifts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListStackInstanceResourceDriftsRequestT = Model::ListStackInstanceResourceDriftsRequest>
+        Model::ListStackInstanceResourceDriftsOutcomeCallable ListStackInstanceResourceDriftsCallable(const ListStackInstanceResourceDriftsRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListStackInstanceResourceDrifts, request);
+        }
+
+        /**
+         * An Async wrapper for ListStackInstanceResourceDrifts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListStackInstanceResourceDriftsRequestT = Model::ListStackInstanceResourceDriftsRequest>
+        void ListStackInstanceResourceDriftsAsync(const ListStackInstanceResourceDriftsRequestT& request, const ListStackInstanceResourceDriftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListStackInstanceResourceDrifts, request, handler, context);
+        }
+
+        /**
          * <p>Returns summary information about stack instances that are associated with
          * the specified stack set. You can filter for stack instances that are associated
          * with a specific Amazon Web Services account name or Region, or that have a

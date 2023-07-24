@@ -653,7 +653,8 @@ namespace ApiGatewayV2
         }
 
         /**
-         * <p>Deletes a route request parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a route request parameter. Supported only for WebSocket
+         * APIs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteRouteRequestParameter">AWS
          * API Reference</a></p>
          */
