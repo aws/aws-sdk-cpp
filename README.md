@@ -65,26 +65,13 @@ __Jump To:__
 
 3. Build the project:
 
-   * For Auto Make build systems:
-   ```sh
+    ```sh
    cd <BUILD_DIR>
    cmake <path-to-root-of-this-source-code> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install>
-   make
-   make install
+   cmake --build . --config=Debug
+   cmake --install . --config=Debug
    ```
 
-   * For Visual Studio:
-   ```sh
-   cd <BUILD_DIR>
-   cmake <path-to-root-of-this-source-code> -G "Visual Studio 15 Win64" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install>
-   msbuild ALL_BUILD.vcxproj /p:Configuration=Debug
-   ```
-
-   * For macOS - Xcode:
-   ```sh
-   cmake <path-to-root-of-this-source-code> -G Xcode -DTARGET_ARCH="APPLE" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install>
-   xcodebuild -target ALL_BUILD
-   ```
 #### Other Dependencies:
 To compile in Linux, you must have the header files for libcurl, libopenssl. The packages are typically available in your package manager.
 
