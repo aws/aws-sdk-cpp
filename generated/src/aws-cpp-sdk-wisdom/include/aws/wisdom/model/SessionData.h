@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wisdom/model/SessionIntegrationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -77,6 +78,37 @@ namespace Model
      * <p>The description of the session.</p>
      */
     inline SessionData& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The configuration information for the session integration.</p>
+     */
+    inline const SessionIntegrationConfiguration& GetIntegrationConfiguration() const{ return m_integrationConfiguration; }
+
+    /**
+     * <p>The configuration information for the session integration.</p>
+     */
+    inline bool IntegrationConfigurationHasBeenSet() const { return m_integrationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration information for the session integration.</p>
+     */
+    inline void SetIntegrationConfiguration(const SessionIntegrationConfiguration& value) { m_integrationConfigurationHasBeenSet = true; m_integrationConfiguration = value; }
+
+    /**
+     * <p>The configuration information for the session integration.</p>
+     */
+    inline void SetIntegrationConfiguration(SessionIntegrationConfiguration&& value) { m_integrationConfigurationHasBeenSet = true; m_integrationConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration information for the session integration.</p>
+     */
+    inline SessionData& WithIntegrationConfiguration(const SessionIntegrationConfiguration& value) { SetIntegrationConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration information for the session integration.</p>
+     */
+    inline SessionData& WithIntegrationConfiguration(SessionIntegrationConfiguration&& value) { SetIntegrationConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -271,6 +303,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    SessionIntegrationConfiguration m_integrationConfiguration;
+    bool m_integrationConfigurationHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

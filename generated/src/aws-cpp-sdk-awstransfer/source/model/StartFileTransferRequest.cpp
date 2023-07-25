@@ -14,7 +14,10 @@ using namespace Aws::Utils;
 
 StartFileTransferRequest::StartFileTransferRequest() : 
     m_connectorIdHasBeenSet(false),
-    m_sendFilePathsHasBeenSet(false)
+    m_sendFilePathsHasBeenSet(false),
+    m_retrieveFilePathsHasBeenSet(false),
+    m_localDirectoryPathHasBeenSet(false),
+    m_remoteDirectoryPathHasBeenSet(false)
 {
 }
 
@@ -36,6 +39,29 @@ Aws::String StartFileTransferRequest::SerializePayload() const
      sendFilePathsJsonList[sendFilePathsIndex].AsString(m_sendFilePaths[sendFilePathsIndex]);
    }
    payload.WithArray("SendFilePaths", std::move(sendFilePathsJsonList));
+
+  }
+
+  if(m_retrieveFilePathsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> retrieveFilePathsJsonList(m_retrieveFilePaths.size());
+   for(unsigned retrieveFilePathsIndex = 0; retrieveFilePathsIndex < retrieveFilePathsJsonList.GetLength(); ++retrieveFilePathsIndex)
+   {
+     retrieveFilePathsJsonList[retrieveFilePathsIndex].AsString(m_retrieveFilePaths[retrieveFilePathsIndex]);
+   }
+   payload.WithArray("RetrieveFilePaths", std::move(retrieveFilePathsJsonList));
+
+  }
+
+  if(m_localDirectoryPathHasBeenSet)
+  {
+   payload.WithString("LocalDirectoryPath", m_localDirectoryPath);
+
+  }
+
+  if(m_remoteDirectoryPathHasBeenSet)
+  {
+   payload.WithString("RemoteDirectoryPath", m_remoteDirectoryPath);
 
   }
 

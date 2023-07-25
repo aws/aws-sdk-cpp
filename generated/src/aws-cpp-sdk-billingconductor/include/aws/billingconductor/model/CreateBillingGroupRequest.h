@@ -130,37 +130,37 @@ namespace Model
 
     /**
      * <p> The set of accounts that will be under the billing group. The set of
-     * accounts resemble the linked accounts in a consolidated family. </p>
+     * accounts resemble the linked accounts in a consolidated billing family. </p>
      */
     inline const AccountGrouping& GetAccountGrouping() const{ return m_accountGrouping; }
 
     /**
      * <p> The set of accounts that will be under the billing group. The set of
-     * accounts resemble the linked accounts in a consolidated family. </p>
+     * accounts resemble the linked accounts in a consolidated billing family. </p>
      */
     inline bool AccountGroupingHasBeenSet() const { return m_accountGroupingHasBeenSet; }
 
     /**
      * <p> The set of accounts that will be under the billing group. The set of
-     * accounts resemble the linked accounts in a consolidated family. </p>
+     * accounts resemble the linked accounts in a consolidated billing family. </p>
      */
     inline void SetAccountGrouping(const AccountGrouping& value) { m_accountGroupingHasBeenSet = true; m_accountGrouping = value; }
 
     /**
      * <p> The set of accounts that will be under the billing group. The set of
-     * accounts resemble the linked accounts in a consolidated family. </p>
+     * accounts resemble the linked accounts in a consolidated billing family. </p>
      */
     inline void SetAccountGrouping(AccountGrouping&& value) { m_accountGroupingHasBeenSet = true; m_accountGrouping = std::move(value); }
 
     /**
      * <p> The set of accounts that will be under the billing group. The set of
-     * accounts resemble the linked accounts in a consolidated family. </p>
+     * accounts resemble the linked accounts in a consolidated billing family. </p>
      */
     inline CreateBillingGroupRequest& WithAccountGrouping(const AccountGrouping& value) { SetAccountGrouping(value); return *this;}
 
     /**
      * <p> The set of accounts that will be under the billing group. The set of
-     * accounts resemble the linked accounts in a consolidated family. </p>
+     * accounts resemble the linked accounts in a consolidated billing family. </p>
      */
     inline CreateBillingGroupRequest& WithAccountGrouping(AccountGrouping&& value) { SetAccountGrouping(std::move(value)); return *this;}
 

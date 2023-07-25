@@ -241,44 +241,40 @@ namespace Model
     /**
      * <p>Specifies whether a rule is the last to be applied with respect to a finding
      * that matches the rule criteria. This is useful when a finding matches the
-     * criteria for multiple rules, and each rule has different actions. If the value
-     * of this field is set to <code>true</code> for a rule, Security Hub applies the
-     * rule action to a finding that matches the rule criteria and doesn't evaluate
-     * other rules for the finding.&#x2028; The default value of this field is
-     * <code>false</code>. </p>
+     * criteria for multiple rules, and each rule has different actions. If a rule is
+     * terminal, Security Hub applies the rule action to a finding that matches the
+     * rule criteria and doesn't evaluate other rules for the finding. By default, a
+     * rule isn't terminal. </p>
      */
     inline bool GetIsTerminal() const{ return m_isTerminal; }
 
     /**
      * <p>Specifies whether a rule is the last to be applied with respect to a finding
      * that matches the rule criteria. This is useful when a finding matches the
-     * criteria for multiple rules, and each rule has different actions. If the value
-     * of this field is set to <code>true</code> for a rule, Security Hub applies the
-     * rule action to a finding that matches the rule criteria and doesn't evaluate
-     * other rules for the finding.&#x2028; The default value of this field is
-     * <code>false</code>. </p>
+     * criteria for multiple rules, and each rule has different actions. If a rule is
+     * terminal, Security Hub applies the rule action to a finding that matches the
+     * rule criteria and doesn't evaluate other rules for the finding. By default, a
+     * rule isn't terminal. </p>
      */
     inline bool IsTerminalHasBeenSet() const { return m_isTerminalHasBeenSet; }
 
     /**
      * <p>Specifies whether a rule is the last to be applied with respect to a finding
      * that matches the rule criteria. This is useful when a finding matches the
-     * criteria for multiple rules, and each rule has different actions. If the value
-     * of this field is set to <code>true</code> for a rule, Security Hub applies the
-     * rule action to a finding that matches the rule criteria and doesn't evaluate
-     * other rules for the finding.&#x2028; The default value of this field is
-     * <code>false</code>. </p>
+     * criteria for multiple rules, and each rule has different actions. If a rule is
+     * terminal, Security Hub applies the rule action to a finding that matches the
+     * rule criteria and doesn't evaluate other rules for the finding. By default, a
+     * rule isn't terminal. </p>
      */
     inline void SetIsTerminal(bool value) { m_isTerminalHasBeenSet = true; m_isTerminal = value; }
 
     /**
      * <p>Specifies whether a rule is the last to be applied with respect to a finding
      * that matches the rule criteria. This is useful when a finding matches the
-     * criteria for multiple rules, and each rule has different actions. If the value
-     * of this field is set to <code>true</code> for a rule, Security Hub applies the
-     * rule action to a finding that matches the rule criteria and doesn't evaluate
-     * other rules for the finding.&#x2028; The default value of this field is
-     * <code>false</code>. </p>
+     * criteria for multiple rules, and each rule has different actions. If a rule is
+     * terminal, Security Hub applies the rule action to a finding that matches the
+     * rule criteria and doesn't evaluate other rules for the finding. By default, a
+     * rule isn't terminal. </p>
      */
     inline AutomationRulesConfig& WithIsTerminal(bool value) { SetIsTerminal(value); return *this;}
 

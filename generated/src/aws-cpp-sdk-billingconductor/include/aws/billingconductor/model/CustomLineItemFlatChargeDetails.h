@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p> A representation of the charge details that are associated with a flat
-   * custom line item. </p><p><h3>See Also:</h3>   <a
+   * <p>A representation of the charge details that are associated with a flat custom
+   * line item.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CustomLineItemFlatChargeDetails">AWS
    * API Reference</a></p>
    */
@@ -37,22 +37,22 @@ namespace Model
 
 
     /**
-     * <p> The custom line item's fixed charge value in USD. </p>
+     * <p>The custom line item's fixed charge value in USD.</p>
      */
     inline double GetChargeValue() const{ return m_chargeValue; }
 
     /**
-     * <p> The custom line item's fixed charge value in USD. </p>
+     * <p>The custom line item's fixed charge value in USD.</p>
      */
     inline bool ChargeValueHasBeenSet() const { return m_chargeValueHasBeenSet; }
 
     /**
-     * <p> The custom line item's fixed charge value in USD. </p>
+     * <p>The custom line item's fixed charge value in USD.</p>
      */
     inline void SetChargeValue(double value) { m_chargeValueHasBeenSet = true; m_chargeValue = value; }
 
     /**
-     * <p> The custom line item's fixed charge value in USD. </p>
+     * <p>The custom line item's fixed charge value in USD.</p>
      */
     inline CustomLineItemFlatChargeDetails& WithChargeValue(double value) { SetChargeValue(value); return *this;}
 

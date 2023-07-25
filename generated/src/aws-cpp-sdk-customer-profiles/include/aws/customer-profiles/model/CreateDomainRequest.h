@@ -8,6 +8,7 @@
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/model/MatchingRequest.h>
+#include <aws/customer-profiles/model/RuleBasedMatchingRequest.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -304,6 +305,79 @@ namespace Model
 
 
     /**
+     * <p>The process of matching duplicate profiles using the Rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline const RuleBasedMatchingRequest& GetRuleBasedMatching() const{ return m_ruleBasedMatching; }
+
+    /**
+     * <p>The process of matching duplicate profiles using the Rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline bool RuleBasedMatchingHasBeenSet() const { return m_ruleBasedMatchingHasBeenSet; }
+
+    /**
+     * <p>The process of matching duplicate profiles using the Rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline void SetRuleBasedMatching(const RuleBasedMatchingRequest& value) { m_ruleBasedMatchingHasBeenSet = true; m_ruleBasedMatching = value; }
+
+    /**
+     * <p>The process of matching duplicate profiles using the Rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline void SetRuleBasedMatching(RuleBasedMatchingRequest&& value) { m_ruleBasedMatchingHasBeenSet = true; m_ruleBasedMatching = std::move(value); }
+
+    /**
+     * <p>The process of matching duplicate profiles using the Rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline CreateDomainRequest& WithRuleBasedMatching(const RuleBasedMatchingRequest& value) { SetRuleBasedMatching(value); return *this;}
+
+    /**
+     * <p>The process of matching duplicate profiles using the Rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline CreateDomainRequest& WithRuleBasedMatching(RuleBasedMatchingRequest&& value) { SetRuleBasedMatching(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -384,6 +458,9 @@ namespace Model
 
     MatchingRequest m_matching;
     bool m_matchingHasBeenSet = false;
+
+    RuleBasedMatchingRequest m_ruleBasedMatching;
+    bool m_ruleBasedMatchingHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

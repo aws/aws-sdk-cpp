@@ -43,6 +43,7 @@
 #include <aws/customer-profiles/model/GetMatchesResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateResult.h>
+#include <aws/customer-profiles/model/GetSimilarProfilesResult.h>
 #include <aws/customer-profiles/model/GetWorkflowResult.h>
 #include <aws/customer-profiles/model/GetWorkflowStepsResult.h>
 #include <aws/customer-profiles/model/ListAccountIntegrationsResult.h>
@@ -55,6 +56,7 @@
 #include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypesResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectsResult.h>
+#include <aws/customer-profiles/model/ListRuleBasedMatchesResult.h>
 #include <aws/customer-profiles/model/ListTagsForResourceResult.h>
 #include <aws/customer-profiles/model/ListWorkflowsResult.h>
 #include <aws/customer-profiles/model/MergeProfilesResult.h>
@@ -132,6 +134,7 @@ namespace Aws
       class GetMatchesRequest;
       class GetProfileObjectTypeRequest;
       class GetProfileObjectTypeTemplateRequest;
+      class GetSimilarProfilesRequest;
       class GetWorkflowRequest;
       class GetWorkflowStepsRequest;
       class ListAccountIntegrationsRequest;
@@ -144,6 +147,7 @@ namespace Aws
       class ListProfileObjectTypeTemplatesRequest;
       class ListProfileObjectTypesRequest;
       class ListProfileObjectsRequest;
+      class ListRuleBasedMatchesRequest;
       class ListTagsForResourceRequest;
       class ListWorkflowsRequest;
       class MergeProfilesRequest;
@@ -184,6 +188,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetMatchesResult, CustomerProfilesError> GetMatchesOutcome;
       typedef Aws::Utils::Outcome<GetProfileObjectTypeResult, CustomerProfilesError> GetProfileObjectTypeOutcome;
       typedef Aws::Utils::Outcome<GetProfileObjectTypeTemplateResult, CustomerProfilesError> GetProfileObjectTypeTemplateOutcome;
+      typedef Aws::Utils::Outcome<GetSimilarProfilesResult, CustomerProfilesError> GetSimilarProfilesOutcome;
       typedef Aws::Utils::Outcome<GetWorkflowResult, CustomerProfilesError> GetWorkflowOutcome;
       typedef Aws::Utils::Outcome<GetWorkflowStepsResult, CustomerProfilesError> GetWorkflowStepsOutcome;
       typedef Aws::Utils::Outcome<ListAccountIntegrationsResult, CustomerProfilesError> ListAccountIntegrationsOutcome;
@@ -196,6 +201,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListProfileObjectTypeTemplatesResult, CustomerProfilesError> ListProfileObjectTypeTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListProfileObjectTypesResult, CustomerProfilesError> ListProfileObjectTypesOutcome;
       typedef Aws::Utils::Outcome<ListProfileObjectsResult, CustomerProfilesError> ListProfileObjectsOutcome;
+      typedef Aws::Utils::Outcome<ListRuleBasedMatchesResult, CustomerProfilesError> ListRuleBasedMatchesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, CustomerProfilesError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListWorkflowsResult, CustomerProfilesError> ListWorkflowsOutcome;
       typedef Aws::Utils::Outcome<MergeProfilesResult, CustomerProfilesError> MergeProfilesOutcome;
@@ -236,6 +242,7 @@ namespace Aws
       typedef std::future<GetMatchesOutcome> GetMatchesOutcomeCallable;
       typedef std::future<GetProfileObjectTypeOutcome> GetProfileObjectTypeOutcomeCallable;
       typedef std::future<GetProfileObjectTypeTemplateOutcome> GetProfileObjectTypeTemplateOutcomeCallable;
+      typedef std::future<GetSimilarProfilesOutcome> GetSimilarProfilesOutcomeCallable;
       typedef std::future<GetWorkflowOutcome> GetWorkflowOutcomeCallable;
       typedef std::future<GetWorkflowStepsOutcome> GetWorkflowStepsOutcomeCallable;
       typedef std::future<ListAccountIntegrationsOutcome> ListAccountIntegrationsOutcomeCallable;
@@ -248,6 +255,7 @@ namespace Aws
       typedef std::future<ListProfileObjectTypeTemplatesOutcome> ListProfileObjectTypeTemplatesOutcomeCallable;
       typedef std::future<ListProfileObjectTypesOutcome> ListProfileObjectTypesOutcomeCallable;
       typedef std::future<ListProfileObjectsOutcome> ListProfileObjectsOutcomeCallable;
+      typedef std::future<ListRuleBasedMatchesOutcome> ListRuleBasedMatchesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
       typedef std::future<MergeProfilesOutcome> MergeProfilesOutcomeCallable;
@@ -291,6 +299,7 @@ namespace Aws
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetMatchesRequest&, const Model::GetMatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMatchesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileObjectTypeRequest&, const Model::GetProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileObjectTypeResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileObjectTypeTemplateRequest&, const Model::GetProfileObjectTypeTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileObjectTypeTemplateResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::GetSimilarProfilesRequest&, const Model::GetSimilarProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSimilarProfilesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetWorkflowRequest&, const Model::GetWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetWorkflowStepsRequest&, const Model::GetWorkflowStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowStepsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListAccountIntegrationsRequest&, const Model::ListAccountIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountIntegrationsResponseReceivedHandler;
@@ -303,6 +312,7 @@ namespace Aws
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectTypeTemplatesRequest&, const Model::ListProfileObjectTypeTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectTypeTemplatesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectTypesRequest&, const Model::ListProfileObjectTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectTypesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectsRequest&, const Model::ListProfileObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectsResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::ListRuleBasedMatchesRequest&, const Model::ListRuleBasedMatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleBasedMatchesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListWorkflowsRequest&, const Model::ListWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::MergeProfilesRequest&, const Model::MergeProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeProfilesResponseReceivedHandler;

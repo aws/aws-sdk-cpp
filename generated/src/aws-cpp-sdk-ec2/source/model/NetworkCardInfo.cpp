@@ -25,7 +25,11 @@ NetworkCardInfo::NetworkCardInfo() :
     m_networkCardIndexHasBeenSet(false),
     m_networkPerformanceHasBeenSet(false),
     m_maximumNetworkInterfaces(0),
-    m_maximumNetworkInterfacesHasBeenSet(false)
+    m_maximumNetworkInterfacesHasBeenSet(false),
+    m_baselineBandwidthInGbps(0.0),
+    m_baselineBandwidthInGbpsHasBeenSet(false),
+    m_peakBandwidthInGbps(0.0),
+    m_peakBandwidthInGbpsHasBeenSet(false)
 {
 }
 
@@ -34,7 +38,11 @@ NetworkCardInfo::NetworkCardInfo(const XmlNode& xmlNode) :
     m_networkCardIndexHasBeenSet(false),
     m_networkPerformanceHasBeenSet(false),
     m_maximumNetworkInterfaces(0),
-    m_maximumNetworkInterfacesHasBeenSet(false)
+    m_maximumNetworkInterfacesHasBeenSet(false),
+    m_baselineBandwidthInGbps(0.0),
+    m_baselineBandwidthInGbpsHasBeenSet(false),
+    m_peakBandwidthInGbps(0.0),
+    m_peakBandwidthInGbpsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -63,6 +71,18 @@ NetworkCardInfo& NetworkCardInfo::operator =(const XmlNode& xmlNode)
       m_maximumNetworkInterfaces = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkInterfacesNode.GetText()).c_str()).c_str());
       m_maximumNetworkInterfacesHasBeenSet = true;
     }
+    XmlNode baselineBandwidthInGbpsNode = resultNode.FirstChild("baselineBandwidthInGbps");
+    if(!baselineBandwidthInGbpsNode.IsNull())
+    {
+      m_baselineBandwidthInGbps = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(baselineBandwidthInGbpsNode.GetText()).c_str()).c_str());
+      m_baselineBandwidthInGbpsHasBeenSet = true;
+    }
+    XmlNode peakBandwidthInGbpsNode = resultNode.FirstChild("peakBandwidthInGbps");
+    if(!peakBandwidthInGbpsNode.IsNull())
+    {
+      m_peakBandwidthInGbps = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(peakBandwidthInGbpsNode.GetText()).c_str()).c_str());
+      m_peakBandwidthInGbpsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -85,6 +105,16 @@ void NetworkCardInfo::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".MaximumNetworkInterfaces=" << m_maximumNetworkInterfaces << "&";
   }
 
+  if(m_baselineBandwidthInGbpsHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".BaselineBandwidthInGbps=" << StringUtils::URLEncode(m_baselineBandwidthInGbps) << "&";
+  }
+
+  if(m_peakBandwidthInGbpsHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".PeakBandwidthInGbps=" << StringUtils::URLEncode(m_peakBandwidthInGbps) << "&";
+  }
+
 }
 
 void NetworkCardInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -100,6 +130,14 @@ void NetworkCardInfo::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_maximumNetworkInterfacesHasBeenSet)
   {
       oStream << location << ".MaximumNetworkInterfaces=" << m_maximumNetworkInterfaces << "&";
+  }
+  if(m_baselineBandwidthInGbpsHasBeenSet)
+  {
+        oStream << location << ".BaselineBandwidthInGbps=" << StringUtils::URLEncode(m_baselineBandwidthInGbps) << "&";
+  }
+  if(m_peakBandwidthInGbpsHasBeenSet)
+  {
+        oStream << location << ".PeakBandwidthInGbps=" << StringUtils::URLEncode(m_peakBandwidthInGbps) << "&";
   }
 }
 

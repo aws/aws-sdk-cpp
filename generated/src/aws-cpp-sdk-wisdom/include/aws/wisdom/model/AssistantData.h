@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wisdom/model/AssistantIntegrationConfiguration.h>
 #include <aws/wisdom/model/ServerSideEncryptionConfiguration.h>
 #include <aws/wisdom/model/AssistantStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -162,6 +163,37 @@ namespace Model
      * <p>The description.</p>
      */
     inline AssistantData& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline const AssistantIntegrationConfiguration& GetIntegrationConfiguration() const{ return m_integrationConfiguration; }
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline bool IntegrationConfigurationHasBeenSet() const { return m_integrationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline void SetIntegrationConfiguration(const AssistantIntegrationConfiguration& value) { m_integrationConfigurationHasBeenSet = true; m_integrationConfiguration = value; }
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline void SetIntegrationConfiguration(AssistantIntegrationConfiguration&& value) { m_integrationConfigurationHasBeenSet = true; m_integrationConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline AssistantData& WithIntegrationConfiguration(const AssistantIntegrationConfiguration& value) { SetIntegrationConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration information for the Wisdom assistant integration.</p>
+     */
+    inline AssistantData& WithIntegrationConfiguration(AssistantIntegrationConfiguration&& value) { SetIntegrationConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -373,6 +405,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    AssistantIntegrationConfiguration m_integrationConfiguration;
+    bool m_integrationConfigurationHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

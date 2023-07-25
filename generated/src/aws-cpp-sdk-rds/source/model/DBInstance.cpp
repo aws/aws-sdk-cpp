@@ -125,7 +125,8 @@ DBInstance::DBInstance() :
     m_dBSystemIdHasBeenSet(false),
     m_masterUserSecretHasBeenSet(false),
     m_certificateDetailsHasBeenSet(false),
-    m_readReplicaSourceDBClusterIdentifierHasBeenSet(false)
+    m_readReplicaSourceDBClusterIdentifierHasBeenSet(false),
+    m_percentProgressHasBeenSet(false)
 {
 }
 
@@ -234,7 +235,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_dBSystemIdHasBeenSet(false),
     m_masterUserSecretHasBeenSet(false),
     m_certificateDetailsHasBeenSet(false),
-    m_readReplicaSourceDBClusterIdentifierHasBeenSet(false)
+    m_readReplicaSourceDBClusterIdentifierHasBeenSet(false),
+    m_percentProgressHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -809,6 +811,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_readReplicaSourceDBClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(readReplicaSourceDBClusterIdentifierNode.GetText());
       m_readReplicaSourceDBClusterIdentifierHasBeenSet = true;
     }
+    XmlNode percentProgressNode = resultNode.FirstChild("PercentProgress");
+    if(!percentProgressNode.IsNull())
+    {
+      m_percentProgress = Aws::Utils::Xml::DecodeEscapedXmlText(percentProgressNode.GetText());
+      m_percentProgressHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1305,6 +1313,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".ReadReplicaSourceDBClusterIdentifier=" << StringUtils::URLEncode(m_readReplicaSourceDBClusterIdentifier.c_str()) << "&";
   }
 
+  if(m_percentProgressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PercentProgress=" << StringUtils::URLEncode(m_percentProgress.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1716,6 +1729,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_readReplicaSourceDBClusterIdentifierHasBeenSet)
   {
       oStream << location << ".ReadReplicaSourceDBClusterIdentifier=" << StringUtils::URLEncode(m_readReplicaSourceDBClusterIdentifier.c_str()) << "&";
+  }
+  if(m_percentProgressHasBeenSet)
+  {
+      oStream << location << ".PercentProgress=" << StringUtils::URLEncode(m_percentProgress.c_str()) << "&";
   }
 }
 

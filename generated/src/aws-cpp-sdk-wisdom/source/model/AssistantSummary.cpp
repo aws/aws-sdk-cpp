@@ -22,6 +22,7 @@ AssistantSummary::AssistantSummary() :
     m_assistantArnHasBeenSet(false),
     m_assistantIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_integrationConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_status(AssistantStatus::NOT_SET),
@@ -36,6 +37,7 @@ AssistantSummary::AssistantSummary(JsonView jsonValue) :
     m_assistantArnHasBeenSet(false),
     m_assistantIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_integrationConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_status(AssistantStatus::NOT_SET),
@@ -68,6 +70,13 @@ AssistantSummary& AssistantSummary::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("integrationConfiguration"))
+  {
+    m_integrationConfiguration = jsonValue.GetObject("integrationConfiguration");
+
+    m_integrationConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -130,6 +139,12 @@ JsonValue AssistantSummary::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_integrationConfigurationHasBeenSet)
+  {
+   payload.WithObject("integrationConfiguration", m_integrationConfiguration.Jsonize());
 
   }
 

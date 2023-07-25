@@ -154,7 +154,7 @@ namespace CustomerProfiles
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
          * to enable <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-         * resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent
+         * resolution</a>: set <code>Matching</code> to true.</p> <p>To prevent
          * cross-service impersonation when you call this API, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
          * confused deputy prevention</a> for sample policies that you should apply.
@@ -808,6 +808,35 @@ namespace CustomerProfiles
         }
 
         /**
+         * <p>Returns a set of profiles that belong to the same matching group using the
+         * <code>matchId</code> or <code>profileId</code>. You can also specify the type of
+         * matching that you want for finding similar profiles using either
+         * <code>RULE_BASED_MATCHING</code> or
+         * <code>ML_BASED_MATCHING</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSimilarProfilesOutcome GetSimilarProfiles(const Model::GetSimilarProfilesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSimilarProfiles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSimilarProfilesRequestT = Model::GetSimilarProfilesRequest>
+        Model::GetSimilarProfilesOutcomeCallable GetSimilarProfilesCallable(const GetSimilarProfilesRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::GetSimilarProfiles, request);
+        }
+
+        /**
+         * An Async wrapper for GetSimilarProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSimilarProfilesRequestT = Model::GetSimilarProfilesRequest>
+        void GetSimilarProfilesAsync(const GetSimilarProfilesRequestT& request, const GetSimilarProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::GetSimilarProfiles, request, handler, context);
+        }
+
+        /**
          * <p>Get details of specified workflow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetWorkflow">AWS
          * API Reference</a></p>
@@ -1114,6 +1143,32 @@ namespace CustomerProfiles
         void ListProfileObjectsAsync(const ListProfileObjectsRequestT& request, const ListProfileObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::ListProfileObjects, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a set of <code>MatchIds</code> that belong to the given
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRuleBasedMatchesOutcome ListRuleBasedMatches(const Model::ListRuleBasedMatchesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRuleBasedMatches that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRuleBasedMatchesRequestT = Model::ListRuleBasedMatchesRequest>
+        Model::ListRuleBasedMatchesOutcomeCallable ListRuleBasedMatchesCallable(const ListRuleBasedMatchesRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::ListRuleBasedMatches, request);
+        }
+
+        /**
+         * An Async wrapper for ListRuleBasedMatches that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRuleBasedMatchesRequestT = Model::ListRuleBasedMatchesRequest>
+        void ListRuleBasedMatchesAsync(const ListRuleBasedMatchesRequestT& request, const ListRuleBasedMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::ListRuleBasedMatches, request, handler, context);
         }
 
         /**
@@ -1434,7 +1489,7 @@ namespace CustomerProfiles
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
          * to enable <a
          * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-         * resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent
+         * resolution</a>: set <code>Matching</code> to true.</p> <p>To prevent
          * cross-service impersonation when you call this API, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
          * confused deputy prevention</a> for sample policies that you should apply. </p>

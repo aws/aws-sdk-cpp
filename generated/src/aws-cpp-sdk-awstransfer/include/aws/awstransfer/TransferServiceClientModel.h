@@ -53,6 +53,7 @@
 #include <aws/awstransfer/model/ListWorkflowsResult.h>
 #include <aws/awstransfer/model/SendWorkflowStepStateResult.h>
 #include <aws/awstransfer/model/StartFileTransferResult.h>
+#include <aws/awstransfer/model/TestConnectionResult.h>
 #include <aws/awstransfer/model/TestIdentityProviderResult.h>
 #include <aws/awstransfer/model/UpdateAccessResult.h>
 #include <aws/awstransfer/model/UpdateAgreementResult.h>
@@ -151,6 +152,7 @@ namespace Aws
       class StartServerRequest;
       class StopServerRequest;
       class TagResourceRequest;
+      class TestConnectionRequest;
       class TestIdentityProviderRequest;
       class UntagResourceRequest;
       class UpdateAccessRequest;
@@ -212,6 +214,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> StartServerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> StopServerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<TestConnectionResult, TransferError> TestConnectionOutcome;
       typedef Aws::Utils::Outcome<TestIdentityProviderResult, TransferError> TestIdentityProviderOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, TransferError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAccessResult, TransferError> UpdateAccessOutcome;
@@ -273,6 +276,7 @@ namespace Aws
       typedef std::future<StartServerOutcome> StartServerOutcomeCallable;
       typedef std::future<StopServerOutcome> StopServerOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<TestConnectionOutcome> TestConnectionOutcomeCallable;
       typedef std::future<TestIdentityProviderOutcome> TestIdentityProviderOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAccessOutcome> UpdateAccessOutcomeCallable;
@@ -337,6 +341,7 @@ namespace Aws
     typedef std::function<void(const TransferClient*, const Model::StartServerRequest&, const Model::StartServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartServerResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::StopServerRequest&, const Model::StopServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopServerResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const TransferClient*, const Model::TestConnectionRequest&, const Model::TestConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestConnectionResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::TestIdentityProviderRequest&, const Model::TestIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::UpdateAccessRequest&, const Model::UpdateAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccessResponseReceivedHandler;
