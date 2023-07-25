@@ -3815,6 +3815,47 @@ namespace Model
      */
     inline DBInstance& WithReadReplicaSourceDBClusterIdentifier(const char* value) { SetReadReplicaSourceDBClusterIdentifier(value); return *this;}
 
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline const Aws::String& GetPercentProgress() const{ return m_percentProgress; }
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline bool PercentProgressHasBeenSet() const { return m_percentProgressHasBeenSet; }
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline void SetPercentProgress(const Aws::String& value) { m_percentProgressHasBeenSet = true; m_percentProgress = value; }
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline void SetPercentProgress(Aws::String&& value) { m_percentProgressHasBeenSet = true; m_percentProgress = std::move(value); }
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline void SetPercentProgress(const char* value) { m_percentProgressHasBeenSet = true; m_percentProgress.assign(value); }
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline DBInstance& WithPercentProgress(const Aws::String& value) { SetPercentProgress(value); return *this;}
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline DBInstance& WithPercentProgress(Aws::String&& value) { SetPercentProgress(std::move(value)); return *this;}
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline DBInstance& WithPercentProgress(const char* value) { SetPercentProgress(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -4059,6 +4100,9 @@ namespace Model
 
     Aws::String m_readReplicaSourceDBClusterIdentifier;
     bool m_readReplicaSourceDBClusterIdentifierHasBeenSet = false;
+
+    Aws::String m_percentProgress;
+    bool m_percentProgressHasBeenSet = false;
   };
 
 } // namespace Model

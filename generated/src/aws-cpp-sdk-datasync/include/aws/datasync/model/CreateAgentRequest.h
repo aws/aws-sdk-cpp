@@ -288,7 +288,7 @@ namespace Model
      * using a VPC endpoint. This is the subnet where DataSync creates and manages the
      * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> for your transfer.</p>
+     * interfaces</a> for your transfer. You can only specify one ARN.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetArns() const{ return m_subnetArns; }
 
@@ -297,7 +297,7 @@ namespace Model
      * using a VPC endpoint. This is the subnet where DataSync creates and manages the
      * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> for your transfer.</p>
+     * interfaces</a> for your transfer. You can only specify one ARN.</p>
      */
     inline bool SubnetArnsHasBeenSet() const { return m_subnetArnsHasBeenSet; }
 
@@ -306,7 +306,7 @@ namespace Model
      * using a VPC endpoint. This is the subnet where DataSync creates and manages the
      * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> for your transfer.</p>
+     * interfaces</a> for your transfer. You can only specify one ARN.</p>
      */
     inline void SetSubnetArns(const Aws::Vector<Aws::String>& value) { m_subnetArnsHasBeenSet = true; m_subnetArns = value; }
 
@@ -315,7 +315,7 @@ namespace Model
      * using a VPC endpoint. This is the subnet where DataSync creates and manages the
      * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> for your transfer.</p>
+     * interfaces</a> for your transfer. You can only specify one ARN.</p>
      */
     inline void SetSubnetArns(Aws::Vector<Aws::String>&& value) { m_subnetArnsHasBeenSet = true; m_subnetArns = std::move(value); }
 
@@ -324,7 +324,7 @@ namespace Model
      * using a VPC endpoint. This is the subnet where DataSync creates and manages the
      * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> for your transfer.</p>
+     * interfaces</a> for your transfer. You can only specify one ARN.</p>
      */
     inline CreateAgentRequest& WithSubnetArns(const Aws::Vector<Aws::String>& value) { SetSubnetArns(value); return *this;}
 
@@ -333,7 +333,7 @@ namespace Model
      * using a VPC endpoint. This is the subnet where DataSync creates and manages the
      * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> for your transfer.</p>
+     * interfaces</a> for your transfer. You can only specify one ARN.</p>
      */
     inline CreateAgentRequest& WithSubnetArns(Aws::Vector<Aws::String>&& value) { SetSubnetArns(std::move(value)); return *this;}
 
@@ -342,7 +342,7 @@ namespace Model
      * using a VPC endpoint. This is the subnet where DataSync creates and manages the
      * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> for your transfer.</p>
+     * interfaces</a> for your transfer. You can only specify one ARN.</p>
      */
     inline CreateAgentRequest& AddSubnetArns(const Aws::String& value) { m_subnetArnsHasBeenSet = true; m_subnetArns.push_back(value); return *this; }
 
@@ -351,7 +351,7 @@ namespace Model
      * using a VPC endpoint. This is the subnet where DataSync creates and manages the
      * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> for your transfer.</p>
+     * interfaces</a> for your transfer. You can only specify one ARN.</p>
      */
     inline CreateAgentRequest& AddSubnetArns(Aws::String&& value) { m_subnetArnsHasBeenSet = true; m_subnetArns.push_back(std::move(value)); return *this; }
 
@@ -360,7 +360,7 @@ namespace Model
      * using a VPC endpoint. This is the subnet where DataSync creates and manages the
      * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> for your transfer.</p>
+     * interfaces</a> for your transfer. You can only specify one ARN.</p>
      */
     inline CreateAgentRequest& AddSubnetArns(const char* value) { m_subnetArnsHasBeenSet = true; m_subnetArns.push_back(value); return *this; }
 
@@ -371,7 +371,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
-     * a virtual private cloud (VPC) endpoint</a>.</p>
+     * a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
 
@@ -381,7 +381,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
-     * a virtual private cloud (VPC) endpoint</a>.</p>
+     * a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
      */
     inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }
 
@@ -391,7 +391,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
-     * a virtual private cloud (VPC) endpoint</a>.</p>
+     * a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
      */
     inline void SetSecurityGroupArns(const Aws::Vector<Aws::String>& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = value; }
 
@@ -401,7 +401,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
-     * a virtual private cloud (VPC) endpoint</a>.</p>
+     * a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
      */
     inline void SetSecurityGroupArns(Aws::Vector<Aws::String>&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = std::move(value); }
 
@@ -411,7 +411,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
-     * a virtual private cloud (VPC) endpoint</a>.</p>
+     * a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
      */
     inline CreateAgentRequest& WithSecurityGroupArns(const Aws::Vector<Aws::String>& value) { SetSecurityGroupArns(value); return *this;}
 
@@ -421,7 +421,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
-     * a virtual private cloud (VPC) endpoint</a>.</p>
+     * a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
      */
     inline CreateAgentRequest& WithSecurityGroupArns(Aws::Vector<Aws::String>&& value) { SetSecurityGroupArns(std::move(value)); return *this;}
 
@@ -431,7 +431,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
-     * a virtual private cloud (VPC) endpoint</a>.</p>
+     * a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
      */
     inline CreateAgentRequest& AddSecurityGroupArns(const Aws::String& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 
@@ -441,7 +441,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
-     * a virtual private cloud (VPC) endpoint</a>.</p>
+     * a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
      */
     inline CreateAgentRequest& AddSecurityGroupArns(Aws::String&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(std::move(value)); return *this; }
 
@@ -451,7 +451,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
      * interfaces</a> when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
-     * a virtual private cloud (VPC) endpoint</a>.</p>
+     * a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
      */
     inline CreateAgentRequest& AddSecurityGroupArns(const char* value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 

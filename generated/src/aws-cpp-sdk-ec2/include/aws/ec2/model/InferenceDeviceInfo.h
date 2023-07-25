@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/InferenceDeviceMemoryInfo.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,37 @@ namespace Model
      */
     inline InferenceDeviceInfo& WithManufacturer(const char* value) { SetManufacturer(value); return *this;}
 
+
+    /**
+     * <p>Describes the memory available to the inference accelerator.</p>
+     */
+    inline const InferenceDeviceMemoryInfo& GetMemoryInfo() const{ return m_memoryInfo; }
+
+    /**
+     * <p>Describes the memory available to the inference accelerator.</p>
+     */
+    inline bool MemoryInfoHasBeenSet() const { return m_memoryInfoHasBeenSet; }
+
+    /**
+     * <p>Describes the memory available to the inference accelerator.</p>
+     */
+    inline void SetMemoryInfo(const InferenceDeviceMemoryInfo& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = value; }
+
+    /**
+     * <p>Describes the memory available to the inference accelerator.</p>
+     */
+    inline void SetMemoryInfo(InferenceDeviceMemoryInfo&& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = std::move(value); }
+
+    /**
+     * <p>Describes the memory available to the inference accelerator.</p>
+     */
+    inline InferenceDeviceInfo& WithMemoryInfo(const InferenceDeviceMemoryInfo& value) { SetMemoryInfo(value); return *this;}
+
+    /**
+     * <p>Describes the memory available to the inference accelerator.</p>
+     */
+    inline InferenceDeviceInfo& WithMemoryInfo(InferenceDeviceMemoryInfo&& value) { SetMemoryInfo(std::move(value)); return *this;}
+
   private:
 
     int m_count;
@@ -152,6 +184,9 @@ namespace Model
 
     Aws::String m_manufacturer;
     bool m_manufacturerHasBeenSet = false;
+
+    InferenceDeviceMemoryInfo m_memoryInfo;
+    bool m_memoryInfoHasBeenSet = false;
   };
 
 } // namespace Model

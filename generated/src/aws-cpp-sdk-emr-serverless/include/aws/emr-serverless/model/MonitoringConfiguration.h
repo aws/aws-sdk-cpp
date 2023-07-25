@@ -7,6 +7,7 @@
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/emr-serverless/model/S3MonitoringConfiguration.h>
 #include <aws/emr-serverless/model/ManagedPersistenceMonitoringConfiguration.h>
+#include <aws/emr-serverless/model/CloudWatchLoggingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +100,43 @@ namespace Model
      */
     inline MonitoringConfiguration& WithManagedPersistenceMonitoringConfiguration(ManagedPersistenceMonitoringConfiguration&& value) { SetManagedPersistenceMonitoringConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
+     * your jobs to send log information to CloudWatch.</p>
+     */
+    inline const CloudWatchLoggingConfiguration& GetCloudWatchLoggingConfiguration() const{ return m_cloudWatchLoggingConfiguration; }
+
+    /**
+     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
+     * your jobs to send log information to CloudWatch.</p>
+     */
+    inline bool CloudWatchLoggingConfigurationHasBeenSet() const { return m_cloudWatchLoggingConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
+     * your jobs to send log information to CloudWatch.</p>
+     */
+    inline void SetCloudWatchLoggingConfiguration(const CloudWatchLoggingConfiguration& value) { m_cloudWatchLoggingConfigurationHasBeenSet = true; m_cloudWatchLoggingConfiguration = value; }
+
+    /**
+     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
+     * your jobs to send log information to CloudWatch.</p>
+     */
+    inline void SetCloudWatchLoggingConfiguration(CloudWatchLoggingConfiguration&& value) { m_cloudWatchLoggingConfigurationHasBeenSet = true; m_cloudWatchLoggingConfiguration = std::move(value); }
+
+    /**
+     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
+     * your jobs to send log information to CloudWatch.</p>
+     */
+    inline MonitoringConfiguration& WithCloudWatchLoggingConfiguration(const CloudWatchLoggingConfiguration& value) { SetCloudWatchLoggingConfiguration(value); return *this;}
+
+    /**
+     * <p>The Amazon CloudWatch configuration for monitoring logs. You can configure
+     * your jobs to send log information to CloudWatch.</p>
+     */
+    inline MonitoringConfiguration& WithCloudWatchLoggingConfiguration(CloudWatchLoggingConfiguration&& value) { SetCloudWatchLoggingConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3MonitoringConfiguration m_s3MonitoringConfiguration;
@@ -106,6 +144,9 @@ namespace Model
 
     ManagedPersistenceMonitoringConfiguration m_managedPersistenceMonitoringConfiguration;
     bool m_managedPersistenceMonitoringConfigurationHasBeenSet = false;
+
+    CloudWatchLoggingConfiguration m_cloudWatchLoggingConfiguration;
+    bool m_cloudWatchLoggingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

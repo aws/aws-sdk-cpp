@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/billingconductor/model/BillingGroupStatus.h>
 #include <aws/billingconductor/model/ComputationPreference.h>
+#include <aws/billingconductor/model/UpdateBillingGroupAccountGrouping.h>
 #include <utility>
 
 namespace Aws
@@ -238,6 +239,43 @@ namespace Model
      */
     inline UpdateBillingGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline const UpdateBillingGroupAccountGrouping& GetAccountGrouping() const{ return m_accountGrouping; }
+
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline bool AccountGroupingHasBeenSet() const { return m_accountGroupingHasBeenSet; }
+
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline void SetAccountGrouping(const UpdateBillingGroupAccountGrouping& value) { m_accountGroupingHasBeenSet = true; m_accountGrouping = value; }
+
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline void SetAccountGrouping(UpdateBillingGroupAccountGrouping&& value) { m_accountGroupingHasBeenSet = true; m_accountGrouping = std::move(value); }
+
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline UpdateBillingGroupRequest& WithAccountGrouping(const UpdateBillingGroupAccountGrouping& value) { SetAccountGrouping(value); return *this;}
+
+    /**
+     * <p>Specifies if the billing group has automatic account association
+     * (<code>AutoAssociate</code>) enabled.</p>
+     */
+    inline UpdateBillingGroupRequest& WithAccountGrouping(UpdateBillingGroupAccountGrouping&& value) { SetAccountGrouping(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -254,6 +292,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    UpdateBillingGroupAccountGrouping m_accountGrouping;
+    bool m_accountGroupingHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,7 +19,9 @@ namespace Model
     EQUALS,
     PREFIX,
     NOT_EQUALS,
-    PREFIX_NOT_EQUALS
+    PREFIX_NOT_EQUALS,
+    CONTAINS,
+    NOT_CONTAINS
   };
 
 namespace StringFilterComparisonMapper

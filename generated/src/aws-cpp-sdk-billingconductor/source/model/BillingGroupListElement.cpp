@@ -32,7 +32,8 @@ BillingGroupListElement::BillingGroupListElement() :
     m_lastModifiedTimeHasBeenSet(false),
     m_status(BillingGroupStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+    m_statusReasonHasBeenSet(false),
+    m_accountGroupingHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ BillingGroupListElement::BillingGroupListElement(JsonView jsonValue) :
     m_lastModifiedTimeHasBeenSet(false),
     m_status(BillingGroupStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+    m_statusReasonHasBeenSet(false),
+    m_accountGroupingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -127,6 +129,13 @@ BillingGroupListElement& BillingGroupListElement::operator =(JsonView jsonValue)
     m_statusReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AccountGrouping"))
+  {
+    m_accountGrouping = jsonValue.GetObject("AccountGrouping");
+
+    m_accountGroupingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -190,6 +199,12 @@ JsonValue BillingGroupListElement::Jsonize() const
   if(m_statusReasonHasBeenSet)
   {
    payload.WithString("StatusReason", m_statusReason);
+
+  }
+
+  if(m_accountGroupingHasBeenSet)
+  {
+   payload.WithObject("AccountGrouping", m_accountGrouping.Jsonize());
 
   }
 

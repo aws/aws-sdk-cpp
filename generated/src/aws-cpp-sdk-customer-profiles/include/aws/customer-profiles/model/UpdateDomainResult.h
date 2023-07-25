@@ -7,6 +7,7 @@
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/model/MatchingResponse.h>
+#include <aws/customer-profiles/model/RuleBasedMatchingResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -252,6 +253,67 @@ namespace Model
 
 
     /**
+     * <p>The process of matching duplicate profiles using the rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline const RuleBasedMatchingResponse& GetRuleBasedMatching() const{ return m_ruleBasedMatching; }
+
+    /**
+     * <p>The process of matching duplicate profiles using the rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline void SetRuleBasedMatching(const RuleBasedMatchingResponse& value) { m_ruleBasedMatching = value; }
+
+    /**
+     * <p>The process of matching duplicate profiles using the rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline void SetRuleBasedMatching(RuleBasedMatchingResponse&& value) { m_ruleBasedMatching = std::move(value); }
+
+    /**
+     * <p>The process of matching duplicate profiles using the rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline UpdateDomainResult& WithRuleBasedMatching(const RuleBasedMatchingResponse& value) { SetRuleBasedMatching(value); return *this;}
+
+    /**
+     * <p>The process of matching duplicate profiles using the rule-Based matching. If
+     * <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will
+     * start to match and merge your profiles according to your configuration in the
+     * <code>RuleBasedMatchingRequest</code>. You can use the
+     * <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to
+     * return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you
+     * can download the results from S3.</p>
+     */
+    inline UpdateDomainResult& WithRuleBasedMatching(RuleBasedMatchingResponse&& value) { SetRuleBasedMatching(std::move(value)); return *this;}
+
+
+    /**
      * <p>The timestamp of when the domain was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -396,6 +458,8 @@ namespace Model
     Aws::String m_deadLetterQueueUrl;
 
     MatchingResponse m_matching;
+
+    RuleBasedMatchingResponse m_ruleBasedMatching;
 
     Aws::Utils::DateTime m_createdAt;
 

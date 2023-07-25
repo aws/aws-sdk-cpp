@@ -20,6 +20,7 @@ namespace Model
 
 SessionData::SessionData() : 
     m_descriptionHasBeenSet(false),
+    m_integrationConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sessionArnHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -29,6 +30,7 @@ SessionData::SessionData() :
 
 SessionData::SessionData(JsonView jsonValue) : 
     m_descriptionHasBeenSet(false),
+    m_integrationConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sessionArnHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -44,6 +46,13 @@ SessionData& SessionData::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("integrationConfiguration"))
+  {
+    m_integrationConfiguration = jsonValue.GetObject("integrationConfiguration");
+
+    m_integrationConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -87,6 +96,12 @@ JsonValue SessionData::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_integrationConfigurationHasBeenSet)
+  {
+   payload.WithObject("integrationConfiguration", m_integrationConfiguration.Jsonize());
 
   }
 

@@ -180,7 +180,8 @@ namespace Model
      * <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the
      * identity provider. Your application must get this token by authenticating the
      * user who is using your application with a web identity provider before the
-     * application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+     * application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens
+     * with RSA algorithms (RS256) are supported.</p>
      */
     inline const Aws::String& GetWebIdentityToken() const{ return m_webIdentityToken; }
 
@@ -188,7 +189,8 @@ namespace Model
      * <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the
      * identity provider. Your application must get this token by authenticating the
      * user who is using your application with a web identity provider before the
-     * application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+     * application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens
+     * with RSA algorithms (RS256) are supported.</p>
      */
     inline bool WebIdentityTokenHasBeenSet() const { return m_webIdentityTokenHasBeenSet; }
 
@@ -196,7 +198,8 @@ namespace Model
      * <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the
      * identity provider. Your application must get this token by authenticating the
      * user who is using your application with a web identity provider before the
-     * application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+     * application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens
+     * with RSA algorithms (RS256) are supported.</p>
      */
     inline void SetWebIdentityToken(const Aws::String& value) { m_webIdentityTokenHasBeenSet = true; m_webIdentityToken = value; }
 
@@ -204,7 +207,8 @@ namespace Model
      * <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the
      * identity provider. Your application must get this token by authenticating the
      * user who is using your application with a web identity provider before the
-     * application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+     * application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens
+     * with RSA algorithms (RS256) are supported.</p>
      */
     inline void SetWebIdentityToken(Aws::String&& value) { m_webIdentityTokenHasBeenSet = true; m_webIdentityToken = std::move(value); }
 
@@ -212,7 +216,8 @@ namespace Model
      * <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the
      * identity provider. Your application must get this token by authenticating the
      * user who is using your application with a web identity provider before the
-     * application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+     * application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens
+     * with RSA algorithms (RS256) are supported.</p>
      */
     inline void SetWebIdentityToken(const char* value) { m_webIdentityTokenHasBeenSet = true; m_webIdentityToken.assign(value); }
 
@@ -220,7 +225,8 @@ namespace Model
      * <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the
      * identity provider. Your application must get this token by authenticating the
      * user who is using your application with a web identity provider before the
-     * application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+     * application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens
+     * with RSA algorithms (RS256) are supported.</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithWebIdentityToken(const Aws::String& value) { SetWebIdentityToken(value); return *this;}
 
@@ -228,7 +234,8 @@ namespace Model
      * <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the
      * identity provider. Your application must get this token by authenticating the
      * user who is using your application with a web identity provider before the
-     * application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+     * application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens
+     * with RSA algorithms (RS256) are supported.</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithWebIdentityToken(Aws::String&& value) { SetWebIdentityToken(std::move(value)); return *this;}
 
@@ -236,7 +243,8 @@ namespace Model
      * <p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the
      * identity provider. Your application must get this token by authenticating the
      * user who is using your application with a web identity provider before the
-     * application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>
+     * application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens
+     * with RSA algorithms (RS256) are supported.</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithWebIdentityToken(const char* value) { SetWebIdentityToken(value); return *this;}
 

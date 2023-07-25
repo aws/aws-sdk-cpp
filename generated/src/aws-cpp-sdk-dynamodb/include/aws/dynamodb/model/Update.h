@@ -383,48 +383,48 @@ namespace Model
     /**
      * <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item
      * attributes if the <code>Update</code> condition fails. For
-     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
-     * ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+     * ALL_OLD.</p>
      */
     inline const ReturnValuesOnConditionCheckFailure& GetReturnValuesOnConditionCheckFailure() const{ return m_returnValuesOnConditionCheckFailure; }
 
     /**
      * <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item
      * attributes if the <code>Update</code> condition fails. For
-     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
-     * ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+     * ALL_OLD.</p>
      */
     inline bool ReturnValuesOnConditionCheckFailureHasBeenSet() const { return m_returnValuesOnConditionCheckFailureHasBeenSet; }
 
     /**
      * <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item
      * attributes if the <code>Update</code> condition fails. For
-     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
-     * ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+     * ALL_OLD.</p>
      */
     inline void SetReturnValuesOnConditionCheckFailure(const ReturnValuesOnConditionCheckFailure& value) { m_returnValuesOnConditionCheckFailureHasBeenSet = true; m_returnValuesOnConditionCheckFailure = value; }
 
     /**
      * <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item
      * attributes if the <code>Update</code> condition fails. For
-     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
-     * ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+     * ALL_OLD.</p>
      */
     inline void SetReturnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure&& value) { m_returnValuesOnConditionCheckFailureHasBeenSet = true; m_returnValuesOnConditionCheckFailure = std::move(value); }
 
     /**
      * <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item
      * attributes if the <code>Update</code> condition fails. For
-     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
-     * ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+     * ALL_OLD.</p>
      */
     inline Update& WithReturnValuesOnConditionCheckFailure(const ReturnValuesOnConditionCheckFailure& value) { SetReturnValuesOnConditionCheckFailure(value); return *this;}
 
     /**
      * <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item
      * attributes if the <code>Update</code> condition fails. For
-     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,
-     * ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>
+     * <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and
+     * ALL_OLD.</p>
      */
     inline Update& WithReturnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure&& value) { SetReturnValuesOnConditionCheckFailure(std::move(value)); return *this;}
 

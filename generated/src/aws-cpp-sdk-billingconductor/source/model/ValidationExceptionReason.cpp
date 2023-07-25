@@ -77,6 +77,8 @@ namespace Aws
         static const int ILLEGAL_USAGE_TYPE_HASH = HashingUtils::HashString("ILLEGAL_USAGE_TYPE");
         static const int INVALID_SKU_COMBO_HASH = HashingUtils::HashString("INVALID_SKU_COMBO");
         static const int INVALID_FILTER_HASH = HashingUtils::HashString("INVALID_FILTER");
+        static const int TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS_HASH = HashingUtils::HashString("TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS");
+        static const int CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP_HASH = HashingUtils::HashString("CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -310,6 +312,14 @@ namespace Aws
           {
             return ValidationExceptionReason::INVALID_FILTER;
           }
+          else if (hashCode == TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS_HASH)
+          {
+            return ValidationExceptionReason::TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS;
+          }
+          else if (hashCode == CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP_HASH)
+          {
+            return ValidationExceptionReason::CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -438,6 +448,10 @@ namespace Aws
             return "INVALID_SKU_COMBO";
           case ValidationExceptionReason::INVALID_FILTER:
             return "INVALID_FILTER";
+          case ValidationExceptionReason::TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS:
+            return "TOO_MANY_AUTO_ASSOCIATE_BILLING_GROUPS";
+          case ValidationExceptionReason::CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP:
+            return "CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

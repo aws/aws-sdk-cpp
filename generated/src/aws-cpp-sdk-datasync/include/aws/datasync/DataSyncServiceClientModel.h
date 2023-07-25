@@ -21,6 +21,7 @@
 #include <aws/datasync/model/AddStorageSystemResult.h>
 #include <aws/datasync/model/CancelTaskExecutionResult.h>
 #include <aws/datasync/model/CreateAgentResult.h>
+#include <aws/datasync/model/CreateLocationAzureBlobResult.h>
 #include <aws/datasync/model/CreateLocationEfsResult.h>
 #include <aws/datasync/model/CreateLocationFsxLustreResult.h>
 #include <aws/datasync/model/CreateLocationFsxOntapResult.h>
@@ -37,6 +38,7 @@
 #include <aws/datasync/model/DeleteTaskResult.h>
 #include <aws/datasync/model/DescribeAgentResult.h>
 #include <aws/datasync/model/DescribeDiscoveryJobResult.h>
+#include <aws/datasync/model/DescribeLocationAzureBlobResult.h>
 #include <aws/datasync/model/DescribeLocationEfsResult.h>
 #include <aws/datasync/model/DescribeLocationFsxLustreResult.h>
 #include <aws/datasync/model/DescribeLocationFsxOntapResult.h>
@@ -68,6 +70,7 @@
 #include <aws/datasync/model/UntagResourceResult.h>
 #include <aws/datasync/model/UpdateAgentResult.h>
 #include <aws/datasync/model/UpdateDiscoveryJobResult.h>
+#include <aws/datasync/model/UpdateLocationAzureBlobResult.h>
 #include <aws/datasync/model/UpdateLocationHdfsResult.h>
 #include <aws/datasync/model/UpdateLocationNfsResult.h>
 #include <aws/datasync/model/UpdateLocationObjectStorageResult.h>
@@ -118,6 +121,7 @@ namespace Aws
       class AddStorageSystemRequest;
       class CancelTaskExecutionRequest;
       class CreateAgentRequest;
+      class CreateLocationAzureBlobRequest;
       class CreateLocationEfsRequest;
       class CreateLocationFsxLustreRequest;
       class CreateLocationFsxOntapRequest;
@@ -134,6 +138,7 @@ namespace Aws
       class DeleteTaskRequest;
       class DescribeAgentRequest;
       class DescribeDiscoveryJobRequest;
+      class DescribeLocationAzureBlobRequest;
       class DescribeLocationEfsRequest;
       class DescribeLocationFsxLustreRequest;
       class DescribeLocationFsxOntapRequest;
@@ -165,6 +170,7 @@ namespace Aws
       class UntagResourceRequest;
       class UpdateAgentRequest;
       class UpdateDiscoveryJobRequest;
+      class UpdateLocationAzureBlobRequest;
       class UpdateLocationHdfsRequest;
       class UpdateLocationNfsRequest;
       class UpdateLocationObjectStorageRequest;
@@ -178,6 +184,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AddStorageSystemResult, DataSyncError> AddStorageSystemOutcome;
       typedef Aws::Utils::Outcome<CancelTaskExecutionResult, DataSyncError> CancelTaskExecutionOutcome;
       typedef Aws::Utils::Outcome<CreateAgentResult, DataSyncError> CreateAgentOutcome;
+      typedef Aws::Utils::Outcome<CreateLocationAzureBlobResult, DataSyncError> CreateLocationAzureBlobOutcome;
       typedef Aws::Utils::Outcome<CreateLocationEfsResult, DataSyncError> CreateLocationEfsOutcome;
       typedef Aws::Utils::Outcome<CreateLocationFsxLustreResult, DataSyncError> CreateLocationFsxLustreOutcome;
       typedef Aws::Utils::Outcome<CreateLocationFsxOntapResult, DataSyncError> CreateLocationFsxOntapOutcome;
@@ -194,6 +201,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteTaskResult, DataSyncError> DeleteTaskOutcome;
       typedef Aws::Utils::Outcome<DescribeAgentResult, DataSyncError> DescribeAgentOutcome;
       typedef Aws::Utils::Outcome<DescribeDiscoveryJobResult, DataSyncError> DescribeDiscoveryJobOutcome;
+      typedef Aws::Utils::Outcome<DescribeLocationAzureBlobResult, DataSyncError> DescribeLocationAzureBlobOutcome;
       typedef Aws::Utils::Outcome<DescribeLocationEfsResult, DataSyncError> DescribeLocationEfsOutcome;
       typedef Aws::Utils::Outcome<DescribeLocationFsxLustreResult, DataSyncError> DescribeLocationFsxLustreOutcome;
       typedef Aws::Utils::Outcome<DescribeLocationFsxOntapResult, DataSyncError> DescribeLocationFsxOntapOutcome;
@@ -225,6 +233,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UntagResourceResult, DataSyncError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAgentResult, DataSyncError> UpdateAgentOutcome;
       typedef Aws::Utils::Outcome<UpdateDiscoveryJobResult, DataSyncError> UpdateDiscoveryJobOutcome;
+      typedef Aws::Utils::Outcome<UpdateLocationAzureBlobResult, DataSyncError> UpdateLocationAzureBlobOutcome;
       typedef Aws::Utils::Outcome<UpdateLocationHdfsResult, DataSyncError> UpdateLocationHdfsOutcome;
       typedef Aws::Utils::Outcome<UpdateLocationNfsResult, DataSyncError> UpdateLocationNfsOutcome;
       typedef Aws::Utils::Outcome<UpdateLocationObjectStorageResult, DataSyncError> UpdateLocationObjectStorageOutcome;
@@ -238,6 +247,7 @@ namespace Aws
       typedef std::future<AddStorageSystemOutcome> AddStorageSystemOutcomeCallable;
       typedef std::future<CancelTaskExecutionOutcome> CancelTaskExecutionOutcomeCallable;
       typedef std::future<CreateAgentOutcome> CreateAgentOutcomeCallable;
+      typedef std::future<CreateLocationAzureBlobOutcome> CreateLocationAzureBlobOutcomeCallable;
       typedef std::future<CreateLocationEfsOutcome> CreateLocationEfsOutcomeCallable;
       typedef std::future<CreateLocationFsxLustreOutcome> CreateLocationFsxLustreOutcomeCallable;
       typedef std::future<CreateLocationFsxOntapOutcome> CreateLocationFsxOntapOutcomeCallable;
@@ -254,6 +264,7 @@ namespace Aws
       typedef std::future<DeleteTaskOutcome> DeleteTaskOutcomeCallable;
       typedef std::future<DescribeAgentOutcome> DescribeAgentOutcomeCallable;
       typedef std::future<DescribeDiscoveryJobOutcome> DescribeDiscoveryJobOutcomeCallable;
+      typedef std::future<DescribeLocationAzureBlobOutcome> DescribeLocationAzureBlobOutcomeCallable;
       typedef std::future<DescribeLocationEfsOutcome> DescribeLocationEfsOutcomeCallable;
       typedef std::future<DescribeLocationFsxLustreOutcome> DescribeLocationFsxLustreOutcomeCallable;
       typedef std::future<DescribeLocationFsxOntapOutcome> DescribeLocationFsxOntapOutcomeCallable;
@@ -285,6 +296,7 @@ namespace Aws
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAgentOutcome> UpdateAgentOutcomeCallable;
       typedef std::future<UpdateDiscoveryJobOutcome> UpdateDiscoveryJobOutcomeCallable;
+      typedef std::future<UpdateLocationAzureBlobOutcome> UpdateLocationAzureBlobOutcomeCallable;
       typedef std::future<UpdateLocationHdfsOutcome> UpdateLocationHdfsOutcomeCallable;
       typedef std::future<UpdateLocationNfsOutcome> UpdateLocationNfsOutcomeCallable;
       typedef std::future<UpdateLocationObjectStorageOutcome> UpdateLocationObjectStorageOutcomeCallable;
@@ -301,6 +313,7 @@ namespace Aws
     typedef std::function<void(const DataSyncClient*, const Model::AddStorageSystemRequest&, const Model::AddStorageSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddStorageSystemResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CancelTaskExecutionRequest&, const Model::CancelTaskExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelTaskExecutionResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateAgentRequest&, const Model::CreateAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAgentResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::CreateLocationAzureBlobRequest&, const Model::CreateLocationAzureBlobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationAzureBlobResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationEfsRequest&, const Model::CreateLocationEfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationEfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationFsxLustreRequest&, const Model::CreateLocationFsxLustreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationFsxLustreResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::CreateLocationFsxOntapRequest&, const Model::CreateLocationFsxOntapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationFsxOntapResponseReceivedHandler;
@@ -317,6 +330,7 @@ namespace Aws
     typedef std::function<void(const DataSyncClient*, const Model::DeleteTaskRequest&, const Model::DeleteTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTaskResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeAgentRequest&, const Model::DescribeAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeDiscoveryJobRequest&, const Model::DescribeDiscoveryJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDiscoveryJobResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationAzureBlobRequest&, const Model::DescribeLocationAzureBlobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationAzureBlobResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationEfsRequest&, const Model::DescribeLocationEfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationEfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationFsxLustreRequest&, const Model::DescribeLocationFsxLustreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationFsxLustreResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::DescribeLocationFsxOntapRequest&, const Model::DescribeLocationFsxOntapOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocationFsxOntapResponseReceivedHandler;
@@ -348,6 +362,7 @@ namespace Aws
     typedef std::function<void(const DataSyncClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateAgentRequest&, const Model::UpdateAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateDiscoveryJobRequest&, const Model::UpdateDiscoveryJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDiscoveryJobResponseReceivedHandler;
+    typedef std::function<void(const DataSyncClient*, const Model::UpdateLocationAzureBlobRequest&, const Model::UpdateLocationAzureBlobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLocationAzureBlobResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateLocationHdfsRequest&, const Model::UpdateLocationHdfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLocationHdfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateLocationNfsRequest&, const Model::UpdateLocationNfsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLocationNfsResponseReceivedHandler;
     typedef std::function<void(const DataSyncClient*, const Model::UpdateLocationObjectStorageRequest&, const Model::UpdateLocationObjectStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLocationObjectStorageResponseReceivedHandler;

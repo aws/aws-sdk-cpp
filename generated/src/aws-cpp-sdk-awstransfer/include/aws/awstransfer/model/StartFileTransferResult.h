@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>Returns the unique identifier for this file transfer. </p>
+     * <p>Returns the unique identifier for the file transfer.</p>
      */
     inline const Aws::String& GetTransferId() const{ return m_transferId; }
 
     /**
-     * <p>Returns the unique identifier for this file transfer. </p>
+     * <p>Returns the unique identifier for the file transfer.</p>
      */
     inline void SetTransferId(const Aws::String& value) { m_transferId = value; }
 
     /**
-     * <p>Returns the unique identifier for this file transfer. </p>
+     * <p>Returns the unique identifier for the file transfer.</p>
      */
     inline void SetTransferId(Aws::String&& value) { m_transferId = std::move(value); }
 
     /**
-     * <p>Returns the unique identifier for this file transfer. </p>
+     * <p>Returns the unique identifier for the file transfer.</p>
      */
     inline void SetTransferId(const char* value) { m_transferId.assign(value); }
 
     /**
-     * <p>Returns the unique identifier for this file transfer. </p>
+     * <p>Returns the unique identifier for the file transfer.</p>
      */
     inline StartFileTransferResult& WithTransferId(const Aws::String& value) { SetTransferId(value); return *this;}
 
     /**
-     * <p>Returns the unique identifier for this file transfer. </p>
+     * <p>Returns the unique identifier for the file transfer.</p>
      */
     inline StartFileTransferResult& WithTransferId(Aws::String&& value) { SetTransferId(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the unique identifier for this file transfer. </p>
+     * <p>Returns the unique identifier for the file transfer.</p>
      */
     inline StartFileTransferResult& WithTransferId(const char* value) { SetTransferId(value); return *this;}
 

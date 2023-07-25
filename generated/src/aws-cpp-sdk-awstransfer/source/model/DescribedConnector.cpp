@@ -25,7 +25,8 @@ DescribedConnector::DescribedConnector() :
     m_as2ConfigHasBeenSet(false),
     m_accessRoleHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sftpConfigHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ DescribedConnector::DescribedConnector(JsonView jsonValue) :
     m_as2ConfigHasBeenSet(false),
     m_accessRoleHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sftpConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ DescribedConnector& DescribedConnector::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SftpConfig"))
+  {
+    m_sftpConfig = jsonValue.GetObject("SftpConfig");
+
+    m_sftpConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +155,12 @@ JsonValue DescribedConnector::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_sftpConfigHasBeenSet)
+  {
+   payload.WithObject("SftpConfig", m_sftpConfig.Jsonize());
 
   }
 

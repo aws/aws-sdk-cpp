@@ -177,10 +177,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const{ return m_homeDirectoryMappings; }
 
@@ -198,10 +199,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline bool HomeDirectoryMappingsHasBeenSet() const { return m_homeDirectoryMappingsHasBeenSet; }
 
@@ -219,10 +221,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline void SetHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = value; }
 
@@ -240,10 +243,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline void SetHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::move(value); }
 
@@ -261,10 +265,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline CreateUserRequest& WithHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { SetHomeDirectoryMappings(value); return *this;}
 
@@ -282,10 +287,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline CreateUserRequest& WithHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { SetHomeDirectoryMappings(std::move(value)); return *this;}
 
@@ -303,10 +309,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline CreateUserRequest& AddHomeDirectoryMappings(const HomeDirectoryMapEntry& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(value); return *this; }
 
@@ -324,10 +331,11 @@ namespace Model
      * "/bucket_name/home/mydirectory" } ]</code> </p> <p>In most cases, you can use
      * this value instead of the session policy to lock your user down to the
      * designated home directory ("<code>chroot</code>"). To do this, you can set
-     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
-     * HomeDirectory parameter value.</p> <p>The following is an <code>Entry</code> and
-     * <code>Target</code> pair example for <code>chroot</code>.</p> <p> <code>[ {
-     * "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>
+     * <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
+     * the user should see for their home directory when they log in.</p> <p>The
+     * following is an <code>Entry</code> and <code>Target</code> pair example for
+     * <code>chroot</code>.</p> <p> <code>[ { "Entry": "/", "Target":
+     * "/bucket_name/home/mydirectory" } ]</code> </p>
      */
     inline CreateUserRequest& AddHomeDirectoryMappings(HomeDirectoryMapEntry&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(std::move(value)); return *this; }
 

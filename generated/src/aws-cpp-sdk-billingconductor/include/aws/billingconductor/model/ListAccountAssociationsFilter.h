@@ -29,7 +29,7 @@ namespace Model
    * following:</p> <p> <code>MONITORED</code>: linked accounts that are associated
    * to billing groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are
    * not associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
-   * accounts that are associated to the provided Billing Group Arn. </p><p><h3>See
+   * accounts that are associated to the provided Billing Group Arn.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListAccountAssociationsFilter">AWS
    * API Reference</a></p>
@@ -47,7 +47,7 @@ namespace Model
      * <p> <code>MONITORED</code>: linked accounts that are associated to billing
      * groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not
      * associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
-     * accounts that are associated to the provided Billing Group Arn. </p>
+     * accounts that are associated to the provided Billing Group Arn.</p>
      */
     inline const Aws::String& GetAssociation() const{ return m_association; }
 
@@ -55,7 +55,7 @@ namespace Model
      * <p> <code>MONITORED</code>: linked accounts that are associated to billing
      * groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not
      * associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
-     * accounts that are associated to the provided Billing Group Arn. </p>
+     * accounts that are associated to the provided Billing Group Arn.</p>
      */
     inline bool AssociationHasBeenSet() const { return m_associationHasBeenSet; }
 
@@ -63,7 +63,7 @@ namespace Model
      * <p> <code>MONITORED</code>: linked accounts that are associated to billing
      * groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not
      * associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
-     * accounts that are associated to the provided Billing Group Arn. </p>
+     * accounts that are associated to the provided Billing Group Arn.</p>
      */
     inline void SetAssociation(const Aws::String& value) { m_associationHasBeenSet = true; m_association = value; }
 
@@ -71,7 +71,7 @@ namespace Model
      * <p> <code>MONITORED</code>: linked accounts that are associated to billing
      * groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not
      * associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
-     * accounts that are associated to the provided Billing Group Arn. </p>
+     * accounts that are associated to the provided Billing Group Arn.</p>
      */
     inline void SetAssociation(Aws::String&& value) { m_associationHasBeenSet = true; m_association = std::move(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * <p> <code>MONITORED</code>: linked accounts that are associated to billing
      * groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not
      * associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
-     * accounts that are associated to the provided Billing Group Arn. </p>
+     * accounts that are associated to the provided Billing Group Arn.</p>
      */
     inline void SetAssociation(const char* value) { m_associationHasBeenSet = true; m_association.assign(value); }
 
@@ -87,7 +87,7 @@ namespace Model
      * <p> <code>MONITORED</code>: linked accounts that are associated to billing
      * groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not
      * associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
-     * accounts that are associated to the provided Billing Group Arn. </p>
+     * accounts that are associated to the provided Billing Group Arn.</p>
      */
     inline ListAccountAssociationsFilter& WithAssociation(const Aws::String& value) { SetAssociation(value); return *this;}
 
@@ -95,7 +95,7 @@ namespace Model
      * <p> <code>MONITORED</code>: linked accounts that are associated to billing
      * groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not
      * associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
-     * accounts that are associated to the provided Billing Group Arn. </p>
+     * accounts that are associated to the provided Billing Group Arn.</p>
      */
     inline ListAccountAssociationsFilter& WithAssociation(Aws::String&& value) { SetAssociation(std::move(value)); return *this;}
 
@@ -103,48 +103,48 @@ namespace Model
      * <p> <code>MONITORED</code>: linked accounts that are associated to billing
      * groups.</p> <p> <code>UNMONITORED</code>: linked accounts that are not
      * associated to billing groups.</p> <p> <code>Billing Group Arn</code>: linked
-     * accounts that are associated to the provided Billing Group Arn. </p>
+     * accounts that are associated to the provided Billing Group Arn.</p>
      */
     inline ListAccountAssociationsFilter& WithAssociation(const char* value) { SetAssociation(value); return *this;}
 
 
     /**
-     * <p> The Amazon Web Services account ID to filter on. </p>
+     * <p>The Amazon Web Services account ID to filter on.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p> The Amazon Web Services account ID to filter on. </p>
+     * <p>The Amazon Web Services account ID to filter on.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p> The Amazon Web Services account ID to filter on. </p>
+     * <p>The Amazon Web Services account ID to filter on.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p> The Amazon Web Services account ID to filter on. </p>
+     * <p>The Amazon Web Services account ID to filter on.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p> The Amazon Web Services account ID to filter on. </p>
+     * <p>The Amazon Web Services account ID to filter on.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p> The Amazon Web Services account ID to filter on. </p>
+     * <p>The Amazon Web Services account ID to filter on.</p>
      */
     inline ListAccountAssociationsFilter& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p> The Amazon Web Services account ID to filter on. </p>
+     * <p>The Amazon Web Services account ID to filter on.</p>
      */
     inline ListAccountAssociationsFilter& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Web Services account ID to filter on. </p>
+     * <p>The Amazon Web Services account ID to filter on.</p>
      */
     inline ListAccountAssociationsFilter& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
