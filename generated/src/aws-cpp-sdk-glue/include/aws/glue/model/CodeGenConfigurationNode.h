@@ -72,6 +72,8 @@
 #include <aws/glue/model/AmazonRedshiftTarget.h>
 #include <aws/glue/model/EvaluateDataQualityMultiFrame.h>
 #include <aws/glue/model/Recipe.h>
+#include <aws/glue/model/SnowflakeSource.h>
+#include <aws/glue/model/SnowflakeTarget.h>
 #include <utility>
 
 namespace Aws
@@ -2385,6 +2387,68 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithRecipe(Recipe&& value) { SetRecipe(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline const SnowflakeSource& GetSnowflakeSource() const{ return m_snowflakeSource; }
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline bool SnowflakeSourceHasBeenSet() const { return m_snowflakeSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline void SetSnowflakeSource(const SnowflakeSource& value) { m_snowflakeSourceHasBeenSet = true; m_snowflakeSource = value; }
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline void SetSnowflakeSource(SnowflakeSource&& value) { m_snowflakeSourceHasBeenSet = true; m_snowflakeSource = std::move(value); }
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline CodeGenConfigurationNode& WithSnowflakeSource(const SnowflakeSource& value) { SetSnowflakeSource(value); return *this;}
+
+    /**
+     * <p>Specifies a Snowflake data source.</p>
+     */
+    inline CodeGenConfigurationNode& WithSnowflakeSource(SnowflakeSource&& value) { SetSnowflakeSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline const SnowflakeTarget& GetSnowflakeTarget() const{ return m_snowflakeTarget; }
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline bool SnowflakeTargetHasBeenSet() const { return m_snowflakeTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline void SetSnowflakeTarget(const SnowflakeTarget& value) { m_snowflakeTargetHasBeenSet = true; m_snowflakeTarget = value; }
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline void SetSnowflakeTarget(SnowflakeTarget&& value) { m_snowflakeTargetHasBeenSet = true; m_snowflakeTarget = std::move(value); }
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline CodeGenConfigurationNode& WithSnowflakeTarget(const SnowflakeTarget& value) { SetSnowflakeTarget(value); return *this;}
+
+    /**
+     * <p>Specifies a target that writes to a Snowflake data source.</p>
+     */
+    inline CodeGenConfigurationNode& WithSnowflakeTarget(SnowflakeTarget&& value) { SetSnowflakeTarget(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -2587,6 +2651,12 @@ namespace Model
 
     Recipe m_recipe;
     bool m_recipeHasBeenSet = false;
+
+    SnowflakeSource m_snowflakeSource;
+    bool m_snowflakeSourceHasBeenSet = false;
+
+    SnowflakeTarget m_snowflakeTarget;
+    bool m_snowflakeTargetHasBeenSet = false;
   };
 
 } // namespace Model

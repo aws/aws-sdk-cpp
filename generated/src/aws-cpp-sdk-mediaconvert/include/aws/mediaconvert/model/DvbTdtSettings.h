@@ -23,9 +23,7 @@ namespace Model
 
   /**
    * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
-   * stream of this output. When you work directly in your JSON job specification,
-   * include this object only when your job has a transport stream output and the
-   * container settings contain the object M2tsSettings.<p><h3>See Also:</h3>   <a
+   * stream of this output.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbTdtSettings">AWS
    * API Reference</a></p>
    */

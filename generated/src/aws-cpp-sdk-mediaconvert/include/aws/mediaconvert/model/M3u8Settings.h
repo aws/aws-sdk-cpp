@@ -47,102 +47,96 @@ namespace Model
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline const M3u8AudioDuration& GetAudioDuration() const{ return m_audioDuration; }
 
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline bool AudioDurationHasBeenSet() const { return m_audioDurationHasBeenSet; }
 
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline void SetAudioDuration(const M3u8AudioDuration& value) { m_audioDurationHasBeenSet = true; m_audioDuration = value; }
 
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline void SetAudioDuration(M3u8AudioDuration&& value) { m_audioDurationHasBeenSet = true; m_audioDuration = std::move(value); }
 
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline M3u8Settings& WithAudioDuration(const M3u8AudioDuration& value) { SetAudioDuration(value); return *this;}
 
     /**
      * Specify this setting only when your output will be consumed by a downstream
      * repackaging workflow that is sensitive to very small duration differences
-     * between video and audio. For this situation, choose Match video duration
-     * (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
-     * codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration,
-     * MediaConvert pads the output audio streams with silence or trims them to ensure
-     * that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream
-     * duration is no more than one frame longer than the video stream. MediaConvert
-     * applies audio padding or trimming only to the end of the last segment of the
-     * output. For unsegmented outputs, MediaConvert adds padding only to the end of
-     * the file. When you keep the default value, any minor discrepancies between audio
-     * and video duration will depend on your output audio codec.
+     * between video and audio. For this situation, choose Match video duration. In all
+     * other cases, keep the default value, Default codec duration. When you choose
+     * Match video duration, MediaConvert pads the output audio streams with silence or
+     * trims them to ensure that the total duration of each audio stream is at least as
+     * long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream.
+     * MediaConvert applies audio padding or trimming only to the end of the last
+     * segment of the output. For unsegmented outputs, MediaConvert adds padding only
+     * to the end of the file. When you keep the default value, any minor discrepancies
+     * between audio and video duration will depend on your output audio codec.
      */
     inline M3u8Settings& WithAudioDuration(M3u8AudioDuration&& value) { SetAudioDuration(std::move(value)); return *this;}
 
@@ -222,7 +216,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value AUTO to allow all PTS values.
      */
     inline const M3u8DataPtsControl& GetDataPTSControl() const{ return m_dataPTSControl; }
 
@@ -230,7 +224,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value AUTO to allow all PTS values.
      */
     inline bool DataPTSControlHasBeenSet() const { return m_dataPTSControlHasBeenSet; }
 
@@ -238,7 +232,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value AUTO to allow all PTS values.
      */
     inline void SetDataPTSControl(const M3u8DataPtsControl& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = value; }
 
@@ -246,7 +240,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value AUTO to allow all PTS values.
      */
     inline void SetDataPTSControl(M3u8DataPtsControl&& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = std::move(value); }
 
@@ -254,7 +248,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value AUTO to allow all PTS values.
      */
     inline M3u8Settings& WithDataPTSControl(const M3u8DataPtsControl& value) { SetDataPTSControl(value); return *this;}
 
@@ -262,7 +256,7 @@ namespace Model
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
      * Presentation Timestamp (PTS) values greater than or equal to the first video
      * packet PTS (MediaConvert drops captions and data packets with lesser PTS
-     * values). Keep the default value (AUTO) to allow all PTS values.
+     * values). Keep the default value AUTO to allow all PTS values.
      */
     inline M3u8Settings& WithDataPTSControl(M3u8DataPtsControl&& value) { SetDataPTSControl(std::move(value)); return *this;}
 
@@ -536,129 +530,117 @@ namespace Model
 
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
-     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
-     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
-     * the ESAM XML as a string in the setting Signal processing notification XML
-     * (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None if you don't want manifest conditioning. Choose
+     * Passthrough and choose Ad markers if you do want manifest conditioning. In both
+     * cases, also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML.
      */
     inline const M3u8Scte35Source& GetScte35Source() const{ return m_scte35Source; }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
-     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
-     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
-     * the ESAM XML as a string in the setting Signal processing notification XML
-     * (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None if you don't want manifest conditioning. Choose
+     * Passthrough and choose Ad markers if you do want manifest conditioning. In both
+     * cases, also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML.
      */
     inline bool Scte35SourceHasBeenSet() const { return m_scte35SourceHasBeenSet; }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
-     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
-     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
-     * the ESAM XML as a string in the setting Signal processing notification XML
-     * (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None if you don't want manifest conditioning. Choose
+     * Passthrough and choose Ad markers if you do want manifest conditioning. In both
+     * cases, also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML.
      */
     inline void SetScte35Source(const M3u8Scte35Source& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = value; }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
-     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
-     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
-     * the ESAM XML as a string in the setting Signal processing notification XML
-     * (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None if you don't want manifest conditioning. Choose
+     * Passthrough and choose Ad markers if you do want manifest conditioning. In both
+     * cases, also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML.
      */
     inline void SetScte35Source(M3u8Scte35Source&& value) { m_scte35SourceHasBeenSet = true; m_scte35Source = std::move(value); }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
-     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
-     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
-     * the ESAM XML as a string in the setting Signal processing notification XML
-     * (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None if you don't want manifest conditioning. Choose
+     * Passthrough and choose Ad markers if you do want manifest conditioning. In both
+     * cases, also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML.
      */
     inline M3u8Settings& WithScte35Source(const M3u8Scte35Source& value) { SetScte35Source(value); return *this;}
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you
-     * want SCTE-35 markers that appear in your input to also appear in this output.
-     * Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35
-     * markers from an ESAM XML document-- Choose None (NONE) if you don't want
-     * manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers
-     * (adMarkers) if you do want manifest conditioning. In both cases, also provide
-     * the ESAM XML as a string in the setting Signal processing notification XML
-     * (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35
+     * markers that appear in your input to also appear in this output. Choose None if
+     * you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM
+     * XML document-- Choose None if you don't want manifest conditioning. Choose
+     * Passthrough and choose Ad markers if you do want manifest conditioning. In both
+     * cases, also provide the ESAM XML as a string in the setting Signal processing
+     * notification XML.
      */
     inline M3u8Settings& WithScte35Source(M3u8Scte35Source&& value) { SetScte35Source(std::move(value)); return *this;}
 
 
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
-     * metadata in this output. This includes ID3 metadata from the following features:
-     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
-     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
-     * metadata to None (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This
+     * includes ID3 metadata from the following features: ID3 timestamp period, and
+     * Custom ID3 metadata inserter. To exclude this ID3 metadata in this output: set
+     * ID3 metadata to None or leave blank.
      */
     inline const TimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
 
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
-     * metadata in this output. This includes ID3 metadata from the following features:
-     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
-     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
-     * metadata to None (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This
+     * includes ID3 metadata from the following features: ID3 timestamp period, and
+     * Custom ID3 metadata inserter. To exclude this ID3 metadata in this output: set
+     * ID3 metadata to None or leave blank.
      */
     inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
 
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
-     * metadata in this output. This includes ID3 metadata from the following features:
-     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
-     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
-     * metadata to None (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This
+     * includes ID3 metadata from the following features: ID3 timestamp period, and
+     * Custom ID3 metadata inserter. To exclude this ID3 metadata in this output: set
+     * ID3 metadata to None or leave blank.
      */
     inline void SetTimedMetadata(const TimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
 
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
-     * metadata in this output. This includes ID3 metadata from the following features:
-     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
-     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
-     * metadata to None (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This
+     * includes ID3 metadata from the following features: ID3 timestamp period, and
+     * Custom ID3 metadata inserter. To exclude this ID3 metadata in this output: set
+     * ID3 metadata to None or leave blank.
      */
     inline void SetTimedMetadata(TimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
 
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
-     * metadata in this output. This includes ID3 metadata from the following features:
-     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
-     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
-     * metadata to None (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This
+     * includes ID3 metadata from the following features: ID3 timestamp period, and
+     * Custom ID3 metadata inserter. To exclude this ID3 metadata in this output: set
+     * ID3 metadata to None or leave blank.
      */
     inline M3u8Settings& WithTimedMetadata(const TimedMetadata& value) { SetTimedMetadata(value); return *this;}
 
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
-     * metadata in this output. This includes ID3 metadata from the following features:
-     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
-     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
-     * metadata to None (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This
+     * includes ID3 metadata from the following features: ID3 timestamp period, and
+     * Custom ID3 metadata inserter. To exclude this ID3 metadata in this output: set
+     * ID3 metadata to None or leave blank.
      */
     inline M3u8Settings& WithTimedMetadata(TimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
 

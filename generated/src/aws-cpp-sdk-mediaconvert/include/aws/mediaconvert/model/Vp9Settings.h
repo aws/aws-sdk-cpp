@@ -28,8 +28,7 @@ namespace Model
 {
 
   /**
-   * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-   * value VP9.<p><h3>See Also:</h3>   <a
+   * Required when you set Codec to the value VP9.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Vp9Settings">AWS
    * API Reference</a></p>
    */
@@ -73,12 +72,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline const Vp9FramerateControl& GetFramerateControl() const{ return m_framerateControl; }
 
@@ -88,12 +82,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
 
@@ -103,12 +92,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline void SetFramerateControl(const Vp9FramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
 
@@ -118,12 +102,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline void SetFramerateControl(Vp9FramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
 
@@ -133,12 +112,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline Vp9Settings& WithFramerateControl(const Vp9FramerateControl& value) { SetFramerateControl(value); return *this;}
 
@@ -148,12 +122,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline Vp9Settings& WithFramerateControl(Vp9FramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
 
@@ -454,126 +423,118 @@ namespace Model
 
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline int GetParDenominator() const{ return m_parDenominator; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline Vp9Settings& WithParDenominator(int value) { SetParDenominator(value); return *this;}
 
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline int GetParNumerator() const{ return m_parNumerator; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline Vp9Settings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
 
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline const Vp9QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline void SetQualityTuningLevel(const Vp9QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline void SetQualityTuningLevel(Vp9QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline Vp9Settings& WithQualityTuningLevel(const Vp9QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding
+     * speed for output video quality. The default behavior is faster, lower quality,
+     * multi-pass encoding.
      */
     inline Vp9Settings& WithQualityTuningLevel(Vp9QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
 

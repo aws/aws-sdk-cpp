@@ -29,7 +29,7 @@ namespace Model
 
   /**
    * <p>Displays the properties of the import job, including the ID, Arn, Name, and
-   * the status of the Data Store.</p><p><h3>See Also:</h3>   <a
+   * the status of the data store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ImportJobProperties">AWS
    * API Reference</a></p>
    */
@@ -321,50 +321,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your
-     * input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input
+     * data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your
-     * input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input
+     * data.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your
-     * input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input
+     * data.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your
-     * input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input
+     * data.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your
-     * input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input
+     * data.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your
-     * input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input
+     * data.</p>
      */
     inline ImportJobProperties& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your
-     * input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input
+     * data.</p>
      */
     inline ImportJobProperties& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access to your
-     * input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input
+     * data.</p>
      */
     inline ImportJobProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 

@@ -85,7 +85,9 @@ CodeGenConfigurationNode::CodeGenConfigurationNode() :
     m_amazonRedshiftSourceHasBeenSet(false),
     m_amazonRedshiftTargetHasBeenSet(false),
     m_evaluateDataQualityMultiFrameHasBeenSet(false),
-    m_recipeHasBeenSet(false)
+    m_recipeHasBeenSet(false),
+    m_snowflakeSourceHasBeenSet(false),
+    m_snowflakeTargetHasBeenSet(false)
 {
 }
 
@@ -156,7 +158,9 @@ CodeGenConfigurationNode::CodeGenConfigurationNode(JsonView jsonValue) :
     m_amazonRedshiftSourceHasBeenSet(false),
     m_amazonRedshiftTargetHasBeenSet(false),
     m_evaluateDataQualityMultiFrameHasBeenSet(false),
-    m_recipeHasBeenSet(false)
+    m_recipeHasBeenSet(false),
+    m_snowflakeSourceHasBeenSet(false),
+    m_snowflakeTargetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -632,6 +636,20 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_recipeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnowflakeSource"))
+  {
+    m_snowflakeSource = jsonValue.GetObject("SnowflakeSource");
+
+    m_snowflakeSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SnowflakeTarget"))
+  {
+    m_snowflakeTarget = jsonValue.GetObject("SnowflakeTarget");
+
+    m_snowflakeTargetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -1038,6 +1056,18 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
   if(m_recipeHasBeenSet)
   {
    payload.WithObject("Recipe", m_recipe.Jsonize());
+
+  }
+
+  if(m_snowflakeSourceHasBeenSet)
+  {
+   payload.WithObject("SnowflakeSource", m_snowflakeSource.Jsonize());
+
+  }
+
+  if(m_snowflakeTargetHasBeenSet)
+  {
+   payload.WithObject("SnowflakeTarget", m_snowflakeTarget.Jsonize());
 
   }
 

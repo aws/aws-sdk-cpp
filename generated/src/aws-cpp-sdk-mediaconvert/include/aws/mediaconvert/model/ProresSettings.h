@@ -32,8 +32,7 @@ namespace Model
 {
 
   /**
-   * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-   * value PRORES.<p><h3>See Also:</h3>   <a
+   * Required when you set Codec to the value PRORES.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ProresSettings">AWS
    * API Reference</a></p>
    */
@@ -49,115 +48,109 @@ namespace Model
     /**
      * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
      * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
-     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
-     * must specify a value for this setting when your output codec profile supports
-     * 4:4:4 chroma sampling. Related Settings: For Apple ProRes outputs with 4:4:4
-     * chroma sampling: Choose Preserve 4:4:4 sampling. Use when your input has 4:4:4
-     * chroma sampling and your output codec Profile is Apple ProRes 4444 or 4444 XQ.
-     * Note that when you choose Preserve 4:4:4 sampling, you cannot include any of the
-     * following Preprocessors: Dolby Vision, HDR10+, or Noise reducer.
+     * to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for
+     * this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: For Apple ProRes outputs with 4:4:4 chroma sampling: Choose
+     * Preserve 4:4:4 sampling. Use when your input has 4:4:4 chroma sampling and your
+     * output codec Profile is Apple ProRes 4444 or 4444 XQ. Note that when you choose
+     * Preserve 4:4:4 sampling, you cannot include any of the following Preprocessors:
+     * Dolby Vision, HDR10+, or Noise reducer.
      */
     inline const ProresChromaSampling& GetChromaSampling() const{ return m_chromaSampling; }
 
     /**
      * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
      * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
-     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
-     * must specify a value for this setting when your output codec profile supports
-     * 4:4:4 chroma sampling. Related Settings: For Apple ProRes outputs with 4:4:4
-     * chroma sampling: Choose Preserve 4:4:4 sampling. Use when your input has 4:4:4
-     * chroma sampling and your output codec Profile is Apple ProRes 4444 or 4444 XQ.
-     * Note that when you choose Preserve 4:4:4 sampling, you cannot include any of the
-     * following Preprocessors: Dolby Vision, HDR10+, or Noise reducer.
+     * to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for
+     * this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: For Apple ProRes outputs with 4:4:4 chroma sampling: Choose
+     * Preserve 4:4:4 sampling. Use when your input has 4:4:4 chroma sampling and your
+     * output codec Profile is Apple ProRes 4444 or 4444 XQ. Note that when you choose
+     * Preserve 4:4:4 sampling, you cannot include any of the following Preprocessors:
+     * Dolby Vision, HDR10+, or Noise reducer.
      */
     inline bool ChromaSamplingHasBeenSet() const { return m_chromaSamplingHasBeenSet; }
 
     /**
      * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
      * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
-     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
-     * must specify a value for this setting when your output codec profile supports
-     * 4:4:4 chroma sampling. Related Settings: For Apple ProRes outputs with 4:4:4
-     * chroma sampling: Choose Preserve 4:4:4 sampling. Use when your input has 4:4:4
-     * chroma sampling and your output codec Profile is Apple ProRes 4444 or 4444 XQ.
-     * Note that when you choose Preserve 4:4:4 sampling, you cannot include any of the
-     * following Preprocessors: Dolby Vision, HDR10+, or Noise reducer.
+     * to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for
+     * this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: For Apple ProRes outputs with 4:4:4 chroma sampling: Choose
+     * Preserve 4:4:4 sampling. Use when your input has 4:4:4 chroma sampling and your
+     * output codec Profile is Apple ProRes 4444 or 4444 XQ. Note that when you choose
+     * Preserve 4:4:4 sampling, you cannot include any of the following Preprocessors:
+     * Dolby Vision, HDR10+, or Noise reducer.
      */
     inline void SetChromaSampling(const ProresChromaSampling& value) { m_chromaSamplingHasBeenSet = true; m_chromaSampling = value; }
 
     /**
      * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
      * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
-     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
-     * must specify a value for this setting when your output codec profile supports
-     * 4:4:4 chroma sampling. Related Settings: For Apple ProRes outputs with 4:4:4
-     * chroma sampling: Choose Preserve 4:4:4 sampling. Use when your input has 4:4:4
-     * chroma sampling and your output codec Profile is Apple ProRes 4444 or 4444 XQ.
-     * Note that when you choose Preserve 4:4:4 sampling, you cannot include any of the
-     * following Preprocessors: Dolby Vision, HDR10+, or Noise reducer.
+     * to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for
+     * this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: For Apple ProRes outputs with 4:4:4 chroma sampling: Choose
+     * Preserve 4:4:4 sampling. Use when your input has 4:4:4 chroma sampling and your
+     * output codec Profile is Apple ProRes 4444 or 4444 XQ. Note that when you choose
+     * Preserve 4:4:4 sampling, you cannot include any of the following Preprocessors:
+     * Dolby Vision, HDR10+, or Noise reducer.
      */
     inline void SetChromaSampling(ProresChromaSampling&& value) { m_chromaSamplingHasBeenSet = true; m_chromaSampling = std::move(value); }
 
     /**
      * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
      * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
-     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
-     * must specify a value for this setting when your output codec profile supports
-     * 4:4:4 chroma sampling. Related Settings: For Apple ProRes outputs with 4:4:4
-     * chroma sampling: Choose Preserve 4:4:4 sampling. Use when your input has 4:4:4
-     * chroma sampling and your output codec Profile is Apple ProRes 4444 or 4444 XQ.
-     * Note that when you choose Preserve 4:4:4 sampling, you cannot include any of the
-     * following Preprocessors: Dolby Vision, HDR10+, or Noise reducer.
+     * to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for
+     * this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: For Apple ProRes outputs with 4:4:4 chroma sampling: Choose
+     * Preserve 4:4:4 sampling. Use when your input has 4:4:4 chroma sampling and your
+     * output codec Profile is Apple ProRes 4444 or 4444 XQ. Note that when you choose
+     * Preserve 4:4:4 sampling, you cannot include any of the following Preprocessors:
+     * Dolby Vision, HDR10+, or Noise reducer.
      */
     inline ProresSettings& WithChromaSampling(const ProresChromaSampling& value) { SetChromaSampling(value); return *this;}
 
     /**
      * This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you
      * create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling
-     * (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You
-     * must specify a value for this setting when your output codec profile supports
-     * 4:4:4 chroma sampling. Related Settings: For Apple ProRes outputs with 4:4:4
-     * chroma sampling: Choose Preserve 4:4:4 sampling. Use when your input has 4:4:4
-     * chroma sampling and your output codec Profile is Apple ProRes 4444 or 4444 XQ.
-     * Note that when you choose Preserve 4:4:4 sampling, you cannot include any of the
-     * following Preprocessors: Dolby Vision, HDR10+, or Noise reducer.
+     * to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for
+     * this setting when your output codec profile supports 4:4:4 chroma sampling.
+     * Related Settings: For Apple ProRes outputs with 4:4:4 chroma sampling: Choose
+     * Preserve 4:4:4 sampling. Use when your input has 4:4:4 chroma sampling and your
+     * output codec Profile is Apple ProRes 4444 or 4444 XQ. Note that when you choose
+     * Preserve 4:4:4 sampling, you cannot include any of the following Preprocessors:
+     * Dolby Vision, HDR10+, or Noise reducer.
      */
     inline ProresSettings& WithChromaSampling(ProresChromaSampling&& value) { SetChromaSampling(std::move(value)); return *this;}
 
 
     /**
-     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
-     * use for this output.
+     * Use Profile to specify the type of Apple ProRes codec to use for this output.
      */
     inline const ProresCodecProfile& GetCodecProfile() const{ return m_codecProfile; }
 
     /**
-     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
-     * use for this output.
+     * Use Profile to specify the type of Apple ProRes codec to use for this output.
      */
     inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
 
     /**
-     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
-     * use for this output.
+     * Use Profile to specify the type of Apple ProRes codec to use for this output.
      */
     inline void SetCodecProfile(const ProresCodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
 
     /**
-     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
-     * use for this output.
+     * Use Profile to specify the type of Apple ProRes codec to use for this output.
      */
     inline void SetCodecProfile(ProresCodecProfile&& value) { m_codecProfileHasBeenSet = true; m_codecProfile = std::move(value); }
 
     /**
-     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
-     * use for this output.
+     * Use Profile to specify the type of Apple ProRes codec to use for this output.
      */
     inline ProresSettings& WithCodecProfile(const ProresCodecProfile& value) { SetCodecProfile(value); return *this;}
 
     /**
-     * Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to
-     * use for this output.
+     * Use Profile to specify the type of Apple ProRes codec to use for this output.
      */
     inline ProresSettings& WithCodecProfile(ProresCodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
 
@@ -168,12 +161,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline const ProresFramerateControl& GetFramerateControl() const{ return m_framerateControl; }
 
@@ -183,12 +171,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
 
@@ -198,12 +181,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline void SetFramerateControl(const ProresFramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
 
@@ -213,12 +191,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline void SetFramerateControl(ProresFramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
 
@@ -228,12 +201,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline ProresSettings& WithFramerateControl(const ProresFramerateControl& value) { SetFramerateControl(value); return *this;}
 
@@ -243,12 +211,7 @@ namespace Model
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list or choose Custom. The framerates shown in the
      * dropdown list are decimal approximations of fractions. If you choose Custom,
-     * specify your frame rate as a fraction. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * specify your frame rate as a fraction.
      */
     inline ProresSettings& WithFramerateControl(ProresFramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
 
@@ -427,350 +390,312 @@ namespace Model
 
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline const ProresInterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline void SetInterlaceMode(const ProresInterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline void SetInterlaceMode(ProresInterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline ProresSettings& WithInterlaceMode(const ProresInterlaceMode& value) { SetInterlaceMode(value); return *this;}
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive
-     * (PROGRESSIVE) to create a progressive output, regardless of the scan type of
-     * your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD)
-     * to create an output that's interlaced with the same field polarity throughout.
-     * Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom
-     * (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the
-     * source. For jobs that have multiple inputs, the output field polarity might
-     * change over the course of the output. Follow behavior depends on the input scan
-     * type. If the source is interlaced, the output will be interlaced with the same
-     * polarity as the source. If the source is progressive, the output will be
-     * interlaced with top field bottom field first, depending on which of the Follow
-     * options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to
+     * create a progressive output, regardless of the scan type of your input. Use Top
+     * field first or Bottom field first to create an output that's interlaced with the
+     * same field polarity throughout. Use Follow, default top or Follow, default
+     * bottom to produce outputs with the same field polarity as the source. For jobs
+     * that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the
+     * source is interlaced, the output will be interlaced with the same polarity as
+     * the source. If the source is progressive, the output will be interlaced with top
+     * field bottom field first, depending on which of the Follow options you choose.
      */
     inline ProresSettings& WithInterlaceMode(ProresInterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
 
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR, choose any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline const ProresParControl& GetParControl() const{ return m_parControl; }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR, choose any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR, choose any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(const ProresParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR, choose any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline void SetParControl(ProresParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR, choose any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline ProresSettings& WithParControl(const ProresParControl& value) { SetParControl(value); return *this;}
 
     /**
      * Optional. Specify how the service determines the pixel aspect ratio (PAR) for
-     * this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses
-     * the PAR from your input video for your output. To specify a different PAR in the
-     * console, choose any value other than Follow source. To specify a different PAR
-     * by editing the JSON job specification, choose SPECIFIED. When you choose
-     * SPECIFIED for this setting, you must also specify values for the parNumerator
-     * and parDenominator settings.
+     * this output. The default behavior, Follow source, uses the PAR from your input
+     * video for your output. To specify a different PAR, choose any value other than
+     * Follow source. When you choose SPECIFIED for this setting, you must also specify
+     * values for the parNumerator and parDenominator settings.
      */
     inline ProresSettings& WithParControl(ProresParControl&& value) { SetParControl(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline int GetParDenominator() const{ return m_parDenominator; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
     inline ProresSettings& WithParDenominator(int value) { SetParDenominator(value); return *this;}
 
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline int GetParNumerator() const{ return m_parNumerator; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the
-     * console, this corresponds to any value other than Follow source. When you
-     * specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC
-     * widescreen, you would specify the ratio 40:33. In this example, the value for
-     * parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this
+     * corresponds to any value other than Follow source. When you specify an output
+     * pixel aspect ratio (PAR) that is different from your input video PAR, provide
+     * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
     inline ProresSettings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
 
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline const ProresScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline void SetScanTypeConversionMode(const ProresScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline void SetScanTypeConversionMode(ProresScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline ProresSettings& WithScanTypeConversionMode(const ProresScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of
-     * your input frame rate. In this situation, choose Optimized interlacing
-     * (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
-     * case, each progressive frame from the input corresponds to an interlaced field
-     * in the output. Keep the default value, Basic interlacing (INTERLACED), for all
-     * other output frame rates. With basic interlacing, MediaConvert performs any
-     * frame rate conversion first and then interlaces the frames. When you choose
-     * Optimized interlacing and you set your output frame rate to a value that isn't
-     * suitable for optimized interlacing, MediaConvert automatically falls back to
-     * basic interlacing. Required settings: To use optimized interlacing, you must set
-     * Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized
-     * interlacing for hard telecine outputs. You must also set Interlace mode
-     * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * your input frame rate. In this situation, choose Optimized interlacing to create
+     * a better quality interlaced output. In this case, each progressive frame from
+     * the input corresponds to an interlaced field in the output. Keep the default
+     * value, Basic interlacing, for all other output frame rates. With basic
+     * interlacing, MediaConvert performs any frame rate conversion first and then
+     * interlaces the frames. When you choose Optimized interlacing and you set your
+     * output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings:
+     * To use optimized interlacing, you must set Telecine to None or Soft. You can't
+     * use optimized interlacing for hard telecine outputs. You must also set Interlace
+     * mode to a value other than Progressive.
      */
     inline ProresSettings& WithScanTypeConversionMode(ProresScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
 
@@ -781,8 +706,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline const ProresSlowPal& GetSlowPal() const{ return m_slowPal; }
 
@@ -792,8 +716,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
 
@@ -803,8 +726,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline void SetSlowPal(const ProresSlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
 
@@ -814,8 +736,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline void SetSlowPal(ProresSlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
 
@@ -825,8 +746,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline ProresSettings& WithSlowPal(const ProresSlowPal& value) { SetSlowPal(value); return *this;}
 
@@ -836,8 +756,7 @@ namespace Model
      * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
      * to keep it synchronized with the video. Note that enabling this setting will
      * slightly reduce the duration of your video. Required settings: You must also set
-     * Framerate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * Framerate to 25.
      */
     inline ProresSettings& WithSlowPal(ProresSlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
 
@@ -845,54 +764,54 @@ namespace Model
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline const ProresTelecine& GetTelecine() const{ return m_telecine; }
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline void SetTelecine(const ProresTelecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline void SetTelecine(ProresTelecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline ProresSettings& WithTelecine(const ProresTelecine& value) { SetTelecine(value); return *this;}
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97
      * fps, and your output scan type is interlaced, you can optionally enable hard
-     * telecine (HARD) to create a smoother picture. When you keep the default value,
-     * None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     * doing anything with the field polarity to create a smoother picture.
+     * telecine to create a smoother picture. When you keep the default value, None,
+     * MediaConvert does a standard frame rate conversion to 29.97 without doing
+     * anything with the field polarity to create a smoother picture.
      */
     inline ProresSettings& WithTelecine(ProresTelecine&& value) { SetTelecine(std::move(value)); return *this;}
 

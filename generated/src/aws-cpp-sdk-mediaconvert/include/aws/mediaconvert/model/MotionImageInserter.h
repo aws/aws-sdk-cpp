@@ -362,10 +362,7 @@ namespace Model
      * need to set up your job to follow timecodes embedded in your source that don't
      * start at zero, make sure that you specify a start time that is after the first
      * embedded timecode. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find
-     * job-wide and input timecode configuration settings in your JSON job settings
-     * specification at settings>timecodeConfig>source and
-     * settings>inputs>timecodeSource.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html
      */
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
@@ -377,10 +374,7 @@ namespace Model
      * need to set up your job to follow timecodes embedded in your source that don't
      * start at zero, make sure that you specify a start time that is after the first
      * embedded timecode. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find
-     * job-wide and input timecode configuration settings in your JSON job settings
-     * specification at settings>timecodeConfig>source and
-     * settings>inputs>timecodeSource.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
@@ -392,10 +386,7 @@ namespace Model
      * need to set up your job to follow timecodes embedded in your source that don't
      * start at zero, make sure that you specify a start time that is after the first
      * embedded timecode. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find
-     * job-wide and input timecode configuration settings in your JSON job settings
-     * specification at settings>timecodeConfig>source and
-     * settings>inputs>timecodeSource.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html
      */
     inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
@@ -407,10 +398,7 @@ namespace Model
      * need to set up your job to follow timecodes embedded in your source that don't
      * start at zero, make sure that you specify a start time that is after the first
      * embedded timecode. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find
-     * job-wide and input timecode configuration settings in your JSON job settings
-     * specification at settings>timecodeConfig>source and
-     * settings>inputs>timecodeSource.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html
      */
     inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
@@ -422,10 +410,7 @@ namespace Model
      * need to set up your job to follow timecodes embedded in your source that don't
      * start at zero, make sure that you specify a start time that is after the first
      * embedded timecode. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find
-     * job-wide and input timecode configuration settings in your JSON job settings
-     * specification at settings>timecodeConfig>source and
-     * settings>inputs>timecodeSource.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html
      */
     inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
 
@@ -437,10 +422,7 @@ namespace Model
      * need to set up your job to follow timecodes embedded in your source that don't
      * start at zero, make sure that you specify a start time that is after the first
      * embedded timecode. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find
-     * job-wide and input timecode configuration settings in your JSON job settings
-     * specification at settings>timecodeConfig>source and
-     * settings>inputs>timecodeSource.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html
      */
     inline MotionImageInserter& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
@@ -452,10 +434,7 @@ namespace Model
      * need to set up your job to follow timecodes embedded in your source that don't
      * start at zero, make sure that you specify a start time that is after the first
      * embedded timecode. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find
-     * job-wide and input timecode configuration settings in your JSON job settings
-     * specification at settings>timecodeConfig>source and
-     * settings>inputs>timecodeSource.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html
      */
     inline MotionImageInserter& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -467,10 +446,7 @@ namespace Model
      * need to set up your job to follow timecodes embedded in your source that don't
      * start at zero, make sure that you specify a start time that is after the first
      * embedded timecode. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html Find
-     * job-wide and input timecode configuration settings in your JSON job settings
-     * specification at settings>timecodeConfig>source and
-     * settings>inputs>timecodeSource.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/setting-up-timecode.html
      */
     inline MotionImageInserter& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 

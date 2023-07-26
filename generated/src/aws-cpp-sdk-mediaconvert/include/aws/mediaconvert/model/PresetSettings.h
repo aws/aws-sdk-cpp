@@ -42,58 +42,50 @@ namespace Model
 
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline const Aws::Vector<AudioDescription>& GetAudioDescriptions() const{ return m_audioDescriptions; }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline bool AudioDescriptionsHasBeenSet() const { return m_audioDescriptionsHasBeenSet; }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline void SetAudioDescriptions(const Aws::Vector<AudioDescription>& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions = value; }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline void SetAudioDescriptions(Aws::Vector<AudioDescription>&& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions = std::move(value); }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline PresetSettings& WithAudioDescriptions(const Aws::Vector<AudioDescription>& value) { SetAudioDescriptions(value); return *this;}
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline PresetSettings& WithAudioDescriptions(Aws::Vector<AudioDescription>&& value) { SetAudioDescriptions(std::move(value)); return *this;}
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline PresetSettings& AddAudioDescriptions(const AudioDescription& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions.push_back(value); return *this; }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline PresetSettings& AddAudioDescriptions(AudioDescription&& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions.push_back(std::move(value)); return *this; }
 

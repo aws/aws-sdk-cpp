@@ -146,49 +146,49 @@ namespace Model
 
     /**
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
-     * Key Value (StaticKeyValue).
+     * Key Value.
      */
     inline const Aws::String& GetStaticKeyValue() const{ return m_staticKeyValue; }
 
     /**
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
-     * Key Value (StaticKeyValue).
+     * Key Value.
      */
     inline bool StaticKeyValueHasBeenSet() const { return m_staticKeyValueHasBeenSet; }
 
     /**
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
-     * Key Value (StaticKeyValue).
+     * Key Value.
      */
     inline void SetStaticKeyValue(const Aws::String& value) { m_staticKeyValueHasBeenSet = true; m_staticKeyValue = value; }
 
     /**
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
-     * Key Value (StaticKeyValue).
+     * Key Value.
      */
     inline void SetStaticKeyValue(Aws::String&& value) { m_staticKeyValueHasBeenSet = true; m_staticKeyValue = std::move(value); }
 
     /**
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
-     * Key Value (StaticKeyValue).
+     * Key Value.
      */
     inline void SetStaticKeyValue(const char* value) { m_staticKeyValueHasBeenSet = true; m_staticKeyValue.assign(value); }
 
     /**
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
-     * Key Value (StaticKeyValue).
+     * Key Value.
      */
     inline StaticKeyProvider& WithStaticKeyValue(const Aws::String& value) { SetStaticKeyValue(value); return *this;}
 
     /**
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
-     * Key Value (StaticKeyValue).
+     * Key Value.
      */
     inline StaticKeyProvider& WithStaticKeyValue(Aws::String&& value) { SetStaticKeyValue(std::move(value)); return *this;}
 
     /**
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
-     * Key Value (StaticKeyValue).
+     * Key Value.
      */
     inline StaticKeyProvider& WithStaticKeyValue(const char* value) { SetStaticKeyValue(value); return *this;}
 

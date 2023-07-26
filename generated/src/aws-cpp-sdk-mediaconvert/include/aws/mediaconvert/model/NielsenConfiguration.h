@@ -25,12 +25,9 @@ namespace Model
 
   /**
    * Settings for your Nielsen configuration. If you don't do Nielsen measurement and
-   * analytics, ignore these settings. When you enable Nielsen configuration
-   * (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs
-   * in the job. To enable Nielsen configuration programmatically, include an
-   * instance of nielsenConfiguration in your JSON job specification. Even if you
-   * don't include any children of nielsenConfiguration, you still enable the
-   * setting.<p><h3>See Also:</h3>   <a
+   * analytics, ignore these settings. When you enable Nielsen configuration,
+   * MediaConvert enables PCM to ID3 tagging for all outputs in the job.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NielsenConfiguration">AWS
    * API Reference</a></p>
    */
@@ -69,50 +66,50 @@ namespace Model
 
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is
-     * assigned to your organization by Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your
+     * organization by Nielsen.
      */
     inline const Aws::String& GetDistributorId() const{ return m_distributorId; }
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is
-     * assigned to your organization by Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your
+     * organization by Nielsen.
      */
     inline bool DistributorIdHasBeenSet() const { return m_distributorIdHasBeenSet; }
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is
-     * assigned to your organization by Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your
+     * organization by Nielsen.
      */
     inline void SetDistributorId(const Aws::String& value) { m_distributorIdHasBeenSet = true; m_distributorId = value; }
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is
-     * assigned to your organization by Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your
+     * organization by Nielsen.
      */
     inline void SetDistributorId(Aws::String&& value) { m_distributorIdHasBeenSet = true; m_distributorId = std::move(value); }
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is
-     * assigned to your organization by Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your
+     * organization by Nielsen.
      */
     inline void SetDistributorId(const char* value) { m_distributorIdHasBeenSet = true; m_distributorId.assign(value); }
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is
-     * assigned to your organization by Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your
+     * organization by Nielsen.
      */
     inline NielsenConfiguration& WithDistributorId(const Aws::String& value) { SetDistributorId(value); return *this;}
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is
-     * assigned to your organization by Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your
+     * organization by Nielsen.
      */
     inline NielsenConfiguration& WithDistributorId(Aws::String&& value) { SetDistributorId(std::move(value)); return *this;}
 
     /**
-     * Use Distributor ID (DistributorID) to specify the distributor ID that is
-     * assigned to your organization by Neilsen.
+     * Use Distributor ID to specify the distributor ID that is assigned to your
+     * organization by Nielsen.
      */
     inline NielsenConfiguration& WithDistributorId(const char* value) { SetDistributorId(value); return *this;}
 

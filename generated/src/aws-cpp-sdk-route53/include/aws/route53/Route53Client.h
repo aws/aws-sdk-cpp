@@ -246,11 +246,12 @@ namespace Route53
          * <code>ChangeResourceRecordSets</code>. </p> <p> <b>Change Propagation to Route
          * 53 DNS Servers</b> </p> <p>When you submit a
          * <code>ChangeResourceRecordSets</code> request, Route 53 propagates your changes
-         * to all of the Route 53 authoritative DNS servers. While your changes are
-         * propagating, <code>GetChange</code> returns a status of <code>PENDING</code>.
-         * When propagation is complete, <code>GetChange</code> returns a status of
-         * <code>INSYNC</code>. Changes generally propagate to all Route 53 name servers
-         * within 60 seconds. For more information, see <a
+         * to all of the Route 53 authoritative DNS servers managing the hosted zone. While
+         * your changes are propagating, <code>GetChange</code> returns a status of
+         * <code>PENDING</code>. When propagation is complete, <code>GetChange</code>
+         * returns a status of <code>INSYNC</code>. Changes generally propagate to all
+         * Route 53 name servers managing the hosted zone within 60 seconds. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.</p>
          * <p> <b>Limits on ChangeResourceRecordSets Requests</b> </p> <p>For information
          * about the limits on a <code>ChangeResourceRecordSets</code> request, see <a
@@ -674,7 +675,14 @@ namespace Route53
          * with a specified domain name (such as example.com) or subdomain name (such as
          * www.example.com). Amazon Route 53 responds to DNS queries for the domain or
          * subdomain name by using the resource record sets that
-         * <code>CreateTrafficPolicyInstance</code> created.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateTrafficPolicyInstance</code> created.</p>  <p>After you submit
+         * an <code>CreateTrafficPolicyInstance</code> request, there's a brief delay while
+         * Amazon Route 53 creates the resource record sets that are specified in the
+         * traffic policy definition. Use <code>GetTrafficPolicyInstance</code> with the
+         * <code>id</code> of new traffic policy instance to confirm that the
+         * <code>CreateTrafficPolicyInstance</code> request completed successfully. For
+         * more information, see the <code>State</code> response element.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -1250,10 +1258,11 @@ namespace Route53
         /**
          * <p>Returns the current status of a change batch request. The status is one of
          * the following values:</p> <ul> <li> <p> <code>PENDING</code> indicates that the
-         * changes in this request have not propagated to all Amazon Route 53 DNS servers.
-         * This is the initial status of all change batch requests.</p> </li> <li> <p>
-         * <code>INSYNC</code> indicates that the changes have propagated to all Route 53
-         * DNS servers. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * changes in this request have not propagated to all Amazon Route 53 DNS servers
+         * managing the hosted zone. This is the initial status of all change batch
+         * requests.</p> </li> <li> <p> <code>INSYNC</code> indicates that the changes have
+         * propagated to all Route 53 DNS servers managing the hosted zone. </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">AWS
          * API Reference</a></p>
          */
@@ -1679,13 +1688,14 @@ namespace Route53
         }
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> 
-         * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
-         * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
-         * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p>   <p>In the Route 53 console, traffic policy
-         * instances are known as policy records.</p> <p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified traffic policy instance.</p>  <p>
+         * Use <code>GetTrafficPolicyInstance</code> with the <code>id</code> of new
+         * traffic policy instance to confirm that the
+         * <code>CreateTrafficPolicyInstance</code> or an
+         * <code>UpdateTrafficPolicyInstance</code> request completed successfully. For
+         * more information, see the <code>State</code> response element.</p> 
+         *  <p>In the Route 53 console, traffic policy instances are known as policy
+         * records.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -2385,7 +2395,11 @@ namespace Route53
          * <p>Gets the value that Amazon Route 53 returns in response to a DNS request for
          * a specified record name and type. You can optionally specify the IP address of a
          * DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p> <p>This
-         * call only supports querying public hosted zones.</p><p><h3>See Also:</h3>   <a
+         * call only supports querying public hosted zones.</p>  <p>The
+         * <code>TestDnsAnswer </code> returns information similar to what you would expect
+         * from the answer section of the <code>dig</code> command. Therefore, if you query
+         * for the name servers of a subdomain that point to the parent name servers, those
+         * will not be returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">AWS
          * API Reference</a></p>
          */
@@ -2491,6 +2505,13 @@ namespace Route53
         }
 
         /**
+         *  <p>After you submit a <code>UpdateTrafficPolicyInstance</code> request,
+         * there's a brief delay while Route 53 creates the resource record sets that are
+         * specified in the traffic policy definition. Use
+         * <code>GetTrafficPolicyInstance</code> with the <code>id</code> of updated
+         * traffic policy instance confirm that the
+         * <code>UpdateTrafficPolicyInstance</code> request completed successfully. For
+         * more information, see the <code>State</code> response element.</p> 
          * <p>Updates the resource record sets in a specified hosted zone that were created
          * based on the settings in a specified traffic policy version.</p> <p>When you
          * update a traffic policy instance, Amazon Route 53 continues to respond to DNS

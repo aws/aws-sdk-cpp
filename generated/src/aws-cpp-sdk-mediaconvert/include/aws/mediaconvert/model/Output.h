@@ -47,115 +47,107 @@ namespace Model
 
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline const Aws::Vector<AudioDescription>& GetAudioDescriptions() const{ return m_audioDescriptions; }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline bool AudioDescriptionsHasBeenSet() const { return m_audioDescriptionsHasBeenSet; }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline void SetAudioDescriptions(const Aws::Vector<AudioDescription>& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions = value; }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline void SetAudioDescriptions(Aws::Vector<AudioDescription>&& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions = std::move(value); }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline Output& WithAudioDescriptions(const Aws::Vector<AudioDescription>& value) { SetAudioDescriptions(value); return *this;}
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline Output& WithAudioDescriptions(Aws::Vector<AudioDescription>&& value) { SetAudioDescriptions(std::move(value)); return *this;}
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline Output& AddAudioDescriptions(const AudioDescription& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions.push_back(value); return *this; }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by
-     * audio codec. Include one instance of (AudioDescriptions) per output.
-     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one
+     * instance of per output. Can contain multiple groups of encoding settings.
      */
     inline Output& AddAudioDescriptions(AudioDescription&& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that
-     * has captions, include one instance of (CaptionDescriptions).
-     * (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include
+     * one instance of CaptionDescriptions. Can contain multiple groups of captions
+     * settings.
      */
     inline const Aws::Vector<CaptionDescription>& GetCaptionDescriptions() const{ return m_captionDescriptions; }
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that
-     * has captions, include one instance of (CaptionDescriptions).
-     * (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include
+     * one instance of CaptionDescriptions. Can contain multiple groups of captions
+     * settings.
      */
     inline bool CaptionDescriptionsHasBeenSet() const { return m_captionDescriptionsHasBeenSet; }
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that
-     * has captions, include one instance of (CaptionDescriptions).
-     * (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include
+     * one instance of CaptionDescriptions. Can contain multiple groups of captions
+     * settings.
      */
     inline void SetCaptionDescriptions(const Aws::Vector<CaptionDescription>& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions = value; }
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that
-     * has captions, include one instance of (CaptionDescriptions).
-     * (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include
+     * one instance of CaptionDescriptions. Can contain multiple groups of captions
+     * settings.
      */
     inline void SetCaptionDescriptions(Aws::Vector<CaptionDescription>&& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions = std::move(value); }
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that
-     * has captions, include one instance of (CaptionDescriptions).
-     * (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include
+     * one instance of CaptionDescriptions. Can contain multiple groups of captions
+     * settings.
      */
     inline Output& WithCaptionDescriptions(const Aws::Vector<CaptionDescription>& value) { SetCaptionDescriptions(value); return *this;}
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that
-     * has captions, include one instance of (CaptionDescriptions).
-     * (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include
+     * one instance of CaptionDescriptions. Can contain multiple groups of captions
+     * settings.
      */
     inline Output& WithCaptionDescriptions(Aws::Vector<CaptionDescription>&& value) { SetCaptionDescriptions(std::move(value)); return *this;}
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that
-     * has captions, include one instance of (CaptionDescriptions).
-     * (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include
+     * one instance of CaptionDescriptions. Can contain multiple groups of captions
+     * settings.
      */
     inline Output& AddCaptionDescriptions(const CaptionDescription& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions.push_back(value); return *this; }
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that
-     * has captions, include one instance of (CaptionDescriptions).
-     * (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include
+     * one instance of CaptionDescriptions. Can contain multiple groups of captions
+     * settings.
      */
     inline Output& AddCaptionDescriptions(CaptionDescription&& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions.push_back(std::move(value)); return *this; }
 
@@ -192,163 +184,155 @@ namespace Model
 
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File
-     * output groups. If you do not specify a value, the service will use default
-     * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
-     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
-     * H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups.
+     * If you do not specify a value, the service will use default extensions by
+     * container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF
+     * container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     * the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     inline const Aws::String& GetExtension() const{ return m_extension; }
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File
-     * output groups. If you do not specify a value, the service will use default
-     * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
-     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
-     * H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups.
+     * If you do not specify a value, the service will use default extensions by
+     * container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF
+     * container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     * the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     inline bool ExtensionHasBeenSet() const { return m_extensionHasBeenSet; }
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File
-     * output groups. If you do not specify a value, the service will use default
-     * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
-     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
-     * H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups.
+     * If you do not specify a value, the service will use default extensions by
+     * container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF
+     * container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     * the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     inline void SetExtension(const Aws::String& value) { m_extensionHasBeenSet = true; m_extension = value; }
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File
-     * output groups. If you do not specify a value, the service will use default
-     * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
-     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
-     * H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups.
+     * If you do not specify a value, the service will use default extensions by
+     * container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF
+     * container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     * the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     inline void SetExtension(Aws::String&& value) { m_extensionHasBeenSet = true; m_extension = std::move(value); }
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File
-     * output groups. If you do not specify a value, the service will use default
-     * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
-     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
-     * H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups.
+     * If you do not specify a value, the service will use default extensions by
+     * container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF
+     * container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     * the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     inline void SetExtension(const char* value) { m_extensionHasBeenSet = true; m_extension.assign(value); }
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File
-     * output groups. If you do not specify a value, the service will use default
-     * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
-     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
-     * H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups.
+     * If you do not specify a value, the service will use default extensions by
+     * container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF
+     * container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     * the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     inline Output& WithExtension(const Aws::String& value) { SetExtension(value); return *this;}
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File
-     * output groups. If you do not specify a value, the service will use default
-     * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
-     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
-     * H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups.
+     * If you do not specify a value, the service will use default extensions by
+     * container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF
+     * container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     * the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     inline Output& WithExtension(Aws::String&& value) { SetExtension(std::move(value)); return *this;}
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File
-     * output groups. If you do not specify a value, the service will use default
-     * extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container,
-     * webm * No Container, the service will use codec extensions (e.g. AAC, H265,
-     * H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups.
+     * If you do not specify a value, the service will use default extensions by
+     * container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov * MXF
+     * container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     * the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     inline Output& WithExtension(const char* value) { SetExtension(value); return *this;}
 
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of
-     * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier
-     * (NameModifier) is required. Name modifier also accepts format identifiers. For
-     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
-     * output, you must use them in the same way in all outputs of the output group.
+     * Use Name modifier to have the service add a string to the end of each output
+     * filename. You specify the base filename as part of your destination URI. When
+     * you create multiple outputs in the same output group, Name modifier is required.
+     * Name modifier also accepts format identifiers. For DASH ISO outputs, if you use
+     * the format identifiers $Number$ or $Time$ in one output, you must use them in
+     * the same way in all outputs of the output group.
      */
     inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of
-     * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier
-     * (NameModifier) is required. Name modifier also accepts format identifiers. For
-     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
-     * output, you must use them in the same way in all outputs of the output group.
+     * Use Name modifier to have the service add a string to the end of each output
+     * filename. You specify the base filename as part of your destination URI. When
+     * you create multiple outputs in the same output group, Name modifier is required.
+     * Name modifier also accepts format identifiers. For DASH ISO outputs, if you use
+     * the format identifiers $Number$ or $Time$ in one output, you must use them in
+     * the same way in all outputs of the output group.
      */
     inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of
-     * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier
-     * (NameModifier) is required. Name modifier also accepts format identifiers. For
-     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
-     * output, you must use them in the same way in all outputs of the output group.
+     * Use Name modifier to have the service add a string to the end of each output
+     * filename. You specify the base filename as part of your destination URI. When
+     * you create multiple outputs in the same output group, Name modifier is required.
+     * Name modifier also accepts format identifiers. For DASH ISO outputs, if you use
+     * the format identifiers $Number$ or $Time$ in one output, you must use them in
+     * the same way in all outputs of the output group.
      */
     inline void SetNameModifier(const Aws::String& value) { m_nameModifierHasBeenSet = true; m_nameModifier = value; }
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of
-     * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier
-     * (NameModifier) is required. Name modifier also accepts format identifiers. For
-     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
-     * output, you must use them in the same way in all outputs of the output group.
+     * Use Name modifier to have the service add a string to the end of each output
+     * filename. You specify the base filename as part of your destination URI. When
+     * you create multiple outputs in the same output group, Name modifier is required.
+     * Name modifier also accepts format identifiers. For DASH ISO outputs, if you use
+     * the format identifiers $Number$ or $Time$ in one output, you must use them in
+     * the same way in all outputs of the output group.
      */
     inline void SetNameModifier(Aws::String&& value) { m_nameModifierHasBeenSet = true; m_nameModifier = std::move(value); }
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of
-     * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier
-     * (NameModifier) is required. Name modifier also accepts format identifiers. For
-     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
-     * output, you must use them in the same way in all outputs of the output group.
+     * Use Name modifier to have the service add a string to the end of each output
+     * filename. You specify the base filename as part of your destination URI. When
+     * you create multiple outputs in the same output group, Name modifier is required.
+     * Name modifier also accepts format identifiers. For DASH ISO outputs, if you use
+     * the format identifiers $Number$ or $Time$ in one output, you must use them in
+     * the same way in all outputs of the output group.
      */
     inline void SetNameModifier(const char* value) { m_nameModifierHasBeenSet = true; m_nameModifier.assign(value); }
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of
-     * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier
-     * (NameModifier) is required. Name modifier also accepts format identifiers. For
-     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
-     * output, you must use them in the same way in all outputs of the output group.
+     * Use Name modifier to have the service add a string to the end of each output
+     * filename. You specify the base filename as part of your destination URI. When
+     * you create multiple outputs in the same output group, Name modifier is required.
+     * Name modifier also accepts format identifiers. For DASH ISO outputs, if you use
+     * the format identifiers $Number$ or $Time$ in one output, you must use them in
+     * the same way in all outputs of the output group.
      */
     inline Output& WithNameModifier(const Aws::String& value) { SetNameModifier(value); return *this;}
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of
-     * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier
-     * (NameModifier) is required. Name modifier also accepts format identifiers. For
-     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
-     * output, you must use them in the same way in all outputs of the output group.
+     * Use Name modifier to have the service add a string to the end of each output
+     * filename. You specify the base filename as part of your destination URI. When
+     * you create multiple outputs in the same output group, Name modifier is required.
+     * Name modifier also accepts format identifiers. For DASH ISO outputs, if you use
+     * the format identifiers $Number$ or $Time$ in one output, you must use them in
+     * the same way in all outputs of the output group.
      */
     inline Output& WithNameModifier(Aws::String&& value) { SetNameModifier(std::move(value)); return *this;}
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of
-     * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier
-     * (NameModifier) is required. Name modifier also accepts format identifiers. For
-     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
-     * output, you must use them in the same way in all outputs of the output group.
+     * Use Name modifier to have the service add a string to the end of each output
+     * filename. You specify the base filename as part of your destination URI. When
+     * you create multiple outputs in the same output group, Name modifier is required.
+     * Name modifier also accepts format identifiers. For DASH ISO outputs, if you use
+     * the format identifiers $Number$ or $Time$ in one output, you must use them in
+     * the same way in all outputs of the output group.
      */
     inline Output& WithNameModifier(const char* value) { SetNameModifier(value); return *this;}
 
@@ -385,58 +369,58 @@ namespace Model
 
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
-     * the system or custom preset name. You can specify either Preset (Preset) or
-     * Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system
+     * or custom preset name. You can specify either Preset or Container settings, but
+     * not both.
      */
     inline const Aws::String& GetPreset() const{ return m_preset; }
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
-     * the system or custom preset name. You can specify either Preset (Preset) or
-     * Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system
+     * or custom preset name. You can specify either Preset or Container settings, but
+     * not both.
      */
     inline bool PresetHasBeenSet() const { return m_presetHasBeenSet; }
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
-     * the system or custom preset name. You can specify either Preset (Preset) or
-     * Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system
+     * or custom preset name. You can specify either Preset or Container settings, but
+     * not both.
      */
     inline void SetPreset(const Aws::String& value) { m_presetHasBeenSet = true; m_preset = value; }
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
-     * the system or custom preset name. You can specify either Preset (Preset) or
-     * Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system
+     * or custom preset name. You can specify either Preset or Container settings, but
+     * not both.
      */
     inline void SetPreset(Aws::String&& value) { m_presetHasBeenSet = true; m_preset = std::move(value); }
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
-     * the system or custom preset name. You can specify either Preset (Preset) or
-     * Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system
+     * or custom preset name. You can specify either Preset or Container settings, but
+     * not both.
      */
     inline void SetPreset(const char* value) { m_presetHasBeenSet = true; m_preset.assign(value); }
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
-     * the system or custom preset name. You can specify either Preset (Preset) or
-     * Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system
+     * or custom preset name. You can specify either Preset or Container settings, but
+     * not both.
      */
     inline Output& WithPreset(const Aws::String& value) { SetPreset(value); return *this;}
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
-     * the system or custom preset name. You can specify either Preset (Preset) or
-     * Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system
+     * or custom preset name. You can specify either Preset or Container settings, but
+     * not both.
      */
     inline Output& WithPreset(Aws::String&& value) { SetPreset(std::move(value)); return *this;}
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide
-     * the system or custom preset name. You can specify either Preset (Preset) or
-     * Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system
+     * or custom preset name. You can specify either Preset or Container settings, but
+     * not both.
      */
     inline Output& WithPreset(const char* value) { SetPreset(value); return *this;}
 

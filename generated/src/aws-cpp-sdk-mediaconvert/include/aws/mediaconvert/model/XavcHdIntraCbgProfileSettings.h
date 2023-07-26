@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * Required when you set (Profile) under
-   * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-   * XAVC_HD_INTRA_CBG.<p><h3>See Also:</h3>   <a
+   * Required when you set Profile to the value XAVC_HD_INTRA_CBG.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/XavcHdIntraCbgProfileSettings">AWS
    * API Reference</a></p>
    */

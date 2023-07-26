@@ -26,9 +26,8 @@ namespace Model
   /**
    * Settings related to SRT captions. SRT is a sidecar format that holds captions in
    * a file that is separate from the video container. Set up sidecar captions in the
-   * same output group, but different output from your video. When you work directly
-   * in your JSON job specification, include this object and any required children
-   * when you set destinationType to SRT.<p><h3>See Also:</h3>   <a
+   * same output group, but different output from your video.<p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/SrtDestinationSettings">AWS
    * API Reference</a></p>
    */
@@ -42,62 +41,56 @@ namespace Model
 
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
-     * and position information from your input captions and use simplified output
-     * captions.
+     * Set Style passthrough to ENABLED to use the available style, color, and position
+     * information from your input captions. MediaConvert uses default settings for any
+     * missing style and position information in your input captions. Set Style
+     * passthrough to DISABLED, or leave blank, to ignore the style and position
+     * information from your input captions and use simplified output captions.
      */
     inline const SrtStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
-     * and position information from your input captions and use simplified output
-     * captions.
+     * Set Style passthrough to ENABLED to use the available style, color, and position
+     * information from your input captions. MediaConvert uses default settings for any
+     * missing style and position information in your input captions. Set Style
+     * passthrough to DISABLED, or leave blank, to ignore the style and position
+     * information from your input captions and use simplified output captions.
      */
     inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
-     * and position information from your input captions and use simplified output
-     * captions.
+     * Set Style passthrough to ENABLED to use the available style, color, and position
+     * information from your input captions. MediaConvert uses default settings for any
+     * missing style and position information in your input captions. Set Style
+     * passthrough to DISABLED, or leave blank, to ignore the style and position
+     * information from your input captions and use simplified output captions.
      */
     inline void SetStylePassthrough(const SrtStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
-     * and position information from your input captions and use simplified output
-     * captions.
+     * Set Style passthrough to ENABLED to use the available style, color, and position
+     * information from your input captions. MediaConvert uses default settings for any
+     * missing style and position information in your input captions. Set Style
+     * passthrough to DISABLED, or leave blank, to ignore the style and position
+     * information from your input captions and use simplified output captions.
      */
     inline void SetStylePassthrough(SrtStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
-     * and position information from your input captions and use simplified output
-     * captions.
+     * Set Style passthrough to ENABLED to use the available style, color, and position
+     * information from your input captions. MediaConvert uses default settings for any
+     * missing style and position information in your input captions. Set Style
+     * passthrough to DISABLED, or leave blank, to ignore the style and position
+     * information from your input captions and use simplified output captions.
      */
     inline SrtDestinationSettings& WithStylePassthrough(const SrtStylePassthrough& value) { SetStylePassthrough(value); return *this;}
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style,
-     * color, and position information from your input captions. MediaConvert uses
-     * default settings for any missing style and position information in your input
-     * captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style
-     * and position information from your input captions and use simplified output
-     * captions.
+     * Set Style passthrough to ENABLED to use the available style, color, and position
+     * information from your input captions. MediaConvert uses default settings for any
+     * missing style and position information in your input captions. Set Style
+     * passthrough to DISABLED, or leave blank, to ignore the style and position
+     * information from your input captions and use simplified output captions.
      */
     inline SrtDestinationSettings& WithStylePassthrough(SrtStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
 

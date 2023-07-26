@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-   * value FRAME_CAPTURE.<p><h3>See Also:</h3>   <a
+   * Required when you set Codec to the value FRAME_CAPTURE.<p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FrameCaptureSettings">AWS
    * API Reference</a></p>
    */

@@ -35,15 +35,14 @@ namespace Model
 {
 
   /**
-   * Video codec settings, (CodecSettings) under (VideoDescription), contains the
-   * group of settings related to video encoding. The settings in this group vary
-   * depending on the value that you choose for Video codec (Codec). For each codec
-   * enum that you choose, define the corresponding settings object. The following
-   * lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
-   * AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings *
-   * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3,
-   * Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings<p><h3>See
-   * Also:</h3>   <a
+   * Video codec settings contains the group of settings related to video encoding.
+   * The settings in this group vary depending on the value that you choose for Video
+   * codec. For each codec enum that you choose, define the corresponding settings
+   * object. The following lists the codec enum, settings object pairs. * AV1,
+   * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
+   * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
+   * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
+   * XavcSettings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -151,7 +150,7 @@ namespace Model
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
      * by the object VideoCodec. To passthrough the video stream of your input
-     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding:
      * Choose Passthrough. If you have multiple input videos, note that they must have
      * identical encoding attributes. When you choose Passthrough, your output
      * container must be MXF or QuickTime MOV.
@@ -161,7 +160,7 @@ namespace Model
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
      * by the object VideoCodec. To passthrough the video stream of your input
-     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding:
      * Choose Passthrough. If you have multiple input videos, note that they must have
      * identical encoding attributes. When you choose Passthrough, your output
      * container must be MXF or QuickTime MOV.
@@ -171,7 +170,7 @@ namespace Model
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
      * by the object VideoCodec. To passthrough the video stream of your input
-     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding:
      * Choose Passthrough. If you have multiple input videos, note that they must have
      * identical encoding attributes. When you choose Passthrough, your output
      * container must be MXF or QuickTime MOV.
@@ -181,7 +180,7 @@ namespace Model
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
      * by the object VideoCodec. To passthrough the video stream of your input
-     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding:
      * Choose Passthrough. If you have multiple input videos, note that they must have
      * identical encoding attributes. When you choose Passthrough, your output
      * container must be MXF or QuickTime MOV.
@@ -191,7 +190,7 @@ namespace Model
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
      * by the object VideoCodec. To passthrough the video stream of your input
-     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding:
      * Choose Passthrough. If you have multiple input videos, note that they must have
      * identical encoding attributes. When you choose Passthrough, your output
      * container must be MXF or QuickTime MOV.
@@ -201,7 +200,7 @@ namespace Model
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
      * by the object VideoCodec. To passthrough the video stream of your input
-     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding:
      * Choose Passthrough. If you have multiple input videos, note that they must have
      * identical encoding attributes. When you choose Passthrough, your output
      * container must be MXF or QuickTime MOV.
@@ -210,75 +209,63 @@ namespace Model
 
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value FRAME_CAPTURE.
+     * Required when you set Codec to the value FRAME_CAPTURE.
      */
     inline const FrameCaptureSettings& GetFrameCaptureSettings() const{ return m_frameCaptureSettings; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value FRAME_CAPTURE.
+     * Required when you set Codec to the value FRAME_CAPTURE.
      */
     inline bool FrameCaptureSettingsHasBeenSet() const { return m_frameCaptureSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value FRAME_CAPTURE.
+     * Required when you set Codec to the value FRAME_CAPTURE.
      */
     inline void SetFrameCaptureSettings(const FrameCaptureSettings& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = value; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value FRAME_CAPTURE.
+     * Required when you set Codec to the value FRAME_CAPTURE.
      */
     inline void SetFrameCaptureSettings(FrameCaptureSettings&& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = std::move(value); }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value FRAME_CAPTURE.
+     * Required when you set Codec to the value FRAME_CAPTURE.
      */
     inline VideoCodecSettings& WithFrameCaptureSettings(const FrameCaptureSettings& value) { SetFrameCaptureSettings(value); return *this;}
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value FRAME_CAPTURE.
+     * Required when you set Codec to the value FRAME_CAPTURE.
      */
     inline VideoCodecSettings& WithFrameCaptureSettings(FrameCaptureSettings&& value) { SetFrameCaptureSettings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value H_264.
+     * Required when you set Codec to the value H_264.
      */
     inline const H264Settings& GetH264Settings() const{ return m_h264Settings; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value H_264.
+     * Required when you set Codec to the value H_264.
      */
     inline bool H264SettingsHasBeenSet() const { return m_h264SettingsHasBeenSet; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value H_264.
+     * Required when you set Codec to the value H_264.
      */
     inline void SetH264Settings(const H264Settings& value) { m_h264SettingsHasBeenSet = true; m_h264Settings = value; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value H_264.
+     * Required when you set Codec to the value H_264.
      */
     inline void SetH264Settings(H264Settings&& value) { m_h264SettingsHasBeenSet = true; m_h264Settings = std::move(value); }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value H_264.
+     * Required when you set Codec to the value H_264.
      */
     inline VideoCodecSettings& WithH264Settings(const H264Settings& value) { SetH264Settings(value); return *this;}
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value H_264.
+     * Required when you set Codec to the value H_264.
      */
     inline VideoCodecSettings& WithH264Settings(H264Settings&& value) { SetH264Settings(std::move(value)); return *this;}
 
@@ -315,223 +302,187 @@ namespace Model
 
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value MPEG2.
+     * Required when you set Codec to the value MPEG2.
      */
     inline const Mpeg2Settings& GetMpeg2Settings() const{ return m_mpeg2Settings; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value MPEG2.
+     * Required when you set Codec to the value MPEG2.
      */
     inline bool Mpeg2SettingsHasBeenSet() const { return m_mpeg2SettingsHasBeenSet; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value MPEG2.
+     * Required when you set Codec to the value MPEG2.
      */
     inline void SetMpeg2Settings(const Mpeg2Settings& value) { m_mpeg2SettingsHasBeenSet = true; m_mpeg2Settings = value; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value MPEG2.
+     * Required when you set Codec to the value MPEG2.
      */
     inline void SetMpeg2Settings(Mpeg2Settings&& value) { m_mpeg2SettingsHasBeenSet = true; m_mpeg2Settings = std::move(value); }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value MPEG2.
+     * Required when you set Codec to the value MPEG2.
      */
     inline VideoCodecSettings& WithMpeg2Settings(const Mpeg2Settings& value) { SetMpeg2Settings(value); return *this;}
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value MPEG2.
+     * Required when you set Codec to the value MPEG2.
      */
     inline VideoCodecSettings& WithMpeg2Settings(Mpeg2Settings&& value) { SetMpeg2Settings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value PRORES.
+     * Required when you set Codec to the value PRORES.
      */
     inline const ProresSettings& GetProresSettings() const{ return m_proresSettings; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value PRORES.
+     * Required when you set Codec to the value PRORES.
      */
     inline bool ProresSettingsHasBeenSet() const { return m_proresSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value PRORES.
+     * Required when you set Codec to the value PRORES.
      */
     inline void SetProresSettings(const ProresSettings& value) { m_proresSettingsHasBeenSet = true; m_proresSettings = value; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value PRORES.
+     * Required when you set Codec to the value PRORES.
      */
     inline void SetProresSettings(ProresSettings&& value) { m_proresSettingsHasBeenSet = true; m_proresSettings = std::move(value); }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value PRORES.
+     * Required when you set Codec to the value PRORES.
      */
     inline VideoCodecSettings& WithProresSettings(const ProresSettings& value) { SetProresSettings(value); return *this;}
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value PRORES.
+     * Required when you set Codec to the value PRORES.
      */
     inline VideoCodecSettings& WithProresSettings(ProresSettings&& value) { SetProresSettings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VC3
+     * Required when you set Codec to the value VC3
      */
     inline const Vc3Settings& GetVc3Settings() const{ return m_vc3Settings; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VC3
+     * Required when you set Codec to the value VC3
      */
     inline bool Vc3SettingsHasBeenSet() const { return m_vc3SettingsHasBeenSet; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VC3
+     * Required when you set Codec to the value VC3
      */
     inline void SetVc3Settings(const Vc3Settings& value) { m_vc3SettingsHasBeenSet = true; m_vc3Settings = value; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VC3
+     * Required when you set Codec to the value VC3
      */
     inline void SetVc3Settings(Vc3Settings&& value) { m_vc3SettingsHasBeenSet = true; m_vc3Settings = std::move(value); }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VC3
+     * Required when you set Codec to the value VC3
      */
     inline VideoCodecSettings& WithVc3Settings(const Vc3Settings& value) { SetVc3Settings(value); return *this;}
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VC3
+     * Required when you set Codec to the value VC3
      */
     inline VideoCodecSettings& WithVc3Settings(Vc3Settings&& value) { SetVc3Settings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP8.
+     * Required when you set Codec to the value VP8.
      */
     inline const Vp8Settings& GetVp8Settings() const{ return m_vp8Settings; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP8.
+     * Required when you set Codec to the value VP8.
      */
     inline bool Vp8SettingsHasBeenSet() const { return m_vp8SettingsHasBeenSet; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP8.
+     * Required when you set Codec to the value VP8.
      */
     inline void SetVp8Settings(const Vp8Settings& value) { m_vp8SettingsHasBeenSet = true; m_vp8Settings = value; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP8.
+     * Required when you set Codec to the value VP8.
      */
     inline void SetVp8Settings(Vp8Settings&& value) { m_vp8SettingsHasBeenSet = true; m_vp8Settings = std::move(value); }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP8.
+     * Required when you set Codec to the value VP8.
      */
     inline VideoCodecSettings& WithVp8Settings(const Vp8Settings& value) { SetVp8Settings(value); return *this;}
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP8.
+     * Required when you set Codec to the value VP8.
      */
     inline VideoCodecSettings& WithVp8Settings(Vp8Settings&& value) { SetVp8Settings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP9.
+     * Required when you set Codec to the value VP9.
      */
     inline const Vp9Settings& GetVp9Settings() const{ return m_vp9Settings; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP9.
+     * Required when you set Codec to the value VP9.
      */
     inline bool Vp9SettingsHasBeenSet() const { return m_vp9SettingsHasBeenSet; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP9.
+     * Required when you set Codec to the value VP9.
      */
     inline void SetVp9Settings(const Vp9Settings& value) { m_vp9SettingsHasBeenSet = true; m_vp9Settings = value; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP9.
+     * Required when you set Codec to the value VP9.
      */
     inline void SetVp9Settings(Vp9Settings&& value) { m_vp9SettingsHasBeenSet = true; m_vp9Settings = std::move(value); }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP9.
+     * Required when you set Codec to the value VP9.
      */
     inline VideoCodecSettings& WithVp9Settings(const Vp9Settings& value) { SetVp9Settings(value); return *this;}
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value VP9.
+     * Required when you set Codec to the value VP9.
      */
     inline VideoCodecSettings& WithVp9Settings(Vp9Settings&& value) { SetVp9Settings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value XAVC.
+     * Required when you set Codec to the value XAVC.
      */
     inline const XavcSettings& GetXavcSettings() const{ return m_xavcSettings; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value XAVC.
+     * Required when you set Codec to the value XAVC.
      */
     inline bool XavcSettingsHasBeenSet() const { return m_xavcSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value XAVC.
+     * Required when you set Codec to the value XAVC.
      */
     inline void SetXavcSettings(const XavcSettings& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = value; }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value XAVC.
+     * Required when you set Codec to the value XAVC.
      */
     inline void SetXavcSettings(XavcSettings&& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = std::move(value); }
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value XAVC.
+     * Required when you set Codec to the value XAVC.
      */
     inline VideoCodecSettings& WithXavcSettings(const XavcSettings& value) { SetXavcSettings(value); return *this;}
 
     /**
-     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-     * value XAVC.
+     * Required when you set Codec to the value XAVC.
      */
     inline VideoCodecSettings& WithXavcSettings(XavcSettings&& value) { SetXavcSettings(std::move(value)); return *this;}
 

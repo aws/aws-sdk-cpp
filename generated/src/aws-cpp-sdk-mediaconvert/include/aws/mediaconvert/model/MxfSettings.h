@@ -42,72 +42,72 @@ namespace Model
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline const MxfAfdSignaling& GetAfdSignaling() const{ return m_afdSignaling; }
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline bool AfdSignalingHasBeenSet() const { return m_afdSignalingHasBeenSet; }
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline void SetAfdSignaling(const MxfAfdSignaling& value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = value; }
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline void SetAfdSignaling(MxfAfdSignaling&& value) { m_afdSignalingHasBeenSet = true; m_afdSignaling = std::move(value); }
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline MxfSettings& WithAfdSignaling(const MxfAfdSignaling& value) { SetAfdSignaling(value); return *this;}
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use
      * this setting to choose whether to also include it in the MXF wrapper. Choose
-     * Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
-     * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream
-     * for this output to the MXF wrapper. Regardless of which option you choose, the
-     * AFD values remain in the video stream. Related settings: To set up your output
-     * to include or exclude AFD values, see AfdSignaling, under VideoDescription. On
-     * the console, find AFD signaling under the output's video encoding settings.
+     * Don't copy to exclude AFD signaling from the MXF wrapper. Choose Copy from video
+     * stream to copy the AFD values from the video stream for this output to the MXF
+     * wrapper. Regardless of which option you choose, the AFD values remain in the
+     * video stream. Related settings: To set up your output to include or exclude AFD
+     * values, see AfdSignaling, under VideoDescription. On the console, find AFD
+     * signaling under the output's video encoding settings.
      */
     inline MxfSettings& WithAfdSignaling(MxfAfdSignaling&& value) { SetAfdSignaling(std::move(value)); return *this;}
 
