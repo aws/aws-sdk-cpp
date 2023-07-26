@@ -866,7 +866,7 @@ TEST_P(TransferTests, TransferManager_EmptyFileTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(0u, fileSize);
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
 
@@ -944,7 +944,7 @@ TEST_P(TransferTests, TransferManager_SmallTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, (SMALL_TEST_SIZE / testStrLen * testStrLen));
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
 
@@ -983,7 +983,7 @@ TEST_P(TransferTests, TransferManager_ContentTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, strlen(CONTENT_TEST_FILE_TEXT));
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CONTENT_FILE_KEY));
 
@@ -1153,7 +1153,7 @@ TEST_P(TransferTests, TransferManager_MediumTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, MEDIUM_TEST_SIZE / testStrLen * testStrLen);
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
 
@@ -1201,7 +1201,7 @@ TEST_P(TransferTests, TransferManager_BigTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, BIG_TEST_SIZE / testStrLen * testStrLen);
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), BIG_FILE_KEY));
 
@@ -1285,7 +1285,7 @@ TEST_P(TransferTests, TransferManager_MultipartTestWithStreamOffset)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, BIG_TEST_SIZE / testStrLen * testStrLen - inputOffset);
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), BIG_FILE_KEY));
 
@@ -1335,7 +1335,7 @@ TEST_P(TransferTests, TransferManager_UnicodeFileNameTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, MEDIUM_TEST_SIZE / testStrLen * testStrLen);
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), UNICODE_FILE_KEY));
 
@@ -1438,7 +1438,7 @@ TEST_P(TransferTests, TransferManager_CancelAndRetryUploadTest)
     ASSERT_TRUE(completedPartsStayedCompletedDuringRetry);
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
     listMultipartOutcome = m_s3Clients[GetParam()]->ListMultipartUploads(listMultipartRequest);
 
@@ -1545,7 +1545,7 @@ TEST_P(TransferTests, TransferManager_AbortAndRetryUploadTest)
     ASSERT_EQ(30u, requestPtr->GetCompletedParts().size());
     ASSERT_TRUE(completionCheckDone);
     ASSERT_FALSE(completedPartsStayedCompletedDuringRetry);
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CANCEL_FILE_KEY));
 
@@ -1581,7 +1581,7 @@ TEST_P(TransferTests, TransferManager_MultiPartContentTest)
 
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
     ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // > 1 part
-    ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+    ASSERT_LE(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
 
     VerifyUploadedFile(*transferManager,
                        multiPartContentFileName,
@@ -1634,7 +1634,7 @@ TEST_P(TransferTests, TransferManager_MultiPartStreamableByteTest)
 
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
     ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // > 1 part
-    ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+    ASSERT_LE(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
 
     VerifyUploadedFile(*transferManager,
                        multiPartContentFileName,
@@ -1671,7 +1671,7 @@ TEST_P(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
 
     requestPtr->WaitUntilFinished();
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
-    ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+    ASSERT_LE(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
 
@@ -1723,7 +1723,7 @@ TEST_P(TransferTests, MultipartUploadWithMetadataTest)
         requestPtr->WaitUntilFinished();
     }
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
-    ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+    ASSERT_LE(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
 
@@ -1871,7 +1871,7 @@ TEST_P(TransferTests, TransferManager_CancelAndRetryDownloadTest)
         ASSERT_TRUE(completedPartsStayedCompletedDuringRetry);
         ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
-        ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+        ASSERT_LE(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
 
         ASSERT_TRUE(AreFilesSame(downloadFileName, cancelTestFileName));
     }
@@ -1901,7 +1901,7 @@ TEST_P(TransferTests, TransferManager_SinglePartUploadWithComputeContentMd5Test)
     requestPtr->WaitUntilFinished();
     ASSERT_FALSE(requestPtr->IsMultipart());
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
-    ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+    ASSERT_LE(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
 
@@ -1956,7 +1956,7 @@ TEST_P(TransferTests, MultipartUploadWithComputeContentMd5Test)
     }
     ASSERT_TRUE(requestPtr->IsMultipart());
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
-    ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+    ASSERT_LE(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
 
@@ -2022,7 +2022,7 @@ TEST_P(TransferTests, TransferManager_TemplatesTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, MEDIUM_TEST_SIZE / testStrLen * testStrLen);
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
+    ASSERT_LE(fileSize, requestPtr->GetBytesTransferred());
 
     ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
 
