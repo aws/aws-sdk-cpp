@@ -399,113 +399,97 @@ namespace Model
 
     /**
      * Specify the language for this audio output track. The service puts this language
-     * code into your output audio track when you set Language code control
-     * (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The service also
-     * uses your specified custom language code when you set Language code control
-     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file
-     * doesn't specify a language code. For all outputs, you can use an ISO 639-2 or
-     * ISO 639-3 code. For streaming outputs, you can also use any other code in the
-     * full RFC-5646 specification. Streaming outputs are those that are in one of the
-     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
-     * Streaming.
+     * code into your output audio track when you set Language code control to Use
+     * configured. The service also uses your specified custom language code when you
+     * set Language code control to Follow input, but your input file doesn't specify a
+     * language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For
+     * streaming outputs, you can also use any other code in the full RFC-5646
+     * specification. Streaming outputs are those that are in one of the following
+     * output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
     inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
 
     /**
      * Specify the language for this audio output track. The service puts this language
-     * code into your output audio track when you set Language code control
-     * (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The service also
-     * uses your specified custom language code when you set Language code control
-     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file
-     * doesn't specify a language code. For all outputs, you can use an ISO 639-2 or
-     * ISO 639-3 code. For streaming outputs, you can also use any other code in the
-     * full RFC-5646 specification. Streaming outputs are those that are in one of the
-     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
-     * Streaming.
+     * code into your output audio track when you set Language code control to Use
+     * configured. The service also uses your specified custom language code when you
+     * set Language code control to Follow input, but your input file doesn't specify a
+     * language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For
+     * streaming outputs, you can also use any other code in the full RFC-5646
+     * specification. Streaming outputs are those that are in one of the following
+     * output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
     inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
 
     /**
      * Specify the language for this audio output track. The service puts this language
-     * code into your output audio track when you set Language code control
-     * (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The service also
-     * uses your specified custom language code when you set Language code control
-     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file
-     * doesn't specify a language code. For all outputs, you can use an ISO 639-2 or
-     * ISO 639-3 code. For streaming outputs, you can also use any other code in the
-     * full RFC-5646 specification. Streaming outputs are those that are in one of the
-     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
-     * Streaming.
+     * code into your output audio track when you set Language code control to Use
+     * configured. The service also uses your specified custom language code when you
+     * set Language code control to Follow input, but your input file doesn't specify a
+     * language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For
+     * streaming outputs, you can also use any other code in the full RFC-5646
+     * specification. Streaming outputs are those that are in one of the following
+     * output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
     inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
 
     /**
      * Specify the language for this audio output track. The service puts this language
-     * code into your output audio track when you set Language code control
-     * (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The service also
-     * uses your specified custom language code when you set Language code control
-     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file
-     * doesn't specify a language code. For all outputs, you can use an ISO 639-2 or
-     * ISO 639-3 code. For streaming outputs, you can also use any other code in the
-     * full RFC-5646 specification. Streaming outputs are those that are in one of the
-     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
-     * Streaming.
+     * code into your output audio track when you set Language code control to Use
+     * configured. The service also uses your specified custom language code when you
+     * set Language code control to Follow input, but your input file doesn't specify a
+     * language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For
+     * streaming outputs, you can also use any other code in the full RFC-5646
+     * specification. Streaming outputs are those that are in one of the following
+     * output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
     inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
 
     /**
      * Specify the language for this audio output track. The service puts this language
-     * code into your output audio track when you set Language code control
-     * (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The service also
-     * uses your specified custom language code when you set Language code control
-     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file
-     * doesn't specify a language code. For all outputs, you can use an ISO 639-2 or
-     * ISO 639-3 code. For streaming outputs, you can also use any other code in the
-     * full RFC-5646 specification. Streaming outputs are those that are in one of the
-     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
-     * Streaming.
+     * code into your output audio track when you set Language code control to Use
+     * configured. The service also uses your specified custom language code when you
+     * set Language code control to Follow input, but your input file doesn't specify a
+     * language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For
+     * streaming outputs, you can also use any other code in the full RFC-5646
+     * specification. Streaming outputs are those that are in one of the following
+     * output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
     inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
 
     /**
      * Specify the language for this audio output track. The service puts this language
-     * code into your output audio track when you set Language code control
-     * (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The service also
-     * uses your specified custom language code when you set Language code control
-     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file
-     * doesn't specify a language code. For all outputs, you can use an ISO 639-2 or
-     * ISO 639-3 code. For streaming outputs, you can also use any other code in the
-     * full RFC-5646 specification. Streaming outputs are those that are in one of the
-     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
-     * Streaming.
+     * code into your output audio track when you set Language code control to Use
+     * configured. The service also uses your specified custom language code when you
+     * set Language code control to Follow input, but your input file doesn't specify a
+     * language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For
+     * streaming outputs, you can also use any other code in the full RFC-5646
+     * specification. Streaming outputs are those that are in one of the following
+     * output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
     inline AudioDescription& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
 
     /**
      * Specify the language for this audio output track. The service puts this language
-     * code into your output audio track when you set Language code control
-     * (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The service also
-     * uses your specified custom language code when you set Language code control
-     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file
-     * doesn't specify a language code. For all outputs, you can use an ISO 639-2 or
-     * ISO 639-3 code. For streaming outputs, you can also use any other code in the
-     * full RFC-5646 specification. Streaming outputs are those that are in one of the
-     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
-     * Streaming.
+     * code into your output audio track when you set Language code control to Use
+     * configured. The service also uses your specified custom language code when you
+     * set Language code control to Follow input, but your input file doesn't specify a
+     * language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For
+     * streaming outputs, you can also use any other code in the full RFC-5646
+     * specification. Streaming outputs are those that are in one of the following
+     * output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
     inline AudioDescription& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
 
     /**
      * Specify the language for this audio output track. The service puts this language
-     * code into your output audio track when you set Language code control
-     * (AudioLanguageCodeControl) to Use configured (USE_CONFIGURED). The service also
-     * uses your specified custom language code when you set Language code control
-     * (AudioLanguageCodeControl) to Follow input (FOLLOW_INPUT), but your input file
-     * doesn't specify a language code. For all outputs, you can use an ISO 639-2 or
-     * ISO 639-3 code. For streaming outputs, you can also use any other code in the
-     * full RFC-5646 specification. Streaming outputs are those that are in one of the
-     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
-     * Streaming.
+     * code into your output audio track when you set Language code control to Use
+     * configured. The service also uses your specified custom language code when you
+     * set Language code control to Follow input, but your input file doesn't specify a
+     * language code. For all outputs, you can use an ISO 639-2 or ISO 639-3 code. For
+     * streaming outputs, you can also use any other code in the full RFC-5646
+     * specification. Streaming outputs are those that are in one of the following
+     * output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth Streaming.
      */
     inline AudioDescription& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 
@@ -561,61 +545,55 @@ namespace Model
 
     /**
      * Specify which source for language code takes precedence for this audio track.
-     * When you choose Follow input (FOLLOW_INPUT), the service uses the language code
-     * from the input track if it's present. If there's no languge code on the input
-     * track, the service uses the code that you specify in the setting Language code
-     * (languageCode or customLanguageCode). When you choose Use configured
-     * (USE_CONFIGURED), the service uses the language code that you specify.
+     * When you choose Follow input, the service uses the language code from the input
+     * track if it's present. If there's no languge code on the input track, the
+     * service uses the code that you specify in the setting Language code. When you
+     * choose Use configured, the service uses the language code that you specify.
      */
     inline const AudioLanguageCodeControl& GetLanguageCodeControl() const{ return m_languageCodeControl; }
 
     /**
      * Specify which source for language code takes precedence for this audio track.
-     * When you choose Follow input (FOLLOW_INPUT), the service uses the language code
-     * from the input track if it's present. If there's no languge code on the input
-     * track, the service uses the code that you specify in the setting Language code
-     * (languageCode or customLanguageCode). When you choose Use configured
-     * (USE_CONFIGURED), the service uses the language code that you specify.
+     * When you choose Follow input, the service uses the language code from the input
+     * track if it's present. If there's no languge code on the input track, the
+     * service uses the code that you specify in the setting Language code. When you
+     * choose Use configured, the service uses the language code that you specify.
      */
     inline bool LanguageCodeControlHasBeenSet() const { return m_languageCodeControlHasBeenSet; }
 
     /**
      * Specify which source for language code takes precedence for this audio track.
-     * When you choose Follow input (FOLLOW_INPUT), the service uses the language code
-     * from the input track if it's present. If there's no languge code on the input
-     * track, the service uses the code that you specify in the setting Language code
-     * (languageCode or customLanguageCode). When you choose Use configured
-     * (USE_CONFIGURED), the service uses the language code that you specify.
+     * When you choose Follow input, the service uses the language code from the input
+     * track if it's present. If there's no languge code on the input track, the
+     * service uses the code that you specify in the setting Language code. When you
+     * choose Use configured, the service uses the language code that you specify.
      */
     inline void SetLanguageCodeControl(const AudioLanguageCodeControl& value) { m_languageCodeControlHasBeenSet = true; m_languageCodeControl = value; }
 
     /**
      * Specify which source for language code takes precedence for this audio track.
-     * When you choose Follow input (FOLLOW_INPUT), the service uses the language code
-     * from the input track if it's present. If there's no languge code on the input
-     * track, the service uses the code that you specify in the setting Language code
-     * (languageCode or customLanguageCode). When you choose Use configured
-     * (USE_CONFIGURED), the service uses the language code that you specify.
+     * When you choose Follow input, the service uses the language code from the input
+     * track if it's present. If there's no languge code on the input track, the
+     * service uses the code that you specify in the setting Language code. When you
+     * choose Use configured, the service uses the language code that you specify.
      */
     inline void SetLanguageCodeControl(AudioLanguageCodeControl&& value) { m_languageCodeControlHasBeenSet = true; m_languageCodeControl = std::move(value); }
 
     /**
      * Specify which source for language code takes precedence for this audio track.
-     * When you choose Follow input (FOLLOW_INPUT), the service uses the language code
-     * from the input track if it's present. If there's no languge code on the input
-     * track, the service uses the code that you specify in the setting Language code
-     * (languageCode or customLanguageCode). When you choose Use configured
-     * (USE_CONFIGURED), the service uses the language code that you specify.
+     * When you choose Follow input, the service uses the language code from the input
+     * track if it's present. If there's no languge code on the input track, the
+     * service uses the code that you specify in the setting Language code. When you
+     * choose Use configured, the service uses the language code that you specify.
      */
     inline AudioDescription& WithLanguageCodeControl(const AudioLanguageCodeControl& value) { SetLanguageCodeControl(value); return *this;}
 
     /**
      * Specify which source for language code takes precedence for this audio track.
-     * When you choose Follow input (FOLLOW_INPUT), the service uses the language code
-     * from the input track if it's present. If there's no languge code on the input
-     * track, the service uses the code that you specify in the setting Language code
-     * (languageCode or customLanguageCode). When you choose Use configured
-     * (USE_CONFIGURED), the service uses the language code that you specify.
+     * When you choose Follow input, the service uses the language code from the input
+     * track if it's present. If there's no languge code on the input track, the
+     * service uses the code that you specify in the setting Language code. When you
+     * choose Use configured, the service uses the language code that you specify.
      */
     inline AudioDescription& WithLanguageCodeControl(AudioLanguageCodeControl&& value) { SetLanguageCodeControl(std::move(value)); return *this;}
 

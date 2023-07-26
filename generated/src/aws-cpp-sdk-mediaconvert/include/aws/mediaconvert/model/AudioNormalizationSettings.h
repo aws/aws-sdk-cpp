@@ -257,38 +257,38 @@ namespace Model
 
 
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use
-     * this setting to specify a target loudness. If you don't specify a value here,
-     * the encoder chooses a value for you, based on the algorithm that you choose for
-     * Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose
-     * -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a
+     * target loudness. If you don't specify a value here, the encoder chooses a value
+     * for you, based on the algorithm that you choose for Algorithm. If you choose
+     * algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
+     * choose -23 LKFS.
      */
     inline double GetTargetLkfs() const{ return m_targetLkfs; }
 
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use
-     * this setting to specify a target loudness. If you don't specify a value here,
-     * the encoder chooses a value for you, based on the algorithm that you choose for
-     * Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose
-     * -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a
+     * target loudness. If you don't specify a value here, the encoder chooses a value
+     * for you, based on the algorithm that you choose for Algorithm. If you choose
+     * algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
+     * choose -23 LKFS.
      */
     inline bool TargetLkfsHasBeenSet() const { return m_targetLkfsHasBeenSet; }
 
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use
-     * this setting to specify a target loudness. If you don't specify a value here,
-     * the encoder chooses a value for you, based on the algorithm that you choose for
-     * Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose
-     * -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a
+     * target loudness. If you don't specify a value here, the encoder chooses a value
+     * for you, based on the algorithm that you choose for Algorithm. If you choose
+     * algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
+     * choose -23 LKFS.
      */
     inline void SetTargetLkfs(double value) { m_targetLkfsHasBeenSet = true; m_targetLkfs = value; }
 
     /**
-     * When you use Audio normalization (AudioNormalizationSettings), optionally use
-     * this setting to specify a target loudness. If you don't specify a value here,
-     * the encoder chooses a value for you, based on the algorithm that you choose for
-     * Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose
-     * -24 LKFS; otherwise, the encoder will choose -23 LKFS.
+     * When you use Audio normalization, optionally use this setting to specify a
+     * target loudness. If you don't specify a value here, the encoder chooses a value
+     * for you, based on the algorithm that you choose for Algorithm. If you choose
+     * algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will
+     * choose -23 LKFS.
      */
     inline AudioNormalizationSettings& WithTargetLkfs(double value) { SetTargetLkfs(value); return *this;}
 

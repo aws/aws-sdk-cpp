@@ -184,182 +184,170 @@ namespace Model
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline const Aws::Map<Aws::String, AudioSelectorGroup>& GetAudioSelectorGroups() const{ return m_audioSelectorGroups; }
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline bool AudioSelectorGroupsHasBeenSet() const { return m_audioSelectorGroupsHasBeenSet; }
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline void SetAudioSelectorGroups(const Aws::Map<Aws::String, AudioSelectorGroup>& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups = value; }
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline void SetAudioSelectorGroups(Aws::Map<Aws::String, AudioSelectorGroup>&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups = std::move(value); }
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline InputTemplate& WithAudioSelectorGroups(const Aws::Map<Aws::String, AudioSelectorGroup>& value) { SetAudioSelectorGroups(value); return *this;}
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline InputTemplate& WithAudioSelectorGroups(Aws::Map<Aws::String, AudioSelectorGroup>&& value) { SetAudioSelectorGroups(std::move(value)); return *this;}
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(const Aws::String& key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, value); return *this; }
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(Aws::String&& key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(std::move(key), value); return *this; }
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(const Aws::String& key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, std::move(value)); return *this; }
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(Aws::String&& key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(const char* key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, std::move(value)); return *this; }
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you
-     * can assign them to a single output audio tab (AudioDescription). Note that, if
-     * you're working with embedded audio, it's simpler to assign multiple input tracks
-     * into a single audio selector rather than use an audio selector group.
+     * can assign them to a single output audio tab. Note that, if you're working with
+     * embedded audio, it's simpler to assign multiple input tracks into a single audio
+     * selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(const char* key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, value); return *this; }
 
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline const Aws::Map<Aws::String, AudioSelector>& GetAudioSelectors() const{ return m_audioSelectors; }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline bool AudioSelectorsHasBeenSet() const { return m_audioSelectorsHasBeenSet; }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline void SetAudioSelectors(const Aws::Map<Aws::String, AudioSelector>& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors = value; }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline void SetAudioSelectors(Aws::Map<Aws::String, AudioSelector>&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors = std::move(value); }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline InputTemplate& WithAudioSelectors(const Aws::Map<Aws::String, AudioSelector>& value) { SetAudioSelectors(value); return *this;}
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline InputTemplate& WithAudioSelectors(Aws::Map<Aws::String, AudioSelector>&& value) { SetAudioSelectors(std::move(value)); return *this;}
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(const Aws::String& key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, value); return *this; }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(Aws::String&& key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(std::move(key), value); return *this; }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(const Aws::String& key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(Aws::String&& key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(const char* key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
-     * the input that you will use in your outputs. You can use multiple Audio
-     * selectors per input.
+     * Use Audio selectors to specify a track or set of tracks from the input that you
+     * will use in your outputs. You can use multiple Audio selectors per input.
      */
     inline InputTemplate& AddAudioSelectors(const char* key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, value); return *this; }
 
@@ -438,124 +426,118 @@ namespace Model
 
 
     /**
-     * Use Cropping selection (crop) to specify the video area that the service will
-     * include in the output video frame. If you specify a value here, it will override
-     * any value that you specify in the output setting Cropping selection (crop).
+     * Use Cropping selection to specify the video area that the service will include
+     * in the output video frame. If you specify a value here, it will override any
+     * value that you specify in the output setting Cropping selection.
      */
     inline const Rectangle& GetCrop() const{ return m_crop; }
 
     /**
-     * Use Cropping selection (crop) to specify the video area that the service will
-     * include in the output video frame. If you specify a value here, it will override
-     * any value that you specify in the output setting Cropping selection (crop).
+     * Use Cropping selection to specify the video area that the service will include
+     * in the output video frame. If you specify a value here, it will override any
+     * value that you specify in the output setting Cropping selection.
      */
     inline bool CropHasBeenSet() const { return m_cropHasBeenSet; }
 
     /**
-     * Use Cropping selection (crop) to specify the video area that the service will
-     * include in the output video frame. If you specify a value here, it will override
-     * any value that you specify in the output setting Cropping selection (crop).
+     * Use Cropping selection to specify the video area that the service will include
+     * in the output video frame. If you specify a value here, it will override any
+     * value that you specify in the output setting Cropping selection.
      */
     inline void SetCrop(const Rectangle& value) { m_cropHasBeenSet = true; m_crop = value; }
 
     /**
-     * Use Cropping selection (crop) to specify the video area that the service will
-     * include in the output video frame. If you specify a value here, it will override
-     * any value that you specify in the output setting Cropping selection (crop).
+     * Use Cropping selection to specify the video area that the service will include
+     * in the output video frame. If you specify a value here, it will override any
+     * value that you specify in the output setting Cropping selection.
      */
     inline void SetCrop(Rectangle&& value) { m_cropHasBeenSet = true; m_crop = std::move(value); }
 
     /**
-     * Use Cropping selection (crop) to specify the video area that the service will
-     * include in the output video frame. If you specify a value here, it will override
-     * any value that you specify in the output setting Cropping selection (crop).
+     * Use Cropping selection to specify the video area that the service will include
+     * in the output video frame. If you specify a value here, it will override any
+     * value that you specify in the output setting Cropping selection.
      */
     inline InputTemplate& WithCrop(const Rectangle& value) { SetCrop(value); return *this;}
 
     /**
-     * Use Cropping selection (crop) to specify the video area that the service will
-     * include in the output video frame. If you specify a value here, it will override
-     * any value that you specify in the output setting Cropping selection (crop).
+     * Use Cropping selection to specify the video area that the service will include
+     * in the output video frame. If you specify a value here, it will override any
+     * value that you specify in the output setting Cropping selection.
      */
     inline InputTemplate& WithCrop(Rectangle&& value) { SetCrop(std::move(value)); return *this;}
 
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
-     * inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled.
+     * Only manually controllable for MPEG2 and uncompressed video inputs.
      */
     inline const InputDeblockFilter& GetDeblockFilter() const{ return m_deblockFilter; }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
-     * inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled.
+     * Only manually controllable for MPEG2 and uncompressed video inputs.
      */
     inline bool DeblockFilterHasBeenSet() const { return m_deblockFilterHasBeenSet; }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
-     * inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled.
+     * Only manually controllable for MPEG2 and uncompressed video inputs.
      */
     inline void SetDeblockFilter(const InputDeblockFilter& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = value; }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
-     * inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled.
+     * Only manually controllable for MPEG2 and uncompressed video inputs.
      */
     inline void SetDeblockFilter(InputDeblockFilter&& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = std::move(value); }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
-     * inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled.
+     * Only manually controllable for MPEG2 and uncompressed video inputs.
      */
     inline InputTemplate& WithDeblockFilter(const InputDeblockFilter& value) { SetDeblockFilter(value); return *this;}
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output.
-     * Default is disabled. Only manually controllable for MPEG2 and uncompressed video
-     * inputs.
+     * Enable Deblock to produce smoother motion in the output. Default is disabled.
+     * Only manually controllable for MPEG2 and uncompressed video inputs.
      */
     inline InputTemplate& WithDeblockFilter(InputDeblockFilter&& value) { SetDeblockFilter(std::move(value)); return *this;}
 
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
-     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only
+     * applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline const InputDenoiseFilter& GetDenoiseFilter() const{ return m_denoiseFilter; }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
-     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only
+     * applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline bool DenoiseFilterHasBeenSet() const { return m_denoiseFilterHasBeenSet; }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
-     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only
+     * applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline void SetDenoiseFilter(const InputDenoiseFilter& value) { m_denoiseFilterHasBeenSet = true; m_denoiseFilter = value; }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
-     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only
+     * applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline void SetDenoiseFilter(InputDenoiseFilter&& value) { m_denoiseFilterHasBeenSet = true; m_denoiseFilter = std::move(value); }
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
-     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only
+     * applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline InputTemplate& WithDenoiseFilter(const InputDenoiseFilter& value) { SetDenoiseFilter(value); return *this;}
 
     /**
-     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is
-     * disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+     * Enable Denoise to filter noise from the input. Default is disabled. Only
+     * applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
     inline InputTemplate& WithDenoiseFilter(InputDenoiseFilter&& value) { SetDenoiseFilter(std::move(value)); return *this;}
 
@@ -805,82 +787,82 @@ namespace Model
 
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a
-     * portion of the input to be used in the outputs. If you provide only a start
-     * time, the clip will be the entire input from that point to the end. If you
-     * provide only an end time, it will be the entire input up to that point. When you
-     * specify more than one input clip, the transcoding service creates the job
-     * outputs by stringing the clips together in the order you specify them.
+     * Contains sets of start and end times that together specify a portion of the
+     * input to be used in the outputs. If you provide only a start time, the clip will
+     * be the entire input from that point to the end. If you provide only an end time,
+     * it will be the entire input up to that point. When you specify more than one
+     * input clip, the transcoding service creates the job outputs by stringing the
+     * clips together in the order you specify them.
      */
     inline const Aws::Vector<InputClipping>& GetInputClippings() const{ return m_inputClippings; }
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a
-     * portion of the input to be used in the outputs. If you provide only a start
-     * time, the clip will be the entire input from that point to the end. If you
-     * provide only an end time, it will be the entire input up to that point. When you
-     * specify more than one input clip, the transcoding service creates the job
-     * outputs by stringing the clips together in the order you specify them.
+     * Contains sets of start and end times that together specify a portion of the
+     * input to be used in the outputs. If you provide only a start time, the clip will
+     * be the entire input from that point to the end. If you provide only an end time,
+     * it will be the entire input up to that point. When you specify more than one
+     * input clip, the transcoding service creates the job outputs by stringing the
+     * clips together in the order you specify them.
      */
     inline bool InputClippingsHasBeenSet() const { return m_inputClippingsHasBeenSet; }
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a
-     * portion of the input to be used in the outputs. If you provide only a start
-     * time, the clip will be the entire input from that point to the end. If you
-     * provide only an end time, it will be the entire input up to that point. When you
-     * specify more than one input clip, the transcoding service creates the job
-     * outputs by stringing the clips together in the order you specify them.
+     * Contains sets of start and end times that together specify a portion of the
+     * input to be used in the outputs. If you provide only a start time, the clip will
+     * be the entire input from that point to the end. If you provide only an end time,
+     * it will be the entire input up to that point. When you specify more than one
+     * input clip, the transcoding service creates the job outputs by stringing the
+     * clips together in the order you specify them.
      */
     inline void SetInputClippings(const Aws::Vector<InputClipping>& value) { m_inputClippingsHasBeenSet = true; m_inputClippings = value; }
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a
-     * portion of the input to be used in the outputs. If you provide only a start
-     * time, the clip will be the entire input from that point to the end. If you
-     * provide only an end time, it will be the entire input up to that point. When you
-     * specify more than one input clip, the transcoding service creates the job
-     * outputs by stringing the clips together in the order you specify them.
+     * Contains sets of start and end times that together specify a portion of the
+     * input to be used in the outputs. If you provide only a start time, the clip will
+     * be the entire input from that point to the end. If you provide only an end time,
+     * it will be the entire input up to that point. When you specify more than one
+     * input clip, the transcoding service creates the job outputs by stringing the
+     * clips together in the order you specify them.
      */
     inline void SetInputClippings(Aws::Vector<InputClipping>&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings = std::move(value); }
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a
-     * portion of the input to be used in the outputs. If you provide only a start
-     * time, the clip will be the entire input from that point to the end. If you
-     * provide only an end time, it will be the entire input up to that point. When you
-     * specify more than one input clip, the transcoding service creates the job
-     * outputs by stringing the clips together in the order you specify them.
+     * Contains sets of start and end times that together specify a portion of the
+     * input to be used in the outputs. If you provide only a start time, the clip will
+     * be the entire input from that point to the end. If you provide only an end time,
+     * it will be the entire input up to that point. When you specify more than one
+     * input clip, the transcoding service creates the job outputs by stringing the
+     * clips together in the order you specify them.
      */
     inline InputTemplate& WithInputClippings(const Aws::Vector<InputClipping>& value) { SetInputClippings(value); return *this;}
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a
-     * portion of the input to be used in the outputs. If you provide only a start
-     * time, the clip will be the entire input from that point to the end. If you
-     * provide only an end time, it will be the entire input up to that point. When you
-     * specify more than one input clip, the transcoding service creates the job
-     * outputs by stringing the clips together in the order you specify them.
+     * Contains sets of start and end times that together specify a portion of the
+     * input to be used in the outputs. If you provide only a start time, the clip will
+     * be the entire input from that point to the end. If you provide only an end time,
+     * it will be the entire input up to that point. When you specify more than one
+     * input clip, the transcoding service creates the job outputs by stringing the
+     * clips together in the order you specify them.
      */
     inline InputTemplate& WithInputClippings(Aws::Vector<InputClipping>&& value) { SetInputClippings(std::move(value)); return *this;}
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a
-     * portion of the input to be used in the outputs. If you provide only a start
-     * time, the clip will be the entire input from that point to the end. If you
-     * provide only an end time, it will be the entire input up to that point. When you
-     * specify more than one input clip, the transcoding service creates the job
-     * outputs by stringing the clips together in the order you specify them.
+     * Contains sets of start and end times that together specify a portion of the
+     * input to be used in the outputs. If you provide only a start time, the clip will
+     * be the entire input from that point to the end. If you provide only an end time,
+     * it will be the entire input up to that point. When you specify more than one
+     * input clip, the transcoding service creates the job outputs by stringing the
+     * clips together in the order you specify them.
      */
     inline InputTemplate& AddInputClippings(const InputClipping& value) { m_inputClippingsHasBeenSet = true; m_inputClippings.push_back(value); return *this; }
 
     /**
-     * (InputClippings) contains sets of start and end times that together specify a
-     * portion of the input to be used in the outputs. If you provide only a start
-     * time, the clip will be the entire input from that point to the end. If you
-     * provide only an end time, it will be the entire input up to that point. When you
-     * specify more than one input clip, the transcoding service creates the job
-     * outputs by stringing the clips together in the order you specify them.
+     * Contains sets of start and end times that together specify a portion of the
+     * input to be used in the outputs. If you provide only a start time, the clip will
+     * be the entire input from that point to the end. If you provide only an end time,
+     * it will be the entire input up to that point. When you specify more than one
+     * input clip, the transcoding service creates the job outputs by stringing the
+     * clips together in the order you specify them.
      */
     inline InputTemplate& AddInputClippings(InputClipping&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings.push_back(std::move(value)); return *this; }
 
@@ -890,9 +872,9 @@ namespace Model
      * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
      * flagging your input as PsF results in better preservation of video quality when
      * you do deinterlacing and frame rate conversion. If you don't specify, the
-     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
-     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
-     * creates horizontal interlacing artifacts.
+     * default value is Auto. Auto is the correct setting for all inputs that are not
+     * PsF. Don't set this value to PsF when your input is interlaced. Doing so creates
+     * horizontal interlacing artifacts.
      */
     inline const InputScanType& GetInputScanType() const{ return m_inputScanType; }
 
@@ -901,9 +883,9 @@ namespace Model
      * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
      * flagging your input as PsF results in better preservation of video quality when
      * you do deinterlacing and frame rate conversion. If you don't specify, the
-     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
-     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
-     * creates horizontal interlacing artifacts.
+     * default value is Auto. Auto is the correct setting for all inputs that are not
+     * PsF. Don't set this value to PsF when your input is interlaced. Doing so creates
+     * horizontal interlacing artifacts.
      */
     inline bool InputScanTypeHasBeenSet() const { return m_inputScanTypeHasBeenSet; }
 
@@ -912,9 +894,9 @@ namespace Model
      * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
      * flagging your input as PsF results in better preservation of video quality when
      * you do deinterlacing and frame rate conversion. If you don't specify, the
-     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
-     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
-     * creates horizontal interlacing artifacts.
+     * default value is Auto. Auto is the correct setting for all inputs that are not
+     * PsF. Don't set this value to PsF when your input is interlaced. Doing so creates
+     * horizontal interlacing artifacts.
      */
     inline void SetInputScanType(const InputScanType& value) { m_inputScanTypeHasBeenSet = true; m_inputScanType = value; }
 
@@ -923,9 +905,9 @@ namespace Model
      * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
      * flagging your input as PsF results in better preservation of video quality when
      * you do deinterlacing and frame rate conversion. If you don't specify, the
-     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
-     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
-     * creates horizontal interlacing artifacts.
+     * default value is Auto. Auto is the correct setting for all inputs that are not
+     * PsF. Don't set this value to PsF when your input is interlaced. Doing so creates
+     * horizontal interlacing artifacts.
      */
     inline void SetInputScanType(InputScanType&& value) { m_inputScanTypeHasBeenSet = true; m_inputScanType = std::move(value); }
 
@@ -934,9 +916,9 @@ namespace Model
      * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
      * flagging your input as PsF results in better preservation of video quality when
      * you do deinterlacing and frame rate conversion. If you don't specify, the
-     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
-     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
-     * creates horizontal interlacing artifacts.
+     * default value is Auto. Auto is the correct setting for all inputs that are not
+     * PsF. Don't set this value to PsF when your input is interlaced. Doing so creates
+     * horizontal interlacing artifacts.
      */
     inline InputTemplate& WithInputScanType(const InputScanType& value) { SetInputScanType(value); return *this;}
 
@@ -945,249 +927,243 @@ namespace Model
      * flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore,
      * flagging your input as PsF results in better preservation of video quality when
      * you do deinterlacing and frame rate conversion. If you don't specify, the
-     * default value is Auto (AUTO). Auto is the correct setting for all inputs that
-     * are not PsF. Don't set this value to PsF when your input is interlaced. Doing so
-     * creates horizontal interlacing artifacts.
+     * default value is Auto. Auto is the correct setting for all inputs that are not
+     * PsF. Don't set this value to PsF when your input is interlaced. Doing so creates
+     * horizontal interlacing artifacts.
      */
     inline InputTemplate& WithInputScanType(InputScanType&& value) { SetInputScanType(std::move(value)); return *this;}
 
 
     /**
-     * Use Selection placement (position) to define the video area in your output
-     * frame. The area outside of the rectangle that you specify here is black. If you
-     * specify a value here, it will override any value that you specify in the output
-     * setting Selection placement (position). If you specify a value here, this will
-     * override any AFD values in your input, even if you set Respond to AFD
-     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
-     * ignore anything that you specify for the setting Scaling Behavior
-     * (scalingBehavior).
+     * Use Selection placement to define the video area in your output frame. The area
+     * outside of the rectangle that you specify here is black. If you specify a value
+     * here, it will override any value that you specify in the output setting
+     * Selection placement. If you specify a value here, this will override any AFD
+     * values in your input, even if you set Respond to AFD to Respond. If you specify
+     * a value here, this will ignore anything that you specify for the setting Scaling
+     * Behavior.
      */
     inline const Rectangle& GetPosition() const{ return m_position; }
 
     /**
-     * Use Selection placement (position) to define the video area in your output
-     * frame. The area outside of the rectangle that you specify here is black. If you
-     * specify a value here, it will override any value that you specify in the output
-     * setting Selection placement (position). If you specify a value here, this will
-     * override any AFD values in your input, even if you set Respond to AFD
-     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
-     * ignore anything that you specify for the setting Scaling Behavior
-     * (scalingBehavior).
+     * Use Selection placement to define the video area in your output frame. The area
+     * outside of the rectangle that you specify here is black. If you specify a value
+     * here, it will override any value that you specify in the output setting
+     * Selection placement. If you specify a value here, this will override any AFD
+     * values in your input, even if you set Respond to AFD to Respond. If you specify
+     * a value here, this will ignore anything that you specify for the setting Scaling
+     * Behavior.
      */
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
     /**
-     * Use Selection placement (position) to define the video area in your output
-     * frame. The area outside of the rectangle that you specify here is black. If you
-     * specify a value here, it will override any value that you specify in the output
-     * setting Selection placement (position). If you specify a value here, this will
-     * override any AFD values in your input, even if you set Respond to AFD
-     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
-     * ignore anything that you specify for the setting Scaling Behavior
-     * (scalingBehavior).
+     * Use Selection placement to define the video area in your output frame. The area
+     * outside of the rectangle that you specify here is black. If you specify a value
+     * here, it will override any value that you specify in the output setting
+     * Selection placement. If you specify a value here, this will override any AFD
+     * values in your input, even if you set Respond to AFD to Respond. If you specify
+     * a value here, this will ignore anything that you specify for the setting Scaling
+     * Behavior.
      */
     inline void SetPosition(const Rectangle& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
-     * Use Selection placement (position) to define the video area in your output
-     * frame. The area outside of the rectangle that you specify here is black. If you
-     * specify a value here, it will override any value that you specify in the output
-     * setting Selection placement (position). If you specify a value here, this will
-     * override any AFD values in your input, even if you set Respond to AFD
-     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
-     * ignore anything that you specify for the setting Scaling Behavior
-     * (scalingBehavior).
+     * Use Selection placement to define the video area in your output frame. The area
+     * outside of the rectangle that you specify here is black. If you specify a value
+     * here, it will override any value that you specify in the output setting
+     * Selection placement. If you specify a value here, this will override any AFD
+     * values in your input, even if you set Respond to AFD to Respond. If you specify
+     * a value here, this will ignore anything that you specify for the setting Scaling
+     * Behavior.
      */
     inline void SetPosition(Rectangle&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
-     * Use Selection placement (position) to define the video area in your output
-     * frame. The area outside of the rectangle that you specify here is black. If you
-     * specify a value here, it will override any value that you specify in the output
-     * setting Selection placement (position). If you specify a value here, this will
-     * override any AFD values in your input, even if you set Respond to AFD
-     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
-     * ignore anything that you specify for the setting Scaling Behavior
-     * (scalingBehavior).
+     * Use Selection placement to define the video area in your output frame. The area
+     * outside of the rectangle that you specify here is black. If you specify a value
+     * here, it will override any value that you specify in the output setting
+     * Selection placement. If you specify a value here, this will override any AFD
+     * values in your input, even if you set Respond to AFD to Respond. If you specify
+     * a value here, this will ignore anything that you specify for the setting Scaling
+     * Behavior.
      */
     inline InputTemplate& WithPosition(const Rectangle& value) { SetPosition(value); return *this;}
 
     /**
-     * Use Selection placement (position) to define the video area in your output
-     * frame. The area outside of the rectangle that you specify here is black. If you
-     * specify a value here, it will override any value that you specify in the output
-     * setting Selection placement (position). If you specify a value here, this will
-     * override any AFD values in your input, even if you set Respond to AFD
-     * (RespondToAfd) to Respond (RESPOND). If you specify a value here, this will
-     * ignore anything that you specify for the setting Scaling Behavior
-     * (scalingBehavior).
+     * Use Selection placement to define the video area in your output frame. The area
+     * outside of the rectangle that you specify here is black. If you specify a value
+     * here, it will override any value that you specify in the output setting
+     * Selection placement. If you specify a value here, this will override any AFD
+     * values in your input, even if you set Respond to AFD to Respond. If you specify
+     * a value here, this will ignore anything that you specify for the setting Scaling
+     * Behavior.
      */
     inline InputTemplate& WithPosition(Rectangle&& value) { SetPosition(std::move(value)); return *this;}
 
 
     /**
-     * Use Program (programNumber) to select a specific program from within a
-     * multi-program transport stream. Note that Quad 4K is not currently supported.
-     * Default is the first program within the transport stream. If the program you
-     * specify doesn't exist, the transcoding service will use this default.
+     * Use Program to select a specific program from within a multi-program transport
+     * stream. Note that Quad 4K is not currently supported. Default is the first
+     * program within the transport stream. If the program you specify doesn't exist,
+     * the transcoding service will use this default.
      */
     inline int GetProgramNumber() const{ return m_programNumber; }
 
     /**
-     * Use Program (programNumber) to select a specific program from within a
-     * multi-program transport stream. Note that Quad 4K is not currently supported.
-     * Default is the first program within the transport stream. If the program you
-     * specify doesn't exist, the transcoding service will use this default.
+     * Use Program to select a specific program from within a multi-program transport
+     * stream. Note that Quad 4K is not currently supported. Default is the first
+     * program within the transport stream. If the program you specify doesn't exist,
+     * the transcoding service will use this default.
      */
     inline bool ProgramNumberHasBeenSet() const { return m_programNumberHasBeenSet; }
 
     /**
-     * Use Program (programNumber) to select a specific program from within a
-     * multi-program transport stream. Note that Quad 4K is not currently supported.
-     * Default is the first program within the transport stream. If the program you
-     * specify doesn't exist, the transcoding service will use this default.
+     * Use Program to select a specific program from within a multi-program transport
+     * stream. Note that Quad 4K is not currently supported. Default is the first
+     * program within the transport stream. If the program you specify doesn't exist,
+     * the transcoding service will use this default.
      */
     inline void SetProgramNumber(int value) { m_programNumberHasBeenSet = true; m_programNumber = value; }
 
     /**
-     * Use Program (programNumber) to select a specific program from within a
-     * multi-program transport stream. Note that Quad 4K is not currently supported.
-     * Default is the first program within the transport stream. If the program you
-     * specify doesn't exist, the transcoding service will use this default.
+     * Use Program to select a specific program from within a multi-program transport
+     * stream. Note that Quad 4K is not currently supported. Default is the first
+     * program within the transport stream. If the program you specify doesn't exist,
+     * the transcoding service will use this default.
      */
     inline InputTemplate& WithProgramNumber(int value) { SetProgramNumber(value); return *this;}
 
 
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
-     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
-     * video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux
+     * process to scans.
+* Ignore PSI - Scan all PIDs for audio and video.
+* Use PSI -
+     * Scan only PSI data.
      */
     inline const InputPsiControl& GetPsiControl() const{ return m_psiControl; }
 
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
-     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
-     * video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux
+     * process to scans.
+* Ignore PSI - Scan all PIDs for audio and video.
+* Use PSI -
+     * Scan only PSI data.
      */
     inline bool PsiControlHasBeenSet() const { return m_psiControlHasBeenSet; }
 
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
-     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
-     * video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux
+     * process to scans.
+* Ignore PSI - Scan all PIDs for audio and video.
+* Use PSI -
+     * Scan only PSI data.
      */
     inline void SetPsiControl(const InputPsiControl& value) { m_psiControlHasBeenSet = true; m_psiControl = value; }
 
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
-     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
-     * video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux
+     * process to scans.
+* Ignore PSI - Scan all PIDs for audio and video.
+* Use PSI -
+     * Scan only PSI data.
      */
     inline void SetPsiControl(InputPsiControl&& value) { m_psiControlHasBeenSet = true; m_psiControl = std::move(value); }
 
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
-     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
-     * video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux
+     * process to scans.
+* Ignore PSI - Scan all PIDs for audio and video.
+* Use PSI -
+     * Scan only PSI data.
      */
     inline InputTemplate& WithPsiControl(const InputPsiControl& value) { SetPsiControl(value); return *this;}
 
     /**
-     * Set PSI control (InputPsiControl) for transport stream inputs to specify which
-     * data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and
-     * video. * Use PSI - Scan only PSI data.
+     * Set PSI control for transport stream inputs to specify which data the demux
+     * process to scans.
+* Ignore PSI - Scan all PIDs for audio and video.
+* Use PSI -
+     * Scan only PSI data.
      */
     inline InputTemplate& WithPsiControl(InputPsiControl&& value) { SetPsiControl(std::move(value)); return *this;}
 
 
     /**
-     * Use this Timecode source setting, located under the input settings
-     * (InputTimecodeSource), to specify how the service counts input video frames.
-     * This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions
-     * formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video.
-     * Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose
-     * Specified start (SPECIFIEDSTART) to start the first frame at the timecode that
-     * you specify in the setting Start timecode (timecodeStart). If you don't specify
-     * a value for Timecode source, the service will use Embedded by default. For more
-     * information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify
+     * how the service counts input video frames. This input frame count affects only
+     * the behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Choose Embedded to use the
+     * timecodes in your input video. Choose Start at zero to start the first frame at
+     * zero. Choose Specified start to start the first frame at the timecode that you
+     * specify in the setting Start timecode. If you don't specify a value for Timecode
+     * source, the service will use Embedded by default. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline const InputTimecodeSource& GetTimecodeSource() const{ return m_timecodeSource; }
 
     /**
-     * Use this Timecode source setting, located under the input settings
-     * (InputTimecodeSource), to specify how the service counts input video frames.
-     * This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions
-     * formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video.
-     * Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose
-     * Specified start (SPECIFIEDSTART) to start the first frame at the timecode that
-     * you specify in the setting Start timecode (timecodeStart). If you don't specify
-     * a value for Timecode source, the service will use Embedded by default. For more
-     * information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify
+     * how the service counts input video frames. This input frame count affects only
+     * the behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Choose Embedded to use the
+     * timecodes in your input video. Choose Start at zero to start the first frame at
+     * zero. Choose Specified start to start the first frame at the timecode that you
+     * specify in the setting Start timecode. If you don't specify a value for Timecode
+     * source, the service will use Embedded by default. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline bool TimecodeSourceHasBeenSet() const { return m_timecodeSourceHasBeenSet; }
 
     /**
-     * Use this Timecode source setting, located under the input settings
-     * (InputTimecodeSource), to specify how the service counts input video frames.
-     * This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions
-     * formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video.
-     * Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose
-     * Specified start (SPECIFIEDSTART) to start the first frame at the timecode that
-     * you specify in the setting Start timecode (timecodeStart). If you don't specify
-     * a value for Timecode source, the service will use Embedded by default. For more
-     * information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify
+     * how the service counts input video frames. This input frame count affects only
+     * the behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Choose Embedded to use the
+     * timecodes in your input video. Choose Start at zero to start the first frame at
+     * zero. Choose Specified start to start the first frame at the timecode that you
+     * specify in the setting Start timecode. If you don't specify a value for Timecode
+     * source, the service will use Embedded by default. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline void SetTimecodeSource(const InputTimecodeSource& value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = value; }
 
     /**
-     * Use this Timecode source setting, located under the input settings
-     * (InputTimecodeSource), to specify how the service counts input video frames.
-     * This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions
-     * formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video.
-     * Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose
-     * Specified start (SPECIFIEDSTART) to start the first frame at the timecode that
-     * you specify in the setting Start timecode (timecodeStart). If you don't specify
-     * a value for Timecode source, the service will use Embedded by default. For more
-     * information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify
+     * how the service counts input video frames. This input frame count affects only
+     * the behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Choose Embedded to use the
+     * timecodes in your input video. Choose Start at zero to start the first frame at
+     * zero. Choose Specified start to start the first frame at the timecode that you
+     * specify in the setting Start timecode. If you don't specify a value for Timecode
+     * source, the service will use Embedded by default. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline void SetTimecodeSource(InputTimecodeSource&& value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = std::move(value); }
 
     /**
-     * Use this Timecode source setting, located under the input settings
-     * (InputTimecodeSource), to specify how the service counts input video frames.
-     * This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions
-     * formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video.
-     * Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose
-     * Specified start (SPECIFIEDSTART) to start the first frame at the timecode that
-     * you specify in the setting Start timecode (timecodeStart). If you don't specify
-     * a value for Timecode source, the service will use Embedded by default. For more
-     * information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify
+     * how the service counts input video frames. This input frame count affects only
+     * the behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Choose Embedded to use the
+     * timecodes in your input video. Choose Start at zero to start the first frame at
+     * zero. Choose Specified start to start the first frame at the timecode that you
+     * specify in the setting Start timecode. If you don't specify a value for Timecode
+     * source, the service will use Embedded by default. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline InputTemplate& WithTimecodeSource(const InputTimecodeSource& value) { SetTimecodeSource(value); return *this;}
 
     /**
-     * Use this Timecode source setting, located under the input settings
-     * (InputTimecodeSource), to specify how the service counts input video frames.
-     * This input frame count affects only the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions
-     * formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video.
-     * Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose
-     * Specified start (SPECIFIEDSTART) to start the first frame at the timecode that
-     * you specify in the setting Start timecode (timecodeStart). If you don't specify
-     * a value for Timecode source, the service will use Embedded by default. For more
-     * information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * Use this Timecode source setting, located under the input settings, to specify
+     * how the service counts input video frames. This input frame count affects only
+     * the behavior of features that apply to a single input at a time, such as input
+     * clipping and synchronizing some captions formats. Choose Embedded to use the
+     * timecodes in your input video. Choose Start at zero to start the first frame at
+     * zero. Choose Specified start to start the first frame at the timecode that you
+     * specify in the setting Start timecode. If you don't specify a value for Timecode
+     * source, the service will use Embedded by default. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline InputTemplate& WithTimecodeSource(InputTimecodeSource&& value) { SetTimecodeSource(std::move(value)); return *this;}
 
@@ -1195,72 +1171,64 @@ namespace Model
     /**
      * Specify the timecode that you want the service to use for this input's initial
      * frame. To use this setting, you must set the Timecode source setting, located
-     * under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * under the input settings, to Specified start. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline const Aws::String& GetTimecodeStart() const{ return m_timecodeStart; }
 
     /**
      * Specify the timecode that you want the service to use for this input's initial
      * frame. To use this setting, you must set the Timecode source setting, located
-     * under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * under the input settings, to Specified start. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline bool TimecodeStartHasBeenSet() const { return m_timecodeStartHasBeenSet; }
 
     /**
      * Specify the timecode that you want the service to use for this input's initial
      * frame. To use this setting, you must set the Timecode source setting, located
-     * under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * under the input settings, to Specified start. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline void SetTimecodeStart(const Aws::String& value) { m_timecodeStartHasBeenSet = true; m_timecodeStart = value; }
 
     /**
      * Specify the timecode that you want the service to use for this input's initial
      * frame. To use this setting, you must set the Timecode source setting, located
-     * under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * under the input settings, to Specified start. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline void SetTimecodeStart(Aws::String&& value) { m_timecodeStartHasBeenSet = true; m_timecodeStart = std::move(value); }
 
     /**
      * Specify the timecode that you want the service to use for this input's initial
      * frame. To use this setting, you must set the Timecode source setting, located
-     * under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * under the input settings, to Specified start. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline void SetTimecodeStart(const char* value) { m_timecodeStartHasBeenSet = true; m_timecodeStart.assign(value); }
 
     /**
      * Specify the timecode that you want the service to use for this input's initial
      * frame. To use this setting, you must set the Timecode source setting, located
-     * under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * under the input settings, to Specified start. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline InputTemplate& WithTimecodeStart(const Aws::String& value) { SetTimecodeStart(value); return *this;}
 
     /**
      * Specify the timecode that you want the service to use for this input's initial
      * frame. To use this setting, you must set the Timecode source setting, located
-     * under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * under the input settings, to Specified start. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline InputTemplate& WithTimecodeStart(Aws::String&& value) { SetTimecodeStart(std::move(value)); return *this;}
 
     /**
      * Specify the timecode that you want the service to use for this input's initial
      * frame. To use this setting, you must set the Timecode source setting, located
-     * under the input settings (InputTimecodeSource), to Specified start
-     * (SPECIFIEDSTART). For more information about timecodes, see
-     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * under the input settings, to Specified start. For more information about
+     * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     inline InputTemplate& WithTimecodeStart(const char* value) { SetTimecodeStart(value); return *this;}
 

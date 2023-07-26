@@ -81,32 +81,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the data of the Amazon Reshift target node.</p>
+     * <p>Specifies the data of the Amazon Redshift target node.</p>
      */
     inline const AmazonRedshiftNodeData& GetData() const{ return m_data; }
 
     /**
-     * <p>Specifies the data of the Amazon Reshift target node.</p>
+     * <p>Specifies the data of the Amazon Redshift target node.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>Specifies the data of the Amazon Reshift target node.</p>
+     * <p>Specifies the data of the Amazon Redshift target node.</p>
      */
     inline void SetData(const AmazonRedshiftNodeData& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>Specifies the data of the Amazon Reshift target node.</p>
+     * <p>Specifies the data of the Amazon Redshift target node.</p>
      */
     inline void SetData(AmazonRedshiftNodeData&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>Specifies the data of the Amazon Reshift target node.</p>
+     * <p>Specifies the data of the Amazon Redshift target node.</p>
      */
     inline AmazonRedshiftTarget& WithData(const AmazonRedshiftNodeData& value) { SetData(value); return *this;}
 
     /**
-     * <p>Specifies the data of the Amazon Reshift target node.</p>
+     * <p>Specifies the data of the Amazon Redshift target node.</p>
      */
     inline AmazonRedshiftTarget& WithData(AmazonRedshiftNodeData&& value) { SetData(std::move(value)); return *this;}
 

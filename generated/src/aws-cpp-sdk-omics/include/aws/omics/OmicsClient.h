@@ -16,9 +16,9 @@ namespace Aws
 namespace Omics
 {
   /**
-   * <p>This is the <i>Amazon Omics API Reference</i>. For an introduction to the
-   * service, see <a href="https://docs.aws.amazon.com/omics/latest/dev/">What is
-   * Amazon Omics?</a> in the <i>Amazon Omics User Guide</i>.</p>
+   * <p>This is the <i>AWS HealthOmics API Reference</i>. For an introduction to the
+   * service, see <a href="https://docs.aws.amazon.com/omics/latest/dev/">What is AWS
+   * HealthOmics?</a> in the <i>AWS HealthOmics User Guide</i>.</p>
    */
   class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>
   {

@@ -49,10 +49,8 @@ namespace Model
 
   /**
    * Settings related to your HLS output package. For more information, see
-   * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
-   * you work directly in your JSON job specification, include this object and any
-   * required children when you set Type, under OutputGroupSettings, to
-   * HLS_GROUP_SETTINGS.<p><h3>See Also:</h3>   <a
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsGroupSettings">AWS
    * API Reference</a></p>
    */
@@ -189,49 +187,49 @@ namespace Model
 
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
-     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
-     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
-     * from your audio segments.
+     * encounter playback issues. Keep the default value, Include, to output audio-only
+     * headers. Choose Exclude to remove the audio-only headers from your audio
+     * segments.
      */
     inline const HlsAudioOnlyHeader& GetAudioOnlyHeader() const{ return m_audioOnlyHeader; }
 
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
-     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
-     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
-     * from your audio segments.
+     * encounter playback issues. Keep the default value, Include, to output audio-only
+     * headers. Choose Exclude to remove the audio-only headers from your audio
+     * segments.
      */
     inline bool AudioOnlyHeaderHasBeenSet() const { return m_audioOnlyHeaderHasBeenSet; }
 
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
-     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
-     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
-     * from your audio segments.
+     * encounter playback issues. Keep the default value, Include, to output audio-only
+     * headers. Choose Exclude to remove the audio-only headers from your audio
+     * segments.
      */
     inline void SetAudioOnlyHeader(const HlsAudioOnlyHeader& value) { m_audioOnlyHeaderHasBeenSet = true; m_audioOnlyHeader = value; }
 
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
-     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
-     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
-     * from your audio segments.
+     * encounter playback issues. Keep the default value, Include, to output audio-only
+     * headers. Choose Exclude to remove the audio-only headers from your audio
+     * segments.
      */
     inline void SetAudioOnlyHeader(HlsAudioOnlyHeader&& value) { m_audioOnlyHeaderHasBeenSet = true; m_audioOnlyHeader = std::move(value); }
 
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
-     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
-     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
-     * from your audio segments.
+     * encounter playback issues. Keep the default value, Include, to output audio-only
+     * headers. Choose Exclude to remove the audio-only headers from your audio
+     * segments.
      */
     inline HlsGroupSettings& WithAudioOnlyHeader(const HlsAudioOnlyHeader& value) { SetAudioOnlyHeader(value); return *this;}
 
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you
-     * encounter playback issues. Keep the default value, Include (INCLUDE), to output
-     * audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only headers
-     * from your audio segments.
+     * encounter playback issues. Keep the default value, Include, to output audio-only
+     * headers. Choose Exclude to remove the audio-only headers from your audio
+     * segments.
      */
     inline HlsGroupSettings& WithAudioOnlyHeader(HlsAudioOnlyHeader&& value) { SetAudioOnlyHeader(std::move(value)); return *this;}
 
@@ -414,105 +412,99 @@ namespace Model
 
 
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
-     * (MATCH_VIDEO) to create caption segments that align with the video segments from
-     * the first video output in this output group. For example, if the video segments
-     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
-     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
-     * are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments
+     * that align with the video segments from the first video output in this output
+     * group. For example, if the video segments are 2 seconds long, your WebVTT
+     * segments will also be 2 seconds long. Keep the default setting, Large segments
+     * to create caption segments that are 300 seconds long.
      */
     inline const HlsCaptionSegmentLengthControl& GetCaptionSegmentLengthControl() const{ return m_captionSegmentLengthControl; }
 
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
-     * (MATCH_VIDEO) to create caption segments that align with the video segments from
-     * the first video output in this output group. For example, if the video segments
-     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
-     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
-     * are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments
+     * that align with the video segments from the first video output in this output
+     * group. For example, if the video segments are 2 seconds long, your WebVTT
+     * segments will also be 2 seconds long. Keep the default setting, Large segments
+     * to create caption segments that are 300 seconds long.
      */
     inline bool CaptionSegmentLengthControlHasBeenSet() const { return m_captionSegmentLengthControlHasBeenSet; }
 
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
-     * (MATCH_VIDEO) to create caption segments that align with the video segments from
-     * the first video output in this output group. For example, if the video segments
-     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
-     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
-     * are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments
+     * that align with the video segments from the first video output in this output
+     * group. For example, if the video segments are 2 seconds long, your WebVTT
+     * segments will also be 2 seconds long. Keep the default setting, Large segments
+     * to create caption segments that are 300 seconds long.
      */
     inline void SetCaptionSegmentLengthControl(const HlsCaptionSegmentLengthControl& value) { m_captionSegmentLengthControlHasBeenSet = true; m_captionSegmentLengthControl = value; }
 
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
-     * (MATCH_VIDEO) to create caption segments that align with the video segments from
-     * the first video output in this output group. For example, if the video segments
-     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
-     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
-     * are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments
+     * that align with the video segments from the first video output in this output
+     * group. For example, if the video segments are 2 seconds long, your WebVTT
+     * segments will also be 2 seconds long. Keep the default setting, Large segments
+     * to create caption segments that are 300 seconds long.
      */
     inline void SetCaptionSegmentLengthControl(HlsCaptionSegmentLengthControl&& value) { m_captionSegmentLengthControlHasBeenSet = true; m_captionSegmentLengthControl = std::move(value); }
 
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
-     * (MATCH_VIDEO) to create caption segments that align with the video segments from
-     * the first video output in this output group. For example, if the video segments
-     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
-     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
-     * are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments
+     * that align with the video segments from the first video output in this output
+     * group. For example, if the video segments are 2 seconds long, your WebVTT
+     * segments will also be 2 seconds long. Keep the default setting, Large segments
+     * to create caption segments that are 300 seconds long.
      */
     inline HlsGroupSettings& WithCaptionSegmentLengthControl(const HlsCaptionSegmentLengthControl& value) { SetCaptionSegmentLengthControl(value); return *this;}
 
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video
-     * (MATCH_VIDEO) to create caption segments that align with the video segments from
-     * the first video output in this output group. For example, if the video segments
-     * are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the
-     * default setting, Large segments (LARGE_SEGMENTS) to create caption segments that
-     * are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments
+     * that align with the video segments from the first video output in this output
+     * group. For example, if the video segments are 2 seconds long, your WebVTT
+     * segments will also be 2 seconds long. Keep the default setting, Large segments
+     * to create caption segments that are 300 seconds long.
      */
     inline HlsGroupSettings& WithCaptionSegmentLengthControl(HlsCaptionSegmentLengthControl&& value) { SetCaptionSegmentLengthControl(std::move(value)); return *this;}
 
 
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
-     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
-     * your video distribution set up. For example, use the Cache-Control http header.
+     * tag. Otherwise, keep the default value Enabled and control caching in your video
+     * distribution set up. For example, use the Cache-Control http header.
      */
     inline const HlsClientCache& GetClientCache() const{ return m_clientCache; }
 
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
-     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
-     * your video distribution set up. For example, use the Cache-Control http header.
+     * tag. Otherwise, keep the default value Enabled and control caching in your video
+     * distribution set up. For example, use the Cache-Control http header.
      */
     inline bool ClientCacheHasBeenSet() const { return m_clientCacheHasBeenSet; }
 
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
-     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
-     * your video distribution set up. For example, use the Cache-Control http header.
+     * tag. Otherwise, keep the default value Enabled and control caching in your video
+     * distribution set up. For example, use the Cache-Control http header.
      */
     inline void SetClientCache(const HlsClientCache& value) { m_clientCacheHasBeenSet = true; m_clientCache = value; }
 
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
-     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
-     * your video distribution set up. For example, use the Cache-Control http header.
+     * tag. Otherwise, keep the default value Enabled and control caching in your video
+     * distribution set up. For example, use the Cache-Control http header.
      */
     inline void SetClientCache(HlsClientCache&& value) { m_clientCacheHasBeenSet = true; m_clientCache = std::move(value); }
 
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
-     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
-     * your video distribution set up. For example, use the Cache-Control http header.
+     * tag. Otherwise, keep the default value Enabled and control caching in your video
+     * distribution set up. For example, use the Cache-Control http header.
      */
     inline HlsGroupSettings& WithClientCache(const HlsClientCache& value) { SetClientCache(value); return *this;}
 
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no
-     * tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in
-     * your video distribution set up. For example, use the Cache-Control http header.
+     * tag. Otherwise, keep the default value Enabled and control caching in your video
+     * distribution set up. For example, use the Cache-Control http header.
      */
     inline HlsGroupSettings& WithClientCache(HlsClientCache&& value) { SetClientCache(std::move(value)); return *this;}
 
@@ -555,74 +547,66 @@ namespace Model
 
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline HlsGroupSettings& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline HlsGroupSettings& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline HlsGroupSettings& WithDestination(const char* value) { SetDestination(value); return *this;}
 
@@ -728,84 +712,78 @@ namespace Model
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert creates a child manifest for each set of
-     * images that you generate and adds corresponding entries to the parent manifest.
-     * A common application for these images is Roku trick mode. The thumbnails and
-     * full-frame images that MediaConvert creates with this feature are compatible
-     * with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert creates a child manifest
+     * for each set of images that you generate and adds corresponding entries to the
+     * parent manifest. A common application for these images is Roku trick mode. The
+     * thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline const HlsImageBasedTrickPlay& GetImageBasedTrickPlay() const{ return m_imageBasedTrickPlay; }
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert creates a child manifest for each set of
-     * images that you generate and adds corresponding entries to the parent manifest.
-     * A common application for these images is Roku trick mode. The thumbnails and
-     * full-frame images that MediaConvert creates with this feature are compatible
-     * with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert creates a child manifest
+     * for each set of images that you generate and adds corresponding entries to the
+     * parent manifest. A common application for these images is Roku trick mode. The
+     * thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline bool ImageBasedTrickPlayHasBeenSet() const { return m_imageBasedTrickPlayHasBeenSet; }
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert creates a child manifest for each set of
-     * images that you generate and adds corresponding entries to the parent manifest.
-     * A common application for these images is Roku trick mode. The thumbnails and
-     * full-frame images that MediaConvert creates with this feature are compatible
-     * with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert creates a child manifest
+     * for each set of images that you generate and adds corresponding entries to the
+     * parent manifest. A common application for these images is Roku trick mode. The
+     * thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline void SetImageBasedTrickPlay(const HlsImageBasedTrickPlay& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = value; }
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert creates a child manifest for each set of
-     * images that you generate and adds corresponding entries to the parent manifest.
-     * A common application for these images is Roku trick mode. The thumbnails and
-     * full-frame images that MediaConvert creates with this feature are compatible
-     * with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert creates a child manifest
+     * for each set of images that you generate and adds corresponding entries to the
+     * parent manifest. A common application for these images is Roku trick mode. The
+     * thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline void SetImageBasedTrickPlay(HlsImageBasedTrickPlay&& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = std::move(value); }
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert creates a child manifest for each set of
-     * images that you generate and adds corresponding entries to the parent manifest.
-     * A common application for these images is Roku trick mode. The thumbnails and
-     * full-frame images that MediaConvert creates with this feature are compatible
-     * with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert creates a child manifest
+     * for each set of images that you generate and adds corresponding entries to the
+     * parent manifest. A common application for these images is Roku trick mode. The
+     * thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline HlsGroupSettings& WithImageBasedTrickPlay(const HlsImageBasedTrickPlay& value) { SetImageBasedTrickPlay(value); return *this;}
 
     /**
      * Specify whether MediaConvert generates images for trick play. Keep the default
-     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
-     * generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
-     * images of single frames. MediaConvert creates a child manifest for each set of
-     * images that you generate and adds corresponding entries to the parent manifest.
-     * A common application for these images is Roku trick mode. The thumbnails and
-     * full-frame images that MediaConvert creates with this feature are compatible
-     * with this Roku specification:
+     * value, None, to not generate any images. Choose Thumbnail to generate tiled
+     * thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails and
+     * full-resolution images of single frames. MediaConvert creates a child manifest
+     * for each set of images that you generate and adds corresponding entries to the
+     * parent manifest. A common application for these images is Roku trick mode. The
+     * thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     inline HlsGroupSettings& WithImageBasedTrickPlay(HlsImageBasedTrickPlay&& value) { SetImageBasedTrickPlay(std::move(value)); return *this;}
@@ -1228,123 +1206,113 @@ namespace Model
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a
      * value, MediaConvert defaults to 10. Related settings: Use Segment length control
-     * (SegmentLengthControl) to specify whether the encoder enforces this value
-     * strictly. Use Segment control (HlsSegmentControl) to specify whether
-     * MediaConvert creates separate segment files or one content file that has
-     * metadata to mark the segment boundaries.
+     * to specify whether the encoder enforces this value strictly. Use Segment control
+     * to specify whether MediaConvert creates separate segment files or one content
+     * file that has metadata to mark the segment boundaries.
      */
     inline int GetSegmentLength() const{ return m_segmentLength; }
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a
      * value, MediaConvert defaults to 10. Related settings: Use Segment length control
-     * (SegmentLengthControl) to specify whether the encoder enforces this value
-     * strictly. Use Segment control (HlsSegmentControl) to specify whether
-     * MediaConvert creates separate segment files or one content file that has
-     * metadata to mark the segment boundaries.
+     * to specify whether the encoder enforces this value strictly. Use Segment control
+     * to specify whether MediaConvert creates separate segment files or one content
+     * file that has metadata to mark the segment boundaries.
      */
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a
      * value, MediaConvert defaults to 10. Related settings: Use Segment length control
-     * (SegmentLengthControl) to specify whether the encoder enforces this value
-     * strictly. Use Segment control (HlsSegmentControl) to specify whether
-     * MediaConvert creates separate segment files or one content file that has
-     * metadata to mark the segment boundaries.
+     * to specify whether the encoder enforces this value strictly. Use Segment control
+     * to specify whether MediaConvert creates separate segment files or one content
+     * file that has metadata to mark the segment boundaries.
      */
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a
      * value, MediaConvert defaults to 10. Related settings: Use Segment length control
-     * (SegmentLengthControl) to specify whether the encoder enforces this value
-     * strictly. Use Segment control (HlsSegmentControl) to specify whether
-     * MediaConvert creates separate segment files or one content file that has
-     * metadata to mark the segment boundaries.
+     * to specify whether the encoder enforces this value strictly. Use Segment control
+     * to specify whether MediaConvert creates separate segment files or one content
+     * file that has metadata to mark the segment boundaries.
      */
     inline HlsGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
 
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline const HlsSegmentLengthControl& GetSegmentLengthControl() const{ return m_segmentLengthControl; }
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline bool SegmentLengthControlHasBeenSet() const { return m_segmentLengthControlHasBeenSet; }
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline void SetSegmentLengthControl(const HlsSegmentLengthControl& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = value; }
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline void SetSegmentLengthControl(HlsSegmentLengthControl&& value) { m_segmentLengthControlHasBeenSet = true; m_segmentLengthControl = std::move(value); }
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline HlsGroupSettings& WithSegmentLengthControl(const HlsSegmentLengthControl& value) { SetSegmentLengthControl(value); return *this;}
 
     /**
      * Specify how you want MediaConvert to determine the segment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Segment length (SegmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Segment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline HlsGroupSettings& WithSegmentLengthControl(HlsSegmentLengthControl&& value) { SetSegmentLengthControl(std::move(value)); return *this;}
 
 
     /**
      * Specify the number of segments to write to a subdirectory before starting a new
-     * one. You  must also set Directory structure to Subdirectory per stream for this
+     * one. You must also set Directory structure to Subdirectory per stream for this
      * setting to have an effect.
      */
     inline int GetSegmentsPerSubdirectory() const{ return m_segmentsPerSubdirectory; }
 
     /**
      * Specify the number of segments to write to a subdirectory before starting a new
-     * one. You  must also set Directory structure to Subdirectory per stream for this
+     * one. You must also set Directory structure to Subdirectory per stream for this
      * setting to have an effect.
      */
     inline bool SegmentsPerSubdirectoryHasBeenSet() const { return m_segmentsPerSubdirectoryHasBeenSet; }
 
     /**
      * Specify the number of segments to write to a subdirectory before starting a new
-     * one. You  must also set Directory structure to Subdirectory per stream for this
+     * one. You must also set Directory structure to Subdirectory per stream for this
      * setting to have an effect.
      */
     inline void SetSegmentsPerSubdirectory(int value) { m_segmentsPerSubdirectoryHasBeenSet = true; m_segmentsPerSubdirectory = value; }
 
     /**
      * Specify the number of segments to write to a subdirectory before starting a new
-     * one. You  must also set Directory structure to Subdirectory per stream for this
+     * one. You must also set Directory structure to Subdirectory per stream for this
      * setting to have an effect.
      */
     inline HlsGroupSettings& WithSegmentsPerSubdirectory(int value) { SetSegmentsPerSubdirectory(value); return *this;}
@@ -1467,56 +1435,44 @@ namespace Model
 
 
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
-     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
-     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
-     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
-     * type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To
+     * include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to
+     * Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
      */
     inline const HlsTimedMetadataId3Frame& GetTimedMetadataId3Frame() const{ return m_timedMetadataId3Frame; }
 
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
-     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
-     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
-     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
-     * type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To
+     * include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to
+     * Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
      */
     inline bool TimedMetadataId3FrameHasBeenSet() const { return m_timedMetadataId3FrameHasBeenSet; }
 
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
-     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
-     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
-     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
-     * type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To
+     * include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to
+     * Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
      */
     inline void SetTimedMetadataId3Frame(const HlsTimedMetadataId3Frame& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = value; }
 
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
-     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
-     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
-     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
-     * type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To
+     * include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to
+     * Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
      */
     inline void SetTimedMetadataId3Frame(HlsTimedMetadataId3Frame&& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = std::move(value); }
 
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
-     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
-     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
-     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
-     * type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To
+     * include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to
+     * Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
      */
     inline HlsGroupSettings& WithTimedMetadataId3Frame(const HlsTimedMetadataId3Frame& value) { SetTimedMetadataId3Frame(value); return *this;}
 
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3
-     * timestamps (timedMetadataId3Period) in your output. To include ID3 timestamps:
-     * Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata) to
-     * Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame
-     * type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To
+     * include ID3 timestamps: Specify PRIV or TDRL and set ID3 metadata to
+     * Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to None.
      */
     inline HlsGroupSettings& WithTimedMetadataId3Frame(HlsTimedMetadataId3Frame&& value) { SetTimedMetadataId3Frame(std::move(value)); return *this;}
 
@@ -1526,8 +1482,7 @@ namespace Model
      * first timestamp starts at the output timecode and date, and increases
      * incrementally with each ID3 timestamp. To use the default interval of 10
      * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
-     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
-     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * frame type to PRIV or TDRL, and set ID3 metadata to Passthrough.
      */
     inline int GetTimedMetadataId3Period() const{ return m_timedMetadataId3Period; }
 
@@ -1536,8 +1491,7 @@ namespace Model
      * first timestamp starts at the output timecode and date, and increases
      * incrementally with each ID3 timestamp. To use the default interval of 10
      * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
-     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
-     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * frame type to PRIV or TDRL, and set ID3 metadata to Passthrough.
      */
     inline bool TimedMetadataId3PeriodHasBeenSet() const { return m_timedMetadataId3PeriodHasBeenSet; }
 
@@ -1546,8 +1500,7 @@ namespace Model
      * first timestamp starts at the output timecode and date, and increases
      * incrementally with each ID3 timestamp. To use the default interval of 10
      * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
-     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
-     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * frame type to PRIV or TDRL, and set ID3 metadata to Passthrough.
      */
     inline void SetTimedMetadataId3Period(int value) { m_timedMetadataId3PeriodHasBeenSet = true; m_timedMetadataId3Period = value; }
 
@@ -1556,8 +1509,7 @@ namespace Model
      * first timestamp starts at the output timecode and date, and increases
      * incrementally with each ID3 timestamp. To use the default interval of 10
      * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp
-     * frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3
-     * metadata (timedMetadata) to Passthrough (PASSTHROUGH).
+     * frame type to PRIV or TDRL, and set ID3 metadata to Passthrough.
      */
     inline HlsGroupSettings& WithTimedMetadataId3Period(int value) { SetTimedMetadataId3Period(value); return *this;}
 

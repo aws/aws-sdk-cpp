@@ -101,37 +101,37 @@ namespace Model
 
     /**
      * Specify the encryption scheme that you want the service to use when encrypting
-     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * your CMAF segments. Choose AES-CBC subsample or AES_CTR.
      */
     inline const CmafEncryptionType& GetEncryptionMethod() const{ return m_encryptionMethod; }
 
     /**
      * Specify the encryption scheme that you want the service to use when encrypting
-     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * your CMAF segments. Choose AES-CBC subsample or AES_CTR.
      */
     inline bool EncryptionMethodHasBeenSet() const { return m_encryptionMethodHasBeenSet; }
 
     /**
      * Specify the encryption scheme that you want the service to use when encrypting
-     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * your CMAF segments. Choose AES-CBC subsample or AES_CTR.
      */
     inline void SetEncryptionMethod(const CmafEncryptionType& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = value; }
 
     /**
      * Specify the encryption scheme that you want the service to use when encrypting
-     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * your CMAF segments. Choose AES-CBC subsample or AES_CTR.
      */
     inline void SetEncryptionMethod(CmafEncryptionType&& value) { m_encryptionMethodHasBeenSet = true; m_encryptionMethod = std::move(value); }
 
     /**
      * Specify the encryption scheme that you want the service to use when encrypting
-     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * your CMAF segments. Choose AES-CBC subsample or AES_CTR.
      */
     inline CmafEncryptionSettings& WithEncryptionMethod(const CmafEncryptionType& value) { SetEncryptionMethod(value); return *this;}
 
     /**
      * Specify the encryption scheme that you want the service to use when encrypting
-     * your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * your CMAF segments. Choose AES-CBC subsample or AES_CTR.
      */
     inline CmafEncryptionSettings& WithEncryptionMethod(CmafEncryptionType&& value) { SetEncryptionMethod(std::move(value)); return *this;}
 

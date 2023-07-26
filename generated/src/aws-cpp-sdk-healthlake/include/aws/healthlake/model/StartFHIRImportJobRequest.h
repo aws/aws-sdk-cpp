@@ -135,90 +135,90 @@ namespace Model
 
 
     /**
-     * <p>The AWS-generated Data Store ID.</p>
+     * <p>The AWS-generated data store ID.</p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
 
     /**
-     * <p>The AWS-generated Data Store ID.</p>
+     * <p>The AWS-generated data store ID.</p>
      */
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
 
     /**
-     * <p>The AWS-generated Data Store ID.</p>
+     * <p>The AWS-generated data store ID.</p>
      */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
 
     /**
-     * <p>The AWS-generated Data Store ID.</p>
+     * <p>The AWS-generated data store ID.</p>
      */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
 
     /**
-     * <p>The AWS-generated Data Store ID.</p>
+     * <p>The AWS-generated data store ID.</p>
      */
     inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
 
     /**
-     * <p>The AWS-generated Data Store ID.</p>
+     * <p>The AWS-generated data store ID.</p>
      */
     inline StartFHIRImportJobRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
 
     /**
-     * <p>The AWS-generated Data Store ID.</p>
+     * <p>The AWS-generated data store ID.</p>
      */
     inline StartFHIRImportJobRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS-generated Data Store ID.</p>
+     * <p>The AWS-generated data store ID.</p>
      */
     inline StartFHIRImportJobRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
      * permission.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
      * permission.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
      * permission.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
      * permission.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
      * permission.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
      * permission.</p>
      */
     inline StartFHIRImportJobRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
      * permission.</p>
      */
     inline StartFHIRImportJobRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon HealthLake access
+     * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access
      * permission.</p>
      */
     inline StartFHIRImportJobRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}

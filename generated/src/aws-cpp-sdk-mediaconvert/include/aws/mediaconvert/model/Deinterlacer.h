@@ -174,50 +174,68 @@ namespace Model
 
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline const DeinterlacerMode& GetMode() const{ return m_mode; }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline void SetMode(const DeinterlacerMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline void SetMode(DeinterlacerMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline Deinterlacer& WithMode(const DeinterlacerMode& value) { SetMode(value); return *this;}
 
     /**
-     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do
-     * deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to
-     * progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
-     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * Use Deinterlacer to choose how the service will do deinterlacing. Default is
+     * Deinterlace.
+- Deinterlace converts interlaced to progressive.
+- Inverse
+     * telecine converts Hard Telecine 29.97i to progressive 23.976p.
+- Adaptive
+     * auto-detects and converts to progressive.
      */
     inline Deinterlacer& WithMode(DeinterlacerMode&& value) { SetMode(std::move(value)); return *this;}
 

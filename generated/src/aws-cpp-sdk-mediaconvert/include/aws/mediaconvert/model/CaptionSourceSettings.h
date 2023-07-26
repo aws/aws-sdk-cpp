@@ -190,38 +190,38 @@ namespace Model
 
 
     /**
-     * Use Source (SourceType) to identify the format of your input captions. The
-     * service cannot auto-detect caption format.
+     * Use Source to identify the format of your input captions. The service cannot
+     * auto-detect caption format.
      */
     inline const CaptionSourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * Use Source (SourceType) to identify the format of your input captions. The
-     * service cannot auto-detect caption format.
+     * Use Source to identify the format of your input captions. The service cannot
+     * auto-detect caption format.
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * Use Source (SourceType) to identify the format of your input captions. The
-     * service cannot auto-detect caption format.
+     * Use Source to identify the format of your input captions. The service cannot
+     * auto-detect caption format.
      */
     inline void SetSourceType(const CaptionSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * Use Source (SourceType) to identify the format of your input captions. The
-     * service cannot auto-detect caption format.
+     * Use Source to identify the format of your input captions. The service cannot
+     * auto-detect caption format.
      */
     inline void SetSourceType(CaptionSourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * Use Source (SourceType) to identify the format of your input captions. The
-     * service cannot auto-detect caption format.
+     * Use Source to identify the format of your input captions. The service cannot
+     * auto-detect caption format.
      */
     inline CaptionSourceSettings& WithSourceType(const CaptionSourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * Use Source (SourceType) to identify the format of your input captions. The
-     * service cannot auto-detect caption format.
+     * Use Source to identify the format of your input captions. The service cannot
+     * auto-detect caption format.
      */
     inline CaptionSourceSettings& WithSourceType(CaptionSourceType&& value) { SetSourceType(std::move(value)); return *this;}
 

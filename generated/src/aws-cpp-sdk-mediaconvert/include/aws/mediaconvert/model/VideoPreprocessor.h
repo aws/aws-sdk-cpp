@@ -31,9 +31,9 @@ namespace Model
 {
 
   /**
-   * Find additional transcoding features under Preprocessors (VideoPreprocessors).
-   * Enable the features at each output individually. These features are disabled by
-   * default.<p><h3>See Also:</h3>   <a
+   * Find additional transcoding features under Preprocessors. Enable the features at
+   * each output individually. These features are disabled by default.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoPreprocessor">AWS
    * API Reference</a></p>
    */
@@ -195,44 +195,44 @@ namespace Model
 
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each output individually. This
-     * setting is disabled by default.
+     * Enable the Image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each output individually. This setting is
+     * disabled by default.
      */
     inline const ImageInserter& GetImageInserter() const{ return m_imageInserter; }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each output individually. This
-     * setting is disabled by default.
+     * Enable the Image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each output individually. This setting is
+     * disabled by default.
      */
     inline bool ImageInserterHasBeenSet() const { return m_imageInserterHasBeenSet; }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each output individually. This
-     * setting is disabled by default.
+     * Enable the Image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each output individually. This setting is
+     * disabled by default.
      */
     inline void SetImageInserter(const ImageInserter& value) { m_imageInserterHasBeenSet = true; m_imageInserter = value; }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each output individually. This
-     * setting is disabled by default.
+     * Enable the Image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each output individually. This setting is
+     * disabled by default.
      */
     inline void SetImageInserter(ImageInserter&& value) { m_imageInserterHasBeenSet = true; m_imageInserter = std::move(value); }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each output individually. This
-     * setting is disabled by default.
+     * Enable the Image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each output individually. This setting is
+     * disabled by default.
      */
     inline VideoPreprocessor& WithImageInserter(const ImageInserter& value) { SetImageInserter(value); return *this;}
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each output individually. This
-     * setting is disabled by default.
+     * Enable the Image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each output individually. This setting is
+     * disabled by default.
      */
     inline VideoPreprocessor& WithImageInserter(ImageInserter&& value) { SetImageInserter(std::move(value)); return *this;}
 

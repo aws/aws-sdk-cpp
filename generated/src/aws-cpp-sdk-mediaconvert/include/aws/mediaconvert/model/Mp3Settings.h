@@ -60,30 +60,30 @@ namespace Model
 
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the
-     * console gives you 1 output channel; choosing Stereo gives you 2. In the API,
-     * valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono gives
+     * you 1 output channel; choosing Stereo gives you 2. In the API, valid values are
+     * 1 and 2.
      */
     inline int GetChannels() const{ return m_channels; }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the
-     * console gives you 1 output channel; choosing Stereo gives you 2. In the API,
-     * valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono gives
+     * you 1 output channel; choosing Stereo gives you 2. In the API, valid values are
+     * 1 and 2.
      */
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the
-     * console gives you 1 output channel; choosing Stereo gives you 2. In the API,
-     * valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono gives
+     * you 1 output channel; choosing Stereo gives you 2. In the API, valid values are
+     * 1 and 2.
      */
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the
-     * console gives you 1 output channel; choosing Stereo gives you 2. In the API,
-     * valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono gives
+     * you 1 output channel; choosing Stereo gives you 2. In the API, valid values are
+     * 1 and 2.
      */
     inline Mp3Settings& WithChannels(int value) { SetChannels(value); return *this;}
 
@@ -147,26 +147,26 @@ namespace Model
 
 
     /**
-     * Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the
-     * audio quality of this MP3 output from 0 (highest quality) to 9 (lowest quality).
+     * Required when you set Bitrate control mode to VBR. Specify the audio quality of
+     * this MP3 output from 0 (highest quality) to 9 (lowest quality).
      */
     inline int GetVbrQuality() const{ return m_vbrQuality; }
 
     /**
-     * Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the
-     * audio quality of this MP3 output from 0 (highest quality) to 9 (lowest quality).
+     * Required when you set Bitrate control mode to VBR. Specify the audio quality of
+     * this MP3 output from 0 (highest quality) to 9 (lowest quality).
      */
     inline bool VbrQualityHasBeenSet() const { return m_vbrQualityHasBeenSet; }
 
     /**
-     * Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the
-     * audio quality of this MP3 output from 0 (highest quality) to 9 (lowest quality).
+     * Required when you set Bitrate control mode to VBR. Specify the audio quality of
+     * this MP3 output from 0 (highest quality) to 9 (lowest quality).
      */
     inline void SetVbrQuality(int value) { m_vbrQualityHasBeenSet = true; m_vbrQuality = value; }
 
     /**
-     * Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the
-     * audio quality of this MP3 output from 0 (highest quality) to 9 (lowest quality).
+     * Required when you set Bitrate control mode to VBR. Specify the audio quality of
+     * this MP3 output from 0 (highest quality) to 9 (lowest quality).
      */
     inline Mp3Settings& WithVbrQuality(int value) { SetVbrQuality(value); return *this;}
 

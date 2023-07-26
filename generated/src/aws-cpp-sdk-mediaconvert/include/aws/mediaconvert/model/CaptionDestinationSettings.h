@@ -33,11 +33,10 @@ namespace Model
 {
 
   /**
-   * Settings related to one captions tab on the MediaConvert console. In your job
-   * JSON, an instance of captions DestinationSettings is equivalent to one captions
-   * tab in the console. Usually, one captions tab corresponds to one output captions
-   * track. Depending on your output captions format, one tab might correspond to a
-   * set of output captions tracks. For more information, see
+   * Settings related to one captions tab on the MediaConvert console. Usually, one
+   * captions tab corresponds to one output captions track. Depending on your output
+   * captions format, one tab might correspond to a set of output captions tracks.
+   * For more information, see
    * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionDestinationSettings">AWS
@@ -58,8 +57,6 @@ namespace Model
      * content with the captions. Set up burn-in captions in the same output as your
      * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to BURN_IN.
      */
     inline const BurninDestinationSettings& GetBurninDestinationSettings() const{ return m_burninDestinationSettings; }
 
@@ -69,8 +66,6 @@ namespace Model
      * content with the captions. Set up burn-in captions in the same output as your
      * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to BURN_IN.
      */
     inline bool BurninDestinationSettingsHasBeenSet() const { return m_burninDestinationSettingsHasBeenSet; }
 
@@ -80,8 +75,6 @@ namespace Model
      * content with the captions. Set up burn-in captions in the same output as your
      * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to BURN_IN.
      */
     inline void SetBurninDestinationSettings(const BurninDestinationSettings& value) { m_burninDestinationSettingsHasBeenSet = true; m_burninDestinationSettings = value; }
 
@@ -91,8 +84,6 @@ namespace Model
      * content with the captions. Set up burn-in captions in the same output as your
      * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to BURN_IN.
      */
     inline void SetBurninDestinationSettings(BurninDestinationSettings&& value) { m_burninDestinationSettingsHasBeenSet = true; m_burninDestinationSettings = std::move(value); }
 
@@ -102,8 +93,6 @@ namespace Model
      * content with the captions. Set up burn-in captions in the same output as your
      * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to BURN_IN.
      */
     inline CaptionDestinationSettings& WithBurninDestinationSettings(const BurninDestinationSettings& value) { SetBurninDestinationSettings(value); return *this;}
 
@@ -113,8 +102,6 @@ namespace Model
      * content with the captions. Set up burn-in captions in the same output as your
      * video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to BURN_IN.
      */
     inline CaptionDestinationSettings& WithBurninDestinationSettings(BurninDestinationSettings&& value) { SetBurninDestinationSettings(std::move(value)); return *this;}
 
@@ -125,9 +112,8 @@ namespace Model
      * constrains your choice of output captions format. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html.
      * If you are using SCTE-20 and you want to create an output that complies with the
-     * SCTE-43 spec, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a
-     * non-compliant output where the embedded captions come first, choose Embedded
-     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output
+     * where the embedded captions come first, choose Embedded plus SCTE-20.
      */
     inline const CaptionDestinationType& GetDestinationType() const{ return m_destinationType; }
 
@@ -137,9 +123,8 @@ namespace Model
      * constrains your choice of output captions format. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html.
      * If you are using SCTE-20 and you want to create an output that complies with the
-     * SCTE-43 spec, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a
-     * non-compliant output where the embedded captions come first, choose Embedded
-     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output
+     * where the embedded captions come first, choose Embedded plus SCTE-20.
      */
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
 
@@ -149,9 +134,8 @@ namespace Model
      * constrains your choice of output captions format. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html.
      * If you are using SCTE-20 and you want to create an output that complies with the
-     * SCTE-43 spec, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a
-     * non-compliant output where the embedded captions come first, choose Embedded
-     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output
+     * where the embedded captions come first, choose Embedded plus SCTE-20.
      */
     inline void SetDestinationType(const CaptionDestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
 
@@ -161,9 +145,8 @@ namespace Model
      * constrains your choice of output captions format. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html.
      * If you are using SCTE-20 and you want to create an output that complies with the
-     * SCTE-43 spec, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a
-     * non-compliant output where the embedded captions come first, choose Embedded
-     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output
+     * where the embedded captions come first, choose Embedded plus SCTE-20.
      */
     inline void SetDestinationType(CaptionDestinationType&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
 
@@ -173,9 +156,8 @@ namespace Model
      * constrains your choice of output captions format. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html.
      * If you are using SCTE-20 and you want to create an output that complies with the
-     * SCTE-43 spec, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a
-     * non-compliant output where the embedded captions come first, choose Embedded
-     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output
+     * where the embedded captions come first, choose Embedded plus SCTE-20.
      */
     inline CaptionDestinationSettings& WithDestinationType(const CaptionDestinationType& value) { SetDestinationType(value); return *this;}
 
@@ -185,9 +167,8 @@ namespace Model
      * constrains your choice of output captions format. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html.
      * If you are using SCTE-20 and you want to create an output that complies with the
-     * SCTE-43 spec, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a
-     * non-compliant output where the embedded captions come first, choose Embedded
-     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * SCTE-43 spec, choose SCTE-20 plus embedded. To create a non-compliant output
+     * where the embedded captions come first, choose Embedded plus SCTE-20.
      */
     inline CaptionDestinationSettings& WithDestinationType(CaptionDestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
 
@@ -196,8 +177,6 @@ namespace Model
      * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output
      * as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to DVB_SUB.
      */
     inline const DvbSubDestinationSettings& GetDvbSubDestinationSettings() const{ return m_dvbSubDestinationSettings; }
 
@@ -205,8 +184,6 @@ namespace Model
      * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output
      * as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to DVB_SUB.
      */
     inline bool DvbSubDestinationSettingsHasBeenSet() const { return m_dvbSubDestinationSettingsHasBeenSet; }
 
@@ -214,8 +191,6 @@ namespace Model
      * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output
      * as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to DVB_SUB.
      */
     inline void SetDvbSubDestinationSettings(const DvbSubDestinationSettings& value) { m_dvbSubDestinationSettingsHasBeenSet = true; m_dvbSubDestinationSettings = value; }
 
@@ -223,8 +198,6 @@ namespace Model
      * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output
      * as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to DVB_SUB.
      */
     inline void SetDvbSubDestinationSettings(DvbSubDestinationSettings&& value) { m_dvbSubDestinationSettingsHasBeenSet = true; m_dvbSubDestinationSettings = std::move(value); }
 
@@ -232,8 +205,6 @@ namespace Model
      * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output
      * as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to DVB_SUB.
      */
     inline CaptionDestinationSettings& WithDvbSubDestinationSettings(const DvbSubDestinationSettings& value) { SetDvbSubDestinationSettings(value); return *this;}
 
@@ -241,8 +212,6 @@ namespace Model
      * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output
      * as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to DVB_SUB.
      */
     inline CaptionDestinationSettings& WithDvbSubDestinationSettings(DvbSubDestinationSettings&& value) { SetDvbSubDestinationSettings(std::move(value)); return *this;}
 
@@ -252,9 +221,6 @@ namespace Model
      * ancillary) captions. Set up embedded captions in the same output as your video.
      * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to EMBEDDED,
-     * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      */
     inline const EmbeddedDestinationSettings& GetEmbeddedDestinationSettings() const{ return m_embeddedDestinationSettings; }
 
@@ -263,9 +229,6 @@ namespace Model
      * ancillary) captions. Set up embedded captions in the same output as your video.
      * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to EMBEDDED,
-     * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      */
     inline bool EmbeddedDestinationSettingsHasBeenSet() const { return m_embeddedDestinationSettingsHasBeenSet; }
 
@@ -274,9 +237,6 @@ namespace Model
      * ancillary) captions. Set up embedded captions in the same output as your video.
      * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to EMBEDDED,
-     * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      */
     inline void SetEmbeddedDestinationSettings(const EmbeddedDestinationSettings& value) { m_embeddedDestinationSettingsHasBeenSet = true; m_embeddedDestinationSettings = value; }
 
@@ -285,9 +245,6 @@ namespace Model
      * ancillary) captions. Set up embedded captions in the same output as your video.
      * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to EMBEDDED,
-     * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      */
     inline void SetEmbeddedDestinationSettings(EmbeddedDestinationSettings&& value) { m_embeddedDestinationSettingsHasBeenSet = true; m_embeddedDestinationSettings = std::move(value); }
 
@@ -296,9 +253,6 @@ namespace Model
      * ancillary) captions. Set up embedded captions in the same output as your video.
      * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to EMBEDDED,
-     * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      */
     inline CaptionDestinationSettings& WithEmbeddedDestinationSettings(const EmbeddedDestinationSettings& value) { SetEmbeddedDestinationSettings(value); return *this;}
 
@@ -307,9 +261,6 @@ namespace Model
      * ancillary) captions. Set up embedded captions in the same output as your video.
      * For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to EMBEDDED,
-     * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      */
     inline CaptionDestinationSettings& WithEmbeddedDestinationSettings(EmbeddedDestinationSettings&& value) { SetEmbeddedDestinationSettings(std::move(value)); return *this;}
 
@@ -320,8 +271,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to IMSC.
      */
     inline const ImscDestinationSettings& GetImscDestinationSettings() const{ return m_imscDestinationSettings; }
 
@@ -331,8 +280,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to IMSC.
      */
     inline bool ImscDestinationSettingsHasBeenSet() const { return m_imscDestinationSettingsHasBeenSet; }
 
@@ -342,8 +289,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to IMSC.
      */
     inline void SetImscDestinationSettings(const ImscDestinationSettings& value) { m_imscDestinationSettingsHasBeenSet = true; m_imscDestinationSettings = value; }
 
@@ -353,8 +298,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to IMSC.
      */
     inline void SetImscDestinationSettings(ImscDestinationSettings&& value) { m_imscDestinationSettingsHasBeenSet = true; m_imscDestinationSettings = std::move(value); }
 
@@ -364,8 +307,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to IMSC.
      */
     inline CaptionDestinationSettings& WithImscDestinationSettings(const ImscDestinationSettings& value) { SetImscDestinationSettings(value); return *this;}
 
@@ -375,8 +316,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to IMSC.
      */
     inline CaptionDestinationSettings& WithImscDestinationSettings(ImscDestinationSettings&& value) { SetImscDestinationSettings(std::move(value)); return *this;}
 
@@ -387,8 +326,6 @@ namespace Model
      * same output group, but different output from your video. For more information,
      * see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to SCC.
      */
     inline const SccDestinationSettings& GetSccDestinationSettings() const{ return m_sccDestinationSettings; }
 
@@ -398,8 +335,6 @@ namespace Model
      * same output group, but different output from your video. For more information,
      * see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to SCC.
      */
     inline bool SccDestinationSettingsHasBeenSet() const { return m_sccDestinationSettingsHasBeenSet; }
 
@@ -409,8 +344,6 @@ namespace Model
      * same output group, but different output from your video. For more information,
      * see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to SCC.
      */
     inline void SetSccDestinationSettings(const SccDestinationSettings& value) { m_sccDestinationSettingsHasBeenSet = true; m_sccDestinationSettings = value; }
 
@@ -420,8 +353,6 @@ namespace Model
      * same output group, but different output from your video. For more information,
      * see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to SCC.
      */
     inline void SetSccDestinationSettings(SccDestinationSettings&& value) { m_sccDestinationSettingsHasBeenSet = true; m_sccDestinationSettings = std::move(value); }
 
@@ -431,8 +362,6 @@ namespace Model
      * same output group, but different output from your video. For more information,
      * see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to SCC.
      */
     inline CaptionDestinationSettings& WithSccDestinationSettings(const SccDestinationSettings& value) { SetSccDestinationSettings(value); return *this;}
 
@@ -442,8 +371,6 @@ namespace Model
      * same output group, but different output from your video. For more information,
      * see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to SCC.
      */
     inline CaptionDestinationSettings& WithSccDestinationSettings(SccDestinationSettings&& value) { SetSccDestinationSettings(std::move(value)); return *this;}
 
@@ -451,54 +378,42 @@ namespace Model
     /**
      * Settings related to SRT captions. SRT is a sidecar format that holds captions in
      * a file that is separate from the video container. Set up sidecar captions in the
-     * same output group, but different output from your video. When you work directly
-     * in your JSON job specification, include this object and any required children
-     * when you set destinationType to SRT.
+     * same output group, but different output from your video.
      */
     inline const SrtDestinationSettings& GetSrtDestinationSettings() const{ return m_srtDestinationSettings; }
 
     /**
      * Settings related to SRT captions. SRT is a sidecar format that holds captions in
      * a file that is separate from the video container. Set up sidecar captions in the
-     * same output group, but different output from your video. When you work directly
-     * in your JSON job specification, include this object and any required children
-     * when you set destinationType to SRT.
+     * same output group, but different output from your video.
      */
     inline bool SrtDestinationSettingsHasBeenSet() const { return m_srtDestinationSettingsHasBeenSet; }
 
     /**
      * Settings related to SRT captions. SRT is a sidecar format that holds captions in
      * a file that is separate from the video container. Set up sidecar captions in the
-     * same output group, but different output from your video. When you work directly
-     * in your JSON job specification, include this object and any required children
-     * when you set destinationType to SRT.
+     * same output group, but different output from your video.
      */
     inline void SetSrtDestinationSettings(const SrtDestinationSettings& value) { m_srtDestinationSettingsHasBeenSet = true; m_srtDestinationSettings = value; }
 
     /**
      * Settings related to SRT captions. SRT is a sidecar format that holds captions in
      * a file that is separate from the video container. Set up sidecar captions in the
-     * same output group, but different output from your video. When you work directly
-     * in your JSON job specification, include this object and any required children
-     * when you set destinationType to SRT.
+     * same output group, but different output from your video.
      */
     inline void SetSrtDestinationSettings(SrtDestinationSettings&& value) { m_srtDestinationSettingsHasBeenSet = true; m_srtDestinationSettings = std::move(value); }
 
     /**
      * Settings related to SRT captions. SRT is a sidecar format that holds captions in
      * a file that is separate from the video container. Set up sidecar captions in the
-     * same output group, but different output from your video. When you work directly
-     * in your JSON job specification, include this object and any required children
-     * when you set destinationType to SRT.
+     * same output group, but different output from your video.
      */
     inline CaptionDestinationSettings& WithSrtDestinationSettings(const SrtDestinationSettings& value) { SetSrtDestinationSettings(value); return *this;}
 
     /**
      * Settings related to SRT captions. SRT is a sidecar format that holds captions in
      * a file that is separate from the video container. Set up sidecar captions in the
-     * same output group, but different output from your video. When you work directly
-     * in your JSON job specification, include this object and any required children
-     * when you set destinationType to SRT.
+     * same output group, but different output from your video.
      */
     inline CaptionDestinationSettings& WithSrtDestinationSettings(SrtDestinationSettings&& value) { SetSrtDestinationSettings(std::move(value)); return *this;}
 
@@ -507,8 +422,6 @@ namespace Model
      * Settings related to teletext captions. Set up teletext captions in the same
      * output as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TELETEXT.
      */
     inline const TeletextDestinationSettings& GetTeletextDestinationSettings() const{ return m_teletextDestinationSettings; }
 
@@ -516,8 +429,6 @@ namespace Model
      * Settings related to teletext captions. Set up teletext captions in the same
      * output as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TELETEXT.
      */
     inline bool TeletextDestinationSettingsHasBeenSet() const { return m_teletextDestinationSettingsHasBeenSet; }
 
@@ -525,8 +436,6 @@ namespace Model
      * Settings related to teletext captions. Set up teletext captions in the same
      * output as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TELETEXT.
      */
     inline void SetTeletextDestinationSettings(const TeletextDestinationSettings& value) { m_teletextDestinationSettingsHasBeenSet = true; m_teletextDestinationSettings = value; }
 
@@ -534,8 +443,6 @@ namespace Model
      * Settings related to teletext captions. Set up teletext captions in the same
      * output as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TELETEXT.
      */
     inline void SetTeletextDestinationSettings(TeletextDestinationSettings&& value) { m_teletextDestinationSettingsHasBeenSet = true; m_teletextDestinationSettings = std::move(value); }
 
@@ -543,8 +450,6 @@ namespace Model
      * Settings related to teletext captions. Set up teletext captions in the same
      * output as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TELETEXT.
      */
     inline CaptionDestinationSettings& WithTeletextDestinationSettings(const TeletextDestinationSettings& value) { SetTeletextDestinationSettings(value); return *this;}
 
@@ -552,8 +457,6 @@ namespace Model
      * Settings related to teletext captions. Set up teletext captions in the same
      * output as your video. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TELETEXT.
      */
     inline CaptionDestinationSettings& WithTeletextDestinationSettings(TeletextDestinationSettings&& value) { SetTeletextDestinationSettings(std::move(value)); return *this;}
 
@@ -564,8 +467,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TTML.
      */
     inline const TtmlDestinationSettings& GetTtmlDestinationSettings() const{ return m_ttmlDestinationSettings; }
 
@@ -575,8 +476,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TTML.
      */
     inline bool TtmlDestinationSettingsHasBeenSet() const { return m_ttmlDestinationSettingsHasBeenSet; }
 
@@ -586,8 +485,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TTML.
      */
     inline void SetTtmlDestinationSettings(const TtmlDestinationSettings& value) { m_ttmlDestinationSettingsHasBeenSet = true; m_ttmlDestinationSettings = value; }
 
@@ -597,8 +494,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TTML.
      */
     inline void SetTtmlDestinationSettings(TtmlDestinationSettings&& value) { m_ttmlDestinationSettingsHasBeenSet = true; m_ttmlDestinationSettings = std::move(value); }
 
@@ -608,8 +503,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TTML.
      */
     inline CaptionDestinationSettings& WithTtmlDestinationSettings(const TtmlDestinationSettings& value) { SetTtmlDestinationSettings(value); return *this;}
 
@@ -619,8 +512,6 @@ namespace Model
      * the same output group, but different output from your video. For more
      * information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to TTML.
      */
     inline CaptionDestinationSettings& WithTtmlDestinationSettings(TtmlDestinationSettings&& value) { SetTtmlDestinationSettings(std::move(value)); return *this;}
 
@@ -631,8 +522,6 @@ namespace Model
      * captions in the same output group, but different output from your video. For
      * more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to WebVTT.
      */
     inline const WebvttDestinationSettings& GetWebvttDestinationSettings() const{ return m_webvttDestinationSettings; }
 
@@ -642,8 +531,6 @@ namespace Model
      * captions in the same output group, but different output from your video. For
      * more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to WebVTT.
      */
     inline bool WebvttDestinationSettingsHasBeenSet() const { return m_webvttDestinationSettingsHasBeenSet; }
 
@@ -653,8 +540,6 @@ namespace Model
      * captions in the same output group, but different output from your video. For
      * more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to WebVTT.
      */
     inline void SetWebvttDestinationSettings(const WebvttDestinationSettings& value) { m_webvttDestinationSettingsHasBeenSet = true; m_webvttDestinationSettings = value; }
 
@@ -664,8 +549,6 @@ namespace Model
      * captions in the same output group, but different output from your video. For
      * more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to WebVTT.
      */
     inline void SetWebvttDestinationSettings(WebvttDestinationSettings&& value) { m_webvttDestinationSettingsHasBeenSet = true; m_webvttDestinationSettings = std::move(value); }
 
@@ -675,8 +558,6 @@ namespace Model
      * captions in the same output group, but different output from your video. For
      * more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to WebVTT.
      */
     inline CaptionDestinationSettings& WithWebvttDestinationSettings(const WebvttDestinationSettings& value) { SetWebvttDestinationSettings(value); return *this;}
 
@@ -686,8 +567,6 @@ namespace Model
      * captions in the same output group, but different output from your video. For
      * more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
-     * When you work directly in your JSON job specification, include this object and
-     * any required children when you set destinationType to WebVTT.
      */
     inline CaptionDestinationSettings& WithWebvttDestinationSettings(WebvttDestinationSettings&& value) { SetWebvttDestinationSettings(std::move(value)); return *this;}
 
