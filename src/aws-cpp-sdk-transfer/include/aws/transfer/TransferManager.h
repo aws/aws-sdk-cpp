@@ -11,6 +11,7 @@
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
+#include <aws/s3/model/CompletedPart.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/ResourceManager.h>
@@ -54,7 +55,7 @@ namespace Aws
             /**
              * When true, TransferManager will calculate the MD5 digest of the content being uploaded.
              * The digest is sent to S3 via an HTTP header enabling the service to perform integrity checks.
-             * This option is disabled by default.
+             * This option is disabled by default. Defer to checksumAlgorithm to use other checksum algorithms.
              */
             bool computeContentMD5;
             /**
@@ -116,6 +117,13 @@ namespace Aws
              * key/val of map entries will be key/val of query strings.
              */
             Aws::Map<Aws::String, Aws::String> customizedAccessLogTag;
+
+            /**
+             * Set the Checksum Algorithm for the transfer manager to use for multipart
+             * upload. Defaults to CRC32. Will be overwritten to use MD5 if computeContentMD5
+             * is set to true.
+             */
+            Aws::S3::Model::ChecksumAlgorithm checksumAlgorithm = S3::Model::ChecksumAlgorithm::CRC32;
         };        
 
         /**
@@ -327,6 +335,13 @@ namespace Aws
              */
             void AddTask(std::shared_ptr<TransferHandle> handle);
             void RemoveTask(const std::shared_ptr<TransferHandle>& handle);
+
+            /**
+             * Sets the checksum on a Completed Part based on the state, and the algorithm selected.
+             * @param state The state of the completed part as tracker by the transfer manager.
+             * @param part The completed part of the MPU.
+             */
+            void SetChecksumForAlgorithm(const std::shared_ptr<PartState> state, Aws::S3::Model::CompletedPart &part);
 
             static Aws::String DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName);
 
