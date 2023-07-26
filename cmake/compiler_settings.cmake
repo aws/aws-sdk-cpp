@@ -53,7 +53,10 @@ macro(set_gcc_flags)
 endmacro()
 
 macro(set_gcc_warnings)
-    list(APPEND AWS_COMPILER_WARNINGS "-Wall" "-Werror" "-pedantic" "-Wextra")
+    list(APPEND AWS_COMPILER_WARNINGS "-Wall" "-pedantic" "-Wextra")
+    if(AWS_SDK_WARNINGS_ARE_ERRORS)
+        list(APPEND AWS_COMPILER_WARNINGS "-Werror")
+    endif ()
     if(COMPILER_CLANG)
         if(PLATFORM_ANDROID)
             # when using clang with libc and API lower than 21 we need to include Android support headers and ignore the gnu-include-next warning.
@@ -153,7 +156,7 @@ macro(set_msvc_warnings)
         endif()
 
         # warnings as errors, max warning level (4)
-        if(NOT CMAKE_CXX_FLAGS MATCHES "/WX")
+        if(NOT CMAKE_CXX_FLAGS MATCHES "/WX" AND AWS_SDK_WARNINGS_ARE_ERRORS)
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
         endif()
 
