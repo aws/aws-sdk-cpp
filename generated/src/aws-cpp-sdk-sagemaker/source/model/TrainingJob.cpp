@@ -60,6 +60,7 @@ TrainingJob::TrainingJob() :
     m_debugRuleConfigurationsHasBeenSet(false),
     m_tensorBoardOutputConfigHasBeenSet(false),
     m_debugRuleEvaluationStatusesHasBeenSet(false),
+    m_profilerConfigHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -108,6 +109,7 @@ TrainingJob::TrainingJob(JsonView jsonValue) :
     m_debugRuleConfigurationsHasBeenSet(false),
     m_tensorBoardOutputConfigHasBeenSet(false),
     m_debugRuleEvaluationStatusesHasBeenSet(false),
+    m_profilerConfigHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -373,6 +375,13 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     m_debugRuleEvaluationStatusesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProfilerConfig"))
+  {
+    m_profilerConfig = jsonValue.GetObject("ProfilerConfig");
+
+    m_profilerConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -632,6 +641,12 @@ JsonValue TrainingJob::Jsonize() const
      debugRuleEvaluationStatusesJsonList[debugRuleEvaluationStatusesIndex].AsObject(m_debugRuleEvaluationStatuses[debugRuleEvaluationStatusesIndex].Jsonize());
    }
    payload.WithArray("DebugRuleEvaluationStatuses", std::move(debugRuleEvaluationStatusesJsonList));
+
+  }
+
+  if(m_profilerConfigHasBeenSet)
+  {
+   payload.WithObject("ProfilerConfig", m_profilerConfig.Jsonize());
 
   }
 

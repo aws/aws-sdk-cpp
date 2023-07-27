@@ -377,36 +377,36 @@ namespace Model
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity. For exact capacity, you must specify a positive value.</p>
-     * <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any
-     * other policy type.) </p>
+     * the current capacity. For exact capacity, you must specify a non-negative
+     * value.</p> <p>Required if the policy type is <code>SimpleScaling</code>. (Not
+     * used with any other policy type.) </p>
      */
     inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity. For exact capacity, you must specify a positive value.</p>
-     * <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any
-     * other policy type.) </p>
+     * the current capacity. For exact capacity, you must specify a non-negative
+     * value.</p> <p>Required if the policy type is <code>SimpleScaling</code>. (Not
+     * used with any other policy type.) </p>
      */
     inline bool ScalingAdjustmentHasBeenSet() const { return m_scalingAdjustmentHasBeenSet; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity. For exact capacity, you must specify a positive value.</p>
-     * <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any
-     * other policy type.) </p>
+     * the current capacity. For exact capacity, you must specify a non-negative
+     * value.</p> <p>Required if the policy type is <code>SimpleScaling</code>. (Not
+     * used with any other policy type.) </p>
      */
     inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity. For exact capacity, you must specify a positive value.</p>
-     * <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any
-     * other policy type.) </p>
+     * the current capacity. For exact capacity, you must specify a non-negative
+     * value.</p> <p>Required if the policy type is <code>SimpleScaling</code>. (Not
+     * used with any other policy type.) </p>
      */
     inline PutScalingPolicyRequest& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 

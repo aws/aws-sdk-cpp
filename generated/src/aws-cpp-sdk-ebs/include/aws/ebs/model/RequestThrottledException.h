@@ -25,8 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The number of API requests has exceed the maximum allowed API request
-   * throttling limit.</p><p><h3>See Also:</h3>   <a
+   * <p>The number of API requests has exceeded the maximum allowed API request
+   * throttling limit for the snapshot. For more information see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+   * retries</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/RequestThrottledException">AWS
    * API Reference</a></p>
    */

@@ -21,6 +21,7 @@
 #include <aws/sagemaker/model/DebugHookConfig.h>
 #include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/sagemaker/model/TensorBoardOutputConfig.h>
+#include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
@@ -1604,6 +1605,25 @@ namespace Model
     inline TrainingJob& AddDebugRuleEvaluationStatuses(DebugRuleEvaluationStatus&& value) { m_debugRuleEvaluationStatusesHasBeenSet = true; m_debugRuleEvaluationStatuses.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const ProfilerConfig& GetProfilerConfig() const{ return m_profilerConfig; }
+
+    
+    inline bool ProfilerConfigHasBeenSet() const { return m_profilerConfigHasBeenSet; }
+
+    
+    inline void SetProfilerConfig(const ProfilerConfig& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = value; }
+
+    
+    inline void SetProfilerConfig(ProfilerConfig&& value) { m_profilerConfigHasBeenSet = true; m_profilerConfig = std::move(value); }
+
+    
+    inline TrainingJob& WithProfilerConfig(const ProfilerConfig& value) { SetProfilerConfig(value); return *this;}
+
+    
+    inline TrainingJob& WithProfilerConfig(ProfilerConfig&& value) { SetProfilerConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>The environment variables to set in the Docker container.</p>
      */
@@ -1882,6 +1902,9 @@ namespace Model
 
     Aws::Vector<DebugRuleEvaluationStatus> m_debugRuleEvaluationStatuses;
     bool m_debugRuleEvaluationStatusesHasBeenSet = false;
+
+    ProfilerConfig m_profilerConfig;
+    bool m_profilerConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
     bool m_environmentHasBeenSet = false;

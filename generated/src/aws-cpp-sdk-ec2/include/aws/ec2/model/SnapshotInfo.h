@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/SnapshotState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/SSEType.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -479,6 +480,37 @@ namespace Model
      */
     inline SnapshotInfo& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const SSEType& GetSseType() const{ return m_sseType; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool SseTypeHasBeenSet() const { return m_sseTypeHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetSseType(const SSEType& value) { m_sseTypeHasBeenSet = true; m_sseType = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetSseType(SSEType&& value) { m_sseTypeHasBeenSet = true; m_sseType = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline SnapshotInfo& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline SnapshotInfo& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -513,6 +545,9 @@ namespace Model
 
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet = false;
+
+    SSEType m_sseType;
+    bool m_sseTypeHasBeenSet = false;
   };
 
 } // namespace Model

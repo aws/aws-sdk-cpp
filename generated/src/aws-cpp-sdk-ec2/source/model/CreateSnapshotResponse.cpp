@@ -21,7 +21,8 @@ CreateSnapshotResponse::CreateSnapshotResponse() :
     m_encrypted(false),
     m_state(SnapshotState::NOT_SET),
     m_volumeSize(0),
-    m_storageTier(StorageTier::NOT_SET)
+    m_storageTier(StorageTier::NOT_SET),
+    m_sseType(SSEType::NOT_SET)
 {
 }
 
@@ -29,7 +30,8 @@ CreateSnapshotResponse::CreateSnapshotResponse(const Aws::AmazonWebServiceResult
     m_encrypted(false),
     m_state(SnapshotState::NOT_SET),
     m_volumeSize(0),
-    m_storageTier(StorageTier::NOT_SET)
+    m_storageTier(StorageTier::NOT_SET),
+    m_sseType(SSEType::NOT_SET)
 {
   *this = result;
 }
@@ -136,6 +138,11 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
     if(!restoreExpiryTimeNode.IsNull())
     {
       m_restoreExpiryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreExpiryTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    }
+    XmlNode sseTypeNode = resultNode.FirstChild("sseType");
+    if(!sseTypeNode.IsNull())
+    {
+      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
     }
   }
 

@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetEbsEncryptionByDefaultResponse::GetEbsEncryptionByDefaultResponse() : 
-    m_ebsEncryptionByDefault(false)
+    m_ebsEncryptionByDefault(false),
+    m_sseType(SSEType::NOT_SET)
 {
 }
 
 GetEbsEncryptionByDefaultResponse::GetEbsEncryptionByDefaultResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
-    m_ebsEncryptionByDefault(false)
+    m_ebsEncryptionByDefault(false),
+    m_sseType(SSEType::NOT_SET)
 {
   *this = result;
 }
@@ -44,6 +46,11 @@ GetEbsEncryptionByDefaultResponse& GetEbsEncryptionByDefaultResponse::operator =
     if(!ebsEncryptionByDefaultNode.IsNull())
     {
       m_ebsEncryptionByDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsEncryptionByDefaultNode.GetText()).c_str()).c_str());
+    }
+    XmlNode sseTypeNode = resultNode.FirstChild("sseType");
+    if(!sseTypeNode.IsNull())
+    {
+      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
     }
   }
 
