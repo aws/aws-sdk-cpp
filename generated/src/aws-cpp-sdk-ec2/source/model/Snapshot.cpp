@@ -41,7 +41,9 @@ Snapshot::Snapshot() :
     m_tagsHasBeenSet(false),
     m_storageTier(StorageTier::NOT_SET),
     m_storageTierHasBeenSet(false),
-    m_restoreExpiryTimeHasBeenSet(false)
+    m_restoreExpiryTimeHasBeenSet(false),
+    m_sseType(SSEType::NOT_SET),
+    m_sseTypeHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_tagsHasBeenSet(false),
     m_storageTier(StorageTier::NOT_SET),
     m_storageTierHasBeenSet(false),
-    m_restoreExpiryTimeHasBeenSet(false)
+    m_restoreExpiryTimeHasBeenSet(false),
+    m_sseType(SSEType::NOT_SET),
+    m_sseTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -185,6 +189,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_restoreExpiryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreExpiryTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_restoreExpiryTimeHasBeenSet = true;
     }
+    XmlNode sseTypeNode = resultNode.FirstChild("sseType");
+    if(!sseTypeNode.IsNull())
+    {
+      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
+      m_sseTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -283,6 +293,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".RestoreExpiryTime=" << StringUtils::URLEncode(m_restoreExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_sseTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+  }
+
   Aws::StringStream responseMetadataLocationAndMemberSs;
   responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
@@ -363,6 +378,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_restoreExpiryTimeHasBeenSet)
   {
       oStream << location << ".RestoreExpiryTime=" << StringUtils::URLEncode(m_restoreExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_sseTypeHasBeenSet)
+  {
+      oStream << location << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

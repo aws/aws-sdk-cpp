@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/VolumeState.h>
 #include <aws/ec2/model/VolumeType.h>
+#include <aws/ec2/model/SSEType.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/VolumeAttachment.h>
 #include <aws/ec2/model/Tag.h>
@@ -576,6 +577,37 @@ namespace Model
     inline Volume& WithThroughput(int value) { SetThroughput(value); return *this;}
 
 
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const SSEType& GetSseType() const{ return m_sseType; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool SseTypeHasBeenSet() const { return m_sseTypeHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetSseType(const SSEType& value) { m_sseTypeHasBeenSet = true; m_sseType = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetSseType(SSEType&& value) { m_sseTypeHasBeenSet = true; m_sseType = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline Volume& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline Volume& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -640,6 +672,9 @@ namespace Model
 
     int m_throughput;
     bool m_throughputHasBeenSet = false;
+
+    SSEType m_sseType;
+    bool m_sseTypeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
   };
