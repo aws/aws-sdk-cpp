@@ -38,6 +38,9 @@ namespace Aws
         static const int SQL_SERVER_FAILOVER_CLUSTER_INSTANCE_HASH = HashingUtils::HashString("SQL_SERVER_FAILOVER_CLUSTER_INSTANCE");
         static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
         static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ACTIVE_DIRECTORY");
+        static const int SAP_NETWEAVER_STANDARD_HASH = HashingUtils::HashString("SAP_NETWEAVER_STANDARD");
+        static const int SAP_NETWEAVER_DISTRIBUTED_HASH = HashingUtils::HashString("SAP_NETWEAVER_DISTRIBUTED");
+        static const int SAP_NETWEAVER_HIGH_AVAILABILITY_HASH = HashingUtils::HashString("SAP_NETWEAVER_HIGH_AVAILABILITY");
 
 
         Tier GetTierForName(const Aws::String& name)
@@ -115,6 +118,18 @@ namespace Aws
           {
             return Tier::ACTIVE_DIRECTORY;
           }
+          else if (hashCode == SAP_NETWEAVER_STANDARD_HASH)
+          {
+            return Tier::SAP_NETWEAVER_STANDARD;
+          }
+          else if (hashCode == SAP_NETWEAVER_DISTRIBUTED_HASH)
+          {
+            return Tier::SAP_NETWEAVER_DISTRIBUTED;
+          }
+          else if (hashCode == SAP_NETWEAVER_HIGH_AVAILABILITY_HASH)
+          {
+            return Tier::SAP_NETWEAVER_HIGH_AVAILABILITY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -165,6 +180,12 @@ namespace Aws
             return "SHAREPOINT";
           case Tier::ACTIVE_DIRECTORY:
             return "ACTIVE_DIRECTORY";
+          case Tier::SAP_NETWEAVER_STANDARD:
+            return "SAP_NETWEAVER_STANDARD";
+          case Tier::SAP_NETWEAVER_DISTRIBUTED:
+            return "SAP_NETWEAVER_DISTRIBUTED";
+          case Tier::SAP_NETWEAVER_HIGH_AVAILABILITY:
+            return "SAP_NETWEAVER_HIGH_AVAILABILITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

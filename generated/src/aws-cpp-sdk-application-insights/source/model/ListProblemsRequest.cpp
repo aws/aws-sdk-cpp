@@ -13,19 +13,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListProblemsRequest::ListProblemsRequest() : 
+    m_accountIdHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_componentNameHasBeenSet(false)
+    m_componentNameHasBeenSet(false),
+    m_visibility(Visibility::NOT_SET),
+    m_visibilityHasBeenSet(false)
 {
 }
 
 Aws::String ListProblemsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
+  }
 
   if(m_resourceGroupNameHasBeenSet)
   {
@@ -59,6 +68,11 @@ Aws::String ListProblemsRequest::SerializePayload() const
   {
    payload.WithString("ComponentName", m_componentName);
 
+  }
+
+  if(m_visibilityHasBeenSet)
+  {
+   payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
   }
 
   return payload.View().WriteReadable();

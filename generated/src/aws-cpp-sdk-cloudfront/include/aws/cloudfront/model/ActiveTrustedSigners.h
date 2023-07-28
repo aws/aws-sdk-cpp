@@ -42,32 +42,28 @@ namespace Model
 
     /**
      * <p>This field is <code>true</code> if any of the Amazon Web Services accounts in
-     * the list have active CloudFront key pairs that CloudFront can use to verify the
-     * signatures of signed URLs and signed cookies. If not, this field is
+     * the list are configured as trusted signers. If not, this field is
      * <code>false</code>.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p>This field is <code>true</code> if any of the Amazon Web Services accounts in
-     * the list have active CloudFront key pairs that CloudFront can use to verify the
-     * signatures of signed URLs and signed cookies. If not, this field is
+     * the list are configured as trusted signers. If not, this field is
      * <code>false</code>.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>This field is <code>true</code> if any of the Amazon Web Services accounts in
-     * the list have active CloudFront key pairs that CloudFront can use to verify the
-     * signatures of signed URLs and signed cookies. If not, this field is
+     * the list are configured as trusted signers. If not, this field is
      * <code>false</code>.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
      * <p>This field is <code>true</code> if any of the Amazon Web Services accounts in
-     * the list have active CloudFront key pairs that CloudFront can use to verify the
-     * signatures of signed URLs and signed cookies. If not, this field is
+     * the list are configured as trusted signers. If not, this field is
      * <code>false</code>.</p>
      */
     inline ActiveTrustedSigners& WithEnabled(bool value) { SetEnabled(value); return *this;}

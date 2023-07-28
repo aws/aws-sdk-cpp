@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeProblemRequest::DescribeProblemRequest() : 
-    m_problemIdHasBeenSet(false)
+    m_problemIdHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String DescribeProblemRequest::SerializePayload() const
   if(m_problemIdHasBeenSet)
   {
    payload.WithString("ProblemId", m_problemId);
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
 
   }
 

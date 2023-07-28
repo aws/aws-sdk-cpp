@@ -8,6 +8,7 @@
 #include <aws/application-insights/ApplicationInsightsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/application-insights/model/Tier.h>
+#include <aws/application-insights/model/RecommendationType.h>
 #include <utility>
 
 namespace Aws
@@ -147,6 +148,37 @@ namespace Model
      */
     inline DescribeComponentConfigurationRecommendationRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline const RecommendationType& GetRecommendationType() const{ return m_recommendationType; }
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline bool RecommendationTypeHasBeenSet() const { return m_recommendationTypeHasBeenSet; }
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline void SetRecommendationType(const RecommendationType& value) { m_recommendationTypeHasBeenSet = true; m_recommendationType = value; }
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline void SetRecommendationType(RecommendationType&& value) { m_recommendationTypeHasBeenSet = true; m_recommendationType = std::move(value); }
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline DescribeComponentConfigurationRecommendationRequest& WithRecommendationType(const RecommendationType& value) { SetRecommendationType(value); return *this;}
+
+    /**
+     * <p>The recommended configuration type.</p>
+     */
+    inline DescribeComponentConfigurationRecommendationRequest& WithRecommendationType(RecommendationType&& value) { SetRecommendationType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -157,6 +189,9 @@ namespace Model
 
     Tier m_tier;
     bool m_tierHasBeenSet = false;
+
+    RecommendationType m_recommendationType;
+    bool m_recommendationTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 DescribeComponentRequest::DescribeComponentRequest() : 
     m_resourceGroupNameHasBeenSet(false),
-    m_componentNameHasBeenSet(false)
+    m_componentNameHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String DescribeComponentRequest::SerializePayload() const
   if(m_componentNameHasBeenSet)
   {
    payload.WithString("ComponentName", m_componentName);
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
 
   }
 

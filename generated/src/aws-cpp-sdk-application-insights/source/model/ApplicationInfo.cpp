@@ -19,6 +19,7 @@ namespace Model
 {
 
 ApplicationInfo::ApplicationInfo() : 
+    m_accountIdHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
     m_opsItemSNSTopicArnHasBeenSet(false),
@@ -35,6 +36,7 @@ ApplicationInfo::ApplicationInfo() :
 }
 
 ApplicationInfo::ApplicationInfo(JsonView jsonValue) : 
+    m_accountIdHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
     m_opsItemSNSTopicArnHasBeenSet(false),
@@ -53,6 +55,13 @@ ApplicationInfo::ApplicationInfo(JsonView jsonValue) :
 
 ApplicationInfo& ApplicationInfo::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ResourceGroupName"))
   {
     m_resourceGroupName = jsonValue.GetString("ResourceGroupName");
@@ -115,6 +124,12 @@ ApplicationInfo& ApplicationInfo::operator =(JsonView jsonValue)
 JsonValue ApplicationInfo::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
+  }
 
   if(m_resourceGroupNameHasBeenSet)
   {

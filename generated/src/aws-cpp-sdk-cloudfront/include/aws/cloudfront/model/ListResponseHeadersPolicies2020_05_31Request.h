@@ -41,7 +41,7 @@ namespace Model
 
     /**
      * <p>A filter to get only the specified kind of response headers policies. Valid
-     * values are:</p> <ul> <li> <p> <code>managed</code> ��� Gets only the managed
+     * values are:</p> <ul> <li> <p> <code>managed</code> – Gets only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
      * – Gets only the custom policies created in your Amazon Web Services account.</p>
      * </li> </ul>
@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>A filter to get only the specified kind of response headers policies. Valid
-     * values are:</p> <ul> <li> <p> <code>managed</code> ��� Gets only the managed
+     * values are:</p> <ul> <li> <p> <code>managed</code> – Gets only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
      * – Gets only the custom policies created in your Amazon Web Services account.</p>
      * </li> </ul>
@@ -59,7 +59,7 @@ namespace Model
 
     /**
      * <p>A filter to get only the specified kind of response headers policies. Valid
-     * values are:</p> <ul> <li> <p> <code>managed</code> ��� Gets only the managed
+     * values are:</p> <ul> <li> <p> <code>managed</code> – Gets only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
      * – Gets only the custom policies created in your Amazon Web Services account.</p>
      * </li> </ul>
@@ -68,7 +68,7 @@ namespace Model
 
     /**
      * <p>A filter to get only the specified kind of response headers policies. Valid
-     * values are:</p> <ul> <li> <p> <code>managed</code> ��� Gets only the managed
+     * values are:</p> <ul> <li> <p> <code>managed</code> – Gets only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
      * – Gets only the custom policies created in your Amazon Web Services account.</p>
      * </li> </ul>
@@ -77,7 +77,7 @@ namespace Model
 
     /**
      * <p>A filter to get only the specified kind of response headers policies. Valid
-     * values are:</p> <ul> <li> <p> <code>managed</code> ��� Gets only the managed
+     * values are:</p> <ul> <li> <p> <code>managed</code> – Gets only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
      * – Gets only the custom policies created in your Amazon Web Services account.</p>
      * </li> </ul>
@@ -86,7 +86,7 @@ namespace Model
 
     /**
      * <p>A filter to get only the specified kind of response headers policies. Valid
-     * values are:</p> <ul> <li> <p> <code>managed</code> ��� Gets only the managed
+     * values are:</p> <ul> <li> <p> <code>managed</code> – Gets only the managed
      * policies created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code>
      * – Gets only the custom policies created in your Amazon Web Services account.</p>
      * </li> </ul>
