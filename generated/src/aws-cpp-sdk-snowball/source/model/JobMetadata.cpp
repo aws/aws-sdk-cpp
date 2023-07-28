@@ -45,7 +45,11 @@ JobMetadata::JobMetadata() :
     m_remoteManagement(RemoteManagement::NOT_SET),
     m_remoteManagementHasBeenSet(false),
     m_longTermPricingIdHasBeenSet(false),
-    m_onDeviceServiceConfigurationHasBeenSet(false)
+    m_onDeviceServiceConfigurationHasBeenSet(false),
+    m_impactLevel(ImpactLevel::NOT_SET),
+    m_impactLevelHasBeenSet(false),
+    m_pickupDetailsHasBeenSet(false),
+    m_snowballIdHasBeenSet(false)
 {
 }
 
@@ -76,7 +80,11 @@ JobMetadata::JobMetadata(JsonView jsonValue) :
     m_remoteManagement(RemoteManagement::NOT_SET),
     m_remoteManagementHasBeenSet(false),
     m_longTermPricingIdHasBeenSet(false),
-    m_onDeviceServiceConfigurationHasBeenSet(false)
+    m_onDeviceServiceConfigurationHasBeenSet(false),
+    m_impactLevel(ImpactLevel::NOT_SET),
+    m_impactLevelHasBeenSet(false),
+    m_pickupDetailsHasBeenSet(false),
+    m_snowballIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -237,6 +245,27 @@ JobMetadata& JobMetadata::operator =(JsonView jsonValue)
     m_onDeviceServiceConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ImpactLevel"))
+  {
+    m_impactLevel = ImpactLevelMapper::GetImpactLevelForName(jsonValue.GetString("ImpactLevel"));
+
+    m_impactLevelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PickupDetails"))
+  {
+    m_pickupDetails = jsonValue.GetObject("PickupDetails");
+
+    m_pickupDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SnowballId"))
+  {
+    m_snowballId = jsonValue.GetString("SnowballId");
+
+    m_snowballIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -367,6 +396,23 @@ JsonValue JobMetadata::Jsonize() const
   if(m_onDeviceServiceConfigurationHasBeenSet)
   {
    payload.WithObject("OnDeviceServiceConfiguration", m_onDeviceServiceConfiguration.Jsonize());
+
+  }
+
+  if(m_impactLevelHasBeenSet)
+  {
+   payload.WithString("ImpactLevel", ImpactLevelMapper::GetNameForImpactLevel(m_impactLevel));
+  }
+
+  if(m_pickupDetailsHasBeenSet)
+  {
+   payload.WithObject("PickupDetails", m_pickupDetails.Jsonize());
+
+  }
+
+  if(m_snowballIdHasBeenSet)
+  {
+   payload.WithString("SnowballId", m_snowballId);
 
   }
 

@@ -24,12 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a security group and Amazon Web Services account ID pair.</p>
-   *  <p>We are retiring EC2-Classic. We recommend that you migrate from
-   * EC2-Classic to a VPC. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-   * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-   * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+   * <p>Describes a security group and Amazon Web Services account ID
+   * pair.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UserIdGroupPair">AWS
    * API Reference</a></p>
    */
@@ -143,8 +139,7 @@ namespace Model
 
 
     /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * <p>[Default VPC] The name of the security group. For a security group in a
      * nondefault VPC, use the security group ID. </p> <p>For a referenced security
      * group in another VPC, this value is not returned if the referenced security
      * group is deleted.</p>
@@ -152,8 +147,7 @@ namespace Model
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * <p>[Default VPC] The name of the security group. For a security group in a
      * nondefault VPC, use the security group ID. </p> <p>For a referenced security
      * group in another VPC, this value is not returned if the referenced security
      * group is deleted.</p>
@@ -161,8 +155,7 @@ namespace Model
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * <p>[Default VPC] The name of the security group. For a security group in a
      * nondefault VPC, use the security group ID. </p> <p>For a referenced security
      * group in another VPC, this value is not returned if the referenced security
      * group is deleted.</p>
@@ -170,8 +163,7 @@ namespace Model
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * <p>[Default VPC] The name of the security group. For a security group in a
      * nondefault VPC, use the security group ID. </p> <p>For a referenced security
      * group in another VPC, this value is not returned if the referenced security
      * group is deleted.</p>
@@ -179,8 +171,7 @@ namespace Model
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * <p>[Default VPC] The name of the security group. For a security group in a
      * nondefault VPC, use the security group ID. </p> <p>For a referenced security
      * group in another VPC, this value is not returned if the referenced security
      * group is deleted.</p>
@@ -188,8 +179,7 @@ namespace Model
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * <p>[Default VPC] The name of the security group. For a security group in a
      * nondefault VPC, use the security group ID. </p> <p>For a referenced security
      * group in another VPC, this value is not returned if the referenced security
      * group is deleted.</p>
@@ -197,8 +187,7 @@ namespace Model
     inline UserIdGroupPair& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * <p>[Default VPC] The name of the security group. For a security group in a
      * nondefault VPC, use the security group ID. </p> <p>For a referenced security
      * group in another VPC, this value is not returned if the referenced security
      * group is deleted.</p>
@@ -206,8 +195,7 @@ namespace Model
     inline UserIdGroupPair& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the security group. In a request, use this parameter for a
-     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * <p>[Default VPC] The name of the security group. For a security group in a
      * nondefault VPC, use the security group ID. </p> <p>For a referenced security
      * group in another VPC, this value is not returned if the referenced security
      * group is deleted.</p>
@@ -260,9 +248,7 @@ namespace Model
      * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
      * group in another VPC, the account ID of the referenced security group is
      * returned in the response. If the referenced security group is deleted, this
-     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
-     * rules that reference a security group in another Amazon Web Services
-     * account.</p>
+     * value is not returned.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
@@ -270,9 +256,7 @@ namespace Model
      * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
      * group in another VPC, the account ID of the referenced security group is
      * returned in the response. If the referenced security group is deleted, this
-     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
-     * rules that reference a security group in another Amazon Web Services
-     * account.</p>
+     * value is not returned.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
@@ -280,9 +264,7 @@ namespace Model
      * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
      * group in another VPC, the account ID of the referenced security group is
      * returned in the response. If the referenced security group is deleted, this
-     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
-     * rules that reference a security group in another Amazon Web Services
-     * account.</p>
+     * value is not returned.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
@@ -290,9 +272,7 @@ namespace Model
      * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
      * group in another VPC, the account ID of the referenced security group is
      * returned in the response. If the referenced security group is deleted, this
-     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
-     * rules that reference a security group in another Amazon Web Services
-     * account.</p>
+     * value is not returned.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
@@ -300,9 +280,7 @@ namespace Model
      * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
      * group in another VPC, the account ID of the referenced security group is
      * returned in the response. If the referenced security group is deleted, this
-     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
-     * rules that reference a security group in another Amazon Web Services
-     * account.</p>
+     * value is not returned.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
@@ -310,9 +288,7 @@ namespace Model
      * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
      * group in another VPC, the account ID of the referenced security group is
      * returned in the response. If the referenced security group is deleted, this
-     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
-     * rules that reference a security group in another Amazon Web Services
-     * account.</p>
+     * value is not returned.</p>
      */
     inline UserIdGroupPair& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
@@ -320,9 +296,7 @@ namespace Model
      * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
      * group in another VPC, the account ID of the referenced security group is
      * returned in the response. If the referenced security group is deleted, this
-     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
-     * rules that reference a security group in another Amazon Web Services
-     * account.</p>
+     * value is not returned.</p>
      */
     inline UserIdGroupPair& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
@@ -330,9 +304,7 @@ namespace Model
      * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
      * group in another VPC, the account ID of the referenced security group is
      * returned in the response. If the referenced security group is deleted, this
-     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
-     * rules that reference a security group in another Amazon Web Services
-     * account.</p>
+     * value is not returned.</p>
      */
     inline UserIdGroupPair& WithUserId(const char* value) { SetUserId(value); return *this;}
 

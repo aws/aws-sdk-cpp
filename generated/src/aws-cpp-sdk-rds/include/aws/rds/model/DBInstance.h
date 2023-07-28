@@ -338,90 +338,66 @@ namespace Model
 
 
     /**
-     * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <ul> <li> <p>For RDS for MariaDB, Microsoft SQL Server, MySQL, and PostgreSQL -
-     * The name of the initial database specified for this DB instance when it was
-     * created, if one was provided. This same name is returned for the life of the DB
-     * instance.</p> </li> <li> <p>For RDS for Oracle - The Oracle System ID (SID) of
-     * the created DB instance. This value is only returned when the object returned is
-     * an Oracle DB instance.</p> </li> </ul>
+     * <p>Contains the initial database name that you provided (if required) when you
+     * created the DB instance. This name is returned for the life of your DB instance.
+     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.</p>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
-     * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <ul> <li> <p>For RDS for MariaDB, Microsoft SQL Server, MySQL, and PostgreSQL -
-     * The name of the initial database specified for this DB instance when it was
-     * created, if one was provided. This same name is returned for the life of the DB
-     * instance.</p> </li> <li> <p>For RDS for Oracle - The Oracle System ID (SID) of
-     * the created DB instance. This value is only returned when the object returned is
-     * an Oracle DB instance.</p> </li> </ul>
+     * <p>Contains the initial database name that you provided (if required) when you
+     * created the DB instance. This name is returned for the life of your DB instance.
+     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.</p>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
-     * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <ul> <li> <p>For RDS for MariaDB, Microsoft SQL Server, MySQL, and PostgreSQL -
-     * The name of the initial database specified for this DB instance when it was
-     * created, if one was provided. This same name is returned for the life of the DB
-     * instance.</p> </li> <li> <p>For RDS for Oracle - The Oracle System ID (SID) of
-     * the created DB instance. This value is only returned when the object returned is
-     * an Oracle DB instance.</p> </li> </ul>
+     * <p>Contains the initial database name that you provided (if required) when you
+     * created the DB instance. This name is returned for the life of your DB instance.
+     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.</p>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
-     * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <ul> <li> <p>For RDS for MariaDB, Microsoft SQL Server, MySQL, and PostgreSQL -
-     * The name of the initial database specified for this DB instance when it was
-     * created, if one was provided. This same name is returned for the life of the DB
-     * instance.</p> </li> <li> <p>For RDS for Oracle - The Oracle System ID (SID) of
-     * the created DB instance. This value is only returned when the object returned is
-     * an Oracle DB instance.</p> </li> </ul>
+     * <p>Contains the initial database name that you provided (if required) when you
+     * created the DB instance. This name is returned for the life of your DB instance.
+     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.</p>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
-     * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <ul> <li> <p>For RDS for MariaDB, Microsoft SQL Server, MySQL, and PostgreSQL -
-     * The name of the initial database specified for this DB instance when it was
-     * created, if one was provided. This same name is returned for the life of the DB
-     * instance.</p> </li> <li> <p>For RDS for Oracle - The Oracle System ID (SID) of
-     * the created DB instance. This value is only returned when the object returned is
-     * an Oracle DB instance.</p> </li> </ul>
+     * <p>Contains the initial database name that you provided (if required) when you
+     * created the DB instance. This name is returned for the life of your DB instance.
+     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.</p>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
-     * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <ul> <li> <p>For RDS for MariaDB, Microsoft SQL Server, MySQL, and PostgreSQL -
-     * The name of the initial database specified for this DB instance when it was
-     * created, if one was provided. This same name is returned for the life of the DB
-     * instance.</p> </li> <li> <p>For RDS for Oracle - The Oracle System ID (SID) of
-     * the created DB instance. This value is only returned when the object returned is
-     * an Oracle DB instance.</p> </li> </ul>
+     * <p>Contains the initial database name that you provided (if required) when you
+     * created the DB instance. This name is returned for the life of your DB instance.
+     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.</p>
      */
     inline DBInstance& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
-     * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <ul> <li> <p>For RDS for MariaDB, Microsoft SQL Server, MySQL, and PostgreSQL -
-     * The name of the initial database specified for this DB instance when it was
-     * created, if one was provided. This same name is returned for the life of the DB
-     * instance.</p> </li> <li> <p>For RDS for Oracle - The Oracle System ID (SID) of
-     * the created DB instance. This value is only returned when the object returned is
-     * an Oracle DB instance.</p> </li> </ul>
+     * <p>Contains the initial database name that you provided (if required) when you
+     * created the DB instance. This name is returned for the life of your DB instance.
+     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.</p>
      */
     inline DBInstance& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
-     * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <ul> <li> <p>For RDS for MariaDB, Microsoft SQL Server, MySQL, and PostgreSQL -
-     * The name of the initial database specified for this DB instance when it was
-     * created, if one was provided. This same name is returned for the life of the DB
-     * instance.</p> </li> <li> <p>For RDS for Oracle - The Oracle System ID (SID) of
-     * the created DB instance. This value is only returned when the object returned is
-     * an Oracle DB instance.</p> </li> </ul>
+     * <p>Contains the initial database name that you provided (if required) when you
+     * created the DB instance. This name is returned for the life of your DB instance.
+     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * CDB.</p>
      */
     inline DBInstance& WithDBName(const char* value) { SetDBName(value); return *this;}
 
@@ -3839,6 +3815,47 @@ namespace Model
      */
     inline DBInstance& WithReadReplicaSourceDBClusterIdentifier(const char* value) { SetReadReplicaSourceDBClusterIdentifier(value); return *this;}
 
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline const Aws::String& GetPercentProgress() const{ return m_percentProgress; }
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline bool PercentProgressHasBeenSet() const { return m_percentProgressHasBeenSet; }
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline void SetPercentProgress(const Aws::String& value) { m_percentProgressHasBeenSet = true; m_percentProgress = value; }
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline void SetPercentProgress(Aws::String&& value) { m_percentProgressHasBeenSet = true; m_percentProgress = std::move(value); }
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline void SetPercentProgress(const char* value) { m_percentProgressHasBeenSet = true; m_percentProgress.assign(value); }
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline DBInstance& WithPercentProgress(const Aws::String& value) { SetPercentProgress(value); return *this;}
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline DBInstance& WithPercentProgress(Aws::String&& value) { SetPercentProgress(std::move(value)); return *this;}
+
+    /**
+     * <p>The progress of the storage optimization operation as a percentage.</p>
+     */
+    inline DBInstance& WithPercentProgress(const char* value) { SetPercentProgress(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -4083,6 +4100,9 @@ namespace Model
 
     Aws::String m_readReplicaSourceDBClusterIdentifier;
     bool m_readReplicaSourceDBClusterIdentifierHasBeenSet = false;
+
+    Aws::String m_percentProgress;
+    bool m_percentProgressHasBeenSet = false;
   };
 
 } // namespace Model

@@ -72,47 +72,47 @@ namespace Model
 
 
     /**
-     * <p>One or more egress-only internet gateway IDs.</p>
+     * <p>The IDs of the egress-only internet gateways.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEgressOnlyInternetGatewayIds() const{ return m_egressOnlyInternetGatewayIds; }
 
     /**
-     * <p>One or more egress-only internet gateway IDs.</p>
+     * <p>The IDs of the egress-only internet gateways.</p>
      */
     inline bool EgressOnlyInternetGatewayIdsHasBeenSet() const { return m_egressOnlyInternetGatewayIdsHasBeenSet; }
 
     /**
-     * <p>One or more egress-only internet gateway IDs.</p>
+     * <p>The IDs of the egress-only internet gateways.</p>
      */
     inline void SetEgressOnlyInternetGatewayIds(const Aws::Vector<Aws::String>& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds = value; }
 
     /**
-     * <p>One or more egress-only internet gateway IDs.</p>
+     * <p>The IDs of the egress-only internet gateways.</p>
      */
     inline void SetEgressOnlyInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds = std::move(value); }
 
     /**
-     * <p>One or more egress-only internet gateway IDs.</p>
+     * <p>The IDs of the egress-only internet gateways.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& WithEgressOnlyInternetGatewayIds(const Aws::Vector<Aws::String>& value) { SetEgressOnlyInternetGatewayIds(value); return *this;}
 
     /**
-     * <p>One or more egress-only internet gateway IDs.</p>
+     * <p>The IDs of the egress-only internet gateways.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& WithEgressOnlyInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetEgressOnlyInternetGatewayIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more egress-only internet gateway IDs.</p>
+     * <p>The IDs of the egress-only internet gateways.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(const Aws::String& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more egress-only internet gateway IDs.</p>
+     * <p>The IDs of the egress-only internet gateways.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(Aws::String&& value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more egress-only internet gateway IDs.</p>
+     * <p>The IDs of the egress-only internet gateways.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& AddEgressOnlyInternetGatewayIds(const char* value) { m_egressOnlyInternetGatewayIdsHasBeenSet = true; m_egressOnlyInternetGatewayIds.push_back(value); return *this; }
 
@@ -200,10 +200,10 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
+     * <p>The filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -213,10 +213,10 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
+     * <p>The filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -226,10 +226,10 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
+     * <p>The filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -239,10 +239,10 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
+     * <p>The filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -252,10 +252,10 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
+     * <p>The filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -265,10 +265,10 @@ namespace Model
     inline DescribeEgressOnlyInternetGatewaysRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
+     * <p>The filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -278,10 +278,10 @@ namespace Model
     inline DescribeEgressOnlyInternetGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
+     * <p>The filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -291,10 +291,10 @@ namespace Model
     inline DescribeEgressOnlyInternetGatewaysRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
+     * <p>The filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all

@@ -56,7 +56,10 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_autoRecoverySupportedHasBeenSet(false),
     m_supportedBootModesHasBeenSet(false),
     m_nitroEnclavesSupport(NitroEnclavesSupport::NOT_SET),
-    m_nitroEnclavesSupportHasBeenSet(false)
+    m_nitroEnclavesSupportHasBeenSet(false),
+    m_nitroTpmSupport(NitroTpmSupport::NOT_SET),
+    m_nitroTpmSupportHasBeenSet(false),
+    m_nitroTpmInfoHasBeenSet(false)
 {
 }
 
@@ -96,7 +99,10 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_autoRecoverySupportedHasBeenSet(false),
     m_supportedBootModesHasBeenSet(false),
     m_nitroEnclavesSupport(NitroEnclavesSupport::NOT_SET),
-    m_nitroEnclavesSupportHasBeenSet(false)
+    m_nitroEnclavesSupportHasBeenSet(false),
+    m_nitroTpmSupport(NitroTpmSupport::NOT_SET),
+    m_nitroTpmSupportHasBeenSet(false),
+    m_nitroTpmInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -281,6 +287,18 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
       m_nitroEnclavesSupport = NitroEnclavesSupportMapper::GetNitroEnclavesSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nitroEnclavesSupportNode.GetText()).c_str()).c_str());
       m_nitroEnclavesSupportHasBeenSet = true;
     }
+    XmlNode nitroTpmSupportNode = resultNode.FirstChild("nitroTpmSupport");
+    if(!nitroTpmSupportNode.IsNull())
+    {
+      m_nitroTpmSupport = NitroTpmSupportMapper::GetNitroTpmSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nitroTpmSupportNode.GetText()).c_str()).c_str());
+      m_nitroTpmSupportHasBeenSet = true;
+    }
+    XmlNode nitroTpmInfoNode = resultNode.FirstChild("nitroTpmInfo");
+    if(!nitroTpmInfoNode.IsNull())
+    {
+      m_nitroTpmInfo = nitroTpmInfoNode;
+      m_nitroTpmInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -449,6 +467,18 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".NitroEnclavesSupport=" << NitroEnclavesSupportMapper::GetNameForNitroEnclavesSupport(m_nitroEnclavesSupport) << "&";
   }
 
+  if(m_nitroTpmSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NitroTpmSupport=" << NitroTpmSupportMapper::GetNameForNitroTpmSupport(m_nitroTpmSupport) << "&";
+  }
+
+  if(m_nitroTpmInfoHasBeenSet)
+  {
+      Aws::StringStream nitroTpmInfoLocationAndMemberSs;
+      nitroTpmInfoLocationAndMemberSs << location << index << locationValue << ".NitroTpmInfo";
+      m_nitroTpmInfo.OutputToStream(oStream, nitroTpmInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -588,6 +618,16 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_nitroEnclavesSupportHasBeenSet)
   {
       oStream << location << ".NitroEnclavesSupport=" << NitroEnclavesSupportMapper::GetNameForNitroEnclavesSupport(m_nitroEnclavesSupport) << "&";
+  }
+  if(m_nitroTpmSupportHasBeenSet)
+  {
+      oStream << location << ".NitroTpmSupport=" << NitroTpmSupportMapper::GetNameForNitroTpmSupport(m_nitroTpmSupport) << "&";
+  }
+  if(m_nitroTpmInfoHasBeenSet)
+  {
+      Aws::String nitroTpmInfoLocationAndMember(location);
+      nitroTpmInfoLocationAndMember += ".NitroTpmInfo";
+      m_nitroTpmInfo.OutputToStream(oStream, nitroTpmInfoLocationAndMember.c_str());
   }
 }
 

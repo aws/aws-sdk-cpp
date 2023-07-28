@@ -18,7 +18,8 @@ UpdateBillingGroupRequest::UpdateBillingGroupRequest() :
     m_status(BillingGroupStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_computationPreferenceHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_accountGroupingHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,12 @@ Aws::String UpdateBillingGroupRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_accountGroupingHasBeenSet)
+  {
+   payload.WithObject("AccountGrouping", m_accountGrouping.Jsonize());
 
   }
 

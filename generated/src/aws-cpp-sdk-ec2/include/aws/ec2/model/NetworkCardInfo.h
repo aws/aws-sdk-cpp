@@ -122,6 +122,48 @@ namespace Model
      */
     inline NetworkCardInfo& WithMaximumNetworkInterfaces(int value) { SetMaximumNetworkInterfaces(value); return *this;}
 
+
+    /**
+     * <p>The baseline network performance of the network card, in Gbps.</p>
+     */
+    inline double GetBaselineBandwidthInGbps() const{ return m_baselineBandwidthInGbps; }
+
+    /**
+     * <p>The baseline network performance of the network card, in Gbps.</p>
+     */
+    inline bool BaselineBandwidthInGbpsHasBeenSet() const { return m_baselineBandwidthInGbpsHasBeenSet; }
+
+    /**
+     * <p>The baseline network performance of the network card, in Gbps.</p>
+     */
+    inline void SetBaselineBandwidthInGbps(double value) { m_baselineBandwidthInGbpsHasBeenSet = true; m_baselineBandwidthInGbps = value; }
+
+    /**
+     * <p>The baseline network performance of the network card, in Gbps.</p>
+     */
+    inline NetworkCardInfo& WithBaselineBandwidthInGbps(double value) { SetBaselineBandwidthInGbps(value); return *this;}
+
+
+    /**
+     * <p>The peak (burst) network performance of the network card, in Gbps.</p>
+     */
+    inline double GetPeakBandwidthInGbps() const{ return m_peakBandwidthInGbps; }
+
+    /**
+     * <p>The peak (burst) network performance of the network card, in Gbps.</p>
+     */
+    inline bool PeakBandwidthInGbpsHasBeenSet() const { return m_peakBandwidthInGbpsHasBeenSet; }
+
+    /**
+     * <p>The peak (burst) network performance of the network card, in Gbps.</p>
+     */
+    inline void SetPeakBandwidthInGbps(double value) { m_peakBandwidthInGbpsHasBeenSet = true; m_peakBandwidthInGbps = value; }
+
+    /**
+     * <p>The peak (burst) network performance of the network card, in Gbps.</p>
+     */
+    inline NetworkCardInfo& WithPeakBandwidthInGbps(double value) { SetPeakBandwidthInGbps(value); return *this;}
+
   private:
 
     int m_networkCardIndex;
@@ -132,6 +174,12 @@ namespace Model
 
     int m_maximumNetworkInterfaces;
     bool m_maximumNetworkInterfacesHasBeenSet = false;
+
+    double m_baselineBandwidthInGbps;
+    bool m_baselineBandwidthInGbpsHasBeenSet = false;
+
+    double m_peakBandwidthInGbps;
+    bool m_peakBandwidthInGbpsHasBeenSet = false;
   };
 
 } // namespace Model

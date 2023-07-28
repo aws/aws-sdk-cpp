@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securitylake/model/DataLakeConfiguration.h>
+#include <aws/securitylake/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +140,63 @@ namespace Model
      */
     inline CreateDataLakeRequest& WithMetaStoreManagerRoleArn(const char* value) { SetMetaStoreManagerRoleArn(value); return *this;}
 
+
+    /**
+     * <p>An array of objects, one for each tag to associate with the data lake
+     * configuration. For each tag, you must specify both a tag key and a tag value. A
+     * tag value cannot be null, but it can be an empty string.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of objects, one for each tag to associate with the data lake
+     * configuration. For each tag, you must specify both a tag key and a tag value. A
+     * tag value cannot be null, but it can be an empty string.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>An array of objects, one for each tag to associate with the data lake
+     * configuration. For each tag, you must specify both a tag key and a tag value. A
+     * tag value cannot be null, but it can be an empty string.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>An array of objects, one for each tag to associate with the data lake
+     * configuration. For each tag, you must specify both a tag key and a tag value. A
+     * tag value cannot be null, but it can be an empty string.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>An array of objects, one for each tag to associate with the data lake
+     * configuration. For each tag, you must specify both a tag key and a tag value. A
+     * tag value cannot be null, but it can be an empty string.</p>
+     */
+    inline CreateDataLakeRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>An array of objects, one for each tag to associate with the data lake
+     * configuration. For each tag, you must specify both a tag key and a tag value. A
+     * tag value cannot be null, but it can be an empty string.</p>
+     */
+    inline CreateDataLakeRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects, one for each tag to associate with the data lake
+     * configuration. For each tag, you must specify both a tag key and a tag value. A
+     * tag value cannot be null, but it can be an empty string.</p>
+     */
+    inline CreateDataLakeRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects, one for each tag to associate with the data lake
+     * configuration. For each tag, you must specify both a tag key and a tag value. A
+     * tag value cannot be null, but it can be an empty string.</p>
+     */
+    inline CreateDataLakeRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<DataLakeConfiguration> m_configurations;
@@ -146,6 +204,9 @@ namespace Model
 
     Aws::String m_metaStoreManagerRoleArn;
     bool m_metaStoreManagerRoleArnHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

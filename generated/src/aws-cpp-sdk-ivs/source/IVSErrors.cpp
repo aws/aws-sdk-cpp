@@ -7,8 +7,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ivs/IVSErrors.h>
 #include <aws/ivs/model/ConflictException.h>
-#include <aws/ivs/model/ServiceQuotaExceededException.h>
 #include <aws/ivs/model/ThrottlingException.h>
+#include <aws/ivs/model/ServiceQuotaExceededException.h>
 #include <aws/ivs/model/StreamUnavailable.h>
 #include <aws/ivs/model/ResourceNotFoundException.h>
 #include <aws/ivs/model/InternalServerException.h>
@@ -32,16 +32,16 @@ template<> AWS_IVS_API ConflictException IVSError::GetModeledError()
   return ConflictException(this->GetJsonPayload().View());
 }
 
-template<> AWS_IVS_API ServiceQuotaExceededException IVSError::GetModeledError()
-{
-  assert(this->GetErrorType() == IVSErrors::SERVICE_QUOTA_EXCEEDED);
-  return ServiceQuotaExceededException(this->GetJsonPayload().View());
-}
-
 template<> AWS_IVS_API ThrottlingException IVSError::GetModeledError()
 {
   assert(this->GetErrorType() == IVSErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_IVS_API ServiceQuotaExceededException IVSError::GetModeledError()
+{
+  assert(this->GetErrorType() == IVSErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template<> AWS_IVS_API StreamUnavailable IVSError::GetModeledError()

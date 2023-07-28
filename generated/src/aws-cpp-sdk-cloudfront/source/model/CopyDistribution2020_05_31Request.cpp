@@ -19,7 +19,9 @@ CopyDistribution2020_05_31Request::CopyDistribution2020_05_31Request() :
     m_staging(false),
     m_stagingHasBeenSet(false),
     m_ifMatchHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false)
+    m_callerReferenceHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,14 @@ Aws::String CopyDistribution2020_05_31Request::SerializePayload() const
   {
    XmlNode callerReferenceNode = parentNode.CreateChildElement("CallerReference");
    callerReferenceNode.SetText(m_callerReference);
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+   ss << std::boolalpha << m_enabled;
+   enabledNode.SetText(ss.str());
+   ss.str("");
   }
 
   return payloadDoc.ConvertToString();

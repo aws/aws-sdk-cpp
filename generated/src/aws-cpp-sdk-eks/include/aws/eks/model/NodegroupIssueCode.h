@@ -25,6 +25,7 @@ namespace Model
     Ec2SubnetNotFound,
     Ec2SubnetInvalidConfiguration,
     IamInstanceProfileNotFound,
+    Ec2SubnetMissingIpv6Assignment,
     IamLimitExceeded,
     IamNodeRoleNotFound,
     NodeCreationFailure,
@@ -34,7 +35,20 @@ namespace Model
     AccessDenied,
     InternalFailure,
     ClusterUnreachable,
-    Ec2SubnetMissingIpv6Assignment
+    AmiIdNotFound,
+    AutoScalingGroupOptInRequired,
+    AutoScalingGroupRateLimitExceeded,
+    Ec2LaunchTemplateDeletionFailure,
+    Ec2LaunchTemplateInvalidConfiguration,
+    Ec2LaunchTemplateMaxLimitExceeded,
+    Ec2SubnetListTooLong,
+    IamThrottling,
+    NodeTerminationFailure,
+    PodEvictionFailure,
+    SourceEc2LaunchTemplateNotFound,
+    LimitExceeded,
+    Unknown,
+    AutoScalingGroupInstanceRefreshActive
   };
 
 namespace NodegroupIssueCodeMapper

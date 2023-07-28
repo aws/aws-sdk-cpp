@@ -129,6 +129,47 @@ namespace Model
     
     AWS_CONNECTCASES_API CaseFilter& WithNot(CaseFilter&& value);
 
+
+    /**
+     * <p>Provides "or all" filtering.</p>
+     */
+    inline const Aws::Vector<CaseFilter>& GetOrAll() const{ return m_orAll; }
+
+    /**
+     * <p>Provides "or all" filtering.</p>
+     */
+    inline bool OrAllHasBeenSet() const { return m_orAllHasBeenSet; }
+
+    /**
+     * <p>Provides "or all" filtering.</p>
+     */
+    inline void SetOrAll(const Aws::Vector<CaseFilter>& value) { m_orAllHasBeenSet = true; m_orAll = value; }
+
+    /**
+     * <p>Provides "or all" filtering.</p>
+     */
+    inline void SetOrAll(Aws::Vector<CaseFilter>&& value) { m_orAllHasBeenSet = true; m_orAll = std::move(value); }
+
+    /**
+     * <p>Provides "or all" filtering.</p>
+     */
+    inline CaseFilter& WithOrAll(const Aws::Vector<CaseFilter>& value) { SetOrAll(value); return *this;}
+
+    /**
+     * <p>Provides "or all" filtering.</p>
+     */
+    inline CaseFilter& WithOrAll(Aws::Vector<CaseFilter>&& value) { SetOrAll(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides "or all" filtering.</p>
+     */
+    inline CaseFilter& AddOrAll(const CaseFilter& value) { m_orAllHasBeenSet = true; m_orAll.push_back(value); return *this; }
+
+    /**
+     * <p>Provides "or all" filtering.</p>
+     */
+    inline CaseFilter& AddOrAll(CaseFilter&& value) { m_orAllHasBeenSet = true; m_orAll.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<CaseFilter> m_andAll;
@@ -139,6 +180,9 @@ namespace Model
 
     std::shared_ptr<CaseFilter> m_not;
     bool m_notHasBeenSet = false;
+
+    Aws::Vector<CaseFilter> m_orAll;
+    bool m_orAllHasBeenSet = false;
   };
 
 } // namespace Model

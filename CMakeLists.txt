@@ -62,6 +62,8 @@ if (LEGACY_BUILD)
     option(ENABLE_ZLIB_REQUEST_COMPRESSION "For services that support it, request content will be compressed. On by default if dependency available" ON)
     option(DISABLE_INTERNAL_IMDSV1_CALLS "Disables IMDSv1 internal client calls" OFF)
     option(BUILD_BENCHMARKS "Enables building the benchmark executable" OFF)
+    option(BUILD_OPTEL "Enables building the open telemetry implementation of tracing" OFF)
+    option(AWS_SDK_WARNINGS_ARE_ERRORS "Compiler warning is treated as an error. Try turning this off when observing errors on a new or uncommon compiler" ON)
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
     set(AWS_TEST_REGION "US_EAST_1" CACHE STRING "Region to target integration tests against")

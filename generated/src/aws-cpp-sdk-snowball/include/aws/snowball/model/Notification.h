@@ -196,6 +196,55 @@ namespace Model
      */
     inline Notification& WithNotifyAll(bool value) { SetNotifyAll(value); return *this;}
 
+
+    /**
+     * <p>Used to send SNS notifications for the person picking up the device
+     * (identified during job creation).</p>
+     */
+    inline const Aws::String& GetDevicePickupSnsTopicARN() const{ return m_devicePickupSnsTopicARN; }
+
+    /**
+     * <p>Used to send SNS notifications for the person picking up the device
+     * (identified during job creation).</p>
+     */
+    inline bool DevicePickupSnsTopicARNHasBeenSet() const { return m_devicePickupSnsTopicARNHasBeenSet; }
+
+    /**
+     * <p>Used to send SNS notifications for the person picking up the device
+     * (identified during job creation).</p>
+     */
+    inline void SetDevicePickupSnsTopicARN(const Aws::String& value) { m_devicePickupSnsTopicARNHasBeenSet = true; m_devicePickupSnsTopicARN = value; }
+
+    /**
+     * <p>Used to send SNS notifications for the person picking up the device
+     * (identified during job creation).</p>
+     */
+    inline void SetDevicePickupSnsTopicARN(Aws::String&& value) { m_devicePickupSnsTopicARNHasBeenSet = true; m_devicePickupSnsTopicARN = std::move(value); }
+
+    /**
+     * <p>Used to send SNS notifications for the person picking up the device
+     * (identified during job creation).</p>
+     */
+    inline void SetDevicePickupSnsTopicARN(const char* value) { m_devicePickupSnsTopicARNHasBeenSet = true; m_devicePickupSnsTopicARN.assign(value); }
+
+    /**
+     * <p>Used to send SNS notifications for the person picking up the device
+     * (identified during job creation).</p>
+     */
+    inline Notification& WithDevicePickupSnsTopicARN(const Aws::String& value) { SetDevicePickupSnsTopicARN(value); return *this;}
+
+    /**
+     * <p>Used to send SNS notifications for the person picking up the device
+     * (identified during job creation).</p>
+     */
+    inline Notification& WithDevicePickupSnsTopicARN(Aws::String&& value) { SetDevicePickupSnsTopicARN(std::move(value)); return *this;}
+
+    /**
+     * <p>Used to send SNS notifications for the person picking up the device
+     * (identified during job creation).</p>
+     */
+    inline Notification& WithDevicePickupSnsTopicARN(const char* value) { SetDevicePickupSnsTopicARN(value); return *this;}
+
   private:
 
     Aws::String m_snsTopicARN;
@@ -206,6 +255,9 @@ namespace Model
 
     bool m_notifyAll;
     bool m_notifyAllHasBeenSet = false;
+
+    Aws::String m_devicePickupSnsTopicARN;
+    bool m_devicePickupSnsTopicARNHasBeenSet = false;
   };
 
 } // namespace Model

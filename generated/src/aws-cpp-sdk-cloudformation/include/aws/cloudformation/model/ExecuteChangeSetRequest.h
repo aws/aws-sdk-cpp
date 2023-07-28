@@ -287,6 +287,51 @@ namespace Model
      */
     inline ExecuteChangeSetRequest& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
 
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline bool GetRetainExceptOnCreate() const{ return m_retainExceptOnCreate; }
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline bool RetainExceptOnCreateHasBeenSet() const { return m_retainExceptOnCreateHasBeenSet; }
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline void SetRetainExceptOnCreate(bool value) { m_retainExceptOnCreateHasBeenSet = true; m_retainExceptOnCreate = value; }
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline ExecuteChangeSetRequest& WithRetainExceptOnCreate(bool value) { SetRetainExceptOnCreate(value); return *this;}
+
   private:
 
     Aws::String m_changeSetName;
@@ -300,6 +345,9 @@ namespace Model
 
     bool m_disableRollback;
     bool m_disableRollbackHasBeenSet = false;
+
+    bool m_retainExceptOnCreate;
+    bool m_retainExceptOnCreateHasBeenSet = false;
   };
 
 } // namespace Model

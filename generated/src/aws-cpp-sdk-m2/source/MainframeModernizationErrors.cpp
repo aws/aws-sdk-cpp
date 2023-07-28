@@ -9,8 +9,8 @@
 #include <aws/m2/model/ConflictException.h>
 #include <aws/m2/model/ThrottlingException.h>
 #include <aws/m2/model/ServiceQuotaExceededException.h>
-#include <aws/m2/model/InternalServerException.h>
 #include <aws/m2/model/ResourceNotFoundException.h>
+#include <aws/m2/model/InternalServerException.h>
 #include <aws/m2/model/ValidationException.h>
 
 using namespace Aws::Client;
@@ -40,16 +40,16 @@ template<> AWS_MAINFRAMEMODERNIZATION_API ServiceQuotaExceededException Mainfram
   return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
-template<> AWS_MAINFRAMEMODERNIZATION_API InternalServerException MainframeModernizationError::GetModeledError()
-{
-  assert(this->GetErrorType() == MainframeModernizationErrors::INTERNAL_SERVER);
-  return InternalServerException(this->GetJsonPayload().View());
-}
-
 template<> AWS_MAINFRAMEMODERNIZATION_API ResourceNotFoundException MainframeModernizationError::GetModeledError()
 {
   assert(this->GetErrorType() == MainframeModernizationErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MAINFRAMEMODERNIZATION_API InternalServerException MainframeModernizationError::GetModeledError()
+{
+  assert(this->GetErrorType() == MainframeModernizationErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
 }
 
 template<> AWS_MAINFRAMEMODERNIZATION_API ValidationException MainframeModernizationError::GetModeledError()

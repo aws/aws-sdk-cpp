@@ -229,6 +229,10 @@ elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
     file(GLOB UTILS_CRYPTO_COMMONCRYPTO_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/commoncrypto/*.cpp")
 endif()
 
+if (BUILD_OPTEL)
+    file(GLOB OPTEL_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/smithy/tracing/impl/opentelemetry/*.h")
+    file(GLOB OPTEL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/tracing/impl/opentelemetry/*.cpp")
+endif ()
 
 file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_TINYXML2_SOURCE}
@@ -300,6 +304,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS}
   ${SMITHY_HEADERS}
   ${SMITHY_TRACING_HEADERS}
+  ${OPTEL_HEADERS}
 )
 
 # misc platform-specific, not related to features (encryption/http clients)
@@ -353,6 +358,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${CJSON_SOURCE}
     ${AWS_NATIVE_SDK_CUSTOM_SRC}
     ${UTILS_CRYPTO_SOURCE}
+    ${OPTEL_SOURCE}
 )
 
 file(GLOB AWS_NATIVE_SDK_UNITY_SRC
@@ -433,6 +439,10 @@ if(MSVC)
         source_group("Header Files\\aws\\core\\utils\\crypto\\commoncrypto" FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS})
     endif()
 
+    if (BUILD_OPTEL)
+        source_group("Header Files\\smithy\\tracing\\impl\\opentelemetry" FILES ${OPTEL_HEADERS})
+    endif ()
+
     source_group("Source Files" FILES ${AWS_SOURCE})
     source_group("Source Files\\external\\cjson" FILES ${CJSON_SOURCE})
     source_group("Source Files\\external\\tinyxml2" FILES ${AWS_TINYXML2_SOURCE})
@@ -487,6 +497,10 @@ if(MSVC)
             source_group("Source Files\\utils\\crypto\\commoncrypto" FILES ${UTILS_CRYPTO_COMMONCRYPTO_SOURCE})
     endif()
 
+    if (BUILD_OPTEL)
+        source_group("Source Files\\smithy\\tracing\\impl\\opentelemetry" FILES ${OPTEL_SOURCE})
+    endif ()
+
 
 endif(MSVC)
 
@@ -539,6 +553,10 @@ if(BUILD_OPENSSL)
     target_include_directories(${PROJECT_NAME} PRIVATE "${OPENSSL_INCLUDE_DIR}")
 endif()
 
+if (BUILD_OPTEL)
+    target_include_directories(${PROJECT_NAME} PRIVATE ${OPENTELEMETRY_CPP_INCLUDE_DIRS})
+endif ()
+
 set(PKG_CONFIG_LIB "-l${PROJECT_NAME}")
 
 if (ENABLE_CURL_LOGGING)
@@ -572,6 +590,10 @@ target_link_libraries(${PROJECT_NAME} PUBLIC ${DEP_AWS_LIBS})
 if (ENABLE_ZLIB_REQUEST_COMPRESSION)
     target_link_libraries(${PROJECT_NAME} PRIVATE ZLIB::ZLIB)
 endif()
+
+if (BUILD_OPTEL)
+    target_link_libraries(${PROJECT_NAME} PRIVATE ${OPENTELEMETRY_CPP_LIBRARIES})
+endif ()
 
 if(USE_WINDOWS_DLL_SEMANTICS)
     target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_WINDOWS_DLL_SEMANTICS")
@@ -660,6 +682,10 @@ install (FILES ${SMITHY_TRACING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy
 if(PLATFORM_ANDROID)
     install (FILES ${UTILS_LOGGING_ANDROID_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/logging/android)
 endif()
+
+if (BUILD_OPTEL)
+    install (FILES ${OPTEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/tracing/impl/opentelemetry)
+endif ()
 
 # http client headers
 if(ENABLE_CURL_CLIENT)

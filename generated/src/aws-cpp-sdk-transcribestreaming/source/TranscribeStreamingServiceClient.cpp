@@ -26,6 +26,9 @@
 #include <aws/transcribestreaming/model/StartMedicalStreamTranscriptionRequest.h>
 #include <aws/transcribestreaming/model/StartStreamTranscriptionRequest.h>
 
+#include <smithy/tracing/TracingUtils.h>
+
+
 using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Client;
@@ -33,6 +36,7 @@ using namespace Aws::TranscribeStreamingService;
 using namespace Aws::TranscribeStreamingService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* TranscribeStreamingServiceClient::SERVICE_NAME = "transcribe";
@@ -181,11 +185,16 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
     handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaEncoding]", false)), handlerContext);
     return;
   }
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+      [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+      TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+      *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
   if (!endpointResolutionOutcome.IsSuccess()) {
-    handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(Aws::Client::AWSError<CoreErrors>(
-        CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
-    return;
+      handler(this, request, StartCallAnalyticsStreamTranscriptionOutcome(Aws::Client::AWSError<CoreErrors>(
+          CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
+      return;
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/call-analytics-stream-transcription");
   request.SetResponseStreamFactory(
@@ -253,11 +262,16 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
     handler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false)), handlerContext);
     return;
   }
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+      [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+      TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+      *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
   if (!endpointResolutionOutcome.IsSuccess()) {
-    handler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<CoreErrors>(
-        CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
-    return;
+      handler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<CoreErrors>(
+          CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
+      return;
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/medical-stream-transcription");
   request.SetResponseStreamFactory(
@@ -307,11 +321,16 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
     handler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaEncoding]", false)), handlerContext);
     return;
   }
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+      [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+      TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+      *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
   if (!endpointResolutionOutcome.IsSuccess()) {
-    handler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<CoreErrors>(
-        CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
-    return;
+      handler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<CoreErrors>(
+          CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
+      return;
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/stream-transcription");
   request.SetResponseStreamFactory(

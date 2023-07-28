@@ -50,8 +50,8 @@ namespace Model
      * <p>The filter to use to identify the subset of headers to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1",
-     * "KeyToExclude2"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1",
+     * "KeyToExclude2" ] }</code> </p>
      */
     inline const HeaderMatchPattern& GetMatchPattern() const{ return m_matchPattern; }
 
@@ -59,8 +59,8 @@ namespace Model
      * <p>The filter to use to identify the subset of headers to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1",
-     * "KeyToExclude2"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1",
+     * "KeyToExclude2" ] }</code> </p>
      */
     inline bool MatchPatternHasBeenSet() const { return m_matchPatternHasBeenSet; }
 
@@ -68,8 +68,8 @@ namespace Model
      * <p>The filter to use to identify the subset of headers to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1",
-     * "KeyToExclude2"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1",
+     * "KeyToExclude2" ] }</code> </p>
      */
     inline void SetMatchPattern(const HeaderMatchPattern& value) { m_matchPatternHasBeenSet = true; m_matchPattern = value; }
 
@@ -77,8 +77,8 @@ namespace Model
      * <p>The filter to use to identify the subset of headers to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1",
-     * "KeyToExclude2"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1",
+     * "KeyToExclude2" ] }</code> </p>
      */
     inline void SetMatchPattern(HeaderMatchPattern&& value) { m_matchPatternHasBeenSet = true; m_matchPattern = std::move(value); }
 
@@ -86,8 +86,8 @@ namespace Model
      * <p>The filter to use to identify the subset of headers to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1",
-     * "KeyToExclude2"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1",
+     * "KeyToExclude2" ] }</code> </p>
      */
     inline Headers& WithMatchPattern(const HeaderMatchPattern& value) { SetMatchPattern(value); return *this;}
 
@@ -95,8 +95,8 @@ namespace Model
      * <p>The filter to use to identify the subset of headers to inspect in a web
      * request. </p> <p>You must specify exactly one setting: either <code>All</code>,
      * <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p> <p>Example
-     * JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1",
-     * "KeyToExclude2"} }</code> </p>
+     * JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1",
+     * "KeyToExclude2" ] }</code> </p>
      */
     inline Headers& WithMatchPattern(HeaderMatchPattern&& value) { SetMatchPattern(std::move(value)); return *this;}
 

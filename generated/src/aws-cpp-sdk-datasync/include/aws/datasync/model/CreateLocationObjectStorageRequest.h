@@ -469,62 +469,80 @@ namespace Model
 
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Specifies a file with the certificates that are used to sign the object
+     * storage server's certificate (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you
+     * specify must include the following:</p> <ul> <li> <p>The certificate of the
+     * signing certificate authority (CA)</p> </li> <li> <p>Any intermediate
+     * certificates</p> </li> <li> <p>base64 encoding</p> </li> <li> <p>A
+     * <code>.pem</code> extension</p> </li> </ul> <p>The file can be up to 32768 bytes
+     * (before base64 encoding).</p> <p>To use this parameter, configure
+     * <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetServerCertificate() const{ return m_serverCertificate; }
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Specifies a file with the certificates that are used to sign the object
+     * storage server's certificate (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you
+     * specify must include the following:</p> <ul> <li> <p>The certificate of the
+     * signing certificate authority (CA)</p> </li> <li> <p>Any intermediate
+     * certificates</p> </li> <li> <p>base64 encoding</p> </li> <li> <p>A
+     * <code>.pem</code> extension</p> </li> </ul> <p>The file can be up to 32768 bytes
+     * (before base64 encoding).</p> <p>To use this parameter, configure
+     * <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
      */
     inline bool ServerCertificateHasBeenSet() const { return m_serverCertificateHasBeenSet; }
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Specifies a file with the certificates that are used to sign the object
+     * storage server's certificate (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you
+     * specify must include the following:</p> <ul> <li> <p>The certificate of the
+     * signing certificate authority (CA)</p> </li> <li> <p>Any intermediate
+     * certificates</p> </li> <li> <p>base64 encoding</p> </li> <li> <p>A
+     * <code>.pem</code> extension</p> </li> </ul> <p>The file can be up to 32768 bytes
+     * (before base64 encoding).</p> <p>To use this parameter, configure
+     * <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
      */
     inline void SetServerCertificate(const Aws::Utils::ByteBuffer& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = value; }
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Specifies a file with the certificates that are used to sign the object
+     * storage server's certificate (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you
+     * specify must include the following:</p> <ul> <li> <p>The certificate of the
+     * signing certificate authority (CA)</p> </li> <li> <p>Any intermediate
+     * certificates</p> </li> <li> <p>base64 encoding</p> </li> <li> <p>A
+     * <code>.pem</code> extension</p> </li> </ul> <p>The file can be up to 32768 bytes
+     * (before base64 encoding).</p> <p>To use this parameter, configure
+     * <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
      */
     inline void SetServerCertificate(Aws::Utils::ByteBuffer&& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = std::move(value); }
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Specifies a file with the certificates that are used to sign the object
+     * storage server's certificate (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you
+     * specify must include the following:</p> <ul> <li> <p>The certificate of the
+     * signing certificate authority (CA)</p> </li> <li> <p>Any intermediate
+     * certificates</p> </li> <li> <p>base64 encoding</p> </li> <li> <p>A
+     * <code>.pem</code> extension</p> </li> </ul> <p>The file can be up to 32768 bytes
+     * (before base64 encoding).</p> <p>To use this parameter, configure
+     * <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
      */
     inline CreateLocationObjectStorageRequest& WithServerCertificate(const Aws::Utils::ByteBuffer& value) { SetServerCertificate(value); return *this;}
 
     /**
-     * <p>Specifies a certificate to authenticate with an object storage system that
-     * uses a private or self-signed certificate authority (CA). You must specify a
-     * Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
-     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
-     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     * <p>Specifies a file with the certificates that are used to sign the object
+     * storage server's certificate (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you
+     * specify must include the following:</p> <ul> <li> <p>The certificate of the
+     * signing certificate authority (CA)</p> </li> <li> <p>Any intermediate
+     * certificates</p> </li> <li> <p>base64 encoding</p> </li> <li> <p>A
+     * <code>.pem</code> extension</p> </li> </ul> <p>The file can be up to 32768 bytes
+     * (before base64 encoding).</p> <p>To use this parameter, configure
+     * <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
      */
     inline CreateLocationObjectStorageRequest& WithServerCertificate(Aws::Utils::ByteBuffer&& value) { SetServerCertificate(std::move(value)); return *this;}
 

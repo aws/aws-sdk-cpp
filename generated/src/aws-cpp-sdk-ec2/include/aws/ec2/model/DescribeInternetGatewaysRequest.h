@@ -39,8 +39,8 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.state</code> - The current
+     * state of the attachment between the gateway and the VPC
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
@@ -58,8 +58,8 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.state</code> - The current
+     * state of the attachment between the gateway and the VPC
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
@@ -77,8 +77,8 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.state</code> - The current
+     * state of the attachment between the gateway and the VPC
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
@@ -96,8 +96,8 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.state</code> - The current
+     * state of the attachment between the gateway and the VPC
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
@@ -115,8 +115,8 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.state</code> - The current
+     * state of the attachment between the gateway and the VPC
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
@@ -134,8 +134,8 @@ namespace Model
     inline DescribeInternetGatewaysRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.state</code> - The current
+     * state of the attachment between the gateway and the VPC
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
@@ -153,8 +153,8 @@ namespace Model
     inline DescribeInternetGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.state</code> - The current
+     * state of the attachment between the gateway and the VPC
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
@@ -172,8 +172,8 @@ namespace Model
     inline DescribeInternetGatewaysRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>attachment.state</code> - The
-     * current state of the attachment between the gateway and the VPC
+     * <p>The filters.</p> <ul> <li> <p> <code>attachment.state</code> - The current
+     * state of the attachment between the gateway and the VPC
      * (<code>available</code>). Present only if a VPC is attached.</p> </li> <li> <p>
      * <code>attachment.vpc-id</code> - The ID of an attached VPC.</p> </li> <li> <p>
      * <code>internet-gateway-id</code> - The ID of the Internet gateway.</p> </li>
@@ -225,55 +225,55 @@ namespace Model
 
 
     /**
-     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
+     * <p>The IDs of the internet gateways.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInternetGatewayIds() const{ return m_internetGatewayIds; }
 
     /**
-     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
+     * <p>The IDs of the internet gateways.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline bool InternetGatewayIdsHasBeenSet() const { return m_internetGatewayIdsHasBeenSet; }
 
     /**
-     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
+     * <p>The IDs of the internet gateways.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline void SetInternetGatewayIds(const Aws::Vector<Aws::String>& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds = value; }
 
     /**
-     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
+     * <p>The IDs of the internet gateways.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline void SetInternetGatewayIds(Aws::Vector<Aws::String>&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds = std::move(value); }
 
     /**
-     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
+     * <p>The IDs of the internet gateways.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline DescribeInternetGatewaysRequest& WithInternetGatewayIds(const Aws::Vector<Aws::String>& value) { SetInternetGatewayIds(value); return *this;}
 
     /**
-     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
+     * <p>The IDs of the internet gateways.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline DescribeInternetGatewaysRequest& WithInternetGatewayIds(Aws::Vector<Aws::String>&& value) { SetInternetGatewayIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
+     * <p>The IDs of the internet gateways.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(const Aws::String& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
+     * <p>The IDs of the internet gateways.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(Aws::String&& value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more internet gateway IDs.</p> <p>Default: Describes all your internet
+     * <p>The IDs of the internet gateways.</p> <p>Default: Describes all your internet
      * gateways.</p>
      */
     inline DescribeInternetGatewaysRequest& AddInternetGatewayIds(const char* value) { m_internetGatewayIdsHasBeenSet = true; m_internetGatewayIds.push_back(value); return *this; }

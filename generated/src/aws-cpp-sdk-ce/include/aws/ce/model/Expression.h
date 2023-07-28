@@ -45,13 +45,13 @@ namespace Model
    * Region is a full name (for example, <code>REGION==US East (N.
    * Virginia)</code>.</p> </li> <li> <p>The corresponding <code>Expression</code>
    * for this example is as follows: <code>{ "Dimensions": { "Key": "REGION",
-   * "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> </li> <li> <p>As shown in
+   * "Values": [ "us-east-1", "us-west-1" ] } }</code> </p> </li> <li> <p>As shown in
    * the previous example, lists of dimension values are combined with
    * <code>OR</code> when applying the filter.</p> </li> </ul> </li> <li> <p>You can
    * also set different match options to further control how the filter behaves. Not
    * all APIs support match options. Refer to the documentation for each specific API
    * to see what is supported.</p> <ul> <li> <p>For example, you can filter for
-   * linked account names that start with “a”.</p> </li> <li> <p>The corresponding
+   * linked account names that start with "a".</p> </li> <li> <p>The corresponding
    * <code>Expression</code> for this example is as follows: <code>{ "Dimensions": {
    * "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a"
    * ] } }</code> </p> </li> </ul> </li> </ul> </li> <li> <p>Compound

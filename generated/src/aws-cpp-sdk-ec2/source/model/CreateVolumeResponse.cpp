@@ -25,7 +25,8 @@ CreateVolumeResponse::CreateVolumeResponse() :
     m_volumeType(VolumeType::NOT_SET),
     m_fastRestored(false),
     m_multiAttachEnabled(false),
-    m_throughput(0)
+    m_throughput(0),
+    m_sseType(SSEType::NOT_SET)
 {
 }
 
@@ -37,7 +38,8 @@ CreateVolumeResponse::CreateVolumeResponse(const Aws::AmazonWebServiceResult<Xml
     m_volumeType(VolumeType::NOT_SET),
     m_fastRestored(false),
     m_multiAttachEnabled(false),
-    m_throughput(0)
+    m_throughput(0),
+    m_sseType(SSEType::NOT_SET)
 {
   *this = result;
 }
@@ -145,6 +147,11 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     if(!throughputNode.IsNull())
     {
       m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
+    }
+    XmlNode sseTypeNode = resultNode.FirstChild("sseType");
+    if(!sseTypeNode.IsNull())
+    {
+      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
     }
   }
 

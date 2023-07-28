@@ -20,13 +20,15 @@ namespace Model
 
 MonitoringConfiguration::MonitoringConfiguration() : 
     m_s3MonitoringConfigurationHasBeenSet(false),
-    m_managedPersistenceMonitoringConfigurationHasBeenSet(false)
+    m_managedPersistenceMonitoringConfigurationHasBeenSet(false),
+    m_cloudWatchLoggingConfigurationHasBeenSet(false)
 {
 }
 
 MonitoringConfiguration::MonitoringConfiguration(JsonView jsonValue) : 
     m_s3MonitoringConfigurationHasBeenSet(false),
-    m_managedPersistenceMonitoringConfigurationHasBeenSet(false)
+    m_managedPersistenceMonitoringConfigurationHasBeenSet(false),
+    m_cloudWatchLoggingConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ MonitoringConfiguration& MonitoringConfiguration::operator =(JsonView jsonValue)
     m_managedPersistenceMonitoringConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cloudWatchLoggingConfiguration"))
+  {
+    m_cloudWatchLoggingConfiguration = jsonValue.GetObject("cloudWatchLoggingConfiguration");
+
+    m_cloudWatchLoggingConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue MonitoringConfiguration::Jsonize() const
   if(m_managedPersistenceMonitoringConfigurationHasBeenSet)
   {
    payload.WithObject("managedPersistenceMonitoringConfiguration", m_managedPersistenceMonitoringConfiguration.Jsonize());
+
+  }
+
+  if(m_cloudWatchLoggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("cloudWatchLoggingConfiguration", m_cloudWatchLoggingConfiguration.Jsonize());
 
   }
 

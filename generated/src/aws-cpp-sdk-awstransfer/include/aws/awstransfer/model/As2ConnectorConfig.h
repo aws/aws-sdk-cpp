@@ -29,9 +29,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details for a connector object. The connector object is used for
-   * AS2 outbound processes, to connect the Transfer Family customer with the trading
-   * partner.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details for an AS2 connector object. The connector object is
+   * used for AS2 outbound processes, to connect the Transfer Family customer with
+   * the trading partner.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/As2ConnectorConfig">AWS
    * API Reference</a></p>
    */

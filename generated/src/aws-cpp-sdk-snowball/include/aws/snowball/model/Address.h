@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/snowball/Snowball_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/snowball/model/AddressType.h>
 #include <utility>
 
 namespace Aws
@@ -638,6 +639,43 @@ namespace Model
      */
     inline Address& WithIsRestricted(bool value) { SetIsRestricted(value); return *this;}
 
+
+    /**
+     * <p>Differentiates between delivery address and pickup address in the customer
+     * account. Provided at job creation.</p>
+     */
+    inline const AddressType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Differentiates between delivery address and pickup address in the customer
+     * account. Provided at job creation.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Differentiates between delivery address and pickup address in the customer
+     * account. Provided at job creation.</p>
+     */
+    inline void SetType(const AddressType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Differentiates between delivery address and pickup address in the customer
+     * account. Provided at job creation.</p>
+     */
+    inline void SetType(AddressType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Differentiates between delivery address and pickup address in the customer
+     * account. Provided at job creation.</p>
+     */
+    inline Address& WithType(const AddressType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Differentiates between delivery address and pickup address in the customer
+     * account. Provided at job creation.</p>
+     */
+    inline Address& WithType(AddressType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_addressId;
@@ -681,6 +719,9 @@ namespace Model
 
     bool m_isRestricted;
     bool m_isRestrictedHasBeenSet = false;
+
+    AddressType m_type;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

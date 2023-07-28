@@ -120,47 +120,47 @@ namespace Model
 
 
     /**
-     * <p>One or more VPC IDs.</p>
+     * <p>The IDs of the VPCs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
 
     /**
-     * <p>One or more VPC IDs.</p>
+     * <p>The IDs of the VPCs.</p>
      */
     inline bool VpcIdsHasBeenSet() const { return m_vpcIdsHasBeenSet; }
 
     /**
-     * <p>One or more VPC IDs.</p>
+     * <p>The IDs of the VPCs.</p>
      */
     inline void SetVpcIds(const Aws::Vector<Aws::String>& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
 
     /**
-     * <p>One or more VPC IDs.</p>
+     * <p>The IDs of the VPCs.</p>
      */
     inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
 
     /**
-     * <p>One or more VPC IDs.</p>
+     * <p>The IDs of the VPCs.</p>
      */
     inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(const Aws::Vector<Aws::String>& value) { SetVpcIds(value); return *this;}
 
     /**
-     * <p>One or more VPC IDs.</p>
+     * <p>The IDs of the VPCs.</p>
      */
     inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more VPC IDs.</p>
+     * <p>The IDs of the VPCs.</p>
      */
     inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const Aws::String& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more VPC IDs.</p>
+     * <p>The IDs of the VPCs.</p>
      */
     inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more VPC IDs.</p>
+     * <p>The IDs of the VPCs.</p>
      */
     inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
 

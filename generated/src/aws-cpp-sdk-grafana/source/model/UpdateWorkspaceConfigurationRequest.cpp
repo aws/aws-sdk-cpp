@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 UpdateWorkspaceConfigurationRequest::UpdateWorkspaceConfigurationRequest() : 
     m_configurationHasBeenSet(false),
+    m_grafanaVersionHasBeenSet(false),
     m_workspaceIdHasBeenSet(false)
 {
 }
@@ -25,6 +26,12 @@ Aws::String UpdateWorkspaceConfigurationRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithString("configuration", m_configuration);
+
+  }
+
+  if(m_grafanaVersionHasBeenSet)
+  {
+   payload.WithString("grafanaVersion", m_grafanaVersion);
 
   }
 

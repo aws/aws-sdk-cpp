@@ -16,7 +16,8 @@ namespace Model
   enum class FunctionRuntime
   {
     NOT_SET,
-    cloudfront_js_1_0
+    cloudfront_js_1_0,
+    cloudfront_js_2_0
   };
 
 namespace FunctionRuntimeMapper

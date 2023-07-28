@@ -1652,6 +1652,130 @@ namespace LexModelsV2
         }
 
         /**
+         * <p>Retrieves summary metrics for the intents in your bot. The following fields
+         * are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html">AnalyticsIntentMetric</a>
+         * objects. In each object, use the <code>name</code> field to specify the metric
+         * to calculate, the <code>statistic</code> field to specify whether to calculate
+         * the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the
+         * <code>order</code> field to specify whether to sort the results in
+         * <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results, the <code>groupBy</code>
+         * field to specify categories by which to group the results, and the
+         * <code>binBy</code> field to specify time intervals by which to group the
+         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
+         * number of results to return in a single response and the <code>nextToken</code>
+         * field to return the next batch of results if the response does not return the
+         * full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field
+         * exists in both <code>binBy</code> and <code>metrics</code>. You can specify only
+         * one <code>order</code> in a given request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIntentMetricsOutcome ListIntentMetrics(const Model::ListIntentMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIntentMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIntentMetricsRequestT = Model::ListIntentMetricsRequest>
+        Model::ListIntentMetricsOutcomeCallable ListIntentMetricsCallable(const ListIntentMetricsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListIntentMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for ListIntentMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIntentMetricsRequestT = Model::ListIntentMetricsRequest>
+        void ListIntentMetricsAsync(const ListIntentMetricsRequestT& request, const ListIntentMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListIntentMetrics, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves summary statistics for a path of intents that users take over
+         * sessions with your bot. The following fields are required:</p> <ul> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> <li> <p>
+         * <code>intentPath</code> – Define an order of intents for which you want to
+         * retrieve metrics. Separate intents in the path with a forward slash. For
+         * example, populate the <code>intentPath</code> field with
+         * <code>/BookCar/BookHotel</code> to see details about how many times users
+         * invoked the <code>BookCar</code> and <code>BookHotel</code> intents in that
+         * order.</p> </li> </ul> <p>Use the optional <code>filters</code> field to filter
+         * the results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentPaths">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIntentPathsOutcome ListIntentPaths(const Model::ListIntentPathsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIntentPaths that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIntentPathsRequestT = Model::ListIntentPathsRequest>
+        Model::ListIntentPathsOutcomeCallable ListIntentPathsCallable(const ListIntentPathsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListIntentPaths, request);
+        }
+
+        /**
+         * An Async wrapper for ListIntentPaths that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIntentPathsRequestT = Model::ListIntentPathsRequest>
+        void ListIntentPathsAsync(const ListIntentPathsRequestT& request, const ListIntentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListIntentPaths, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves summary metrics for the stages within intents in your bot. The
+         * following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list
+         * of <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a>
+         * objects. In each object, use the <code>name</code> field to specify the metric
+         * to calculate, the <code>statistic</code> field to specify whether to calculate
+         * the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the
+         * <code>order</code> field to specify whether to sort the results in
+         * <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results, the <code>groupBy</code>
+         * field to specify categories by which to group the results, and the
+         * <code>binBy</code> field to specify time intervals by which to group the
+         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
+         * number of results to return in a single response and the <code>nextToken</code>
+         * field to return the next batch of results if the response does not return the
+         * full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field
+         * exists in both <code>binBy</code> and <code>metrics</code>. You can only specify
+         * one <code>order</code> in a given request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentStageMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIntentStageMetricsOutcome ListIntentStageMetrics(const Model::ListIntentStageMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIntentStageMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIntentStageMetricsRequestT = Model::ListIntentStageMetricsRequest>
+        Model::ListIntentStageMetricsOutcomeCallable ListIntentStageMetricsCallable(const ListIntentStageMetricsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListIntentStageMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for ListIntentStageMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIntentStageMetricsRequestT = Model::ListIntentStageMetricsRequest>
+        void ListIntentStageMetricsAsync(const ListIntentStageMetricsRequestT& request, const ListIntentStageMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListIntentStageMetrics, request, handler, context);
+        }
+
+        /**
          * <p>Get a list of intents that meet the specified criteria.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntents">AWS
@@ -1702,6 +1826,84 @@ namespace LexModelsV2
         void ListRecommendedIntentsAsync(const ListRecommendedIntentsRequestT& request, const ListRecommendedIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::ListRecommendedIntents, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of metadata for individual user sessions with your bot. The
+         * <code>startDateTime</code> and <code>endDateTime</code> fields are required.
+         * These fields define a time range for which you want to retrieve results. Of the
+         * optional fields, you can organize the results in the following ways:</p> <ul>
+         * <li> <p>Use the <code>filters</code> field to filter the results and the
+         * <code>sortBy</code> field to specify the values by which to sort the
+         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
+         * number of results to return in a single response and the <code>nextToken</code>
+         * field to return the next batch of results if the response does not return the
+         * full set of results.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionAnalyticsData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSessionAnalyticsDataOutcome ListSessionAnalyticsData(const Model::ListSessionAnalyticsDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSessionAnalyticsData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSessionAnalyticsDataRequestT = Model::ListSessionAnalyticsDataRequest>
+        Model::ListSessionAnalyticsDataOutcomeCallable ListSessionAnalyticsDataCallable(const ListSessionAnalyticsDataRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListSessionAnalyticsData, request);
+        }
+
+        /**
+         * An Async wrapper for ListSessionAnalyticsData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSessionAnalyticsDataRequestT = Model::ListSessionAnalyticsDataRequest>
+        void ListSessionAnalyticsDataAsync(const ListSessionAnalyticsDataRequestT& request, const ListSessionAnalyticsDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListSessionAnalyticsData, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves summary metrics for the user sessions with your bot. The following
+         * fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html">AnalyticsSessionMetric</a>
+         * objects. In each object, use the <code>name</code> field to specify the metric
+         * to calculate, the <code>statistic</code> field to specify whether to calculate
+         * the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the
+         * <code>order</code> field to specify whether to sort the results in
+         * <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results, the <code>groupBy</code>
+         * field to specify categories by which to group the results, and the
+         * <code>binBy</code> field to specify time intervals by which to group the
+         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
+         * number of results to return in a single response and the <code>nextToken</code>
+         * field to return the next batch of results if the response does not return the
+         * full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field
+         * exists in both <code>binBy</code> and <code>metrics</code>. Currently, you can
+         * specify it in either field, but not in both.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSessionMetricsOutcome ListSessionMetrics(const Model::ListSessionMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSessionMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSessionMetricsRequestT = Model::ListSessionMetricsRequest>
+        Model::ListSessionMetricsOutcomeCallable ListSessionMetricsCallable(const ListSessionMetricsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListSessionMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for ListSessionMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSessionMetricsRequestT = Model::ListSessionMetricsRequest>
+        void ListSessionMetricsAsync(const ListSessionMetricsRequestT& request, const ListSessionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListSessionMetrics, request, handler, context);
         }
 
         /**
@@ -1880,6 +2082,98 @@ namespace LexModelsV2
         void ListTestSetsAsync(const ListTestSetsRequestT& request, const ListTestSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LexModelsV2Client::ListTestSets, request, handler, context);
+        }
+
+        /**
+         *  <p>To use this API operation, your IAM role must have permissions to
+         * perform the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, which provides access to utterance-related analytics. See <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing
+         * utterance statistics</a> for the IAM policy to apply to the IAM role.</p>
+         *  <p>Retrieves a list of metadata for individual user utterances to your
+         * bot. The following fields are required:</p> <ul> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results and the <code>sortBy</code>
+         * field to specify the values by which to sort the results.</p> </li> <li> <p>Use
+         * the <code>maxResults</code> field to limit the number of results to return in a
+         * single response and the <code>nextToken</code> field to return the next batch of
+         * results if the response does not return the full set of results.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUtteranceAnalyticsDataOutcome ListUtteranceAnalyticsData(const Model::ListUtteranceAnalyticsDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUtteranceAnalyticsData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListUtteranceAnalyticsDataRequestT = Model::ListUtteranceAnalyticsDataRequest>
+        Model::ListUtteranceAnalyticsDataOutcomeCallable ListUtteranceAnalyticsDataCallable(const ListUtteranceAnalyticsDataRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListUtteranceAnalyticsData, request);
+        }
+
+        /**
+         * An Async wrapper for ListUtteranceAnalyticsData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListUtteranceAnalyticsDataRequestT = Model::ListUtteranceAnalyticsDataRequest>
+        void ListUtteranceAnalyticsDataAsync(const ListUtteranceAnalyticsDataRequestT& request, const ListUtteranceAnalyticsDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListUtteranceAnalyticsData, request, handler, context);
+        }
+
+        /**
+         *  <p>To use this API operation, your IAM role must have permissions to
+         * perform the <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
+         * operation, which provides access to utterance-related analytics. See <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing
+         * utterance statistics</a> for the IAM policy to apply to the IAM role.</p>
+         *  <p>Retrieves summary metrics for the utterances in your bot. The
+         * following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list
+         * of <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a>
+         * objects. In each object, use the <code>name</code> field to specify the metric
+         * to calculate, the <code>statistic</code> field to specify whether to calculate
+         * the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the
+         * <code>order</code> field to specify whether to sort the results in
+         * <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p>
+         * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range
+         * for which you want to retrieve results.</p> </li> </ul> <p>Of the optional
+         * fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use
+         * the <code>filters</code> field to filter the results, the <code>groupBy</code>
+         * field to specify categories by which to group the results, and the
+         * <code>binBy</code> field to specify time intervals by which to group the
+         * results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the
+         * number of results to return in a single response and the <code>nextToken</code>
+         * field to return the next batch of results if the response does not return the
+         * full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field
+         * exists in both <code>binBy</code> and <code>metrics</code>. Currently, you can
+         * specify it in either field, but not in both.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUtteranceMetricsOutcome ListUtteranceMetrics(const Model::ListUtteranceMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUtteranceMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListUtteranceMetricsRequestT = Model::ListUtteranceMetricsRequest>
+        Model::ListUtteranceMetricsOutcomeCallable ListUtteranceMetricsCallable(const ListUtteranceMetricsRequestT& request) const
+        {
+            return SubmitCallable(&LexModelsV2Client::ListUtteranceMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for ListUtteranceMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListUtteranceMetricsRequestT = Model::ListUtteranceMetricsRequest>
+        void ListUtteranceMetricsAsync(const ListUtteranceMetricsRequestT& request, const ListUtteranceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LexModelsV2Client::ListUtteranceMetrics, request, handler, context);
         }
 
         /**

@@ -23,6 +23,8 @@
 #include <aws/core/utils/UUID.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 
+#include <smithy/tracing/TracingUtils.h>
+
 #include <cassert>
 
 
@@ -31,6 +33,7 @@ using namespace Aws::Client;
 using namespace Aws::Http;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
 
 static const char AWS_JSON_CLIENT_LOG_TAG[] = "AWSJsonClient";
 
@@ -103,17 +106,33 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
     if (!httpOutcome.IsSuccess())
     {
-        return JsonOutcome(std::move(httpOutcome));
+        return smithy::components::tracing::TracingUtils::MakeCallWithTiming<JsonOutcome>(
+            [&]() -> JsonOutcome {
+                return JsonOutcome(std::move(httpOutcome));
+            },
+            TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
+            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     }
 
-    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
-        //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
-        return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(httpOutcome.GetResult()->GetResponseBody()),
-        httpOutcome.GetResult()->GetHeaders(),
-        httpOutcome.GetResult()->GetResponseCode()));
-
-    else
-        return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
+    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0){
+        return smithy::components::tracing::TracingUtils::MakeCallWithTiming<JsonOutcome>(
+            [&]() -> JsonOutcome {
+                return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(httpOutcome.GetResult()->GetResponseBody()),
+                    httpOutcome.GetResult()->GetHeaders(),
+                    httpOutcome.GetResult()->GetResponseCode()));
+            },
+            TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
+            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    }
+    return smithy::components::tracing::TracingUtils::MakeCallWithTiming<JsonOutcome>(
+        [&]() -> JsonOutcome {
+            return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
+        },
+        TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
+        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
@@ -126,24 +145,46 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride));
     if (!httpOutcome.IsSuccess())
     {
-        return JsonOutcome(std::move(httpOutcome));
+        return smithy::components::tracing::TracingUtils::MakeCallWithTiming<JsonOutcome>(
+            [&]() -> JsonOutcome {
+                return {std::move(httpOutcome)};
+            },
+            TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
+            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     }
 
     if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
     {
         JsonValue jsonValue(httpOutcome.GetResult()->GetResponseBody());
-        if (!jsonValue.WasParseSuccessful())
-        {
-            return JsonOutcome(AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Json Parser Error", jsonValue.GetErrorMessage(), false));
+        if (!jsonValue.WasParseSuccessful()) {
+            return smithy::components::tracing::TracingUtils::MakeCallWithTiming<JsonOutcome>(
+                [&]() -> JsonOutcome {
+                    return JsonOutcome(AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Json Parser Error", jsonValue.GetErrorMessage(), false));
+                },
+                TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
+                *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+                {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         }
 
-        //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
-        return JsonOutcome(AmazonWebServiceResult<JsonValue>(std::move(jsonValue),
-            httpOutcome.GetResult()->GetHeaders(),
-            httpOutcome.GetResult()->GetResponseCode()));
+        return smithy::components::tracing::TracingUtils::MakeCallWithTiming<JsonOutcome>(
+            [&]() -> JsonOutcome {
+                return JsonOutcome(AmazonWebServiceResult<JsonValue>(std::move(jsonValue),
+                    httpOutcome.GetResult()->GetHeaders(),
+                    httpOutcome.GetResult()->GetResponseCode()));
+            },
+            TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
+            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     }
 
-    return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
+    return smithy::components::tracing::TracingUtils::MakeCallWithTiming<JsonOutcome>(
+        [&]() -> JsonOutcome {
+            return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(), httpOutcome.GetResult()->GetHeaders()));
+        },
+        TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
+        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 JsonOutcome AWSJsonClient::MakeEventStreamRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const

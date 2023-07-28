@@ -36,80 +36,87 @@ namespace Model
 
 
     /**
-     * <p>Contains a list of blue/green deployments for the user.</p>
+     * <p>A list of blue/green deployments in the current account and Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::Vector<BlueGreenDeployment>& GetBlueGreenDeployments() const{ return m_blueGreenDeployments; }
 
     /**
-     * <p>Contains a list of blue/green deployments for the user.</p>
+     * <p>A list of blue/green deployments in the current account and Amazon Web
+     * Services Region.</p>
      */
     inline void SetBlueGreenDeployments(const Aws::Vector<BlueGreenDeployment>& value) { m_blueGreenDeployments = value; }
 
     /**
-     * <p>Contains a list of blue/green deployments for the user.</p>
+     * <p>A list of blue/green deployments in the current account and Amazon Web
+     * Services Region.</p>
      */
     inline void SetBlueGreenDeployments(Aws::Vector<BlueGreenDeployment>&& value) { m_blueGreenDeployments = std::move(value); }
 
     /**
-     * <p>Contains a list of blue/green deployments for the user.</p>
+     * <p>A list of blue/green deployments in the current account and Amazon Web
+     * Services Region.</p>
      */
     inline DescribeBlueGreenDeploymentsResult& WithBlueGreenDeployments(const Aws::Vector<BlueGreenDeployment>& value) { SetBlueGreenDeployments(value); return *this;}
 
     /**
-     * <p>Contains a list of blue/green deployments for the user.</p>
+     * <p>A list of blue/green deployments in the current account and Amazon Web
+     * Services Region.</p>
      */
     inline DescribeBlueGreenDeploymentsResult& WithBlueGreenDeployments(Aws::Vector<BlueGreenDeployment>&& value) { SetBlueGreenDeployments(std::move(value)); return *this;}
 
     /**
-     * <p>Contains a list of blue/green deployments for the user.</p>
+     * <p>A list of blue/green deployments in the current account and Amazon Web
+     * Services Region.</p>
      */
     inline DescribeBlueGreenDeploymentsResult& AddBlueGreenDeployments(const BlueGreenDeployment& value) { m_blueGreenDeployments.push_back(value); return *this; }
 
     /**
-     * <p>Contains a list of blue/green deployments for the user.</p>
+     * <p>A list of blue/green deployments in the current account and Amazon Web
+     * Services Region.</p>
      */
     inline DescribeBlueGreenDeploymentsResult& AddBlueGreenDeployments(BlueGreenDeployment&& value) { m_blueGreenDeployments.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A pagination token that can be used in a later DescribeBlueGreenDeployments
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeBlueGreenDeployments</code> request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>A pagination token that can be used in a later DescribeBlueGreenDeployments
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeBlueGreenDeployments</code> request.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p>A pagination token that can be used in a later DescribeBlueGreenDeployments
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeBlueGreenDeployments</code> request.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p>A pagination token that can be used in a later DescribeBlueGreenDeployments
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeBlueGreenDeployments</code> request.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p>A pagination token that can be used in a later DescribeBlueGreenDeployments
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeBlueGreenDeployments</code> request.</p>
      */
     inline DescribeBlueGreenDeploymentsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a later DescribeBlueGreenDeployments
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeBlueGreenDeployments</code> request.</p>
      */
     inline DescribeBlueGreenDeploymentsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a later DescribeBlueGreenDeployments
-     * request.</p>
+     * <p>A pagination token that can be used in a later
+     * <code>DescribeBlueGreenDeployments</code> request.</p>
      */
     inline DescribeBlueGreenDeploymentsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

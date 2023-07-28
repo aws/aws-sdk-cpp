@@ -748,40 +748,40 @@ namespace Model
 
     /**
      * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed
      * directly on the nested stack. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool GetEnableTerminationProtection() const{ return m_enableTerminationProtection; }
 
     /**
      * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed
      * directly on the nested stack. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool EnableTerminationProtectionHasBeenSet() const { return m_enableTerminationProtectionHasBeenSet; }
 
     /**
      * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed
      * directly on the nested stack. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetEnableTerminationProtection(bool value) { m_enableTerminationProtectionHasBeenSet = true; m_enableTerminationProtection = value; }
 
     /**
      * <p>Whether termination protection is enabled for the stack.</p> <p>For <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed
      * directly on the nested stack. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithEnableTerminationProtection(bool value) { SetEnableTerminationProtection(value); return *this;}
@@ -791,7 +791,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetParentId() const{ return m_parentId; }
@@ -800,7 +800,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
@@ -809,7 +809,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
@@ -818,7 +818,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetParentId(Aws::String&& value) { m_parentIdHasBeenSet = true; m_parentId = std::move(value); }
@@ -827,7 +827,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetParentId(const char* value) { m_parentIdHasBeenSet = true; m_parentId.assign(value); }
@@ -836,7 +836,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithParentId(const Aws::String& value) { SetParentId(value); return *this;}
@@ -845,7 +845,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithParentId(Aws::String&& value) { SetParentId(std::move(value)); return *this;}
@@ -854,7 +854,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithParentId(const char* value) { SetParentId(value); return *this;}
@@ -864,7 +864,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetRootId() const{ return m_rootId; }
@@ -873,7 +873,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool RootIdHasBeenSet() const { return m_rootIdHasBeenSet; }
@@ -882,7 +882,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetRootId(const Aws::String& value) { m_rootIdHasBeenSet = true; m_rootId = value; }
@@ -891,7 +891,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetRootId(Aws::String&& value) { m_rootIdHasBeenSet = true; m_rootId = std::move(value); }
@@ -900,7 +900,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetRootId(const char* value) { m_rootIdHasBeenSet = true; m_rootId.assign(value); }
@@ -909,7 +909,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithRootId(const Aws::String& value) { SetRootId(value); return *this;}
@@ -918,7 +918,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithRootId(Aws::String&& value) { SetRootId(std::move(value)); return *this;}
@@ -927,7 +927,7 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
      * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline Stack& WithRootId(const char* value) { SetRootId(value); return *this;}
@@ -938,7 +938,7 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline const StackDriftInformation& GetDriftInformation() const{ return m_driftInformation; }
@@ -948,7 +948,7 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline bool DriftInformationHasBeenSet() const { return m_driftInformationHasBeenSet; }
@@ -958,7 +958,7 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline void SetDriftInformation(const StackDriftInformation& value) { m_driftInformationHasBeenSet = true; m_driftInformation = value; }
@@ -968,7 +968,7 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline void SetDriftInformation(StackDriftInformation&& value) { m_driftInformationHasBeenSet = true; m_driftInformation = std::move(value); }
@@ -978,7 +978,7 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline Stack& WithDriftInformation(const StackDriftInformation& value) { SetDriftInformation(value); return *this;}
@@ -988,10 +988,55 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline Stack& WithDriftInformation(StackDriftInformation&& value) { SetDriftInformation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline bool GetRetainExceptOnCreate() const{ return m_retainExceptOnCreate; }
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline bool RetainExceptOnCreateHasBeenSet() const { return m_retainExceptOnCreateHasBeenSet; }
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline void SetRetainExceptOnCreate(bool value) { m_retainExceptOnCreateHasBeenSet = true; m_retainExceptOnCreate = value; }
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline Stack& WithRetainExceptOnCreate(bool value) { SetRetainExceptOnCreate(value); return *this;}
 
   private:
 
@@ -1060,6 +1105,9 @@ namespace Model
 
     StackDriftInformation m_driftInformation;
     bool m_driftInformationHasBeenSet = false;
+
+    bool m_retainExceptOnCreate;
+    bool m_retainExceptOnCreateHasBeenSet = false;
   };
 
 } // namespace Model

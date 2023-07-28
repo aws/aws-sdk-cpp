@@ -25,6 +25,7 @@ namespace Aws
         static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
         static const int WARNING_HASH = HashingUtils::HashString("WARNING");
         static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 
         DatabaseStatus GetDatabaseStatusForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return DatabaseStatus::UNKNOWN;
           }
+          else if (hashCode == ERROR__HASH)
+          {
+            return DatabaseStatus::ERROR_;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "WARNING";
           case DatabaseStatus::UNKNOWN:
             return "UNKNOWN";
+          case DatabaseStatus::ERROR_:
+            return "ERROR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -33,10 +33,8 @@ namespace Model
   /**
    * Settings related to your Microsoft Smooth Streaming output package. For more
    * information, see
-   * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
-   * you work directly in your JSON job specification, include this object and any
-   * required children when you set Type, under OutputGroupSettings, to
-   * MS_SMOOTH_GROUP_SETTINGS.<p><h3>See Also:</h3>   <a
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MsSmoothGroupSettings">AWS
    * API Reference</a></p>
    */
@@ -160,74 +158,66 @@ namespace Model
 
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline MsSmoothGroupSettings& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline MsSmoothGroupSettings& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output
-     * filename base. Destination accepts format identifiers. If you do not specify the
-     * base filename in the URI, the service will use the filename of the input file.
-     * If your job has multiple inputs, the service uses the filename of the first
-     * input file.
+     * Use Destination to specify the S3 output location and the output filename base.
+     * Destination accepts format identifiers. If you do not specify the base filename
+     * in the URI, the service will use the filename of the input file. If your job has
+     * multiple inputs, the service uses the filename of the first input file.
      */
     inline MsSmoothGroupSettings& WithDestination(const char* value) { SetDestination(value); return *this;}
 
@@ -270,167 +260,151 @@ namespace Model
 
 
     /**
-     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
-     * value SpekeKeyProvider.
+     * If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      */
     inline const MsSmoothEncryptionSettings& GetEncryption() const{ return m_encryption; }
 
     /**
-     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
-     * value SpekeKeyProvider.
+     * If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      */
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
 
     /**
-     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
-     * value SpekeKeyProvider.
+     * If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      */
     inline void SetEncryption(const MsSmoothEncryptionSettings& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
-     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
-     * value SpekeKeyProvider.
+     * If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      */
     inline void SetEncryption(MsSmoothEncryptionSettings&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
 
     /**
-     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
-     * value SpekeKeyProvider.
+     * If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      */
     inline MsSmoothGroupSettings& WithEncryption(const MsSmoothEncryptionSettings& value) { SetEncryption(value); return *this;}
 
     /**
-     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the
-     * value SpekeKeyProvider.
+     * If you are using DRM, set DRM System to specify the value SpekeKeyProvider.
      */
     inline MsSmoothGroupSettings& WithEncryption(MsSmoothEncryptionSettings&& value) { SetEncryption(std::move(value)); return *this;}
 
 
     /**
      * Specify how you want MediaConvert to determine the fragment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Fragment length (FragmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Fragment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline int GetFragmentLength() const{ return m_fragmentLength; }
 
     /**
      * Specify how you want MediaConvert to determine the fragment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Fragment length (FragmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Fragment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline bool FragmentLengthHasBeenSet() const { return m_fragmentLengthHasBeenSet; }
 
     /**
      * Specify how you want MediaConvert to determine the fragment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Fragment length (FragmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Fragment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
 
     /**
      * Specify how you want MediaConvert to determine the fragment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Fragment length (FragmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Fragment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline MsSmoothGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
 
 
     /**
      * Specify how you want MediaConvert to determine the fragment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Fragment length (FragmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Fragment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline const MsSmoothFragmentLengthControl& GetFragmentLengthControl() const{ return m_fragmentLengthControl; }
 
     /**
      * Specify how you want MediaConvert to determine the fragment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Fragment length (FragmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Fragment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline bool FragmentLengthControlHasBeenSet() const { return m_fragmentLengthControlHasBeenSet; }
 
     /**
      * Specify how you want MediaConvert to determine the fragment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Fragment length (FragmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Fragment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline void SetFragmentLengthControl(const MsSmoothFragmentLengthControl& value) { m_fragmentLengthControlHasBeenSet = true; m_fragmentLengthControl = value; }
 
     /**
      * Specify how you want MediaConvert to determine the fragment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Fragment length (FragmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Fragment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline void SetFragmentLengthControl(MsSmoothFragmentLengthControl&& value) { m_fragmentLengthControlHasBeenSet = true; m_fragmentLengthControl = std::move(value); }
 
     /**
      * Specify how you want MediaConvert to determine the fragment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Fragment length (FragmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Fragment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline MsSmoothGroupSettings& WithFragmentLengthControl(const MsSmoothFragmentLengthControl& value) { SetFragmentLengthControl(value); return *this;}
 
     /**
      * Specify how you want MediaConvert to determine the fragment length. Choose Exact
-     * (EXACT) to have the encoder use the exact length that you specify with the
-     * setting Fragment length (FragmentLength). This might result in extra I-frames.
-     * Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     * lengths to match the next GOP boundary.
+     * to have the encoder use the exact length that you specify with the setting
+     * Fragment length. This might result in extra I-frames. Choose Multiple of GOP to
+     * have the encoder round up the segment lengths to match the next GOP boundary.
      */
     inline MsSmoothGroupSettings& WithFragmentLengthControl(MsSmoothFragmentLengthControl&& value) { SetFragmentLengthControl(std::move(value)); return *this;}
 
 
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
-     * for the server and client manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
      */
     inline const MsSmoothManifestEncoding& GetManifestEncoding() const{ return m_manifestEncoding; }
 
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
-     * for the server and client manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
      */
     inline bool ManifestEncodingHasBeenSet() const { return m_manifestEncodingHasBeenSet; }
 
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
-     * for the server and client manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
      */
     inline void SetManifestEncoding(const MsSmoothManifestEncoding& value) { m_manifestEncodingHasBeenSet = true; m_manifestEncoding = value; }
 
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
-     * for the server and client manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
      */
     inline void SetManifestEncoding(MsSmoothManifestEncoding&& value) { m_manifestEncodingHasBeenSet = true; m_manifestEncoding = std::move(value); }
 
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
-     * for the server and client manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
      */
     inline MsSmoothGroupSettings& WithManifestEncoding(const MsSmoothManifestEncoding& value) { SetManifestEncoding(value); return *this;}
 
     /**
-     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format
-     * for the server and client manifest. Valid options are utf8 and utf16.
+     * Use Manifest encoding to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
      */
     inline MsSmoothGroupSettings& WithManifestEncoding(MsSmoothManifestEncoding&& value) { SetManifestEncoding(std::move(value)); return *this;}
 

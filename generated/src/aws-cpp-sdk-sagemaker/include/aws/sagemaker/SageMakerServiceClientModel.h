@@ -214,6 +214,7 @@
 #include <aws/sagemaker/model/ListPipelinesResult.h>
 #include <aws/sagemaker/model/ListProcessingJobsResult.h>
 #include <aws/sagemaker/model/ListProjectsResult.h>
+#include <aws/sagemaker/model/ListResourceCatalogsResult.h>
 #include <aws/sagemaker/model/ListSpacesResult.h>
 #include <aws/sagemaker/model/ListStageDevicesResult.h>
 #include <aws/sagemaker/model/ListStudioLifecycleConfigsResult.h>
@@ -538,6 +539,7 @@ namespace Aws
       class ListPipelinesRequest;
       class ListProcessingJobsRequest;
       class ListProjectsRequest;
+      class ListResourceCatalogsRequest;
       class ListSpacesRequest;
       class ListStageDevicesRequest;
       class ListStudioLifecycleConfigsRequest;
@@ -843,6 +845,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListPipelinesResult, SageMakerError> ListPipelinesOutcome;
       typedef Aws::Utils::Outcome<ListProcessingJobsResult, SageMakerError> ListProcessingJobsOutcome;
       typedef Aws::Utils::Outcome<ListProjectsResult, SageMakerError> ListProjectsOutcome;
+      typedef Aws::Utils::Outcome<ListResourceCatalogsResult, SageMakerError> ListResourceCatalogsOutcome;
       typedef Aws::Utils::Outcome<ListSpacesResult, SageMakerError> ListSpacesOutcome;
       typedef Aws::Utils::Outcome<ListStageDevicesResult, SageMakerError> ListStageDevicesOutcome;
       typedef Aws::Utils::Outcome<ListStudioLifecycleConfigsResult, SageMakerError> ListStudioLifecycleConfigsOutcome;
@@ -1148,6 +1151,7 @@ namespace Aws
       typedef std::future<ListPipelinesOutcome> ListPipelinesOutcomeCallable;
       typedef std::future<ListProcessingJobsOutcome> ListProcessingJobsOutcomeCallable;
       typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
+      typedef std::future<ListResourceCatalogsOutcome> ListResourceCatalogsOutcomeCallable;
       typedef std::future<ListSpacesOutcome> ListSpacesOutcomeCallable;
       typedef std::future<ListStageDevicesOutcome> ListStageDevicesOutcomeCallable;
       typedef std::future<ListStudioLifecycleConfigsOutcome> ListStudioLifecycleConfigsOutcomeCallable;
@@ -1456,6 +1460,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::ListPipelinesRequest&, const Model::ListPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPipelinesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListProcessingJobsRequest&, const Model::ListProcessingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProcessingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListResourceCatalogsRequest&, const Model::ListResourceCatalogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceCatalogsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListSpacesRequest&, const Model::ListSpacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSpacesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListStageDevicesRequest&, const Model::ListStageDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStageDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListStudioLifecycleConfigsRequest&, const Model::ListStudioLifecycleConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudioLifecycleConfigsResponseReceivedHandler;

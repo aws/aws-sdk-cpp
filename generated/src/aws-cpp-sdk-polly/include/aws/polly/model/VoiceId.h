@@ -105,7 +105,8 @@ namespace Model
     Kazuha,
     Tomoko,
     Niamh,
-    Sofie
+    Sofie,
+    Lisa
   };
 
 namespace VoiceIdMapper

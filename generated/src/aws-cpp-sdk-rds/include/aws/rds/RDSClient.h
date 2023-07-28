@@ -1077,10 +1077,11 @@ namespace Aws
          * capability, and a read-only secondary cluster that receives data from the
          * primary cluster through high-speed replication performed by the Aurora storage
          * subsystem.</p> <p>You can create a global database that is initially empty, and
-         * then add a primary cluster and a secondary cluster to it. Or you can specify an
-         * existing Aurora cluster during the create operation, and this cluster becomes
-         * the primary cluster of the global database.</p>  <p>This operation applies
-         * only to Aurora DB clusters.</p> <p><h3>See Also:</h3>   <a
+         * then create the primary and secondary DB clusters in the global database. Or you
+         * can specify an existing Aurora cluster during the create operation, and this
+         * cluster becomes the primary cluster of the global database.</p>  <p>This
+         * operation applies only to Aurora DB clusters.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">AWS
          * API Reference</a></p>
          */
@@ -1135,9 +1136,9 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
          * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS
          * User Guide</i> and <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-         * Using Amazon RDS Blue/Green Deployments for database updates</a> in the
-         * <i>Amazon Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+         * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
+         * Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteBlueGreenDeployment">AWS
          * API Reference</a></p>
          */
@@ -1703,8 +1704,8 @@ namespace Aws
         }
 
         /**
-         * <p>Returns information about blue/green deployments.</p> <p>For more
-         * information, see <a
+         * <p>Describes one or more blue/green deployments.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
          * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS
          * User Guide</i> and <a
@@ -3529,13 +3530,13 @@ namespace Aws
         }
 
         /**
-         * <p>Modify a setting for an Amazon Aurora global cluster. You can change one or
+         * <p>Modifies a setting for an Amazon Aurora global cluster. You can change one or
          * more database configuration parameters by specifying these parameters and the
          * new values in the request. For more information on Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> 
-         * <p>This action only applies to Aurora DB clusters.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation only applies to Aurora global database clusters.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyGlobalCluster">AWS
          * API Reference</a></p>
          */
@@ -4554,9 +4555,9 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
          * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS
          * User Guide</i> and <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-         * Using Amazon RDS Blue/Green Deployments for database updates</a> in the
-         * <i>Amazon Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+         * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
+         * Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverBlueGreenDeployment">AWS
          * API Reference</a></p>
          */

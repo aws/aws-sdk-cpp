@@ -39,26 +39,25 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>association.association-id</code> - The ID of an association ID for the
-     * ACL.</p> </li> <li> <p> <code>association.network-acl-id</code> - The ID of the
-     * network ACL involved in the association.</p> </li> <li> <p>
-     * <code>association.subnet-id</code> - The ID of the subnet involved in the
-     * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
-     * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
-     * <li> <p> <code>entry.icmp.code</code> - The ICMP code specified in the entry, if
-     * any.</p> </li> <li> <p> <code>entry.icmp.type</code> - The ICMP type specified
-     * in the entry, if any.</p> </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6
-     * CIDR range specified in the entry.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
-     * <code>entry.protocol</code> - The protocol specified in the entry
-     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
-     * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
-     * the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li> <li>
-     * <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
+     * <p>The filters.</p> <ul> <li> <p> <code>association.association-id</code> - The
+     * ID of an association ID for the ACL.</p> </li> <li> <p>
+     * <code>association.network-acl-id</code> - The ID of the network ACL involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>default</code> - Indicates whether the ACL is the default network ACL for
+     * the VPC.</p> </li> <li> <p> <code>entry.cidr</code> - The IPv4 CIDR range
+     * specified in the entry.</p> </li> <li> <p> <code>entry.icmp.code</code> - The
+     * ICMP code specified in the entry, if any.</p> </li> <li> <p>
+     * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.</p>
+     * </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in
+     * the entry.</p> </li> <li> <p> <code>entry.port-range.from</code> - The start of
+     * the port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.port-range.to</code> - The end of the port range specified in the
+     * entry. </p> </li> <li> <p> <code>entry.protocol</code> - The protocol specified
+     * in the entry (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
+     * protocol number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or
+     * denies the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li>
+     * <li> <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
      * Specify <code>true</code> for egress rules, or <code>false</code> for ingress
      * rules.</p> </li> <li> <p> <code>entry.rule-number</code> - The number of an
      * entry (in other words, rule) in the set of ACL entries.</p> </li> <li> <p>
@@ -78,26 +77,25 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>association.association-id</code> - The ID of an association ID for the
-     * ACL.</p> </li> <li> <p> <code>association.network-acl-id</code> - The ID of the
-     * network ACL involved in the association.</p> </li> <li> <p>
-     * <code>association.subnet-id</code> - The ID of the subnet involved in the
-     * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
-     * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
-     * <li> <p> <code>entry.icmp.code</code> - The ICMP code specified in the entry, if
-     * any.</p> </li> <li> <p> <code>entry.icmp.type</code> - The ICMP type specified
-     * in the entry, if any.</p> </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6
-     * CIDR range specified in the entry.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
-     * <code>entry.protocol</code> - The protocol specified in the entry
-     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
-     * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
-     * the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li> <li>
-     * <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
+     * <p>The filters.</p> <ul> <li> <p> <code>association.association-id</code> - The
+     * ID of an association ID for the ACL.</p> </li> <li> <p>
+     * <code>association.network-acl-id</code> - The ID of the network ACL involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>default</code> - Indicates whether the ACL is the default network ACL for
+     * the VPC.</p> </li> <li> <p> <code>entry.cidr</code> - The IPv4 CIDR range
+     * specified in the entry.</p> </li> <li> <p> <code>entry.icmp.code</code> - The
+     * ICMP code specified in the entry, if any.</p> </li> <li> <p>
+     * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.</p>
+     * </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in
+     * the entry.</p> </li> <li> <p> <code>entry.port-range.from</code> - The start of
+     * the port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.port-range.to</code> - The end of the port range specified in the
+     * entry. </p> </li> <li> <p> <code>entry.protocol</code> - The protocol specified
+     * in the entry (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
+     * protocol number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or
+     * denies the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li>
+     * <li> <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
      * Specify <code>true</code> for egress rules, or <code>false</code> for ingress
      * rules.</p> </li> <li> <p> <code>entry.rule-number</code> - The number of an
      * entry (in other words, rule) in the set of ACL entries.</p> </li> <li> <p>
@@ -117,26 +115,25 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>association.association-id</code> - The ID of an association ID for the
-     * ACL.</p> </li> <li> <p> <code>association.network-acl-id</code> - The ID of the
-     * network ACL involved in the association.</p> </li> <li> <p>
-     * <code>association.subnet-id</code> - The ID of the subnet involved in the
-     * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
-     * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
-     * <li> <p> <code>entry.icmp.code</code> - The ICMP code specified in the entry, if
-     * any.</p> </li> <li> <p> <code>entry.icmp.type</code> - The ICMP type specified
-     * in the entry, if any.</p> </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6
-     * CIDR range specified in the entry.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
-     * <code>entry.protocol</code> - The protocol specified in the entry
-     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
-     * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
-     * the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li> <li>
-     * <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
+     * <p>The filters.</p> <ul> <li> <p> <code>association.association-id</code> - The
+     * ID of an association ID for the ACL.</p> </li> <li> <p>
+     * <code>association.network-acl-id</code> - The ID of the network ACL involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>default</code> - Indicates whether the ACL is the default network ACL for
+     * the VPC.</p> </li> <li> <p> <code>entry.cidr</code> - The IPv4 CIDR range
+     * specified in the entry.</p> </li> <li> <p> <code>entry.icmp.code</code> - The
+     * ICMP code specified in the entry, if any.</p> </li> <li> <p>
+     * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.</p>
+     * </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in
+     * the entry.</p> </li> <li> <p> <code>entry.port-range.from</code> - The start of
+     * the port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.port-range.to</code> - The end of the port range specified in the
+     * entry. </p> </li> <li> <p> <code>entry.protocol</code> - The protocol specified
+     * in the entry (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
+     * protocol number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or
+     * denies the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li>
+     * <li> <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
      * Specify <code>true</code> for egress rules, or <code>false</code> for ingress
      * rules.</p> </li> <li> <p> <code>entry.rule-number</code> - The number of an
      * entry (in other words, rule) in the set of ACL entries.</p> </li> <li> <p>
@@ -156,26 +153,25 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>association.association-id</code> - The ID of an association ID for the
-     * ACL.</p> </li> <li> <p> <code>association.network-acl-id</code> - The ID of the
-     * network ACL involved in the association.</p> </li> <li> <p>
-     * <code>association.subnet-id</code> - The ID of the subnet involved in the
-     * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
-     * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
-     * <li> <p> <code>entry.icmp.code</code> - The ICMP code specified in the entry, if
-     * any.</p> </li> <li> <p> <code>entry.icmp.type</code> - The ICMP type specified
-     * in the entry, if any.</p> </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6
-     * CIDR range specified in the entry.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
-     * <code>entry.protocol</code> - The protocol specified in the entry
-     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
-     * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
-     * the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li> <li>
-     * <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
+     * <p>The filters.</p> <ul> <li> <p> <code>association.association-id</code> - The
+     * ID of an association ID for the ACL.</p> </li> <li> <p>
+     * <code>association.network-acl-id</code> - The ID of the network ACL involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>default</code> - Indicates whether the ACL is the default network ACL for
+     * the VPC.</p> </li> <li> <p> <code>entry.cidr</code> - The IPv4 CIDR range
+     * specified in the entry.</p> </li> <li> <p> <code>entry.icmp.code</code> - The
+     * ICMP code specified in the entry, if any.</p> </li> <li> <p>
+     * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.</p>
+     * </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in
+     * the entry.</p> </li> <li> <p> <code>entry.port-range.from</code> - The start of
+     * the port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.port-range.to</code> - The end of the port range specified in the
+     * entry. </p> </li> <li> <p> <code>entry.protocol</code> - The protocol specified
+     * in the entry (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
+     * protocol number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or
+     * denies the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li>
+     * <li> <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
      * Specify <code>true</code> for egress rules, or <code>false</code> for ingress
      * rules.</p> </li> <li> <p> <code>entry.rule-number</code> - The number of an
      * entry (in other words, rule) in the set of ACL entries.</p> </li> <li> <p>
@@ -195,26 +191,25 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>association.association-id</code> - The ID of an association ID for the
-     * ACL.</p> </li> <li> <p> <code>association.network-acl-id</code> - The ID of the
-     * network ACL involved in the association.</p> </li> <li> <p>
-     * <code>association.subnet-id</code> - The ID of the subnet involved in the
-     * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
-     * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
-     * <li> <p> <code>entry.icmp.code</code> - The ICMP code specified in the entry, if
-     * any.</p> </li> <li> <p> <code>entry.icmp.type</code> - The ICMP type specified
-     * in the entry, if any.</p> </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6
-     * CIDR range specified in the entry.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
-     * <code>entry.protocol</code> - The protocol specified in the entry
-     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
-     * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
-     * the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li> <li>
-     * <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
+     * <p>The filters.</p> <ul> <li> <p> <code>association.association-id</code> - The
+     * ID of an association ID for the ACL.</p> </li> <li> <p>
+     * <code>association.network-acl-id</code> - The ID of the network ACL involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>default</code> - Indicates whether the ACL is the default network ACL for
+     * the VPC.</p> </li> <li> <p> <code>entry.cidr</code> - The IPv4 CIDR range
+     * specified in the entry.</p> </li> <li> <p> <code>entry.icmp.code</code> - The
+     * ICMP code specified in the entry, if any.</p> </li> <li> <p>
+     * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.</p>
+     * </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in
+     * the entry.</p> </li> <li> <p> <code>entry.port-range.from</code> - The start of
+     * the port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.port-range.to</code> - The end of the port range specified in the
+     * entry. </p> </li> <li> <p> <code>entry.protocol</code> - The protocol specified
+     * in the entry (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
+     * protocol number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or
+     * denies the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li>
+     * <li> <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
      * Specify <code>true</code> for egress rules, or <code>false</code> for ingress
      * rules.</p> </li> <li> <p> <code>entry.rule-number</code> - The number of an
      * entry (in other words, rule) in the set of ACL entries.</p> </li> <li> <p>
@@ -234,26 +229,25 @@ namespace Model
     inline DescribeNetworkAclsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>association.association-id</code> - The ID of an association ID for the
-     * ACL.</p> </li> <li> <p> <code>association.network-acl-id</code> - The ID of the
-     * network ACL involved in the association.</p> </li> <li> <p>
-     * <code>association.subnet-id</code> - The ID of the subnet involved in the
-     * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
-     * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
-     * <li> <p> <code>entry.icmp.code</code> - The ICMP code specified in the entry, if
-     * any.</p> </li> <li> <p> <code>entry.icmp.type</code> - The ICMP type specified
-     * in the entry, if any.</p> </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6
-     * CIDR range specified in the entry.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
-     * <code>entry.protocol</code> - The protocol specified in the entry
-     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
-     * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
-     * the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li> <li>
-     * <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
+     * <p>The filters.</p> <ul> <li> <p> <code>association.association-id</code> - The
+     * ID of an association ID for the ACL.</p> </li> <li> <p>
+     * <code>association.network-acl-id</code> - The ID of the network ACL involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>default</code> - Indicates whether the ACL is the default network ACL for
+     * the VPC.</p> </li> <li> <p> <code>entry.cidr</code> - The IPv4 CIDR range
+     * specified in the entry.</p> </li> <li> <p> <code>entry.icmp.code</code> - The
+     * ICMP code specified in the entry, if any.</p> </li> <li> <p>
+     * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.</p>
+     * </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in
+     * the entry.</p> </li> <li> <p> <code>entry.port-range.from</code> - The start of
+     * the port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.port-range.to</code> - The end of the port range specified in the
+     * entry. </p> </li> <li> <p> <code>entry.protocol</code> - The protocol specified
+     * in the entry (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
+     * protocol number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or
+     * denies the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li>
+     * <li> <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
      * Specify <code>true</code> for egress rules, or <code>false</code> for ingress
      * rules.</p> </li> <li> <p> <code>entry.rule-number</code> - The number of an
      * entry (in other words, rule) in the set of ACL entries.</p> </li> <li> <p>
@@ -273,26 +267,25 @@ namespace Model
     inline DescribeNetworkAclsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>association.association-id</code> - The ID of an association ID for the
-     * ACL.</p> </li> <li> <p> <code>association.network-acl-id</code> - The ID of the
-     * network ACL involved in the association.</p> </li> <li> <p>
-     * <code>association.subnet-id</code> - The ID of the subnet involved in the
-     * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
-     * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
-     * <li> <p> <code>entry.icmp.code</code> - The ICMP code specified in the entry, if
-     * any.</p> </li> <li> <p> <code>entry.icmp.type</code> - The ICMP type specified
-     * in the entry, if any.</p> </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6
-     * CIDR range specified in the entry.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
-     * <code>entry.protocol</code> - The protocol specified in the entry
-     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
-     * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
-     * the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li> <li>
-     * <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
+     * <p>The filters.</p> <ul> <li> <p> <code>association.association-id</code> - The
+     * ID of an association ID for the ACL.</p> </li> <li> <p>
+     * <code>association.network-acl-id</code> - The ID of the network ACL involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>default</code> - Indicates whether the ACL is the default network ACL for
+     * the VPC.</p> </li> <li> <p> <code>entry.cidr</code> - The IPv4 CIDR range
+     * specified in the entry.</p> </li> <li> <p> <code>entry.icmp.code</code> - The
+     * ICMP code specified in the entry, if any.</p> </li> <li> <p>
+     * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.</p>
+     * </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in
+     * the entry.</p> </li> <li> <p> <code>entry.port-range.from</code> - The start of
+     * the port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.port-range.to</code> - The end of the port range specified in the
+     * entry. </p> </li> <li> <p> <code>entry.protocol</code> - The protocol specified
+     * in the entry (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
+     * protocol number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or
+     * denies the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li>
+     * <li> <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
      * Specify <code>true</code> for egress rules, or <code>false</code> for ingress
      * rules.</p> </li> <li> <p> <code>entry.rule-number</code> - The number of an
      * entry (in other words, rule) in the set of ACL entries.</p> </li> <li> <p>
@@ -312,26 +305,25 @@ namespace Model
     inline DescribeNetworkAclsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>association.association-id</code> - The ID of an association ID for the
-     * ACL.</p> </li> <li> <p> <code>association.network-acl-id</code> - The ID of the
-     * network ACL involved in the association.</p> </li> <li> <p>
-     * <code>association.subnet-id</code> - The ID of the subnet involved in the
-     * association.</p> </li> <li> <p> <code>default</code> - Indicates whether the ACL
-     * is the default network ACL for the VPC.</p> </li> <li> <p>
-     * <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.</p> </li>
-     * <li> <p> <code>entry.icmp.code</code> - The ICMP code specified in the entry, if
-     * any.</p> </li> <li> <p> <code>entry.icmp.type</code> - The ICMP type specified
-     * in the entry, if any.</p> </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6
-     * CIDR range specified in the entry.</p> </li> <li> <p>
-     * <code>entry.port-range.from</code> - The start of the port range specified in
-     * the entry. </p> </li> <li> <p> <code>entry.port-range.to</code> - The end of the
-     * port range specified in the entry. </p> </li> <li> <p>
-     * <code>entry.protocol</code> - The protocol specified in the entry
-     * (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a protocol
-     * number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or denies
-     * the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li> <li>
-     * <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
+     * <p>The filters.</p> <ul> <li> <p> <code>association.association-id</code> - The
+     * ID of an association ID for the ACL.</p> </li> <li> <p>
+     * <code>association.network-acl-id</code> - The ID of the network ACL involved in
+     * the association.</p> </li> <li> <p> <code>association.subnet-id</code> - The ID
+     * of the subnet involved in the association.</p> </li> <li> <p>
+     * <code>default</code> - Indicates whether the ACL is the default network ACL for
+     * the VPC.</p> </li> <li> <p> <code>entry.cidr</code> - The IPv4 CIDR range
+     * specified in the entry.</p> </li> <li> <p> <code>entry.icmp.code</code> - The
+     * ICMP code specified in the entry, if any.</p> </li> <li> <p>
+     * <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.</p>
+     * </li> <li> <p> <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in
+     * the entry.</p> </li> <li> <p> <code>entry.port-range.from</code> - The start of
+     * the port range specified in the entry. </p> </li> <li> <p>
+     * <code>entry.port-range.to</code> - The end of the port range specified in the
+     * entry. </p> </li> <li> <p> <code>entry.protocol</code> - The protocol specified
+     * in the entry (<code>tcp</code> | <code>udp</code> | <code>icmp</code> or a
+     * protocol number).</p> </li> <li> <p> <code>entry.rule-action</code> - Allows or
+     * denies the matching traffic (<code>allow</code> | <code>deny</code>).</p> </li>
+     * <li> <p> <code>entry.egress</code> - A Boolean that indicates the type of rule.
      * Specify <code>true</code> for egress rules, or <code>false</code> for ingress
      * rules.</p> </li> <li> <p> <code>entry.rule-number</code> - The number of an
      * entry (in other words, rule) in the set of ACL entries.</p> </li> <li> <p>
@@ -385,55 +377,55 @@ namespace Model
 
 
     /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * <p>The IDs of the network ACLs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNetworkAclIds() const{ return m_networkAclIds; }
 
     /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * <p>The IDs of the network ACLs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
     inline bool NetworkAclIdsHasBeenSet() const { return m_networkAclIdsHasBeenSet; }
 
     /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * <p>The IDs of the network ACLs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
     inline void SetNetworkAclIds(const Aws::Vector<Aws::String>& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds = value; }
 
     /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * <p>The IDs of the network ACLs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
     inline void SetNetworkAclIds(Aws::Vector<Aws::String>&& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds = std::move(value); }
 
     /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * <p>The IDs of the network ACLs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
     inline DescribeNetworkAclsRequest& WithNetworkAclIds(const Aws::Vector<Aws::String>& value) { SetNetworkAclIds(value); return *this;}
 
     /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * <p>The IDs of the network ACLs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
     inline DescribeNetworkAclsRequest& WithNetworkAclIds(Aws::Vector<Aws::String>&& value) { SetNetworkAclIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * <p>The IDs of the network ACLs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
     inline DescribeNetworkAclsRequest& AddNetworkAclIds(const Aws::String& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * <p>The IDs of the network ACLs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
     inline DescribeNetworkAclsRequest& AddNetworkAclIds(Aws::String&& value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more network ACL IDs.</p> <p>Default: Describes all your network
+     * <p>The IDs of the network ACLs.</p> <p>Default: Describes all your network
      * ACLs.</p>
      */
     inline DescribeNetworkAclsRequest& AddNetworkAclIds(const char* value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(value); return *this; }

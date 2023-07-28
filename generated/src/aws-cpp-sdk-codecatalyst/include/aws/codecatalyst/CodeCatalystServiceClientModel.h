@@ -21,11 +21,16 @@
 #include <aws/codecatalyst/model/CreateAccessTokenResult.h>
 #include <aws/codecatalyst/model/CreateDevEnvironmentResult.h>
 #include <aws/codecatalyst/model/CreateProjectResult.h>
+#include <aws/codecatalyst/model/CreateSourceRepositoryResult.h>
 #include <aws/codecatalyst/model/CreateSourceRepositoryBranchResult.h>
 #include <aws/codecatalyst/model/DeleteAccessTokenResult.h>
 #include <aws/codecatalyst/model/DeleteDevEnvironmentResult.h>
+#include <aws/codecatalyst/model/DeleteProjectResult.h>
+#include <aws/codecatalyst/model/DeleteSourceRepositoryResult.h>
+#include <aws/codecatalyst/model/DeleteSpaceResult.h>
 #include <aws/codecatalyst/model/GetDevEnvironmentResult.h>
 #include <aws/codecatalyst/model/GetProjectResult.h>
+#include <aws/codecatalyst/model/GetSourceRepositoryResult.h>
 #include <aws/codecatalyst/model/GetSourceRepositoryCloneUrlsResult.h>
 #include <aws/codecatalyst/model/GetSpaceResult.h>
 #include <aws/codecatalyst/model/GetSubscriptionResult.h>
@@ -43,6 +48,8 @@
 #include <aws/codecatalyst/model/StopDevEnvironmentResult.h>
 #include <aws/codecatalyst/model/StopDevEnvironmentSessionResult.h>
 #include <aws/codecatalyst/model/UpdateDevEnvironmentResult.h>
+#include <aws/codecatalyst/model/UpdateProjectResult.h>
+#include <aws/codecatalyst/model/UpdateSpaceResult.h>
 #include <aws/codecatalyst/model/VerifySessionResult.h>
 /* End of service model headers required in CodeCatalystClient header */
 
@@ -86,11 +93,16 @@ namespace Aws
       class CreateAccessTokenRequest;
       class CreateDevEnvironmentRequest;
       class CreateProjectRequest;
+      class CreateSourceRepositoryRequest;
       class CreateSourceRepositoryBranchRequest;
       class DeleteAccessTokenRequest;
       class DeleteDevEnvironmentRequest;
+      class DeleteProjectRequest;
+      class DeleteSourceRepositoryRequest;
+      class DeleteSpaceRequest;
       class GetDevEnvironmentRequest;
       class GetProjectRequest;
+      class GetSourceRepositoryRequest;
       class GetSourceRepositoryCloneUrlsRequest;
       class GetSpaceRequest;
       class GetSubscriptionRequest;
@@ -108,17 +120,24 @@ namespace Aws
       class StopDevEnvironmentRequest;
       class StopDevEnvironmentSessionRequest;
       class UpdateDevEnvironmentRequest;
+      class UpdateProjectRequest;
+      class UpdateSpaceRequest;
       /* End of service model forward declarations required in CodeCatalystClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateAccessTokenResult, CodeCatalystError> CreateAccessTokenOutcome;
       typedef Aws::Utils::Outcome<CreateDevEnvironmentResult, CodeCatalystError> CreateDevEnvironmentOutcome;
       typedef Aws::Utils::Outcome<CreateProjectResult, CodeCatalystError> CreateProjectOutcome;
+      typedef Aws::Utils::Outcome<CreateSourceRepositoryResult, CodeCatalystError> CreateSourceRepositoryOutcome;
       typedef Aws::Utils::Outcome<CreateSourceRepositoryBranchResult, CodeCatalystError> CreateSourceRepositoryBranchOutcome;
       typedef Aws::Utils::Outcome<DeleteAccessTokenResult, CodeCatalystError> DeleteAccessTokenOutcome;
       typedef Aws::Utils::Outcome<DeleteDevEnvironmentResult, CodeCatalystError> DeleteDevEnvironmentOutcome;
+      typedef Aws::Utils::Outcome<DeleteProjectResult, CodeCatalystError> DeleteProjectOutcome;
+      typedef Aws::Utils::Outcome<DeleteSourceRepositoryResult, CodeCatalystError> DeleteSourceRepositoryOutcome;
+      typedef Aws::Utils::Outcome<DeleteSpaceResult, CodeCatalystError> DeleteSpaceOutcome;
       typedef Aws::Utils::Outcome<GetDevEnvironmentResult, CodeCatalystError> GetDevEnvironmentOutcome;
       typedef Aws::Utils::Outcome<GetProjectResult, CodeCatalystError> GetProjectOutcome;
+      typedef Aws::Utils::Outcome<GetSourceRepositoryResult, CodeCatalystError> GetSourceRepositoryOutcome;
       typedef Aws::Utils::Outcome<GetSourceRepositoryCloneUrlsResult, CodeCatalystError> GetSourceRepositoryCloneUrlsOutcome;
       typedef Aws::Utils::Outcome<GetSpaceResult, CodeCatalystError> GetSpaceOutcome;
       typedef Aws::Utils::Outcome<GetSubscriptionResult, CodeCatalystError> GetSubscriptionOutcome;
@@ -136,6 +155,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<StopDevEnvironmentResult, CodeCatalystError> StopDevEnvironmentOutcome;
       typedef Aws::Utils::Outcome<StopDevEnvironmentSessionResult, CodeCatalystError> StopDevEnvironmentSessionOutcome;
       typedef Aws::Utils::Outcome<UpdateDevEnvironmentResult, CodeCatalystError> UpdateDevEnvironmentOutcome;
+      typedef Aws::Utils::Outcome<UpdateProjectResult, CodeCatalystError> UpdateProjectOutcome;
+      typedef Aws::Utils::Outcome<UpdateSpaceResult, CodeCatalystError> UpdateSpaceOutcome;
       typedef Aws::Utils::Outcome<VerifySessionResult, CodeCatalystError> VerifySessionOutcome;
       /* End of service model Outcome class definitions */
 
@@ -143,11 +164,16 @@ namespace Aws
       typedef std::future<CreateAccessTokenOutcome> CreateAccessTokenOutcomeCallable;
       typedef std::future<CreateDevEnvironmentOutcome> CreateDevEnvironmentOutcomeCallable;
       typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
+      typedef std::future<CreateSourceRepositoryOutcome> CreateSourceRepositoryOutcomeCallable;
       typedef std::future<CreateSourceRepositoryBranchOutcome> CreateSourceRepositoryBranchOutcomeCallable;
       typedef std::future<DeleteAccessTokenOutcome> DeleteAccessTokenOutcomeCallable;
       typedef std::future<DeleteDevEnvironmentOutcome> DeleteDevEnvironmentOutcomeCallable;
+      typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+      typedef std::future<DeleteSourceRepositoryOutcome> DeleteSourceRepositoryOutcomeCallable;
+      typedef std::future<DeleteSpaceOutcome> DeleteSpaceOutcomeCallable;
       typedef std::future<GetDevEnvironmentOutcome> GetDevEnvironmentOutcomeCallable;
       typedef std::future<GetProjectOutcome> GetProjectOutcomeCallable;
+      typedef std::future<GetSourceRepositoryOutcome> GetSourceRepositoryOutcomeCallable;
       typedef std::future<GetSourceRepositoryCloneUrlsOutcome> GetSourceRepositoryCloneUrlsOutcomeCallable;
       typedef std::future<GetSpaceOutcome> GetSpaceOutcomeCallable;
       typedef std::future<GetSubscriptionOutcome> GetSubscriptionOutcomeCallable;
@@ -165,6 +191,8 @@ namespace Aws
       typedef std::future<StopDevEnvironmentOutcome> StopDevEnvironmentOutcomeCallable;
       typedef std::future<StopDevEnvironmentSessionOutcome> StopDevEnvironmentSessionOutcomeCallable;
       typedef std::future<UpdateDevEnvironmentOutcome> UpdateDevEnvironmentOutcomeCallable;
+      typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+      typedef std::future<UpdateSpaceOutcome> UpdateSpaceOutcomeCallable;
       typedef std::future<VerifySessionOutcome> VerifySessionOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -175,11 +203,16 @@ namespace Aws
     typedef std::function<void(const CodeCatalystClient*, const Model::CreateAccessTokenRequest&, const Model::CreateAccessTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessTokenResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::CreateDevEnvironmentRequest&, const Model::CreateDevEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDevEnvironmentResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeCatalystClient*, const Model::CreateSourceRepositoryRequest&, const Model::CreateSourceRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSourceRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::CreateSourceRepositoryBranchRequest&, const Model::CreateSourceRepositoryBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSourceRepositoryBranchResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::DeleteAccessTokenRequest&, const Model::DeleteAccessTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessTokenResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::DeleteDevEnvironmentRequest&, const Model::DeleteDevEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDevEnvironmentResponseReceivedHandler;
+    typedef std::function<void(const CodeCatalystClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeCatalystClient*, const Model::DeleteSourceRepositoryRequest&, const Model::DeleteSourceRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSourceRepositoryResponseReceivedHandler;
+    typedef std::function<void(const CodeCatalystClient*, const Model::DeleteSpaceRequest&, const Model::DeleteSpaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSpaceResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::GetDevEnvironmentRequest&, const Model::GetDevEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevEnvironmentResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::GetProjectRequest&, const Model::GetProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeCatalystClient*, const Model::GetSourceRepositoryRequest&, const Model::GetSourceRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSourceRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::GetSourceRepositoryCloneUrlsRequest&, const Model::GetSourceRepositoryCloneUrlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSourceRepositoryCloneUrlsResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::GetSpaceRequest&, const Model::GetSpaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSpaceResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::GetSubscriptionRequest&, const Model::GetSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionResponseReceivedHandler;
@@ -197,6 +230,8 @@ namespace Aws
     typedef std::function<void(const CodeCatalystClient*, const Model::StopDevEnvironmentRequest&, const Model::StopDevEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDevEnvironmentResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::StopDevEnvironmentSessionRequest&, const Model::StopDevEnvironmentSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDevEnvironmentSessionResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::UpdateDevEnvironmentRequest&, const Model::UpdateDevEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDevEnvironmentResponseReceivedHandler;
+    typedef std::function<void(const CodeCatalystClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeCatalystClient*, const Model::UpdateSpaceRequest&, const Model::UpdateSpaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSpaceResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::VerifySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifySessionResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace CodeCatalyst

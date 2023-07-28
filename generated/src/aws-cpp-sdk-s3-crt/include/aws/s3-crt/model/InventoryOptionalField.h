@@ -28,7 +28,9 @@ namespace Model
     ObjectLockLegalHoldStatus,
     IntelligentTieringAccessTier,
     BucketKeyStatus,
-    ChecksumAlgorithm
+    ChecksumAlgorithm,
+    ObjectAccessControlList,
+    ObjectOwner
   };
 
 namespace InventoryOptionalFieldMapper

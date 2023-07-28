@@ -33,7 +33,9 @@ Address::Address() :
     m_postalCodeHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
     m_isRestricted(false),
-    m_isRestrictedHasBeenSet(false)
+    m_isRestrictedHasBeenSet(false),
+    m_type(AddressType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ Address::Address(JsonView jsonValue) :
     m_postalCodeHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
     m_isRestricted(false),
-    m_isRestrictedHasBeenSet(false)
+    m_isRestrictedHasBeenSet(false),
+    m_type(AddressType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +161,13 @@ Address& Address::operator =(JsonView jsonValue)
     m_isRestrictedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = AddressTypeMapper::GetAddressTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -246,6 +257,11 @@ JsonValue Address::Jsonize() const
   {
    payload.WithBool("IsRestricted", m_isRestricted);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", AddressTypeMapper::GetNameForAddressType(m_type));
   }
 
   return payload;

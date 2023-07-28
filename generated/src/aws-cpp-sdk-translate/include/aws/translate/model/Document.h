@@ -89,73 +89,97 @@ namespace Model
 
     /**
      * <p>Describes the format of the document. You can specify one of the
-     * following:</p> <ul> <li> <p>text/html - The input data consists of HTML content.
-     * Amazon Translate translates only the text in the HTML element.</p> </li> <li>
-     * <p>text/plain - The input data consists of unformatted text. Amazon Translate
-     * translates every character in the content. </p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>text/html</code> - The input data consists of
+     * HTML content. Amazon Translate translates only the text in the HTML element.</p>
+     * </li> <li> <p> <code>text/plain</code> - The input data consists of unformatted
+     * text. Amazon Translate translates every character in the content. </p> </li>
+     * <li> <p>
+     * <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>
+     * - The input data consists of a Word document (.docx).</p> </li> </ul>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
     /**
      * <p>Describes the format of the document. You can specify one of the
-     * following:</p> <ul> <li> <p>text/html - The input data consists of HTML content.
-     * Amazon Translate translates only the text in the HTML element.</p> </li> <li>
-     * <p>text/plain - The input data consists of unformatted text. Amazon Translate
-     * translates every character in the content. </p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>text/html</code> - The input data consists of
+     * HTML content. Amazon Translate translates only the text in the HTML element.</p>
+     * </li> <li> <p> <code>text/plain</code> - The input data consists of unformatted
+     * text. Amazon Translate translates every character in the content. </p> </li>
+     * <li> <p>
+     * <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>
+     * - The input data consists of a Word document (.docx).</p> </li> </ul>
      */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>Describes the format of the document. You can specify one of the
-     * following:</p> <ul> <li> <p>text/html - The input data consists of HTML content.
-     * Amazon Translate translates only the text in the HTML element.</p> </li> <li>
-     * <p>text/plain - The input data consists of unformatted text. Amazon Translate
-     * translates every character in the content. </p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>text/html</code> - The input data consists of
+     * HTML content. Amazon Translate translates only the text in the HTML element.</p>
+     * </li> <li> <p> <code>text/plain</code> - The input data consists of unformatted
+     * text. Amazon Translate translates every character in the content. </p> </li>
+     * <li> <p>
+     * <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>
+     * - The input data consists of a Word document (.docx).</p> </li> </ul>
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
      * <p>Describes the format of the document. You can specify one of the
-     * following:</p> <ul> <li> <p>text/html - The input data consists of HTML content.
-     * Amazon Translate translates only the text in the HTML element.</p> </li> <li>
-     * <p>text/plain - The input data consists of unformatted text. Amazon Translate
-     * translates every character in the content. </p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>text/html</code> - The input data consists of
+     * HTML content. Amazon Translate translates only the text in the HTML element.</p>
+     * </li> <li> <p> <code>text/plain</code> - The input data consists of unformatted
+     * text. Amazon Translate translates every character in the content. </p> </li>
+     * <li> <p>
+     * <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>
+     * - The input data consists of a Word document (.docx).</p> </li> </ul>
      */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
     /**
      * <p>Describes the format of the document. You can specify one of the
-     * following:</p> <ul> <li> <p>text/html - The input data consists of HTML content.
-     * Amazon Translate translates only the text in the HTML element.</p> </li> <li>
-     * <p>text/plain - The input data consists of unformatted text. Amazon Translate
-     * translates every character in the content. </p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>text/html</code> - The input data consists of
+     * HTML content. Amazon Translate translates only the text in the HTML element.</p>
+     * </li> <li> <p> <code>text/plain</code> - The input data consists of unformatted
+     * text. Amazon Translate translates every character in the content. </p> </li>
+     * <li> <p>
+     * <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>
+     * - The input data consists of a Word document (.docx).</p> </li> </ul>
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
 
     /**
      * <p>Describes the format of the document. You can specify one of the
-     * following:</p> <ul> <li> <p>text/html - The input data consists of HTML content.
-     * Amazon Translate translates only the text in the HTML element.</p> </li> <li>
-     * <p>text/plain - The input data consists of unformatted text. Amazon Translate
-     * translates every character in the content. </p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>text/html</code> - The input data consists of
+     * HTML content. Amazon Translate translates only the text in the HTML element.</p>
+     * </li> <li> <p> <code>text/plain</code> - The input data consists of unformatted
+     * text. Amazon Translate translates every character in the content. </p> </li>
+     * <li> <p>
+     * <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>
+     * - The input data consists of a Word document (.docx).</p> </li> </ul>
      */
     inline Document& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
     /**
      * <p>Describes the format of the document. You can specify one of the
-     * following:</p> <ul> <li> <p>text/html - The input data consists of HTML content.
-     * Amazon Translate translates only the text in the HTML element.</p> </li> <li>
-     * <p>text/plain - The input data consists of unformatted text. Amazon Translate
-     * translates every character in the content. </p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>text/html</code> - The input data consists of
+     * HTML content. Amazon Translate translates only the text in the HTML element.</p>
+     * </li> <li> <p> <code>text/plain</code> - The input data consists of unformatted
+     * text. Amazon Translate translates every character in the content. </p> </li>
+     * <li> <p>
+     * <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>
+     * - The input data consists of a Word document (.docx).</p> </li> </ul>
      */
     inline Document& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
      * <p>Describes the format of the document. You can specify one of the
-     * following:</p> <ul> <li> <p>text/html - The input data consists of HTML content.
-     * Amazon Translate translates only the text in the HTML element.</p> </li> <li>
-     * <p>text/plain - The input data consists of unformatted text. Amazon Translate
-     * translates every character in the content. </p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>text/html</code> - The input data consists of
+     * HTML content. Amazon Translate translates only the text in the HTML element.</p>
+     * </li> <li> <p> <code>text/plain</code> - The input data consists of unformatted
+     * text. Amazon Translate translates every character in the content. </p> </li>
+     * <li> <p>
+     * <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>
+     * - The input data consists of a Word document (.docx).</p> </li> </ul>
      */
     inline Document& WithContentType(const char* value) { SetContentType(value); return *this;}
 

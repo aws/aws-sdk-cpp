@@ -66,30 +66,30 @@ namespace Model
 
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the
-     * console gives you 1 output channel; choosing Stereo gives you 2. In the API,
-     * valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono on
+     * gives you 1 output channel; choosing Stereo gives you 2. In the API, valid
+     * values are 1 and 2.
      */
     inline int GetChannels() const{ return m_channels; }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the
-     * console gives you 1 output channel; choosing Stereo gives you 2. In the API,
-     * valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono on
+     * gives you 1 output channel; choosing Stereo gives you 2. In the API, valid
+     * values are 1 and 2.
      */
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the
-     * console gives you 1 output channel; choosing Stereo gives you 2. In the API,
-     * valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono on
+     * gives you 1 output channel; choosing Stereo gives you 2. In the API, valid
+     * values are 1 and 2.
      */
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
 
     /**
-     * Specify the number of channels in this output audio track. Choosing Mono on the
-     * console gives you 1 output channel; choosing Stereo gives you 2. In the API,
-     * valid values are 1 and 2.
+     * Specify the number of channels in this output audio track. Choosing Mono on
+     * gives you 1 output channel; choosing Stereo gives you 2. In the API, valid
+     * values are 1 and 2.
      */
     inline OpusSettings& WithChannels(int value) { SetChannels(value); return *this;}
 

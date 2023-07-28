@@ -16,7 +16,8 @@ DisassociateResourceShareRequest::DisassociateResourceShareRequest() :
     m_resourceShareArnHasBeenSet(false),
     m_resourceArnsHasBeenSet(false),
     m_principalsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_sourcesHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String DisassociateResourceShareRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_sourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+   {
+     sourcesJsonList[sourcesIndex].AsString(m_sources[sourcesIndex]);
+   }
+   payload.WithArray("sources", std::move(sourcesJsonList));
 
   }
 

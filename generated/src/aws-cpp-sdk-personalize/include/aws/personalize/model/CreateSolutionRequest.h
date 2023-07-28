@@ -177,49 +177,49 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the recipe to use for model training. Only specified when
+     * <p>The ARN of the recipe to use for model training. This is required when
      * <code>performAutoML</code> is false.</p>
      */
     inline const Aws::String& GetRecipeArn() const{ return m_recipeArn; }
 
     /**
-     * <p>The ARN of the recipe to use for model training. Only specified when
+     * <p>The ARN of the recipe to use for model training. This is required when
      * <code>performAutoML</code> is false.</p>
      */
     inline bool RecipeArnHasBeenSet() const { return m_recipeArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the recipe to use for model training. Only specified when
+     * <p>The ARN of the recipe to use for model training. This is required when
      * <code>performAutoML</code> is false.</p>
      */
     inline void SetRecipeArn(const Aws::String& value) { m_recipeArnHasBeenSet = true; m_recipeArn = value; }
 
     /**
-     * <p>The ARN of the recipe to use for model training. Only specified when
+     * <p>The ARN of the recipe to use for model training. This is required when
      * <code>performAutoML</code> is false.</p>
      */
     inline void SetRecipeArn(Aws::String&& value) { m_recipeArnHasBeenSet = true; m_recipeArn = std::move(value); }
 
     /**
-     * <p>The ARN of the recipe to use for model training. Only specified when
+     * <p>The ARN of the recipe to use for model training. This is required when
      * <code>performAutoML</code> is false.</p>
      */
     inline void SetRecipeArn(const char* value) { m_recipeArnHasBeenSet = true; m_recipeArn.assign(value); }
 
     /**
-     * <p>The ARN of the recipe to use for model training. Only specified when
+     * <p>The ARN of the recipe to use for model training. This is required when
      * <code>performAutoML</code> is false.</p>
      */
     inline CreateSolutionRequest& WithRecipeArn(const Aws::String& value) { SetRecipeArn(value); return *this;}
 
     /**
-     * <p>The ARN of the recipe to use for model training. Only specified when
+     * <p>The ARN of the recipe to use for model training. This is required when
      * <code>performAutoML</code> is false.</p>
      */
     inline CreateSolutionRequest& WithRecipeArn(Aws::String&& value) { SetRecipeArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the recipe to use for model training. Only specified when
+     * <p>The ARN of the recipe to use for model training. This is required when
      * <code>performAutoML</code> is false.</p>
      */
     inline CreateSolutionRequest& WithRecipeArn(const char* value) { SetRecipeArn(value); return *this;}

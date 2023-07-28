@@ -300,38 +300,38 @@ namespace Model
 
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
-     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.
+     * Applies only if you enabled the HTTP metadata endpoint.</p>
      */
     inline const InstanceMetadataProtocolState& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
-     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.
+     * Applies only if you enabled the HTTP metadata endpoint.</p>
      */
     inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
-     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.
+     * Applies only if you enabled the HTTP metadata endpoint.</p>
      */
     inline void SetHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
-     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.
+     * Applies only if you enabled the HTTP metadata endpoint.</p>
      */
     inline void SetHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
-     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.
+     * Applies only if you enabled the HTTP metadata endpoint.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { SetHttpProtocolIpv6(value); return *this;}
 
     /**
-     * <p>Enables or disables the IPv6 endpoint for the instance metadata service. This
-     * setting applies only if you have enabled the HTTP metadata endpoint.</p>
+     * <p>Enables or disables the IPv6 endpoint for the instance metadata service.
+     * Applies only if you enabled the HTTP metadata endpoint.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
 

@@ -74,22 +74,26 @@ namespace Model
 
 
     /**
-     * <p>The desired capacity for the runtime environment to update.</p>
+     * <p>The desired capacity for the runtime environment to update. The minimum
+     * possible value is 0 and the maximum is 100.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p>The desired capacity for the runtime environment to update.</p>
+     * <p>The desired capacity for the runtime environment to update. The minimum
+     * possible value is 0 and the maximum is 100.</p>
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
-     * <p>The desired capacity for the runtime environment to update.</p>
+     * <p>The desired capacity for the runtime environment to update. The minimum
+     * possible value is 0 and the maximum is 100.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p>The desired capacity for the runtime environment to update.</p>
+     * <p>The desired capacity for the runtime environment to update. The minimum
+     * possible value is 0 and the maximum is 100.</p>
      */
     inline UpdateEnvironmentRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 

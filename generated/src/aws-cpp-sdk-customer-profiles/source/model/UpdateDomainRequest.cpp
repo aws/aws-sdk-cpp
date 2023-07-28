@@ -19,6 +19,7 @@ UpdateDomainRequest::UpdateDomainRequest() :
     m_defaultEncryptionKeyHasBeenSet(false),
     m_deadLetterQueueUrlHasBeenSet(false),
     m_matchingHasBeenSet(false),
+    m_ruleBasedMatchingHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -48,6 +49,12 @@ Aws::String UpdateDomainRequest::SerializePayload() const
   if(m_matchingHasBeenSet)
   {
    payload.WithObject("Matching", m_matching.Jsonize());
+
+  }
+
+  if(m_ruleBasedMatchingHasBeenSet)
+  {
+   payload.WithObject("RuleBasedMatching", m_ruleBasedMatching.Jsonize());
 
   }
 

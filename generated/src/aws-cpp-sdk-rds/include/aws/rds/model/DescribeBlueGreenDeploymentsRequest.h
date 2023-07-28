@@ -39,87 +39,79 @@ namespace Model
   public:
 
     /**
-     * <p>The blue/green deployment identifier. If this parameter is specified,
-     * information from only the specific blue/green deployment is returned. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
-     * supplied, must match an existing blue/green deployment identifier.</p> </li>
-     * </ul>
+     * <p>The blue/green deployment identifier. If you specify this parameter, the
+     * response only includes information about the specific blue/green deployment.
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * match an existing blue/green deployment identifier.</p> </li> </ul>
      */
     inline const Aws::String& GetBlueGreenDeploymentIdentifier() const{ return m_blueGreenDeploymentIdentifier; }
 
     /**
-     * <p>The blue/green deployment identifier. If this parameter is specified,
-     * information from only the specific blue/green deployment is returned. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
-     * supplied, must match an existing blue/green deployment identifier.</p> </li>
-     * </ul>
+     * <p>The blue/green deployment identifier. If you specify this parameter, the
+     * response only includes information about the specific blue/green deployment.
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * match an existing blue/green deployment identifier.</p> </li> </ul>
      */
     inline bool BlueGreenDeploymentIdentifierHasBeenSet() const { return m_blueGreenDeploymentIdentifierHasBeenSet; }
 
     /**
-     * <p>The blue/green deployment identifier. If this parameter is specified,
-     * information from only the specific blue/green deployment is returned. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
-     * supplied, must match an existing blue/green deployment identifier.</p> </li>
-     * </ul>
+     * <p>The blue/green deployment identifier. If you specify this parameter, the
+     * response only includes information about the specific blue/green deployment.
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * match an existing blue/green deployment identifier.</p> </li> </ul>
      */
     inline void SetBlueGreenDeploymentIdentifier(const Aws::String& value) { m_blueGreenDeploymentIdentifierHasBeenSet = true; m_blueGreenDeploymentIdentifier = value; }
 
     /**
-     * <p>The blue/green deployment identifier. If this parameter is specified,
-     * information from only the specific blue/green deployment is returned. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
-     * supplied, must match an existing blue/green deployment identifier.</p> </li>
-     * </ul>
+     * <p>The blue/green deployment identifier. If you specify this parameter, the
+     * response only includes information about the specific blue/green deployment.
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * match an existing blue/green deployment identifier.</p> </li> </ul>
      */
     inline void SetBlueGreenDeploymentIdentifier(Aws::String&& value) { m_blueGreenDeploymentIdentifierHasBeenSet = true; m_blueGreenDeploymentIdentifier = std::move(value); }
 
     /**
-     * <p>The blue/green deployment identifier. If this parameter is specified,
-     * information from only the specific blue/green deployment is returned. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
-     * supplied, must match an existing blue/green deployment identifier.</p> </li>
-     * </ul>
+     * <p>The blue/green deployment identifier. If you specify this parameter, the
+     * response only includes information about the specific blue/green deployment.
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * match an existing blue/green deployment identifier.</p> </li> </ul>
      */
     inline void SetBlueGreenDeploymentIdentifier(const char* value) { m_blueGreenDeploymentIdentifierHasBeenSet = true; m_blueGreenDeploymentIdentifier.assign(value); }
 
     /**
-     * <p>The blue/green deployment identifier. If this parameter is specified,
-     * information from only the specific blue/green deployment is returned. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
-     * supplied, must match an existing blue/green deployment identifier.</p> </li>
-     * </ul>
+     * <p>The blue/green deployment identifier. If you specify this parameter, the
+     * response only includes information about the specific blue/green deployment.
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * match an existing blue/green deployment identifier.</p> </li> </ul>
      */
     inline DescribeBlueGreenDeploymentsRequest& WithBlueGreenDeploymentIdentifier(const Aws::String& value) { SetBlueGreenDeploymentIdentifier(value); return *this;}
 
     /**
-     * <p>The blue/green deployment identifier. If this parameter is specified,
-     * information from only the specific blue/green deployment is returned. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
-     * supplied, must match an existing blue/green deployment identifier.</p> </li>
-     * </ul>
+     * <p>The blue/green deployment identifier. If you specify this parameter, the
+     * response only includes information about the specific blue/green deployment.
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * match an existing blue/green deployment identifier.</p> </li> </ul>
      */
     inline DescribeBlueGreenDeploymentsRequest& WithBlueGreenDeploymentIdentifier(Aws::String&& value) { SetBlueGreenDeploymentIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The blue/green deployment identifier. If this parameter is specified,
-     * information from only the specific blue/green deployment is returned. This
-     * parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If
-     * supplied, must match an existing blue/green deployment identifier.</p> </li>
-     * </ul>
+     * <p>The blue/green deployment identifier. If you specify this parameter, the
+     * response only includes information about the specific blue/green deployment.
+     * This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * match an existing blue/green deployment identifier.</p> </li> </ul>
      */
     inline DescribeBlueGreenDeploymentsRequest& WithBlueGreenDeploymentIdentifier(const char* value) { SetBlueGreenDeploymentIdentifier(value); return *this;}
 
 
     /**
      * <p>A filter that specifies one or more blue/green deployments to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p>
-     * <code>blue-green-deployment-identifier</code> - Accepts system-generated
-     * identifiers for blue/green deployments. The results list only includes
-     * information about the blue/green deployments with the specified identifiers.</p>
-     * </li> <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied
-     * names for blue/green deployments. The results list only includes information
-     * about the blue/green deployments with the specified names.</p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>blue-green-deployment-identifier</code>
+     * - Accepts system-generated identifiers for blue/green deployments. The results
+     * list only includes information about the blue/green deployments with the
+     * specified identifiers.</p> </li> <li> <p>
+     * <code>blue-green-deployment-name</code> - Accepts user-supplied names for
+     * blue/green deployments. The results list only includes information about the
+     * blue/green deployments with the specified names.</p> </li> <li> <p>
      * <code>source</code> - Accepts source databases for a blue/green deployment. The
      * results list only includes information about the blue/green deployments with the
      * specified source databases.</p> </li> <li> <p> <code>target</code> - Accepts
@@ -131,13 +123,13 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more blue/green deployments to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p>
-     * <code>blue-green-deployment-identifier</code> - Accepts system-generated
-     * identifiers for blue/green deployments. The results list only includes
-     * information about the blue/green deployments with the specified identifiers.</p>
-     * </li> <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied
-     * names for blue/green deployments. The results list only includes information
-     * about the blue/green deployments with the specified names.</p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>blue-green-deployment-identifier</code>
+     * - Accepts system-generated identifiers for blue/green deployments. The results
+     * list only includes information about the blue/green deployments with the
+     * specified identifiers.</p> </li> <li> <p>
+     * <code>blue-green-deployment-name</code> - Accepts user-supplied names for
+     * blue/green deployments. The results list only includes information about the
+     * blue/green deployments with the specified names.</p> </li> <li> <p>
      * <code>source</code> - Accepts source databases for a blue/green deployment. The
      * results list only includes information about the blue/green deployments with the
      * specified source databases.</p> </li> <li> <p> <code>target</code> - Accepts
@@ -149,13 +141,13 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more blue/green deployments to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p>
-     * <code>blue-green-deployment-identifier</code> - Accepts system-generated
-     * identifiers for blue/green deployments. The results list only includes
-     * information about the blue/green deployments with the specified identifiers.</p>
-     * </li> <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied
-     * names for blue/green deployments. The results list only includes information
-     * about the blue/green deployments with the specified names.</p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>blue-green-deployment-identifier</code>
+     * - Accepts system-generated identifiers for blue/green deployments. The results
+     * list only includes information about the blue/green deployments with the
+     * specified identifiers.</p> </li> <li> <p>
+     * <code>blue-green-deployment-name</code> - Accepts user-supplied names for
+     * blue/green deployments. The results list only includes information about the
+     * blue/green deployments with the specified names.</p> </li> <li> <p>
      * <code>source</code> - Accepts source databases for a blue/green deployment. The
      * results list only includes information about the blue/green deployments with the
      * specified source databases.</p> </li> <li> <p> <code>target</code> - Accepts
@@ -167,13 +159,13 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more blue/green deployments to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p>
-     * <code>blue-green-deployment-identifier</code> - Accepts system-generated
-     * identifiers for blue/green deployments. The results list only includes
-     * information about the blue/green deployments with the specified identifiers.</p>
-     * </li> <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied
-     * names for blue/green deployments. The results list only includes information
-     * about the blue/green deployments with the specified names.</p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>blue-green-deployment-identifier</code>
+     * - Accepts system-generated identifiers for blue/green deployments. The results
+     * list only includes information about the blue/green deployments with the
+     * specified identifiers.</p> </li> <li> <p>
+     * <code>blue-green-deployment-name</code> - Accepts user-supplied names for
+     * blue/green deployments. The results list only includes information about the
+     * blue/green deployments with the specified names.</p> </li> <li> <p>
      * <code>source</code> - Accepts source databases for a blue/green deployment. The
      * results list only includes information about the blue/green deployments with the
      * specified source databases.</p> </li> <li> <p> <code>target</code> - Accepts
@@ -185,13 +177,13 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more blue/green deployments to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p>
-     * <code>blue-green-deployment-identifier</code> - Accepts system-generated
-     * identifiers for blue/green deployments. The results list only includes
-     * information about the blue/green deployments with the specified identifiers.</p>
-     * </li> <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied
-     * names for blue/green deployments. The results list only includes information
-     * about the blue/green deployments with the specified names.</p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>blue-green-deployment-identifier</code>
+     * - Accepts system-generated identifiers for blue/green deployments. The results
+     * list only includes information about the blue/green deployments with the
+     * specified identifiers.</p> </li> <li> <p>
+     * <code>blue-green-deployment-name</code> - Accepts user-supplied names for
+     * blue/green deployments. The results list only includes information about the
+     * blue/green deployments with the specified names.</p> </li> <li> <p>
      * <code>source</code> - Accepts source databases for a blue/green deployment. The
      * results list only includes information about the blue/green deployments with the
      * specified source databases.</p> </li> <li> <p> <code>target</code> - Accepts
@@ -203,13 +195,13 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more blue/green deployments to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p>
-     * <code>blue-green-deployment-identifier</code> - Accepts system-generated
-     * identifiers for blue/green deployments. The results list only includes
-     * information about the blue/green deployments with the specified identifiers.</p>
-     * </li> <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied
-     * names for blue/green deployments. The results list only includes information
-     * about the blue/green deployments with the specified names.</p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>blue-green-deployment-identifier</code>
+     * - Accepts system-generated identifiers for blue/green deployments. The results
+     * list only includes information about the blue/green deployments with the
+     * specified identifiers.</p> </li> <li> <p>
+     * <code>blue-green-deployment-name</code> - Accepts user-supplied names for
+     * blue/green deployments. The results list only includes information about the
+     * blue/green deployments with the specified names.</p> </li> <li> <p>
      * <code>source</code> - Accepts source databases for a blue/green deployment. The
      * results list only includes information about the blue/green deployments with the
      * specified source databases.</p> </li> <li> <p> <code>target</code> - Accepts
@@ -221,13 +213,13 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more blue/green deployments to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p>
-     * <code>blue-green-deployment-identifier</code> - Accepts system-generated
-     * identifiers for blue/green deployments. The results list only includes
-     * information about the blue/green deployments with the specified identifiers.</p>
-     * </li> <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied
-     * names for blue/green deployments. The results list only includes information
-     * about the blue/green deployments with the specified names.</p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>blue-green-deployment-identifier</code>
+     * - Accepts system-generated identifiers for blue/green deployments. The results
+     * list only includes information about the blue/green deployments with the
+     * specified identifiers.</p> </li> <li> <p>
+     * <code>blue-green-deployment-name</code> - Accepts user-supplied names for
+     * blue/green deployments. The results list only includes information about the
+     * blue/green deployments with the specified names.</p> </li> <li> <p>
      * <code>source</code> - Accepts source databases for a blue/green deployment. The
      * results list only includes information about the blue/green deployments with the
      * specified source databases.</p> </li> <li> <p> <code>target</code> - Accepts
@@ -239,13 +231,13 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more blue/green deployments to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p>
-     * <code>blue-green-deployment-identifier</code> - Accepts system-generated
-     * identifiers for blue/green deployments. The results list only includes
-     * information about the blue/green deployments with the specified identifiers.</p>
-     * </li> <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied
-     * names for blue/green deployments. The results list only includes information
-     * about the blue/green deployments with the specified names.</p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>blue-green-deployment-identifier</code>
+     * - Accepts system-generated identifiers for blue/green deployments. The results
+     * list only includes information about the blue/green deployments with the
+     * specified identifiers.</p> </li> <li> <p>
+     * <code>blue-green-deployment-name</code> - Accepts user-supplied names for
+     * blue/green deployments. The results list only includes information about the
+     * blue/green deployments with the specified names.</p> </li> <li> <p>
      * <code>source</code> - Accepts source databases for a blue/green deployment. The
      * results list only includes information about the blue/green deployments with the
      * specified source databases.</p> </li> <li> <p> <code>target</code> - Accepts
@@ -258,64 +250,64 @@ namespace Model
 
     /**
      * <p>An optional pagination token provided by a previous
-     * <code>DescribeBlueGreenDeployments</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value
+     * <code>DescribeBlueGreenDeployments</code> request. If you specify this
+     * parameter, the response only includes records beyond the marker, up to the value
      * specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>An optional pagination token provided by a previous
-     * <code>DescribeBlueGreenDeployments</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value
+     * <code>DescribeBlueGreenDeployments</code> request. If you specify this
+     * parameter, the response only includes records beyond the marker, up to the value
      * specified by <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional pagination token provided by a previous
-     * <code>DescribeBlueGreenDeployments</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value
+     * <code>DescribeBlueGreenDeployments</code> request. If you specify this
+     * parameter, the response only includes records beyond the marker, up to the value
      * specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional pagination token provided by a previous
-     * <code>DescribeBlueGreenDeployments</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value
+     * <code>DescribeBlueGreenDeployments</code> request. If you specify this
+     * parameter, the response only includes records beyond the marker, up to the value
      * specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional pagination token provided by a previous
-     * <code>DescribeBlueGreenDeployments</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value
+     * <code>DescribeBlueGreenDeployments</code> request. If you specify this
+     * parameter, the response only includes records beyond the marker, up to the value
      * specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>An optional pagination token provided by a previous
-     * <code>DescribeBlueGreenDeployments</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value
+     * <code>DescribeBlueGreenDeployments</code> request. If you specify this
+     * parameter, the response only includes records beyond the marker, up to the value
      * specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeBlueGreenDeploymentsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional pagination token provided by a previous
-     * <code>DescribeBlueGreenDeployments</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value
+     * <code>DescribeBlueGreenDeployments</code> request. If you specify this
+     * parameter, the response only includes records beyond the marker, up to the value
      * specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeBlueGreenDeploymentsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional pagination token provided by a previous
-     * <code>DescribeBlueGreenDeployments</code> request. If this parameter is
-     * specified, the response includes only records beyond the marker, up to the value
+     * <code>DescribeBlueGreenDeployments</code> request. If you specify this
+     * parameter, the response only includes records beyond the marker, up to the value
      * specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeBlueGreenDeploymentsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
@@ -325,7 +317,8 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints:</p> <ul> <li> <p>Must be a
+     * minimum of 20.</p> </li> <li> <p>Can't exceed 100.</p> </li> </ul>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
@@ -333,7 +326,8 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints:</p> <ul> <li> <p>Must be a
+     * minimum of 20.</p> </li> <li> <p>Can't exceed 100.</p> </li> </ul>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
@@ -341,7 +335,8 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints:</p> <ul> <li> <p>Must be a
+     * minimum of 20.</p> </li> <li> <p>Can't exceed 100.</p> </li> </ul>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
@@ -349,7 +344,8 @@ namespace Model
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
      * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     * results.</p> <p>Default: 100</p> <p>Constraints:</p> <ul> <li> <p>Must be a
+     * minimum of 20.</p> </li> <li> <p>Can't exceed 100.</p> </li> </ul>
      */
     inline DescribeBlueGreenDeploymentsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The identity provider configuration that you gave when the Data Store was
+   * <p>The identity provider configuration that you gave when the data store was
    * created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/IdentityProviderConfiguration">AWS
    * API Reference</a></p>
@@ -40,63 +40,63 @@ namespace Model
 
 
     /**
-     * <p>The authorization strategy that you selected when you created the Data
-     * Store.</p>
+     * <p>The authorization strategy that you selected when you created the data
+     * store.</p>
      */
     inline const AuthorizationStrategy& GetAuthorizationStrategy() const{ return m_authorizationStrategy; }
 
     /**
-     * <p>The authorization strategy that you selected when you created the Data
-     * Store.</p>
+     * <p>The authorization strategy that you selected when you created the data
+     * store.</p>
      */
     inline bool AuthorizationStrategyHasBeenSet() const { return m_authorizationStrategyHasBeenSet; }
 
     /**
-     * <p>The authorization strategy that you selected when you created the Data
-     * Store.</p>
+     * <p>The authorization strategy that you selected when you created the data
+     * store.</p>
      */
     inline void SetAuthorizationStrategy(const AuthorizationStrategy& value) { m_authorizationStrategyHasBeenSet = true; m_authorizationStrategy = value; }
 
     /**
-     * <p>The authorization strategy that you selected when you created the Data
-     * Store.</p>
+     * <p>The authorization strategy that you selected when you created the data
+     * store.</p>
      */
     inline void SetAuthorizationStrategy(AuthorizationStrategy&& value) { m_authorizationStrategyHasBeenSet = true; m_authorizationStrategy = std::move(value); }
 
     /**
-     * <p>The authorization strategy that you selected when you created the Data
-     * Store.</p>
+     * <p>The authorization strategy that you selected when you created the data
+     * store.</p>
      */
     inline IdentityProviderConfiguration& WithAuthorizationStrategy(const AuthorizationStrategy& value) { SetAuthorizationStrategy(value); return *this;}
 
     /**
-     * <p>The authorization strategy that you selected when you created the Data
-     * Store.</p>
+     * <p>The authorization strategy that you selected when you created the data
+     * store.</p>
      */
     inline IdentityProviderConfiguration& WithAuthorizationStrategy(AuthorizationStrategy&& value) { SetAuthorizationStrategy(std::move(value)); return *this;}
 
 
     /**
-     * <p>If you enabled fine-grained authorization when you created the Data
-     * Store.</p>
+     * <p>If you enabled fine-grained authorization when you created the data
+     * store.</p>
      */
     inline bool GetFineGrainedAuthorizationEnabled() const{ return m_fineGrainedAuthorizationEnabled; }
 
     /**
-     * <p>If you enabled fine-grained authorization when you created the Data
-     * Store.</p>
+     * <p>If you enabled fine-grained authorization when you created the data
+     * store.</p>
      */
     inline bool FineGrainedAuthorizationEnabledHasBeenSet() const { return m_fineGrainedAuthorizationEnabledHasBeenSet; }
 
     /**
-     * <p>If you enabled fine-grained authorization when you created the Data
-     * Store.</p>
+     * <p>If you enabled fine-grained authorization when you created the data
+     * store.</p>
      */
     inline void SetFineGrainedAuthorizationEnabled(bool value) { m_fineGrainedAuthorizationEnabledHasBeenSet = true; m_fineGrainedAuthorizationEnabled = value; }
 
     /**
-     * <p>If you enabled fine-grained authorization when you created the Data
-     * Store.</p>
+     * <p>If you enabled fine-grained authorization when you created the data
+     * store.</p>
      */
     inline IdentityProviderConfiguration& WithFineGrainedAuthorizationEnabled(bool value) { SetFineGrainedAuthorizationEnabled(value); return *this;}
 

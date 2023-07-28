@@ -142,7 +142,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
      EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"), EpParam("Region", "cn-north-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"DualStack cannot be combined with a Host override (PrivateLink)"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Cannot set dual-stack in combination with a custom endpoint."} // expect
   },
   /*TEST CASE 12*/
   {"Access point ARN with FIPS & Dualstack", // documentation
@@ -783,34 +783,25 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 79*/
-  {"non-bucket endpoint with FIPS: TODO(descriptive)", // documentation
+  {"non-bucket endpoint override with FIPS = error", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "http://beta.example.com:1234/path"), EpParam("Region", "us-west-2"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"http://beta.example.com:1234/path",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 80*/
-  {"FIPS + dualstack + custom endpoint TODO(descriptive)", // documentation
+  {"FIPS + dualstack + custom endpoint", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "http://beta.example.com:1234/path"), EpParam("Region", "us-west-2"),
      EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"http://beta.example.com:1234/path",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Cannot set dual-stack in combination with a custom endpoint."} // expect
   },
   /*TEST CASE 81*/
-  {"dualstack + custom endpoint TODO(descriptive)", // documentation
+  {"dualstack + custom endpoint", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "http://beta.example.com:1234/path"), EpParam("Region", "us-west-2"),
      EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"http://beta.example.com:1234/path",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Cannot set dual-stack in combination with a custom endpoint."} // expect
   },
   /*TEST CASE 82*/
   {"custom endpoint without FIPS/dualstack", // documentation
@@ -919,20 +910,14 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("Endpoint", "http://foo.com"), EpParam("Bucket", "bucket!"),
      EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com/bucket%21",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 94*/
   {"endpoint override + non-dns bucket + FIPS (BUG)", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "http://foo.com"), EpParam("Bucket", "bucket!"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com/bucket%21",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 95*/
   {"FIPS + bucket endpoint + force path style", // documentation
@@ -969,10 +954,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", true), EpParam("Endpoint", "https://foo.com"),
      EpParam("Bucket", "bucket!"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://foo.com/bucket%21",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 99*/
   {"FIPS + path based endpoint", // documentation
@@ -1019,10 +1001,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("UseGlobalEndpoint", true), EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("Endpoint", "http://foo.com"),
      EpParam("Bucket", "bucket!"), EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com/bucket%21",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 104*/
   {"FIPS + Dualstack + global endpoint + non-dns bucket", // documentation
@@ -1035,39 +1014,29 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 105*/
-  {"endpoint override + FIPS + dualstack (this is wrong—it's a bug in the UseGlobalEndpoint branch)", // documentation
+  {"endpoint override + FIPS + dualstack", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", true), EpParam("Endpoint", "http://foo.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Cannot set dual-stack in combination with a custom endpoint."} // expect
   },
   /*TEST CASE 106*/
   {"non-bucket endpoint override + dualstack + global endpoint", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", false), EpParam("Endpoint", "http://foo.com"),
      EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Cannot set dual-stack in combination with a custom endpoint."} // expect
   },
   /*TEST CASE 107*/
   {"Endpoint override + UseGlobalEndpoint + us-east-1", // documentation
     {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", true), EpParam("Endpoint", "http://foo.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 108*/
   {"non-FIPS partition with FIPS set + custom endpoint", // documentation
-    {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", true), EpParam("Endpoint", "http://foo.com"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false)}, // params
+    {EpParam("UseGlobalEndpoint", true), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
@@ -1111,14 +1080,11 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 113*/
-  {"aws-global + fips + custom endpoint (TODO: should be an error)", // documentation
+  {"aws-global + fips + custom endpoint", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "http://foo.com"), EpParam("Bucket", "bucket!"), EpParam("Region", "aws-global"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com/bucket%21",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 114*/
   {"aws-global, endpoint override & path only-bucket", // documentation
@@ -1131,14 +1097,11 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 115*/
-  {"aws-global + dualstack + custom endpoint (TODO: should be an error)", // documentation
+  {"aws-global + dualstack + custom endpoint", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "http://foo.com"), EpParam("Region", "aws-global"), EpParam("Accelerate", false),
      EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Cannot set dual-stack in combination with a custom endpoint."} // expect
   },
   /*TEST CASE 116*/
   {"accelerate, dualstack + aws-global", // documentation
@@ -1151,7 +1114,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 117*/
-  {"FIPS + aws-global + path only bucket. TODO: this should be an error", // documentation
+  {"FIPS + aws-global + path only bucket. This is not supported by S3 but we allow garbage in garbage out", // documentation
     {EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("Bucket", "bucket!"), EpParam("Region", "aws-global"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -1161,23 +1124,17 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 118*/
-  {"aws-global + FIPS + endpoint override. TODO: should this be an error?", // documentation
+  {"aws-global + FIPS + endpoint override.", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "http://foo.com"), EpParam("Region", "aws-global")}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 119*/
-  {"force path style, aws-global & endpoint override", // documentation
+  {"force path style, FIPS, aws-global & endpoint override", // documentation
     {EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("Endpoint", "http://foo.com"), EpParam("Bucket", "bucket!"),
      EpParam("Region", "aws-global")}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com/bucket%21",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 120*/
   {"ip address causes path style to be forced", // documentation
@@ -1192,10 +1149,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
   {"endpoint override with aws-global region", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "http://foo.com"), EpParam("Region", "aws-global"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"http://foo.com",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-east-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Cannot set dual-stack in combination with a custom endpoint."} // expect
   },
   /*TEST CASE 122*/
   {"FIPS + path-only (TODO: consider making this an error)", // documentation
@@ -1603,10 +1557,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
     {EpParam("ForcePathStyle", true), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://s3-fips.cn-north-1.amazonaws.com.cn/bucket-name",
-       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"),
-                                      EpProp("signingName", "s3")}}},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
   /*TEST CASE 170*/
   {"path style + accelerate = error@cn-north-1", // documentation
@@ -1746,7 +1697,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
      EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 185*/
   {"SDK::Host + DualStack@us-west-2", // documentation
@@ -1754,14 +1705,14 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
      EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Cannot set dual-stack in combination with a custom endpoint."} // expect
   },
   /*TEST CASE 186*/
   {"SDK::HOST + accelerate@us-west-2", // documentation
     {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "http://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with S3 Accelerate"} // expect
   },
   /*TEST CASE 187*/
   {"SDK::Host + access point ARN@us-west-2", // documentation
@@ -1797,10 +1748,9 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 190*/
-  {"SDK::Host + FIPS@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
-     EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"), EpParam("Accelerate", false),
-     EpParam("UseDualStack", false)}, // params
+  {"FIPS@cn-north-1", // documentation
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
@@ -1810,7 +1760,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
      EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Cannot set dual-stack in combination with a custom endpoint."} // expect
   },
   /*TEST CASE 192*/
   {"SDK::HOST + accelerate@cn-north-1", // documentation
@@ -1818,7 +1768,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
      EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"), EpParam("Accelerate", true),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"S3 Accelerate cannot be used in this region"} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with S3 Accelerate"} // expect
   },
   /*TEST CASE 193*/
   {"SDK::Host + access point ARN@cn-north-1", // documentation
@@ -1859,7 +1809,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
      EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with FIPS"} // expect
   },
   /*TEST CASE 197*/
   {"SDK::Host + DualStack@af-south-1", // documentation
@@ -1867,7 +1817,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
      EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Cannot set dual-stack in combination with a custom endpoint."} // expect
   },
   /*TEST CASE 198*/
   {"SDK::HOST + accelerate@af-south-1", // documentation
@@ -1875,7 +1825,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
      EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"), EpParam("Accelerate", true),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate"} // expect
+    {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with S3 Accelerate"} // expect
   },
   /*TEST CASE 199*/
   {"SDK::Host + access point ARN@af-south-1", // documentation
@@ -2393,7 +2343,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 258*/
-  {"S3 Outposts Abba Real Outpost Prod us-west-1", // documentation
+  {"S3 Outposts bucketAlias Real Outpost Prod us-west-1", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3"),
      EpParam("Region", "us-west-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -2403,7 +2353,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 259*/
-  {"S3 Outposts Abba Real Outpost Prod ap-east-1", // documentation
+  {"S3 Outposts bucketAlias Real Outpost Prod ap-east-1", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3"),
      EpParam("Region", "ap-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -2413,7 +2363,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 260*/
-  {"S3 Outposts Abba Ec2 Outpost Prod us-east-1", // documentation
+  {"S3 Outposts bucketAlias Ec2 Outpost Prod us-east-1", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-e0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3"),
      EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -2423,7 +2373,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 261*/
-  {"S3 Outposts Abba Ec2 Outpost Prod me-south-1", // documentation
+  {"S3 Outposts bucketAlias Ec2 Outpost Prod me-south-1", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-e0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3"),
      EpParam("Region", "me-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -2433,7 +2383,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 262*/
-  {"S3 Outposts Abba Real Outpost Beta", // documentation
+  {"S3 Outposts bucketAlias Real Outpost Beta", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.amazonaws.com"), EpParam("Bucket", "test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kbeta0--op-s3"),
      EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -2443,7 +2393,7 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 263*/
-  {"S3 Outposts Abba Ec2 Outpost Beta", // documentation
+  {"S3 Outposts bucketAlias Ec2 Outpost Beta", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.amazonaws.com"), EpParam("Bucket", "161743052723-e00000136899934034jeahy1t8gpzpbwjj8kb7beta0--op-s3"),
      EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -2453,28 +2403,28 @@ static const Aws::Vector<S3CrtEndpointProviderEndpointTestCase> TEST_CASES = {
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 264*/
-  {"S3 Outposts Abba - No endpoint set for beta", // documentation
+  {"S3 Outposts bucketAlias - No endpoint set for beta", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kbeta0--op-s3"),
      EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Expected a endpoint to be specified but no endpoint was found"} // expect
   },
   /*TEST CASE 265*/
-  {"S3 Outposts Abba Invalid hardware type", // documentation
+  {"S3 Outposts bucketAlias Invalid hardware type", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-h0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3"),
      EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/R"(Unrecognized hardware type: "Expected hardware type o or e but got h")"} // expect
   },
   /*TEST CASE 266*/
-  {"S3 Outposts Abba Special character in Outpost Arn", // documentation
+  {"S3 Outposts bucketAlias Special character in Outpost Arn", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-o00000754%1d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3"),
      EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`."} // expect
   },
   /*TEST CASE 267*/
-  {"S3 Outposts Abba - No endpoint set for beta", // documentation
+  {"S3 Outposts bucketAlias - No endpoint set for beta", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-e0b1d075431d83bebde8xz5w8ijx1qzlbp3i3ebeta0--op-s3"),
      EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags

@@ -34,7 +34,9 @@ SnapshotInfo::SnapshotInfo() :
     m_progressHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_outpostArnHasBeenSet(false),
+    m_sseType(SSEType::NOT_SET),
+    m_sseTypeHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ SnapshotInfo::SnapshotInfo(const XmlNode& xmlNode) :
     m_progressHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_outpostArnHasBeenSet(false),
+    m_sseType(SSEType::NOT_SET),
+    m_sseTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -135,6 +139,12 @@ SnapshotInfo& SnapshotInfo::operator =(const XmlNode& xmlNode)
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
     }
+    XmlNode sseTypeNode = resultNode.FirstChild("sseType");
+    if(!sseTypeNode.IsNull())
+    {
+      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
+      m_sseTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -203,6 +213,11 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
+  if(m_sseTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+  }
+
 }
 
 void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -256,6 +271,10 @@ void SnapshotInfo::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_outpostArnHasBeenSet)
   {
       oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+  if(m_sseTypeHasBeenSet)
+  {
+      oStream << location << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
   }
 }
 

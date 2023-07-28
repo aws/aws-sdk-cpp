@@ -41,7 +41,10 @@
 #include <aws/securitylake/model/ListDataLakesResult.h>
 #include <aws/securitylake/model/ListLogSourcesResult.h>
 #include <aws/securitylake/model/ListSubscribersResult.h>
+#include <aws/securitylake/model/ListTagsForResourceResult.h>
 #include <aws/securitylake/model/RegisterDataLakeDelegatedAdministratorResult.h>
+#include <aws/securitylake/model/TagResourceResult.h>
+#include <aws/securitylake/model/UntagResourceResult.h>
 #include <aws/securitylake/model/UpdateDataLakeResult.h>
 #include <aws/securitylake/model/UpdateDataLakeExceptionSubscriptionResult.h>
 #include <aws/securitylake/model/UpdateSubscriberResult.h>
@@ -109,7 +112,10 @@ namespace Aws
       class ListDataLakesRequest;
       class ListLogSourcesRequest;
       class ListSubscribersRequest;
+      class ListTagsForResourceRequest;
       class RegisterDataLakeDelegatedAdministratorRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
       class UpdateDataLakeRequest;
       class UpdateDataLakeExceptionSubscriptionRequest;
       class UpdateSubscriberRequest;
@@ -140,7 +146,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListDataLakesResult, SecurityLakeError> ListDataLakesOutcome;
       typedef Aws::Utils::Outcome<ListLogSourcesResult, SecurityLakeError> ListLogSourcesOutcome;
       typedef Aws::Utils::Outcome<ListSubscribersResult, SecurityLakeError> ListSubscribersOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, SecurityLakeError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<RegisterDataLakeDelegatedAdministratorResult, SecurityLakeError> RegisterDataLakeDelegatedAdministratorOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, SecurityLakeError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, SecurityLakeError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateDataLakeResult, SecurityLakeError> UpdateDataLakeOutcome;
       typedef Aws::Utils::Outcome<UpdateDataLakeExceptionSubscriptionResult, SecurityLakeError> UpdateDataLakeExceptionSubscriptionOutcome;
       typedef Aws::Utils::Outcome<UpdateSubscriberResult, SecurityLakeError> UpdateSubscriberOutcome;
@@ -171,7 +180,10 @@ namespace Aws
       typedef std::future<ListDataLakesOutcome> ListDataLakesOutcomeCallable;
       typedef std::future<ListLogSourcesOutcome> ListLogSourcesOutcomeCallable;
       typedef std::future<ListSubscribersOutcome> ListSubscribersOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<RegisterDataLakeDelegatedAdministratorOutcome> RegisterDataLakeDelegatedAdministratorOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateDataLakeOutcome> UpdateDataLakeOutcomeCallable;
       typedef std::future<UpdateDataLakeExceptionSubscriptionOutcome> UpdateDataLakeExceptionSubscriptionOutcomeCallable;
       typedef std::future<UpdateSubscriberOutcome> UpdateSubscriberOutcomeCallable;
@@ -205,7 +217,10 @@ namespace Aws
     typedef std::function<void(const SecurityLakeClient*, const Model::ListDataLakesRequest&, const Model::ListDataLakesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataLakesResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::ListLogSourcesRequest&, const Model::ListLogSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogSourcesResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::ListSubscribersRequest&, const Model::ListSubscribersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscribersResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::RegisterDataLakeDelegatedAdministratorRequest&, const Model::RegisterDataLakeDelegatedAdministratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDataLakeDelegatedAdministratorResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::UpdateDataLakeRequest&, const Model::UpdateDataLakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataLakeResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::UpdateDataLakeExceptionSubscriptionRequest&, const Model::UpdateDataLakeExceptionSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataLakeExceptionSubscriptionResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::UpdateSubscriberRequest&, const Model::UpdateSubscriberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriberResponseReceivedHandler;

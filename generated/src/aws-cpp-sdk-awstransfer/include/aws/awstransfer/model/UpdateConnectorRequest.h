@@ -8,6 +8,7 @@
 #include <aws/awstransfer/TransferRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/awstransfer/model/As2ConnectorConfig.h>
+#include <aws/awstransfer/model/SftpConnectorConfig.h>
 #include <utility>
 
 namespace Aws
@@ -77,73 +78,73 @@ namespace Model
 
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline UpdateConnectorRequest& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline UpdateConnectorRequest& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the partner's AS2 endpoint.</p>
+     * <p>The URL of the partner's AS2 or SFTP endpoint.</p>
      */
     inline UpdateConnectorRequest& WithUrl(const char* value) { SetUrl(value); return *this;}
 
 
     /**
-     * <p>A structure that contains the parameters for a connector object.</p>
+     * <p>A structure that contains the parameters for an AS2 connector object.</p>
      */
     inline const As2ConnectorConfig& GetAs2Config() const{ return m_as2Config; }
 
     /**
-     * <p>A structure that contains the parameters for a connector object.</p>
+     * <p>A structure that contains the parameters for an AS2 connector object.</p>
      */
     inline bool As2ConfigHasBeenSet() const { return m_as2ConfigHasBeenSet; }
 
     /**
-     * <p>A structure that contains the parameters for a connector object.</p>
+     * <p>A structure that contains the parameters for an AS2 connector object.</p>
      */
     inline void SetAs2Config(const As2ConnectorConfig& value) { m_as2ConfigHasBeenSet = true; m_as2Config = value; }
 
     /**
-     * <p>A structure that contains the parameters for a connector object.</p>
+     * <p>A structure that contains the parameters for an AS2 connector object.</p>
      */
     inline void SetAs2Config(As2ConnectorConfig&& value) { m_as2ConfigHasBeenSet = true; m_as2Config = std::move(value); }
 
     /**
-     * <p>A structure that contains the parameters for a connector object.</p>
+     * <p>A structure that contains the parameters for an AS2 connector object.</p>
      */
     inline UpdateConnectorRequest& WithAs2Config(const As2ConnectorConfig& value) { SetAs2Config(value); return *this;}
 
     /**
-     * <p>A structure that contains the parameters for a connector object.</p>
+     * <p>A structure that contains the parameters for an AS2 connector object.</p>
      */
     inline UpdateConnectorRequest& WithAs2Config(As2ConnectorConfig&& value) { SetAs2Config(std::move(value)); return *this;}
 
@@ -365,6 +366,37 @@ namespace Model
      */
     inline UpdateConnectorRequest& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 
+
+    /**
+     * <p>A structure that contains the parameters for an SFTP connector object.</p>
+     */
+    inline const SftpConnectorConfig& GetSftpConfig() const{ return m_sftpConfig; }
+
+    /**
+     * <p>A structure that contains the parameters for an SFTP connector object.</p>
+     */
+    inline bool SftpConfigHasBeenSet() const { return m_sftpConfigHasBeenSet; }
+
+    /**
+     * <p>A structure that contains the parameters for an SFTP connector object.</p>
+     */
+    inline void SetSftpConfig(const SftpConnectorConfig& value) { m_sftpConfigHasBeenSet = true; m_sftpConfig = value; }
+
+    /**
+     * <p>A structure that contains the parameters for an SFTP connector object.</p>
+     */
+    inline void SetSftpConfig(SftpConnectorConfig&& value) { m_sftpConfigHasBeenSet = true; m_sftpConfig = std::move(value); }
+
+    /**
+     * <p>A structure that contains the parameters for an SFTP connector object.</p>
+     */
+    inline UpdateConnectorRequest& WithSftpConfig(const SftpConnectorConfig& value) { SetSftpConfig(value); return *this;}
+
+    /**
+     * <p>A structure that contains the parameters for an SFTP connector object.</p>
+     */
+    inline UpdateConnectorRequest& WithSftpConfig(SftpConnectorConfig&& value) { SetSftpConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_connectorId;
@@ -381,6 +413,9 @@ namespace Model
 
     Aws::String m_loggingRole;
     bool m_loggingRoleHasBeenSet = false;
+
+    SftpConnectorConfig m_sftpConfig;
+    bool m_sftpConfigHasBeenSet = false;
   };
 
 } // namespace Model

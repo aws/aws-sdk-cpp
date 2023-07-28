@@ -36,37 +36,44 @@ namespace Model
 
 
     /**
-     * <p>The response to each PartiQL statement in the batch.</p>
+     * <p>The response to each PartiQL statement in the batch. The values of the list
+     * are ordered according to the ordering of the request statements.</p>
      */
     inline const Aws::Vector<BatchStatementResponse>& GetResponses() const{ return m_responses; }
 
     /**
-     * <p>The response to each PartiQL statement in the batch.</p>
+     * <p>The response to each PartiQL statement in the batch. The values of the list
+     * are ordered according to the ordering of the request statements.</p>
      */
     inline void SetResponses(const Aws::Vector<BatchStatementResponse>& value) { m_responses = value; }
 
     /**
-     * <p>The response to each PartiQL statement in the batch.</p>
+     * <p>The response to each PartiQL statement in the batch. The values of the list
+     * are ordered according to the ordering of the request statements.</p>
      */
     inline void SetResponses(Aws::Vector<BatchStatementResponse>&& value) { m_responses = std::move(value); }
 
     /**
-     * <p>The response to each PartiQL statement in the batch.</p>
+     * <p>The response to each PartiQL statement in the batch. The values of the list
+     * are ordered according to the ordering of the request statements.</p>
      */
     inline BatchExecuteStatementResult& WithResponses(const Aws::Vector<BatchStatementResponse>& value) { SetResponses(value); return *this;}
 
     /**
-     * <p>The response to each PartiQL statement in the batch.</p>
+     * <p>The response to each PartiQL statement in the batch. The values of the list
+     * are ordered according to the ordering of the request statements.</p>
      */
     inline BatchExecuteStatementResult& WithResponses(Aws::Vector<BatchStatementResponse>&& value) { SetResponses(std::move(value)); return *this;}
 
     /**
-     * <p>The response to each PartiQL statement in the batch.</p>
+     * <p>The response to each PartiQL statement in the batch. The values of the list
+     * are ordered according to the ordering of the request statements.</p>
      */
     inline BatchExecuteStatementResult& AddResponses(const BatchStatementResponse& value) { m_responses.push_back(value); return *this; }
 
     /**
-     * <p>The response to each PartiQL statement in the batch.</p>
+     * <p>The response to each PartiQL statement in the batch. The values of the list
+     * are ordered according to the ordering of the request statements.</p>
      */
     inline BatchExecuteStatementResult& AddResponses(BatchStatementResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
 

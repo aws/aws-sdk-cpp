@@ -89,6 +89,42 @@ namespace Model
     inline DescribeWorkspaceConfigurationResult& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 
 
+    /**
+     * <p>The supported Grafana version for the workspace.</p>
+     */
+    inline const Aws::String& GetGrafanaVersion() const{ return m_grafanaVersion; }
+
+    /**
+     * <p>The supported Grafana version for the workspace.</p>
+     */
+    inline void SetGrafanaVersion(const Aws::String& value) { m_grafanaVersion = value; }
+
+    /**
+     * <p>The supported Grafana version for the workspace.</p>
+     */
+    inline void SetGrafanaVersion(Aws::String&& value) { m_grafanaVersion = std::move(value); }
+
+    /**
+     * <p>The supported Grafana version for the workspace.</p>
+     */
+    inline void SetGrafanaVersion(const char* value) { m_grafanaVersion.assign(value); }
+
+    /**
+     * <p>The supported Grafana version for the workspace.</p>
+     */
+    inline DescribeWorkspaceConfigurationResult& WithGrafanaVersion(const Aws::String& value) { SetGrafanaVersion(value); return *this;}
+
+    /**
+     * <p>The supported Grafana version for the workspace.</p>
+     */
+    inline DescribeWorkspaceConfigurationResult& WithGrafanaVersion(Aws::String&& value) { SetGrafanaVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported Grafana version for the workspace.</p>
+     */
+    inline DescribeWorkspaceConfigurationResult& WithGrafanaVersion(const char* value) { SetGrafanaVersion(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -113,6 +149,8 @@ namespace Model
   private:
 
     Aws::String m_configuration;
+
+    Aws::String m_grafanaVersion;
 
     Aws::String m_requestId;
   };

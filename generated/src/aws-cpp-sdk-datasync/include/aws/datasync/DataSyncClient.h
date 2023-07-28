@@ -16,12 +16,12 @@ namespace Aws
 namespace DataSync
 {
   /**
-   * <fullname>DataSync</fullname> <p>DataSync is a managed data transfer service
-   * that makes it simpler for you to automate moving data between on-premises
-   * storage and Amazon Web Services storage services. You also can use DataSync to
-   * transfer data between other cloud providers and Amazon Web Services storage
-   * services.</p> <p>This API interface reference includes documentation for using
-   * DataSync programmatically. For complete information, see the <i> <a
+   * <fullname>DataSync</fullname> <p>DataSync is an online data movement and
+   * discovery service that simplifies data migration and helps you quickly, easily,
+   * and securely transfer your file or object data to, from, and between Amazon Web
+   * Services storage services.</p> <p>This API interface reference includes
+   * documentation for using DataSync programmatically. For complete information, see
+   * the <i> <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync
    * User Guide</a> </i>.</p>
    */
@@ -143,21 +143,16 @@ namespace DataSync
         }
 
         /**
-         * <p>Activates an DataSync agent that you have deployed in your storage
-         * environment. The activation process associates your agent with your account. In
-         * the activation process, you specify information such as the Amazon Web Services
-         * Region that you want to activate the agent in. You activate the agent in the
-         * Amazon Web Services Region where your target locations (in Amazon S3 or Amazon
-         * EFS) reside. Your tasks are created in this Amazon Web Services Region.</p>
-         * <p>You can activate the agent in a VPC (virtual private cloud) or provide the
-         * agent access to a VPC endpoint so you can run tasks without going over the
-         * public internet.</p> <p>You can use an agent for more than one location. If a
-         * task uses multiple agents, all of them need to have status AVAILABLE for the
-         * task to run. If you use multiple agents for a source location, the status of all
-         * the agents must be AVAILABLE for the task to run. </p> <p>Agents are
-         * automatically updated by Amazon Web Services on a regular basis, using a
-         * mechanism that ensures minimal interruption to your tasks.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Activates an DataSync agent that you've deployed in your storage environment.
+         * The activation process associates the agent with your Amazon Web Services
+         * account.</p> <p>If you haven't deployed an agent yet, see the following topics
+         * to learn more:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/agent-requirements.html">Agent
+         * requirements</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-agent.html">Create
+         * an agent</a> </p> </li> </ul>  <p>If you're transferring between Amazon
+         * Web Services storage services, you don't need a DataSync agent. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">AWS
          * API Reference</a></p>
          */
@@ -179,6 +174,41 @@ namespace DataSync
         void CreateAgentAsync(const CreateAgentRequestT& request, const CreateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataSyncClient::CreateAgent, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an endpoint for a Microsoft Azure Blob Storage container that
+         * DataSync can use as a transfer source or destination.</p> <p>Before you begin,
+         * make sure you know <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
+         * DataSync accesses Azure Blob Storage</a> and works with <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">access
+         * tiers</a> and <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
+         * types</a>. You also need a <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent">DataSync
+         * agent</a> that can connect to your container.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocationAzureBlobOutcome CreateLocationAzureBlob(const Model::CreateLocationAzureBlobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLocationAzureBlob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLocationAzureBlobRequestT = Model::CreateLocationAzureBlobRequest>
+        Model::CreateLocationAzureBlobOutcomeCallable CreateLocationAzureBlobCallable(const CreateLocationAzureBlobRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::CreateLocationAzureBlob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLocationAzureBlob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLocationAzureBlobRequestT = Model::CreateLocationAzureBlobRequest>
+        void CreateLocationAzureBlobAsync(const CreateLocationAzureBlobRequestT& request, const CreateLocationAzureBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::CreateLocationAzureBlob, request, handler, context);
         }
 
         /**
@@ -346,8 +376,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Defines a file system on a Network File System (NFS) server that can be read
-         * from or written to.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an endpoint for an Network File System (NFS) file server that
+         * DataSync can use for a data transfer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationNfs">AWS
          * API Reference</a></p>
          */
@@ -436,9 +466,10 @@ namespace DataSync
 
         /**
          * <p>Creates an endpoint for a Server Message Block (SMB) file server that
-         * DataSync can access for a transfer. For more information, see <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
-         * an SMB location</a>.</p><p><h3>See Also:</h3>   <a
+         * DataSync can use for a data transfer.</p> <p>Before you begin, make sure that
+         * you understand how DataSync <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses
+         * an SMB file server</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          */
@@ -625,6 +656,32 @@ namespace DataSync
         void DescribeDiscoveryJobAsync(const DescribeDiscoveryJobRequestT& request, const DescribeDiscoveryJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataSyncClient::DescribeDiscoveryJob, request, handler, context);
+        }
+
+        /**
+         * <p>Provides details about how an DataSync transfer location for Microsoft Azure
+         * Blob Storage is configured.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLocationAzureBlobOutcome DescribeLocationAzureBlob(const Model::DescribeLocationAzureBlobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeLocationAzureBlob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeLocationAzureBlobRequestT = Model::DescribeLocationAzureBlobRequest>
+        Model::DescribeLocationAzureBlobOutcomeCallable DescribeLocationAzureBlobCallable(const DescribeLocationAzureBlobRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::DescribeLocationAzureBlob, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeLocationAzureBlob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeLocationAzureBlobRequestT = Model::DescribeLocationAzureBlobRequest>
+        void DescribeLocationAzureBlobAsync(const DescribeLocationAzureBlobRequestT& request, const DescribeLocationAzureBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::DescribeLocationAzureBlob, request, handler, context);
         }
 
         /**
@@ -972,7 +1029,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns metadata about a task.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides information about an DataSync transfer task.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTask">AWS
          * API Reference</a></p>
          */
@@ -997,8 +1055,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Returns detailed metadata about a task that is being executed.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides information about an DataSync transfer task that's
+         * running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">AWS
          * API Reference</a></p>
          */
@@ -1478,6 +1536,32 @@ namespace DataSync
         void UpdateDiscoveryJobAsync(const UpdateDiscoveryJobRequestT& request, const UpdateDiscoveryJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataSyncClient::UpdateDiscoveryJob, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies some configurations of the Microsoft Azure Blob Storage transfer
+         * location that you're using with DataSync.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLocationAzureBlobOutcome UpdateLocationAzureBlob(const Model::UpdateLocationAzureBlobRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLocationAzureBlob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLocationAzureBlobRequestT = Model::UpdateLocationAzureBlobRequest>
+        Model::UpdateLocationAzureBlobOutcomeCallable UpdateLocationAzureBlobCallable(const UpdateLocationAzureBlobRequestT& request) const
+        {
+            return SubmitCallable(&DataSyncClient::UpdateLocationAzureBlob, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLocationAzureBlob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLocationAzureBlobRequestT = Model::UpdateLocationAzureBlobRequest>
+        void UpdateLocationAzureBlobAsync(const UpdateLocationAzureBlobRequestT& request, const UpdateLocationAzureBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataSyncClient::UpdateLocationAzureBlob, request, handler, context);
         }
 
         /**

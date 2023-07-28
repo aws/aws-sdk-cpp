@@ -105,7 +105,7 @@ namespace Model
 
 
     /**
-     * <p>For <code>SCTE35_ENHANCED</code> output, defines a vaue. MediaTailor; takes
+     * <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes
      * this value, and its associated key, and generates the key/value pair within the
      * <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a
      * corresponding key.</p>
@@ -113,7 +113,7 @@ namespace Model
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>For <code>SCTE35_ENHANCED</code> output, defines a vaue. MediaTailor; takes
+     * <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes
      * this value, and its associated key, and generates the key/value pair within the
      * <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a
      * corresponding key.</p>
@@ -121,7 +121,7 @@ namespace Model
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>For <code>SCTE35_ENHANCED</code> output, defines a vaue. MediaTailor; takes
+     * <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes
      * this value, and its associated key, and generates the key/value pair within the
      * <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a
      * corresponding key.</p>
@@ -129,7 +129,7 @@ namespace Model
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>For <code>SCTE35_ENHANCED</code> output, defines a vaue. MediaTailor; takes
+     * <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes
      * this value, and its associated key, and generates the key/value pair within the
      * <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a
      * corresponding key.</p>
@@ -137,7 +137,7 @@ namespace Model
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>For <code>SCTE35_ENHANCED</code> output, defines a vaue. MediaTailor; takes
+     * <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes
      * this value, and its associated key, and generates the key/value pair within the
      * <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a
      * corresponding key.</p>
@@ -145,7 +145,7 @@ namespace Model
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>For <code>SCTE35_ENHANCED</code> output, defines a vaue. MediaTailor; takes
+     * <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes
      * this value, and its associated key, and generates the key/value pair within the
      * <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a
      * corresponding key.</p>
@@ -153,7 +153,7 @@ namespace Model
     inline KeyValuePair& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>For <code>SCTE35_ENHANCED</code> output, defines a vaue. MediaTailor; takes
+     * <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes
      * this value, and its associated key, and generates the key/value pair within the
      * <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a
      * corresponding key.</p>
@@ -161,7 +161,7 @@ namespace Model
     inline KeyValuePair& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>For <code>SCTE35_ENHANCED</code> output, defines a vaue. MediaTailor; takes
+     * <p>For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes
      * this value, and its associated key, and generates the key/value pair within the
      * <code>EXT-X-ASSET</code>tag. If you specify a value, you must also specify a
      * corresponding key.</p>

@@ -176,7 +176,8 @@ namespace ConnectCases
          * API. You need specific IAM permissions to successfully associate the Cases
          * domain. For more information, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
-         * to Cases</a>.</p> <p><h3>See Also:</h3>   <a
+         * to Cases</a>.</p> <pre><code> &lt;/important&gt; </code></pre><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateDomain">AWS
          * API Reference</a></p>
          */
@@ -320,7 +321,12 @@ namespace ConnectCases
         }
 
         /**
-         * <p>Deletes a domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Cases domain.</p> <pre><code> &lt;note&gt; &lt;p&gt;After deleting
+         * your domain you must disassociate the deleted domain from your Amazon Connect
+         * instance with another API call before being able to use Cases again with this
+         * Amazon Connect instance. See &lt;a
+         * href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt;
+         * &lt;/note&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteDomain">AWS
          * API Reference</a></p>
          */

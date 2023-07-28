@@ -23,6 +23,7 @@ FieldValueUnion::FieldValueUnion() :
     m_booleanValueHasBeenSet(false),
     m_doubleValue(0.0),
     m_doubleValueHasBeenSet(false),
+    m_emptyValueHasBeenSet(false),
     m_stringValueHasBeenSet(false)
 {
 }
@@ -32,6 +33,7 @@ FieldValueUnion::FieldValueUnion(JsonView jsonValue) :
     m_booleanValueHasBeenSet(false),
     m_doubleValue(0.0),
     m_doubleValueHasBeenSet(false),
+    m_emptyValueHasBeenSet(false),
     m_stringValueHasBeenSet(false)
 {
   *this = jsonValue;
@@ -51,6 +53,13 @@ FieldValueUnion& FieldValueUnion::operator =(JsonView jsonValue)
     m_doubleValue = jsonValue.GetDouble("doubleValue");
 
     m_doubleValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("emptyValue"))
+  {
+    m_emptyValue = jsonValue.GetObject("emptyValue");
+
+    m_emptyValueHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("stringValue"))
@@ -76,6 +85,12 @@ JsonValue FieldValueUnion::Jsonize() const
   if(m_doubleValueHasBeenSet)
   {
    payload.WithDouble("doubleValue", m_doubleValue);
+
+  }
+
+  if(m_emptyValueHasBeenSet)
+  {
+   payload.WithObject("emptyValue", m_emptyValue.Jsonize());
 
   }
 

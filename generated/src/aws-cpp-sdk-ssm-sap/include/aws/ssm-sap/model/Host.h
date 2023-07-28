@@ -80,37 +80,6 @@ namespace Model
 
 
     /**
-     * <p>The role of the Dedicated Host.</p>
-     */
-    inline const HostRole& GetHostRole() const{ return m_hostRole; }
-
-    /**
-     * <p>The role of the Dedicated Host.</p>
-     */
-    inline bool HostRoleHasBeenSet() const { return m_hostRoleHasBeenSet; }
-
-    /**
-     * <p>The role of the Dedicated Host.</p>
-     */
-    inline void SetHostRole(const HostRole& value) { m_hostRoleHasBeenSet = true; m_hostRole = value; }
-
-    /**
-     * <p>The role of the Dedicated Host.</p>
-     */
-    inline void SetHostRole(HostRole&& value) { m_hostRoleHasBeenSet = true; m_hostRole = std::move(value); }
-
-    /**
-     * <p>The role of the Dedicated Host.</p>
-     */
-    inline Host& WithHostRole(const HostRole& value) { SetHostRole(value); return *this;}
-
-    /**
-     * <p>The role of the Dedicated Host.</p>
-     */
-    inline Host& WithHostRole(HostRole&& value) { SetHostRole(std::move(value)); return *this;}
-
-
-    /**
      * <p>The IP address of the Dedicated Host. </p>
      */
     inline const Aws::String& GetHostIp() const{ return m_hostIp; }
@@ -149,6 +118,47 @@ namespace Model
      * <p>The IP address of the Dedicated Host. </p>
      */
     inline Host& WithHostIp(const char* value) { SetHostIp(value); return *this;}
+
+
+    /**
+     * <p>The ID of Amazon EC2 instance.</p>
+     */
+    inline const Aws::String& GetEC2InstanceId() const{ return m_eC2InstanceId; }
+
+    /**
+     * <p>The ID of Amazon EC2 instance.</p>
+     */
+    inline bool EC2InstanceIdHasBeenSet() const { return m_eC2InstanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of Amazon EC2 instance.</p>
+     */
+    inline void SetEC2InstanceId(const Aws::String& value) { m_eC2InstanceIdHasBeenSet = true; m_eC2InstanceId = value; }
+
+    /**
+     * <p>The ID of Amazon EC2 instance.</p>
+     */
+    inline void SetEC2InstanceId(Aws::String&& value) { m_eC2InstanceIdHasBeenSet = true; m_eC2InstanceId = std::move(value); }
+
+    /**
+     * <p>The ID of Amazon EC2 instance.</p>
+     */
+    inline void SetEC2InstanceId(const char* value) { m_eC2InstanceIdHasBeenSet = true; m_eC2InstanceId.assign(value); }
+
+    /**
+     * <p>The ID of Amazon EC2 instance.</p>
+     */
+    inline Host& WithEC2InstanceId(const Aws::String& value) { SetEC2InstanceId(value); return *this;}
+
+    /**
+     * <p>The ID of Amazon EC2 instance.</p>
+     */
+    inline Host& WithEC2InstanceId(Aws::String&& value) { SetEC2InstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of Amazon EC2 instance.</p>
+     */
+    inline Host& WithEC2InstanceId(const char* value) { SetEC2InstanceId(value); return *this;}
 
 
     /**
@@ -191,19 +201,97 @@ namespace Model
      */
     inline Host& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
+    /**
+     * <p>The role of the Dedicated Host.</p>
+     */
+    inline const HostRole& GetHostRole() const{ return m_hostRole; }
+
+    /**
+     * <p>The role of the Dedicated Host.</p>
+     */
+    inline bool HostRoleHasBeenSet() const { return m_hostRoleHasBeenSet; }
+
+    /**
+     * <p>The role of the Dedicated Host.</p>
+     */
+    inline void SetHostRole(const HostRole& value) { m_hostRoleHasBeenSet = true; m_hostRole = value; }
+
+    /**
+     * <p>The role of the Dedicated Host.</p>
+     */
+    inline void SetHostRole(HostRole&& value) { m_hostRoleHasBeenSet = true; m_hostRole = std::move(value); }
+
+    /**
+     * <p>The role of the Dedicated Host.</p>
+     */
+    inline Host& WithHostRole(const HostRole& value) { SetHostRole(value); return *this;}
+
+    /**
+     * <p>The role of the Dedicated Host.</p>
+     */
+    inline Host& WithHostRole(HostRole&& value) { SetHostRole(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The version of the operating system.</p>
+     */
+    inline const Aws::String& GetOsVersion() const{ return m_osVersion; }
+
+    /**
+     * <p>The version of the operating system.</p>
+     */
+    inline bool OsVersionHasBeenSet() const { return m_osVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the operating system.</p>
+     */
+    inline void SetOsVersion(const Aws::String& value) { m_osVersionHasBeenSet = true; m_osVersion = value; }
+
+    /**
+     * <p>The version of the operating system.</p>
+     */
+    inline void SetOsVersion(Aws::String&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::move(value); }
+
+    /**
+     * <p>The version of the operating system.</p>
+     */
+    inline void SetOsVersion(const char* value) { m_osVersionHasBeenSet = true; m_osVersion.assign(value); }
+
+    /**
+     * <p>The version of the operating system.</p>
+     */
+    inline Host& WithOsVersion(const Aws::String& value) { SetOsVersion(value); return *this;}
+
+    /**
+     * <p>The version of the operating system.</p>
+     */
+    inline Host& WithOsVersion(Aws::String&& value) { SetOsVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the operating system.</p>
+     */
+    inline Host& WithOsVersion(const char* value) { SetOsVersion(value); return *this;}
+
   private:
 
     Aws::String m_hostName;
     bool m_hostNameHasBeenSet = false;
 
-    HostRole m_hostRole;
-    bool m_hostRoleHasBeenSet = false;
-
     Aws::String m_hostIp;
     bool m_hostIpHasBeenSet = false;
 
+    Aws::String m_eC2InstanceId;
+    bool m_eC2InstanceIdHasBeenSet = false;
+
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
+
+    HostRole m_hostRole;
+    bool m_hostRoleHasBeenSet = false;
+
+    Aws::String m_osVersion;
+    bool m_osVersionHasBeenSet = false;
   };
 
 } // namespace Model

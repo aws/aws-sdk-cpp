@@ -576,42 +576,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The user agent whose actions are recorded in the event.</p>
      */
     inline const Aws::String& GetUserAgent() const{ return m_userAgent; }
 
     /**
-     * <p/>
+     * <p>The user agent whose actions are recorded in the event.</p>
      */
     inline bool UserAgentHasBeenSet() const { return m_userAgentHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The user agent whose actions are recorded in the event.</p>
      */
     inline void SetUserAgent(const Aws::String& value) { m_userAgentHasBeenSet = true; m_userAgent = value; }
 
     /**
-     * <p/>
+     * <p>The user agent whose actions are recorded in the event.</p>
      */
     inline void SetUserAgent(Aws::String&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The user agent whose actions are recorded in the event.</p>
      */
     inline void SetUserAgent(const char* value) { m_userAgentHasBeenSet = true; m_userAgent.assign(value); }
 
     /**
-     * <p/>
+     * <p>The user agent whose actions are recorded in the event.</p>
      */
     inline EventLogEntry& WithUserAgent(const Aws::String& value) { SetUserAgent(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The user agent whose actions are recorded in the event.</p>
      */
     inline EventLogEntry& WithUserAgent(Aws::String&& value) { SetUserAgent(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The user agent whose actions are recorded in the event.</p>
      */
     inline EventLogEntry& WithUserAgent(const char* value) { SetUserAgent(value); return *this;}
 

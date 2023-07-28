@@ -37,50 +37,50 @@ namespace Model
 
 
     /**
-     * <p> This parameter limits the response to the export job with the specified Data
-     * Store ID. </p>
+     * <p> This parameter limits the response to the export job with the specified data
+     * store ID. </p>
      */
     inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
 
     /**
-     * <p> This parameter limits the response to the export job with the specified Data
-     * Store ID. </p>
+     * <p> This parameter limits the response to the export job with the specified data
+     * store ID. </p>
      */
     inline bool DatastoreIdHasBeenSet() const { return m_datastoreIdHasBeenSet; }
 
     /**
-     * <p> This parameter limits the response to the export job with the specified Data
-     * Store ID. </p>
+     * <p> This parameter limits the response to the export job with the specified data
+     * store ID. </p>
      */
     inline void SetDatastoreId(const Aws::String& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = value; }
 
     /**
-     * <p> This parameter limits the response to the export job with the specified Data
-     * Store ID. </p>
+     * <p> This parameter limits the response to the export job with the specified data
+     * store ID. </p>
      */
     inline void SetDatastoreId(Aws::String&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::move(value); }
 
     /**
-     * <p> This parameter limits the response to the export job with the specified Data
-     * Store ID. </p>
+     * <p> This parameter limits the response to the export job with the specified data
+     * store ID. </p>
      */
     inline void SetDatastoreId(const char* value) { m_datastoreIdHasBeenSet = true; m_datastoreId.assign(value); }
 
     /**
-     * <p> This parameter limits the response to the export job with the specified Data
-     * Store ID. </p>
+     * <p> This parameter limits the response to the export job with the specified data
+     * store ID. </p>
      */
     inline ListFHIRExportJobsRequest& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
 
     /**
-     * <p> This parameter limits the response to the export job with the specified Data
-     * Store ID. </p>
+     * <p> This parameter limits the response to the export job with the specified data
+     * store ID. </p>
      */
     inline ListFHIRExportJobsRequest& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
 
     /**
-     * <p> This parameter limits the response to the export job with the specified Data
-     * Store ID. </p>
+     * <p> This parameter limits the response to the export job with the specified data
+     * store ID. </p>
      */
     inline ListFHIRExportJobsRequest& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
 

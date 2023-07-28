@@ -238,11 +238,11 @@ namespace Model
      * <p>Encryption mode that you can specify to encrypt the results of this
      * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
-     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> ��� The server-side
-     * encryption provided as a default by Amazon S3.</p> </li> <li> <p>
-     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This
-     * encryption can use either a custom KMS encryption key that you specify or the
-     * default KMS encryption key that DMS provides.</p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
+     * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline const Aws::String& GetResultEncryptionMode() const{ return m_resultEncryptionMode; }
 
@@ -250,11 +250,11 @@ namespace Model
      * <p>Encryption mode that you can specify to encrypt the results of this
      * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
-     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> ��� The server-side
-     * encryption provided as a default by Amazon S3.</p> </li> <li> <p>
-     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This
-     * encryption can use either a custom KMS encryption key that you specify or the
-     * default KMS encryption key that DMS provides.</p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
+     * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline bool ResultEncryptionModeHasBeenSet() const { return m_resultEncryptionModeHasBeenSet; }
 
@@ -262,11 +262,11 @@ namespace Model
      * <p>Encryption mode that you can specify to encrypt the results of this
      * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
-     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> ��� The server-side
-     * encryption provided as a default by Amazon S3.</p> </li> <li> <p>
-     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This
-     * encryption can use either a custom KMS encryption key that you specify or the
-     * default KMS encryption key that DMS provides.</p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
+     * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline void SetResultEncryptionMode(const Aws::String& value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode = value; }
 
@@ -274,11 +274,11 @@ namespace Model
      * <p>Encryption mode that you can specify to encrypt the results of this
      * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
-     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> ��� The server-side
-     * encryption provided as a default by Amazon S3.</p> </li> <li> <p>
-     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This
-     * encryption can use either a custom KMS encryption key that you specify or the
-     * default KMS encryption key that DMS provides.</p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
+     * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline void SetResultEncryptionMode(Aws::String&& value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode = std::move(value); }
 
@@ -286,11 +286,11 @@ namespace Model
      * <p>Encryption mode that you can specify to encrypt the results of this
      * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
-     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> ��� The server-side
-     * encryption provided as a default by Amazon S3.</p> </li> <li> <p>
-     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This
-     * encryption can use either a custom KMS encryption key that you specify or the
-     * default KMS encryption key that DMS provides.</p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
+     * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline void SetResultEncryptionMode(const char* value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode.assign(value); }
 
@@ -298,11 +298,11 @@ namespace Model
      * <p>Encryption mode that you can specify to encrypt the results of this
      * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
-     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> ��� The server-side
-     * encryption provided as a default by Amazon S3.</p> </li> <li> <p>
-     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This
-     * encryption can use either a custom KMS encryption key that you specify or the
-     * default KMS encryption key that DMS provides.</p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
+     * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultEncryptionMode(const Aws::String& value) { SetResultEncryptionMode(value); return *this;}
 
@@ -310,11 +310,11 @@ namespace Model
      * <p>Encryption mode that you can specify to encrypt the results of this
      * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
-     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> ��� The server-side
-     * encryption provided as a default by Amazon S3.</p> </li> <li> <p>
-     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This
-     * encryption can use either a custom KMS encryption key that you specify or the
-     * default KMS encryption key that DMS provides.</p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
+     * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultEncryptionMode(Aws::String&& value) { SetResultEncryptionMode(std::move(value)); return *this;}
 
@@ -322,11 +322,11 @@ namespace Model
      * <p>Encryption mode that you can specify to encrypt the results of this
      * assessment run. If you don't specify this request parameter, DMS stores the
      * assessment run results without encryption. You can specify one of the options
-     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> ��� The server-side
-     * encryption provided as a default by Amazon S3.</p> </li> <li> <p>
-     * <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This
-     * encryption can use either a custom KMS encryption key that you specify or the
-     * default KMS encryption key that DMS provides.</p> </li> </ul>
+     * following:</p> <ul> <li> <p> <code>"SSE_S3"</code> – The server-side encryption
+     * provided as a default by Amazon S3.</p> </li> <li> <p> <code>"SSE_KMS"</code> –
+     * Key Management Service (KMS) encryption. This encryption can use either a custom
+     * KMS encryption key that you specify or the default KMS encryption key that DMS
+     * provides.</p> </li> </ul>
      */
     inline StartReplicationTaskAssessmentRunRequest& WithResultEncryptionMode(const char* value) { SetResultEncryptionMode(value); return *this;}
 

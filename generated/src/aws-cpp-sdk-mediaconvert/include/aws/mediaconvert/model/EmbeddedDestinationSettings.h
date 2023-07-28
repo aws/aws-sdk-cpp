@@ -25,10 +25,8 @@ namespace Model
    * Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or
    * ancillary) captions. Set up embedded captions in the same output as your video.
    * For more information, see
-   * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
-   * When you work directly in your JSON job specification, include this object and
-   * any required children when you set destinationType to EMBEDDED,
-   * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.<p><h3>See Also:</h3>   <a
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/EmbeddedDestinationSettings">AWS
    * API Reference</a></p>
    */
@@ -82,11 +80,10 @@ namespace Model
      * Ignore this setting unless your input captions are SCC format and you want both
      * 608 and 708 captions embedded in your output stream. Optionally, specify the 708
      * service number for each output captions channel. Choose a different number for
-     * each channel. To use this setting, also set Force 608 to 708 upconvert
-     * (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector
-     * settings. If you choose to upconvert but don't specify a 708 service number,
-     * MediaConvert uses the number that you specify for CC channel number
-     * (destination608ChannelNumber) for the 708 service number. For more information,
+     * each channel. To use this setting, also set Force 608 to 708 upconvert to
+     * Upconvert in your input captions selector settings. If you choose to upconvert
+     * but don't specify a 708 service number, MediaConvert uses the number that you
+     * specify for CC channel number for the 708 service number. For more information,
      * see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
     inline int GetDestination708ServiceNumber() const{ return m_destination708ServiceNumber; }
@@ -95,11 +92,10 @@ namespace Model
      * Ignore this setting unless your input captions are SCC format and you want both
      * 608 and 708 captions embedded in your output stream. Optionally, specify the 708
      * service number for each output captions channel. Choose a different number for
-     * each channel. To use this setting, also set Force 608 to 708 upconvert
-     * (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector
-     * settings. If you choose to upconvert but don't specify a 708 service number,
-     * MediaConvert uses the number that you specify for CC channel number
-     * (destination608ChannelNumber) for the 708 service number. For more information,
+     * each channel. To use this setting, also set Force 608 to 708 upconvert to
+     * Upconvert in your input captions selector settings. If you choose to upconvert
+     * but don't specify a 708 service number, MediaConvert uses the number that you
+     * specify for CC channel number for the 708 service number. For more information,
      * see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
     inline bool Destination708ServiceNumberHasBeenSet() const { return m_destination708ServiceNumberHasBeenSet; }
@@ -108,11 +104,10 @@ namespace Model
      * Ignore this setting unless your input captions are SCC format and you want both
      * 608 and 708 captions embedded in your output stream. Optionally, specify the 708
      * service number for each output captions channel. Choose a different number for
-     * each channel. To use this setting, also set Force 608 to 708 upconvert
-     * (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector
-     * settings. If you choose to upconvert but don't specify a 708 service number,
-     * MediaConvert uses the number that you specify for CC channel number
-     * (destination608ChannelNumber) for the 708 service number. For more information,
+     * each channel. To use this setting, also set Force 608 to 708 upconvert to
+     * Upconvert in your input captions selector settings. If you choose to upconvert
+     * but don't specify a 708 service number, MediaConvert uses the number that you
+     * specify for CC channel number for the 708 service number. For more information,
      * see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
     inline void SetDestination708ServiceNumber(int value) { m_destination708ServiceNumberHasBeenSet = true; m_destination708ServiceNumber = value; }
@@ -121,11 +116,10 @@ namespace Model
      * Ignore this setting unless your input captions are SCC format and you want both
      * 608 and 708 captions embedded in your output stream. Optionally, specify the 708
      * service number for each output captions channel. Choose a different number for
-     * each channel. To use this setting, also set Force 608 to 708 upconvert
-     * (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector
-     * settings. If you choose to upconvert but don't specify a 708 service number,
-     * MediaConvert uses the number that you specify for CC channel number
-     * (destination608ChannelNumber) for the 708 service number. For more information,
+     * each channel. To use this setting, also set Force 608 to 708 upconvert to
+     * Upconvert in your input captions selector settings. If you choose to upconvert
+     * but don't specify a 708 service number, MediaConvert uses the number that you
+     * specify for CC channel number for the 708 service number. For more information,
      * see https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
     inline EmbeddedDestinationSettings& WithDestination708ServiceNumber(int value) { SetDestination708ServiceNumber(value); return *this;}

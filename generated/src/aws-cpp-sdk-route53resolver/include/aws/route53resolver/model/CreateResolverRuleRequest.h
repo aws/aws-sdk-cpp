@@ -304,65 +304,65 @@ namespace Model
 
     /**
      * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
-     * only IPv4 addresses. Separate IP addresses with a space.</p> <p>
-     * <code>TargetIps</code> is available only when the value of <code>Rule
-     * type</code> is <code>FORWARD</code>.</p>
+     * either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP
+     * addresses with a space.</p> <p> <code>TargetIps</code> is available only when
+     * the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
      */
     inline const Aws::Vector<TargetAddress>& GetTargetIps() const{ return m_targetIps; }
 
     /**
      * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
-     * only IPv4 addresses. Separate IP addresses with a space.</p> <p>
-     * <code>TargetIps</code> is available only when the value of <code>Rule
-     * type</code> is <code>FORWARD</code>.</p>
+     * either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP
+     * addresses with a space.</p> <p> <code>TargetIps</code> is available only when
+     * the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
      */
     inline bool TargetIpsHasBeenSet() const { return m_targetIpsHasBeenSet; }
 
     /**
      * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
-     * only IPv4 addresses. Separate IP addresses with a space.</p> <p>
-     * <code>TargetIps</code> is available only when the value of <code>Rule
-     * type</code> is <code>FORWARD</code>.</p>
+     * either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP
+     * addresses with a space.</p> <p> <code>TargetIps</code> is available only when
+     * the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
      */
     inline void SetTargetIps(const Aws::Vector<TargetAddress>& value) { m_targetIpsHasBeenSet = true; m_targetIps = value; }
 
     /**
      * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
-     * only IPv4 addresses. Separate IP addresses with a space.</p> <p>
-     * <code>TargetIps</code> is available only when the value of <code>Rule
-     * type</code> is <code>FORWARD</code>.</p>
+     * either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP
+     * addresses with a space.</p> <p> <code>TargetIps</code> is available only when
+     * the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
      */
     inline void SetTargetIps(Aws::Vector<TargetAddress>&& value) { m_targetIpsHasBeenSet = true; m_targetIps = std::move(value); }
 
     /**
      * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
-     * only IPv4 addresses. Separate IP addresses with a space.</p> <p>
-     * <code>TargetIps</code> is available only when the value of <code>Rule
-     * type</code> is <code>FORWARD</code>.</p>
+     * either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP
+     * addresses with a space.</p> <p> <code>TargetIps</code> is available only when
+     * the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
      */
     inline CreateResolverRuleRequest& WithTargetIps(const Aws::Vector<TargetAddress>& value) { SetTargetIps(value); return *this;}
 
     /**
      * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
-     * only IPv4 addresses. Separate IP addresses with a space.</p> <p>
-     * <code>TargetIps</code> is available only when the value of <code>Rule
-     * type</code> is <code>FORWARD</code>.</p>
+     * either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP
+     * addresses with a space.</p> <p> <code>TargetIps</code> is available only when
+     * the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
      */
     inline CreateResolverRuleRequest& WithTargetIps(Aws::Vector<TargetAddress>&& value) { SetTargetIps(std::move(value)); return *this;}
 
     /**
      * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
-     * only IPv4 addresses. Separate IP addresses with a space.</p> <p>
-     * <code>TargetIps</code> is available only when the value of <code>Rule
-     * type</code> is <code>FORWARD</code>.</p>
+     * either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP
+     * addresses with a space.</p> <p> <code>TargetIps</code> is available only when
+     * the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
      */
     inline CreateResolverRuleRequest& AddTargetIps(const TargetAddress& value) { m_targetIpsHasBeenSet = true; m_targetIps.push_back(value); return *this; }
 
     /**
      * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
-     * only IPv4 addresses. Separate IP addresses with a space.</p> <p>
-     * <code>TargetIps</code> is available only when the value of <code>Rule
-     * type</code> is <code>FORWARD</code>.</p>
+     * either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP
+     * addresses with a space.</p> <p> <code>TargetIps</code> is available only when
+     * the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
      */
     inline CreateResolverRuleRequest& AddTargetIps(TargetAddress&& value) { m_targetIpsHasBeenSet = true; m_targetIps.push_back(std::move(value)); return *this; }
 

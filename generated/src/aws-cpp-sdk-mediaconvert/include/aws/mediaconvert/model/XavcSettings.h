@@ -36,8 +36,7 @@ namespace Model
 {
 
   /**
-   * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
-   * value XAVC.<p><h3>See Also:</h3>   <a
+   * Required when you set Codec to the value XAVC.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/XavcSettings">AWS
    * API Reference</a></p>
    */
@@ -51,92 +50,86 @@ namespace Model
 
 
     /**
-     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * Keep the default value, Auto, for this setting to have MediaConvert
      * automatically apply the best types of quantization for your video content. When
      * you want to apply your quantization settings manually, you must set Adaptive
-     * quantization (adaptiveQuantization) to a value other than Auto (AUTO). Use this
-     * setting to specify the strength of any adaptive quantization filters that you
-     * enable. If you don't want MediaConvert to do any adaptive quantization in this
-     * transcode, set Adaptive quantization to Off (OFF). Related settings: The value
-     * that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * quantization to a value other than Auto. Use this setting to specify the
+     * strength of any adaptive quantization filters that you enable. If you don't want
+     * MediaConvert to do any adaptive quantization in this transcode, set Adaptive
+     * quantization to Off. Related settings: The value that you choose here applies to
+     * the following settings: Flicker adaptive quantization
+     * (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal
+     * adaptive quantization.
      */
     inline const XavcAdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
 
     /**
-     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * Keep the default value, Auto, for this setting to have MediaConvert
      * automatically apply the best types of quantization for your video content. When
      * you want to apply your quantization settings manually, you must set Adaptive
-     * quantization (adaptiveQuantization) to a value other than Auto (AUTO). Use this
-     * setting to specify the strength of any adaptive quantization filters that you
-     * enable. If you don't want MediaConvert to do any adaptive quantization in this
-     * transcode, set Adaptive quantization to Off (OFF). Related settings: The value
-     * that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * quantization to a value other than Auto. Use this setting to specify the
+     * strength of any adaptive quantization filters that you enable. If you don't want
+     * MediaConvert to do any adaptive quantization in this transcode, set Adaptive
+     * quantization to Off. Related settings: The value that you choose here applies to
+     * the following settings: Flicker adaptive quantization
+     * (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal
+     * adaptive quantization.
      */
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
 
     /**
-     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * Keep the default value, Auto, for this setting to have MediaConvert
      * automatically apply the best types of quantization for your video content. When
      * you want to apply your quantization settings manually, you must set Adaptive
-     * quantization (adaptiveQuantization) to a value other than Auto (AUTO). Use this
-     * setting to specify the strength of any adaptive quantization filters that you
-     * enable. If you don't want MediaConvert to do any adaptive quantization in this
-     * transcode, set Adaptive quantization to Off (OFF). Related settings: The value
-     * that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * quantization to a value other than Auto. Use this setting to specify the
+     * strength of any adaptive quantization filters that you enable. If you don't want
+     * MediaConvert to do any adaptive quantization in this transcode, set Adaptive
+     * quantization to Off. Related settings: The value that you choose here applies to
+     * the following settings: Flicker adaptive quantization
+     * (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal
+     * adaptive quantization.
      */
     inline void SetAdaptiveQuantization(const XavcAdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
 
     /**
-     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * Keep the default value, Auto, for this setting to have MediaConvert
      * automatically apply the best types of quantization for your video content. When
      * you want to apply your quantization settings manually, you must set Adaptive
-     * quantization (adaptiveQuantization) to a value other than Auto (AUTO). Use this
-     * setting to specify the strength of any adaptive quantization filters that you
-     * enable. If you don't want MediaConvert to do any adaptive quantization in this
-     * transcode, set Adaptive quantization to Off (OFF). Related settings: The value
-     * that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * quantization to a value other than Auto. Use this setting to specify the
+     * strength of any adaptive quantization filters that you enable. If you don't want
+     * MediaConvert to do any adaptive quantization in this transcode, set Adaptive
+     * quantization to Off. Related settings: The value that you choose here applies to
+     * the following settings: Flicker adaptive quantization
+     * (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal
+     * adaptive quantization.
      */
     inline void SetAdaptiveQuantization(XavcAdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
 
     /**
-     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * Keep the default value, Auto, for this setting to have MediaConvert
      * automatically apply the best types of quantization for your video content. When
      * you want to apply your quantization settings manually, you must set Adaptive
-     * quantization (adaptiveQuantization) to a value other than Auto (AUTO). Use this
-     * setting to specify the strength of any adaptive quantization filters that you
-     * enable. If you don't want MediaConvert to do any adaptive quantization in this
-     * transcode, set Adaptive quantization to Off (OFF). Related settings: The value
-     * that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * quantization to a value other than Auto. Use this setting to specify the
+     * strength of any adaptive quantization filters that you enable. If you don't want
+     * MediaConvert to do any adaptive quantization in this transcode, set Adaptive
+     * quantization to Off. Related settings: The value that you choose here applies to
+     * the following settings: Flicker adaptive quantization
+     * (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal
+     * adaptive quantization.
      */
     inline XavcSettings& WithAdaptiveQuantization(const XavcAdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
 
     /**
-     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert
+     * Keep the default value, Auto, for this setting to have MediaConvert
      * automatically apply the best types of quantization for your video content. When
      * you want to apply your quantization settings manually, you must set Adaptive
-     * quantization (adaptiveQuantization) to a value other than Auto (AUTO). Use this
-     * setting to specify the strength of any adaptive quantization filters that you
-     * enable. If you don't want MediaConvert to do any adaptive quantization in this
-     * transcode, set Adaptive quantization to Off (OFF). Related settings: The value
-     * that you choose here applies to the following settings: Flicker adaptive
-     * quantization (flickerAdaptiveQuantization), Spatial adaptive quantization
-     * (spatialAdaptiveQuantization), and Temporal adaptive quantization
-     * (temporalAdaptiveQuantization).
+     * quantization to a value other than Auto. Use this setting to specify the
+     * strength of any adaptive quantization filters that you enable. If you don't want
+     * MediaConvert to do any adaptive quantization in this transcode, set Adaptive
+     * quantization to Off. Related settings: The value that you choose here applies to
+     * the following settings: Flicker adaptive quantization
+     * (flickerAdaptiveQuantization), Spatial adaptive quantization, and Temporal
+     * adaptive quantization.
      */
     inline XavcSettings& WithAdaptiveQuantization(XavcAdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
 
@@ -189,12 +182,7 @@ namespace Model
      * rate for this output. If you want to keep the same frame rate as the input
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list. The framerates shown in the dropdown list are
-     * decimal approximations of fractions. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate that you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * decimal approximations of fractions.
      */
     inline const XavcFramerateControl& GetFramerateControl() const{ return m_framerateControl; }
 
@@ -203,12 +191,7 @@ namespace Model
      * rate for this output. If you want to keep the same frame rate as the input
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list. The framerates shown in the dropdown list are
-     * decimal approximations of fractions. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate that you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * decimal approximations of fractions.
      */
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
 
@@ -217,12 +200,7 @@ namespace Model
      * rate for this output. If you want to keep the same frame rate as the input
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list. The framerates shown in the dropdown list are
-     * decimal approximations of fractions. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate that you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * decimal approximations of fractions.
      */
     inline void SetFramerateControl(const XavcFramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
 
@@ -231,12 +209,7 @@ namespace Model
      * rate for this output. If you want to keep the same frame rate as the input
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list. The framerates shown in the dropdown list are
-     * decimal approximations of fractions. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate that you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * decimal approximations of fractions.
      */
     inline void SetFramerateControl(XavcFramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
 
@@ -245,12 +218,7 @@ namespace Model
      * rate for this output. If you want to keep the same frame rate as the input
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list. The framerates shown in the dropdown list are
-     * decimal approximations of fractions. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate that you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * decimal approximations of fractions.
      */
     inline XavcSettings& WithFramerateControl(const XavcFramerateControl& value) { SetFramerateControl(value); return *this;}
 
@@ -259,12 +227,7 @@ namespace Model
      * rate for this output. If you want to keep the same frame rate as the input
      * video, choose Follow source. If you want to do frame rate conversion, choose a
      * frame rate from the dropdown list. The framerates shown in the dropdown list are
-     * decimal approximations of fractions. If you are creating your transcoding job
-     * specification as a JSON file without the console, use FramerateControl to
-     * specify which value the service uses for the frame rate for this output. Choose
-     * INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the
-     * input. Choose SPECIFIED if you want the service to use the frame rate that you
-     * specify in the settings FramerateNumerator and FramerateDenominator.
+     * decimal approximations of fractions.
      */
     inline XavcSettings& WithFramerateControl(XavcFramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
 
@@ -496,8 +459,7 @@ namespace Model
      * second (fps). Enable slow PAL to create a 25 fps output by relabeling the video
      * frames and resampling your audio. Note that enabling this setting will slightly
      * reduce the duration of your video. Related settings: You must also set Frame
-     * rate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * rate to 25.
      */
     inline const XavcSlowPal& GetSlowPal() const{ return m_slowPal; }
 
@@ -506,8 +468,7 @@ namespace Model
      * second (fps). Enable slow PAL to create a 25 fps output by relabeling the video
      * frames and resampling your audio. Note that enabling this setting will slightly
      * reduce the duration of your video. Related settings: You must also set Frame
-     * rate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * rate to 25.
      */
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
 
@@ -516,8 +477,7 @@ namespace Model
      * second (fps). Enable slow PAL to create a 25 fps output by relabeling the video
      * frames and resampling your audio. Note that enabling this setting will slightly
      * reduce the duration of your video. Related settings: You must also set Frame
-     * rate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * rate to 25.
      */
     inline void SetSlowPal(const XavcSlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
 
@@ -526,8 +486,7 @@ namespace Model
      * second (fps). Enable slow PAL to create a 25 fps output by relabeling the video
      * frames and resampling your audio. Note that enabling this setting will slightly
      * reduce the duration of your video. Related settings: You must also set Frame
-     * rate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * rate to 25.
      */
     inline void SetSlowPal(XavcSlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
 
@@ -536,8 +495,7 @@ namespace Model
      * second (fps). Enable slow PAL to create a 25 fps output by relabeling the video
      * frames and resampling your audio. Note that enabling this setting will slightly
      * reduce the duration of your video. Related settings: You must also set Frame
-     * rate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * rate to 25.
      */
     inline XavcSettings& WithSlowPal(const XavcSlowPal& value) { SetSlowPal(value); return *this;}
 
@@ -546,8 +504,7 @@ namespace Model
      * second (fps). Enable slow PAL to create a 25 fps output by relabeling the video
      * frames and resampling your audio. Note that enabling this setting will slightly
      * reduce the duration of your video. Related settings: You must also set Frame
-     * rate to 25. In your JSON job specification, set (framerateControl) to
-     * (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     * rate to 25.
      */
     inline XavcSettings& WithSlowPal(XavcSlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
 
@@ -555,537 +512,473 @@ namespace Model
     /**
      * Ignore this setting unless your downstream workflow requires that you specify it
      * explicitly. Otherwise, we recommend that you adjust the softness of your output
-     * by using a lower value for the setting Sharpness (sharpness) or by enabling a
-     * noise reducer filter (noiseReducerFilter). The Softness (softness) setting
-     * specifies the quantization matrices that the encoder uses. Keep the default
-     * value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT
-     * softening quantization matricies from the H.264 specification. Choose a value
-     * from 17 to 128 to use planar interpolation. Increasing values from 17 to 128
-     * result in increasing reduction of high-frequency data. The value 128 results in
-     * the softest video.
+     * by using a lower value for the setting Sharpness or by enabling a noise reducer
+     * filter. The Softness setting specifies the quantization matrices that the
+     * encoder uses. Keep the default value, 0, for flat quantization. Choose the value
+     * 1 or 16 to use the default JVT softening quantization matricies from the H.264
+     * specification. Choose a value from 17 to 128 to use planar interpolation.
+     * Increasing values from 17 to 128 result in increasing reduction of
+     * high-frequency data. The value 128 results in the softest video.
      */
     inline int GetSoftness() const{ return m_softness; }
 
     /**
      * Ignore this setting unless your downstream workflow requires that you specify it
      * explicitly. Otherwise, we recommend that you adjust the softness of your output
-     * by using a lower value for the setting Sharpness (sharpness) or by enabling a
-     * noise reducer filter (noiseReducerFilter). The Softness (softness) setting
-     * specifies the quantization matrices that the encoder uses. Keep the default
-     * value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT
-     * softening quantization matricies from the H.264 specification. Choose a value
-     * from 17 to 128 to use planar interpolation. Increasing values from 17 to 128
-     * result in increasing reduction of high-frequency data. The value 128 results in
-     * the softest video.
+     * by using a lower value for the setting Sharpness or by enabling a noise reducer
+     * filter. The Softness setting specifies the quantization matrices that the
+     * encoder uses. Keep the default value, 0, for flat quantization. Choose the value
+     * 1 or 16 to use the default JVT softening quantization matricies from the H.264
+     * specification. Choose a value from 17 to 128 to use planar interpolation.
+     * Increasing values from 17 to 128 result in increasing reduction of
+     * high-frequency data. The value 128 results in the softest video.
      */
     inline bool SoftnessHasBeenSet() const { return m_softnessHasBeenSet; }
 
     /**
      * Ignore this setting unless your downstream workflow requires that you specify it
      * explicitly. Otherwise, we recommend that you adjust the softness of your output
-     * by using a lower value for the setting Sharpness (sharpness) or by enabling a
-     * noise reducer filter (noiseReducerFilter). The Softness (softness) setting
-     * specifies the quantization matrices that the encoder uses. Keep the default
-     * value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT
-     * softening quantization matricies from the H.264 specification. Choose a value
-     * from 17 to 128 to use planar interpolation. Increasing values from 17 to 128
-     * result in increasing reduction of high-frequency data. The value 128 results in
-     * the softest video.
+     * by using a lower value for the setting Sharpness or by enabling a noise reducer
+     * filter. The Softness setting specifies the quantization matrices that the
+     * encoder uses. Keep the default value, 0, for flat quantization. Choose the value
+     * 1 or 16 to use the default JVT softening quantization matricies from the H.264
+     * specification. Choose a value from 17 to 128 to use planar interpolation.
+     * Increasing values from 17 to 128 result in increasing reduction of
+     * high-frequency data. The value 128 results in the softest video.
      */
     inline void SetSoftness(int value) { m_softnessHasBeenSet = true; m_softness = value; }
 
     /**
      * Ignore this setting unless your downstream workflow requires that you specify it
      * explicitly. Otherwise, we recommend that you adjust the softness of your output
-     * by using a lower value for the setting Sharpness (sharpness) or by enabling a
-     * noise reducer filter (noiseReducerFilter). The Softness (softness) setting
-     * specifies the quantization matrices that the encoder uses. Keep the default
-     * value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT
-     * softening quantization matricies from the H.264 specification. Choose a value
-     * from 17 to 128 to use planar interpolation. Increasing values from 17 to 128
-     * result in increasing reduction of high-frequency data. The value 128 results in
-     * the softest video.
+     * by using a lower value for the setting Sharpness or by enabling a noise reducer
+     * filter. The Softness setting specifies the quantization matrices that the
+     * encoder uses. Keep the default value, 0, for flat quantization. Choose the value
+     * 1 or 16 to use the default JVT softening quantization matricies from the H.264
+     * specification. Choose a value from 17 to 128 to use planar interpolation.
+     * Increasing values from 17 to 128 result in increasing reduction of
+     * high-frequency data. The value 128 results in the softest video.
      */
     inline XavcSettings& WithSoftness(int value) { SetSoftness(value); return *this;}
 
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on spatial variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas
-     * where any small distortion will be noticeable. For example, complex textured
-     * blocks are encoded with fewer bits and smooth textured blocks are encoded with
-     * more bits. Enabling this feature will almost always improve your video quality.
-     * Note, though, that this feature doesn't take into account where the viewer's
-     * attention is likely to be. If viewers are likely to be focusing their attention
-     * on a part of the screen with a lot of complex texture, you might choose to
-     * disable this feature. Related setting: When you enable spatial adaptive
-     * quantization, set the value for Adaptive quantization (adaptiveQuantization)
-     * depending on your content. For homogeneous content, such as cartoons and video
-     * games, set it to Low. For content with a wider variety of textures, set it to
-     * High or Higher.
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline const XavcSpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on spatial variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas
-     * where any small distortion will be noticeable. For example, complex textured
-     * blocks are encoded with fewer bits and smooth textured blocks are encoded with
-     * more bits. Enabling this feature will almost always improve your video quality.
-     * Note, though, that this feature doesn't take into account where the viewer's
-     * attention is likely to be. If viewers are likely to be focusing their attention
-     * on a part of the screen with a lot of complex texture, you might choose to
-     * disable this feature. Related setting: When you enable spatial adaptive
-     * quantization, set the value for Adaptive quantization (adaptiveQuantization)
-     * depending on your content. For homogeneous content, such as cartoons and video
-     * games, set it to Low. For content with a wider variety of textures, set it to
-     * High or Higher.
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on spatial variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas
-     * where any small distortion will be noticeable. For example, complex textured
-     * blocks are encoded with fewer bits and smooth textured blocks are encoded with
-     * more bits. Enabling this feature will almost always improve your video quality.
-     * Note, though, that this feature doesn't take into account where the viewer's
-     * attention is likely to be. If viewers are likely to be focusing their attention
-     * on a part of the screen with a lot of complex texture, you might choose to
-     * disable this feature. Related setting: When you enable spatial adaptive
-     * quantization, set the value for Adaptive quantization (adaptiveQuantization)
-     * depending on your content. For homogeneous content, such as cartoons and video
-     * games, set it to Low. For content with a wider variety of textures, set it to
-     * High or Higher.
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline void SetSpatialAdaptiveQuantization(const XavcSpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on spatial variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas
-     * where any small distortion will be noticeable. For example, complex textured
-     * blocks are encoded with fewer bits and smooth textured blocks are encoded with
-     * more bits. Enabling this feature will almost always improve your video quality.
-     * Note, though, that this feature doesn't take into account where the viewer's
-     * attention is likely to be. If viewers are likely to be focusing their attention
-     * on a part of the screen with a lot of complex texture, you might choose to
-     * disable this feature. Related setting: When you enable spatial adaptive
-     * quantization, set the value for Adaptive quantization (adaptiveQuantization)
-     * depending on your content. For homogeneous content, such as cartoons and video
-     * games, set it to Low. For content with a wider variety of textures, set it to
-     * High or Higher.
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline void SetSpatialAdaptiveQuantization(XavcSpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on spatial variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas
-     * where any small distortion will be noticeable. For example, complex textured
-     * blocks are encoded with fewer bits and smooth textured blocks are encoded with
-     * more bits. Enabling this feature will almost always improve your video quality.
-     * Note, though, that this feature doesn't take into account where the viewer's
-     * attention is likely to be. If viewers are likely to be focusing their attention
-     * on a part of the screen with a lot of complex texture, you might choose to
-     * disable this feature. Related setting: When you enable spatial adaptive
-     * quantization, set the value for Adaptive quantization (adaptiveQuantization)
-     * depending on your content. For homogeneous content, such as cartoons and video
-     * games, set it to Low. For content with a wider variety of textures, set it to
-     * High or Higher.
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline XavcSettings& WithSpatialAdaptiveQuantization(const XavcSpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on spatial variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas that can sustain more
-     * distortion with no noticeable visual degradation and uses more bits on areas
-     * where any small distortion will be noticeable. For example, complex textured
-     * blocks are encoded with fewer bits and smooth textured blocks are encoded with
-     * more bits. Enabling this feature will almost always improve your video quality.
-     * Note, though, that this feature doesn't take into account where the viewer's
-     * attention is likely to be. If viewers are likely to be focusing their attention
-     * on a part of the screen with a lot of complex texture, you might choose to
-     * disable this feature. Related setting: When you enable spatial adaptive
-     * quantization, set the value for Adaptive quantization (adaptiveQuantization)
-     * depending on your content. For homogeneous content, such as cartoons and video
-     * games, set it to Low. For content with a wider variety of textures, set it to
-     * High or Higher.
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * spatial variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas that can sustain more distortion with no
+     * noticeable visual degradation and uses more bits on areas where any small
+     * distortion will be noticeable. For example, complex textured blocks are encoded
+     * with fewer bits and smooth textured blocks are encoded with more bits. Enabling
+     * this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to
+     * be. If viewers are likely to be focusing their attention on a part of the screen
+     * with a lot of complex texture, you might choose to disable this feature. Related
+     * setting: When you enable spatial adaptive quantization, set the value for
+     * Adaptive quantization depending on your content. For homogeneous content, such
+     * as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher.
      */
     inline XavcSettings& WithSpatialAdaptiveQuantization(XavcSpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
 
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on temporal variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas of the frame that
-     * aren't moving and uses more bits on complex objects with sharp edges that move a
-     * lot. For example, this feature improves the readability of text tickers on
-     * newscasts and scoreboards on sports matches. Enabling this feature will almost
-     * always improve your video quality. Note, though, that this feature doesn't take
-     * into account where the viewer's attention is likely to be. If viewers are likely
-     * to be focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal adaptive
-     * quantization, adjust the strength of the filter with the setting Adaptive
-     * quantization (adaptiveQuantization).
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * temporal variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas of the frame that aren't moving and uses more
+     * bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to disable this feature.
+     * Related setting: When you enable temporal adaptive quantization, adjust the
+     * strength of the filter with the setting Adaptive quantization.
      */
     inline const XavcTemporalAdaptiveQuantization& GetTemporalAdaptiveQuantization() const{ return m_temporalAdaptiveQuantization; }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on temporal variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas of the frame that
-     * aren't moving and uses more bits on complex objects with sharp edges that move a
-     * lot. For example, this feature improves the readability of text tickers on
-     * newscasts and scoreboards on sports matches. Enabling this feature will almost
-     * always improve your video quality. Note, though, that this feature doesn't take
-     * into account where the viewer's attention is likely to be. If viewers are likely
-     * to be focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal adaptive
-     * quantization, adjust the strength of the filter with the setting Adaptive
-     * quantization (adaptiveQuantization).
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * temporal variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas of the frame that aren't moving and uses more
+     * bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to disable this feature.
+     * Related setting: When you enable temporal adaptive quantization, adjust the
+     * strength of the filter with the setting Adaptive quantization.
      */
     inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on temporal variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas of the frame that
-     * aren't moving and uses more bits on complex objects with sharp edges that move a
-     * lot. For example, this feature improves the readability of text tickers on
-     * newscasts and scoreboards on sports matches. Enabling this feature will almost
-     * always improve your video quality. Note, though, that this feature doesn't take
-     * into account where the viewer's attention is likely to be. If viewers are likely
-     * to be focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal adaptive
-     * quantization, adjust the strength of the filter with the setting Adaptive
-     * quantization (adaptiveQuantization).
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * temporal variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas of the frame that aren't moving and uses more
+     * bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to disable this feature.
+     * Related setting: When you enable temporal adaptive quantization, adjust the
+     * strength of the filter with the setting Adaptive quantization.
      */
     inline void SetTemporalAdaptiveQuantization(const XavcTemporalAdaptiveQuantization& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on temporal variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas of the frame that
-     * aren't moving and uses more bits on complex objects with sharp edges that move a
-     * lot. For example, this feature improves the readability of text tickers on
-     * newscasts and scoreboards on sports matches. Enabling this feature will almost
-     * always improve your video quality. Note, though, that this feature doesn't take
-     * into account where the viewer's attention is likely to be. If viewers are likely
-     * to be focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal adaptive
-     * quantization, adjust the strength of the filter with the setting Adaptive
-     * quantization (adaptiveQuantization).
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * temporal variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas of the frame that aren't moving and uses more
+     * bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to disable this feature.
+     * Related setting: When you enable temporal adaptive quantization, adjust the
+     * strength of the filter with the setting Adaptive quantization.
      */
     inline void SetTemporalAdaptiveQuantization(XavcTemporalAdaptiveQuantization&& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = std::move(value); }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on temporal variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas of the frame that
-     * aren't moving and uses more bits on complex objects with sharp edges that move a
-     * lot. For example, this feature improves the readability of text tickers on
-     * newscasts and scoreboards on sports matches. Enabling this feature will almost
-     * always improve your video quality. Note, though, that this feature doesn't take
-     * into account where the viewer's attention is likely to be. If viewers are likely
-     * to be focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal adaptive
-     * quantization, adjust the strength of the filter with the setting Adaptive
-     * quantization (adaptiveQuantization).
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * temporal variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas of the frame that aren't moving and uses more
+     * bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to disable this feature.
+     * Related setting: When you enable temporal adaptive quantization, adjust the
+     * strength of the filter with the setting Adaptive quantization.
      */
     inline XavcSettings& WithTemporalAdaptiveQuantization(const XavcTemporalAdaptiveQuantization& value) { SetTemporalAdaptiveQuantization(value); return *this;}
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto
-     * (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you
-     * do so, MediaConvert automatically applies the best types of quantization for
-     * your video content. Include this setting in your JSON job specification only
-     * when you choose to change the default value for Adaptive quantization. For this
-     * setting, keep the default value, Enabled (ENABLED), to adjust quantization
-     * within each frame based on temporal variation of content complexity. When you
-     * enable this feature, the encoder uses fewer bits on areas of the frame that
-     * aren't moving and uses more bits on complex objects with sharp edges that move a
-     * lot. For example, this feature improves the readability of text tickers on
-     * newscasts and scoreboards on sports matches. Enabling this feature will almost
-     * always improve your video quality. Note, though, that this feature doesn't take
-     * into account where the viewer's attention is likely to be. If viewers are likely
-     * to be focusing their attention on a part of the screen that doesn't have moving
-     * objects with sharp edges, such as sports athletes' faces, you might choose to
-     * disable this feature. Related setting: When you enable temporal adaptive
-     * quantization, adjust the strength of the filter with the setting Adaptive
-     * quantization (adaptiveQuantization).
+     * The best way to set up adaptive quantization is to keep the default value, Auto,
+     * for the setting Adaptive quantization. When you do so, MediaConvert
+     * automatically applies the best types of quantization for your video content.
+     * Include this setting in your JSON job specification only when you choose to
+     * change the default value for Adaptive quantization. For this setting, keep the
+     * default value, Enabled, to adjust quantization within each frame based on
+     * temporal variation of content complexity. When you enable this feature, the
+     * encoder uses fewer bits on areas of the frame that aren't moving and uses more
+     * bits on complex objects with sharp edges that move a lot. For example, this
+     * feature improves the readability of text tickers on newscasts and scoreboards on
+     * sports matches. Enabling this feature will almost always improve your video
+     * quality. Note, though, that this feature doesn't take into account where the
+     * viewer's attention is likely to be. If viewers are likely to be focusing their
+     * attention on a part of the screen that doesn't have moving objects with sharp
+     * edges, such as sports athletes' faces, you might choose to disable this feature.
+     * Related setting: When you enable temporal adaptive quantization, adjust the
+     * strength of the filter with the setting Adaptive quantization.
      */
     inline XavcSettings& WithTemporalAdaptiveQuantization(XavcTemporalAdaptiveQuantization&& value) { SetTemporalAdaptiveQuantization(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_4K_INTRA_CBG.
      */
     inline const Xavc4kIntraCbgProfileSettings& GetXavc4kIntraCbgProfileSettings() const{ return m_xavc4kIntraCbgProfileSettings; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_4K_INTRA_CBG.
      */
     inline bool Xavc4kIntraCbgProfileSettingsHasBeenSet() const { return m_xavc4kIntraCbgProfileSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_4K_INTRA_CBG.
      */
     inline void SetXavc4kIntraCbgProfileSettings(const Xavc4kIntraCbgProfileSettings& value) { m_xavc4kIntraCbgProfileSettingsHasBeenSet = true; m_xavc4kIntraCbgProfileSettings = value; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_4K_INTRA_CBG.
      */
     inline void SetXavc4kIntraCbgProfileSettings(Xavc4kIntraCbgProfileSettings&& value) { m_xavc4kIntraCbgProfileSettingsHasBeenSet = true; m_xavc4kIntraCbgProfileSettings = std::move(value); }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_4K_INTRA_CBG.
      */
     inline XavcSettings& WithXavc4kIntraCbgProfileSettings(const Xavc4kIntraCbgProfileSettings& value) { SetXavc4kIntraCbgProfileSettings(value); return *this;}
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_4K_INTRA_CBG.
      */
     inline XavcSettings& WithXavc4kIntraCbgProfileSettings(Xavc4kIntraCbgProfileSettings&& value) { SetXavc4kIntraCbgProfileSettings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_VBR.
+     * Required when you set Profile to the value XAVC_4K_INTRA_VBR.
      */
     inline const Xavc4kIntraVbrProfileSettings& GetXavc4kIntraVbrProfileSettings() const{ return m_xavc4kIntraVbrProfileSettings; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_VBR.
+     * Required when you set Profile to the value XAVC_4K_INTRA_VBR.
      */
     inline bool Xavc4kIntraVbrProfileSettingsHasBeenSet() const { return m_xavc4kIntraVbrProfileSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_VBR.
+     * Required when you set Profile to the value XAVC_4K_INTRA_VBR.
      */
     inline void SetXavc4kIntraVbrProfileSettings(const Xavc4kIntraVbrProfileSettings& value) { m_xavc4kIntraVbrProfileSettingsHasBeenSet = true; m_xavc4kIntraVbrProfileSettings = value; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_VBR.
+     * Required when you set Profile to the value XAVC_4K_INTRA_VBR.
      */
     inline void SetXavc4kIntraVbrProfileSettings(Xavc4kIntraVbrProfileSettings&& value) { m_xavc4kIntraVbrProfileSettingsHasBeenSet = true; m_xavc4kIntraVbrProfileSettings = std::move(value); }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_VBR.
+     * Required when you set Profile to the value XAVC_4K_INTRA_VBR.
      */
     inline XavcSettings& WithXavc4kIntraVbrProfileSettings(const Xavc4kIntraVbrProfileSettings& value) { SetXavc4kIntraVbrProfileSettings(value); return *this;}
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_4K_INTRA_VBR.
+     * Required when you set Profile to the value XAVC_4K_INTRA_VBR.
      */
     inline XavcSettings& WithXavc4kIntraVbrProfileSettings(Xavc4kIntraVbrProfileSettings&& value) { SetXavc4kIntraVbrProfileSettings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+     * Required when you set Profile to the value XAVC_4K.
      */
     inline const Xavc4kProfileSettings& GetXavc4kProfileSettings() const{ return m_xavc4kProfileSettings; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+     * Required when you set Profile to the value XAVC_4K.
      */
     inline bool Xavc4kProfileSettingsHasBeenSet() const { return m_xavc4kProfileSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+     * Required when you set Profile to the value XAVC_4K.
      */
     inline void SetXavc4kProfileSettings(const Xavc4kProfileSettings& value) { m_xavc4kProfileSettingsHasBeenSet = true; m_xavc4kProfileSettings = value; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+     * Required when you set Profile to the value XAVC_4K.
      */
     inline void SetXavc4kProfileSettings(Xavc4kProfileSettings&& value) { m_xavc4kProfileSettingsHasBeenSet = true; m_xavc4kProfileSettings = std::move(value); }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+     * Required when you set Profile to the value XAVC_4K.
      */
     inline XavcSettings& WithXavc4kProfileSettings(const Xavc4kProfileSettings& value) { SetXavc4kProfileSettings(value); return *this;}
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_4K.
+     * Required when you set Profile to the value XAVC_4K.
      */
     inline XavcSettings& WithXavc4kProfileSettings(Xavc4kProfileSettings&& value) { SetXavc4kProfileSettings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_HD_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_HD_INTRA_CBG.
      */
     inline const XavcHdIntraCbgProfileSettings& GetXavcHdIntraCbgProfileSettings() const{ return m_xavcHdIntraCbgProfileSettings; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_HD_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_HD_INTRA_CBG.
      */
     inline bool XavcHdIntraCbgProfileSettingsHasBeenSet() const { return m_xavcHdIntraCbgProfileSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_HD_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_HD_INTRA_CBG.
      */
     inline void SetXavcHdIntraCbgProfileSettings(const XavcHdIntraCbgProfileSettings& value) { m_xavcHdIntraCbgProfileSettingsHasBeenSet = true; m_xavcHdIntraCbgProfileSettings = value; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_HD_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_HD_INTRA_CBG.
      */
     inline void SetXavcHdIntraCbgProfileSettings(XavcHdIntraCbgProfileSettings&& value) { m_xavcHdIntraCbgProfileSettingsHasBeenSet = true; m_xavcHdIntraCbgProfileSettings = std::move(value); }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_HD_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_HD_INTRA_CBG.
      */
     inline XavcSettings& WithXavcHdIntraCbgProfileSettings(const XavcHdIntraCbgProfileSettings& value) { SetXavcHdIntraCbgProfileSettings(value); return *this;}
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value
-     * XAVC_HD_INTRA_CBG.
+     * Required when you set Profile to the value XAVC_HD_INTRA_CBG.
      */
     inline XavcSettings& WithXavcHdIntraCbgProfileSettings(XavcHdIntraCbgProfileSettings&& value) { SetXavcHdIntraCbgProfileSettings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+     * Required when you set Profile to the value XAVC_HD.
      */
     inline const XavcHdProfileSettings& GetXavcHdProfileSettings() const{ return m_xavcHdProfileSettings; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+     * Required when you set Profile to the value XAVC_HD.
      */
     inline bool XavcHdProfileSettingsHasBeenSet() const { return m_xavcHdProfileSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+     * Required when you set Profile to the value XAVC_HD.
      */
     inline void SetXavcHdProfileSettings(const XavcHdProfileSettings& value) { m_xavcHdProfileSettingsHasBeenSet = true; m_xavcHdProfileSettings = value; }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+     * Required when you set Profile to the value XAVC_HD.
      */
     inline void SetXavcHdProfileSettings(XavcHdProfileSettings&& value) { m_xavcHdProfileSettingsHasBeenSet = true; m_xavcHdProfileSettings = std::move(value); }
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+     * Required when you set Profile to the value XAVC_HD.
      */
     inline XavcSettings& WithXavcHdProfileSettings(const XavcHdProfileSettings& value) { SetXavcHdProfileSettings(value); return *this;}
 
     /**
-     * Required when you set (Profile) under
-     * (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+     * Required when you set Profile to the value XAVC_HD.
      */
     inline XavcSettings& WithXavcHdProfileSettings(XavcHdProfileSettings&& value) { SetXavcHdProfileSettings(std::move(value)); return *this;}
 

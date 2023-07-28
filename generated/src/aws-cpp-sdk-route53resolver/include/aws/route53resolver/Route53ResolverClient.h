@@ -307,6 +307,31 @@ namespace Route53Resolver
         }
 
         /**
+         * <p>Creates an Route 53 Resolver on an Outpost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateOutpostResolverOutcome CreateOutpostResolver(const Model::CreateOutpostResolverRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateOutpostResolver that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateOutpostResolverRequestT = Model::CreateOutpostResolverRequest>
+        Model::CreateOutpostResolverOutcomeCallable CreateOutpostResolverCallable(const CreateOutpostResolverRequestT& request) const
+        {
+            return SubmitCallable(&Route53ResolverClient::CreateOutpostResolver, request);
+        }
+
+        /**
+         * An Async wrapper for CreateOutpostResolver that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateOutpostResolverRequestT = Model::CreateOutpostResolverRequest>
+        void CreateOutpostResolverAsync(const CreateOutpostResolverRequestT& request, const CreateOutpostResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Route53ResolverClient::CreateOutpostResolver, request, handler, context);
+        }
+
+        /**
          * <p>Creates a Resolver endpoint. There are two types of Resolver endpoints,
          * inbound and outbound:</p> <ul> <li> <p>An <i>inbound Resolver endpoint</i>
          * forwards DNS queries to the DNS service for a VPC from your network.</p> </li>
@@ -472,6 +497,31 @@ namespace Route53Resolver
         void DeleteFirewallRuleGroupAsync(const DeleteFirewallRuleGroupRequestT& request, const DeleteFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Route53ResolverClient::DeleteFirewallRuleGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a Resolver on the Outpost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteOutpostResolver">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteOutpostResolverOutcome DeleteOutpostResolver(const Model::DeleteOutpostResolverRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteOutpostResolver that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteOutpostResolverRequestT = Model::DeleteOutpostResolverRequest>
+        Model::DeleteOutpostResolverOutcomeCallable DeleteOutpostResolverCallable(const DeleteOutpostResolverRequestT& request) const
+        {
+            return SubmitCallable(&Route53ResolverClient::DeleteOutpostResolver, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteOutpostResolver that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteOutpostResolverRequestT = Model::DeleteOutpostResolverRequest>
+        void DeleteOutpostResolverAsync(const DeleteOutpostResolverRequestT& request, const DeleteOutpostResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Route53ResolverClient::DeleteOutpostResolver, request, handler, context);
         }
 
         /**
@@ -818,6 +868,33 @@ namespace Route53Resolver
         void GetFirewallRuleGroupPolicyAsync(const GetFirewallRuleGroupPolicyRequestT& request, const GetFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Route53ResolverClient::GetFirewallRuleGroupPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about a specified Resolver on the Outpost, such as its
+         * instance count and type, name, and the current status of the
+         * Resolver.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetOutpostResolver">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetOutpostResolverOutcome GetOutpostResolver(const Model::GetOutpostResolverRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetOutpostResolver that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetOutpostResolverRequestT = Model::GetOutpostResolverRequest>
+        Model::GetOutpostResolverOutcomeCallable GetOutpostResolverCallable(const GetOutpostResolverRequestT& request) const
+        {
+            return SubmitCallable(&Route53ResolverClient::GetOutpostResolver, request);
+        }
+
+        /**
+         * An Async wrapper for GetOutpostResolver that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetOutpostResolverRequestT = Model::GetOutpostResolverRequest>
+        void GetOutpostResolverAsync(const GetOutpostResolverRequestT& request, const GetOutpostResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Route53ResolverClient::GetOutpostResolver, request, handler, context);
         }
 
         /**
@@ -1265,6 +1342,32 @@ namespace Route53Resolver
         void ListFirewallRulesAsync(const ListFirewallRulesRequestT& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Route53ResolverClient::ListFirewallRules, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all the Resolvers on Outposts that were created using the current
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListOutpostResolvers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOutpostResolversOutcome ListOutpostResolvers(const Model::ListOutpostResolversRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListOutpostResolvers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListOutpostResolversRequestT = Model::ListOutpostResolversRequest>
+        Model::ListOutpostResolversOutcomeCallable ListOutpostResolversCallable(const ListOutpostResolversRequestT& request) const
+        {
+            return SubmitCallable(&Route53ResolverClient::ListOutpostResolvers, request);
+        }
+
+        /**
+         * An Async wrapper for ListOutpostResolvers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListOutpostResolversRequestT = Model::ListOutpostResolversRequest>
+        void ListOutpostResolversAsync(const ListOutpostResolversRequestT& request, const ListOutpostResolversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Route53ResolverClient::ListOutpostResolvers, request, handler, context);
         }
 
         /**
@@ -1740,6 +1843,32 @@ namespace Route53Resolver
         void UpdateFirewallRuleGroupAssociationAsync(const UpdateFirewallRuleGroupAssociationRequestT& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Route53ResolverClient::UpdateFirewallRuleGroupAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>You can use <code>UpdateOutpostResolver</code> to update the instance count,
+         * type, or name of a Resolver on an Outpost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateOutpostResolver">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateOutpostResolverOutcome UpdateOutpostResolver(const Model::UpdateOutpostResolverRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateOutpostResolver that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateOutpostResolverRequestT = Model::UpdateOutpostResolverRequest>
+        Model::UpdateOutpostResolverOutcomeCallable UpdateOutpostResolverCallable(const UpdateOutpostResolverRequestT& request) const
+        {
+            return SubmitCallable(&Route53ResolverClient::UpdateOutpostResolver, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateOutpostResolver that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateOutpostResolverRequestT = Model::UpdateOutpostResolverRequest>
+        void UpdateOutpostResolverAsync(const UpdateOutpostResolverRequestT& request, const UpdateOutpostResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Route53ResolverClient::UpdateOutpostResolver, request, handler, context);
         }
 
         /**

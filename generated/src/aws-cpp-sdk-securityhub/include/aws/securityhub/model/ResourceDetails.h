@@ -94,6 +94,7 @@
 #include <aws/securityhub/model/AwsEventSchemasRegistryDetails.h>
 #include <aws/securityhub/model/AwsGuardDutyDetectorDetails.h>
 #include <aws/securityhub/model/AwsStepFunctionStateMachineDetails.h>
+#include <aws/securityhub/model/AwsAthenaWorkGroupDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -3108,6 +3109,49 @@ namespace Model
      */
     inline ResourceDetails& WithAwsStepFunctionStateMachine(AwsStepFunctionStateMachineDetails&& value) { SetAwsStepFunctionStateMachine(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline const AwsAthenaWorkGroupDetails& GetAwsAthenaWorkGroup() const{ return m_awsAthenaWorkGroup; }
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline bool AwsAthenaWorkGroupHasBeenSet() const { return m_awsAthenaWorkGroupHasBeenSet; }
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline void SetAwsAthenaWorkGroup(const AwsAthenaWorkGroupDetails& value) { m_awsAthenaWorkGroupHasBeenSet = true; m_awsAthenaWorkGroup = value; }
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline void SetAwsAthenaWorkGroup(AwsAthenaWorkGroupDetails&& value) { m_awsAthenaWorkGroupHasBeenSet = true; m_awsAthenaWorkGroup = std::move(value); }
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline ResourceDetails& WithAwsAthenaWorkGroup(const AwsAthenaWorkGroupDetails& value) { SetAwsAthenaWorkGroup(value); return *this;}
+
+    /**
+     * <p> Provides information about an Amazon Athena workgroup. A workgroup helps you
+     * separate users, teams, applications, or workloads. It also helps you set limits
+     * on data processing and track costs. </p>
+     */
+    inline ResourceDetails& WithAwsAthenaWorkGroup(AwsAthenaWorkGroupDetails&& value) { SetAwsAthenaWorkGroup(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -3376,6 +3420,9 @@ namespace Model
 
     AwsStepFunctionStateMachineDetails m_awsStepFunctionStateMachine;
     bool m_awsStepFunctionStateMachineHasBeenSet = false;
+
+    AwsAthenaWorkGroupDetails m_awsAthenaWorkGroup;
+    bool m_awsAthenaWorkGroupHasBeenSet = false;
   };
 
 } // namespace Model

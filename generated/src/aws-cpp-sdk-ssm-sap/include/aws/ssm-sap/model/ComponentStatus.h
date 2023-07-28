@@ -16,7 +16,13 @@ namespace Model
   enum class ComponentStatus
   {
     NOT_SET,
-    ACTIVATED
+    ACTIVATED,
+    STARTING,
+    STOPPED,
+    STOPPING,
+    RUNNING,
+    RUNNING_WITH_ERROR,
+    UNDEFINED
   };
 
 namespace ComponentStatusMapper

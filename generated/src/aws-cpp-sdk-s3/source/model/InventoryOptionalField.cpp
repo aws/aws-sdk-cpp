@@ -33,6 +33,8 @@ namespace Aws
         static const int IntelligentTieringAccessTier_HASH = HashingUtils::HashString("IntelligentTieringAccessTier");
         static const int BucketKeyStatus_HASH = HashingUtils::HashString("BucketKeyStatus");
         static const int ChecksumAlgorithm_HASH = HashingUtils::HashString("ChecksumAlgorithm");
+        static const int ObjectAccessControlList_HASH = HashingUtils::HashString("ObjectAccessControlList");
+        static const int ObjectOwner_HASH = HashingUtils::HashString("ObjectOwner");
 
 
         InventoryOptionalField GetInventoryOptionalFieldForName(const Aws::String& name)
@@ -90,6 +92,14 @@ namespace Aws
           {
             return InventoryOptionalField::ChecksumAlgorithm;
           }
+          else if (hashCode == ObjectAccessControlList_HASH)
+          {
+            return InventoryOptionalField::ObjectAccessControlList;
+          }
+          else if (hashCode == ObjectOwner_HASH)
+          {
+            return InventoryOptionalField::ObjectOwner;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -130,6 +140,10 @@ namespace Aws
             return "BucketKeyStatus";
           case InventoryOptionalField::ChecksumAlgorithm:
             return "ChecksumAlgorithm";
+          case InventoryOptionalField::ObjectAccessControlList:
+            return "ObjectAccessControlList";
+          case InventoryOptionalField::ObjectOwner:
+            return "ObjectOwner";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

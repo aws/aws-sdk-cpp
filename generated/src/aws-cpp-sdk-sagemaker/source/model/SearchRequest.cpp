@@ -21,7 +21,9 @@ SearchRequest::SearchRequest() :
     m_sortOrderHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_crossAccountFilterOption(CrossAccountFilterOption::NOT_SET),
+    m_crossAccountFilterOptionHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,11 @@ Aws::String SearchRequest::SerializePayload() const
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
+  }
+
+  if(m_crossAccountFilterOptionHasBeenSet)
+  {
+   payload.WithString("CrossAccountFilterOption", CrossAccountFilterOptionMapper::GetNameForCrossAccountFilterOption(m_crossAccountFilterOption));
   }
 
   return payload.View().WriteReadable();

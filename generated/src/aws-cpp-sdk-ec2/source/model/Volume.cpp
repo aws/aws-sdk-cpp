@@ -44,7 +44,9 @@ Volume::Volume() :
     m_multiAttachEnabled(false),
     m_multiAttachEnabledHasBeenSet(false),
     m_throughput(0),
-    m_throughputHasBeenSet(false)
+    m_throughputHasBeenSet(false),
+    m_sseType(SSEType::NOT_SET),
+    m_sseTypeHasBeenSet(false)
 {
 }
 
@@ -72,7 +74,9 @@ Volume::Volume(const XmlNode& xmlNode) :
     m_multiAttachEnabled(false),
     m_multiAttachEnabledHasBeenSet(false),
     m_throughput(0),
-    m_throughputHasBeenSet(false)
+    m_throughputHasBeenSet(false),
+    m_sseType(SSEType::NOT_SET),
+    m_sseTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -191,6 +195,12 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
       m_throughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(throughputNode.GetText()).c_str()).c_str());
       m_throughputHasBeenSet = true;
     }
+    XmlNode sseTypeNode = resultNode.FirstChild("sseType");
+    if(!sseTypeNode.IsNull())
+    {
+      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
+      m_sseTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -290,6 +300,11 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".Throughput=" << m_throughput << "&";
   }
 
+  if(m_sseTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+  }
+
   Aws::StringStream responseMetadataLocationAndMemberSs;
   responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
@@ -372,6 +387,10 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_throughputHasBeenSet)
   {
       oStream << location << ".Throughput=" << m_throughput << "&";
+  }
+  if(m_sseTypeHasBeenSet)
+  {
+      oStream << location << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

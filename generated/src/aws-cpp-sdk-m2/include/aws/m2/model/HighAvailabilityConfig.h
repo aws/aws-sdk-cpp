@@ -37,22 +37,26 @@ namespace Model
 
 
     /**
-     * <p>The number of instances in a high availability configuration.</p>
+     * <p>The number of instances in a high availability configuration. The minimum
+     * possible value is 1 and the maximum is 100.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p>The number of instances in a high availability configuration.</p>
+     * <p>The number of instances in a high availability configuration. The minimum
+     * possible value is 1 and the maximum is 100.</p>
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
-     * <p>The number of instances in a high availability configuration.</p>
+     * <p>The number of instances in a high availability configuration. The minimum
+     * possible value is 1 and the maximum is 100.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p>The number of instances in a high availability configuration.</p>
+     * <p>The number of instances in a high availability configuration. The minimum
+     * possible value is 1 and the maximum is 100.</p>
      */
     inline HighAvailabilityConfig& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 

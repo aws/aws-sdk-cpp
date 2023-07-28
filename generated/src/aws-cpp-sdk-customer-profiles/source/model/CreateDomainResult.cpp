@@ -61,6 +61,12 @@ CreateDomainResult& CreateDomainResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("RuleBasedMatching"))
+  {
+    m_ruleBasedMatching = jsonValue.GetObject("RuleBasedMatching");
+
+  }
+
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");

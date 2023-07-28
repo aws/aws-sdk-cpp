@@ -16,9 +16,9 @@ namespace Aws
 namespace HealthLake
 {
   /**
-   * <p>Amazon HealthLake is a HIPAA eligibile service that allows customers to
-   * store, transform, query, and analyze their FHIR-formatted data in a consistent
-   * fashion in the cloud.</p>
+   * <p>AWS HealthLake is a HIPAA eligibile service that allows customers to store,
+   * transform, query, and analyze their FHIR-formatted data in a consistent fashion
+   * in the cloud.</p>
    */
   class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>
   {
@@ -79,7 +79,7 @@ namespace HealthLake
         virtual ~HealthLakeClient();
 
         /**
-         * <p>Creates a Data Store that can ingest and export FHIR formatted
+         * <p>Creates a data store that can ingest and export FHIR formatted
          * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateFHIRDatastore">AWS
          * API Reference</a></p>
@@ -105,7 +105,7 @@ namespace HealthLake
         }
 
         /**
-         * <p>Deletes a Data Store. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a data store. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteFHIRDatastore">AWS
          * API Reference</a></p>
          */
@@ -130,9 +130,10 @@ namespace HealthLake
         }
 
         /**
-         * <p>Gets the properties associated with the FHIR Data Store, including the Data
-         * Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data
-         * Store type version, and Data Store endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the properties associated with the FHIR data store, including the data
+         * store ID, data store ARN, data store name, data store status, when the data
+         * store was created, data store type version, and the data store's
+         * endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRDatastore">AWS
          * API Reference</a></p>
          */
@@ -209,8 +210,8 @@ namespace HealthLake
         }
 
         /**
-         * <p>Lists all FHIR Data Stores that are in the user’s account, regardless of Data
-         * Store status.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all FHIR data stores that are in the user’s account, regardless of data
+         * store status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListFHIRDatastores">AWS
          * API Reference</a></p>
          */
@@ -287,7 +288,7 @@ namespace HealthLake
         }
 
         /**
-         * <p> Returns a list of all existing tags associated with a Data Store.
+         * <p> Returns a list of all existing tags associated with a data store.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -363,7 +364,7 @@ namespace HealthLake
         }
 
         /**
-         * <p> Adds a user specified key and value tag to a Data Store. </p><p><h3>See
+         * <p> Adds a user specified key and value tag to a data store. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/TagResource">AWS
          * API Reference</a></p>
@@ -389,7 +390,7 @@ namespace HealthLake
         }
 
         /**
-         * <p> Removes tags from a Data Store. </p><p><h3>See Also:</h3>   <a
+         * <p> Removes tags from a data store. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UntagResource">AWS
          * API Reference</a></p>
          */

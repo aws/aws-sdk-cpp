@@ -7,6 +7,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cloudformation/model/Warnings.h>
 #include <aws/cloudformation/model/ResponseMetadata.h>
 #include <aws/cloudformation/model/ParameterDeclaration.h>
 #include <aws/cloudformation/model/Capability.h>
@@ -498,6 +499,32 @@ namespace Model
     inline GetTemplateSummaryResult& AddResourceIdentifierSummaries(ResourceIdentifierSummary&& value) { m_resourceIdentifierSummaries.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>An object containing any warnings returned.</p>
+     */
+    inline const Warnings& GetWarnings() const{ return m_warnings; }
+
+    /**
+     * <p>An object containing any warnings returned.</p>
+     */
+    inline void SetWarnings(const Warnings& value) { m_warnings = value; }
+
+    /**
+     * <p>An object containing any warnings returned.</p>
+     */
+    inline void SetWarnings(Warnings&& value) { m_warnings = std::move(value); }
+
+    /**
+     * <p>An object containing any warnings returned.</p>
+     */
+    inline GetTemplateSummaryResult& WithWarnings(const Warnings& value) { SetWarnings(value); return *this;}
+
+    /**
+     * <p>An object containing any warnings returned.</p>
+     */
+    inline GetTemplateSummaryResult& WithWarnings(Warnings&& value) { SetWarnings(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -532,6 +559,8 @@ namespace Model
     Aws::Vector<Aws::String> m_declaredTransforms;
 
     Aws::Vector<ResourceIdentifierSummary> m_resourceIdentifierSummaries;
+
+    Warnings m_warnings;
 
     ResponseMetadata m_responseMetadata;
   };

@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
      */
     inline DescribeTaskRequest& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
      */
     inline DescribeTaskRequest& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the transfer task.</p>
      */
     inline DescribeTaskRequest& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 

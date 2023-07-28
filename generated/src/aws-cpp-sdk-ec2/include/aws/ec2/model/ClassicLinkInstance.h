@@ -27,12 +27,8 @@ namespace Model
 {
 
   /**
-   *  <p>We are retiring EC2-Classic. We recommend that you migrate from
-   * EC2-Classic to a VPC. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-   * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-   * Guide</i>.</p>  <p>Describes a linked EC2-Classic instance.</p><p><h3>See
-   * Also:</h3>   <a
+   *  <p>Deprecated.</p>  <p>Describes a linked EC2-Classic
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClassicLinkInstance">AWS
    * API Reference</a></p>
    */
@@ -48,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>A list of security groups.</p>
+     * <p>The security groups.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>A list of security groups.</p>
+     * <p>The security groups.</p>
      */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
-     * <p>A list of security groups.</p>
+     * <p>The security groups.</p>
      */
     inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>A list of security groups.</p>
+     * <p>The security groups.</p>
      */
     inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>A list of security groups.</p>
+     * <p>The security groups.</p>
      */
     inline ClassicLinkInstance& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>A list of security groups.</p>
+     * <p>The security groups.</p>
      */
     inline ClassicLinkInstance& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>A list of security groups.</p>
+     * <p>The security groups.</p>
      */
     inline ClassicLinkInstance& AddGroups(const GroupIdentifier& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>A list of security groups.</p>
+     * <p>The security groups.</p>
      */
     inline ClassicLinkInstance& AddGroups(GroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 

@@ -38,44 +38,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source NFS file system location that is
-     * created.</p>
+     * <p>The ARN of the transfer location that you created for your NFS file
+     * server.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source NFS file system location that is
-     * created.</p>
+     * <p>The ARN of the transfer location that you created for your NFS file
+     * server.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source NFS file system location that is
-     * created.</p>
+     * <p>The ARN of the transfer location that you created for your NFS file
+     * server.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source NFS file system location that is
-     * created.</p>
+     * <p>The ARN of the transfer location that you created for your NFS file
+     * server.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source NFS file system location that is
-     * created.</p>
+     * <p>The ARN of the transfer location that you created for your NFS file
+     * server.</p>
      */
     inline CreateLocationNfsResult& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source NFS file system location that is
-     * created.</p>
+     * <p>The ARN of the transfer location that you created for your NFS file
+     * server.</p>
      */
     inline CreateLocationNfsResult& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source NFS file system location that is
-     * created.</p>
+     * <p>The ARN of the transfer location that you created for your NFS file
+     * server.</p>
      */
     inline CreateLocationNfsResult& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 

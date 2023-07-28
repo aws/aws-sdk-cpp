@@ -35,58 +35,66 @@ namespace Model
 
 
     /**
-     * <p>A list of <code>FeatureGroup</code> names, with their corresponding
-     * <code>RecordIdentifier</code> value, and Feature name that have been requested
-     * to be retrieved in batch.</p>
+     * <p>A list containing the name or Amazon Resource Name (ARN) of the
+     * <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be
+     * retrieved, and the corresponding <code>RecordIdentifier</code> values as
+     * strings.</p>
      */
     inline const Aws::Vector<BatchGetRecordIdentifier>& GetIdentifiers() const{ return m_identifiers; }
 
     /**
-     * <p>A list of <code>FeatureGroup</code> names, with their corresponding
-     * <code>RecordIdentifier</code> value, and Feature name that have been requested
-     * to be retrieved in batch.</p>
+     * <p>A list containing the name or Amazon Resource Name (ARN) of the
+     * <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be
+     * retrieved, and the corresponding <code>RecordIdentifier</code> values as
+     * strings.</p>
      */
     inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
 
     /**
-     * <p>A list of <code>FeatureGroup</code> names, with their corresponding
-     * <code>RecordIdentifier</code> value, and Feature name that have been requested
-     * to be retrieved in batch.</p>
+     * <p>A list containing the name or Amazon Resource Name (ARN) of the
+     * <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be
+     * retrieved, and the corresponding <code>RecordIdentifier</code> values as
+     * strings.</p>
      */
     inline void SetIdentifiers(const Aws::Vector<BatchGetRecordIdentifier>& value) { m_identifiersHasBeenSet = true; m_identifiers = value; }
 
     /**
-     * <p>A list of <code>FeatureGroup</code> names, with their corresponding
-     * <code>RecordIdentifier</code> value, and Feature name that have been requested
-     * to be retrieved in batch.</p>
+     * <p>A list containing the name or Amazon Resource Name (ARN) of the
+     * <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be
+     * retrieved, and the corresponding <code>RecordIdentifier</code> values as
+     * strings.</p>
      */
     inline void SetIdentifiers(Aws::Vector<BatchGetRecordIdentifier>&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::move(value); }
 
     /**
-     * <p>A list of <code>FeatureGroup</code> names, with their corresponding
-     * <code>RecordIdentifier</code> value, and Feature name that have been requested
-     * to be retrieved in batch.</p>
+     * <p>A list containing the name or Amazon Resource Name (ARN) of the
+     * <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be
+     * retrieved, and the corresponding <code>RecordIdentifier</code> values as
+     * strings.</p>
      */
     inline BatchGetRecordRequest& WithIdentifiers(const Aws::Vector<BatchGetRecordIdentifier>& value) { SetIdentifiers(value); return *this;}
 
     /**
-     * <p>A list of <code>FeatureGroup</code> names, with their corresponding
-     * <code>RecordIdentifier</code> value, and Feature name that have been requested
-     * to be retrieved in batch.</p>
+     * <p>A list containing the name or Amazon Resource Name (ARN) of the
+     * <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be
+     * retrieved, and the corresponding <code>RecordIdentifier</code> values as
+     * strings.</p>
      */
     inline BatchGetRecordRequest& WithIdentifiers(Aws::Vector<BatchGetRecordIdentifier>&& value) { SetIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <code>FeatureGroup</code> names, with their corresponding
-     * <code>RecordIdentifier</code> value, and Feature name that have been requested
-     * to be retrieved in batch.</p>
+     * <p>A list containing the name or Amazon Resource Name (ARN) of the
+     * <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be
+     * retrieved, and the corresponding <code>RecordIdentifier</code> values as
+     * strings.</p>
      */
     inline BatchGetRecordRequest& AddIdentifiers(const BatchGetRecordIdentifier& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>FeatureGroup</code> names, with their corresponding
-     * <code>RecordIdentifier</code> value, and Feature name that have been requested
-     * to be retrieved in batch.</p>
+     * <p>A list containing the name or Amazon Resource Name (ARN) of the
+     * <code>FeatureGroup</code>, the list of names of <code>Feature</code>s to be
+     * retrieved, and the corresponding <code>RecordIdentifier</code> values as
+     * strings.</p>
      */
     inline BatchGetRecordRequest& AddIdentifiers(BatchGetRecordIdentifier&& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(std::move(value)); return *this; }
 

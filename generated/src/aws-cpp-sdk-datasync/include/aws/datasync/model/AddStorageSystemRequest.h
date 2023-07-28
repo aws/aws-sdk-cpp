@@ -128,55 +128,64 @@ namespace Model
 
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects
-     * to and reads from your on-premises storage system's management interface.</p>
+     * to and reads from your on-premises storage system's management interface. You
+     * can only specify one ARN.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
 
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects
-     * to and reads from your on-premises storage system's management interface.</p>
+     * to and reads from your on-premises storage system's management interface. You
+     * can only specify one ARN.</p>
      */
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
 
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects
-     * to and reads from your on-premises storage system's management interface.</p>
+     * to and reads from your on-premises storage system's management interface. You
+     * can only specify one ARN.</p>
      */
     inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
 
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects
-     * to and reads from your on-premises storage system's management interface.</p>
+     * to and reads from your on-premises storage system's management interface. You
+     * can only specify one ARN.</p>
      */
     inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::move(value); }
 
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects
-     * to and reads from your on-premises storage system's management interface.</p>
+     * to and reads from your on-premises storage system's management interface. You
+     * can only specify one ARN.</p>
      */
     inline AddStorageSystemRequest& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
 
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects
-     * to and reads from your on-premises storage system's management interface.</p>
+     * to and reads from your on-premises storage system's management interface. You
+     * can only specify one ARN.</p>
      */
     inline AddStorageSystemRequest& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects
-     * to and reads from your on-premises storage system's management interface.</p>
+     * to and reads from your on-premises storage system's management interface. You
+     * can only specify one ARN.</p>
      */
     inline AddStorageSystemRequest& AddAgentArns(const Aws::String& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
 
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects
-     * to and reads from your on-premises storage system's management interface.</p>
+     * to and reads from your on-premises storage system's management interface. You
+     * can only specify one ARN.</p>
      */
     inline AddStorageSystemRequest& AddAgentArns(Aws::String&& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects
-     * to and reads from your on-premises storage system's management interface.</p>
+     * to and reads from your on-premises storage system's management interface. You
+     * can only specify one ARN.</p>
      */
     inline AddStorageSystemRequest& AddAgentArns(const char* value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
 

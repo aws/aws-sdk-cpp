@@ -544,7 +544,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -555,9 +555,9 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * create a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must create the stack directly from the template using this
@@ -567,7 +567,7 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
      */
@@ -605,7 +605,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -616,9 +616,9 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * create a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must create the stack directly from the template using this
@@ -628,7 +628,7 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
      */
@@ -666,7 +666,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -677,9 +677,9 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * create a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must create the stack directly from the template using this
@@ -689,7 +689,7 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
      */
@@ -727,7 +727,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -738,9 +738,9 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * create a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must create the stack directly from the template using this
@@ -750,7 +750,7 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
      */
@@ -788,7 +788,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -799,9 +799,9 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * create a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must create the stack directly from the template using this
@@ -811,7 +811,7 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
      */
@@ -849,7 +849,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -860,9 +860,9 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * create a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must create the stack directly from the template using this
@@ -872,7 +872,7 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
      */
@@ -910,7 +910,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -921,9 +921,9 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * create a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must create the stack directly from the template using this
@@ -933,7 +933,7 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
      */
@@ -971,7 +971,7 @@ namespace Model
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -982,9 +982,9 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
      * and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
      * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
      * create a stack from a stack template that contains macros <i>and</i> nested
      * stacks, you must create the stack directly from the template using this
@@ -994,7 +994,7 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
      * </ul>
      */
@@ -1696,10 +1696,10 @@ namespace Model
      * <p>Whether to enable termination protection on the specified stack. If a user
      * attempts to delete a stack with termination protection enabled, the operation
      * fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
      * Termination protection is deactivated on stacks by default.</p> <p>For <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed
      * directly on the nested stack.</p>
      */
@@ -1709,10 +1709,10 @@ namespace Model
      * <p>Whether to enable termination protection on the specified stack. If a user
      * attempts to delete a stack with termination protection enabled, the operation
      * fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
      * Termination protection is deactivated on stacks by default.</p> <p>For <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed
      * directly on the nested stack.</p>
      */
@@ -1722,10 +1722,10 @@ namespace Model
      * <p>Whether to enable termination protection on the specified stack. If a user
      * attempts to delete a stack with termination protection enabled, the operation
      * fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
      * Termination protection is deactivated on stacks by default.</p> <p>For <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed
      * directly on the nested stack.</p>
      */
@@ -1735,14 +1735,59 @@ namespace Model
      * <p>Whether to enable termination protection on the specified stack. If a user
      * attempts to delete a stack with termination protection enabled, the operation
      * fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
      * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
      * Termination protection is deactivated on stacks by default.</p> <p>For <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed
      * directly on the nested stack.</p>
      */
     inline CreateStackRequest& WithEnableTerminationProtection(bool value) { SetEnableTerminationProtection(value); return *this;}
+
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline bool GetRetainExceptOnCreate() const{ return m_retainExceptOnCreate; }
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline bool RetainExceptOnCreateHasBeenSet() const { return m_retainExceptOnCreateHasBeenSet; }
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline void SetRetainExceptOnCreate(bool value) { m_retainExceptOnCreateHasBeenSet = true; m_retainExceptOnCreate = value; }
+
+    /**
+     * <p>This deletion policy deletes newly created resources, but retains existing
+     * resources, when a stack operation is rolled back. This ensures new, empty, and
+     * unused resources are deleted, while critical resources and their data are
+     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
+     * that supports the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
+     * DeletionPolicy</a> attribute.</p>
+     */
+    inline CreateStackRequest& WithRetainExceptOnCreate(bool value) { SetRetainExceptOnCreate(value); return *this;}
 
   private:
 
@@ -1796,6 +1841,9 @@ namespace Model
 
     bool m_enableTerminationProtection;
     bool m_enableTerminationProtectionHasBeenSet = false;
+
+    bool m_retainExceptOnCreate;
+    bool m_retainExceptOnCreateHasBeenSet = false;
   };
 
 } // namespace Model

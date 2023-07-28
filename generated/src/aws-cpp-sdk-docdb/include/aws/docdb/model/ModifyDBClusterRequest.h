@@ -684,51 +684,116 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Modifying engine version is not supported on Amazon DocumentDB.</p>
+     * Changing this parameter results in an outage. The change is applied during the
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
+     * <p>To list all of the available engine versions for Amazon DocumentDB use the
+     * following command:</p> <p> <code>aws docdb describe-db-engine-versions --engine
+     * docdb --query "DBEngineVersions[].EngineVersion"</code> </p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
+
+    /**
+     * <p>A value that indicates whether major version upgrades are allowed.</p>
+     * <p>Constraints: You must allow major version upgrades when specifying a value
+     * for the <code>EngineVersion</code> parameter that is a different major version
+     * than the DB cluster's current version.</p>
+     */
+    inline ModifyDBClusterRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
 
 
     /**
@@ -804,6 +869,9 @@ namespace Model
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
+
+    bool m_allowMajorVersionUpgrade;
+    bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/PluginNameValue.h>
 #include <aws/dms/model/LongVarcharMappingType.h>
+#include <aws/dms/model/DatabaseMode.h>
 #include <utility>
 
 namespace Aws
@@ -1149,6 +1150,96 @@ namespace Model
      */
     inline PostgreSQLSettings& WithMapLongVarcharAs(LongVarcharMappingType&& value) { SetMapLongVarcharAs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether to use default or custom replication behavior for
+     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
+     * behavior for endpoints that require additional configuration, such as Babelfish
+     * endpoints.</p>
+     */
+    inline const DatabaseMode& GetDatabaseMode() const{ return m_databaseMode; }
+
+    /**
+     * <p>Specifies whether to use default or custom replication behavior for
+     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
+     * behavior for endpoints that require additional configuration, such as Babelfish
+     * endpoints.</p>
+     */
+    inline bool DatabaseModeHasBeenSet() const { return m_databaseModeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to use default or custom replication behavior for
+     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
+     * behavior for endpoints that require additional configuration, such as Babelfish
+     * endpoints.</p>
+     */
+    inline void SetDatabaseMode(const DatabaseMode& value) { m_databaseModeHasBeenSet = true; m_databaseMode = value; }
+
+    /**
+     * <p>Specifies whether to use default or custom replication behavior for
+     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
+     * behavior for endpoints that require additional configuration, such as Babelfish
+     * endpoints.</p>
+     */
+    inline void SetDatabaseMode(DatabaseMode&& value) { m_databaseModeHasBeenSet = true; m_databaseMode = std::move(value); }
+
+    /**
+     * <p>Specifies whether to use default or custom replication behavior for
+     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
+     * behavior for endpoints that require additional configuration, such as Babelfish
+     * endpoints.</p>
+     */
+    inline PostgreSQLSettings& WithDatabaseMode(const DatabaseMode& value) { SetDatabaseMode(value); return *this;}
+
+    /**
+     * <p>Specifies whether to use default or custom replication behavior for
+     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
+     * behavior for endpoints that require additional configuration, such as Babelfish
+     * endpoints.</p>
+     */
+    inline PostgreSQLSettings& WithDatabaseMode(DatabaseMode&& value) { SetDatabaseMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline const Aws::String& GetBabelfishDatabaseName() const{ return m_babelfishDatabaseName; }
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline bool BabelfishDatabaseNameHasBeenSet() const { return m_babelfishDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline void SetBabelfishDatabaseName(const Aws::String& value) { m_babelfishDatabaseNameHasBeenSet = true; m_babelfishDatabaseName = value; }
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline void SetBabelfishDatabaseName(Aws::String&& value) { m_babelfishDatabaseNameHasBeenSet = true; m_babelfishDatabaseName = std::move(value); }
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline void SetBabelfishDatabaseName(const char* value) { m_babelfishDatabaseNameHasBeenSet = true; m_babelfishDatabaseName.assign(value); }
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline PostgreSQLSettings& WithBabelfishDatabaseName(const Aws::String& value) { SetBabelfishDatabaseName(value); return *this;}
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline PostgreSQLSettings& WithBabelfishDatabaseName(Aws::String&& value) { SetBabelfishDatabaseName(std::move(value)); return *this;}
+
+    /**
+     * <p>The Babelfish for Aurora PostgreSQL database name for the endpoint.</p>
+     */
+    inline PostgreSQLSettings& WithBabelfishDatabaseName(const char* value) { SetBabelfishDatabaseName(value); return *this;}
+
   private:
 
     Aws::String m_afterConnectScript;
@@ -1216,6 +1307,12 @@ namespace Model
 
     LongVarcharMappingType m_mapLongVarcharAs;
     bool m_mapLongVarcharAsHasBeenSet = false;
+
+    DatabaseMode m_databaseMode;
+    bool m_databaseModeHasBeenSet = false;
+
+    Aws::String m_babelfishDatabaseName;
+    bool m_babelfishDatabaseNameHasBeenSet = false;
   };
 
 } // namespace Model

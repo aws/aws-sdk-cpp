@@ -107,7 +107,8 @@ ResourceDetails::ResourceDetails() :
     m_awsAppSyncGraphQlApiHasBeenSet(false),
     m_awsEventSchemasRegistryHasBeenSet(false),
     m_awsGuardDutyDetectorHasBeenSet(false),
-    m_awsStepFunctionStateMachineHasBeenSet(false)
+    m_awsStepFunctionStateMachineHasBeenSet(false),
+    m_awsAthenaWorkGroupHasBeenSet(false)
 {
 }
 
@@ -200,7 +201,8 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsAppSyncGraphQlApiHasBeenSet(false),
     m_awsEventSchemasRegistryHasBeenSet(false),
     m_awsGuardDutyDetectorHasBeenSet(false),
-    m_awsStepFunctionStateMachineHasBeenSet(false)
+    m_awsStepFunctionStateMachineHasBeenSet(false),
+    m_awsAthenaWorkGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -833,6 +835,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsStepFunctionStateMachineHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsAthenaWorkGroup"))
+  {
+    m_awsAthenaWorkGroup = jsonValue.GetObject("AwsAthenaWorkGroup");
+
+    m_awsAthenaWorkGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -1376,6 +1385,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsStepFunctionStateMachineHasBeenSet)
   {
    payload.WithObject("AwsStepFunctionStateMachine", m_awsStepFunctionStateMachine.Jsonize());
+
+  }
+
+  if(m_awsAthenaWorkGroupHasBeenSet)
+  {
+   payload.WithObject("AwsAthenaWorkGroup", m_awsAthenaWorkGroup.Jsonize());
 
   }
 

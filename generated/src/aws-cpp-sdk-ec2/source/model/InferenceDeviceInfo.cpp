@@ -24,7 +24,8 @@ InferenceDeviceInfo::InferenceDeviceInfo() :
     m_count(0),
     m_countHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_manufacturerHasBeenSet(false)
+    m_manufacturerHasBeenSet(false),
+    m_memoryInfoHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ InferenceDeviceInfo::InferenceDeviceInfo(const XmlNode& xmlNode) :
     m_count(0),
     m_countHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_manufacturerHasBeenSet(false)
+    m_manufacturerHasBeenSet(false),
+    m_memoryInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,6 +63,12 @@ InferenceDeviceInfo& InferenceDeviceInfo::operator =(const XmlNode& xmlNode)
       m_manufacturer = Aws::Utils::Xml::DecodeEscapedXmlText(manufacturerNode.GetText());
       m_manufacturerHasBeenSet = true;
     }
+    XmlNode memoryInfoNode = resultNode.FirstChild("memoryInfo");
+    if(!memoryInfoNode.IsNull())
+    {
+      m_memoryInfo = memoryInfoNode;
+      m_memoryInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -83,6 +91,13 @@ void InferenceDeviceInfo::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".Manufacturer=" << StringUtils::URLEncode(m_manufacturer.c_str()) << "&";
   }
 
+  if(m_memoryInfoHasBeenSet)
+  {
+      Aws::StringStream memoryInfoLocationAndMemberSs;
+      memoryInfoLocationAndMemberSs << location << index << locationValue << ".MemoryInfo";
+      m_memoryInfo.OutputToStream(oStream, memoryInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InferenceDeviceInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -98,6 +113,12 @@ void InferenceDeviceInfo::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_manufacturerHasBeenSet)
   {
       oStream << location << ".Manufacturer=" << StringUtils::URLEncode(m_manufacturer.c_str()) << "&";
+  }
+  if(m_memoryInfoHasBeenSet)
+  {
+      Aws::String memoryInfoLocationAndMember(location);
+      memoryInfoLocationAndMember += ".MemoryInfo";
+      m_memoryInfo.OutputToStream(oStream, memoryInfoLocationAndMember.c_str());
   }
 }
 

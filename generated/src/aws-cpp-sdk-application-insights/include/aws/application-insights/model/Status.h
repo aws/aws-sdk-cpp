@@ -19,7 +19,8 @@ namespace Model
     IGNORE,
     RESOLVED,
     PENDING,
-    RECURRING
+    RECURRING,
+    RECOVERING
   };
 
 namespace StatusMapper

@@ -20,7 +20,8 @@ namespace Model
     STARTING,
     STOPPED,
     WARNING,
-    UNKNOWN
+    UNKNOWN,
+    ERROR_
   };
 
 namespace DatabaseStatusMapper

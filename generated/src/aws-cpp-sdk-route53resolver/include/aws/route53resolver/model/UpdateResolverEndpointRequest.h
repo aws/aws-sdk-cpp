@@ -121,78 +121,100 @@ namespace Model
 
     /**
      * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
-     * forward DNS queries. </p>
+     * forward DNS queries. </p> <p>Updating to <code>IPV6</code> type isn't currently
+     * supported.</p>
      */
     inline const ResolverEndpointType& GetResolverEndpointType() const{ return m_resolverEndpointType; }
 
     /**
      * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
-     * forward DNS queries. </p>
+     * forward DNS queries. </p> <p>Updating to <code>IPV6</code> type isn't currently
+     * supported.</p>
      */
     inline bool ResolverEndpointTypeHasBeenSet() const { return m_resolverEndpointTypeHasBeenSet; }
 
     /**
      * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
-     * forward DNS queries. </p>
+     * forward DNS queries. </p> <p>Updating to <code>IPV6</code> type isn't currently
+     * supported.</p>
      */
     inline void SetResolverEndpointType(const ResolverEndpointType& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = value; }
 
     /**
      * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
-     * forward DNS queries. </p>
+     * forward DNS queries. </p> <p>Updating to <code>IPV6</code> type isn't currently
+     * supported.</p>
      */
     inline void SetResolverEndpointType(ResolverEndpointType&& value) { m_resolverEndpointTypeHasBeenSet = true; m_resolverEndpointType = std::move(value); }
 
     /**
      * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
-     * forward DNS queries. </p>
+     * forward DNS queries. </p> <p>Updating to <code>IPV6</code> type isn't currently
+     * supported.</p>
      */
     inline UpdateResolverEndpointRequest& WithResolverEndpointType(const ResolverEndpointType& value) { SetResolverEndpointType(value); return *this;}
 
     /**
      * <p> Specifies the endpoint type for what type of IP address the endpoint uses to
-     * forward DNS queries. </p>
+     * forward DNS queries. </p> <p>Updating to <code>IPV6</code> type isn't currently
+     * supported.</p>
      */
     inline UpdateResolverEndpointRequest& WithResolverEndpointType(ResolverEndpointType&& value) { SetResolverEndpointType(std::move(value)); return *this;}
 
 
     /**
-     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     * <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4
+     * to dual-stack. If you don't specify an IPv6 address, one will be automatically
+     * chosen from your subnet. </p>
      */
     inline const Aws::Vector<UpdateIpAddress>& GetUpdateIpAddresses() const{ return m_updateIpAddresses; }
 
     /**
-     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     * <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4
+     * to dual-stack. If you don't specify an IPv6 address, one will be automatically
+     * chosen from your subnet. </p>
      */
     inline bool UpdateIpAddressesHasBeenSet() const { return m_updateIpAddressesHasBeenSet; }
 
     /**
-     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     * <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4
+     * to dual-stack. If you don't specify an IPv6 address, one will be automatically
+     * chosen from your subnet. </p>
      */
     inline void SetUpdateIpAddresses(const Aws::Vector<UpdateIpAddress>& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses = value; }
 
     /**
-     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     * <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4
+     * to dual-stack. If you don't specify an IPv6 address, one will be automatically
+     * chosen from your subnet. </p>
      */
     inline void SetUpdateIpAddresses(Aws::Vector<UpdateIpAddress>&& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses = std::move(value); }
 
     /**
-     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     * <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4
+     * to dual-stack. If you don't specify an IPv6 address, one will be automatically
+     * chosen from your subnet. </p>
      */
     inline UpdateResolverEndpointRequest& WithUpdateIpAddresses(const Aws::Vector<UpdateIpAddress>& value) { SetUpdateIpAddresses(value); return *this;}
 
     /**
-     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     * <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4
+     * to dual-stack. If you don't specify an IPv6 address, one will be automatically
+     * chosen from your subnet. </p>
      */
     inline UpdateResolverEndpointRequest& WithUpdateIpAddresses(Aws::Vector<UpdateIpAddress>&& value) { SetUpdateIpAddresses(std::move(value)); return *this;}
 
     /**
-     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     * <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4
+     * to dual-stack. If you don't specify an IPv6 address, one will be automatically
+     * chosen from your subnet. </p>
      */
     inline UpdateResolverEndpointRequest& AddUpdateIpAddresses(const UpdateIpAddress& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses.push_back(value); return *this; }
 
     /**
-     * <p> Updates the Resolver endpoint type to IpV4, Ipv6, or dual-stack. </p>
+     * <p> Specifies the IPv6 address when you update the Resolver endpoint from IPv4
+     * to dual-stack. If you don't specify an IPv6 address, one will be automatically
+     * chosen from your subnet. </p>
      */
     inline UpdateResolverEndpointRequest& AddUpdateIpAddresses(UpdateIpAddress&& value) { m_updateIpAddressesHasBeenSet = true; m_updateIpAddresses.push_back(std::move(value)); return *this; }
 

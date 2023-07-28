@@ -39,7 +39,7 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
      * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * ID of the Availability Zone for the subnet. You can also use
@@ -105,7 +105,7 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
      * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * ID of the Availability Zone for the subnet. You can also use
@@ -171,7 +171,7 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
      * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * ID of the Availability Zone for the subnet. You can also use
@@ -237,7 +237,7 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
      * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * ID of the Availability Zone for the subnet. You can also use
@@ -303,7 +303,7 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
      * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * ID of the Availability Zone for the subnet. You can also use
@@ -369,7 +369,7 @@ namespace Model
     inline DescribeSubnetsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
      * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * ID of the Availability Zone for the subnet. You can also use
@@ -435,7 +435,7 @@ namespace Model
     inline DescribeSubnetsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
      * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * ID of the Availability Zone for the subnet. You can also use
@@ -501,7 +501,7 @@ namespace Model
     inline DescribeSubnetsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
      * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * ID of the Availability Zone for the subnet. You can also use
@@ -568,47 +568,47 @@ namespace Model
 
 
     /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
      */
     inline DescribeSubnetsRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
      */
     inline DescribeSubnetsRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
      */
     inline DescribeSubnetsRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
      */
     inline DescribeSubnetsRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more subnet IDs.</p> <p>Default: Describes all your subnets.</p>
+     * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
      */
     inline DescribeSubnetsRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 

@@ -899,7 +899,7 @@ namespace LakeFormation
          * you are able to see only the principal permissions for ALTER.</p> <p>This
          * operation returns only those permissions that have been explicitly granted.</p>
          * <p>For information about permissions, see <a
-         * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
+         * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security
          * and Access Control to Metadata and Data</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListPermissions">AWS
          * API Reference</a></p>

@@ -239,7 +239,9 @@ namespace Aws
       class DeleteInstanceRequest;
       class DeleteIntegrationAssociationRequest;
       class DeletePromptRequest;
+      class DeleteQueueRequest;
       class DeleteQuickConnectRequest;
+      class DeleteRoutingProfileRequest;
       class DeleteRuleRequest;
       class DeleteSecurityProfileRequest;
       class DeleteTaskTemplateRequest;
@@ -436,7 +438,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteInstanceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteIntegrationAssociationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeletePromptOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteQueueOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteQuickConnectOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteRoutingProfileOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteRuleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteSecurityProfileOutcome;
       typedef Aws::Utils::Outcome<DeleteTaskTemplateResult, ConnectError> DeleteTaskTemplateOutcome;
@@ -633,7 +637,9 @@ namespace Aws
       typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
       typedef std::future<DeleteIntegrationAssociationOutcome> DeleteIntegrationAssociationOutcomeCallable;
       typedef std::future<DeletePromptOutcome> DeletePromptOutcomeCallable;
+      typedef std::future<DeleteQueueOutcome> DeleteQueueOutcomeCallable;
       typedef std::future<DeleteQuickConnectOutcome> DeleteQuickConnectOutcomeCallable;
+      typedef std::future<DeleteRoutingProfileOutcome> DeleteRoutingProfileOutcomeCallable;
       typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
       typedef std::future<DeleteSecurityProfileOutcome> DeleteSecurityProfileOutcomeCallable;
       typedef std::future<DeleteTaskTemplateOutcome> DeleteTaskTemplateOutcomeCallable;
@@ -833,7 +839,9 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::DeleteInstanceRequest&, const Model::DeleteInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteIntegrationAssociationRequest&, const Model::DeleteIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationAssociationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeletePromptRequest&, const Model::DeletePromptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePromptResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteQueueRequest&, const Model::DeleteQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueueResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteQuickConnectRequest&, const Model::DeleteQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuickConnectResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteRoutingProfileRequest&, const Model::DeleteRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoutingProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteRuleRequest&, const Model::DeleteRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteSecurityProfileRequest&, const Model::DeleteSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteTaskTemplateRequest&, const Model::DeleteTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTaskTemplateResponseReceivedHandler;

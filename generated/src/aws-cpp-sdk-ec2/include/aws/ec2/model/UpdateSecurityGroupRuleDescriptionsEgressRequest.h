@@ -131,49 +131,49 @@ namespace Model
 
     /**
      * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request.</p>
+     * security group ID or the security group name.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
      * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request.</p>
+     * security group ID or the security group name.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request.</p>
+     * security group ID or the security group name.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request.</p>
+     * security group ID or the security group name.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request.</p>
+     * security group ID or the security group name.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
      * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request.</p>
+     * security group ID or the security group name.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request.</p>
+     * security group ID or the security group name.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>[Default VPC] The name of the security group. You must specify either the
-     * security group ID or the security group name in the request.</p>
+     * security group ID or the security group name.</p>
      */
     inline UpdateSecurityGroupRuleDescriptionsEgressRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 

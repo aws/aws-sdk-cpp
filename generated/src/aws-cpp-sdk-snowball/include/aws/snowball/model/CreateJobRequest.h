@@ -17,6 +17,8 @@
 #include <aws/snowball/model/TaxDocuments.h>
 #include <aws/snowball/model/DeviceConfiguration.h>
 #include <aws/snowball/model/RemoteManagement.h>
+#include <aws/snowball/model/ImpactLevel.h>
+#include <aws/snowball/model/PickupDetails.h>
 #include <utility>
 
 namespace Aws
@@ -911,8 +913,9 @@ namespace Model
      * <p>Allows you to securely operate and manage Snowcone devices remotely from
      * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
      * remote management will automatically be available when the device arrives at
-     * your location. Otherwise, you need to use the Snowball Client to manage the
-     * device.</p>
+     * your location. Otherwise, you need to use the Snowball Edge client to manage the
+     * device. When set to <code>NOT_INSTALLED</code>, remote management will not be
+     * available on the device. </p>
      */
     inline const RemoteManagement& GetRemoteManagement() const{ return m_remoteManagement; }
 
@@ -920,8 +923,9 @@ namespace Model
      * <p>Allows you to securely operate and manage Snowcone devices remotely from
      * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
      * remote management will automatically be available when the device arrives at
-     * your location. Otherwise, you need to use the Snowball Client to manage the
-     * device.</p>
+     * your location. Otherwise, you need to use the Snowball Edge client to manage the
+     * device. When set to <code>NOT_INSTALLED</code>, remote management will not be
+     * available on the device. </p>
      */
     inline bool RemoteManagementHasBeenSet() const { return m_remoteManagementHasBeenSet; }
 
@@ -929,8 +933,9 @@ namespace Model
      * <p>Allows you to securely operate and manage Snowcone devices remotely from
      * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
      * remote management will automatically be available when the device arrives at
-     * your location. Otherwise, you need to use the Snowball Client to manage the
-     * device.</p>
+     * your location. Otherwise, you need to use the Snowball Edge client to manage the
+     * device. When set to <code>NOT_INSTALLED</code>, remote management will not be
+     * available on the device. </p>
      */
     inline void SetRemoteManagement(const RemoteManagement& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = value; }
 
@@ -938,8 +943,9 @@ namespace Model
      * <p>Allows you to securely operate and manage Snowcone devices remotely from
      * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
      * remote management will automatically be available when the device arrives at
-     * your location. Otherwise, you need to use the Snowball Client to manage the
-     * device.</p>
+     * your location. Otherwise, you need to use the Snowball Edge client to manage the
+     * device. When set to <code>NOT_INSTALLED</code>, remote management will not be
+     * available on the device. </p>
      */
     inline void SetRemoteManagement(RemoteManagement&& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = std::move(value); }
 
@@ -947,8 +953,9 @@ namespace Model
      * <p>Allows you to securely operate and manage Snowcone devices remotely from
      * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
      * remote management will automatically be available when the device arrives at
-     * your location. Otherwise, you need to use the Snowball Client to manage the
-     * device.</p>
+     * your location. Otherwise, you need to use the Snowball Edge client to manage the
+     * device. When set to <code>NOT_INSTALLED</code>, remote management will not be
+     * available on the device. </p>
      */
     inline CreateJobRequest& WithRemoteManagement(const RemoteManagement& value) { SetRemoteManagement(value); return *this;}
 
@@ -956,8 +963,9 @@ namespace Model
      * <p>Allows you to securely operate and manage Snowcone devices remotely from
      * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
      * remote management will automatically be available when the device arrives at
-     * your location. Otherwise, you need to use the Snowball Client to manage the
-     * device.</p>
+     * your location. Otherwise, you need to use the Snowball Edge client to manage the
+     * device. When set to <code>NOT_INSTALLED</code>, remote management will not be
+     * available on the device. </p>
      */
     inline CreateJobRequest& WithRemoteManagement(RemoteManagement&& value) { SetRemoteManagement(std::move(value)); return *this;}
 
@@ -1001,6 +1009,74 @@ namespace Model
      * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline CreateJobRequest& WithLongTermPricingId(const char* value) { SetLongTermPricingId(value); return *this;}
+
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline const ImpactLevel& GetImpactLevel() const{ return m_impactLevel; }
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline bool ImpactLevelHasBeenSet() const { return m_impactLevelHasBeenSet; }
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline void SetImpactLevel(const ImpactLevel& value) { m_impactLevelHasBeenSet = true; m_impactLevel = value; }
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline void SetImpactLevel(ImpactLevel&& value) { m_impactLevelHasBeenSet = true; m_impactLevel = std::move(value); }
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline CreateJobRequest& WithImpactLevel(const ImpactLevel& value) { SetImpactLevel(value); return *this;}
+
+    /**
+     * <p>The highest impact level of data that will be stored or processed on the
+     * device, provided at job creation.</p>
+     */
+    inline CreateJobRequest& WithImpactLevel(ImpactLevel&& value) { SetImpactLevel(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline const PickupDetails& GetPickupDetails() const{ return m_pickupDetails; }
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline bool PickupDetailsHasBeenSet() const { return m_pickupDetailsHasBeenSet; }
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline void SetPickupDetails(const PickupDetails& value) { m_pickupDetailsHasBeenSet = true; m_pickupDetails = value; }
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline void SetPickupDetails(PickupDetails&& value) { m_pickupDetailsHasBeenSet = true; m_pickupDetails = std::move(value); }
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline CreateJobRequest& WithPickupDetails(const PickupDetails& value) { SetPickupDetails(value); return *this;}
+
+    /**
+     * <p>Information identifying the person picking up the device.</p>
+     */
+    inline CreateJobRequest& WithPickupDetails(PickupDetails&& value) { SetPickupDetails(std::move(value)); return *this;}
 
   private:
 
@@ -1054,6 +1130,12 @@ namespace Model
 
     Aws::String m_longTermPricingId;
     bool m_longTermPricingIdHasBeenSet = false;
+
+    ImpactLevel m_impactLevel;
+    bool m_impactLevelHasBeenSet = false;
+
+    PickupDetails m_pickupDetails;
+    bool m_pickupDetailsHasBeenSet = false;
   };
 
 } // namespace Model

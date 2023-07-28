@@ -29,14 +29,13 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details about a blue/green deployment.</p> <p>For more
-   * information, see <a
+   * <p>Details about a blue/green deployment.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
    * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS
    * User Guide</i> and <a
-   * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-   * Using Amazon RDS Blue/Green Deployments for database updates</a> in the
-   * <i>Amazon Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+   * Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
+   * Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BlueGreenDeployment">AWS
    * API Reference</a></p>
    */
@@ -52,42 +51,42 @@ namespace Model
 
 
     /**
-     * <p>The system-generated identifier of the blue/green deployment.</p>
+     * <p>The unique identifier of the blue/green deployment.</p>
      */
     inline const Aws::String& GetBlueGreenDeploymentIdentifier() const{ return m_blueGreenDeploymentIdentifier; }
 
     /**
-     * <p>The system-generated identifier of the blue/green deployment.</p>
+     * <p>The unique identifier of the blue/green deployment.</p>
      */
     inline bool BlueGreenDeploymentIdentifierHasBeenSet() const { return m_blueGreenDeploymentIdentifierHasBeenSet; }
 
     /**
-     * <p>The system-generated identifier of the blue/green deployment.</p>
+     * <p>The unique identifier of the blue/green deployment.</p>
      */
     inline void SetBlueGreenDeploymentIdentifier(const Aws::String& value) { m_blueGreenDeploymentIdentifierHasBeenSet = true; m_blueGreenDeploymentIdentifier = value; }
 
     /**
-     * <p>The system-generated identifier of the blue/green deployment.</p>
+     * <p>The unique identifier of the blue/green deployment.</p>
      */
     inline void SetBlueGreenDeploymentIdentifier(Aws::String&& value) { m_blueGreenDeploymentIdentifierHasBeenSet = true; m_blueGreenDeploymentIdentifier = std::move(value); }
 
     /**
-     * <p>The system-generated identifier of the blue/green deployment.</p>
+     * <p>The unique identifier of the blue/green deployment.</p>
      */
     inline void SetBlueGreenDeploymentIdentifier(const char* value) { m_blueGreenDeploymentIdentifierHasBeenSet = true; m_blueGreenDeploymentIdentifier.assign(value); }
 
     /**
-     * <p>The system-generated identifier of the blue/green deployment.</p>
+     * <p>The unique identifier of the blue/green deployment.</p>
      */
     inline BlueGreenDeployment& WithBlueGreenDeploymentIdentifier(const Aws::String& value) { SetBlueGreenDeploymentIdentifier(value); return *this;}
 
     /**
-     * <p>The system-generated identifier of the blue/green deployment.</p>
+     * <p>The unique identifier of the blue/green deployment.</p>
      */
     inline BlueGreenDeployment& WithBlueGreenDeploymentIdentifier(Aws::String&& value) { SetBlueGreenDeploymentIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The system-generated identifier of the blue/green deployment.</p>
+     * <p>The unique identifier of the blue/green deployment.</p>
      */
     inline BlueGreenDeployment& WithBlueGreenDeploymentIdentifier(const char* value) { SetBlueGreenDeploymentIdentifier(value); return *this;}
 
@@ -330,8 +329,8 @@ namespace Model
 
 
     /**
-     * <p>The status of the blue/green deployment.</p> <p>Values:</p> <ul> <li> <p>
-     * <code>PROVISIONING</code> - Resources are being created in the green
+     * <p>The status of the blue/green deployment.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>PROVISIONING</code> - Resources are being created in the green
      * environment.</p> </li> <li> <p> <code>AVAILABLE</code> - Resources are available
      * in the green environment.</p> </li> <li> <p> <code>SWITCHOVER_IN_PROGRESS</code>
      * - The deployment is being switched from the blue environment to the green
@@ -346,8 +345,8 @@ namespace Model
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the blue/green deployment.</p> <p>Values:</p> <ul> <li> <p>
-     * <code>PROVISIONING</code> - Resources are being created in the green
+     * <p>The status of the blue/green deployment.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>PROVISIONING</code> - Resources are being created in the green
      * environment.</p> </li> <li> <p> <code>AVAILABLE</code> - Resources are available
      * in the green environment.</p> </li> <li> <p> <code>SWITCHOVER_IN_PROGRESS</code>
      * - The deployment is being switched from the blue environment to the green
@@ -362,8 +361,8 @@ namespace Model
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the blue/green deployment.</p> <p>Values:</p> <ul> <li> <p>
-     * <code>PROVISIONING</code> - Resources are being created in the green
+     * <p>The status of the blue/green deployment.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>PROVISIONING</code> - Resources are being created in the green
      * environment.</p> </li> <li> <p> <code>AVAILABLE</code> - Resources are available
      * in the green environment.</p> </li> <li> <p> <code>SWITCHOVER_IN_PROGRESS</code>
      * - The deployment is being switched from the blue environment to the green
@@ -378,8 +377,8 @@ namespace Model
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the blue/green deployment.</p> <p>Values:</p> <ul> <li> <p>
-     * <code>PROVISIONING</code> - Resources are being created in the green
+     * <p>The status of the blue/green deployment.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>PROVISIONING</code> - Resources are being created in the green
      * environment.</p> </li> <li> <p> <code>AVAILABLE</code> - Resources are available
      * in the green environment.</p> </li> <li> <p> <code>SWITCHOVER_IN_PROGRESS</code>
      * - The deployment is being switched from the blue environment to the green
@@ -394,8 +393,8 @@ namespace Model
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the blue/green deployment.</p> <p>Values:</p> <ul> <li> <p>
-     * <code>PROVISIONING</code> - Resources are being created in the green
+     * <p>The status of the blue/green deployment.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>PROVISIONING</code> - Resources are being created in the green
      * environment.</p> </li> <li> <p> <code>AVAILABLE</code> - Resources are available
      * in the green environment.</p> </li> <li> <p> <code>SWITCHOVER_IN_PROGRESS</code>
      * - The deployment is being switched from the blue environment to the green
@@ -410,8 +409,8 @@ namespace Model
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the blue/green deployment.</p> <p>Values:</p> <ul> <li> <p>
-     * <code>PROVISIONING</code> - Resources are being created in the green
+     * <p>The status of the blue/green deployment.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>PROVISIONING</code> - Resources are being created in the green
      * environment.</p> </li> <li> <p> <code>AVAILABLE</code> - Resources are available
      * in the green environment.</p> </li> <li> <p> <code>SWITCHOVER_IN_PROGRESS</code>
      * - The deployment is being switched from the blue environment to the green
@@ -426,8 +425,8 @@ namespace Model
     inline BlueGreenDeployment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the blue/green deployment.</p> <p>Values:</p> <ul> <li> <p>
-     * <code>PROVISIONING</code> - Resources are being created in the green
+     * <p>The status of the blue/green deployment.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>PROVISIONING</code> - Resources are being created in the green
      * environment.</p> </li> <li> <p> <code>AVAILABLE</code> - Resources are available
      * in the green environment.</p> </li> <li> <p> <code>SWITCHOVER_IN_PROGRESS</code>
      * - The deployment is being switched from the blue environment to the green
@@ -442,8 +441,8 @@ namespace Model
     inline BlueGreenDeployment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the blue/green deployment.</p> <p>Values:</p> <ul> <li> <p>
-     * <code>PROVISIONING</code> - Resources are being created in the green
+     * <p>The status of the blue/green deployment.</p> <p>Valid Values:</p> <ul> <li>
+     * <p> <code>PROVISIONING</code> - Resources are being created in the green
      * environment.</p> </li> <li> <p> <code>AVAILABLE</code> - Resources are available
      * in the green environment.</p> </li> <li> <p> <code>SWITCHOVER_IN_PROGRESS</code>
      * - The deployment is being switched from the blue environment to the green
@@ -500,75 +499,75 @@ namespace Model
 
 
     /**
-     * <p>Specifies the time when the blue/green deployment was created, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was created, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>Specifies the time when the blue/green deployment was created, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was created, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
-     * <p>Specifies the time when the blue/green deployment was created, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was created, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
-     * <p>Specifies the time when the blue/green deployment was created, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was created, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
 
     /**
-     * <p>Specifies the time when the blue/green deployment was created, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was created, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline BlueGreenDeployment& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>Specifies the time when the blue/green deployment was created, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was created, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline BlueGreenDeployment& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the time when the blue/green deployment was deleted, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was deleted, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetDeleteTime() const{ return m_deleteTime; }
 
     /**
-     * <p>Specifies the time when the blue/green deployment was deleted, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was deleted, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline bool DeleteTimeHasBeenSet() const { return m_deleteTimeHasBeenSet; }
 
     /**
-     * <p>Specifies the time when the blue/green deployment was deleted, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was deleted, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline void SetDeleteTime(const Aws::Utils::DateTime& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = value; }
 
     /**
-     * <p>Specifies the time when the blue/green deployment was deleted, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was deleted, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline void SetDeleteTime(Aws::Utils::DateTime&& value) { m_deleteTimeHasBeenSet = true; m_deleteTime = std::move(value); }
 
     /**
-     * <p>Specifies the time when the blue/green deployment was deleted, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was deleted, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline BlueGreenDeployment& WithDeleteTime(const Aws::Utils::DateTime& value) { SetDeleteTime(value); return *this;}
 
     /**
-     * <p>Specifies the time when the blue/green deployment was deleted, in Universal
-     * Coordinated Time (UTC).</p>
+     * <p>The time when the blue/green deployment was deleted, in Universal Coordinated
+     * Time (UTC).</p>
      */
     inline BlueGreenDeployment& WithDeleteTime(Aws::Utils::DateTime&& value) { SetDeleteTime(std::move(value)); return *this;}
 

@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeApplicationRequest::DescribeApplicationRequest() : 
-    m_resourceGroupNameHasBeenSet(false)
+    m_resourceGroupNameHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String DescribeApplicationRequest::SerializePayload() const
   if(m_resourceGroupNameHasBeenSet)
   {
    payload.WithString("ResourceGroupName", m_resourceGroupName);
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
 
   }
 

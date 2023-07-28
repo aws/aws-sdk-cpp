@@ -42,151 +42,151 @@ namespace Model
 
 
     /**
-     * <p>The user generated name for the Data Store.</p>
+     * <p>The user generated name for the data store.</p>
      */
     inline const Aws::String& GetDatastoreName() const{ return m_datastoreName; }
 
     /**
-     * <p>The user generated name for the Data Store.</p>
+     * <p>The user generated name for the data store.</p>
      */
     inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
 
     /**
-     * <p>The user generated name for the Data Store.</p>
+     * <p>The user generated name for the data store.</p>
      */
     inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
 
     /**
-     * <p>The user generated name for the Data Store.</p>
+     * <p>The user generated name for the data store.</p>
      */
     inline void SetDatastoreName(Aws::String&& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = std::move(value); }
 
     /**
-     * <p>The user generated name for the Data Store.</p>
+     * <p>The user generated name for the data store.</p>
      */
     inline void SetDatastoreName(const char* value) { m_datastoreNameHasBeenSet = true; m_datastoreName.assign(value); }
 
     /**
-     * <p>The user generated name for the Data Store.</p>
+     * <p>The user generated name for the data store.</p>
      */
     inline CreateFHIRDatastoreRequest& WithDatastoreName(const Aws::String& value) { SetDatastoreName(value); return *this;}
 
     /**
-     * <p>The user generated name for the Data Store.</p>
+     * <p>The user generated name for the data store.</p>
      */
     inline CreateFHIRDatastoreRequest& WithDatastoreName(Aws::String&& value) { SetDatastoreName(std::move(value)); return *this;}
 
     /**
-     * <p>The user generated name for the Data Store.</p>
+     * <p>The user generated name for the data store.</p>
      */
     inline CreateFHIRDatastoreRequest& WithDatastoreName(const char* value) { SetDatastoreName(value); return *this;}
 
 
     /**
-     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+     * <p>The FHIR version of the data store. The only supported version is R4.</p>
      */
     inline const FHIRVersion& GetDatastoreTypeVersion() const{ return m_datastoreTypeVersion; }
 
     /**
-     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+     * <p>The FHIR version of the data store. The only supported version is R4.</p>
      */
     inline bool DatastoreTypeVersionHasBeenSet() const { return m_datastoreTypeVersionHasBeenSet; }
 
     /**
-     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+     * <p>The FHIR version of the data store. The only supported version is R4.</p>
      */
     inline void SetDatastoreTypeVersion(const FHIRVersion& value) { m_datastoreTypeVersionHasBeenSet = true; m_datastoreTypeVersion = value; }
 
     /**
-     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+     * <p>The FHIR version of the data store. The only supported version is R4.</p>
      */
     inline void SetDatastoreTypeVersion(FHIRVersion&& value) { m_datastoreTypeVersionHasBeenSet = true; m_datastoreTypeVersion = std::move(value); }
 
     /**
-     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+     * <p>The FHIR version of the data store. The only supported version is R4.</p>
      */
     inline CreateFHIRDatastoreRequest& WithDatastoreTypeVersion(const FHIRVersion& value) { SetDatastoreTypeVersion(value); return *this;}
 
     /**
-     * <p>The FHIR version of the Data Store. The only supported version is R4.</p>
+     * <p>The FHIR version of the data store. The only supported version is R4.</p>
      */
     inline CreateFHIRDatastoreRequest& WithDatastoreTypeVersion(FHIRVersion&& value) { SetDatastoreTypeVersion(std::move(value)); return *this;}
 
 
     /**
      * <p> The server-side encryption key configuration for a customer provided
-     * encryption key specified for creating a Data Store. </p>
+     * encryption key specified for creating a data store. </p>
      */
     inline const SseConfiguration& GetSseConfiguration() const{ return m_sseConfiguration; }
 
     /**
      * <p> The server-side encryption key configuration for a customer provided
-     * encryption key specified for creating a Data Store. </p>
+     * encryption key specified for creating a data store. </p>
      */
     inline bool SseConfigurationHasBeenSet() const { return m_sseConfigurationHasBeenSet; }
 
     /**
      * <p> The server-side encryption key configuration for a customer provided
-     * encryption key specified for creating a Data Store. </p>
+     * encryption key specified for creating a data store. </p>
      */
     inline void SetSseConfiguration(const SseConfiguration& value) { m_sseConfigurationHasBeenSet = true; m_sseConfiguration = value; }
 
     /**
      * <p> The server-side encryption key configuration for a customer provided
-     * encryption key specified for creating a Data Store. </p>
+     * encryption key specified for creating a data store. </p>
      */
     inline void SetSseConfiguration(SseConfiguration&& value) { m_sseConfigurationHasBeenSet = true; m_sseConfiguration = std::move(value); }
 
     /**
      * <p> The server-side encryption key configuration for a customer provided
-     * encryption key specified for creating a Data Store. </p>
+     * encryption key specified for creating a data store. </p>
      */
     inline CreateFHIRDatastoreRequest& WithSseConfiguration(const SseConfiguration& value) { SetSseConfiguration(value); return *this;}
 
     /**
      * <p> The server-side encryption key configuration for a customer provided
-     * encryption key specified for creating a Data Store. </p>
+     * encryption key specified for creating a data store. </p>
      */
     inline CreateFHIRDatastoreRequest& WithSseConfiguration(SseConfiguration&& value) { SetSseConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * <p>Optional parameter to preload data upon creation of the data store.
      * Currently, the only supported preloaded data is synthetic data generated from
      * Synthea.</p>
      */
     inline const PreloadDataConfig& GetPreloadDataConfig() const{ return m_preloadDataConfig; }
 
     /**
-     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * <p>Optional parameter to preload data upon creation of the data store.
      * Currently, the only supported preloaded data is synthetic data generated from
      * Synthea.</p>
      */
     inline bool PreloadDataConfigHasBeenSet() const { return m_preloadDataConfigHasBeenSet; }
 
     /**
-     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * <p>Optional parameter to preload data upon creation of the data store.
      * Currently, the only supported preloaded data is synthetic data generated from
      * Synthea.</p>
      */
     inline void SetPreloadDataConfig(const PreloadDataConfig& value) { m_preloadDataConfigHasBeenSet = true; m_preloadDataConfig = value; }
 
     /**
-     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * <p>Optional parameter to preload data upon creation of the data store.
      * Currently, the only supported preloaded data is synthetic data generated from
      * Synthea.</p>
      */
     inline void SetPreloadDataConfig(PreloadDataConfig&& value) { m_preloadDataConfigHasBeenSet = true; m_preloadDataConfig = std::move(value); }
 
     /**
-     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * <p>Optional parameter to preload data upon creation of the data store.
      * Currently, the only supported preloaded data is synthetic data generated from
      * Synthea.</p>
      */
     inline CreateFHIRDatastoreRequest& WithPreloadDataConfig(const PreloadDataConfig& value) { SetPreloadDataConfig(value); return *this;}
 
     /**
-     * <p>Optional parameter to preload data upon creation of the Data Store.
+     * <p>Optional parameter to preload data upon creation of the data store.
      * Currently, the only supported preloaded data is synthetic data generated from
      * Synthea.</p>
      */
@@ -235,79 +235,79 @@ namespace Model
 
 
     /**
-     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     * <p> Resource tags that are applied to a data store when it is created. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     * <p> Resource tags that are applied to a data store when it is created. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     * <p> Resource tags that are applied to a data store when it is created. </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     * <p> Resource tags that are applied to a data store when it is created. </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     * <p> Resource tags that are applied to a data store when it is created. </p>
      */
     inline CreateFHIRDatastoreRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     * <p> Resource tags that are applied to a data store when it is created. </p>
      */
     inline CreateFHIRDatastoreRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     * <p> Resource tags that are applied to a data store when it is created. </p>
      */
     inline CreateFHIRDatastoreRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p> Resource tags that are applied to a Data Store when it is created. </p>
+     * <p> Resource tags that are applied to a data store when it is created. </p>
      */
     inline CreateFHIRDatastoreRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The configuration of the identity provider that you want to use for your Data
-     * Store.</p>
+     * <p>The configuration of the identity provider that you want to use for your data
+     * store.</p>
      */
     inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const{ return m_identityProviderConfiguration; }
 
     /**
-     * <p>The configuration of the identity provider that you want to use for your Data
-     * Store.</p>
+     * <p>The configuration of the identity provider that you want to use for your data
+     * store.</p>
      */
     inline bool IdentityProviderConfigurationHasBeenSet() const { return m_identityProviderConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration of the identity provider that you want to use for your Data
-     * Store.</p>
+     * <p>The configuration of the identity provider that you want to use for your data
+     * store.</p>
      */
     inline void SetIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = value; }
 
     /**
-     * <p>The configuration of the identity provider that you want to use for your Data
-     * Store.</p>
+     * <p>The configuration of the identity provider that you want to use for your data
+     * store.</p>
      */
     inline void SetIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration of the identity provider that you want to use for your Data
-     * Store.</p>
+     * <p>The configuration of the identity provider that you want to use for your data
+     * store.</p>
      */
     inline CreateFHIRDatastoreRequest& WithIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { SetIdentityProviderConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration of the identity provider that you want to use for your Data
-     * Store.</p>
+     * <p>The configuration of the identity provider that you want to use for your data
+     * store.</p>
      */
     inline CreateFHIRDatastoreRequest& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
 

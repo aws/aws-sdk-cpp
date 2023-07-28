@@ -247,12 +247,11 @@ namespace Model
      * the output. These values don't affect the pixel values that are encoded in the
      * video stream. They are intended to help the downstream video player display
      * content in a way that reflects the intentions of the the content creator. When
-     * you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10),
-     * these settings are required. You must set values for Max frame average light
-     * level (maxFrameAverageLightLevel) and Max content light level
-     * (maxContentLightLevel); these settings don't have a default value. The default
-     * values for the other HDR 10 metadata settings are defined by the P3D65 color
-     * space. For more information about MediaConvert HDR jobs, see
+     * you set Color space conversion to HDR 10, these settings are required. You must
+     * set values for Max frame average light level and Max content light level; these
+     * settings don't have a default value. The default values for the other HDR 10
+     * metadata settings are defined by the P3D65 color space. For more information
+     * about MediaConvert HDR jobs, see
      * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline const Hdr10Metadata& GetHdr10Metadata() const{ return m_hdr10Metadata; }
@@ -263,12 +262,11 @@ namespace Model
      * the output. These values don't affect the pixel values that are encoded in the
      * video stream. They are intended to help the downstream video player display
      * content in a way that reflects the intentions of the the content creator. When
-     * you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10),
-     * these settings are required. You must set values for Max frame average light
-     * level (maxFrameAverageLightLevel) and Max content light level
-     * (maxContentLightLevel); these settings don't have a default value. The default
-     * values for the other HDR 10 metadata settings are defined by the P3D65 color
-     * space. For more information about MediaConvert HDR jobs, see
+     * you set Color space conversion to HDR 10, these settings are required. You must
+     * set values for Max frame average light level and Max content light level; these
+     * settings don't have a default value. The default values for the other HDR 10
+     * metadata settings are defined by the P3D65 color space. For more information
+     * about MediaConvert HDR jobs, see
      * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline bool Hdr10MetadataHasBeenSet() const { return m_hdr10MetadataHasBeenSet; }
@@ -279,12 +277,11 @@ namespace Model
      * the output. These values don't affect the pixel values that are encoded in the
      * video stream. They are intended to help the downstream video player display
      * content in a way that reflects the intentions of the the content creator. When
-     * you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10),
-     * these settings are required. You must set values for Max frame average light
-     * level (maxFrameAverageLightLevel) and Max content light level
-     * (maxContentLightLevel); these settings don't have a default value. The default
-     * values for the other HDR 10 metadata settings are defined by the P3D65 color
-     * space. For more information about MediaConvert HDR jobs, see
+     * you set Color space conversion to HDR 10, these settings are required. You must
+     * set values for Max frame average light level and Max content light level; these
+     * settings don't have a default value. The default values for the other HDR 10
+     * metadata settings are defined by the P3D65 color space. For more information
+     * about MediaConvert HDR jobs, see
      * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline void SetHdr10Metadata(const Hdr10Metadata& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = value; }
@@ -295,12 +292,11 @@ namespace Model
      * the output. These values don't affect the pixel values that are encoded in the
      * video stream. They are intended to help the downstream video player display
      * content in a way that reflects the intentions of the the content creator. When
-     * you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10),
-     * these settings are required. You must set values for Max frame average light
-     * level (maxFrameAverageLightLevel) and Max content light level
-     * (maxContentLightLevel); these settings don't have a default value. The default
-     * values for the other HDR 10 metadata settings are defined by the P3D65 color
-     * space. For more information about MediaConvert HDR jobs, see
+     * you set Color space conversion to HDR 10, these settings are required. You must
+     * set values for Max frame average light level and Max content light level; these
+     * settings don't have a default value. The default values for the other HDR 10
+     * metadata settings are defined by the P3D65 color space. For more information
+     * about MediaConvert HDR jobs, see
      * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline void SetHdr10Metadata(Hdr10Metadata&& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = std::move(value); }
@@ -311,12 +307,11 @@ namespace Model
      * the output. These values don't affect the pixel values that are encoded in the
      * video stream. They are intended to help the downstream video player display
      * content in a way that reflects the intentions of the the content creator. When
-     * you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10),
-     * these settings are required. You must set values for Max frame average light
-     * level (maxFrameAverageLightLevel) and Max content light level
-     * (maxContentLightLevel); these settings don't have a default value. The default
-     * values for the other HDR 10 metadata settings are defined by the P3D65 color
-     * space. For more information about MediaConvert HDR jobs, see
+     * you set Color space conversion to HDR 10, these settings are required. You must
+     * set values for Max frame average light level and Max content light level; these
+     * settings don't have a default value. The default values for the other HDR 10
+     * metadata settings are defined by the P3D65 color space. For more information
+     * about MediaConvert HDR jobs, see
      * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline ColorCorrector& WithHdr10Metadata(const Hdr10Metadata& value) { SetHdr10Metadata(value); return *this;}
@@ -327,12 +322,11 @@ namespace Model
      * the output. These values don't affect the pixel values that are encoded in the
      * video stream. They are intended to help the downstream video player display
      * content in a way that reflects the intentions of the the content creator. When
-     * you set Color space conversion (ColorSpaceConversion) to HDR 10 (FORCE_HDR10),
-     * these settings are required. You must set values for Max frame average light
-     * level (maxFrameAverageLightLevel) and Max content light level
-     * (maxContentLightLevel); these settings don't have a default value. The default
-     * values for the other HDR 10 metadata settings are defined by the P3D65 color
-     * space. For more information about MediaConvert HDR jobs, see
+     * you set Color space conversion to HDR 10, these settings are required. You must
+     * set values for Max frame average light level and Max content light level; these
+     * settings don't have a default value. The default values for the other HDR 10
+     * metadata settings are defined by the P3D65 color space. For more information
+     * about MediaConvert HDR jobs, see
      * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline ColorCorrector& WithHdr10Metadata(Hdr10Metadata&& value) { SetHdr10Metadata(std::move(value)); return *this;}

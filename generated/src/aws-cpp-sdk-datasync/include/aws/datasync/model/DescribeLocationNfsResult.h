@@ -129,27 +129,27 @@ namespace Model
 
 
     /**
-     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     * <p>The mount options that DataSync uses to mount your NFS share.</p>
      */
     inline const NfsMountOptions& GetMountOptions() const{ return m_mountOptions; }
 
     /**
-     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     * <p>The mount options that DataSync uses to mount your NFS share.</p>
      */
     inline void SetMountOptions(const NfsMountOptions& value) { m_mountOptions = value; }
 
     /**
-     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     * <p>The mount options that DataSync uses to mount your NFS share.</p>
      */
     inline void SetMountOptions(NfsMountOptions&& value) { m_mountOptions = std::move(value); }
 
     /**
-     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     * <p>The mount options that DataSync uses to mount your NFS share.</p>
      */
     inline DescribeLocationNfsResult& WithMountOptions(const NfsMountOptions& value) { SetMountOptions(value); return *this;}
 
     /**
-     * <p>The NFS mount options that DataSync used to mount your NFS share.</p>
+     * <p>The mount options that DataSync uses to mount your NFS share.</p>
      */
     inline DescribeLocationNfsResult& WithMountOptions(NfsMountOptions&& value) { SetMountOptions(std::move(value)); return *this;}
 

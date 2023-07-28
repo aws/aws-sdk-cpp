@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/model/JourneyTimeframeCap.h>
 #include <utility>
 
 namespace Aws
@@ -161,6 +162,68 @@ namespace Model
      */
     inline JourneyLimits& WithEndpointReentryInterval(const char* value) { SetEndpointReentryInterval(value); return *this;}
 
+
+    /**
+     * <p>The number of messages that an endpoint can receive during the specified
+     * timeframe.</p>
+     */
+    inline const JourneyTimeframeCap& GetTimeframeCap() const{ return m_timeframeCap; }
+
+    /**
+     * <p>The number of messages that an endpoint can receive during the specified
+     * timeframe.</p>
+     */
+    inline bool TimeframeCapHasBeenSet() const { return m_timeframeCapHasBeenSet; }
+
+    /**
+     * <p>The number of messages that an endpoint can receive during the specified
+     * timeframe.</p>
+     */
+    inline void SetTimeframeCap(const JourneyTimeframeCap& value) { m_timeframeCapHasBeenSet = true; m_timeframeCap = value; }
+
+    /**
+     * <p>The number of messages that an endpoint can receive during the specified
+     * timeframe.</p>
+     */
+    inline void SetTimeframeCap(JourneyTimeframeCap&& value) { m_timeframeCapHasBeenSet = true; m_timeframeCap = std::move(value); }
+
+    /**
+     * <p>The number of messages that an endpoint can receive during the specified
+     * timeframe.</p>
+     */
+    inline JourneyLimits& WithTimeframeCap(const JourneyTimeframeCap& value) { SetTimeframeCap(value); return *this;}
+
+    /**
+     * <p>The number of messages that an endpoint can receive during the specified
+     * timeframe.</p>
+     */
+    inline JourneyLimits& WithTimeframeCap(JourneyTimeframeCap&& value) { SetTimeframeCap(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum number of messages a journey can sent to a single endpoint. The
+     * maximum value is 100. If set to 0, this limit will not apply.</p>
+     */
+    inline int GetTotalCap() const{ return m_totalCap; }
+
+    /**
+     * <p>The maximum number of messages a journey can sent to a single endpoint. The
+     * maximum value is 100. If set to 0, this limit will not apply.</p>
+     */
+    inline bool TotalCapHasBeenSet() const { return m_totalCapHasBeenSet; }
+
+    /**
+     * <p>The maximum number of messages a journey can sent to a single endpoint. The
+     * maximum value is 100. If set to 0, this limit will not apply.</p>
+     */
+    inline void SetTotalCap(int value) { m_totalCapHasBeenSet = true; m_totalCap = value; }
+
+    /**
+     * <p>The maximum number of messages a journey can sent to a single endpoint. The
+     * maximum value is 100. If set to 0, this limit will not apply.</p>
+     */
+    inline JourneyLimits& WithTotalCap(int value) { SetTotalCap(value); return *this;}
+
   private:
 
     int m_dailyCap;
@@ -174,6 +237,12 @@ namespace Model
 
     Aws::String m_endpointReentryInterval;
     bool m_endpointReentryIntervalHasBeenSet = false;
+
+    JourneyTimeframeCap m_timeframeCap;
+    bool m_timeframeCapHasBeenSet = false;
+
+    int m_totalCap;
+    bool m_totalCapHasBeenSet = false;
   };
 
 } // namespace Model

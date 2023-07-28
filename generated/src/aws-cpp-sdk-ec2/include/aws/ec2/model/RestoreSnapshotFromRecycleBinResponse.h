@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/SnapshotState.h>
+#include <aws/ec2/model/SSEType.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -363,6 +364,32 @@ namespace Model
     inline RestoreSnapshotFromRecycleBinResponse& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
 
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const SSEType& GetSseType() const{ return m_sseType; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetSseType(const SSEType& value) { m_sseType = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetSseType(SSEType&& value) { m_sseType = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline RestoreSnapshotFromRecycleBinResponse& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline RestoreSnapshotFromRecycleBinResponse& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -399,6 +426,8 @@ namespace Model
     Aws::String m_volumeId;
 
     int m_volumeSize;
+
+    SSEType m_sseType;
 
     ResponseMetadata m_responseMetadata;
   };

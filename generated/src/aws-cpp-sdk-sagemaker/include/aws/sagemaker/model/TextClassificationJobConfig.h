@@ -78,98 +78,98 @@ namespace Model
 
     /**
      * <p>The name of the column used to provide the sentences to be classified. It
-     * should not be the same as the target column (Required).</p>
+     * should not be the same as the target column.</p>
      */
     inline const Aws::String& GetContentColumn() const{ return m_contentColumn; }
 
     /**
      * <p>The name of the column used to provide the sentences to be classified. It
-     * should not be the same as the target column (Required).</p>
+     * should not be the same as the target column.</p>
      */
     inline bool ContentColumnHasBeenSet() const { return m_contentColumnHasBeenSet; }
 
     /**
      * <p>The name of the column used to provide the sentences to be classified. It
-     * should not be the same as the target column (Required).</p>
+     * should not be the same as the target column.</p>
      */
     inline void SetContentColumn(const Aws::String& value) { m_contentColumnHasBeenSet = true; m_contentColumn = value; }
 
     /**
      * <p>The name of the column used to provide the sentences to be classified. It
-     * should not be the same as the target column (Required).</p>
+     * should not be the same as the target column.</p>
      */
     inline void SetContentColumn(Aws::String&& value) { m_contentColumnHasBeenSet = true; m_contentColumn = std::move(value); }
 
     /**
      * <p>The name of the column used to provide the sentences to be classified. It
-     * should not be the same as the target column (Required).</p>
+     * should not be the same as the target column.</p>
      */
     inline void SetContentColumn(const char* value) { m_contentColumnHasBeenSet = true; m_contentColumn.assign(value); }
 
     /**
      * <p>The name of the column used to provide the sentences to be classified. It
-     * should not be the same as the target column (Required).</p>
+     * should not be the same as the target column.</p>
      */
     inline TextClassificationJobConfig& WithContentColumn(const Aws::String& value) { SetContentColumn(value); return *this;}
 
     /**
      * <p>The name of the column used to provide the sentences to be classified. It
-     * should not be the same as the target column (Required).</p>
+     * should not be the same as the target column.</p>
      */
     inline TextClassificationJobConfig& WithContentColumn(Aws::String&& value) { SetContentColumn(std::move(value)); return *this;}
 
     /**
      * <p>The name of the column used to provide the sentences to be classified. It
-     * should not be the same as the target column (Required).</p>
+     * should not be the same as the target column.</p>
      */
     inline TextClassificationJobConfig& WithContentColumn(const char* value) { SetContentColumn(value); return *this;}
 
 
     /**
      * <p>The name of the column used to provide the class labels. It should not be
-     * same as the content column (Required).</p>
+     * same as the content column.</p>
      */
     inline const Aws::String& GetTargetLabelColumn() const{ return m_targetLabelColumn; }
 
     /**
      * <p>The name of the column used to provide the class labels. It should not be
-     * same as the content column (Required).</p>
+     * same as the content column.</p>
      */
     inline bool TargetLabelColumnHasBeenSet() const { return m_targetLabelColumnHasBeenSet; }
 
     /**
      * <p>The name of the column used to provide the class labels. It should not be
-     * same as the content column (Required).</p>
+     * same as the content column.</p>
      */
     inline void SetTargetLabelColumn(const Aws::String& value) { m_targetLabelColumnHasBeenSet = true; m_targetLabelColumn = value; }
 
     /**
      * <p>The name of the column used to provide the class labels. It should not be
-     * same as the content column (Required).</p>
+     * same as the content column.</p>
      */
     inline void SetTargetLabelColumn(Aws::String&& value) { m_targetLabelColumnHasBeenSet = true; m_targetLabelColumn = std::move(value); }
 
     /**
      * <p>The name of the column used to provide the class labels. It should not be
-     * same as the content column (Required).</p>
+     * same as the content column.</p>
      */
     inline void SetTargetLabelColumn(const char* value) { m_targetLabelColumnHasBeenSet = true; m_targetLabelColumn.assign(value); }
 
     /**
      * <p>The name of the column used to provide the class labels. It should not be
-     * same as the content column (Required).</p>
+     * same as the content column.</p>
      */
     inline TextClassificationJobConfig& WithTargetLabelColumn(const Aws::String& value) { SetTargetLabelColumn(value); return *this;}
 
     /**
      * <p>The name of the column used to provide the class labels. It should not be
-     * same as the content column (Required).</p>
+     * same as the content column.</p>
      */
     inline TextClassificationJobConfig& WithTargetLabelColumn(Aws::String&& value) { SetTargetLabelColumn(std::move(value)); return *this;}
 
     /**
      * <p>The name of the column used to provide the class labels. It should not be
-     * same as the content column (Required).</p>
+     * same as the content column.</p>
      */
     inline TextClassificationJobConfig& WithTargetLabelColumn(const char* value) { SetTargetLabelColumn(value); return *this;}
 

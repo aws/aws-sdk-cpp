@@ -108,3 +108,20 @@ TEST_F(AwsSdkMisuseTest, MissingCurlyBracesTest)
     ASSERT_FALSE(outcomeAfterShutdown.IsSuccess());
     ASSERT_EQ((Aws::Client::CoreErrors) outcomeAfterShutdown.GetError().GetErrorType(), Aws::Client::CoreErrors::NOT_INITIALIZED);
 }
+
+using AwsSdkMisuseTest1 = ::testing::Test;
+
+TEST_F(AwsSdkMisuseTest1, MultipleShutdownTest)
+{
+    Aws::SDKOptions options;
+    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
+
+    Aws::InitAPI(options);
+
+    // Shutdown the API.
+    Aws::ShutdownAPI(options);
+    // Now shut it down a second time. (This call must not crash.)
+    Aws::ShutdownAPI(options);
+    // And one more time, for good measure.
+    Aws::ShutdownAPI(options);
+}

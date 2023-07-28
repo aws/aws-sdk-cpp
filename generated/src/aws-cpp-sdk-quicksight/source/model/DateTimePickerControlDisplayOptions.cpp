@@ -20,13 +20,15 @@ namespace Model
 
 DateTimePickerControlDisplayOptions::DateTimePickerControlDisplayOptions() : 
     m_titleOptionsHasBeenSet(false),
-    m_dateTimeFormatHasBeenSet(false)
+    m_dateTimeFormatHasBeenSet(false),
+    m_infoIconLabelOptionsHasBeenSet(false)
 {
 }
 
 DateTimePickerControlDisplayOptions::DateTimePickerControlDisplayOptions(JsonView jsonValue) : 
     m_titleOptionsHasBeenSet(false),
-    m_dateTimeFormatHasBeenSet(false)
+    m_dateTimeFormatHasBeenSet(false),
+    m_infoIconLabelOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ DateTimePickerControlDisplayOptions& DateTimePickerControlDisplayOptions::operat
     m_dateTimeFormatHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InfoIconLabelOptions"))
+  {
+    m_infoIconLabelOptions = jsonValue.GetObject("InfoIconLabelOptions");
+
+    m_infoIconLabelOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue DateTimePickerControlDisplayOptions::Jsonize() const
   if(m_dateTimeFormatHasBeenSet)
   {
    payload.WithString("DateTimeFormat", m_dateTimeFormat);
+
+  }
+
+  if(m_infoIconLabelOptionsHasBeenSet)
+  {
+   payload.WithObject("InfoIconLabelOptions", m_infoIconLabelOptions.Jsonize());
 
   }
 

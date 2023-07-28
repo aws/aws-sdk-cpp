@@ -16,7 +16,8 @@ namespace Model
   enum class ComponentType
   {
     NOT_SET,
-    HANA
+    HANA,
+    HANA_NODE
   };
 
 namespace ComponentTypeMapper

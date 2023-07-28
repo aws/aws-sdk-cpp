@@ -151,10 +151,13 @@ namespace Transfer
 
         /**
          * <p>Creates the connector, which captures the parameters for an outbound
-         * connection for the AS2 protocol. The connector is required for sending files to
-         * an externally hosted AS2 server. For more details about connectors, see <a
+         * connection for the AS2 or SFTP protocol. The connector is required for sending
+         * files to an externally hosted AS2 or SFTP server. For more details about AS2
+         * connectors, see <a
          * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
-         * AS2 connectors</a>.</p><p><h3>See Also:</h3>   <a
+         * AS2 connectors</a>.</p>  <p>You must specify exactly one configuration
+         * object: either for AS2 (<code>As2Config</code>) or SFTP
+         * (<code>SftpConfig</code>).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">AWS
          * API Reference</a></p>
          */
@@ -373,7 +376,7 @@ namespace Transfer
         }
 
         /**
-         * <p>Deletes the agreement that's specified in the provided
+         * <p>Deletes the connector that's specified in the provided
          * <code>ConnectorId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector">AWS
          * API Reference</a></p>
@@ -1290,9 +1293,21 @@ namespace Transfer
         }
 
         /**
-         * <p>Begins an outbound file transfer to a remote AS2 server. You specify the
-         * <code>ConnectorId</code> and the file paths for where to send the files.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Begins a file transfer between local Amazon Web Services storage and a remote
+         * AS2 or SFTP server.</p> <ul> <li> <p>For an AS2 connector, you specify the
+         * <code>ConnectorId</code> and one or more <code>SendFilePaths</code> to identify
+         * the files you want to transfer.</p> </li> <li> <p>For an SFTP connector, the
+         * file transfer can be either outbound or inbound. In both cases, you specify the
+         * <code>ConnectorId</code>. Depending on the direction of the transfer, you also
+         * specify the following items:</p> <ul> <li> <p>If you are transferring file from
+         * a partner's SFTP server to a Transfer Family server, you specify one or more
+         * <code>RetreiveFilePaths</code> to identify the files you want to transfer, and a
+         * <code>LocalDirectoryPath</code> to specify the destination folder.</p> </li>
+         * <li> <p>If you are transferring file to a partner's SFTP server from Amazon Web
+         * Services storage, you specify one or more <code>SendFilePaths</code> to identify
+         * the files you want to transfer, and a <code>RemoteDirectoryPath</code> to
+         * specify the destination folder.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">AWS
          * API Reference</a></p>
          */
@@ -1408,6 +1423,34 @@ namespace Transfer
         void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TransferClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Tests whether your SFTP connector is set up successfully. We highly recommend
+         * that you call this operation to test your ability to transfer files between a
+         * Transfer Family server and a trading partner's SFTP server.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TestConnectionOutcome TestConnection(const Model::TestConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for TestConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TestConnectionRequestT = Model::TestConnectionRequest>
+        Model::TestConnectionOutcomeCallable TestConnectionCallable(const TestConnectionRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::TestConnection, request);
+        }
+
+        /**
+         * An Async wrapper for TestConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TestConnectionRequestT = Model::TestConnectionRequest>
+        void TestConnectionAsync(const TestConnectionRequestT& request, const TestConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::TestConnection, request, handler, context);
         }
 
         /**
