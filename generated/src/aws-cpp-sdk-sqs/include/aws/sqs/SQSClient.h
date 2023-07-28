@@ -157,11 +157,18 @@ namespace SQS
         }
 
         /**
-         * <p>Cancels a specified message movement task.</p>  <ul> <li> <p>A message
-         * movement can only be cancelled when the current status is RUNNING.</p> </li>
-         * <li> <p>Cancelling a message movement task does not revert the messages that
-         * have already been moved. It can only stop the messages that have not been moved
-         * yet.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * <p>Cancels a specified message movement task. A message movement can only be
+         * cancelled when the current status is RUNNING. Cancelling a message movement task
+         * does not revert the messages that have already been moved. It can only stop the
+         * messages that have not been moved yet.</p>  <ul> <li> <p>This action is
+         * currently limited to supporting message redrive from <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
+         * queues (DLQs)</a> only. In this context, the source queue is the dead-letter
+         * queue (DLQ), while the destination queue can be the original source queue (from
+         * which the messages were driven to the dead-letter-queue), or a custom
+         * destination queue. </p> </li> <li> <p>Currently, only standard queues are
+         * supported.</p> </li> <li> <p>Only one active message movement task is supported
+         * per queue at any given time.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CancelMessageMoveTask">AWS
          * API Reference</a></p>
          */
@@ -551,7 +558,15 @@ namespace SQS
 
         /**
          * <p>Gets the most recent message movement tasks (up to 10) under a specific
-         * source queue.</p><p><h3>See Also:</h3>   <a
+         * source queue.</p>  <ul> <li> <p>This action is currently limited to
+         * supporting message redrive from <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
+         * queues (DLQs)</a> only. In this context, the source queue is the dead-letter
+         * queue (DLQ), while the destination queue can be the original source queue (from
+         * which the messages were driven to the dead-letter-queue), or a custom
+         * destination queue. </p> </li> <li> <p>Currently, only standard queues are
+         * supported.</p> </li> <li> <p>Only one active message movement task is supported
+         * per queue at any given time.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListMessageMoveTasks">AWS
          * API Reference</a></p>
          */
@@ -649,13 +664,14 @@ namespace SQS
         }
 
         /**
-         * <p>Deletes the messages in a queue specified by the <code>QueueURL</code>
-         * parameter.</p>  <p>When you use the <code>PurgeQueue</code> action,
-         * you can't retrieve any messages deleted from a queue.</p> <p>The message
-         * deletion process takes up to 60 seconds. We recommend waiting for 60 seconds
-         * regardless of your queue's size. </p>  <p>Messages sent to the queue
-         * <i>before</i> you call <code>PurgeQueue</code> might be received but are deleted
-         * within the next minute.</p> <p>Messages sent to the queue <i>after</i> you call
+         * <p>Deletes available messages in a queue (including in-flight messages)
+         * specified by the <code>QueueURL</code> parameter.</p>  <p>When you
+         * use the <code>PurgeQueue</code> action, you can't retrieve any messages deleted
+         * from a queue.</p> <p>The message deletion process takes up to 60 seconds. We
+         * recommend waiting for 60 seconds regardless of your queue's size. </p>
+         *  <p>Messages sent to the queue <i>before</i> you call
+         * <code>PurgeQueue</code> might be received but are deleted within the next
+         * minute.</p> <p>Messages sent to the queue <i>after</i> you call
          * <code>PurgeQueue</code> might be deleted while the queue is being
          * purged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">AWS API
@@ -895,13 +911,17 @@ namespace SQS
         /**
          * <p>Starts an asynchronous task to move messages from a specified source queue to
          * a specified destination queue.</p>  <ul> <li> <p>This action is currently
-         * limited to supporting message redrive from dead-letter queues (DLQs) only. In
-         * this context, the source queue is the dead-letter queue (DLQ), while the
+         * limited to supporting message redrive from queues that are configured as <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
+         * queues (DLQs)</a> of other Amazon SQS queues only. Non-SQS queue sources of
+         * dead-letter queues, such as Lambda or Amazon SNS topics, are currently not
+         * supported.</p> </li> <li> <p>In dead-letter queues redrive context, the
+         * <code>StartMessageMoveTask</code> the source queue is the DLQ, while the
          * destination queue can be the original source queue (from which the messages were
-         * driven to the dead-letter-queue), or a custom destination queue. </p> </li> <li>
-         * <p>Currently, only standard queues are supported.</p> </li> <li> <p>Only one
-         * active message movement task is supported per queue at any given time.</p> </li>
-         * </ul> <p><h3>See Also:</h3>   <a
+         * driven to the dead-letter-queue), or a custom destination queue.</p> </li> <li>
+         * <p>Currently, only standard queues support redrive. FIFO queues don't support
+         * redrive.</p> </li> <li> <p>Only one active message movement task is supported
+         * per queue at any given time.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/StartMessageMoveTask">AWS
          * API Reference</a></p>
          */

@@ -38,49 +38,65 @@ namespace Model
 
     /**
      * <p>The ARN of the queue that contains the messages to be moved to another queue.
-     * Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+     * Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon
+     * SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda
+     * or Amazon SNS topics, are not currently supported.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
      * <p>The ARN of the queue that contains the messages to be moved to another queue.
-     * Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+     * Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon
+     * SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda
+     * or Amazon SNS topics, are not currently supported.</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
      * <p>The ARN of the queue that contains the messages to be moved to another queue.
-     * Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+     * Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon
+     * SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda
+     * or Amazon SNS topics, are not currently supported.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
      * <p>The ARN of the queue that contains the messages to be moved to another queue.
-     * Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+     * Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon
+     * SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda
+     * or Amazon SNS topics, are not currently supported.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
      * <p>The ARN of the queue that contains the messages to be moved to another queue.
-     * Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+     * Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon
+     * SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda
+     * or Amazon SNS topics, are not currently supported.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
      * <p>The ARN of the queue that contains the messages to be moved to another queue.
-     * Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+     * Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon
+     * SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda
+     * or Amazon SNS topics, are not currently supported.</p>
      */
     inline StartMessageMoveTaskRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
      * <p>The ARN of the queue that contains the messages to be moved to another queue.
-     * Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+     * Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon
+     * SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda
+     * or Amazon SNS topics, are not currently supported.</p>
      */
     inline StartMessageMoveTaskRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the queue that contains the messages to be moved to another queue.
-     * Currently, only dead-letter queue (DLQ) ARNs are accepted.</p>
+     * Currently, only ARNs of dead-letter queues (DLQs) whose sources are other Amazon
+     * SQS queues are accepted. DLQs whose sources are non-SQS queues, such as Lambda
+     * or Amazon SNS topics, are not currently supported.</p>
      */
     inline StartMessageMoveTaskRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
