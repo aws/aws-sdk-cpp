@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 ListApplicationsRequest::ListApplicationsRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_accountIdHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String ListApplicationsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
 
   }
 

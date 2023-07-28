@@ -20,15 +20,19 @@ namespace Model
 
 GCMChannelRequest::GCMChannelRequest() : 
     m_apiKeyHasBeenSet(false),
+    m_defaultAuthenticationMethodHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_serviceJsonHasBeenSet(false)
 {
 }
 
 GCMChannelRequest::GCMChannelRequest(JsonView jsonValue) : 
     m_apiKeyHasBeenSet(false),
+    m_defaultAuthenticationMethodHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_serviceJsonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,11 +46,25 @@ GCMChannelRequest& GCMChannelRequest::operator =(JsonView jsonValue)
     m_apiKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultAuthenticationMethod"))
+  {
+    m_defaultAuthenticationMethod = jsonValue.GetString("DefaultAuthenticationMethod");
+
+    m_defaultAuthenticationMethodHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
 
     m_enabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceJson"))
+  {
+    m_serviceJson = jsonValue.GetString("ServiceJson");
+
+    m_serviceJsonHasBeenSet = true;
   }
 
   return *this;
@@ -62,9 +80,21 @@ JsonValue GCMChannelRequest::Jsonize() const
 
   }
 
+  if(m_defaultAuthenticationMethodHasBeenSet)
+  {
+   payload.WithString("DefaultAuthenticationMethod", m_defaultAuthenticationMethod);
+
+  }
+
   if(m_enabledHasBeenSet)
   {
    payload.WithBool("Enabled", m_enabled);
+
+  }
+
+  if(m_serviceJsonHasBeenSet)
+  {
+   payload.WithString("ServiceJson", m_serviceJson);
 
   }
 

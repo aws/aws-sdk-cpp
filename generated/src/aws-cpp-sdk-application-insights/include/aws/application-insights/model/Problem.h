@@ -10,6 +10,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/application-insights/model/SeverityLevel.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/application-insights/model/Visibility.h>
+#include <aws/application-insights/model/ResolutionMethod.h>
 #include <aws/application-insights/model/FeedbackKey.h>
 #include <aws/application-insights/model/FeedbackValue.h>
 #include <utility>
@@ -333,6 +335,55 @@ namespace Model
 
 
     /**
+     * <p>The AWS account ID for the owner of the resource group affected by the
+     * problem.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The AWS account ID for the owner of the resource group affected by the
+     * problem.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID for the owner of the resource group affected by the
+     * problem.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The AWS account ID for the owner of the resource group affected by the
+     * problem.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The AWS account ID for the owner of the resource group affected by the
+     * problem.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The AWS account ID for the owner of the resource group affected by the
+     * problem.</p>
+     */
+    inline Problem& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The AWS account ID for the owner of the resource group affected by the
+     * problem.</p>
+     */
+    inline Problem& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID for the owner of the resource group affected by the
+     * problem.</p>
+     */
+    inline Problem& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
      * <p>The name of the resource group affected by the problem.</p>
      */
     inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
@@ -479,6 +530,92 @@ namespace Model
      */
     inline Problem& WithLastRecurrenceTime(Aws::Utils::DateTime&& value) { SetLastRecurrenceTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether or not you can view the problem. Updates to ignored
+     * problems do not generate notifications.</p>
+     */
+    inline const Visibility& GetVisibility() const{ return m_visibility; }
+
+    /**
+     * <p>Specifies whether or not you can view the problem. Updates to ignored
+     * problems do not generate notifications.</p>
+     */
+    inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
+
+    /**
+     * <p>Specifies whether or not you can view the problem. Updates to ignored
+     * problems do not generate notifications.</p>
+     */
+    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+
+    /**
+     * <p>Specifies whether or not you can view the problem. Updates to ignored
+     * problems do not generate notifications.</p>
+     */
+    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
+
+    /**
+     * <p>Specifies whether or not you can view the problem. Updates to ignored
+     * problems do not generate notifications.</p>
+     */
+    inline Problem& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
+
+    /**
+     * <p>Specifies whether or not you can view the problem. Updates to ignored
+     * problems do not generate notifications.</p>
+     */
+    inline Problem& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies how the problem was resolved. If the value is
+     * <code>AUTOMATIC</code>, the system resolved the problem. If the value is
+     * <code>MANUAL</code>, the user resolved the problem. If the value is
+     * <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+     */
+    inline const ResolutionMethod& GetResolutionMethod() const{ return m_resolutionMethod; }
+
+    /**
+     * <p>Specifies how the problem was resolved. If the value is
+     * <code>AUTOMATIC</code>, the system resolved the problem. If the value is
+     * <code>MANUAL</code>, the user resolved the problem. If the value is
+     * <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+     */
+    inline bool ResolutionMethodHasBeenSet() const { return m_resolutionMethodHasBeenSet; }
+
+    /**
+     * <p>Specifies how the problem was resolved. If the value is
+     * <code>AUTOMATIC</code>, the system resolved the problem. If the value is
+     * <code>MANUAL</code>, the user resolved the problem. If the value is
+     * <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+     */
+    inline void SetResolutionMethod(const ResolutionMethod& value) { m_resolutionMethodHasBeenSet = true; m_resolutionMethod = value; }
+
+    /**
+     * <p>Specifies how the problem was resolved. If the value is
+     * <code>AUTOMATIC</code>, the system resolved the problem. If the value is
+     * <code>MANUAL</code>, the user resolved the problem. If the value is
+     * <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+     */
+    inline void SetResolutionMethod(ResolutionMethod&& value) { m_resolutionMethodHasBeenSet = true; m_resolutionMethod = std::move(value); }
+
+    /**
+     * <p>Specifies how the problem was resolved. If the value is
+     * <code>AUTOMATIC</code>, the system resolved the problem. If the value is
+     * <code>MANUAL</code>, the user resolved the problem. If the value is
+     * <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+     */
+    inline Problem& WithResolutionMethod(const ResolutionMethod& value) { SetResolutionMethod(value); return *this;}
+
+    /**
+     * <p>Specifies how the problem was resolved. If the value is
+     * <code>AUTOMATIC</code>, the system resolved the problem. If the value is
+     * <code>MANUAL</code>, the user resolved the problem. If the value is
+     * <code>UNRESOLVED</code>, then the problem is not resolved.</p>
+     */
+    inline Problem& WithResolutionMethod(ResolutionMethod&& value) { SetResolutionMethod(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -505,6 +642,9 @@ namespace Model
     SeverityLevel m_severityLevel;
     bool m_severityLevelHasBeenSet = false;
 
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
+
     Aws::String m_resourceGroupName;
     bool m_resourceGroupNameHasBeenSet = false;
 
@@ -516,6 +656,12 @@ namespace Model
 
     Aws::Utils::DateTime m_lastRecurrenceTime;
     bool m_lastRecurrenceTimeHasBeenSet = false;
+
+    Visibility m_visibility;
+    bool m_visibilityHasBeenSet = false;
+
+    ResolutionMethod m_resolutionMethod;
+    bool m_resolutionMethodHasBeenSet = false;
   };
 
 } // namespace Model

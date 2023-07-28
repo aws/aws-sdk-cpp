@@ -35,6 +35,12 @@ ListLogPatternSetsResult& ListLogPatternSetsResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+  }
+
   if(jsonValue.ValueExists("LogPatternSets"))
   {
     Aws::Utils::Array<JsonView> logPatternSetsJsonList = jsonValue.GetArray("LogPatternSets");

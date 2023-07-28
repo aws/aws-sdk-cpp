@@ -456,9 +456,58 @@ namespace Model
 
 
     /**
-     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a
+     * value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+     */
+    inline const Aws::String& GetPreferredAuthenticationMethod() const{ return m_preferredAuthenticationMethod; }
+
+    /**
+     * <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a
+     * value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+     */
+    inline bool PreferredAuthenticationMethodHasBeenSet() const { return m_preferredAuthenticationMethodHasBeenSet; }
+
+    /**
+     * <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a
+     * value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+     */
+    inline void SetPreferredAuthenticationMethod(const Aws::String& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = value; }
+
+    /**
+     * <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a
+     * value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+     */
+    inline void SetPreferredAuthenticationMethod(Aws::String&& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = std::move(value); }
+
+    /**
+     * <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a
+     * value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+     */
+    inline void SetPreferredAuthenticationMethod(const char* value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod.assign(value); }
+
+    /**
+     * <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a
+     * value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+     */
+    inline GCMMessage& WithPreferredAuthenticationMethod(const Aws::String& value) { SetPreferredAuthenticationMethod(value); return *this;}
+
+    /**
+     * <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a
+     * value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+     */
+    inline GCMMessage& WithPreferredAuthenticationMethod(Aws::String&& value) { SetPreferredAuthenticationMethod(std::move(value)); return *this;}
+
+    /**
+     * <p>The preferred authentication method, with valid values "KEY" or "TOKEN". If a
+     * value isn't provided then the <b>DefaultAuthenticationMethod</b> is used.</p>
+     */
+    inline GCMMessage& WithPreferredAuthenticationMethod(const char* value) { SetPreferredAuthenticationMethod(value); return *this;}
+
+
+    /**
+     * <p>para>normal – The notification might be delayed. Delivery is optimized for
      * battery usage on the recipient's device. Use this value unless immediate
-     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * delivery is required.</p>/listitem> <li><p>high – The notification is sent
      * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
      * specifies this value in the FCM priority parameter when it sends the
      * notification message to FCM.</p> <p>The equivalent values for Apple Push
@@ -469,9 +518,9 @@ namespace Model
     inline const Aws::String& GetPriority() const{ return m_priority; }
 
     /**
-     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * <p>para>normal – The notification might be delayed. Delivery is optimized for
      * battery usage on the recipient's device. Use this value unless immediate
-     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * delivery is required.</p>/listitem> <li><p>high – The notification is sent
      * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
      * specifies this value in the FCM priority parameter when it sends the
      * notification message to FCM.</p> <p>The equivalent values for Apple Push
@@ -482,9 +531,9 @@ namespace Model
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * <p>para>normal – The notification might be delayed. Delivery is optimized for
      * battery usage on the recipient's device. Use this value unless immediate
-     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * delivery is required.</p>/listitem> <li><p>high – The notification is sent
      * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
      * specifies this value in the FCM priority parameter when it sends the
      * notification message to FCM.</p> <p>The equivalent values for Apple Push
@@ -495,9 +544,9 @@ namespace Model
     inline void SetPriority(const Aws::String& value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * <p>para>normal – The notification might be delayed. Delivery is optimized for
      * battery usage on the recipient's device. Use this value unless immediate
-     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * delivery is required.</p>/listitem> <li><p>high – The notification is sent
      * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
      * specifies this value in the FCM priority parameter when it sends the
      * notification message to FCM.</p> <p>The equivalent values for Apple Push
@@ -508,9 +557,9 @@ namespace Model
     inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
 
     /**
-     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * <p>para>normal – The notification might be delayed. Delivery is optimized for
      * battery usage on the recipient's device. Use this value unless immediate
-     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * delivery is required.</p>/listitem> <li><p>high – The notification is sent
      * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
      * specifies this value in the FCM priority parameter when it sends the
      * notification message to FCM.</p> <p>The equivalent values for Apple Push
@@ -521,9 +570,9 @@ namespace Model
     inline void SetPriority(const char* value) { m_priorityHasBeenSet = true; m_priority.assign(value); }
 
     /**
-     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * <p>para>normal – The notification might be delayed. Delivery is optimized for
      * battery usage on the recipient's device. Use this value unless immediate
-     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * delivery is required.</p>/listitem> <li><p>high – The notification is sent
      * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
      * specifies this value in the FCM priority parameter when it sends the
      * notification message to FCM.</p> <p>The equivalent values for Apple Push
@@ -534,9 +583,9 @@ namespace Model
     inline GCMMessage& WithPriority(const Aws::String& value) { SetPriority(value); return *this;}
 
     /**
-     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * <p>para>normal – The notification might be delayed. Delivery is optimized for
      * battery usage on the recipient's device. Use this value unless immediate
-     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * delivery is required.</p>/listitem> <li><p>high – The notification is sent
      * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
      * specifies this value in the FCM priority parameter when it sends the
      * notification message to FCM.</p> <p>The equivalent values for Apple Push
@@ -547,9 +596,9 @@ namespace Model
     inline GCMMessage& WithPriority(Aws::String&& value) { SetPriority(std::move(value)); return *this;}
 
     /**
-     * <p>para>normal - The notification might be delayed. Delivery is optimized for
+     * <p>para>normal – The notification might be delayed. Delivery is optimized for
      * battery usage on the recipient's device. Use this value unless immediate
-     * delivery is required.</p>/listitem> <li><p>high - The notification is sent
+     * delivery is required.</p>/listitem> <li><p>high – The notification is sent
      * immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint
      * specifies this value in the FCM priority parameter when it sends the
      * notification message to FCM.</p> <p>The equivalent values for Apple Push
@@ -1046,6 +1095,9 @@ namespace Model
 
     Aws::String m_imageUrl;
     bool m_imageUrlHasBeenSet = false;
+
+    Aws::String m_preferredAuthenticationMethod;
+    bool m_preferredAuthenticationMethodHasBeenSet = false;
 
     Aws::String m_priority;
     bool m_priorityHasBeenSet = false;

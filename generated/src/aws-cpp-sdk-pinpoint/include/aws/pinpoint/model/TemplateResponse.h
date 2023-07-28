@@ -518,37 +518,37 @@ namespace Model
 
     /**
      * <p>The type of channel that the message template is designed for. Possible
-     * values are: EMAIL, PUSH, SMS, and VOICE.</p>
+     * values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
      */
     inline const TemplateType& GetTemplateType() const{ return m_templateType; }
 
     /**
      * <p>The type of channel that the message template is designed for. Possible
-     * values are: EMAIL, PUSH, SMS, and VOICE.</p>
+     * values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
      */
     inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
 
     /**
      * <p>The type of channel that the message template is designed for. Possible
-     * values are: EMAIL, PUSH, SMS, and VOICE.</p>
+     * values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
      */
     inline void SetTemplateType(const TemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
 
     /**
      * <p>The type of channel that the message template is designed for. Possible
-     * values are: EMAIL, PUSH, SMS, and VOICE.</p>
+     * values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
      */
     inline void SetTemplateType(TemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
 
     /**
      * <p>The type of channel that the message template is designed for. Possible
-     * values are: EMAIL, PUSH, SMS, and VOICE.</p>
+     * values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
      */
     inline TemplateResponse& WithTemplateType(const TemplateType& value) { SetTemplateType(value); return *this;}
 
     /**
      * <p>The type of channel that the message template is designed for. Possible
-     * values are: EMAIL, PUSH, SMS, and VOICE.</p>
+     * values are: EMAIL, PUSH, SMS, INAPP, and VOICE.</p>
      */
     inline TemplateResponse& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
 

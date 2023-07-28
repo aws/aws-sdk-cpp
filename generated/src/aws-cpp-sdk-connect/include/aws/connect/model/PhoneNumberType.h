@@ -17,7 +17,11 @@ namespace Model
   {
     NOT_SET,
     TOLL_FREE,
-    DID
+    DID,
+    UIFN,
+    SHARED,
+    THIRD_PARTY_TF,
+    THIRD_PARTY_DID
   };
 
 namespace PhoneNumberTypeMapper

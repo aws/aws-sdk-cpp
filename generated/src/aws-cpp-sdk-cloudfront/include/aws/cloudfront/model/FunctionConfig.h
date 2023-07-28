@@ -81,38 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment verion.</p>
      */
     inline const FunctionRuntime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment verion.</p>
      */
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment verion.</p>
      */
     inline void SetRuntime(const FunctionRuntime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment verion.</p>
      */
     inline void SetRuntime(FunctionRuntime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment verion.</p>
      */
     inline FunctionConfig& WithRuntime(const FunctionRuntime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The function's runtime environment. The only valid value is
-     * <code>cloudfront-js-1.0</code>.</p>
+     * <p>The function's runtime environment verion.</p>
      */
     inline FunctionConfig& WithRuntime(FunctionRuntime&& value) { SetRuntime(std::move(value)); return *this;}
 

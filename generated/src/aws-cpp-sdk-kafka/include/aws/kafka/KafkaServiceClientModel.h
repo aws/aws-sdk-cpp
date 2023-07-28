@@ -30,6 +30,7 @@
 #include <aws/kafka/model/DescribeClusterResult.h>
 #include <aws/kafka/model/DescribeClusterV2Result.h>
 #include <aws/kafka/model/DescribeClusterOperationResult.h>
+#include <aws/kafka/model/DescribeClusterOperationV2Result.h>
 #include <aws/kafka/model/DescribeConfigurationResult.h>
 #include <aws/kafka/model/DescribeConfigurationRevisionResult.h>
 #include <aws/kafka/model/DescribeVpcConnectionResult.h>
@@ -38,6 +39,7 @@
 #include <aws/kafka/model/GetCompatibleKafkaVersionsResult.h>
 #include <aws/kafka/model/GetClusterPolicyResult.h>
 #include <aws/kafka/model/ListClusterOperationsResult.h>
+#include <aws/kafka/model/ListClusterOperationsV2Result.h>
 #include <aws/kafka/model/ListClustersResult.h>
 #include <aws/kafka/model/ListClustersV2Result.h>
 #include <aws/kafka/model/ListConfigurationRevisionsResult.h>
@@ -114,6 +116,7 @@ namespace Aws
       class DescribeClusterRequest;
       class DescribeClusterV2Request;
       class DescribeClusterOperationRequest;
+      class DescribeClusterOperationV2Request;
       class DescribeConfigurationRequest;
       class DescribeConfigurationRevisionRequest;
       class DescribeVpcConnectionRequest;
@@ -122,6 +125,7 @@ namespace Aws
       class GetCompatibleKafkaVersionsRequest;
       class GetClusterPolicyRequest;
       class ListClusterOperationsRequest;
+      class ListClusterOperationsV2Request;
       class ListClustersRequest;
       class ListClustersV2Request;
       class ListConfigurationRevisionsRequest;
@@ -162,6 +166,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeClusterResult, KafkaError> DescribeClusterOutcome;
       typedef Aws::Utils::Outcome<DescribeClusterV2Result, KafkaError> DescribeClusterV2Outcome;
       typedef Aws::Utils::Outcome<DescribeClusterOperationResult, KafkaError> DescribeClusterOperationOutcome;
+      typedef Aws::Utils::Outcome<DescribeClusterOperationV2Result, KafkaError> DescribeClusterOperationV2Outcome;
       typedef Aws::Utils::Outcome<DescribeConfigurationResult, KafkaError> DescribeConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeConfigurationRevisionResult, KafkaError> DescribeConfigurationRevisionOutcome;
       typedef Aws::Utils::Outcome<DescribeVpcConnectionResult, KafkaError> DescribeVpcConnectionOutcome;
@@ -170,6 +175,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetCompatibleKafkaVersionsResult, KafkaError> GetCompatibleKafkaVersionsOutcome;
       typedef Aws::Utils::Outcome<GetClusterPolicyResult, KafkaError> GetClusterPolicyOutcome;
       typedef Aws::Utils::Outcome<ListClusterOperationsResult, KafkaError> ListClusterOperationsOutcome;
+      typedef Aws::Utils::Outcome<ListClusterOperationsV2Result, KafkaError> ListClusterOperationsV2Outcome;
       typedef Aws::Utils::Outcome<ListClustersResult, KafkaError> ListClustersOutcome;
       typedef Aws::Utils::Outcome<ListClustersV2Result, KafkaError> ListClustersV2Outcome;
       typedef Aws::Utils::Outcome<ListConfigurationRevisionsResult, KafkaError> ListConfigurationRevisionsOutcome;
@@ -210,6 +216,7 @@ namespace Aws
       typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
       typedef std::future<DescribeClusterV2Outcome> DescribeClusterV2OutcomeCallable;
       typedef std::future<DescribeClusterOperationOutcome> DescribeClusterOperationOutcomeCallable;
+      typedef std::future<DescribeClusterOperationV2Outcome> DescribeClusterOperationV2OutcomeCallable;
       typedef std::future<DescribeConfigurationOutcome> DescribeConfigurationOutcomeCallable;
       typedef std::future<DescribeConfigurationRevisionOutcome> DescribeConfigurationRevisionOutcomeCallable;
       typedef std::future<DescribeVpcConnectionOutcome> DescribeVpcConnectionOutcomeCallable;
@@ -218,6 +225,7 @@ namespace Aws
       typedef std::future<GetCompatibleKafkaVersionsOutcome> GetCompatibleKafkaVersionsOutcomeCallable;
       typedef std::future<GetClusterPolicyOutcome> GetClusterPolicyOutcomeCallable;
       typedef std::future<ListClusterOperationsOutcome> ListClusterOperationsOutcomeCallable;
+      typedef std::future<ListClusterOperationsV2Outcome> ListClusterOperationsV2OutcomeCallable;
       typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
       typedef std::future<ListClustersV2Outcome> ListClustersV2OutcomeCallable;
       typedef std::future<ListConfigurationRevisionsOutcome> ListConfigurationRevisionsOutcomeCallable;
@@ -261,6 +269,7 @@ namespace Aws
     typedef std::function<void(const KafkaClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DescribeClusterV2Request&, const Model::DescribeClusterV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterV2ResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DescribeClusterOperationRequest&, const Model::DescribeClusterOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterOperationResponseReceivedHandler;
+    typedef std::function<void(const KafkaClient*, const Model::DescribeClusterOperationV2Request&, const Model::DescribeClusterOperationV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterOperationV2ResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DescribeConfigurationRequest&, const Model::DescribeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DescribeConfigurationRevisionRequest&, const Model::DescribeConfigurationRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationRevisionResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::DescribeVpcConnectionRequest&, const Model::DescribeVpcConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcConnectionResponseReceivedHandler;
@@ -269,6 +278,7 @@ namespace Aws
     typedef std::function<void(const KafkaClient*, const Model::GetCompatibleKafkaVersionsRequest&, const Model::GetCompatibleKafkaVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCompatibleKafkaVersionsResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::GetClusterPolicyRequest&, const Model::GetClusterPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterPolicyResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListClusterOperationsRequest&, const Model::ListClusterOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClusterOperationsResponseReceivedHandler;
+    typedef std::function<void(const KafkaClient*, const Model::ListClusterOperationsV2Request&, const Model::ListClusterOperationsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClusterOperationsV2ResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListClustersV2Request&, const Model::ListClustersV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersV2ResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::ListConfigurationRevisionsRequest&, const Model::ListConfigurationRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationRevisionsResponseReceivedHandler;

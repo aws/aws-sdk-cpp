@@ -125,8 +125,14 @@ namespace CloudFront
          * deployment workflow.</p> <p>After you create a staging distribution, you can use
          * <code>UpdateDistribution</code> to modify the staging distribution's
          * configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to
-         * incrementally move traffic to the staging distribution.</p><p><h3>See Also:</h3>
-         * <a
+         * incrementally move traffic to the staging distribution.</p> <p>This API
+         * operation requires the following IAM permissions:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CopyDistribution.html">CopyDistribution</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CopyDistribution2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -282,7 +288,12 @@ namespace CloudFront
         }
 
         /**
-         * <p>Create a new distribution with tags.</p><p><h3>See Also:</h3>   <a
+         * <p>Create a new distribution with tags. This API operation requires the
+         * following IAM permissions:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateDistribution.html">CreateDistribution</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_TagResource.html">TagResource</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -2933,7 +2944,12 @@ namespace CloudFront
          * distribution and verifying that it works as intended, you can use this operation
          * to copy the staging distribution's configuration to the primary distribution.
          * This action will disable the continuous deployment policy and move your domain's
-         * traffic back to the primary distribution.</p><p><h3>See Also:</h3>   <a
+         * traffic back to the primary distribution.</p> <p>This API operation requires the
+         * following IAM permissions:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig2020_05_31">AWS
          * API Reference</a></p>
          */

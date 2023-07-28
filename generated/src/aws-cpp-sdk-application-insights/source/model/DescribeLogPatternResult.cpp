@@ -35,6 +35,12 @@ DescribeLogPatternResult& DescribeLogPatternResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+  }
+
   if(jsonValue.ValueExists("LogPattern"))
   {
     m_logPattern = jsonValue.GetObject("LogPattern");

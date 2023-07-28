@@ -180,6 +180,55 @@ namespace Model
 
 
     /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline const Aws::String& GetDefaultAuthenticationMethod() const{ return m_defaultAuthenticationMethod; }
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline bool DefaultAuthenticationMethodHasBeenSet() const { return m_defaultAuthenticationMethodHasBeenSet; }
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline void SetDefaultAuthenticationMethod(const Aws::String& value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod = value; }
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline void SetDefaultAuthenticationMethod(Aws::String&& value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod = std::move(value); }
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline void SetDefaultAuthenticationMethod(const char* value) { m_defaultAuthenticationMethodHasBeenSet = true; m_defaultAuthenticationMethod.assign(value); }
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline GCMChannelResponse& WithDefaultAuthenticationMethod(const Aws::String& value) { SetDefaultAuthenticationMethod(value); return *this;}
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline GCMChannelResponse& WithDefaultAuthenticationMethod(Aws::String&& value) { SetDefaultAuthenticationMethod(std::move(value)); return *this;}
+
+    /**
+     * <p>The default authentication method used for GCM. Values are either "TOKEN" or
+     * "KEY". Defaults to "KEY".</p>
+     */
+    inline GCMChannelResponse& WithDefaultAuthenticationMethod(const char* value) { SetDefaultAuthenticationMethod(value); return *this;}
+
+
+    /**
      * <p>Specifies whether the GCM channel is enabled for the application.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
@@ -219,6 +268,31 @@ namespace Model
      * <p>(Not used) This property is retained only for backward compatibility.</p>
      */
     inline GCMChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
+
+
+    /**
+     * <p>Returns true if the JSON file provided by Google during registration process
+     * was used in the <b>ServiceJson</b> field of the request.</p>
+     */
+    inline bool GetHasFcmServiceCredentials() const{ return m_hasFcmServiceCredentials; }
+
+    /**
+     * <p>Returns true if the JSON file provided by Google during registration process
+     * was used in the <b>ServiceJson</b> field of the request.</p>
+     */
+    inline bool HasFcmServiceCredentialsHasBeenSet() const { return m_hasFcmServiceCredentialsHasBeenSet; }
+
+    /**
+     * <p>Returns true if the JSON file provided by Google during registration process
+     * was used in the <b>ServiceJson</b> field of the request.</p>
+     */
+    inline void SetHasFcmServiceCredentials(bool value) { m_hasFcmServiceCredentialsHasBeenSet = true; m_hasFcmServiceCredentials = value; }
+
+    /**
+     * <p>Returns true if the JSON file provided by Google during registration process
+     * was used in the <b>ServiceJson</b> field of the request.</p>
+     */
+    inline GCMChannelResponse& WithHasFcmServiceCredentials(bool value) { SetHasFcmServiceCredentials(value); return *this;}
 
 
     /**
@@ -453,11 +527,17 @@ namespace Model
     Aws::String m_credential;
     bool m_credentialHasBeenSet = false;
 
+    Aws::String m_defaultAuthenticationMethod;
+    bool m_defaultAuthenticationMethodHasBeenSet = false;
+
     bool m_enabled;
     bool m_enabledHasBeenSet = false;
 
     bool m_hasCredential;
     bool m_hasCredentialHasBeenSet = false;
+
+    bool m_hasFcmServiceCredentials;
+    bool m_hasFcmServiceCredentialsHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;

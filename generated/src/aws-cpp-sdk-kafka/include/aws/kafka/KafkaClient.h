@@ -417,6 +417,34 @@ namespace Kafka
 
         /**
          * 
+            <p>Returns a description of the cluster operation specified by the
+         * ARN.</p>
+<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeClusterOperationV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClusterOperationV2Outcome DescribeClusterOperationV2(const Model::DescribeClusterOperationV2Request& request) const;
+
+        /**
+         * A Callable wrapper for DescribeClusterOperationV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeClusterOperationV2RequestT = Model::DescribeClusterOperationV2Request>
+        Model::DescribeClusterOperationV2OutcomeCallable DescribeClusterOperationV2Callable(const DescribeClusterOperationV2RequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::DescribeClusterOperationV2, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeClusterOperationV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeClusterOperationV2RequestT = Model::DescribeClusterOperationV2Request>
+        void DescribeClusterOperationV2Async(const DescribeClusterOperationV2RequestT& request, const DescribeClusterOperationV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::DescribeClusterOperationV2, request, handler, context);
+        }
+
+        /**
+         * 
             <p>Returns a description of this MSK configuration.</p>
         
          * <p><h3>See Also:</h3>   <a
@@ -637,6 +665,34 @@ namespace Kafka
         void ListClusterOperationsAsync(const ListClusterOperationsRequestT& request, const ListClusterOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KafkaClient::ListClusterOperations, request, handler, context);
+        }
+
+        /**
+         * 
+            <p>Returns a list of all the operations that have been performed on
+         * the specified MSK cluster.</p>
+         <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClusterOperationsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListClusterOperationsV2Outcome ListClusterOperationsV2(const Model::ListClusterOperationsV2Request& request) const;
+
+        /**
+         * A Callable wrapper for ListClusterOperationsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListClusterOperationsV2RequestT = Model::ListClusterOperationsV2Request>
+        Model::ListClusterOperationsV2OutcomeCallable ListClusterOperationsV2Callable(const ListClusterOperationsV2RequestT& request) const
+        {
+            return SubmitCallable(&KafkaClient::ListClusterOperationsV2, request);
+        }
+
+        /**
+         * An Async wrapper for ListClusterOperationsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListClusterOperationsV2RequestT = Model::ListClusterOperationsV2Request>
+        void ListClusterOperationsV2Async(const ListClusterOperationsV2RequestT& request, const ListClusterOperationsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KafkaClient::ListClusterOperationsV2, request, handler, context);
         }
 
         /**

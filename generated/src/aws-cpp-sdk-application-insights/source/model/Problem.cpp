@@ -29,11 +29,16 @@ Problem::Problem() :
     m_endTimeHasBeenSet(false),
     m_severityLevel(SeverityLevel::NOT_SET),
     m_severityLevelHasBeenSet(false),
+    m_accountIdHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
     m_feedbackHasBeenSet(false),
     m_recurringCount(0),
     m_recurringCountHasBeenSet(false),
-    m_lastRecurrenceTimeHasBeenSet(false)
+    m_lastRecurrenceTimeHasBeenSet(false),
+    m_visibility(Visibility::NOT_SET),
+    m_visibilityHasBeenSet(false),
+    m_resolutionMethod(ResolutionMethod::NOT_SET),
+    m_resolutionMethodHasBeenSet(false)
 {
 }
 
@@ -48,11 +53,16 @@ Problem::Problem(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_severityLevel(SeverityLevel::NOT_SET),
     m_severityLevelHasBeenSet(false),
+    m_accountIdHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
     m_feedbackHasBeenSet(false),
     m_recurringCount(0),
     m_recurringCountHasBeenSet(false),
-    m_lastRecurrenceTimeHasBeenSet(false)
+    m_lastRecurrenceTimeHasBeenSet(false),
+    m_visibility(Visibility::NOT_SET),
+    m_visibilityHasBeenSet(false),
+    m_resolutionMethod(ResolutionMethod::NOT_SET),
+    m_resolutionMethodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,6 +125,13 @@ Problem& Problem::operator =(JsonView jsonValue)
     m_severityLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ResourceGroupName"))
   {
     m_resourceGroupName = jsonValue.GetString("ResourceGroupName");
@@ -144,6 +161,20 @@ Problem& Problem::operator =(JsonView jsonValue)
     m_lastRecurrenceTime = jsonValue.GetDouble("LastRecurrenceTime");
 
     m_lastRecurrenceTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Visibility"))
+  {
+    m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
+
+    m_visibilityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResolutionMethod"))
+  {
+    m_resolutionMethod = ResolutionMethodMapper::GetResolutionMethodForName(jsonValue.GetString("ResolutionMethod"));
+
+    m_resolutionMethodHasBeenSet = true;
   }
 
   return *this;
@@ -197,6 +228,12 @@ JsonValue Problem::Jsonize() const
    payload.WithString("SeverityLevel", SeverityLevelMapper::GetNameForSeverityLevel(m_severityLevel));
   }
 
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
+  }
+
   if(m_resourceGroupNameHasBeenSet)
   {
    payload.WithString("ResourceGroupName", m_resourceGroupName);
@@ -223,6 +260,16 @@ JsonValue Problem::Jsonize() const
   if(m_lastRecurrenceTimeHasBeenSet)
   {
    payload.WithDouble("LastRecurrenceTime", m_lastRecurrenceTime.SecondsWithMSPrecision());
+  }
+
+  if(m_visibilityHasBeenSet)
+  {
+   payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
+  }
+
+  if(m_resolutionMethodHasBeenSet)
+  {
+   payload.WithString("ResolutionMethod", ResolutionMethodMapper::GetNameForResolutionMethod(m_resolutionMethod));
   }
 
   return payload;
