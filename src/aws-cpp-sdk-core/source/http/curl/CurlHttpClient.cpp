@@ -674,7 +674,13 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
 
 #if LIBCURL_VERSION_MAJOR >= 7
 #if LIBCURL_VERSION_MINOR >= 34
+#if defined(ENFORCE_TLS_V1_3)
+            curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_3);
+#elif defined(ENFORCE_TLS_V1_2)
+            curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
+#else
             curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1);
+#endif
 #endif //LIBCURL_VERSION_MINOR
 #endif //LIBCURL_VERSION_MAJOR
         }
