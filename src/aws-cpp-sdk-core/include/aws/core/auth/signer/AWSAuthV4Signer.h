@@ -184,7 +184,6 @@ namespace Aws
             Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate,
                     const Aws::String& canonicalRequestHash, const Aws::String& region,
                     const Aws::String& serviceName) const;
-            Aws::Utils::ByteBuffer ComputeHash(const Aws::String& secretKey, const Aws::String& simpleDate) const;
             Aws::Utils::ByteBuffer ComputeHash(const Aws::String& secretKey,
                     const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const;
             bool SignRequestWithSigV4a(Aws::Http::HttpRequest& request, const char* region, const char* serviceName,
