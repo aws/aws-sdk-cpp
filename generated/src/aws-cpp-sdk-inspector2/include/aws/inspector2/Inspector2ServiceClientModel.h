@@ -21,6 +21,7 @@
 #include <aws/inspector2/model/AssociateMemberResult.h>
 #include <aws/inspector2/model/BatchGetAccountStatusResult.h>
 #include <aws/inspector2/model/BatchGetCodeSnippetResult.h>
+#include <aws/inspector2/model/BatchGetFindingDetailsResult.h>
 #include <aws/inspector2/model/BatchGetFreeTrialInfoResult.h>
 #include <aws/inspector2/model/BatchGetMemberEc2DeepInspectionStatusResult.h>
 #include <aws/inspector2/model/BatchUpdateMemberEc2DeepInspectionStatusResult.h>
@@ -106,6 +107,7 @@ namespace Aws
       class AssociateMemberRequest;
       class BatchGetAccountStatusRequest;
       class BatchGetCodeSnippetRequest;
+      class BatchGetFindingDetailsRequest;
       class BatchGetFreeTrialInfoRequest;
       class BatchGetMemberEc2DeepInspectionStatusRequest;
       class BatchUpdateMemberEc2DeepInspectionStatusRequest;
@@ -154,6 +156,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociateMemberResult, Inspector2Error> AssociateMemberOutcome;
       typedef Aws::Utils::Outcome<BatchGetAccountStatusResult, Inspector2Error> BatchGetAccountStatusOutcome;
       typedef Aws::Utils::Outcome<BatchGetCodeSnippetResult, Inspector2Error> BatchGetCodeSnippetOutcome;
+      typedef Aws::Utils::Outcome<BatchGetFindingDetailsResult, Inspector2Error> BatchGetFindingDetailsOutcome;
       typedef Aws::Utils::Outcome<BatchGetFreeTrialInfoResult, Inspector2Error> BatchGetFreeTrialInfoOutcome;
       typedef Aws::Utils::Outcome<BatchGetMemberEc2DeepInspectionStatusResult, Inspector2Error> BatchGetMemberEc2DeepInspectionStatusOutcome;
       typedef Aws::Utils::Outcome<BatchUpdateMemberEc2DeepInspectionStatusResult, Inspector2Error> BatchUpdateMemberEc2DeepInspectionStatusOutcome;
@@ -202,6 +205,7 @@ namespace Aws
       typedef std::future<AssociateMemberOutcome> AssociateMemberOutcomeCallable;
       typedef std::future<BatchGetAccountStatusOutcome> BatchGetAccountStatusOutcomeCallable;
       typedef std::future<BatchGetCodeSnippetOutcome> BatchGetCodeSnippetOutcomeCallable;
+      typedef std::future<BatchGetFindingDetailsOutcome> BatchGetFindingDetailsOutcomeCallable;
       typedef std::future<BatchGetFreeTrialInfoOutcome> BatchGetFreeTrialInfoOutcomeCallable;
       typedef std::future<BatchGetMemberEc2DeepInspectionStatusOutcome> BatchGetMemberEc2DeepInspectionStatusOutcomeCallable;
       typedef std::future<BatchUpdateMemberEc2DeepInspectionStatusOutcome> BatchUpdateMemberEc2DeepInspectionStatusOutcomeCallable;
@@ -253,6 +257,7 @@ namespace Aws
     typedef std::function<void(const Inspector2Client*, const Model::AssociateMemberRequest&, const Model::AssociateMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateMemberResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::BatchGetAccountStatusRequest&, const Model::BatchGetAccountStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAccountStatusResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::BatchGetCodeSnippetRequest&, const Model::BatchGetCodeSnippetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCodeSnippetResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::BatchGetFindingDetailsRequest&, const Model::BatchGetFindingDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetFindingDetailsResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::BatchGetFreeTrialInfoRequest&, const Model::BatchGetFreeTrialInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetFreeTrialInfoResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::BatchGetMemberEc2DeepInspectionStatusRequest&, const Model::BatchGetMemberEc2DeepInspectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetMemberEc2DeepInspectionStatusResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::BatchUpdateMemberEc2DeepInspectionStatusRequest&, const Model::BatchUpdateMemberEc2DeepInspectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateMemberEc2DeepInspectionStatusResponseReceivedHandler;

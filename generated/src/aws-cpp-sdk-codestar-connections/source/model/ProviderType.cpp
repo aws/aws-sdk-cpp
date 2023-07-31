@@ -23,6 +23,7 @@ namespace Aws
         static const int Bitbucket_HASH = HashingUtils::HashString("Bitbucket");
         static const int GitHub_HASH = HashingUtils::HashString("GitHub");
         static const int GitHubEnterpriseServer_HASH = HashingUtils::HashString("GitHubEnterpriseServer");
+        static const int GitLab_HASH = HashingUtils::HashString("GitLab");
 
 
         ProviderType GetProviderTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == GitHubEnterpriseServer_HASH)
           {
             return ProviderType::GitHubEnterpriseServer;
+          }
+          else if (hashCode == GitLab_HASH)
+          {
+            return ProviderType::GitLab;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "GitHub";
           case ProviderType::GitHubEnterpriseServer:
             return "GitHubEnterpriseServer";
+          case ProviderType::GitLab:
+            return "GitLab";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

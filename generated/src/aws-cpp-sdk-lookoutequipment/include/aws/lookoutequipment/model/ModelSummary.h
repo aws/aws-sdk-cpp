@@ -265,6 +265,88 @@ namespace Model
      */
     inline ModelSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The model version that the inference scheduler uses to run an inference
+     * execution.</p>
+     */
+    inline long long GetActiveModelVersion() const{ return m_activeModelVersion; }
+
+    /**
+     * <p>The model version that the inference scheduler uses to run an inference
+     * execution.</p>
+     */
+    inline bool ActiveModelVersionHasBeenSet() const { return m_activeModelVersionHasBeenSet; }
+
+    /**
+     * <p>The model version that the inference scheduler uses to run an inference
+     * execution.</p>
+     */
+    inline void SetActiveModelVersion(long long value) { m_activeModelVersionHasBeenSet = true; m_activeModelVersion = value; }
+
+    /**
+     * <p>The model version that the inference scheduler uses to run an inference
+     * execution.</p>
+     */
+    inline ModelSummary& WithActiveModelVersion(long long value) { SetActiveModelVersion(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version that is set as active.
+     * The active model version is the model version that the inference scheduler uses
+     * to run an inference execution.</p>
+     */
+    inline const Aws::String& GetActiveModelVersionArn() const{ return m_activeModelVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version that is set as active.
+     * The active model version is the model version that the inference scheduler uses
+     * to run an inference execution.</p>
+     */
+    inline bool ActiveModelVersionArnHasBeenSet() const { return m_activeModelVersionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version that is set as active.
+     * The active model version is the model version that the inference scheduler uses
+     * to run an inference execution.</p>
+     */
+    inline void SetActiveModelVersionArn(const Aws::String& value) { m_activeModelVersionArnHasBeenSet = true; m_activeModelVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version that is set as active.
+     * The active model version is the model version that the inference scheduler uses
+     * to run an inference execution.</p>
+     */
+    inline void SetActiveModelVersionArn(Aws::String&& value) { m_activeModelVersionArnHasBeenSet = true; m_activeModelVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version that is set as active.
+     * The active model version is the model version that the inference scheduler uses
+     * to run an inference execution.</p>
+     */
+    inline void SetActiveModelVersionArn(const char* value) { m_activeModelVersionArnHasBeenSet = true; m_activeModelVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version that is set as active.
+     * The active model version is the model version that the inference scheduler uses
+     * to run an inference execution.</p>
+     */
+    inline ModelSummary& WithActiveModelVersionArn(const Aws::String& value) { SetActiveModelVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version that is set as active.
+     * The active model version is the model version that the inference scheduler uses
+     * to run an inference execution.</p>
+     */
+    inline ModelSummary& WithActiveModelVersionArn(Aws::String&& value) { SetActiveModelVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version that is set as active.
+     * The active model version is the model version that the inference scheduler uses
+     * to run an inference execution.</p>
+     */
+    inline ModelSummary& WithActiveModelVersionArn(const char* value) { SetActiveModelVersionArn(value); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -284,6 +366,12 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
+
+    long long m_activeModelVersion;
+    bool m_activeModelVersionHasBeenSet = false;
+
+    Aws::String m_activeModelVersionArn;
+    bool m_activeModelVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

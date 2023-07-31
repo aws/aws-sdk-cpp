@@ -137,58 +137,90 @@ namespace Model
 
 
     /**
-     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
-     * If no KeyPattern is provided, we will use the default hierarchy file structure,
-     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     * <p> The pattern for matching the Amazon S3 files that will be used for
+     * ingestion. If the schema was created previously without any KeyPattern, then the
+     * default KeyPattern {prefix}/{component_name}/ * is used to download files from
+     * Amazon S3 according to the schema. This field is required when ingestion is
+     * being done for the first time.</p> <p>Valid Values: {prefix}/{component_name}_*
+     * | {prefix}/{component_name}/ * | {prefix}/{component_name}[DELIMITER]* (Allowed
+     * delimiters : space, dot, underscore, hyphen)</p>
      */
     inline const Aws::String& GetKeyPattern() const{ return m_keyPattern; }
 
     /**
-     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
-     * If no KeyPattern is provided, we will use the default hierarchy file structure,
-     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     * <p> The pattern for matching the Amazon S3 files that will be used for
+     * ingestion. If the schema was created previously without any KeyPattern, then the
+     * default KeyPattern {prefix}/{component_name}/ * is used to download files from
+     * Amazon S3 according to the schema. This field is required when ingestion is
+     * being done for the first time.</p> <p>Valid Values: {prefix}/{component_name}_*
+     * | {prefix}/{component_name}/ * | {prefix}/{component_name}[DELIMITER]* (Allowed
+     * delimiters : space, dot, underscore, hyphen)</p>
      */
     inline bool KeyPatternHasBeenSet() const { return m_keyPatternHasBeenSet; }
 
     /**
-     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
-     * If no KeyPattern is provided, we will use the default hierarchy file structure,
-     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     * <p> The pattern for matching the Amazon S3 files that will be used for
+     * ingestion. If the schema was created previously without any KeyPattern, then the
+     * default KeyPattern {prefix}/{component_name}/ * is used to download files from
+     * Amazon S3 according to the schema. This field is required when ingestion is
+     * being done for the first time.</p> <p>Valid Values: {prefix}/{component_name}_*
+     * | {prefix}/{component_name}/ * | {prefix}/{component_name}[DELIMITER]* (Allowed
+     * delimiters : space, dot, underscore, hyphen)</p>
      */
     inline void SetKeyPattern(const Aws::String& value) { m_keyPatternHasBeenSet = true; m_keyPattern = value; }
 
     /**
-     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
-     * If no KeyPattern is provided, we will use the default hierarchy file structure,
-     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     * <p> The pattern for matching the Amazon S3 files that will be used for
+     * ingestion. If the schema was created previously without any KeyPattern, then the
+     * default KeyPattern {prefix}/{component_name}/ * is used to download files from
+     * Amazon S3 according to the schema. This field is required when ingestion is
+     * being done for the first time.</p> <p>Valid Values: {prefix}/{component_name}_*
+     * | {prefix}/{component_name}/ * | {prefix}/{component_name}[DELIMITER]* (Allowed
+     * delimiters : space, dot, underscore, hyphen)</p>
      */
     inline void SetKeyPattern(Aws::String&& value) { m_keyPatternHasBeenSet = true; m_keyPattern = std::move(value); }
 
     /**
-     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
-     * If no KeyPattern is provided, we will use the default hierarchy file structure,
-     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     * <p> The pattern for matching the Amazon S3 files that will be used for
+     * ingestion. If the schema was created previously without any KeyPattern, then the
+     * default KeyPattern {prefix}/{component_name}/ * is used to download files from
+     * Amazon S3 according to the schema. This field is required when ingestion is
+     * being done for the first time.</p> <p>Valid Values: {prefix}/{component_name}_*
+     * | {prefix}/{component_name}/ * | {prefix}/{component_name}[DELIMITER]* (Allowed
+     * delimiters : space, dot, underscore, hyphen)</p>
      */
     inline void SetKeyPattern(const char* value) { m_keyPatternHasBeenSet = true; m_keyPattern.assign(value); }
 
     /**
-     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
-     * If no KeyPattern is provided, we will use the default hierarchy file structure,
-     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     * <p> The pattern for matching the Amazon S3 files that will be used for
+     * ingestion. If the schema was created previously without any KeyPattern, then the
+     * default KeyPattern {prefix}/{component_name}/ * is used to download files from
+     * Amazon S3 according to the schema. This field is required when ingestion is
+     * being done for the first time.</p> <p>Valid Values: {prefix}/{component_name}_*
+     * | {prefix}/{component_name}/ * | {prefix}/{component_name}[DELIMITER]* (Allowed
+     * delimiters : space, dot, underscore, hyphen)</p>
      */
     inline IngestionS3InputConfiguration& WithKeyPattern(const Aws::String& value) { SetKeyPattern(value); return *this;}
 
     /**
-     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
-     * If no KeyPattern is provided, we will use the default hierarchy file structure,
-     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     * <p> The pattern for matching the Amazon S3 files that will be used for
+     * ingestion. If the schema was created previously without any KeyPattern, then the
+     * default KeyPattern {prefix}/{component_name}/ * is used to download files from
+     * Amazon S3 according to the schema. This field is required when ingestion is
+     * being done for the first time.</p> <p>Valid Values: {prefix}/{component_name}_*
+     * | {prefix}/{component_name}/ * | {prefix}/{component_name}[DELIMITER]* (Allowed
+     * delimiters : space, dot, underscore, hyphen)</p>
      */
     inline IngestionS3InputConfiguration& WithKeyPattern(Aws::String&& value) { SetKeyPattern(std::move(value)); return *this;}
 
     /**
-     * <p> Pattern for matching the Amazon S3 files which will be used for ingestion.
-     * If no KeyPattern is provided, we will use the default hierarchy file structure,
-     * which is same as KeyPattern {prefix}/{component_name}/ * </p>
+     * <p> The pattern for matching the Amazon S3 files that will be used for
+     * ingestion. If the schema was created previously without any KeyPattern, then the
+     * default KeyPattern {prefix}/{component_name}/ * is used to download files from
+     * Amazon S3 according to the schema. This field is required when ingestion is
+     * being done for the first time.</p> <p>Valid Values: {prefix}/{component_name}_*
+     * | {prefix}/{component_name}/ * | {prefix}/{component_name}[DELIMITER]* (Allowed
+     * delimiters : space, dot, underscore, hyphen)</p>
      */
     inline IngestionS3InputConfiguration& WithKeyPattern(const char* value) { SetKeyPattern(value); return *this;}
 

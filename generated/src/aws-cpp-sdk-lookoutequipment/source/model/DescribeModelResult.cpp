@@ -18,12 +18,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeModelResult::DescribeModelResult() : 
-    m_status(ModelStatus::NOT_SET)
+    m_status(ModelStatus::NOT_SET),
+    m_activeModelVersion(0),
+    m_previousActiveModelVersion(0)
 {
 }
 
 DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(ModelStatus::NOT_SET)
+    m_status(ModelStatus::NOT_SET),
+    m_activeModelVersion(0),
+    m_previousActiveModelVersion(0)
 {
   *this = result;
 }
@@ -154,6 +158,60 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("OffCondition"))
   {
     m_offCondition = jsonValue.GetString("OffCondition");
+
+  }
+
+  if(jsonValue.ValueExists("SourceModelVersionArn"))
+  {
+    m_sourceModelVersionArn = jsonValue.GetString("SourceModelVersionArn");
+
+  }
+
+  if(jsonValue.ValueExists("ImportJobStartTime"))
+  {
+    m_importJobStartTime = jsonValue.GetDouble("ImportJobStartTime");
+
+  }
+
+  if(jsonValue.ValueExists("ImportJobEndTime"))
+  {
+    m_importJobEndTime = jsonValue.GetDouble("ImportJobEndTime");
+
+  }
+
+  if(jsonValue.ValueExists("ActiveModelVersion"))
+  {
+    m_activeModelVersion = jsonValue.GetInt64("ActiveModelVersion");
+
+  }
+
+  if(jsonValue.ValueExists("ActiveModelVersionArn"))
+  {
+    m_activeModelVersionArn = jsonValue.GetString("ActiveModelVersionArn");
+
+  }
+
+  if(jsonValue.ValueExists("ModelVersionActivatedAt"))
+  {
+    m_modelVersionActivatedAt = jsonValue.GetDouble("ModelVersionActivatedAt");
+
+  }
+
+  if(jsonValue.ValueExists("PreviousActiveModelVersion"))
+  {
+    m_previousActiveModelVersion = jsonValue.GetInt64("PreviousActiveModelVersion");
+
+  }
+
+  if(jsonValue.ValueExists("PreviousActiveModelVersionArn"))
+  {
+    m_previousActiveModelVersionArn = jsonValue.GetString("PreviousActiveModelVersionArn");
+
+  }
+
+  if(jsonValue.ValueExists("PreviousModelVersionActivatedAt"))
+  {
+    m_previousModelVersionActivatedAt = jsonValue.GetDouble("PreviousModelVersionActivatedAt");
 
   }
 

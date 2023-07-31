@@ -85,6 +85,32 @@ namespace CleanRooms
         virtual ~CleanRoomsClient();
 
         /**
+         * <p>Retrieves multiple analysis templates within a collaboration by their Amazon
+         * Resource Names (ARNs).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetCollaborationAnalysisTemplateOutcome BatchGetCollaborationAnalysisTemplate(const Model::BatchGetCollaborationAnalysisTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetCollaborationAnalysisTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetCollaborationAnalysisTemplateRequestT = Model::BatchGetCollaborationAnalysisTemplateRequest>
+        Model::BatchGetCollaborationAnalysisTemplateOutcomeCallable BatchGetCollaborationAnalysisTemplateCallable(const BatchGetCollaborationAnalysisTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::BatchGetCollaborationAnalysisTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetCollaborationAnalysisTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetCollaborationAnalysisTemplateRequestT = Model::BatchGetCollaborationAnalysisTemplateRequest>
+        void BatchGetCollaborationAnalysisTemplateAsync(const BatchGetCollaborationAnalysisTemplateRequestT& request, const BatchGetCollaborationAnalysisTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::BatchGetCollaborationAnalysisTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves multiple schemas by their identifiers.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetSchema">AWS
@@ -108,6 +134,31 @@ namespace CleanRooms
         void BatchGetSchemaAsync(const BatchGetSchemaRequestT& request, const BatchGetSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::BatchGetSchema, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new analysis template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAnalysisTemplateOutcome CreateAnalysisTemplate(const Model::CreateAnalysisTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAnalysisTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAnalysisTemplateRequestT = Model::CreateAnalysisTemplateRequest>
+        Model::CreateAnalysisTemplateOutcomeCallable CreateAnalysisTemplateCallable(const CreateAnalysisTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::CreateAnalysisTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAnalysisTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAnalysisTemplateRequestT = Model::CreateAnalysisTemplateRequest>
+        void CreateAnalysisTemplateAsync(const CreateAnalysisTemplateRequestT& request, const CreateAnalysisTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::CreateAnalysisTemplate, request, handler, context);
         }
 
         /**
@@ -237,6 +288,31 @@ namespace CleanRooms
         void CreateMembershipAsync(const CreateMembershipRequestT& request, const CreateMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::CreateMembership, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an analysis template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAnalysisTemplateOutcome DeleteAnalysisTemplate(const Model::DeleteAnalysisTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAnalysisTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAnalysisTemplateRequestT = Model::DeleteAnalysisTemplateRequest>
+        Model::DeleteAnalysisTemplateOutcomeCallable DeleteAnalysisTemplateCallable(const DeleteAnalysisTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::DeleteAnalysisTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAnalysisTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAnalysisTemplateRequestT = Model::DeleteAnalysisTemplateRequest>
+        void DeleteAnalysisTemplateAsync(const DeleteAnalysisTemplateRequestT& request, const DeleteAnalysisTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::DeleteAnalysisTemplate, request, handler, context);
         }
 
         /**
@@ -395,6 +471,31 @@ namespace CleanRooms
         }
 
         /**
+         * <p>Retrieves an analysis template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAnalysisTemplateOutcome GetAnalysisTemplate(const Model::GetAnalysisTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAnalysisTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAnalysisTemplateRequestT = Model::GetAnalysisTemplateRequest>
+        Model::GetAnalysisTemplateOutcomeCallable GetAnalysisTemplateCallable(const GetAnalysisTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::GetAnalysisTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for GetAnalysisTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAnalysisTemplateRequestT = Model::GetAnalysisTemplateRequest>
+        void GetAnalysisTemplateAsync(const GetAnalysisTemplateRequestT& request, const GetAnalysisTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::GetAnalysisTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Returns metadata about a collaboration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaboration">AWS
          * API Reference</a></p>
@@ -417,6 +518,32 @@ namespace CleanRooms
         void GetCollaborationAsync(const GetCollaborationRequestT& request, const GetCollaborationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::GetCollaboration, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves an analysis template within a collaboration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCollaborationAnalysisTemplateOutcome GetCollaborationAnalysisTemplate(const Model::GetCollaborationAnalysisTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCollaborationAnalysisTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCollaborationAnalysisTemplateRequestT = Model::GetCollaborationAnalysisTemplateRequest>
+        Model::GetCollaborationAnalysisTemplateOutcomeCallable GetCollaborationAnalysisTemplateCallable(const GetCollaborationAnalysisTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::GetCollaborationAnalysisTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for GetCollaborationAnalysisTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCollaborationAnalysisTemplateRequestT = Model::GetCollaborationAnalysisTemplateRequest>
+        void GetCollaborationAnalysisTemplateAsync(const GetCollaborationAnalysisTemplateRequestT& request, const GetCollaborationAnalysisTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::GetCollaborationAnalysisTemplate, request, handler, context);
         }
 
         /**
@@ -594,6 +721,57 @@ namespace CleanRooms
         void GetSchemaAnalysisRuleAsync(const GetSchemaAnalysisRuleRequestT& request, const GetSchemaAnalysisRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::GetSchemaAnalysisRule, request, handler, context);
+        }
+
+        /**
+         * <p>Lists analysis templates that the caller owns.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAnalysisTemplatesOutcome ListAnalysisTemplates(const Model::ListAnalysisTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAnalysisTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAnalysisTemplatesRequestT = Model::ListAnalysisTemplatesRequest>
+        Model::ListAnalysisTemplatesOutcomeCallable ListAnalysisTemplatesCallable(const ListAnalysisTemplatesRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::ListAnalysisTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for ListAnalysisTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAnalysisTemplatesRequestT = Model::ListAnalysisTemplatesRequest>
+        void ListAnalysisTemplatesAsync(const ListAnalysisTemplatesRequestT& request, const ListAnalysisTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::ListAnalysisTemplates, request, handler, context);
+        }
+
+        /**
+         * <p>Lists analysis templates within a collaboration.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCollaborationAnalysisTemplatesOutcome ListCollaborationAnalysisTemplates(const Model::ListCollaborationAnalysisTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCollaborationAnalysisTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCollaborationAnalysisTemplatesRequestT = Model::ListCollaborationAnalysisTemplatesRequest>
+        Model::ListCollaborationAnalysisTemplatesOutcomeCallable ListCollaborationAnalysisTemplatesCallable(const ListCollaborationAnalysisTemplatesRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::ListCollaborationAnalysisTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for ListCollaborationAnalysisTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCollaborationAnalysisTemplatesRequestT = Model::ListCollaborationAnalysisTemplatesRequest>
+        void ListCollaborationAnalysisTemplatesAsync(const ListCollaborationAnalysisTemplatesRequestT& request, const ListCollaborationAnalysisTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::ListCollaborationAnalysisTemplates, request, handler, context);
         }
 
         /**
@@ -876,6 +1054,31 @@ namespace CleanRooms
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the analysis template metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAnalysisTemplateOutcome UpdateAnalysisTemplate(const Model::UpdateAnalysisTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAnalysisTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAnalysisTemplateRequestT = Model::UpdateAnalysisTemplateRequest>
+        Model::UpdateAnalysisTemplateOutcomeCallable UpdateAnalysisTemplateCallable(const UpdateAnalysisTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsClient::UpdateAnalysisTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAnalysisTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAnalysisTemplateRequestT = Model::UpdateAnalysisTemplateRequest>
+        void UpdateAnalysisTemplateAsync(const UpdateAnalysisTemplateRequestT& request, const UpdateAnalysisTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsClient::UpdateAnalysisTemplate, request, handler, context);
         }
 
         /**

@@ -75,50 +75,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the connection to be created. The name must be unique in the
-     * calling AWS account.</p>
+     * <p>The name of the connection to be created.</p>
      */
     inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
 
     /**
-     * <p>The name of the connection to be created. The name must be unique in the
-     * calling AWS account.</p>
+     * <p>The name of the connection to be created.</p>
      */
     inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
 
     /**
-     * <p>The name of the connection to be created. The name must be unique in the
-     * calling AWS account.</p>
+     * <p>The name of the connection to be created.</p>
      */
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
 
     /**
-     * <p>The name of the connection to be created. The name must be unique in the
-     * calling AWS account.</p>
+     * <p>The name of the connection to be created.</p>
      */
     inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
 
     /**
-     * <p>The name of the connection to be created. The name must be unique in the
-     * calling AWS account.</p>
+     * <p>The name of the connection to be created.</p>
      */
     inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
 
     /**
-     * <p>The name of the connection to be created. The name must be unique in the
-     * calling AWS account.</p>
+     * <p>The name of the connection to be created.</p>
      */
     inline CreateConnectionRequest& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
 
     /**
-     * <p>The name of the connection to be created. The name must be unique in the
-     * calling AWS account.</p>
+     * <p>The name of the connection to be created.</p>
      */
     inline CreateConnectionRequest& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the connection to be created. The name must be unique in the
-     * calling AWS account.</p>
+     * <p>The name of the connection to be created.</p>
      */
     inline CreateConnectionRequest& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 

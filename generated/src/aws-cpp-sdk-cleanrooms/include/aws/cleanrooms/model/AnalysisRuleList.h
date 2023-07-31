@@ -96,49 +96,49 @@ namespace Model
 
 
     /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * <p>The logical operators (if any) that are to be used in an INNER JOIN match
      * condition. Default is <code>AND</code>.</p>
      */
     inline const Aws::Vector<JoinOperator>& GetAllowedJoinOperators() const{ return m_allowedJoinOperators; }
 
     /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * <p>The logical operators (if any) that are to be used in an INNER JOIN match
      * condition. Default is <code>AND</code>.</p>
      */
     inline bool AllowedJoinOperatorsHasBeenSet() const { return m_allowedJoinOperatorsHasBeenSet; }
 
     /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * <p>The logical operators (if any) that are to be used in an INNER JOIN match
      * condition. Default is <code>AND</code>.</p>
      */
     inline void SetAllowedJoinOperators(const Aws::Vector<JoinOperator>& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = value; }
 
     /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * <p>The logical operators (if any) that are to be used in an INNER JOIN match
      * condition. Default is <code>AND</code>.</p>
      */
     inline void SetAllowedJoinOperators(Aws::Vector<JoinOperator>&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators = std::move(value); }
 
     /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * <p>The logical operators (if any) that are to be used in an INNER JOIN match
      * condition. Default is <code>AND</code>.</p>
      */
     inline AnalysisRuleList& WithAllowedJoinOperators(const Aws::Vector<JoinOperator>& value) { SetAllowedJoinOperators(value); return *this;}
 
     /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * <p>The logical operators (if any) that are to be used in an INNER JOIN match
      * condition. Default is <code>AND</code>.</p>
      */
     inline AnalysisRuleList& WithAllowedJoinOperators(Aws::Vector<JoinOperator>&& value) { SetAllowedJoinOperators(std::move(value)); return *this;}
 
     /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * <p>The logical operators (if any) that are to be used in an INNER JOIN match
      * condition. Default is <code>AND</code>.</p>
      */
     inline AnalysisRuleList& AddAllowedJoinOperators(const JoinOperator& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(value); return *this; }
 
     /**
-     * <p>Which logical operators (if any) are to be used in an INNER JOIN match
+     * <p>The logical operators (if any) that are to be used in an INNER JOIN match
      * condition. Default is <code>AND</code>.</p>
      */
     inline AnalysisRuleList& AddAllowedJoinOperators(JoinOperator&& value) { m_allowedJoinOperatorsHasBeenSet = true; m_allowedJoinOperators.push_back(std::move(value)); return *this; }

@@ -23,7 +23,8 @@ ModifyCustomDBEngineVersionResult::ModifyCustomDBEngineVersionResult() :
     m_supportsParallelQuery(false),
     m_supportsGlobalDatabases(false),
     m_supportsBabelfish(false),
-    m_supportsCertificateRotationWithoutRestart(false)
+    m_supportsCertificateRotationWithoutRestart(false),
+    m_supportsLocalWriteForwarding(false)
 {
 }
 
@@ -33,7 +34,8 @@ ModifyCustomDBEngineVersionResult::ModifyCustomDBEngineVersionResult(const Aws::
     m_supportsParallelQuery(false),
     m_supportsGlobalDatabases(false),
     m_supportsBabelfish(false),
-    m_supportsCertificateRotationWithoutRestart(false)
+    m_supportsCertificateRotationWithoutRestart(false),
+    m_supportsLocalWriteForwarding(false)
 {
   *this = result;
 }
@@ -258,6 +260,11 @@ ModifyCustomDBEngineVersionResult& ModifyCustomDBEngineVersionResult::operator =
         supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersMember.NextNode("member");
       }
 
+    }
+    XmlNode supportsLocalWriteForwardingNode = resultNode.FirstChild("SupportsLocalWriteForwarding");
+    if(!supportsLocalWriteForwardingNode.IsNull())
+    {
+      m_supportsLocalWriteForwarding = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLocalWriteForwardingNode.GetText()).c_str()).c_str());
     }
   }
 

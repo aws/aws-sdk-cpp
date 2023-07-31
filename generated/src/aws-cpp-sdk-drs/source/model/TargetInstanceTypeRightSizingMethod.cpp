@@ -22,6 +22,7 @@ namespace Aws
 
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int BASIC_HASH = HashingUtils::HashString("BASIC");
+        static const int IN_AWS_HASH = HashingUtils::HashString("IN_AWS");
 
 
         TargetInstanceTypeRightSizingMethod GetTargetInstanceTypeRightSizingMethodForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == BASIC_HASH)
           {
             return TargetInstanceTypeRightSizingMethod::BASIC;
+          }
+          else if (hashCode == IN_AWS_HASH)
+          {
+            return TargetInstanceTypeRightSizingMethod::IN_AWS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "NONE";
           case TargetInstanceTypeRightSizingMethod::BASIC:
             return "BASIC";
+          case TargetInstanceTypeRightSizingMethod::IN_AWS:
+            return "IN_AWS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

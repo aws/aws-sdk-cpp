@@ -78,42 +78,42 @@ namespace Model
 
 
     /**
-     * <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
+     * <p>The ID number for the KMS key key used to encrypt the inference output. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
+     * <p>The ID number for the KMS key key used to encrypt the inference output. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
+     * <p>The ID number for the KMS key key used to encrypt the inference output. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
+     * <p>The ID number for the KMS key key used to encrypt the inference output. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
+     * <p>The ID number for the KMS key key used to encrypt the inference output. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
+     * <p>The ID number for the KMS key key used to encrypt the inference output. </p>
      */
     inline InferenceOutputConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
+     * <p>The ID number for the KMS key key used to encrypt the inference output. </p>
      */
     inline InferenceOutputConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID number for the AWS KMS key used to encrypt the inference output. </p>
+     * <p>The ID number for the KMS key key used to encrypt the inference output. </p>
      */
     inline InferenceOutputConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

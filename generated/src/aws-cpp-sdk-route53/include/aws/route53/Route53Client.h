@@ -675,14 +675,7 @@ namespace Route53
          * with a specified domain name (such as example.com) or subdomain name (such as
          * www.example.com). Amazon Route 53 responds to DNS queries for the domain or
          * subdomain name by using the resource record sets that
-         * <code>CreateTrafficPolicyInstance</code> created.</p>  <p>After you submit
-         * an <code>CreateTrafficPolicyInstance</code> request, there's a brief delay while
-         * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. Use <code>GetTrafficPolicyInstance</code> with the
-         * <code>id</code> of new traffic policy instance to confirm that the
-         * <code>CreateTrafficPolicyInstance</code> request completed successfully. For
-         * more information, see the <code>State</code> response element.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <code>CreateTrafficPolicyInstance</code> created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -1688,14 +1681,13 @@ namespace Route53
         }
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p>  <p>
-         * Use <code>GetTrafficPolicyInstance</code> with the <code>id</code> of new
-         * traffic policy instance to confirm that the
-         * <code>CreateTrafficPolicyInstance</code> or an
-         * <code>UpdateTrafficPolicyInstance</code> request completed successfully. For
-         * more information, see the <code>State</code> response element.</p> 
-         *  <p>In the Route 53 console, traffic policy instances are known as policy
-         * records.</p> <p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified traffic policy instance.</p> 
+         * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
+         * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
+         * Amazon Route 53 creates the resource record sets that are specified in the
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</p>   <p>In the Route 53 console, traffic policy
+         * instances are known as policy records.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -2505,13 +2497,6 @@ namespace Route53
         }
 
         /**
-         *  <p>After you submit a <code>UpdateTrafficPolicyInstance</code> request,
-         * there's a brief delay while Route 53 creates the resource record sets that are
-         * specified in the traffic policy definition. Use
-         * <code>GetTrafficPolicyInstance</code> with the <code>id</code> of updated
-         * traffic policy instance confirm that the
-         * <code>UpdateTrafficPolicyInstance</code> request completed successfully. For
-         * more information, see the <code>State</code> response element.</p> 
          * <p>Updates the resource record sets in a specified hosted zone that were created
          * based on the settings in a specified traffic policy version.</p> <p>When you
          * update a traffic policy instance, Amazon Route 53 continues to respond to DNS

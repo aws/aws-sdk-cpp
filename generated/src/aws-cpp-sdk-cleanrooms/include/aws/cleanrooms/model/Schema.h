@@ -126,50 +126,50 @@ namespace Model
 
 
     /**
-     * <p>The analysis rule types associated with the schema. Valued values are LIST
-     * and AGGREGATION. Currently, only one entry is present.</p>
+     * <p>The analysis rule types associated with the schema. Currently, only one entry
+     * is present.</p>
      */
     inline const Aws::Vector<AnalysisRuleType>& GetAnalysisRuleTypes() const{ return m_analysisRuleTypes; }
 
     /**
-     * <p>The analysis rule types associated with the schema. Valued values are LIST
-     * and AGGREGATION. Currently, only one entry is present.</p>
+     * <p>The analysis rule types associated with the schema. Currently, only one entry
+     * is present.</p>
      */
     inline bool AnalysisRuleTypesHasBeenSet() const { return m_analysisRuleTypesHasBeenSet; }
 
     /**
-     * <p>The analysis rule types associated with the schema. Valued values are LIST
-     * and AGGREGATION. Currently, only one entry is present.</p>
+     * <p>The analysis rule types associated with the schema. Currently, only one entry
+     * is present.</p>
      */
     inline void SetAnalysisRuleTypes(const Aws::Vector<AnalysisRuleType>& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = value; }
 
     /**
-     * <p>The analysis rule types associated with the schema. Valued values are LIST
-     * and AGGREGATION. Currently, only one entry is present.</p>
+     * <p>The analysis rule types associated with the schema. Currently, only one entry
+     * is present.</p>
      */
     inline void SetAnalysisRuleTypes(Aws::Vector<AnalysisRuleType>&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = std::move(value); }
 
     /**
-     * <p>The analysis rule types associated with the schema. Valued values are LIST
-     * and AGGREGATION. Currently, only one entry is present.</p>
+     * <p>The analysis rule types associated with the schema. Currently, only one entry
+     * is present.</p>
      */
     inline Schema& WithAnalysisRuleTypes(const Aws::Vector<AnalysisRuleType>& value) { SetAnalysisRuleTypes(value); return *this;}
 
     /**
-     * <p>The analysis rule types associated with the schema. Valued values are LIST
-     * and AGGREGATION. Currently, only one entry is present.</p>
+     * <p>The analysis rule types associated with the schema. Currently, only one entry
+     * is present.</p>
      */
     inline Schema& WithAnalysisRuleTypes(Aws::Vector<AnalysisRuleType>&& value) { SetAnalysisRuleTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The analysis rule types associated with the schema. Valued values are LIST
-     * and AGGREGATION. Currently, only one entry is present.</p>
+     * <p>The analysis rule types associated with the schema. Currently, only one entry
+     * is present.</p>
      */
     inline Schema& AddAnalysisRuleTypes(const AnalysisRuleType& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(value); return *this; }
 
     /**
-     * <p>The analysis rule types associated with the schema. Valued values are LIST
-     * and AGGREGATION. Currently, only one entry is present.</p>
+     * <p>The analysis rule types associated with the schema. Currently, only one entry
+     * is present.</p>
      */
     inline Schema& AddAnalysisRuleTypes(AnalysisRuleType&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(std::move(value)); return *this; }
 

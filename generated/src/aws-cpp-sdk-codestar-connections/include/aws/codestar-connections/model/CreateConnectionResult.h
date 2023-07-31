@@ -36,57 +36,57 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is
-     * used as the connection reference when the connection is shared between AWS
-     * services.</p>  <p>The ARN is never reused if the connection is
-     * deleted.</p> 
+     * used as the connection reference when the connection is shared between Amazon
+     * Web Services services.</p>  <p>The ARN is never reused if the connection
+     * is deleted.</p> 
      */
     inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is
-     * used as the connection reference when the connection is shared between AWS
-     * services.</p>  <p>The ARN is never reused if the connection is
-     * deleted.</p> 
+     * used as the connection reference when the connection is shared between Amazon
+     * Web Services services.</p>  <p>The ARN is never reused if the connection
+     * is deleted.</p> 
      */
     inline void SetConnectionArn(const Aws::String& value) { m_connectionArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is
-     * used as the connection reference when the connection is shared between AWS
-     * services.</p>  <p>The ARN is never reused if the connection is
-     * deleted.</p> 
+     * used as the connection reference when the connection is shared between Amazon
+     * Web Services services.</p>  <p>The ARN is never reused if the connection
+     * is deleted.</p> 
      */
     inline void SetConnectionArn(Aws::String&& value) { m_connectionArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is
-     * used as the connection reference when the connection is shared between AWS
-     * services.</p>  <p>The ARN is never reused if the connection is
-     * deleted.</p> 
+     * used as the connection reference when the connection is shared between Amazon
+     * Web Services services.</p>  <p>The ARN is never reused if the connection
+     * is deleted.</p> 
      */
     inline void SetConnectionArn(const char* value) { m_connectionArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is
-     * used as the connection reference when the connection is shared between AWS
-     * services.</p>  <p>The ARN is never reused if the connection is
-     * deleted.</p> 
+     * used as the connection reference when the connection is shared between Amazon
+     * Web Services services.</p>  <p>The ARN is never reused if the connection
+     * is deleted.</p> 
      */
     inline CreateConnectionResult& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is
-     * used as the connection reference when the connection is shared between AWS
-     * services.</p>  <p>The ARN is never reused if the connection is
-     * deleted.</p> 
+     * used as the connection reference when the connection is shared between Amazon
+     * Web Services services.</p>  <p>The ARN is never reused if the connection
+     * is deleted.</p> 
      */
     inline CreateConnectionResult& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is
-     * used as the connection reference when the connection is shared between AWS
-     * services.</p>  <p>The ARN is never reused if the connection is
-     * deleted.</p> 
+     * used as the connection reference when the connection is shared between Amazon
+     * Web Services services.</p>  <p>The ARN is never reused if the connection
+     * is deleted.</p> 
      */
     inline CreateConnectionResult& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
 

@@ -79,50 +79,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3
-     * object. Without this key, data in the bucket is not accessible. </p>
+     * <p>The Amazon Web Services Key Management Service (KMS key) key being used to
+     * encrypt the S3 object. Without this key, data in the bucket is not accessible.
+     * </p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3
-     * object. Without this key, data in the bucket is not accessible. </p>
+     * <p>The Amazon Web Services Key Management Service (KMS key) key being used to
+     * encrypt the S3 object. Without this key, data in the bucket is not accessible.
+     * </p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3
-     * object. Without this key, data in the bucket is not accessible. </p>
+     * <p>The Amazon Web Services Key Management Service (KMS key) key being used to
+     * encrypt the S3 object. Without this key, data in the bucket is not accessible.
+     * </p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3
-     * object. Without this key, data in the bucket is not accessible. </p>
+     * <p>The Amazon Web Services Key Management Service (KMS key) key being used to
+     * encrypt the S3 object. Without this key, data in the bucket is not accessible.
+     * </p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3
-     * object. Without this key, data in the bucket is not accessible. </p>
+     * <p>The Amazon Web Services Key Management Service (KMS key) key being used to
+     * encrypt the S3 object. Without this key, data in the bucket is not accessible.
+     * </p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3
-     * object. Without this key, data in the bucket is not accessible. </p>
+     * <p>The Amazon Web Services Key Management Service (KMS key) key being used to
+     * encrypt the S3 object. Without this key, data in the bucket is not accessible.
+     * </p>
      */
     inline S3Object& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3
-     * object. Without this key, data in the bucket is not accessible. </p>
+     * <p>The Amazon Web Services Key Management Service (KMS key) key being used to
+     * encrypt the S3 object. Without this key, data in the bucket is not accessible.
+     * </p>
      */
     inline S3Object& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key being used to encrypt the S3
-     * object. Without this key, data in the bucket is not accessible. </p>
+     * <p>The Amazon Web Services Key Management Service (KMS key) key being used to
+     * encrypt the S3 object. Without this key, data in the bucket is not accessible.
+     * </p>
      */
     inline S3Object& WithKey(const char* value) { SetKey(value); return *this;}
 

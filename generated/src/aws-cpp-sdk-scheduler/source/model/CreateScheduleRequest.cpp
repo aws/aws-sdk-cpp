@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateScheduleRequest::CreateScheduleRequest() : 
+    m_actionAfterCompletion(ActionAfterCompletion::NOT_SET),
+    m_actionAfterCompletionHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
@@ -33,6 +35,11 @@ CreateScheduleRequest::CreateScheduleRequest() :
 Aws::String CreateScheduleRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_actionAfterCompletionHasBeenSet)
+  {
+   payload.WithString("ActionAfterCompletion", ActionAfterCompletionMapper::GetNameForActionAfterCompletion(m_actionAfterCompletion));
+  }
 
   if(m_clientTokenHasBeenSet)
   {

@@ -39,50 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the host to be created. The name must be unique in the calling
-     * AWS account.</p>
+     * <p>The name of the host to be created.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the host to be created. The name must be unique in the calling
-     * AWS account.</p>
+     * <p>The name of the host to be created.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the host to be created. The name must be unique in the calling
-     * AWS account.</p>
+     * <p>The name of the host to be created.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the host to be created. The name must be unique in the calling
-     * AWS account.</p>
+     * <p>The name of the host to be created.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the host to be created. The name must be unique in the calling
-     * AWS account.</p>
+     * <p>The name of the host to be created.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the host to be created. The name must be unique in the calling
-     * AWS account.</p>
+     * <p>The name of the host to be created.</p>
      */
     inline CreateHostRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the host to be created. The name must be unique in the calling
-     * AWS account.</p>
+     * <p>The name of the host to be created.</p>
      */
     inline CreateHostRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the host to be created. The name must be unique in the calling
-     * AWS account.</p>
+     * <p>The name of the host to be created.</p>
      */
     inline CreateHostRequest& WithName(const char* value) { SetName(value); return *this;}
 

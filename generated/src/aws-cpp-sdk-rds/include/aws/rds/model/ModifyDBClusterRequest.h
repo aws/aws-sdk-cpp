@@ -2953,6 +2953,35 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithAllowEngineModeChange(bool value) { SetAllowEngineModeChange(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether read replicas can forward write operations to the writer DB
+     * instance in the DB cluster. By default, write operations aren't allowed on
+     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool GetEnableLocalWriteForwarding() const{ return m_enableLocalWriteForwarding; }
+
+    /**
+     * <p>Specifies whether read replicas can forward write operations to the writer DB
+     * instance in the DB cluster. By default, write operations aren't allowed on
+     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool EnableLocalWriteForwardingHasBeenSet() const { return m_enableLocalWriteForwardingHasBeenSet; }
+
+    /**
+     * <p>Specifies whether read replicas can forward write operations to the writer DB
+     * instance in the DB cluster. By default, write operations aren't allowed on
+     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetEnableLocalWriteForwarding(bool value) { m_enableLocalWriteForwardingHasBeenSet = true; m_enableLocalWriteForwarding = value; }
+
+    /**
+     * <p>Specifies whether read replicas can forward write operations to the writer DB
+     * instance in the DB cluster. By default, write operations aren't allowed on
+     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline ModifyDBClusterRequest& WithEnableLocalWriteForwarding(bool value) { SetEnableLocalWriteForwarding(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -3077,6 +3106,9 @@ namespace Model
 
     bool m_allowEngineModeChange;
     bool m_allowEngineModeChangeHasBeenSet = false;
+
+    bool m_enableLocalWriteForwarding;
+    bool m_enableLocalWriteForwardingHasBeenSet = false;
   };
 
 } // namespace Model

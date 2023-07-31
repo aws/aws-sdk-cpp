@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/SequenceInformation.h>
 #include <aws/omics/model/ReadSetFiles.h>
+#include <aws/omics/model/CreationType.h>
 #include <utility>
 
 namespace Aws
@@ -498,6 +499,32 @@ namespace Model
     inline GetReadSetMetadataResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline const CreationType& GetCreationType() const{ return m_creationType; }
+
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline void SetCreationType(const CreationType& value) { m_creationType = value; }
+
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline void SetCreationType(CreationType&& value) { m_creationType = std::move(value); }
+
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline GetReadSetMetadataResult& WithCreationType(const CreationType& value) { SetCreationType(value); return *this;}
+
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline GetReadSetMetadataResult& WithCreationType(CreationType&& value) { SetCreationType(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -548,6 +575,8 @@ namespace Model
     ReadSetFiles m_files;
 
     Aws::String m_statusMessage;
+
+    CreationType m_creationType;
 
     Aws::String m_requestId;
   };

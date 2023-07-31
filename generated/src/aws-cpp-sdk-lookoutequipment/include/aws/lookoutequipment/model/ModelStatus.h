@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     IN_PROGRESS,
     SUCCESS,
-    FAILED
+    FAILED,
+    IMPORT_IN_PROGRESS
   };
 
 namespace ModelStatusMapper

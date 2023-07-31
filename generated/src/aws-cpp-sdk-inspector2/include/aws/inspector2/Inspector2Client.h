@@ -163,6 +163,31 @@ namespace Inspector2
         }
 
         /**
+         * <p>Gets vulnerability details for findings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFindingDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetFindingDetailsOutcome BatchGetFindingDetails(const Model::BatchGetFindingDetailsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetFindingDetails that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetFindingDetailsRequestT = Model::BatchGetFindingDetailsRequest>
+        Model::BatchGetFindingDetailsOutcomeCallable BatchGetFindingDetailsCallable(const BatchGetFindingDetailsRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::BatchGetFindingDetails, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetFindingDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetFindingDetailsRequestT = Model::BatchGetFindingDetailsRequest>
+        void BatchGetFindingDetailsAsync(const BatchGetFindingDetailsRequestT& request, const BatchGetFindingDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::BatchGetFindingDetails, request, handler, context);
+        }
+
+        /**
          * <p>Gets free trial status for multiple Amazon Web Services
          * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFreeTrialInfo">AWS
