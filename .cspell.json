@@ -22,7 +22,7 @@
         "PythonInterp", "DWAVE", "Winmm", "DPULSE", "pulseaudio", "MSVC", "NOTFOUND", "libpulse", "COREAUDIO",
         "devel", "AUDIOTOOLBOX", "DCORE", "CONCAT", "DNON", "FULLPATCH", "setopt", "CURLOPT", "SSLCERT",
         "CROSSCOMPILING", "nullptr", "DWORD", "lpsz", "commoncrypto", "COMMONCRYPTO", "endforeach", "pkgconfig",
-        "MGMT", "DENABLED",
+        "MGMT", "DENABLED", "DENFORCE",
         // Compiler and linker
         "Wpedantic", "Wextra", "Werror", "xldscope", "Wtype", "Wunused", "RTTI", "ffunction", "fdata", "fsanitize",
         "pathconf", "unistd", "umask", "GNUCXX", "libasan", "SUNPRO", "gnustl", "libgnustl", "Wmissing",

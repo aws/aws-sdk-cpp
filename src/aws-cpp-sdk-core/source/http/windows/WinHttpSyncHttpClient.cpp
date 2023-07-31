@@ -105,11 +105,22 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     if (m_verifySSL)
     {
         //disable insecure tls protocols, otherwise you might as well turn ssl verification off.
-#if defined(WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3)
-        DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_1 |
-                WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3;
+#if defined(ENFORCE_TLS_V1_3) && defined(WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3)
+        DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3;
+#elif defined(ENFORCE_TLS_V1_2) && defined(WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3)
+        DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2 |
+                      WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3;
+#elif defined(ENFORCE_TLS_V1_2) && !defined(WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3)
+        DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2;
+#elif defined(WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3)
+        DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1 |
+                      WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_1 |
+                      WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2 |
+                      WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_3;
 #else
-        DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2;
+        DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1 |
+                      WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_1 |
+                      WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2;
 #endif
 
         if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURE_PROTOCOLS, &flags, sizeof(flags)))
