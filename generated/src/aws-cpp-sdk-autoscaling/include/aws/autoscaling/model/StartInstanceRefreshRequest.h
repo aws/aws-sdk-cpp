@@ -209,7 +209,7 @@ namespace Model
      * use if instances that are in <code>Standby</code> state or protected from scale
      * in are found. You can also choose to enable additional features, such as the
      * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
-     * </li> <li> <p>Skip matching</p> </li> </ul>
+     * </li> <li> <p>CloudWatch alarms</p> </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline const RefreshPreferences& GetPreferences() const{ return m_preferences; }
 
@@ -220,7 +220,7 @@ namespace Model
      * use if instances that are in <code>Standby</code> state or protected from scale
      * in are found. You can also choose to enable additional features, such as the
      * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
-     * </li> <li> <p>Skip matching</p> </li> </ul>
+     * </li> <li> <p>CloudWatch alarms</p> </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline bool PreferencesHasBeenSet() const { return m_preferencesHasBeenSet; }
 
@@ -231,7 +231,7 @@ namespace Model
      * use if instances that are in <code>Standby</code> state or protected from scale
      * in are found. You can also choose to enable additional features, such as the
      * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
-     * </li> <li> <p>Skip matching</p> </li> </ul>
+     * </li> <li> <p>CloudWatch alarms</p> </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline void SetPreferences(const RefreshPreferences& value) { m_preferencesHasBeenSet = true; m_preferences = value; }
 
@@ -242,7 +242,7 @@ namespace Model
      * use if instances that are in <code>Standby</code> state or protected from scale
      * in are found. You can also choose to enable additional features, such as the
      * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
-     * </li> <li> <p>Skip matching</p> </li> </ul>
+     * </li> <li> <p>CloudWatch alarms</p> </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline void SetPreferences(RefreshPreferences&& value) { m_preferencesHasBeenSet = true; m_preferences = std::move(value); }
 
@@ -253,7 +253,7 @@ namespace Model
      * use if instances that are in <code>Standby</code> state or protected from scale
      * in are found. You can also choose to enable additional features, such as the
      * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
-     * </li> <li> <p>Skip matching</p> </li> </ul>
+     * </li> <li> <p>CloudWatch alarms</p> </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline StartInstanceRefreshRequest& WithPreferences(const RefreshPreferences& value) { SetPreferences(value); return *this;}
 
@@ -264,7 +264,7 @@ namespace Model
      * use if instances that are in <code>Standby</code> state or protected from scale
      * in are found. You can also choose to enable additional features, such as the
      * following:</p> <ul> <li> <p>Auto rollback</p> </li> <li> <p>Checkpoints</p>
-     * </li> <li> <p>Skip matching</p> </li> </ul>
+     * </li> <li> <p>CloudWatch alarms</p> </li> <li> <p>Skip matching</p> </li> </ul>
      */
     inline StartInstanceRefreshRequest& WithPreferences(RefreshPreferences&& value) { SetPreferences(std::move(value)); return *this;}
 

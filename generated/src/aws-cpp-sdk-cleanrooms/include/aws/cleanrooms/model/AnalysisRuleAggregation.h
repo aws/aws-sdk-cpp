@@ -30,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>Enables query structure and specified queries that produce aggregate
-   * statistics.</p><p><h3>See Also:</h3>   <a
+   * <p>A type of analysis rule that enables query structure and specified queries
+   * that produce aggregate statistics.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/AnalysisRuleAggregation">AWS
    * API Reference</a></p>
    */

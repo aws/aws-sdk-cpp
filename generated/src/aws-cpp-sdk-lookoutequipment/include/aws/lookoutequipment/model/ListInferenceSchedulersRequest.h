@@ -188,32 +188,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the current status of the inference schedulers to list.</p>
+     * <p>Specifies the current status of the inference schedulers.</p>
      */
     inline const InferenceSchedulerStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Specifies the current status of the inference schedulers to list.</p>
+     * <p>Specifies the current status of the inference schedulers.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Specifies the current status of the inference schedulers to list.</p>
+     * <p>Specifies the current status of the inference schedulers.</p>
      */
     inline void SetStatus(const InferenceSchedulerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Specifies the current status of the inference schedulers to list.</p>
+     * <p>Specifies the current status of the inference schedulers.</p>
      */
     inline void SetStatus(InferenceSchedulerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Specifies the current status of the inference schedulers to list.</p>
+     * <p>Specifies the current status of the inference schedulers.</p>
      */
     inline ListInferenceSchedulersRequest& WithStatus(const InferenceSchedulerStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Specifies the current status of the inference schedulers to list.</p>
+     * <p>Specifies the current status of the inference schedulers.</p>
      */
     inline ListInferenceSchedulersRequest& WithStatus(InferenceSchedulerStatus&& value) { SetStatus(std::move(value)); return *this;}
 

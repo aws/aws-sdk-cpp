@@ -1298,6 +1298,31 @@ namespace Model
     inline CreateCustomDBEngineVersionResult& AddSupportedCACertificateIdentifiers(const char* value) { m_supportedCACertificateIdentifiers.push_back(value); return *this; }
 
 
+    /**
+     * <p>A value that indicates whether the DB engine version supports forwarding
+     * write operations from reader DB instances to the writer DB instance in the DB
+     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
+     * <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool GetSupportsLocalWriteForwarding() const{ return m_supportsLocalWriteForwarding; }
+
+    /**
+     * <p>A value that indicates whether the DB engine version supports forwarding
+     * write operations from reader DB instances to the writer DB instance in the DB
+     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
+     * <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetSupportsLocalWriteForwarding(bool value) { m_supportsLocalWriteForwarding = value; }
+
+    /**
+     * <p>A value that indicates whether the DB engine version supports forwarding
+     * write operations from reader DB instances to the writer DB instance in the DB
+     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
+     * <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline CreateCustomDBEngineVersionResult& WithSupportsLocalWriteForwarding(bool value) { SetSupportsLocalWriteForwarding(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -1376,6 +1401,8 @@ namespace Model
     bool m_supportsCertificateRotationWithoutRestart;
 
     Aws::Vector<Aws::String> m_supportedCACertificateIdentifiers;
+
+    bool m_supportsLocalWriteForwarding;
 
     ResponseMetadata m_responseMetadata;
   };

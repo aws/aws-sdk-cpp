@@ -10,6 +10,7 @@
 #include <aws/omics/model/FileType.h>
 #include <aws/omics/model/SequenceInformation.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/omics/model/CreationType.h>
 #include <utility>
 
 namespace Aws
@@ -529,6 +530,37 @@ namespace Model
      */
     inline ReadSetListItem& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline const CreationType& GetCreationType() const{ return m_creationType; }
+
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline bool CreationTypeHasBeenSet() const { return m_creationTypeHasBeenSet; }
+
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline void SetCreationType(const CreationType& value) { m_creationTypeHasBeenSet = true; m_creationType = value; }
+
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline void SetCreationType(CreationType&& value) { m_creationTypeHasBeenSet = true; m_creationType = std::move(value); }
+
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline ReadSetListItem& WithCreationType(const CreationType& value) { SetCreationType(value); return *this;}
+
+    /**
+     * <p> The creation type of the read set. </p>
+     */
+    inline ReadSetListItem& WithCreationType(CreationType&& value) { SetCreationType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -569,6 +601,9 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
+
+    CreationType m_creationType;
+    bool m_creationTypeHasBeenSet = false;
   };
 
 } // namespace Model

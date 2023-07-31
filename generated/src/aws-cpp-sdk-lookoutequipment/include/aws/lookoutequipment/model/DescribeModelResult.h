@@ -820,6 +820,287 @@ namespace Model
     inline DescribeModelResult& WithOffCondition(const char* value) { SetOffCondition(value); return *this;}
 
 
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model version. This field
+     * appears if the active model version was imported.</p>
+     */
+    inline const Aws::String& GetSourceModelVersionArn() const{ return m_sourceModelVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model version. This field
+     * appears if the active model version was imported.</p>
+     */
+    inline void SetSourceModelVersionArn(const Aws::String& value) { m_sourceModelVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model version. This field
+     * appears if the active model version was imported.</p>
+     */
+    inline void SetSourceModelVersionArn(Aws::String&& value) { m_sourceModelVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model version. This field
+     * appears if the active model version was imported.</p>
+     */
+    inline void SetSourceModelVersionArn(const char* value) { m_sourceModelVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model version. This field
+     * appears if the active model version was imported.</p>
+     */
+    inline DescribeModelResult& WithSourceModelVersionArn(const Aws::String& value) { SetSourceModelVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model version. This field
+     * appears if the active model version was imported.</p>
+     */
+    inline DescribeModelResult& WithSourceModelVersionArn(Aws::String&& value) { SetSourceModelVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source model version. This field
+     * appears if the active model version was imported.</p>
+     */
+    inline DescribeModelResult& WithSourceModelVersionArn(const char* value) { SetSourceModelVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The date and time when the import job was started. This field appears if the
+     * active model version was imported.</p>
+     */
+    inline const Aws::Utils::DateTime& GetImportJobStartTime() const{ return m_importJobStartTime; }
+
+    /**
+     * <p>The date and time when the import job was started. This field appears if the
+     * active model version was imported.</p>
+     */
+    inline void SetImportJobStartTime(const Aws::Utils::DateTime& value) { m_importJobStartTime = value; }
+
+    /**
+     * <p>The date and time when the import job was started. This field appears if the
+     * active model version was imported.</p>
+     */
+    inline void SetImportJobStartTime(Aws::Utils::DateTime&& value) { m_importJobStartTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the import job was started. This field appears if the
+     * active model version was imported.</p>
+     */
+    inline DescribeModelResult& WithImportJobStartTime(const Aws::Utils::DateTime& value) { SetImportJobStartTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the import job was started. This field appears if the
+     * active model version was imported.</p>
+     */
+    inline DescribeModelResult& WithImportJobStartTime(Aws::Utils::DateTime&& value) { SetImportJobStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time when the import job was completed. This field appears if
+     * the active model version was imported.</p>
+     */
+    inline const Aws::Utils::DateTime& GetImportJobEndTime() const{ return m_importJobEndTime; }
+
+    /**
+     * <p>The date and time when the import job was completed. This field appears if
+     * the active model version was imported.</p>
+     */
+    inline void SetImportJobEndTime(const Aws::Utils::DateTime& value) { m_importJobEndTime = value; }
+
+    /**
+     * <p>The date and time when the import job was completed. This field appears if
+     * the active model version was imported.</p>
+     */
+    inline void SetImportJobEndTime(Aws::Utils::DateTime&& value) { m_importJobEndTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the import job was completed. This field appears if
+     * the active model version was imported.</p>
+     */
+    inline DescribeModelResult& WithImportJobEndTime(const Aws::Utils::DateTime& value) { SetImportJobEndTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the import job was completed. This field appears if
+     * the active model version was imported.</p>
+     */
+    inline DescribeModelResult& WithImportJobEndTime(Aws::Utils::DateTime&& value) { SetImportJobEndTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the model version used by the inference schedular when running a
+     * scheduled inference execution.</p>
+     */
+    inline long long GetActiveModelVersion() const{ return m_activeModelVersion; }
+
+    /**
+     * <p>The name of the model version used by the inference schedular when running a
+     * scheduled inference execution.</p>
+     */
+    inline void SetActiveModelVersion(long long value) { m_activeModelVersion = value; }
+
+    /**
+     * <p>The name of the model version used by the inference schedular when running a
+     * scheduled inference execution.</p>
+     */
+    inline DescribeModelResult& WithActiveModelVersion(long long value) { SetActiveModelVersion(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version used by the inference
+     * scheduler when running a scheduled inference execution.</p>
+     */
+    inline const Aws::String& GetActiveModelVersionArn() const{ return m_activeModelVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version used by the inference
+     * scheduler when running a scheduled inference execution.</p>
+     */
+    inline void SetActiveModelVersionArn(const Aws::String& value) { m_activeModelVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version used by the inference
+     * scheduler when running a scheduled inference execution.</p>
+     */
+    inline void SetActiveModelVersionArn(Aws::String&& value) { m_activeModelVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version used by the inference
+     * scheduler when running a scheduled inference execution.</p>
+     */
+    inline void SetActiveModelVersionArn(const char* value) { m_activeModelVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version used by the inference
+     * scheduler when running a scheduled inference execution.</p>
+     */
+    inline DescribeModelResult& WithActiveModelVersionArn(const Aws::String& value) { SetActiveModelVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version used by the inference
+     * scheduler when running a scheduled inference execution.</p>
+     */
+    inline DescribeModelResult& WithActiveModelVersionArn(Aws::String&& value) { SetActiveModelVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model version used by the inference
+     * scheduler when running a scheduled inference execution.</p>
+     */
+    inline DescribeModelResult& WithActiveModelVersionArn(const char* value) { SetActiveModelVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The date the active model version was activated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetModelVersionActivatedAt() const{ return m_modelVersionActivatedAt; }
+
+    /**
+     * <p>The date the active model version was activated.</p>
+     */
+    inline void SetModelVersionActivatedAt(const Aws::Utils::DateTime& value) { m_modelVersionActivatedAt = value; }
+
+    /**
+     * <p>The date the active model version was activated.</p>
+     */
+    inline void SetModelVersionActivatedAt(Aws::Utils::DateTime&& value) { m_modelVersionActivatedAt = std::move(value); }
+
+    /**
+     * <p>The date the active model version was activated.</p>
+     */
+    inline DescribeModelResult& WithModelVersionActivatedAt(const Aws::Utils::DateTime& value) { SetModelVersionActivatedAt(value); return *this;}
+
+    /**
+     * <p>The date the active model version was activated.</p>
+     */
+    inline DescribeModelResult& WithModelVersionActivatedAt(Aws::Utils::DateTime&& value) { SetModelVersionActivatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The model version that was set as the active model version prior to the
+     * current active model version.</p>
+     */
+    inline long long GetPreviousActiveModelVersion() const{ return m_previousActiveModelVersion; }
+
+    /**
+     * <p>The model version that was set as the active model version prior to the
+     * current active model version.</p>
+     */
+    inline void SetPreviousActiveModelVersion(long long value) { m_previousActiveModelVersion = value; }
+
+    /**
+     * <p>The model version that was set as the active model version prior to the
+     * current active model version.</p>
+     */
+    inline DescribeModelResult& WithPreviousActiveModelVersion(long long value) { SetPreviousActiveModelVersion(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the model version that was set as the active model version prior
+     * to the current active model version.</p>
+     */
+    inline const Aws::String& GetPreviousActiveModelVersionArn() const{ return m_previousActiveModelVersionArn; }
+
+    /**
+     * <p>The ARN of the model version that was set as the active model version prior
+     * to the current active model version.</p>
+     */
+    inline void SetPreviousActiveModelVersionArn(const Aws::String& value) { m_previousActiveModelVersionArn = value; }
+
+    /**
+     * <p>The ARN of the model version that was set as the active model version prior
+     * to the current active model version.</p>
+     */
+    inline void SetPreviousActiveModelVersionArn(Aws::String&& value) { m_previousActiveModelVersionArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the model version that was set as the active model version prior
+     * to the current active model version.</p>
+     */
+    inline void SetPreviousActiveModelVersionArn(const char* value) { m_previousActiveModelVersionArn.assign(value); }
+
+    /**
+     * <p>The ARN of the model version that was set as the active model version prior
+     * to the current active model version.</p>
+     */
+    inline DescribeModelResult& WithPreviousActiveModelVersionArn(const Aws::String& value) { SetPreviousActiveModelVersionArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the model version that was set as the active model version prior
+     * to the current active model version.</p>
+     */
+    inline DescribeModelResult& WithPreviousActiveModelVersionArn(Aws::String&& value) { SetPreviousActiveModelVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the model version that was set as the active model version prior
+     * to the current active model version.</p>
+     */
+    inline DescribeModelResult& WithPreviousActiveModelVersionArn(const char* value) { SetPreviousActiveModelVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The date and time when the previous active model version was activated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPreviousModelVersionActivatedAt() const{ return m_previousModelVersionActivatedAt; }
+
+    /**
+     * <p>The date and time when the previous active model version was activated.</p>
+     */
+    inline void SetPreviousModelVersionActivatedAt(const Aws::Utils::DateTime& value) { m_previousModelVersionActivatedAt = value; }
+
+    /**
+     * <p>The date and time when the previous active model version was activated.</p>
+     */
+    inline void SetPreviousModelVersionActivatedAt(Aws::Utils::DateTime&& value) { m_previousModelVersionActivatedAt = std::move(value); }
+
+    /**
+     * <p>The date and time when the previous active model version was activated.</p>
+     */
+    inline DescribeModelResult& WithPreviousModelVersionActivatedAt(const Aws::Utils::DateTime& value) { SetPreviousModelVersionActivatedAt(value); return *this;}
+
+    /**
+     * <p>The date and time when the previous active model version was activated.</p>
+     */
+    inline DescribeModelResult& WithPreviousModelVersionActivatedAt(Aws::Utils::DateTime&& value) { SetPreviousModelVersionActivatedAt(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -884,6 +1165,24 @@ namespace Model
     Aws::String m_serverSideKmsKeyId;
 
     Aws::String m_offCondition;
+
+    Aws::String m_sourceModelVersionArn;
+
+    Aws::Utils::DateTime m_importJobStartTime;
+
+    Aws::Utils::DateTime m_importJobEndTime;
+
+    long long m_activeModelVersion;
+
+    Aws::String m_activeModelVersionArn;
+
+    Aws::Utils::DateTime m_modelVersionActivatedAt;
+
+    long long m_previousActiveModelVersion;
+
+    Aws::String m_previousActiveModelVersionArn;
+
+    Aws::Utils::DateTime m_previousModelVersionActivatedAt;
 
     Aws::String m_requestId;
   };

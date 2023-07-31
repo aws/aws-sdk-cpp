@@ -3976,6 +3976,35 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether read replicas can forward write operations to the writer DB
+     * instance in the DB cluster. By default, write operations aren't allowed on
+     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool GetEnableLocalWriteForwarding() const{ return m_enableLocalWriteForwarding; }
+
+    /**
+     * <p>Specifies whether read replicas can forward write operations to the writer DB
+     * instance in the DB cluster. By default, write operations aren't allowed on
+     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool EnableLocalWriteForwardingHasBeenSet() const { return m_enableLocalWriteForwardingHasBeenSet; }
+
+    /**
+     * <p>Specifies whether read replicas can forward write operations to the writer DB
+     * instance in the DB cluster. By default, write operations aren't allowed on
+     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetEnableLocalWriteForwarding(bool value) { m_enableLocalWriteForwardingHasBeenSet = true; m_enableLocalWriteForwarding = value; }
+
+    /**
+     * <p>Specifies whether read replicas can forward write operations to the writer DB
+     * instance in the DB cluster. By default, write operations aren't allowed on
+     * reader DB instances.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline CreateDBClusterRequest& WithEnableLocalWriteForwarding(bool value) { SetEnableLocalWriteForwarding(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -4163,6 +4192,9 @@ namespace Model
 
     Aws::String m_masterUserSecretKmsKeyId;
     bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
+
+    bool m_enableLocalWriteForwarding;
+    bool m_enableLocalWriteForwardingHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

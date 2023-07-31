@@ -334,6 +334,39 @@ namespace Model
      */
     inline UpgradeTarget& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether the target engine version supports forwarding
+     * write operations from reader DB instances to the writer DB instance in the DB
+     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
+     * <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool GetSupportsLocalWriteForwarding() const{ return m_supportsLocalWriteForwarding; }
+
+    /**
+     * <p>A value that indicates whether the target engine version supports forwarding
+     * write operations from reader DB instances to the writer DB instance in the DB
+     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
+     * <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool SupportsLocalWriteForwardingHasBeenSet() const { return m_supportsLocalWriteForwardingHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the target engine version supports forwarding
+     * write operations from reader DB instances to the writer DB instance in the DB
+     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
+     * <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetSupportsLocalWriteForwarding(bool value) { m_supportsLocalWriteForwardingHasBeenSet = true; m_supportsLocalWriteForwarding = value; }
+
+    /**
+     * <p>A value that indicates whether the target engine version supports forwarding
+     * write operations from reader DB instances to the writer DB instance in the DB
+     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
+     * <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline UpgradeTarget& WithSupportsLocalWriteForwarding(bool value) { SetSupportsLocalWriteForwarding(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -362,6 +395,9 @@ namespace Model
 
     bool m_supportsBabelfish;
     bool m_supportsBabelfishHasBeenSet = false;
+
+    bool m_supportsLocalWriteForwarding;
+    bool m_supportsLocalWriteForwardingHasBeenSet = false;
   };
 
 } // namespace Model

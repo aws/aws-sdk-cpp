@@ -25,7 +25,10 @@ ModelSummary::ModelSummary() :
     m_datasetArnHasBeenSet(false),
     m_status(ModelStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_activeModelVersion(0),
+    m_activeModelVersionHasBeenSet(false),
+    m_activeModelVersionArnHasBeenSet(false)
 {
 }
 
@@ -36,7 +39,10 @@ ModelSummary::ModelSummary(JsonView jsonValue) :
     m_datasetArnHasBeenSet(false),
     m_status(ModelStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
+    m_createdAtHasBeenSet(false),
+    m_activeModelVersion(0),
+    m_activeModelVersionHasBeenSet(false),
+    m_activeModelVersionArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +91,20 @@ ModelSummary& ModelSummary::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ActiveModelVersion"))
+  {
+    m_activeModelVersion = jsonValue.GetInt64("ActiveModelVersion");
+
+    m_activeModelVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ActiveModelVersionArn"))
+  {
+    m_activeModelVersionArn = jsonValue.GetString("ActiveModelVersionArn");
+
+    m_activeModelVersionArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +144,18 @@ JsonValue ModelSummary::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_activeModelVersionHasBeenSet)
+  {
+   payload.WithInt64("ActiveModelVersion", m_activeModelVersion);
+
+  }
+
+  if(m_activeModelVersionArnHasBeenSet)
+  {
+   payload.WithString("ActiveModelVersionArn", m_activeModelVersionArn);
+
   }
 
   return payload;

@@ -70,7 +70,9 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_masterUserSecretKmsKeyIdHasBeenSet(false),
     m_engineModeHasBeenSet(false),
     m_allowEngineModeChange(false),
-    m_allowEngineModeChangeHasBeenSet(false)
+    m_allowEngineModeChangeHasBeenSet(false),
+    m_enableLocalWriteForwarding(false),
+    m_enableLocalWriteForwardingHasBeenSet(false)
 {
 }
 
@@ -287,6 +289,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_allowEngineModeChangeHasBeenSet)
   {
     ss << "AllowEngineModeChange=" << std::boolalpha << m_allowEngineModeChange << "&";
+  }
+
+  if(m_enableLocalWriteForwardingHasBeenSet)
+  {
+    ss << "EnableLocalWriteForwarding=" << std::boolalpha << m_enableLocalWriteForwarding << "&";
   }
 
   ss << "Version=2014-10-31";

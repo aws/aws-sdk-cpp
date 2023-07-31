@@ -8,6 +8,7 @@
 #include <aws/amplifyuibuilder/model/JSModule.h>
 #include <aws/amplifyuibuilder/model/JSTarget.h>
 #include <aws/amplifyuibuilder/model/JSScript.h>
+#include <aws/amplifyuibuilder/model/ApiConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -182,6 +183,37 @@ namespace Model
      */
     inline ReactStartCodegenJobData& WithInlineSourceMap(bool value) { SetInlineSourceMap(value); return *this;}
 
+
+    /**
+     * <p>The API configuration for the code generation job.</p>
+     */
+    inline const ApiConfiguration& GetApiConfiguration() const{ return m_apiConfiguration; }
+
+    /**
+     * <p>The API configuration for the code generation job.</p>
+     */
+    inline bool ApiConfigurationHasBeenSet() const { return m_apiConfigurationHasBeenSet; }
+
+    /**
+     * <p>The API configuration for the code generation job.</p>
+     */
+    inline void SetApiConfiguration(const ApiConfiguration& value) { m_apiConfigurationHasBeenSet = true; m_apiConfiguration = value; }
+
+    /**
+     * <p>The API configuration for the code generation job.</p>
+     */
+    inline void SetApiConfiguration(ApiConfiguration&& value) { m_apiConfigurationHasBeenSet = true; m_apiConfiguration = std::move(value); }
+
+    /**
+     * <p>The API configuration for the code generation job.</p>
+     */
+    inline ReactStartCodegenJobData& WithApiConfiguration(const ApiConfiguration& value) { SetApiConfiguration(value); return *this;}
+
+    /**
+     * <p>The API configuration for the code generation job.</p>
+     */
+    inline ReactStartCodegenJobData& WithApiConfiguration(ApiConfiguration&& value) { SetApiConfiguration(std::move(value)); return *this;}
+
   private:
 
     JSModule m_module;
@@ -198,6 +230,9 @@ namespace Model
 
     bool m_inlineSourceMap;
     bool m_inlineSourceMapHasBeenSet = false;
+
+    ApiConfiguration m_apiConfiguration;
+    bool m_apiConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

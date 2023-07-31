@@ -301,58 +301,50 @@ namespace Model
 
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline const Aws::Vector<ConfiguredTableAnalysisRuleType>& GetAnalysisRuleTypes() const{ return m_analysisRuleTypes; }
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline bool AnalysisRuleTypesHasBeenSet() const { return m_analysisRuleTypesHasBeenSet; }
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline void SetAnalysisRuleTypes(const Aws::Vector<ConfiguredTableAnalysisRuleType>& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = value; }
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline void SetAnalysisRuleTypes(Aws::Vector<ConfiguredTableAnalysisRuleType>&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes = std::move(value); }
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline ConfiguredTable& WithAnalysisRuleTypes(const Aws::Vector<ConfiguredTableAnalysisRuleType>& value) { SetAnalysisRuleTypes(value); return *this;}
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline ConfiguredTable& WithAnalysisRuleTypes(Aws::Vector<ConfiguredTableAnalysisRuleType>&& value) { SetAnalysisRuleTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline ConfiguredTable& AddAnalysisRuleTypes(const ConfiguredTableAnalysisRuleType& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(value); return *this; }
 
     /**
-     * <p>The types of analysis rules associated with this configured table. Valid
-     * values are `AGGREGATION` and `LIST`. Currently, only one analysis rule may be
-     * associated with a configured table.</p>
+     * <p>The types of analysis rules associated with this configured table. Currently,
+     * only one analysis rule may be associated with a configured table.</p>
      */
     inline ConfiguredTable& AddAnalysisRuleTypes(ConfiguredTableAnalysisRuleType&& value) { m_analysisRuleTypesHasBeenSet = true; m_analysisRuleTypes.push_back(std::move(value)); return *this; }
 

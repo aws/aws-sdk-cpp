@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     FIELD_VALIDATION_FAILED,
     INVALID_CONFIGURATION,
-    INVALID_QUERY
+    INVALID_QUERY,
+    IAM_SYNCHRONIZATION_DELAY
   };
 
 namespace ValidationExceptionReasonMapper

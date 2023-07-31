@@ -7,6 +7,7 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/AnalysisRuleList.h>
 #include <aws/cleanrooms/model/AnalysisRuleAggregation.h>
+#include <aws/cleanrooms/model/AnalysisRuleCustom.h>
 #include <utility>
 
 namespace Aws
@@ -26,7 +27,7 @@ namespace Model
 
   /**
    * <p>Controls on the query specifications that can be run on configured
-   * table..</p><p><h3>See Also:</h3>   <a
+   * table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/AnalysisRulePolicyV1">AWS
    * API Reference</a></p>
    */
@@ -106,6 +107,37 @@ namespace Model
      */
     inline AnalysisRulePolicyV1& WithAggregation(AnalysisRuleAggregation&& value) { SetAggregation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
+     */
+    inline const AnalysisRuleCustom& GetCustom() const{ return m_custom; }
+
+    /**
+     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
+     */
+    inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
+
+    /**
+     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
+     */
+    inline void SetCustom(const AnalysisRuleCustom& value) { m_customHasBeenSet = true; m_custom = value; }
+
+    /**
+     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
+     */
+    inline void SetCustom(AnalysisRuleCustom&& value) { m_customHasBeenSet = true; m_custom = std::move(value); }
+
+    /**
+     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
+     */
+    inline AnalysisRulePolicyV1& WithCustom(const AnalysisRuleCustom& value) { SetCustom(value); return *this;}
+
+    /**
+     * <p>Analysis rule type that enables custom SQL queries on a configured table.</p>
+     */
+    inline AnalysisRulePolicyV1& WithCustom(AnalysisRuleCustom&& value) { SetCustom(std::move(value)); return *this;}
+
   private:
 
     AnalysisRuleList m_list;
@@ -113,6 +145,9 @@ namespace Model
 
     AnalysisRuleAggregation m_aggregation;
     bool m_aggregationHasBeenSet = false;
+
+    AnalysisRuleCustom m_custom;
+    bool m_customHasBeenSet = false;
   };
 
 } // namespace Model

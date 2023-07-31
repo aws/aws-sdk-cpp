@@ -23,6 +23,7 @@ namespace Aws
         static const int CREATED_HASH = HashingUtils::HashString("CREATED");
         static const int INGESTION_IN_PROGRESS_HASH = HashingUtils::HashString("INGESTION_IN_PROGRESS");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int IMPORT_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_IN_PROGRESS");
 
 
         DatasetStatus GetDatasetStatusForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == ACTIVE_HASH)
           {
             return DatasetStatus::ACTIVE;
+          }
+          else if (hashCode == IMPORT_IN_PROGRESS_HASH)
+          {
+            return DatasetStatus::IMPORT_IN_PROGRESS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "INGESTION_IN_PROGRESS";
           case DatasetStatus::ACTIVE:
             return "ACTIVE";
+          case DatasetStatus::IMPORT_IN_PROGRESS:
+            return "IMPORT_IN_PROGRESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -7,6 +7,7 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/AnalysisRuleList.h>
 #include <aws/cleanrooms/model/AnalysisRuleAggregation.h>
+#include <aws/cleanrooms/model/AnalysisRuleCustom.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +107,25 @@ namespace Model
      */
     inline ConfiguredTableAnalysisRulePolicyV1& WithAggregation(AnalysisRuleAggregation&& value) { SetAggregation(std::move(value)); return *this;}
 
+
+    
+    inline const AnalysisRuleCustom& GetCustom() const{ return m_custom; }
+
+    
+    inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
+
+    
+    inline void SetCustom(const AnalysisRuleCustom& value) { m_customHasBeenSet = true; m_custom = value; }
+
+    
+    inline void SetCustom(AnalysisRuleCustom&& value) { m_customHasBeenSet = true; m_custom = std::move(value); }
+
+    
+    inline ConfiguredTableAnalysisRulePolicyV1& WithCustom(const AnalysisRuleCustom& value) { SetCustom(value); return *this;}
+
+    
+    inline ConfiguredTableAnalysisRulePolicyV1& WithCustom(AnalysisRuleCustom&& value) { SetCustom(std::move(value)); return *this;}
+
   private:
 
     AnalysisRuleList m_list;
@@ -113,6 +133,9 @@ namespace Model
 
     AnalysisRuleAggregation m_aggregation;
     bool m_aggregationHasBeenSet = false;
+
+    AnalysisRuleCustom m_custom;
+    bool m_customHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1402,42 +1402,42 @@ namespace Model
 
 
     /**
-     * <p>Details on the ingress source addresses used to filter findings.</p>
+     * <p>Details on network protocol used to filter findings.</p>
      */
     inline const Aws::Vector<StringFilter>& GetNetworkProtocol() const{ return m_networkProtocol; }
 
     /**
-     * <p>Details on the ingress source addresses used to filter findings.</p>
+     * <p>Details on network protocol used to filter findings.</p>
      */
     inline bool NetworkProtocolHasBeenSet() const { return m_networkProtocolHasBeenSet; }
 
     /**
-     * <p>Details on the ingress source addresses used to filter findings.</p>
+     * <p>Details on network protocol used to filter findings.</p>
      */
     inline void SetNetworkProtocol(const Aws::Vector<StringFilter>& value) { m_networkProtocolHasBeenSet = true; m_networkProtocol = value; }
 
     /**
-     * <p>Details on the ingress source addresses used to filter findings.</p>
+     * <p>Details on network protocol used to filter findings.</p>
      */
     inline void SetNetworkProtocol(Aws::Vector<StringFilter>&& value) { m_networkProtocolHasBeenSet = true; m_networkProtocol = std::move(value); }
 
     /**
-     * <p>Details on the ingress source addresses used to filter findings.</p>
+     * <p>Details on network protocol used to filter findings.</p>
      */
     inline FilterCriteria& WithNetworkProtocol(const Aws::Vector<StringFilter>& value) { SetNetworkProtocol(value); return *this;}
 
     /**
-     * <p>Details on the ingress source addresses used to filter findings.</p>
+     * <p>Details on network protocol used to filter findings.</p>
      */
     inline FilterCriteria& WithNetworkProtocol(Aws::Vector<StringFilter>&& value) { SetNetworkProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>Details on the ingress source addresses used to filter findings.</p>
+     * <p>Details on network protocol used to filter findings.</p>
      */
     inline FilterCriteria& AddNetworkProtocol(const StringFilter& value) { m_networkProtocolHasBeenSet = true; m_networkProtocol.push_back(value); return *this; }
 
     /**
-     * <p>Details on the ingress source addresses used to filter findings.</p>
+     * <p>Details on network protocol used to filter findings.</p>
      */
     inline FilterCriteria& AddNetworkProtocol(StringFilter&& value) { m_networkProtocolHasBeenSet = true; m_networkProtocol.push_back(std::move(value)); return *this; }
 

@@ -185,37 +185,37 @@ namespace Model
 
     /**
      * <p>Returns all the inference events with an end start time equal to or greater
-     * than less than the end time given</p>
+     * than less than the end time given.</p>
      */
     inline const Aws::Utils::DateTime& GetIntervalEndTime() const{ return m_intervalEndTime; }
 
     /**
      * <p>Returns all the inference events with an end start time equal to or greater
-     * than less than the end time given</p>
+     * than less than the end time given.</p>
      */
     inline bool IntervalEndTimeHasBeenSet() const { return m_intervalEndTimeHasBeenSet; }
 
     /**
      * <p>Returns all the inference events with an end start time equal to or greater
-     * than less than the end time given</p>
+     * than less than the end time given.</p>
      */
     inline void SetIntervalEndTime(const Aws::Utils::DateTime& value) { m_intervalEndTimeHasBeenSet = true; m_intervalEndTime = value; }
 
     /**
      * <p>Returns all the inference events with an end start time equal to or greater
-     * than less than the end time given</p>
+     * than less than the end time given.</p>
      */
     inline void SetIntervalEndTime(Aws::Utils::DateTime&& value) { m_intervalEndTimeHasBeenSet = true; m_intervalEndTime = std::move(value); }
 
     /**
      * <p>Returns all the inference events with an end start time equal to or greater
-     * than less than the end time given</p>
+     * than less than the end time given.</p>
      */
     inline ListInferenceEventsRequest& WithIntervalEndTime(const Aws::Utils::DateTime& value) { SetIntervalEndTime(value); return *this;}
 
     /**
      * <p>Returns all the inference events with an end start time equal to or greater
-     * than less than the end time given</p>
+     * than less than the end time given.</p>
      */
     inline ListInferenceEventsRequest& WithIntervalEndTime(Aws::Utils::DateTime&& value) { SetIntervalEndTime(std::move(value)); return *this;}
 

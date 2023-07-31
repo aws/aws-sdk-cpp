@@ -19,12 +19,16 @@ namespace Model
 {
 
 ProtectedQuerySQLParameters::ProtectedQuerySQLParameters() : 
-    m_queryStringHasBeenSet(false)
+    m_queryStringHasBeenSet(false),
+    m_analysisTemplateArnHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
 }
 
 ProtectedQuerySQLParameters::ProtectedQuerySQLParameters(JsonView jsonValue) : 
-    m_queryStringHasBeenSet(false)
+    m_queryStringHasBeenSet(false),
+    m_analysisTemplateArnHasBeenSet(false),
+    m_parametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,23 @@ ProtectedQuerySQLParameters& ProtectedQuerySQLParameters::operator =(JsonView js
     m_queryStringHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("analysisTemplateArn"))
+  {
+    m_analysisTemplateArn = jsonValue.GetString("analysisTemplateArn");
+
+    m_analysisTemplateArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("parameters"))
+  {
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
+    for(auto& parametersItem : parametersJsonMap)
+    {
+      m_parameters[parametersItem.first] = parametersItem.second.AsString();
+    }
+    m_parametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +69,23 @@ JsonValue ProtectedQuerySQLParameters::Jsonize() const
   if(m_queryStringHasBeenSet)
   {
    payload.WithString("queryString", m_queryString);
+
+  }
+
+  if(m_analysisTemplateArnHasBeenSet)
+  {
+   payload.WithString("analysisTemplateArn", m_analysisTemplateArn);
+
+  }
+
+  if(m_parametersHasBeenSet)
+  {
+   JsonValue parametersJsonMap;
+   for(auto& parametersItem : m_parameters)
+   {
+     parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+   }
+   payload.WithObject("parameters", std::move(parametersJsonMap));
 
   }
 

@@ -109,6 +109,12 @@ DescribeDatasetResult& DescribeDatasetResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("SourceDatasetArn"))
+  {
+    m_sourceDatasetArn = jsonValue.GetString("SourceDatasetArn");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
