@@ -644,6 +644,47 @@ namespace Model
      */
     inline DescribeDBClusterSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}
 
+
+    /**
+     * <p>A specific DB cluster resource ID to describe.</p>
+     */
+    inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
+
+    /**
+     * <p>A specific DB cluster resource ID to describe.</p>
+     */
+    inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
+
+    /**
+     * <p>A specific DB cluster resource ID to describe.</p>
+     */
+    inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
+
+    /**
+     * <p>A specific DB cluster resource ID to describe.</p>
+     */
+    inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
+
+    /**
+     * <p>A specific DB cluster resource ID to describe.</p>
+     */
+    inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
+
+    /**
+     * <p>A specific DB cluster resource ID to describe.</p>
+     */
+    inline DescribeDBClusterSnapshotsRequest& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
+
+    /**
+     * <p>A specific DB cluster resource ID to describe.</p>
+     */
+    inline DescribeDBClusterSnapshotsRequest& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>A specific DB cluster resource ID to describe.</p>
+     */
+    inline DescribeDBClusterSnapshotsRequest& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -669,6 +710,9 @@ namespace Model
 
     bool m_includePublic;
     bool m_includePublicHasBeenSet = false;
+
+    Aws::String m_dbClusterResourceId;
+    bool m_dbClusterResourceIdHasBeenSet = false;
   };
 
 } // namespace Model

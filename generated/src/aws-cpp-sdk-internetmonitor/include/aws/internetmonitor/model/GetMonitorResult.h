@@ -112,50 +112,50 @@ namespace Model
 
 
     /**
-     * <p>The resources that have been added for the monitor. Resources are listed by
-     * their Amazon Resource Names (ARNs).</p>
+     * <p>The resources monitored by the monitor. Resources are listed by their Amazon
+     * Resource Names (ARNs).</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>The resources that have been added for the monitor. Resources are listed by
-     * their Amazon Resource Names (ARNs).</p>
+     * <p>The resources monitored by the monitor. Resources are listed by their Amazon
+     * Resource Names (ARNs).</p>
      */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resources = value; }
 
     /**
-     * <p>The resources that have been added for the monitor. Resources are listed by
-     * their Amazon Resource Names (ARNs).</p>
+     * <p>The resources monitored by the monitor. Resources are listed by their Amazon
+     * Resource Names (ARNs).</p>
      */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resources = std::move(value); }
 
     /**
-     * <p>The resources that have been added for the monitor. Resources are listed by
-     * their Amazon Resource Names (ARNs).</p>
+     * <p>The resources monitored by the monitor. Resources are listed by their Amazon
+     * Resource Names (ARNs).</p>
      */
     inline GetMonitorResult& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>The resources that have been added for the monitor. Resources are listed by
-     * their Amazon Resource Names (ARNs).</p>
+     * <p>The resources monitored by the monitor. Resources are listed by their Amazon
+     * Resource Names (ARNs).</p>
      */
     inline GetMonitorResult& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>The resources that have been added for the monitor. Resources are listed by
-     * their Amazon Resource Names (ARNs).</p>
+     * <p>The resources monitored by the monitor. Resources are listed by their Amazon
+     * Resource Names (ARNs).</p>
      */
     inline GetMonitorResult& AddResources(const Aws::String& value) { m_resources.push_back(value); return *this; }
 
     /**
-     * <p>The resources that have been added for the monitor. Resources are listed by
-     * their Amazon Resource Names (ARNs).</p>
+     * <p>The resources monitored by the monitor. Resources are listed by their Amazon
+     * Resource Names (ARNs).</p>
      */
     inline GetMonitorResult& AddResources(Aws::String&& value) { m_resources.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The resources that have been added for the monitor. Resources are listed by
-     * their Amazon Resource Names (ARNs).</p>
+     * <p>The resources monitored by the monitor. Resources are listed by their Amazon
+     * Resource Names (ARNs).</p>
      */
     inline GetMonitorResult& AddResources(const char* value) { m_resources.push_back(value); return *this; }
 
@@ -371,9 +371,9 @@ namespace Model
     /**
      * <p>The maximum number of city-networks to monitor for your resources. A
      * city-network is the location (city) where clients access your application
-     * resources from and the network or ASN, such as an internet service provider
-     * (ISP), that clients access the resources through. This limit helps control
-     * billing costs.</p> <p>To learn more, see <a
+     * resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. This limit can help
+     * control billing costs.</p> <p>To learn more, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
      * a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor
      * section of the <i>CloudWatch User Guide</i>.</p>
@@ -383,9 +383,9 @@ namespace Model
     /**
      * <p>The maximum number of city-networks to monitor for your resources. A
      * city-network is the location (city) where clients access your application
-     * resources from and the network or ASN, such as an internet service provider
-     * (ISP), that clients access the resources through. This limit helps control
-     * billing costs.</p> <p>To learn more, see <a
+     * resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. This limit can help
+     * control billing costs.</p> <p>To learn more, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
      * a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor
      * section of the <i>CloudWatch User Guide</i>.</p>
@@ -395,9 +395,9 @@ namespace Model
     /**
      * <p>The maximum number of city-networks to monitor for your resources. A
      * city-network is the location (city) where clients access your application
-     * resources from and the network or ASN, such as an internet service provider
-     * (ISP), that clients access the resources through. This limit helps control
-     * billing costs.</p> <p>To learn more, see <a
+     * resources from and the ASN or network provider, such as an internet service
+     * provider (ISP), that clients access the resources through. This limit can help
+     * control billing costs.</p> <p>To learn more, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
      * a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor
      * section of the <i>CloudWatch User Guide</i>.</p>
@@ -442,61 +442,88 @@ namespace Model
 
 
     /**
-     * <p>The percentage of the internet-facing traffic for your application that you
-     * want to monitor with this monitor.</p>
+     * <p>The percentage of the internet-facing traffic for your application to monitor
+     * with this monitor. If you set a city-networks maximum, that limit overrides the
+     * traffic percentage that you set.</p> <p>To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing
+     * an application traffic percentage to monitor </a> in the Amazon CloudWatch
+     * Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline int GetTrafficPercentageToMonitor() const{ return m_trafficPercentageToMonitor; }
 
     /**
-     * <p>The percentage of the internet-facing traffic for your application that you
-     * want to monitor with this monitor.</p>
+     * <p>The percentage of the internet-facing traffic for your application to monitor
+     * with this monitor. If you set a city-networks maximum, that limit overrides the
+     * traffic percentage that you set.</p> <p>To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing
+     * an application traffic percentage to monitor </a> in the Amazon CloudWatch
+     * Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline void SetTrafficPercentageToMonitor(int value) { m_trafficPercentageToMonitor = value; }
 
     /**
-     * <p>The percentage of the internet-facing traffic for your application that you
-     * want to monitor with this monitor.</p>
+     * <p>The percentage of the internet-facing traffic for your application to monitor
+     * with this monitor. If you set a city-networks maximum, that limit overrides the
+     * traffic percentage that you set.</p> <p>To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing
+     * an application traffic percentage to monitor </a> in the Amazon CloudWatch
+     * Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline GetMonitorResult& WithTrafficPercentageToMonitor(int value) { SetTrafficPercentageToMonitor(value); return *this;}
 
 
     /**
-     * <p>The list of health event thresholds. A health event threshold percentage, for
-     * performance and availability, determines the level of impact at which Amazon
-     * CloudWatch Internet Monitor creates a health event when there's an internet
-     * issue that affects your application end users.</p>
+     * <p>The list of health event threshold configurations. The threshold percentage
+     * for a health score determines, along with other configuration information, when
+     * Internet Monitor creates a health event when there's an internet issue that
+     * affects your application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
      */
     inline const HealthEventsConfig& GetHealthEventsConfig() const{ return m_healthEventsConfig; }
 
     /**
-     * <p>The list of health event thresholds. A health event threshold percentage, for
-     * performance and availability, determines the level of impact at which Amazon
-     * CloudWatch Internet Monitor creates a health event when there's an internet
-     * issue that affects your application end users.</p>
+     * <p>The list of health event threshold configurations. The threshold percentage
+     * for a health score determines, along with other configuration information, when
+     * Internet Monitor creates a health event when there's an internet issue that
+     * affects your application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
      */
     inline void SetHealthEventsConfig(const HealthEventsConfig& value) { m_healthEventsConfig = value; }
 
     /**
-     * <p>The list of health event thresholds. A health event threshold percentage, for
-     * performance and availability, determines the level of impact at which Amazon
-     * CloudWatch Internet Monitor creates a health event when there's an internet
-     * issue that affects your application end users.</p>
+     * <p>The list of health event threshold configurations. The threshold percentage
+     * for a health score determines, along with other configuration information, when
+     * Internet Monitor creates a health event when there's an internet issue that
+     * affects your application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
      */
     inline void SetHealthEventsConfig(HealthEventsConfig&& value) { m_healthEventsConfig = std::move(value); }
 
     /**
-     * <p>The list of health event thresholds. A health event threshold percentage, for
-     * performance and availability, determines the level of impact at which Amazon
-     * CloudWatch Internet Monitor creates a health event when there's an internet
-     * issue that affects your application end users.</p>
+     * <p>The list of health event threshold configurations. The threshold percentage
+     * for a health score determines, along with other configuration information, when
+     * Internet Monitor creates a health event when there's an internet issue that
+     * affects your application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
      */
     inline GetMonitorResult& WithHealthEventsConfig(const HealthEventsConfig& value) { SetHealthEventsConfig(value); return *this;}
 
     /**
-     * <p>The list of health event thresholds. A health event threshold percentage, for
-     * performance and availability, determines the level of impact at which Amazon
-     * CloudWatch Internet Monitor creates a health event when there's an internet
-     * issue that affects your application end users.</p>
+     * <p>The list of health event threshold configurations. The threshold percentage
+     * for a health score determines, along with other configuration information, when
+     * Internet Monitor creates a health event when there's an internet issue that
+     * affects your application end users.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview">
+     * Change health event thresholds</a> in the Internet Monitor section of the
+     * <i>CloudWatch User Guide</i>.</p>
      */
     inline GetMonitorResult& WithHealthEventsConfig(HealthEventsConfig&& value) { SetHealthEventsConfig(std::move(value)); return *this;}
 

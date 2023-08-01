@@ -336,26 +336,38 @@ namespace Model
 
 
     /**
-     * <p>The impact on global traffic monitored by this monitor for this health
-     * event.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline double GetPercentOfTotalTrafficImpacted() const{ return m_percentOfTotalTrafficImpacted; }
 
     /**
-     * <p>The impact on global traffic monitored by this monitor for this health
-     * event.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline bool PercentOfTotalTrafficImpactedHasBeenSet() const { return m_percentOfTotalTrafficImpactedHasBeenSet; }
 
     /**
-     * <p>The impact on global traffic monitored by this monitor for this health
-     * event.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpactedHasBeenSet = true; m_percentOfTotalTrafficImpacted = value; }
 
     /**
-     * <p>The impact on global traffic monitored by this monitor for this health
-     * event.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline HealthEvent& WithPercentOfTotalTrafficImpacted(double value) { SetPercentOfTotalTrafficImpacted(value); return *this;}
 

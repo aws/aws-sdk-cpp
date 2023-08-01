@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     BEST_FIT,
     BEST_FIT_PROGRESSIVE,
-    SPOT_CAPACITY_OPTIMIZED
+    SPOT_CAPACITY_OPTIMIZED,
+    SPOT_PRICE_CAPACITY_OPTIMIZED
   };
 
 namespace CRAllocationStrategyMapper

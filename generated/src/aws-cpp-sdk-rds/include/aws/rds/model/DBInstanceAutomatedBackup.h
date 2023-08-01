@@ -87,49 +87,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the source DB instance, which can't be changed and which
+     * <p>The resource ID for the source DB instance, which can't be changed and which
      * is unique to an Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
 
     /**
-     * <p>The identifier for the source DB instance, which can't be changed and which
+     * <p>The resource ID for the source DB instance, which can't be changed and which
      * is unique to an Amazon Web Services Region.</p>
      */
     inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the source DB instance, which can't be changed and which
+     * <p>The resource ID for the source DB instance, which can't be changed and which
      * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
 
     /**
-     * <p>The identifier for the source DB instance, which can't be changed and which
+     * <p>The resource ID for the source DB instance, which can't be changed and which
      * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
 
     /**
-     * <p>The identifier for the source DB instance, which can't be changed and which
+     * <p>The resource ID for the source DB instance, which can't be changed and which
      * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
 
     /**
-     * <p>The identifier for the source DB instance, which can't be changed and which
+     * <p>The resource ID for the source DB instance, which can't be changed and which
      * is unique to an Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
 
     /**
-     * <p>The identifier for the source DB instance, which can't be changed and which
+     * <p>The resource ID for the source DB instance, which can't be changed and which
      * is unique to an Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the source DB instance, which can't be changed and which
+     * <p>The resource ID for the source DB instance, which can't be changed and which
      * is unique to an Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
@@ -177,50 +177,50 @@ namespace Model
 
 
     /**
-     * <p>The customer id of the instance that is/was associated with the automated
-     * backup.</p>
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
-     * <p>The customer id of the instance that is/was associated with the automated
-     * backup.</p>
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
-     * <p>The customer id of the instance that is/was associated with the automated
-     * backup.</p>
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
-     * <p>The customer id of the instance that is/was associated with the automated
-     * backup.</p>
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
-     * <p>The customer id of the instance that is/was associated with the automated
-     * backup.</p>
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
-     * <p>The customer id of the instance that is/was associated with the automated
-     * backup.</p>
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p>The customer id of the instance that is/was associated with the automated
-     * backup.</p>
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The customer id of the instance that is/was associated with the automated
-     * backup.</p>
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline DBInstanceAutomatedBackup& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
@@ -279,73 +279,73 @@ namespace Model
 
     /**
      * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - automated backups for current instances</p> </li> <li>
-     * <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-     * <li> <p> <code>creating</code> - automated backups that are waiting for the
-     * first automated snapshot to be available.</p> </li> </ul>
+     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
+     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
+     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
+     * the first automated snapshot to be available.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - automated backups for current instances</p> </li> <li>
-     * <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-     * <li> <p> <code>creating</code> - automated backups that are waiting for the
-     * first automated snapshot to be available.</p> </li> </ul>
+     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
+     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
+     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
+     * the first automated snapshot to be available.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - automated backups for current instances</p> </li> <li>
-     * <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-     * <li> <p> <code>creating</code> - automated backups that are waiting for the
-     * first automated snapshot to be available.</p> </li> </ul>
+     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
+     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
+     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
+     * the first automated snapshot to be available.</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - automated backups for current instances</p> </li> <li>
-     * <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-     * <li> <p> <code>creating</code> - automated backups that are waiting for the
-     * first automated snapshot to be available.</p> </li> </ul>
+     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
+     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
+     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
+     * the first automated snapshot to be available.</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - automated backups for current instances</p> </li> <li>
-     * <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-     * <li> <p> <code>creating</code> - automated backups that are waiting for the
-     * first automated snapshot to be available.</p> </li> </ul>
+     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
+     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
+     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
+     * the first automated snapshot to be available.</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - automated backups for current instances</p> </li> <li>
-     * <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-     * <li> <p> <code>creating</code> - automated backups that are waiting for the
-     * first automated snapshot to be available.</p> </li> </ul>
+     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
+     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
+     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
+     * the first automated snapshot to be available.</p> </li> </ul>
      */
     inline DBInstanceAutomatedBackup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - automated backups for current instances</p> </li> <li>
-     * <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-     * <li> <p> <code>creating</code> - automated backups that are waiting for the
-     * first automated snapshot to be available.</p> </li> </ul>
+     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
+     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
+     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
+     * the first automated snapshot to be available.</p> </li> </ul>
      */
     inline DBInstanceAutomatedBackup& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>Provides a list of status information for an automated backup:</p> <ul> <li>
-     * <p> <code>active</code> - automated backups for current instances</p> </li> <li>
-     * <p> <code>retained</code> - automated backups for deleted instances</p> </li>
-     * <li> <p> <code>creating</code> - automated backups that are waiting for the
-     * first automated snapshot to be available.</p> </li> </ul>
+     * <p> <code>active</code> - Automated backups for current instances.</p> </li>
+     * <li> <p> <code>retained</code> - Automated backups for deleted instances.</p>
+     * </li> <li> <p> <code>creating</code> - Automated backups that are waiting for
+     * the first automated snapshot to be available.</p> </li> </ul>
      */
     inline DBInstanceAutomatedBackup& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -517,42 +517,42 @@ namespace Model
 
 
     /**
-     * <p>The license model of an automated backup.</p>
+     * <p>The master user name of an automated backup.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>The license model of an automated backup.</p>
+     * <p>The master user name of an automated backup.</p>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>The license model of an automated backup.</p>
+     * <p>The master user name of an automated backup.</p>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>The license model of an automated backup.</p>
+     * <p>The master user name of an automated backup.</p>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>The license model of an automated backup.</p>
+     * <p>The master user name of an automated backup.</p>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>The license model of an automated backup.</p>
+     * <p>The master user name of an automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>The license model of an automated backup.</p>
+     * <p>The master user name of an automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The license model of an automated backup.</p>
+     * <p>The master user name of an automated backup.</p>
      */
     inline DBInstanceAutomatedBackup& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 

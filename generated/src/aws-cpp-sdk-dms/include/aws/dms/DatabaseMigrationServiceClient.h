@@ -914,6 +914,32 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Returns information about the replication instance versions used in the
+         * project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEngineVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEngineVersionsOutcome DescribeEngineVersions(const Model::DescribeEngineVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEngineVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeEngineVersionsRequestT = Model::DescribeEngineVersionsRequest>
+        Model::DescribeEngineVersionsOutcomeCallable DescribeEngineVersionsCallable(const DescribeEngineVersionsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeEngineVersions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeEngineVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeEngineVersionsRequestT = Model::DescribeEngineVersionsRequest>
+        void DescribeEngineVersionsAsync(const DescribeEngineVersionsRequestT& request, const DescribeEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeEngineVersions, request, handler, context);
+        }
+
+        /**
          * <p>Lists categories for all event source types, or, if specified, for a
          * specified source type. You can see a list of the event categories and source
          * types in <a

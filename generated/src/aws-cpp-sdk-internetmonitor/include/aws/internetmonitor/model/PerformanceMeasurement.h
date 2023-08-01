@@ -24,19 +24,20 @@ namespace Model
 {
 
   /**
-   * <p>Measurements about the performance for your application on the internet
-   * calculated by Amazon CloudWatch Internet Monitor. Amazon Web Services has
-   * substantial historical data about internet performance and availability between
-   * Amazon Web Services services and different network providers and geographies. By
-   * applying statistical analysis to the data, Internet Monitor can detect when the
-   * performance and availability for your application has dropped, compared to an
-   * estimated baseline that's already calculated. To make it easier to see those
-   * drops, we report that information to you in the form of health scores: a
-   * performance score and an availability score.</p> <p>Performance in Internet
-   * Monitor represents the estimated percentage of traffic that is not seeing a
-   * performance drop. For example, a performance score of 99% for an end user and
-   * service location pair is equivalent to 1% of the traffic experiencing a
-   * performance drop for that pair.</p> <p>For more information, see <a
+   * <p>Amazon CloudWatch Internet Monitor calculates measurements about the
+   * performance for your application's internet traffic between client locations and
+   * Amazon Web Services. Amazon Web Services has substantial historical data about
+   * internet performance and availability between Amazon Web Services services and
+   * different network providers and geographies. By applying statistical analysis to
+   * the data, Internet Monitor can detect when the performance and availability for
+   * your application has dropped, compared to an estimated baseline that's already
+   * calculated. To make it easier to see those drops, we report that information to
+   * you in the form of health scores: a performance score and an availability
+   * score.</p> <p>Performance in Internet Monitor represents the estimated
+   * percentage of traffic that is not seeing a performance drop. For example, a
+   * performance score of 99% for an end user and service location pair is equivalent
+   * to 1% of the traffic experiencing a performance drop for that pair.</p> <p>For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
    * Internet Monitor calculates performance and availability scores</a> in the
    * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
@@ -123,10 +124,11 @@ namespace Model
 
 
     /**
-     * <p>How much performance impact was caused by a health event for total traffic
-     * globally. For performance, this is the percentage of how much latency increased
-     * during the event compared to typical performance for your application traffic
-     * globally. </p> <p>For more information, see <a
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
      * Amazon Web Services creates and resolves health events</a> in the Amazon
      * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
@@ -134,10 +136,11 @@ namespace Model
     inline double GetPercentOfTotalTrafficImpacted() const{ return m_percentOfTotalTrafficImpacted; }
 
     /**
-     * <p>How much performance impact was caused by a health event for total traffic
-     * globally. For performance, this is the percentage of how much latency increased
-     * during the event compared to typical performance for your application traffic
-     * globally. </p> <p>For more information, see <a
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
      * Amazon Web Services creates and resolves health events</a> in the Amazon
      * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
@@ -145,10 +148,11 @@ namespace Model
     inline bool PercentOfTotalTrafficImpactedHasBeenSet() const { return m_percentOfTotalTrafficImpactedHasBeenSet; }
 
     /**
-     * <p>How much performance impact was caused by a health event for total traffic
-     * globally. For performance, this is the percentage of how much latency increased
-     * during the event compared to typical performance for your application traffic
-     * globally. </p> <p>For more information, see <a
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
      * Amazon Web Services creates and resolves health events</a> in the Amazon
      * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
@@ -156,10 +160,11 @@ namespace Model
     inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpactedHasBeenSet = true; m_percentOfTotalTrafficImpacted = value; }
 
     /**
-     * <p>How much performance impact was caused by a health event for total traffic
-     * globally. For performance, this is the percentage of how much latency increased
-     * during the event compared to typical performance for your application traffic
-     * globally. </p> <p>For more information, see <a
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
      * Amazon Web Services creates and resolves health events</a> in the Amazon
      * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>

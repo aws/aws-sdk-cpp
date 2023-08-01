@@ -229,6 +229,35 @@ namespace Model
      */
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(const char* value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether to remove automated backups immediately after
+     * the DB cluster is deleted. This parameter isn't case-sensitive. The default is
+     * to remove automated backups immediately after the DB cluster is deleted.</p>
+     */
+    inline bool GetDeleteAutomatedBackups() const{ return m_deleteAutomatedBackups; }
+
+    /**
+     * <p>A value that indicates whether to remove automated backups immediately after
+     * the DB cluster is deleted. This parameter isn't case-sensitive. The default is
+     * to remove automated backups immediately after the DB cluster is deleted.</p>
+     */
+    inline bool DeleteAutomatedBackupsHasBeenSet() const { return m_deleteAutomatedBackupsHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to remove automated backups immediately after
+     * the DB cluster is deleted. This parameter isn't case-sensitive. The default is
+     * to remove automated backups immediately after the DB cluster is deleted.</p>
+     */
+    inline void SetDeleteAutomatedBackups(bool value) { m_deleteAutomatedBackupsHasBeenSet = true; m_deleteAutomatedBackups = value; }
+
+    /**
+     * <p>A value that indicates whether to remove automated backups immediately after
+     * the DB cluster is deleted. This parameter isn't case-sensitive. The default is
+     * to remove automated backups immediately after the DB cluster is deleted.</p>
+     */
+    inline DeleteDBClusterRequest& WithDeleteAutomatedBackups(bool value) { SetDeleteAutomatedBackups(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -239,6 +268,9 @@ namespace Model
 
     Aws::String m_finalDBSnapshotIdentifier;
     bool m_finalDBSnapshotIdentifierHasBeenSet = false;
+
+    bool m_deleteAutomatedBackups;
+    bool m_deleteAutomatedBackupsHasBeenSet = false;
   };
 
 } // namespace Model

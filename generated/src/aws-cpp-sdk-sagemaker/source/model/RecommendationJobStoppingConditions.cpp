@@ -21,14 +21,18 @@ namespace Model
 RecommendationJobStoppingConditions::RecommendationJobStoppingConditions() : 
     m_maxInvocations(0),
     m_maxInvocationsHasBeenSet(false),
-    m_modelLatencyThresholdsHasBeenSet(false)
+    m_modelLatencyThresholdsHasBeenSet(false),
+    m_flatInvocations(FlatInvocations::NOT_SET),
+    m_flatInvocationsHasBeenSet(false)
 {
 }
 
 RecommendationJobStoppingConditions::RecommendationJobStoppingConditions(JsonView jsonValue) : 
     m_maxInvocations(0),
     m_maxInvocationsHasBeenSet(false),
-    m_modelLatencyThresholdsHasBeenSet(false)
+    m_modelLatencyThresholdsHasBeenSet(false),
+    m_flatInvocations(FlatInvocations::NOT_SET),
+    m_flatInvocationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ RecommendationJobStoppingConditions& RecommendationJobStoppingConditions::operat
       m_modelLatencyThresholds.push_back(modelLatencyThresholdsJsonList[modelLatencyThresholdsIndex].AsObject());
     }
     m_modelLatencyThresholdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FlatInvocations"))
+  {
+    m_flatInvocations = FlatInvocationsMapper::GetFlatInvocationsForName(jsonValue.GetString("FlatInvocations"));
+
+    m_flatInvocationsHasBeenSet = true;
   }
 
   return *this;
@@ -74,6 +85,11 @@ JsonValue RecommendationJobStoppingConditions::Jsonize() const
    }
    payload.WithArray("ModelLatencyThresholds", std::move(modelLatencyThresholdsJsonList));
 
+  }
+
+  if(m_flatInvocationsHasBeenSet)
+  {
+   payload.WithString("FlatInvocations", FlatInvocationsMapper::GetNameForFlatInvocations(m_flatInvocations));
   }
 
   return payload;

@@ -14,7 +14,9 @@ DeleteDBClusterRequest::DeleteDBClusterRequest() :
     m_dBClusterIdentifierHasBeenSet(false),
     m_skipFinalSnapshot(false),
     m_skipFinalSnapshotHasBeenSet(false),
-    m_finalDBSnapshotIdentifierHasBeenSet(false)
+    m_finalDBSnapshotIdentifierHasBeenSet(false),
+    m_deleteAutomatedBackups(false),
+    m_deleteAutomatedBackupsHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,11 @@ Aws::String DeleteDBClusterRequest::SerializePayload() const
   if(m_finalDBSnapshotIdentifierHasBeenSet)
   {
     ss << "FinalDBSnapshotIdentifier=" << StringUtils::URLEncode(m_finalDBSnapshotIdentifier.c_str()) << "&";
+  }
+
+  if(m_deleteAutomatedBackupsHasBeenSet)
+  {
+    ss << "DeleteAutomatedBackups=" << std::boolalpha << m_deleteAutomatedBackups << "&";
   }
 
   ss << "Version=2014-10-31";

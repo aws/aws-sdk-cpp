@@ -1152,50 +1152,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to use default or custom replication behavior for
-     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
-     * behavior for endpoints that require additional configuration, such as Babelfish
-     * endpoints.</p>
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
      */
     inline const DatabaseMode& GetDatabaseMode() const{ return m_databaseMode; }
 
     /**
-     * <p>Specifies whether to use default or custom replication behavior for
-     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
-     * behavior for endpoints that require additional configuration, such as Babelfish
-     * endpoints.</p>
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
      */
     inline bool DatabaseModeHasBeenSet() const { return m_databaseModeHasBeenSet; }
 
     /**
-     * <p>Specifies whether to use default or custom replication behavior for
-     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
-     * behavior for endpoints that require additional configuration, such as Babelfish
-     * endpoints.</p>
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
      */
     inline void SetDatabaseMode(const DatabaseMode& value) { m_databaseModeHasBeenSet = true; m_databaseMode = value; }
 
     /**
-     * <p>Specifies whether to use default or custom replication behavior for
-     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
-     * behavior for endpoints that require additional configuration, such as Babelfish
-     * endpoints.</p>
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
      */
     inline void SetDatabaseMode(DatabaseMode&& value) { m_databaseModeHasBeenSet = true; m_databaseMode = std::move(value); }
 
     /**
-     * <p>Specifies whether to use default or custom replication behavior for
-     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
-     * behavior for endpoints that require additional configuration, such as Babelfish
-     * endpoints.</p>
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
      */
     inline PostgreSQLSettings& WithDatabaseMode(const DatabaseMode& value) { SetDatabaseMode(value); return *this;}
 
     /**
-     * <p>Specifies whether to use default or custom replication behavior for
-     * PostgreSQL-compatible endpoints. You can use this setting to specify replication
-     * behavior for endpoints that require additional configuration, such as Babelfish
-     * endpoints.</p>
+     * <p>Specifies the default behavior of the replication's handling of PostgreSQL-
+     * compatible endpoints that require some additional configuration, such as
+     * Babelfish endpoints.</p>
      */
     inline PostgreSQLSettings& WithDatabaseMode(DatabaseMode&& value) { SetDatabaseMode(std::move(value)); return *this;}
 
