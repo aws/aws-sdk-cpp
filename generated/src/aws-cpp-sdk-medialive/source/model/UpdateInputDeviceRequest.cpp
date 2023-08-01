@@ -16,7 +16,8 @@ UpdateInputDeviceRequest::UpdateInputDeviceRequest() :
     m_hdDeviceSettingsHasBeenSet(false),
     m_inputDeviceIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_uhdDeviceSettingsHasBeenSet(false)
+    m_uhdDeviceSettingsHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String UpdateInputDeviceRequest::SerializePayload() const
   if(m_uhdDeviceSettingsHasBeenSet)
   {
    payload.WithObject("uhdDeviceSettings", m_uhdDeviceSettings.Jsonize());
+
+  }
+
+  if(m_availabilityZoneHasBeenSet)
+  {
+   payload.WithString("availabilityZone", m_availabilityZone);
 
   }
 

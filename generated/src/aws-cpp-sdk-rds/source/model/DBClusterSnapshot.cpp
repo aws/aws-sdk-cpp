@@ -49,7 +49,8 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_dbClusterResourceIdHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_dbClusterResourceIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -249,6 +251,12 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
     }
+    XmlNode dbClusterResourceIdNode = resultNode.FirstChild("DbClusterResourceId");
+    if(!dbClusterResourceIdNode.IsNull())
+    {
+      m_dbClusterResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(dbClusterResourceIdNode.GetText());
+      m_dbClusterResourceIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -386,6 +394,11 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
+  if(m_dbClusterResourceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DbClusterResourceId=" << StringUtils::URLEncode(m_dbClusterResourceId.c_str()) << "&";
+  }
+
 }
 
 void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -495,6 +508,10 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_storageTypeHasBeenSet)
   {
       oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_dbClusterResourceIdHasBeenSet)
+  {
+      oStream << location << ".DbClusterResourceId=" << StringUtils::URLEncode(m_dbClusterResourceId.c_str()) << "&";
   }
 }
 

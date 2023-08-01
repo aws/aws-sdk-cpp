@@ -35,7 +35,8 @@ InputDeviceSummary::InputDeviceSummary() :
     m_type(InputDeviceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_uhdDeviceSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ InputDeviceSummary::InputDeviceSummary(JsonView jsonValue) :
     m_type(InputDeviceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_uhdDeviceSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +159,13 @@ InputDeviceSummary& InputDeviceSummary::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("availabilityZone"))
+  {
+    m_availabilityZone = jsonValue.GetString("availabilityZone");
+
+    m_availabilityZoneHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -240,6 +249,12 @@ JsonValue InputDeviceSummary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_availabilityZoneHasBeenSet)
+  {
+   payload.WithString("availabilityZone", m_availabilityZone);
 
   }
 

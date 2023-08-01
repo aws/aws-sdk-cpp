@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int PHASES_HASH = HashingUtils::HashString("PHASES");
+        static const int STAIRS_HASH = HashingUtils::HashString("STAIRS");
 
 
         TrafficType GetTrafficTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == PHASES_HASH)
           {
             return TrafficType::PHASES;
+          }
+          else if (hashCode == STAIRS_HASH)
+          {
+            return TrafficType::STAIRS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case TrafficType::PHASES:
             return "PHASES";
+          case TrafficType::STAIRS:
+            return "STAIRS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

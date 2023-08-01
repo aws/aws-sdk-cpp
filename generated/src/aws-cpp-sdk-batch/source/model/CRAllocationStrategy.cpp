@@ -23,6 +23,7 @@ namespace Aws
         static const int BEST_FIT_HASH = HashingUtils::HashString("BEST_FIT");
         static const int BEST_FIT_PROGRESSIVE_HASH = HashingUtils::HashString("BEST_FIT_PROGRESSIVE");
         static const int SPOT_CAPACITY_OPTIMIZED_HASH = HashingUtils::HashString("SPOT_CAPACITY_OPTIMIZED");
+        static const int SPOT_PRICE_CAPACITY_OPTIMIZED_HASH = HashingUtils::HashString("SPOT_PRICE_CAPACITY_OPTIMIZED");
 
 
         CRAllocationStrategy GetCRAllocationStrategyForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == SPOT_CAPACITY_OPTIMIZED_HASH)
           {
             return CRAllocationStrategy::SPOT_CAPACITY_OPTIMIZED;
+          }
+          else if (hashCode == SPOT_PRICE_CAPACITY_OPTIMIZED_HASH)
+          {
+            return CRAllocationStrategy::SPOT_PRICE_CAPACITY_OPTIMIZED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "BEST_FIT_PROGRESSIVE";
           case CRAllocationStrategy::SPOT_CAPACITY_OPTIMIZED:
             return "SPOT_CAPACITY_OPTIMIZED";
+          case CRAllocationStrategy::SPOT_PRICE_CAPACITY_OPTIMIZED:
+            return "SPOT_PRICE_CAPACITY_OPTIMIZED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

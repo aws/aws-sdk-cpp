@@ -16,7 +16,8 @@ namespace Model
   enum class TrafficType
   {
     NOT_SET,
-    PHASES
+    PHASES,
+    STAIRS
   };
 
 namespace TrafficTypeMapper

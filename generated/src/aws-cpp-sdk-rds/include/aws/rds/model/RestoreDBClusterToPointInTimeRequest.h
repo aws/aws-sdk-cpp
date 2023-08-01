@@ -1907,6 +1907,47 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline const Aws::String& GetSourceDbClusterResourceId() const{ return m_sourceDbClusterResourceId; }
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline bool SourceDbClusterResourceIdHasBeenSet() const { return m_sourceDbClusterResourceIdHasBeenSet; }
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline void SetSourceDbClusterResourceId(const Aws::String& value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId = value; }
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline void SetSourceDbClusterResourceId(Aws::String&& value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId = std::move(value); }
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline void SetSourceDbClusterResourceId(const char* value) { m_sourceDbClusterResourceIdHasBeenSet = true; m_sourceDbClusterResourceId.assign(value); }
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(const Aws::String& value) { SetSourceDbClusterResourceId(value); return *this;}
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(Aws::String&& value) { SetSourceDbClusterResourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The resource ID of the source DB cluster from which to restore.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithSourceDbClusterResourceId(const char* value) { SetSourceDbClusterResourceId(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -1989,6 +2030,9 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    Aws::String m_sourceDbClusterResourceId;
+    bool m_sourceDbClusterResourceIdHasBeenSet = false;
   };
 
 } // namespace Model

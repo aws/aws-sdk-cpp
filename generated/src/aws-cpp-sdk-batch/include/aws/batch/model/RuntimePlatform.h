@@ -209,56 +209,56 @@ namespace Model
 
     /**
      * <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values
-     * are <code>X86_64</code> and <code> ARM64</code>.</p>  <p>This parameter
+     * are <code>X86_64</code> and <code>ARM64</code>.</p>  <p>This parameter
      * must be set to <code>X86_64</code> for Windows containers.</p> 
      */
     inline const Aws::String& GetCpuArchitecture() const{ return m_cpuArchitecture; }
 
     /**
      * <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values
-     * are <code>X86_64</code> and <code> ARM64</code>.</p>  <p>This parameter
+     * are <code>X86_64</code> and <code>ARM64</code>.</p>  <p>This parameter
      * must be set to <code>X86_64</code> for Windows containers.</p> 
      */
     inline bool CpuArchitectureHasBeenSet() const { return m_cpuArchitectureHasBeenSet; }
 
     /**
      * <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values
-     * are <code>X86_64</code> and <code> ARM64</code>.</p>  <p>This parameter
+     * are <code>X86_64</code> and <code>ARM64</code>.</p>  <p>This parameter
      * must be set to <code>X86_64</code> for Windows containers.</p> 
      */
     inline void SetCpuArchitecture(const Aws::String& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = value; }
 
     /**
      * <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values
-     * are <code>X86_64</code> and <code> ARM64</code>.</p>  <p>This parameter
+     * are <code>X86_64</code> and <code>ARM64</code>.</p>  <p>This parameter
      * must be set to <code>X86_64</code> for Windows containers.</p> 
      */
     inline void SetCpuArchitecture(Aws::String&& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = std::move(value); }
 
     /**
      * <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values
-     * are <code>X86_64</code> and <code> ARM64</code>.</p>  <p>This parameter
+     * are <code>X86_64</code> and <code>ARM64</code>.</p>  <p>This parameter
      * must be set to <code>X86_64</code> for Windows containers.</p> 
      */
     inline void SetCpuArchitecture(const char* value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture.assign(value); }
 
     /**
      * <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values
-     * are <code>X86_64</code> and <code> ARM64</code>.</p>  <p>This parameter
+     * are <code>X86_64</code> and <code>ARM64</code>.</p>  <p>This parameter
      * must be set to <code>X86_64</code> for Windows containers.</p> 
      */
     inline RuntimePlatform& WithCpuArchitecture(const Aws::String& value) { SetCpuArchitecture(value); return *this;}
 
     /**
      * <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values
-     * are <code>X86_64</code> and <code> ARM64</code>.</p>  <p>This parameter
+     * are <code>X86_64</code> and <code>ARM64</code>.</p>  <p>This parameter
      * must be set to <code>X86_64</code> for Windows containers.</p> 
      */
     inline RuntimePlatform& WithCpuArchitecture(Aws::String&& value) { SetCpuArchitecture(std::move(value)); return *this;}
 
     /**
      * <p>The vCPU architecture. The default value is <code>X86_64</code>. Valid values
-     * are <code>X86_64</code> and <code> ARM64</code>.</p>  <p>This parameter
+     * are <code>X86_64</code> and <code>ARM64</code>.</p>  <p>This parameter
      * must be set to <code>X86_64</code> for Windows containers.</p> 
      */
     inline RuntimePlatform& WithCpuArchitecture(const char* value) { SetCpuArchitecture(value); return *this;}

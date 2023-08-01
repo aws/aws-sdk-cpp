@@ -489,6 +489,42 @@ namespace Model
     inline UpdateInputDeviceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZone = std::move(value); }
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline UpdateInputDeviceResult& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline UpdateInputDeviceResult& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+
+    /**
+     * The Availability Zone associated with this input device.
+     */
+    inline UpdateInputDeviceResult& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -537,6 +573,8 @@ namespace Model
     InputDeviceUhdSettings m_uhdDeviceSettings;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_availabilityZone;
 
     Aws::String m_requestId;
   };
