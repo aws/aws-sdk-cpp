@@ -201,10 +201,37 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
             hashIterator.second->Update(reinterpret_cast<unsigned char*>(ptr), sizeToWrite);
         }
 
+        if (response->GetResponseBody().fail()) {
+            const auto& ref = response->GetResponseBody();
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Response output stream in bad state (eof: "
+                    << ref.eof() << ", bad: " << ref.bad() << ")");
+            return 0;
+        }
+
+        size_t cur = response->GetResponseBody().tellp();
+        if (response->GetResponseBody().fail()) {
+            const auto& ref = response->GetResponseBody();
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Unable to query response output position (eof: "
+                    << ref.eof() << ", bad: " << ref.bad() << ")");
+            return 0;
+        }
+
         response->GetResponseBody().write(ptr, static_cast<std::streamsize>(sizeToWrite));
+        if (response->GetResponseBody().fail()) {
+            const auto& ref = response->GetResponseBody();
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to write " << size << " / " << sizeToWrite << " B response"
+                << " at " << cur << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
+            return 0;
+        }
         if (context->m_request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
             response->GetResponseBody().flush();
+            if (response->GetResponseBody().fail()) {
+                const auto& ref = response->GetResponseBody();
+                AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to flush event response (eof: "
+                    << ref.eof() << ", bad: " << ref.bad() << ")");
+                return 0;
+            }
         }
         auto& receivedHandler = context->m_request->GetDataReceivedEventHandler();
         if (receivedHandler)
@@ -860,6 +887,14 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         }
         //go ahead and flush the response body stream
         response->GetResponseBody().flush();
+        if (response->GetResponseBody().fail()) {
+            const auto& ref = response->GetResponseBody();
+            Aws::StringStream ss;
+            ss << "Failed to flush response stream (eof: " << ref.eof() << ", bad: " << ref.bad() << ")";
+            response->SetClientErrorType(CoreErrors::INTERNAL_FAILURE);
+            response->SetClientErrorMessage(ss.str());
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, ss.str());
+        }
         request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::RequestLatency), (DateTime::Now() - startTransmissionTime).count());
     }
 

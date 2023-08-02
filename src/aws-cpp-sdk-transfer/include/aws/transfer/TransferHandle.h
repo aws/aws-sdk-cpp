@@ -360,7 +360,11 @@ namespace Aws
 
             const CreateDownloadStreamCallback& GetCreateDownloadStreamFunction() const { return m_createDownloadStreamFn; }
 
-            void WritePartToDownloadStream(Aws::IOStream* partStream, uint64_t writeOffset);
+            /**
+             * Write @partStream to the configured output (f)stream.
+             * Return empty string on success, string with error message on error.
+             */
+            Aws::String WritePartToDownloadStream(Aws::IOStream* partStream, uint64_t writeOffset);
 
             void ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig);
 
