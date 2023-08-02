@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
+#include <aws/resiliencehub/model/ExcludeRecommendationReason.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -59,83 +60,135 @@ namespace Model
 
 
     /**
-     * <p>The resource identifier.</p>
+     * <p>Indicates the reason for excluding an operational recommendation.</p>
+     */
+    inline const ExcludeRecommendationReason& GetExcludeReason() const{ return m_excludeReason; }
+
+    /**
+     * <p>Indicates the reason for excluding an operational recommendation.</p>
+     */
+    inline bool ExcludeReasonHasBeenSet() const { return m_excludeReasonHasBeenSet; }
+
+    /**
+     * <p>Indicates the reason for excluding an operational recommendation.</p>
+     */
+    inline void SetExcludeReason(const ExcludeRecommendationReason& value) { m_excludeReasonHasBeenSet = true; m_excludeReason = value; }
+
+    /**
+     * <p>Indicates the reason for excluding an operational recommendation.</p>
+     */
+    inline void SetExcludeReason(ExcludeRecommendationReason&& value) { m_excludeReasonHasBeenSet = true; m_excludeReason = std::move(value); }
+
+    /**
+     * <p>Indicates the reason for excluding an operational recommendation.</p>
+     */
+    inline RecommendationItem& WithExcludeReason(const ExcludeRecommendationReason& value) { SetExcludeReason(value); return *this;}
+
+    /**
+     * <p>Indicates the reason for excluding an operational recommendation.</p>
+     */
+    inline RecommendationItem& WithExcludeReason(ExcludeRecommendationReason&& value) { SetExcludeReason(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates if an operational recommendation item is excluded.</p>
+     */
+    inline bool GetExcluded() const{ return m_excluded; }
+
+    /**
+     * <p>Indicates if an operational recommendation item is excluded.</p>
+     */
+    inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
+
+    /**
+     * <p>Indicates if an operational recommendation item is excluded.</p>
+     */
+    inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
+
+    /**
+     * <p>Indicates if an operational recommendation item is excluded.</p>
+     */
+    inline RecommendationItem& WithExcluded(bool value) { SetExcluded(value); return *this;}
+
+
+    /**
+     * <p>Identifier of the resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The resource identifier.</p>
+     * <p>Identifier of the resource.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The resource identifier.</p>
+     * <p>Identifier of the resource.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The resource identifier.</p>
+     * <p>Identifier of the resource.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The resource identifier.</p>
+     * <p>Identifier of the resource.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The resource identifier.</p>
+     * <p>Identifier of the resource.</p>
      */
     inline RecommendationItem& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The resource identifier.</p>
+     * <p>Identifier of the resource.</p>
      */
     inline RecommendationItem& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The resource identifier.</p>
+     * <p>Identifier of the resource.</p>
      */
     inline RecommendationItem& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>The target account identifier.</p>
+     * <p>Identifier of the target account.</p>
      */
     inline const Aws::String& GetTargetAccountId() const{ return m_targetAccountId; }
 
     /**
-     * <p>The target account identifier.</p>
+     * <p>Identifier of the target account.</p>
      */
     inline bool TargetAccountIdHasBeenSet() const { return m_targetAccountIdHasBeenSet; }
 
     /**
-     * <p>The target account identifier.</p>
+     * <p>Identifier of the target account.</p>
      */
     inline void SetTargetAccountId(const Aws::String& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = value; }
 
     /**
-     * <p>The target account identifier.</p>
+     * <p>Identifier of the target account.</p>
      */
     inline void SetTargetAccountId(Aws::String&& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = std::move(value); }
 
     /**
-     * <p>The target account identifier.</p>
+     * <p>Identifier of the target account.</p>
      */
     inline void SetTargetAccountId(const char* value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId.assign(value); }
 
     /**
-     * <p>The target account identifier.</p>
+     * <p>Identifier of the target account.</p>
      */
     inline RecommendationItem& WithTargetAccountId(const Aws::String& value) { SetTargetAccountId(value); return *this;}
 
     /**
-     * <p>The target account identifier.</p>
+     * <p>Identifier of the target account.</p>
      */
     inline RecommendationItem& WithTargetAccountId(Aws::String&& value) { SetTargetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The target account identifier.</p>
+     * <p>Identifier of the target account.</p>
      */
     inline RecommendationItem& WithTargetAccountId(const char* value) { SetTargetAccountId(value); return *this;}
 
@@ -184,6 +237,12 @@ namespace Model
 
     bool m_alreadyImplemented;
     bool m_alreadyImplementedHasBeenSet = false;
+
+    ExcludeRecommendationReason m_excludeReason;
+    bool m_excludeReasonHasBeenSet = false;
+
+    bool m_excluded;
+    bool m_excludedHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;

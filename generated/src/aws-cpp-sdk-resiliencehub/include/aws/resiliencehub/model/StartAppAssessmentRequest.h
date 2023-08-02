@@ -35,8 +35,8 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -45,8 +45,8 @@ namespace Model
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -55,8 +55,8 @@ namespace Model
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -65,8 +65,8 @@ namespace Model
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -75,8 +75,8 @@ namespace Model
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -85,8 +85,8 @@ namespace Model
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -95,8 +95,8 @@ namespace Model
     inline StartAppAssessmentRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -105,8 +105,8 @@ namespace Model
     inline StartAppAssessmentRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -255,80 +255,80 @@ namespace Model
 
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline StartAppAssessmentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline StartAppAssessmentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline StartAppAssessmentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline StartAppAssessmentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline StartAppAssessmentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline StartAppAssessmentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline StartAppAssessmentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline StartAppAssessmentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline StartAppAssessmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

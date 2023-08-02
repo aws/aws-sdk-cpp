@@ -479,9 +479,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline const Aws::String& GetTemporaryPassword() const{ return m_temporaryPassword; }
 
@@ -493,9 +493,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline bool TemporaryPasswordHasBeenSet() const { return m_temporaryPasswordHasBeenSet; }
 
@@ -507,9 +507,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline void SetTemporaryPassword(const Aws::String& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = value; }
 
@@ -521,9 +521,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline void SetTemporaryPassword(Aws::String&& value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword = std::move(value); }
 
@@ -535,9 +535,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline void SetTemporaryPassword(const char* value) { m_temporaryPasswordHasBeenSet = true; m_temporaryPassword.assign(value); }
 
@@ -549,9 +549,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline AdminCreateUserRequest& WithTemporaryPassword(const Aws::String& value) { SetTemporaryPassword(value); return *this;}
 
@@ -563,9 +563,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline AdminCreateUserRequest& WithTemporaryPassword(Aws::String&& value) { SetTemporaryPassword(std::move(value)); return *this;}
 
@@ -577,9 +577,9 @@ namespace Model
      * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
      * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
      * temporary password can only be used until the user account expiration limit that
-     * you specified when you created the user pool. To reset the account after that
-     * time limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
+     * you set for your user pool. To reset the account after that time limit, you must
+     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
+     * <code>MessageAction</code> parameter.</p>
      */
     inline AdminCreateUserRequest& WithTemporaryPassword(const char* value) { SetTemporaryPassword(value); return *this;}
 

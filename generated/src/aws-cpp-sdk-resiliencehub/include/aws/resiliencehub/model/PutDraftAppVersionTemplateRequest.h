@@ -33,8 +33,8 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -43,8 +43,8 @@ namespace Model
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -53,8 +53,8 @@ namespace Model
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -63,8 +63,8 @@ namespace Model
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -73,8 +73,8 @@ namespace Model
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -83,8 +83,8 @@ namespace Model
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -93,8 +93,8 @@ namespace Model
     inline PutDraftAppVersionTemplateRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -103,8 +103,8 @@ namespace Model
     inline PutDraftAppVersionTemplateRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -122,19 +122,19 @@ namespace Model
      * that must be included in the Resilience Hub application.</p> <p>Type: Array</p>
      *  <p>Don't add the resources that you want to exclude.</p>  <p>Each
      * <code>resources</code> array item includes the following fields:</p> <ul> <li>
-     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>The logical identifier of
-     * the resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code>
-     * object includes the following fields:</p> <ul> <li> <p> <code>identifier</code>
-     * </p> <p>The identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
+     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>Logical identifier of the
+     * resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code> object
+     * includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p>
+     * <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
      * <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceGroupName</code> </p> <p>The name of the resource group this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> <li> <p> <i> <code>type</code> </i> </p> <p>The
      * type of resource.</p> <p>Type: string</p> </li> <li> <p> <i> <code>name</code>
      * </i> </p> <p>The name of the resource.</p> <p>Type: String</p> </li> <li> <p>
@@ -147,14 +147,13 @@ namespace Model
      * region and one associated account.</p> <p>Key: <code>"failover-regions"</code>
      * </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;",
      * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>  </li> </ul>
-     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>The list of
-     * Application Components that this resource belongs to. If an Application
-     * Component is not part of the Resilience Hub application, it will be added.</p>
-     * <p>Type: Array</p> <p>Each <code>appComponents</code> array item includes the
-     * following fields:</p> <ul> <li> <p> <code>name</code> </p> <p>The name of the
-     * Application Component.</p> <p>Type: String</p> </li> <li> <p> <code>type</code>
-     * </p> <p>The type of Application Component. For more information about the types
-     * of Application Component, see <a
+     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>List of Application
+     * Components that this resource belongs to. If an Application Component is not
+     * part of the Resilience Hub application, it will be added.</p> <p>Type: Array</p>
+     * <p>Each <code>appComponents</code> array item includes the following fields:</p>
+     * <ul> <li> <p> <code>name</code> </p> <p>Name of the Application Component.</p>
+     * <p>Type: String</p> </li> <li> <p> <code>type</code> </p> <p>Type of Application
+     * Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceNames</code> </p> <p>The list of included resources that are
@@ -173,25 +172,25 @@ namespace Model
      * logical resource identifiers to be excluded from the application.</p> <p>Type:
      * Array</p>  <p>Don't add the resources that you want to include.</p>
      *  <p>Each <code>excludedResources</code> array item includes the following
-     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p> <p>The
-     * logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
+     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p>
+     * <p>Logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
      * configure only one of the following fields:</p> <ul> <li> <p>
      * <code>logicalStackName</code> </p> </li> <li> <p> <code>resourceGroupName</code>
      * </p> </li> <li> <p> <code>terraformSourceName</code> </p> </li> <li> <p>
      * <code>eksSourceName</code> </p> </li> </ul>  <p>Each
      * <code>logicalResourceIds</code> object includes the following fields:</p> <ul>
-     * <li> <p> <code>identifier</code> </p> <p>The identifier of the resource.</p>
+     * <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p>
      * <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The
      * name of the CloudFormation stack this resource belongs to.</p> <p>Type:
      * String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the
      * resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> </ul> </li> <li> <p> <b> <code>version</code> </b>
-     * </p> <p>The Resilience Hub application version.</p> </li> <li> <p>
+     * </p> <p>Resilience Hub application version.</p> </li> <li> <p>
      * <code>additionalInfo</code> </p> <p>Additional configuration parameters for an
      * Resilience Hub application. If you want to implement <code>additionalInfo</code>
      * through the Resilience Hub console rather than using an API call, see <a
@@ -213,19 +212,19 @@ namespace Model
      * that must be included in the Resilience Hub application.</p> <p>Type: Array</p>
      *  <p>Don't add the resources that you want to exclude.</p>  <p>Each
      * <code>resources</code> array item includes the following fields:</p> <ul> <li>
-     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>The logical identifier of
-     * the resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code>
-     * object includes the following fields:</p> <ul> <li> <p> <code>identifier</code>
-     * </p> <p>The identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
+     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>Logical identifier of the
+     * resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code> object
+     * includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p>
+     * <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
      * <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceGroupName</code> </p> <p>The name of the resource group this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> <li> <p> <i> <code>type</code> </i> </p> <p>The
      * type of resource.</p> <p>Type: string</p> </li> <li> <p> <i> <code>name</code>
      * </i> </p> <p>The name of the resource.</p> <p>Type: String</p> </li> <li> <p>
@@ -238,14 +237,13 @@ namespace Model
      * region and one associated account.</p> <p>Key: <code>"failover-regions"</code>
      * </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;",
      * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>  </li> </ul>
-     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>The list of
-     * Application Components that this resource belongs to. If an Application
-     * Component is not part of the Resilience Hub application, it will be added.</p>
-     * <p>Type: Array</p> <p>Each <code>appComponents</code> array item includes the
-     * following fields:</p> <ul> <li> <p> <code>name</code> </p> <p>The name of the
-     * Application Component.</p> <p>Type: String</p> </li> <li> <p> <code>type</code>
-     * </p> <p>The type of Application Component. For more information about the types
-     * of Application Component, see <a
+     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>List of Application
+     * Components that this resource belongs to. If an Application Component is not
+     * part of the Resilience Hub application, it will be added.</p> <p>Type: Array</p>
+     * <p>Each <code>appComponents</code> array item includes the following fields:</p>
+     * <ul> <li> <p> <code>name</code> </p> <p>Name of the Application Component.</p>
+     * <p>Type: String</p> </li> <li> <p> <code>type</code> </p> <p>Type of Application
+     * Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceNames</code> </p> <p>The list of included resources that are
@@ -264,25 +262,25 @@ namespace Model
      * logical resource identifiers to be excluded from the application.</p> <p>Type:
      * Array</p>  <p>Don't add the resources that you want to include.</p>
      *  <p>Each <code>excludedResources</code> array item includes the following
-     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p> <p>The
-     * logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
+     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p>
+     * <p>Logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
      * configure only one of the following fields:</p> <ul> <li> <p>
      * <code>logicalStackName</code> </p> </li> <li> <p> <code>resourceGroupName</code>
      * </p> </li> <li> <p> <code>terraformSourceName</code> </p> </li> <li> <p>
      * <code>eksSourceName</code> </p> </li> </ul>  <p>Each
      * <code>logicalResourceIds</code> object includes the following fields:</p> <ul>
-     * <li> <p> <code>identifier</code> </p> <p>The identifier of the resource.</p>
+     * <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p>
      * <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The
      * name of the CloudFormation stack this resource belongs to.</p> <p>Type:
      * String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the
      * resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> </ul> </li> <li> <p> <b> <code>version</code> </b>
-     * </p> <p>The Resilience Hub application version.</p> </li> <li> <p>
+     * </p> <p>Resilience Hub application version.</p> </li> <li> <p>
      * <code>additionalInfo</code> </p> <p>Additional configuration parameters for an
      * Resilience Hub application. If you want to implement <code>additionalInfo</code>
      * through the Resilience Hub console rather than using an API call, see <a
@@ -304,19 +302,19 @@ namespace Model
      * that must be included in the Resilience Hub application.</p> <p>Type: Array</p>
      *  <p>Don't add the resources that you want to exclude.</p>  <p>Each
      * <code>resources</code> array item includes the following fields:</p> <ul> <li>
-     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>The logical identifier of
-     * the resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code>
-     * object includes the following fields:</p> <ul> <li> <p> <code>identifier</code>
-     * </p> <p>The identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
+     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>Logical identifier of the
+     * resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code> object
+     * includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p>
+     * <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
      * <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceGroupName</code> </p> <p>The name of the resource group this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> <li> <p> <i> <code>type</code> </i> </p> <p>The
      * type of resource.</p> <p>Type: string</p> </li> <li> <p> <i> <code>name</code>
      * </i> </p> <p>The name of the resource.</p> <p>Type: String</p> </li> <li> <p>
@@ -329,14 +327,13 @@ namespace Model
      * region and one associated account.</p> <p>Key: <code>"failover-regions"</code>
      * </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;",
      * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>  </li> </ul>
-     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>The list of
-     * Application Components that this resource belongs to. If an Application
-     * Component is not part of the Resilience Hub application, it will be added.</p>
-     * <p>Type: Array</p> <p>Each <code>appComponents</code> array item includes the
-     * following fields:</p> <ul> <li> <p> <code>name</code> </p> <p>The name of the
-     * Application Component.</p> <p>Type: String</p> </li> <li> <p> <code>type</code>
-     * </p> <p>The type of Application Component. For more information about the types
-     * of Application Component, see <a
+     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>List of Application
+     * Components that this resource belongs to. If an Application Component is not
+     * part of the Resilience Hub application, it will be added.</p> <p>Type: Array</p>
+     * <p>Each <code>appComponents</code> array item includes the following fields:</p>
+     * <ul> <li> <p> <code>name</code> </p> <p>Name of the Application Component.</p>
+     * <p>Type: String</p> </li> <li> <p> <code>type</code> </p> <p>Type of Application
+     * Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceNames</code> </p> <p>The list of included resources that are
@@ -355,25 +352,25 @@ namespace Model
      * logical resource identifiers to be excluded from the application.</p> <p>Type:
      * Array</p>  <p>Don't add the resources that you want to include.</p>
      *  <p>Each <code>excludedResources</code> array item includes the following
-     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p> <p>The
-     * logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
+     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p>
+     * <p>Logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
      * configure only one of the following fields:</p> <ul> <li> <p>
      * <code>logicalStackName</code> </p> </li> <li> <p> <code>resourceGroupName</code>
      * </p> </li> <li> <p> <code>terraformSourceName</code> </p> </li> <li> <p>
      * <code>eksSourceName</code> </p> </li> </ul>  <p>Each
      * <code>logicalResourceIds</code> object includes the following fields:</p> <ul>
-     * <li> <p> <code>identifier</code> </p> <p>The identifier of the resource.</p>
+     * <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p>
      * <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The
      * name of the CloudFormation stack this resource belongs to.</p> <p>Type:
      * String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the
      * resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> </ul> </li> <li> <p> <b> <code>version</code> </b>
-     * </p> <p>The Resilience Hub application version.</p> </li> <li> <p>
+     * </p> <p>Resilience Hub application version.</p> </li> <li> <p>
      * <code>additionalInfo</code> </p> <p>Additional configuration parameters for an
      * Resilience Hub application. If you want to implement <code>additionalInfo</code>
      * through the Resilience Hub console rather than using an API call, see <a
@@ -395,19 +392,19 @@ namespace Model
      * that must be included in the Resilience Hub application.</p> <p>Type: Array</p>
      *  <p>Don't add the resources that you want to exclude.</p>  <p>Each
      * <code>resources</code> array item includes the following fields:</p> <ul> <li>
-     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>The logical identifier of
-     * the resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code>
-     * object includes the following fields:</p> <ul> <li> <p> <code>identifier</code>
-     * </p> <p>The identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
+     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>Logical identifier of the
+     * resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code> object
+     * includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p>
+     * <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
      * <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceGroupName</code> </p> <p>The name of the resource group this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> <li> <p> <i> <code>type</code> </i> </p> <p>The
      * type of resource.</p> <p>Type: string</p> </li> <li> <p> <i> <code>name</code>
      * </i> </p> <p>The name of the resource.</p> <p>Type: String</p> </li> <li> <p>
@@ -420,14 +417,13 @@ namespace Model
      * region and one associated account.</p> <p>Key: <code>"failover-regions"</code>
      * </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;",
      * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>  </li> </ul>
-     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>The list of
-     * Application Components that this resource belongs to. If an Application
-     * Component is not part of the Resilience Hub application, it will be added.</p>
-     * <p>Type: Array</p> <p>Each <code>appComponents</code> array item includes the
-     * following fields:</p> <ul> <li> <p> <code>name</code> </p> <p>The name of the
-     * Application Component.</p> <p>Type: String</p> </li> <li> <p> <code>type</code>
-     * </p> <p>The type of Application Component. For more information about the types
-     * of Application Component, see <a
+     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>List of Application
+     * Components that this resource belongs to. If an Application Component is not
+     * part of the Resilience Hub application, it will be added.</p> <p>Type: Array</p>
+     * <p>Each <code>appComponents</code> array item includes the following fields:</p>
+     * <ul> <li> <p> <code>name</code> </p> <p>Name of the Application Component.</p>
+     * <p>Type: String</p> </li> <li> <p> <code>type</code> </p> <p>Type of Application
+     * Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceNames</code> </p> <p>The list of included resources that are
@@ -446,25 +442,25 @@ namespace Model
      * logical resource identifiers to be excluded from the application.</p> <p>Type:
      * Array</p>  <p>Don't add the resources that you want to include.</p>
      *  <p>Each <code>excludedResources</code> array item includes the following
-     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p> <p>The
-     * logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
+     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p>
+     * <p>Logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
      * configure only one of the following fields:</p> <ul> <li> <p>
      * <code>logicalStackName</code> </p> </li> <li> <p> <code>resourceGroupName</code>
      * </p> </li> <li> <p> <code>terraformSourceName</code> </p> </li> <li> <p>
      * <code>eksSourceName</code> </p> </li> </ul>  <p>Each
      * <code>logicalResourceIds</code> object includes the following fields:</p> <ul>
-     * <li> <p> <code>identifier</code> </p> <p>The identifier of the resource.</p>
+     * <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p>
      * <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The
      * name of the CloudFormation stack this resource belongs to.</p> <p>Type:
      * String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the
      * resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> </ul> </li> <li> <p> <b> <code>version</code> </b>
-     * </p> <p>The Resilience Hub application version.</p> </li> <li> <p>
+     * </p> <p>Resilience Hub application version.</p> </li> <li> <p>
      * <code>additionalInfo</code> </p> <p>Additional configuration parameters for an
      * Resilience Hub application. If you want to implement <code>additionalInfo</code>
      * through the Resilience Hub console rather than using an API call, see <a
@@ -486,19 +482,19 @@ namespace Model
      * that must be included in the Resilience Hub application.</p> <p>Type: Array</p>
      *  <p>Don't add the resources that you want to exclude.</p>  <p>Each
      * <code>resources</code> array item includes the following fields:</p> <ul> <li>
-     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>The logical identifier of
-     * the resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code>
-     * object includes the following fields:</p> <ul> <li> <p> <code>identifier</code>
-     * </p> <p>The identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
+     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>Logical identifier of the
+     * resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code> object
+     * includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p>
+     * <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
      * <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceGroupName</code> </p> <p>The name of the resource group this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> <li> <p> <i> <code>type</code> </i> </p> <p>The
      * type of resource.</p> <p>Type: string</p> </li> <li> <p> <i> <code>name</code>
      * </i> </p> <p>The name of the resource.</p> <p>Type: String</p> </li> <li> <p>
@@ -511,14 +507,13 @@ namespace Model
      * region and one associated account.</p> <p>Key: <code>"failover-regions"</code>
      * </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;",
      * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>  </li> </ul>
-     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>The list of
-     * Application Components that this resource belongs to. If an Application
-     * Component is not part of the Resilience Hub application, it will be added.</p>
-     * <p>Type: Array</p> <p>Each <code>appComponents</code> array item includes the
-     * following fields:</p> <ul> <li> <p> <code>name</code> </p> <p>The name of the
-     * Application Component.</p> <p>Type: String</p> </li> <li> <p> <code>type</code>
-     * </p> <p>The type of Application Component. For more information about the types
-     * of Application Component, see <a
+     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>List of Application
+     * Components that this resource belongs to. If an Application Component is not
+     * part of the Resilience Hub application, it will be added.</p> <p>Type: Array</p>
+     * <p>Each <code>appComponents</code> array item includes the following fields:</p>
+     * <ul> <li> <p> <code>name</code> </p> <p>Name of the Application Component.</p>
+     * <p>Type: String</p> </li> <li> <p> <code>type</code> </p> <p>Type of Application
+     * Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceNames</code> </p> <p>The list of included resources that are
@@ -537,25 +532,25 @@ namespace Model
      * logical resource identifiers to be excluded from the application.</p> <p>Type:
      * Array</p>  <p>Don't add the resources that you want to include.</p>
      *  <p>Each <code>excludedResources</code> array item includes the following
-     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p> <p>The
-     * logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
+     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p>
+     * <p>Logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
      * configure only one of the following fields:</p> <ul> <li> <p>
      * <code>logicalStackName</code> </p> </li> <li> <p> <code>resourceGroupName</code>
      * </p> </li> <li> <p> <code>terraformSourceName</code> </p> </li> <li> <p>
      * <code>eksSourceName</code> </p> </li> </ul>  <p>Each
      * <code>logicalResourceIds</code> object includes the following fields:</p> <ul>
-     * <li> <p> <code>identifier</code> </p> <p>The identifier of the resource.</p>
+     * <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p>
      * <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The
      * name of the CloudFormation stack this resource belongs to.</p> <p>Type:
      * String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the
      * resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> </ul> </li> <li> <p> <b> <code>version</code> </b>
-     * </p> <p>The Resilience Hub application version.</p> </li> <li> <p>
+     * </p> <p>Resilience Hub application version.</p> </li> <li> <p>
      * <code>additionalInfo</code> </p> <p>Additional configuration parameters for an
      * Resilience Hub application. If you want to implement <code>additionalInfo</code>
      * through the Resilience Hub console rather than using an API call, see <a
@@ -577,19 +572,19 @@ namespace Model
      * that must be included in the Resilience Hub application.</p> <p>Type: Array</p>
      *  <p>Don't add the resources that you want to exclude.</p>  <p>Each
      * <code>resources</code> array item includes the following fields:</p> <ul> <li>
-     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>The logical identifier of
-     * the resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code>
-     * object includes the following fields:</p> <ul> <li> <p> <code>identifier</code>
-     * </p> <p>The identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
+     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>Logical identifier of the
+     * resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code> object
+     * includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p>
+     * <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
      * <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceGroupName</code> </p> <p>The name of the resource group this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> <li> <p> <i> <code>type</code> </i> </p> <p>The
      * type of resource.</p> <p>Type: string</p> </li> <li> <p> <i> <code>name</code>
      * </i> </p> <p>The name of the resource.</p> <p>Type: String</p> </li> <li> <p>
@@ -602,14 +597,13 @@ namespace Model
      * region and one associated account.</p> <p>Key: <code>"failover-regions"</code>
      * </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;",
      * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>  </li> </ul>
-     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>The list of
-     * Application Components that this resource belongs to. If an Application
-     * Component is not part of the Resilience Hub application, it will be added.</p>
-     * <p>Type: Array</p> <p>Each <code>appComponents</code> array item includes the
-     * following fields:</p> <ul> <li> <p> <code>name</code> </p> <p>The name of the
-     * Application Component.</p> <p>Type: String</p> </li> <li> <p> <code>type</code>
-     * </p> <p>The type of Application Component. For more information about the types
-     * of Application Component, see <a
+     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>List of Application
+     * Components that this resource belongs to. If an Application Component is not
+     * part of the Resilience Hub application, it will be added.</p> <p>Type: Array</p>
+     * <p>Each <code>appComponents</code> array item includes the following fields:</p>
+     * <ul> <li> <p> <code>name</code> </p> <p>Name of the Application Component.</p>
+     * <p>Type: String</p> </li> <li> <p> <code>type</code> </p> <p>Type of Application
+     * Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceNames</code> </p> <p>The list of included resources that are
@@ -628,25 +622,25 @@ namespace Model
      * logical resource identifiers to be excluded from the application.</p> <p>Type:
      * Array</p>  <p>Don't add the resources that you want to include.</p>
      *  <p>Each <code>excludedResources</code> array item includes the following
-     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p> <p>The
-     * logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
+     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p>
+     * <p>Logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
      * configure only one of the following fields:</p> <ul> <li> <p>
      * <code>logicalStackName</code> </p> </li> <li> <p> <code>resourceGroupName</code>
      * </p> </li> <li> <p> <code>terraformSourceName</code> </p> </li> <li> <p>
      * <code>eksSourceName</code> </p> </li> </ul>  <p>Each
      * <code>logicalResourceIds</code> object includes the following fields:</p> <ul>
-     * <li> <p> <code>identifier</code> </p> <p>The identifier of the resource.</p>
+     * <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p>
      * <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The
      * name of the CloudFormation stack this resource belongs to.</p> <p>Type:
      * String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the
      * resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> </ul> </li> <li> <p> <b> <code>version</code> </b>
-     * </p> <p>The Resilience Hub application version.</p> </li> <li> <p>
+     * </p> <p>Resilience Hub application version.</p> </li> <li> <p>
      * <code>additionalInfo</code> </p> <p>Additional configuration parameters for an
      * Resilience Hub application. If you want to implement <code>additionalInfo</code>
      * through the Resilience Hub console rather than using an API call, see <a
@@ -668,19 +662,19 @@ namespace Model
      * that must be included in the Resilience Hub application.</p> <p>Type: Array</p>
      *  <p>Don't add the resources that you want to exclude.</p>  <p>Each
      * <code>resources</code> array item includes the following fields:</p> <ul> <li>
-     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>The logical identifier of
-     * the resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code>
-     * object includes the following fields:</p> <ul> <li> <p> <code>identifier</code>
-     * </p> <p>The identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
+     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>Logical identifier of the
+     * resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code> object
+     * includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p>
+     * <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
      * <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceGroupName</code> </p> <p>The name of the resource group this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> <li> <p> <i> <code>type</code> </i> </p> <p>The
      * type of resource.</p> <p>Type: string</p> </li> <li> <p> <i> <code>name</code>
      * </i> </p> <p>The name of the resource.</p> <p>Type: String</p> </li> <li> <p>
@@ -693,14 +687,13 @@ namespace Model
      * region and one associated account.</p> <p>Key: <code>"failover-regions"</code>
      * </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;",
      * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>  </li> </ul>
-     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>The list of
-     * Application Components that this resource belongs to. If an Application
-     * Component is not part of the Resilience Hub application, it will be added.</p>
-     * <p>Type: Array</p> <p>Each <code>appComponents</code> array item includes the
-     * following fields:</p> <ul> <li> <p> <code>name</code> </p> <p>The name of the
-     * Application Component.</p> <p>Type: String</p> </li> <li> <p> <code>type</code>
-     * </p> <p>The type of Application Component. For more information about the types
-     * of Application Component, see <a
+     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>List of Application
+     * Components that this resource belongs to. If an Application Component is not
+     * part of the Resilience Hub application, it will be added.</p> <p>Type: Array</p>
+     * <p>Each <code>appComponents</code> array item includes the following fields:</p>
+     * <ul> <li> <p> <code>name</code> </p> <p>Name of the Application Component.</p>
+     * <p>Type: String</p> </li> <li> <p> <code>type</code> </p> <p>Type of Application
+     * Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceNames</code> </p> <p>The list of included resources that are
@@ -719,25 +712,25 @@ namespace Model
      * logical resource identifiers to be excluded from the application.</p> <p>Type:
      * Array</p>  <p>Don't add the resources that you want to include.</p>
      *  <p>Each <code>excludedResources</code> array item includes the following
-     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p> <p>The
-     * logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
+     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p>
+     * <p>Logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
      * configure only one of the following fields:</p> <ul> <li> <p>
      * <code>logicalStackName</code> </p> </li> <li> <p> <code>resourceGroupName</code>
      * </p> </li> <li> <p> <code>terraformSourceName</code> </p> </li> <li> <p>
      * <code>eksSourceName</code> </p> </li> </ul>  <p>Each
      * <code>logicalResourceIds</code> object includes the following fields:</p> <ul>
-     * <li> <p> <code>identifier</code> </p> <p>The identifier of the resource.</p>
+     * <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p>
      * <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The
      * name of the CloudFormation stack this resource belongs to.</p> <p>Type:
      * String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the
      * resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> </ul> </li> <li> <p> <b> <code>version</code> </b>
-     * </p> <p>The Resilience Hub application version.</p> </li> <li> <p>
+     * </p> <p>Resilience Hub application version.</p> </li> <li> <p>
      * <code>additionalInfo</code> </p> <p>Additional configuration parameters for an
      * Resilience Hub application. If you want to implement <code>additionalInfo</code>
      * through the Resilience Hub console rather than using an API call, see <a
@@ -759,19 +752,19 @@ namespace Model
      * that must be included in the Resilience Hub application.</p> <p>Type: Array</p>
      *  <p>Don't add the resources that you want to exclude.</p>  <p>Each
      * <code>resources</code> array item includes the following fields:</p> <ul> <li>
-     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>The logical identifier of
-     * the resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code>
-     * object includes the following fields:</p> <ul> <li> <p> <code>identifier</code>
-     * </p> <p>The identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
+     * <p> <i> <code>logicalResourceId</code> </i> </p> <p>Logical identifier of the
+     * resource.</p> <p>Type: Object</p> <p>Each <code>logicalResourceId</code> object
+     * includes the following fields:</p> <ul> <li> <p> <code>identifier</code> </p>
+     * <p>Identifier of the resource.</p> <p>Type: String</p> </li> <li> <p>
      * <code>logicalStackName</code> </p> <p>The name of the CloudFormation stack this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceGroupName</code> </p> <p>The name of the resource group this
      * resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> <li> <p> <i> <code>type</code> </i> </p> <p>The
      * type of resource.</p> <p>Type: string</p> </li> <li> <p> <i> <code>name</code>
      * </i> </p> <p>The name of the resource.</p> <p>Type: String</p> </li> <li> <p>
@@ -784,14 +777,13 @@ namespace Model
      * region and one associated account.</p> <p>Key: <code>"failover-regions"</code>
      * </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;",
      * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>  </li> </ul>
-     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>The list of
-     * Application Components that this resource belongs to. If an Application
-     * Component is not part of the Resilience Hub application, it will be added.</p>
-     * <p>Type: Array</p> <p>Each <code>appComponents</code> array item includes the
-     * following fields:</p> <ul> <li> <p> <code>name</code> </p> <p>The name of the
-     * Application Component.</p> <p>Type: String</p> </li> <li> <p> <code>type</code>
-     * </p> <p>The type of Application Component. For more information about the types
-     * of Application Component, see <a
+     * </li> <li> <p> <b> <code>appComponents</code> </b> </p> <p>List of Application
+     * Components that this resource belongs to. If an Application Component is not
+     * part of the Resilience Hub application, it will be added.</p> <p>Type: Array</p>
+     * <p>Each <code>appComponents</code> array item includes the following fields:</p>
+     * <ul> <li> <p> <code>name</code> </p> <p>Name of the Application Component.</p>
+     * <p>Type: String</p> </li> <li> <p> <code>type</code> </p> <p>Type of Application
+     * Component. For more information about the types of Application Component, see <a
      * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/AppComponent.grouping.html">Grouping
      * resources in an AppComponent</a>.</p> <p>Type: String</p> </li> <li> <p>
      * <code>resourceNames</code> </p> <p>The list of included resources that are
@@ -810,25 +802,25 @@ namespace Model
      * logical resource identifiers to be excluded from the application.</p> <p>Type:
      * Array</p>  <p>Don't add the resources that you want to include.</p>
      *  <p>Each <code>excludedResources</code> array item includes the following
-     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p> <p>The
-     * logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
+     * fields:</p> <ul> <li> <p> <i> <code>logicalResourceIds</code> </i> </p>
+     * <p>Logical identifier of the resource.</p> <p>Type: Object</p>  <p>You can
      * configure only one of the following fields:</p> <ul> <li> <p>
      * <code>logicalStackName</code> </p> </li> <li> <p> <code>resourceGroupName</code>
      * </p> </li> <li> <p> <code>terraformSourceName</code> </p> </li> <li> <p>
      * <code>eksSourceName</code> </p> </li> </ul>  <p>Each
      * <code>logicalResourceIds</code> object includes the following fields:</p> <ul>
-     * <li> <p> <code>identifier</code> </p> <p>The identifier of the resource.</p>
+     * <li> <p> <code>identifier</code> </p> <p>Identifier of the resource.</p>
      * <p>Type: String</p> </li> <li> <p> <code>logicalStackName</code> </p> <p>The
      * name of the CloudFormation stack this resource belongs to.</p> <p>Type:
      * String</p> </li> <li> <p> <code>resourceGroupName</code> </p> <p>The name of the
      * resource group this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
      * <code>terraformSourceName</code> </p> <p>The name of the Terraform S3 state file
      * this resource belongs to.</p> <p>Type: String</p> </li> <li> <p>
-     * <code>eksSourceName</code> </p> <p>The name of the Amazon Elastic Kubernetes
-     * Service cluster and namespace this resource belongs to.</p>  <p>This
-     * parameter accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
+     * <code>eksSourceName</code> </p> <p>Name of the Amazon Elastic Kubernetes Service
+     * cluster and namespace this resource belongs to.</p>  <p>This parameter
+     * accepts values in "eks-cluster/namespace" format.</p>  <p>Type:
      * String</p> </li> </ul> </li> </ul> </li> <li> <p> <b> <code>version</code> </b>
-     * </p> <p>The Resilience Hub application version.</p> </li> <li> <p>
+     * </p> <p>Resilience Hub application version.</p> </li> <li> <p>
      * <code>additionalInfo</code> </p> <p>Additional configuration parameters for an
      * Resilience Hub application. If you want to implement <code>additionalInfo</code>
      * through the Resilience Hub console rather than using an API call, see <a

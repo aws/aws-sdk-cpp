@@ -25,6 +25,7 @@ namespace Aws
         static const int Important_HASH = HashingUtils::HashString("Important");
         static const int CoreServices_HASH = HashingUtils::HashString("CoreServices");
         static const int NonCritical_HASH = HashingUtils::HashString("NonCritical");
+        static const int NotApplicable_HASH = HashingUtils::HashString("NotApplicable");
 
 
         ResiliencyPolicyTier GetResiliencyPolicyTierForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return ResiliencyPolicyTier::NonCritical;
           }
+          else if (hashCode == NotApplicable_HASH)
+          {
+            return ResiliencyPolicyTier::NotApplicable;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "CoreServices";
           case ResiliencyPolicyTier::NonCritical:
             return "NonCritical";
+          case ResiliencyPolicyTier::NotApplicable:
+            return "NotApplicable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

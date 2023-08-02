@@ -88,65 +88,74 @@ namespace Model
 
 
     /**
-     * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is null, all
-     * attributes are returned.</p>
+     * <p>A JSON array of user attribute names, for example <code>given_name</code>,
+     * that you want Amazon Cognito to include in the response for each user. When you
+     * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
+     * all attributes for each user.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributesToGet() const{ return m_attributesToGet; }
 
     /**
-     * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is null, all
-     * attributes are returned.</p>
+     * <p>A JSON array of user attribute names, for example <code>given_name</code>,
+     * that you want Amazon Cognito to include in the response for each user. When you
+     * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
+     * all attributes for each user.</p>
      */
     inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
 
     /**
-     * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is null, all
-     * attributes are returned.</p>
+     * <p>A JSON array of user attribute names, for example <code>given_name</code>,
+     * that you want Amazon Cognito to include in the response for each user. When you
+     * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
+     * all attributes for each user.</p>
      */
     inline void SetAttributesToGet(const Aws::Vector<Aws::String>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
 
     /**
-     * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is null, all
-     * attributes are returned.</p>
+     * <p>A JSON array of user attribute names, for example <code>given_name</code>,
+     * that you want Amazon Cognito to include in the response for each user. When you
+     * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
+     * all attributes for each user.</p>
      */
     inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
 
     /**
-     * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is null, all
-     * attributes are returned.</p>
+     * <p>A JSON array of user attribute names, for example <code>given_name</code>,
+     * that you want Amazon Cognito to include in the response for each user. When you
+     * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
+     * all attributes for each user.</p>
      */
     inline ListUsersRequest& WithAttributesToGet(const Aws::Vector<Aws::String>& value) { SetAttributesToGet(value); return *this;}
 
     /**
-     * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is null, all
-     * attributes are returned.</p>
+     * <p>A JSON array of user attribute names, for example <code>given_name</code>,
+     * that you want Amazon Cognito to include in the response for each user. When you
+     * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
+     * all attributes for each user.</p>
      */
     inline ListUsersRequest& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is null, all
-     * attributes are returned.</p>
+     * <p>A JSON array of user attribute names, for example <code>given_name</code>,
+     * that you want Amazon Cognito to include in the response for each user. When you
+     * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
+     * all attributes for each user.</p>
      */
     inline ListUsersRequest& AddAttributesToGet(const Aws::String& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is null, all
-     * attributes are returned.</p>
+     * <p>A JSON array of user attribute names, for example <code>given_name</code>,
+     * that you want Amazon Cognito to include in the response for each user. When you
+     * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
+     * all attributes for each user.</p>
      */
     inline ListUsersRequest& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings, where each string is the name of a user attribute to be
-     * returned for each user in the search results. If the array is null, all
-     * attributes are returned.</p>
+     * <p>A JSON array of user attribute names, for example <code>given_name</code>,
+     * that you want Amazon Cognito to include in the response for each user. When you
+     * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
+     * all attributes for each user.</p>
      */
     inline ListUsersRequest& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 

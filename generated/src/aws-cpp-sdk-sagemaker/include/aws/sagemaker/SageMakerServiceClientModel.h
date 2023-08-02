@@ -154,6 +154,7 @@
 #include <aws/sagemaker/model/GetLineageGroupPolicyResult.h>
 #include <aws/sagemaker/model/GetModelPackageGroupPolicyResult.h>
 #include <aws/sagemaker/model/GetSagemakerServicecatalogPortfolioStatusResult.h>
+#include <aws/sagemaker/model/GetScalingConfigurationRecommendationResult.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsResult.h>
 #include <aws/sagemaker/model/ImportHubContentResult.h>
 #include <aws/sagemaker/model/ListActionsResult.h>
@@ -479,6 +480,7 @@ namespace Aws
       class GetLineageGroupPolicyRequest;
       class GetModelPackageGroupPolicyRequest;
       class GetSagemakerServicecatalogPortfolioStatusRequest;
+      class GetScalingConfigurationRecommendationRequest;
       class GetSearchSuggestionsRequest;
       class ImportHubContentRequest;
       class ListActionsRequest;
@@ -785,6 +787,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetLineageGroupPolicyResult, SageMakerError> GetLineageGroupPolicyOutcome;
       typedef Aws::Utils::Outcome<GetModelPackageGroupPolicyResult, SageMakerError> GetModelPackageGroupPolicyOutcome;
       typedef Aws::Utils::Outcome<GetSagemakerServicecatalogPortfolioStatusResult, SageMakerError> GetSagemakerServicecatalogPortfolioStatusOutcome;
+      typedef Aws::Utils::Outcome<GetScalingConfigurationRecommendationResult, SageMakerError> GetScalingConfigurationRecommendationOutcome;
       typedef Aws::Utils::Outcome<GetSearchSuggestionsResult, SageMakerError> GetSearchSuggestionsOutcome;
       typedef Aws::Utils::Outcome<ImportHubContentResult, SageMakerError> ImportHubContentOutcome;
       typedef Aws::Utils::Outcome<ListActionsResult, SageMakerError> ListActionsOutcome;
@@ -1091,6 +1094,7 @@ namespace Aws
       typedef std::future<GetLineageGroupPolicyOutcome> GetLineageGroupPolicyOutcomeCallable;
       typedef std::future<GetModelPackageGroupPolicyOutcome> GetModelPackageGroupPolicyOutcomeCallable;
       typedef std::future<GetSagemakerServicecatalogPortfolioStatusOutcome> GetSagemakerServicecatalogPortfolioStatusOutcomeCallable;
+      typedef std::future<GetScalingConfigurationRecommendationOutcome> GetScalingConfigurationRecommendationOutcomeCallable;
       typedef std::future<GetSearchSuggestionsOutcome> GetSearchSuggestionsOutcomeCallable;
       typedef std::future<ImportHubContentOutcome> ImportHubContentOutcomeCallable;
       typedef std::future<ListActionsOutcome> ListActionsOutcomeCallable;
@@ -1400,6 +1404,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::GetLineageGroupPolicyRequest&, const Model::GetLineageGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLineageGroupPolicyResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetModelPackageGroupPolicyRequest&, const Model::GetModelPackageGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelPackageGroupPolicyResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSagemakerServicecatalogPortfolioStatusRequest&, const Model::GetSagemakerServicecatalogPortfolioStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSagemakerServicecatalogPortfolioStatusResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::GetScalingConfigurationRecommendationRequest&, const Model::GetScalingConfigurationRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetScalingConfigurationRecommendationResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSearchSuggestionsRequest&, const Model::GetSearchSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSearchSuggestionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ImportHubContentRequest&, const Model::ImportHubContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportHubContentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListActionsRequest&, const Model::ListActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionsResponseReceivedHandler;

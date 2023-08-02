@@ -110,15 +110,43 @@ namespace ResilienceHub
         }
 
         /**
+         * <p>Enables you to include or exclude one or more operational
+         * recommendations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/BatchUpdateRecommendationStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateRecommendationStatusOutcome BatchUpdateRecommendationStatus(const Model::BatchUpdateRecommendationStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateRecommendationStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchUpdateRecommendationStatusRequestT = Model::BatchUpdateRecommendationStatusRequest>
+        Model::BatchUpdateRecommendationStatusOutcomeCallable BatchUpdateRecommendationStatusCallable(const BatchUpdateRecommendationStatusRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::BatchUpdateRecommendationStatus, request);
+        }
+
+        /**
+         * An Async wrapper for BatchUpdateRecommendationStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchUpdateRecommendationStatusRequestT = Model::BatchUpdateRecommendationStatusRequest>
+        void BatchUpdateRecommendationStatusAsync(const BatchUpdateRecommendationStatusRequestT& request, const BatchUpdateRecommendationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::BatchUpdateRecommendationStatus, request, handler, context);
+        }
+
+        /**
          * <p>Creates an Resilience Hub application. An Resilience Hub application is a
          * collection of Amazon Web Services resources structured to prevent and recover
-         * Amazon Web Services application disruptions. To describe an Resilience Hub
+         * Amazon Web Services application disruptions. To describe a Resilience Hub
          * application, you provide an application name, resources from one or more
          * CloudFormation stacks, Resource Groups, Terraform state files, AppRegistry
-         * applications, and an appropriate resiliency policy. For more information about
-         * the number of resources supported per application, see <a
+         * applications, and an appropriate resiliency policy. In addition, you can also
+         * add resources that are located on Amazon Elastic Kubernetes Service (Amazon EKS)
+         * clusters as optional resources. For more information about the number of
+         * resources supported per application, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service
-         * Quotas</a>.</p> <p>After you create an Resilience Hub application, you publish
+         * quotas</a>.</p> <p>After you create an Resilience Hub application, you publish
          * it so that you can run a resiliency assessment on it. You can then use
          * recommendations from the assessment to improve resiliency by running another
          * assessment, comparing results, and then iterating the process until you achieve
@@ -753,6 +781,32 @@ namespace ResilienceHub
         void ListAlarmRecommendationsAsync(const ListAlarmRecommendationsRequestT& request, const ListAlarmRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ResilienceHubClient::ListAlarmRecommendations, request, handler, context);
+        }
+
+        /**
+         * <p>List of compliance drifts that were detected while running an
+         * assessment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppAssessmentComplianceDriftsOutcome ListAppAssessmentComplianceDrifts(const Model::ListAppAssessmentComplianceDriftsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAppAssessmentComplianceDrifts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAppAssessmentComplianceDriftsRequestT = Model::ListAppAssessmentComplianceDriftsRequest>
+        Model::ListAppAssessmentComplianceDriftsOutcomeCallable ListAppAssessmentComplianceDriftsCallable(const ListAppAssessmentComplianceDriftsRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::ListAppAssessmentComplianceDrifts, request);
+        }
+
+        /**
+         * An Async wrapper for ListAppAssessmentComplianceDrifts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAppAssessmentComplianceDriftsRequestT = Model::ListAppAssessmentComplianceDriftsRequest>
+        void ListAppAssessmentComplianceDriftsAsync(const ListAppAssessmentComplianceDriftsRequestT& request, const ListAppAssessmentComplianceDriftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::ListAppAssessmentComplianceDrifts, request, handler, context);
         }
 
         /**

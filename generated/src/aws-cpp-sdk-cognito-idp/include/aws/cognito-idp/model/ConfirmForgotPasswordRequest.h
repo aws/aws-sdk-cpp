@@ -84,49 +84,73 @@ namespace Model
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline const Aws::String& GetSecretHash() const{ return m_secretHash; }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline bool SecretHashHasBeenSet() const { return m_secretHashHasBeenSet; }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline void SetSecretHash(const Aws::String& value) { m_secretHashHasBeenSet = true; m_secretHash = value; }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline void SetSecretHash(Aws::String&& value) { m_secretHashHasBeenSet = true; m_secretHash = std::move(value); }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline void SetSecretHash(const char* value) { m_secretHashHasBeenSet = true; m_secretHash.assign(value); }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithSecretHash(const Aws::String& value) { SetSecretHash(value); return *this;}
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithSecretHash(Aws::String&& value) { SetSecretHash(std::move(value)); return *this;}
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline ConfirmForgotPasswordRequest& WithSecretHash(const char* value) { SetSecretHash(value); return *this;}
 

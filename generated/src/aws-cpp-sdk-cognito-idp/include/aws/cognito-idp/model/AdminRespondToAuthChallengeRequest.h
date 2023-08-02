@@ -193,7 +193,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetChallengeResponses() const{ return m_challengeResponses; }
 
@@ -229,7 +234,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline bool ChallengeResponsesHasBeenSet() const { return m_challengeResponsesHasBeenSet; }
 
@@ -265,7 +275,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline void SetChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = value; }
 
@@ -301,7 +316,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline void SetChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = std::move(value); }
 
@@ -337,7 +357,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { SetChallengeResponses(value); return *this;}
 
@@ -373,7 +398,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { SetChallengeResponses(std::move(value)); return *this;}
 
@@ -409,7 +439,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 
@@ -445,7 +480,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
@@ -481,7 +521,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
@@ -517,7 +562,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -553,7 +603,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const char* key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
@@ -589,7 +644,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
@@ -625,7 +685,12 @@ namespace Model
      * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
      * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
      * This happens even if you specified an alias in your call to
-     * <code>AdminInitiateAuth</code>.</p>
+     * <code>AdminInitiateAuth</code>.</p> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const char* key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 

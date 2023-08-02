@@ -46,8 +46,8 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -56,8 +56,8 @@ namespace Model
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -66,8 +66,8 @@ namespace Model
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -76,8 +76,8 @@ namespace Model
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -86,8 +86,8 @@ namespace Model
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -96,8 +96,8 @@ namespace Model
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -106,8 +106,8 @@ namespace Model
     inline RecommendationTemplate& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -116,8 +116,8 @@ namespace Model
     inline RecommendationTemplate& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -127,7 +127,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -136,7 +136,7 @@ namespace Model
     inline const Aws::String& GetAssessmentArn() const{ return m_assessmentArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -145,7 +145,7 @@ namespace Model
     inline bool AssessmentArnHasBeenSet() const { return m_assessmentArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -154,7 +154,7 @@ namespace Model
     inline void SetAssessmentArn(const Aws::String& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -163,7 +163,7 @@ namespace Model
     inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -172,7 +172,7 @@ namespace Model
     inline void SetAssessmentArn(const char* value) { m_assessmentArnHasBeenSet = true; m_assessmentArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -181,7 +181,7 @@ namespace Model
     inline RecommendationTemplate& WithAssessmentArn(const Aws::String& value) { SetAssessmentArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -190,7 +190,7 @@ namespace Model
     inline RecommendationTemplate& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -231,126 +231,126 @@ namespace Model
 
 
     /**
-     * <p>The format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd>
-     * <p>The template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The
-     * template is CloudFormation YAML.</p> </dd> </dl>
+     * <p>Format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd> <p>The
+     * template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The template
+     * is CloudFormation YAML.</p> </dd> </dl>
      */
     inline const TemplateFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p>The format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd>
-     * <p>The template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The
-     * template is CloudFormation YAML.</p> </dd> </dl>
+     * <p>Format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd> <p>The
+     * template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The template
+     * is CloudFormation YAML.</p> </dd> </dl>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p>The format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd>
-     * <p>The template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The
-     * template is CloudFormation YAML.</p> </dd> </dl>
+     * <p>Format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd> <p>The
+     * template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The template
+     * is CloudFormation YAML.</p> </dd> </dl>
      */
     inline void SetFormat(const TemplateFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p>The format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd>
-     * <p>The template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The
-     * template is CloudFormation YAML.</p> </dd> </dl>
+     * <p>Format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd> <p>The
+     * template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The template
+     * is CloudFormation YAML.</p> </dd> </dl>
      */
     inline void SetFormat(TemplateFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p>The format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd>
-     * <p>The template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The
-     * template is CloudFormation YAML.</p> </dd> </dl>
+     * <p>Format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd> <p>The
+     * template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The template
+     * is CloudFormation YAML.</p> </dd> </dl>
      */
     inline RecommendationTemplate& WithFormat(const TemplateFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p>The format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd>
-     * <p>The template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The
-     * template is CloudFormation YAML.</p> </dd> </dl>
+     * <p>Format of the recommendation template.</p> <dl> <dt>CfnJson</dt> <dd> <p>The
+     * template is CloudFormation JSON.</p> </dd> <dt>CfnYaml</dt> <dd> <p>The template
+     * is CloudFormation YAML.</p> </dd> </dl>
      */
     inline RecommendationTemplate& WithFormat(TemplateFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 
     /**
-     * <p>The message for the recommendation template.</p>
+     * <p>Message for the recommendation template.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>The message for the recommendation template.</p>
+     * <p>Message for the recommendation template.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>The message for the recommendation template.</p>
+     * <p>Message for the recommendation template.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The message for the recommendation template.</p>
+     * <p>Message for the recommendation template.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>The message for the recommendation template.</p>
+     * <p>Message for the recommendation template.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>The message for the recommendation template.</p>
+     * <p>Message for the recommendation template.</p>
      */
     inline RecommendationTemplate& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The message for the recommendation template.</p>
+     * <p>Message for the recommendation template.</p>
      */
     inline RecommendationTemplate& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The message for the recommendation template.</p>
+     * <p>Message for the recommendation template.</p>
      */
     inline RecommendationTemplate& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
     /**
-     * <p>The name for the recommendation template.</p>
+     * <p>Name for the recommendation template.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name for the recommendation template.</p>
+     * <p>Name for the recommendation template.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name for the recommendation template.</p>
+     * <p>Name for the recommendation template.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name for the recommendation template.</p>
+     * <p>Name for the recommendation template.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name for the recommendation template.</p>
+     * <p>Name for the recommendation template.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name for the recommendation template.</p>
+     * <p>Name for the recommendation template.</p>
      */
     inline RecommendationTemplate& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name for the recommendation template.</p>
+     * <p>Name for the recommendation template.</p>
      */
     inline RecommendationTemplate& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the recommendation template.</p>
+     * <p>Name for the recommendation template.</p>
      */
     inline RecommendationTemplate& WithName(const char* value) { SetName(value); return *this;}
 
@@ -423,42 +423,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+     * <p>Amazon Resource Name (ARN) for the recommendation template.</p>
      */
     inline const Aws::String& GetRecommendationTemplateArn() const{ return m_recommendationTemplateArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+     * <p>Amazon Resource Name (ARN) for the recommendation template.</p>
      */
     inline bool RecommendationTemplateArnHasBeenSet() const { return m_recommendationTemplateArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+     * <p>Amazon Resource Name (ARN) for the recommendation template.</p>
      */
     inline void SetRecommendationTemplateArn(const Aws::String& value) { m_recommendationTemplateArnHasBeenSet = true; m_recommendationTemplateArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+     * <p>Amazon Resource Name (ARN) for the recommendation template.</p>
      */
     inline void SetRecommendationTemplateArn(Aws::String&& value) { m_recommendationTemplateArnHasBeenSet = true; m_recommendationTemplateArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+     * <p>Amazon Resource Name (ARN) for the recommendation template.</p>
      */
     inline void SetRecommendationTemplateArn(const char* value) { m_recommendationTemplateArnHasBeenSet = true; m_recommendationTemplateArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+     * <p>Amazon Resource Name (ARN) for the recommendation template.</p>
      */
     inline RecommendationTemplate& WithRecommendationTemplateArn(const Aws::String& value) { SetRecommendationTemplateArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+     * <p>Amazon Resource Name (ARN) for the recommendation template.</p>
      */
     inline RecommendationTemplate& WithRecommendationTemplateArn(Aws::String&& value) { SetRecommendationTemplateArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the recommendation template.</p>
+     * <p>Amazon Resource Name (ARN) for the recommendation template.</p>
      */
     inline RecommendationTemplate& WithRecommendationTemplateArn(const char* value) { SetRecommendationTemplateArn(value); return *this;}
 
@@ -568,111 +568,111 @@ namespace Model
 
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline const RecommendationTemplateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline void SetStatus(const RecommendationTemplateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline void SetStatus(RecommendationTemplateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline RecommendationTemplate& WithStatus(const RecommendationTemplateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline RecommendationTemplate& WithStatus(RecommendationTemplateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline RecommendationTemplate& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline RecommendationTemplate& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline RecommendationTemplate& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline RecommendationTemplate& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline RecommendationTemplate& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline RecommendationTemplate& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline RecommendationTemplate& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline RecommendationTemplate& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline RecommendationTemplate& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

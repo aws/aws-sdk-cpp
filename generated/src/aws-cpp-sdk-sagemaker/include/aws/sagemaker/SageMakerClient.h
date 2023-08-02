@@ -5090,6 +5090,33 @@ namespace SageMaker
         }
 
         /**
+         * <p>Starts an Amazon SageMaker Inference Recommender autoscaling recommendation
+         * job. Returns recommendations for autoscaling policies that you can apply to your
+         * SageMaker endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetScalingConfigurationRecommendation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetScalingConfigurationRecommendationOutcome GetScalingConfigurationRecommendation(const Model::GetScalingConfigurationRecommendationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetScalingConfigurationRecommendation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetScalingConfigurationRecommendationRequestT = Model::GetScalingConfigurationRecommendationRequest>
+        Model::GetScalingConfigurationRecommendationOutcomeCallable GetScalingConfigurationRecommendationCallable(const GetScalingConfigurationRecommendationRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::GetScalingConfigurationRecommendation, request);
+        }
+
+        /**
+         * An Async wrapper for GetScalingConfigurationRecommendation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetScalingConfigurationRecommendationRequestT = Model::GetScalingConfigurationRecommendationRequest>
+        void GetScalingConfigurationRecommendationAsync(const GetScalingConfigurationRecommendationRequestT& request, const GetScalingConfigurationRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::GetScalingConfigurationRecommendation, request, handler, context);
+        }
+
+        /**
          * <p>An auto-complete API for the search functionality in the SageMaker console.
          * It returns suggestions of possible matches for the property name to use in
          * <code>Search</code> queries. Provides suggestions for
