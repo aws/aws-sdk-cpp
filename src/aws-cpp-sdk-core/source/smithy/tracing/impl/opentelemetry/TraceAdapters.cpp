@@ -53,7 +53,7 @@ void OtelSpanAdapter::end() {
 opentelemetry::trace::StatusCode OtelSpanAdapter::convertStatusCode(TraceSpanStatus status) {
     if (status == TraceSpanStatus::OK) {
         return opentelemetry::trace::StatusCode::kOk;
-    } else if (status == TraceSpanStatus::ERROR) {
+    } else if (status == TraceSpanStatus::FAULT) {
         return opentelemetry::trace::StatusCode::kError;
     } else if (status == TraceSpanStatus::UNSET) {
         return opentelemetry::trace::StatusCode::kUnset;
