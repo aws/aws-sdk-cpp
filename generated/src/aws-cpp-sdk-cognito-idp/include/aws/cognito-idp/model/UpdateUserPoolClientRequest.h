@@ -317,10 +317,10 @@ namespace Model
      * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
-     * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
-     * specify otherwise in the configuration of your app client, your ID tokens are
-     * valid for one hour.</p>
+     * default time unit for <code>IdTokenValidity</code> in an API request is hours.
+     * <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't specify
+     * otherwise in the configuration of your app client, your ID tokens are valid for
+     * one hour.</p>
      */
     inline int GetIdTokenValidity() const{ return m_idTokenValidity; }
 
@@ -332,10 +332,10 @@ namespace Model
      * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
-     * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
-     * specify otherwise in the configuration of your app client, your ID tokens are
-     * valid for one hour.</p>
+     * default time unit for <code>IdTokenValidity</code> in an API request is hours.
+     * <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't specify
+     * otherwise in the configuration of your app client, your ID tokens are valid for
+     * one hour.</p>
      */
     inline bool IdTokenValidityHasBeenSet() const { return m_idTokenValidityHasBeenSet; }
 
@@ -347,10 +347,10 @@ namespace Model
      * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
-     * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
-     * specify otherwise in the configuration of your app client, your ID tokens are
-     * valid for one hour.</p>
+     * default time unit for <code>IdTokenValidity</code> in an API request is hours.
+     * <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't specify
+     * otherwise in the configuration of your app client, your ID tokens are valid for
+     * one hour.</p>
      */
     inline void SetIdTokenValidity(int value) { m_idTokenValidityHasBeenSet = true; m_idTokenValidity = value; }
 
@@ -362,47 +362,53 @@ namespace Model
      * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
-     * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
-     * specify otherwise in the configuration of your app client, your ID tokens are
-     * valid for one hour.</p>
+     * default time unit for <code>IdTokenValidity</code> in an API request is hours.
+     * <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't specify
+     * otherwise in the configuration of your app client, your ID tokens are valid for
+     * one hour.</p>
      */
     inline UpdateUserPoolClientRequest& WithIdTokenValidity(int value) { SetIdTokenValidity(value); return *this;}
 
 
     /**
-     * <p>The units in which the validity times are represented. The default unit for
-     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
+     * <p>The time units you use when you set the duration of ID, access, and refresh
+     * tokens. The default unit for RefreshToken is days, and the default for ID and
+     * access tokens is hours.</p>
      */
     inline const TokenValidityUnitsType& GetTokenValidityUnits() const{ return m_tokenValidityUnits; }
 
     /**
-     * <p>The units in which the validity times are represented. The default unit for
-     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
+     * <p>The time units you use when you set the duration of ID, access, and refresh
+     * tokens. The default unit for RefreshToken is days, and the default for ID and
+     * access tokens is hours.</p>
      */
     inline bool TokenValidityUnitsHasBeenSet() const { return m_tokenValidityUnitsHasBeenSet; }
 
     /**
-     * <p>The units in which the validity times are represented. The default unit for
-     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
+     * <p>The time units you use when you set the duration of ID, access, and refresh
+     * tokens. The default unit for RefreshToken is days, and the default for ID and
+     * access tokens is hours.</p>
      */
     inline void SetTokenValidityUnits(const TokenValidityUnitsType& value) { m_tokenValidityUnitsHasBeenSet = true; m_tokenValidityUnits = value; }
 
     /**
-     * <p>The units in which the validity times are represented. The default unit for
-     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
+     * <p>The time units you use when you set the duration of ID, access, and refresh
+     * tokens. The default unit for RefreshToken is days, and the default for ID and
+     * access tokens is hours.</p>
      */
     inline void SetTokenValidityUnits(TokenValidityUnitsType&& value) { m_tokenValidityUnitsHasBeenSet = true; m_tokenValidityUnits = std::move(value); }
 
     /**
-     * <p>The units in which the validity times are represented. The default unit for
-     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
+     * <p>The time units you use when you set the duration of ID, access, and refresh
+     * tokens. The default unit for RefreshToken is days, and the default for ID and
+     * access tokens is hours.</p>
      */
     inline UpdateUserPoolClientRequest& WithTokenValidityUnits(const TokenValidityUnitsType& value) { SetTokenValidityUnits(value); return *this;}
 
     /**
-     * <p>The units in which the validity times are represented. The default unit for
-     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
+     * <p>The time units you use when you set the duration of ID, access, and refresh
+     * tokens. The default unit for RefreshToken is days, and the default for ID and
+     * access tokens is hours.</p>
      */
     inline UpdateUserPoolClientRequest& WithTokenValidityUnits(TokenValidityUnitsType&& value) { SetTokenValidityUnits(std::move(value)); return *this;}
 
@@ -1245,26 +1251,74 @@ namespace Model
 
 
     /**
-     * <p>Set to true if the client is allowed to follow the OAuth protocol when
-     * interacting with Amazon Cognito user pools.</p>
+     * <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app
+     * client.</p> <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be
+     * <code>true</code> before you can configure the following features in your app
+     * client.</p> <ul> <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+     * <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li> <li> <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li> <li> <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and
+     * client credentials OAuth 2.0 grants.</p> </li> </ul> <p>To use OAuth 2.0
+     * features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a
+     * <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API
+     * request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs,
+     * it defaults to <code>false</code>.</p>
      */
     inline bool GetAllowedOAuthFlowsUserPoolClient() const{ return m_allowedOAuthFlowsUserPoolClient; }
 
     /**
-     * <p>Set to true if the client is allowed to follow the OAuth protocol when
-     * interacting with Amazon Cognito user pools.</p>
+     * <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app
+     * client.</p> <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be
+     * <code>true</code> before you can configure the following features in your app
+     * client.</p> <ul> <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+     * <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li> <li> <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li> <li> <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and
+     * client credentials OAuth 2.0 grants.</p> </li> </ul> <p>To use OAuth 2.0
+     * features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a
+     * <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API
+     * request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs,
+     * it defaults to <code>false</code>.</p>
      */
     inline bool AllowedOAuthFlowsUserPoolClientHasBeenSet() const { return m_allowedOAuthFlowsUserPoolClientHasBeenSet; }
 
     /**
-     * <p>Set to true if the client is allowed to follow the OAuth protocol when
-     * interacting with Amazon Cognito user pools.</p>
+     * <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app
+     * client.</p> <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be
+     * <code>true</code> before you can configure the following features in your app
+     * client.</p> <ul> <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+     * <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li> <li> <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li> <li> <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and
+     * client credentials OAuth 2.0 grants.</p> </li> </ul> <p>To use OAuth 2.0
+     * features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a
+     * <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API
+     * request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs,
+     * it defaults to <code>false</code>.</p>
      */
     inline void SetAllowedOAuthFlowsUserPoolClient(bool value) { m_allowedOAuthFlowsUserPoolClientHasBeenSet = true; m_allowedOAuthFlowsUserPoolClient = value; }
 
     /**
-     * <p>Set to true if the client is allowed to follow the OAuth protocol when
-     * interacting with Amazon Cognito user pools.</p>
+     * <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app
+     * client.</p> <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be
+     * <code>true</code> before you can configure the following features in your app
+     * client.</p> <ul> <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+     * <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li> <li> <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li> <li> <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and
+     * client credentials OAuth 2.0 grants.</p> </li> </ul> <p>To use OAuth 2.0
+     * features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a
+     * <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API
+     * request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs,
+     * it defaults to <code>false</code>.</p>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthFlowsUserPoolClient(bool value) { SetAllowedOAuthFlowsUserPoolClient(value); return *this;}
 

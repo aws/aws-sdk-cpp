@@ -47,17 +47,20 @@ namespace Model
 
 
     /**
-     * <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this
-     * email address in one of the following ways, depending on the value that you
-     * specify for the <code>EmailSendingAccount</code> parameter:</p> <ul> <li> <p>If
-     * you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as
-     * the custom FROM address when it emails your users using its built-in email
-     * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
-     * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
-     * indicate a supported Amazon Web Services Region of your user pool. Typically,
-     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
-     * For more information, see <a
+     * <p>The ARN of a verified email address or an address from a verified domain in
+     * Amazon SES. You can set a <code>SourceArn</code> email from a verified domain
+     * only with an API request. You can set a verified email address, but not an
+     * address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses
+     * the email address that you provide in one of the following ways, depending on
+     * the value that you specify for the <code>EmailSendingAccount</code>
+     * parameter:</p> <ul> <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon
+     * Cognito uses this address as the custom FROM address when it emails your users
+     * using its built-in email account.</p> </li> <li> <p>If you specify
+     * <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by
+     * calling Amazon SES on your behalf.</p> </li> </ul> <p>The Region value of the
+     * <code>SourceArn</code> parameter must indicate a supported Amazon Web Services
+     * Region of your user pool. Typically, the Region in the <code>SourceArn</code>
+     * and the user pool Region are the same. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
      * SES email configuration regions</a> in the <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
@@ -66,17 +69,20 @@ namespace Model
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
-     * <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this
-     * email address in one of the following ways, depending on the value that you
-     * specify for the <code>EmailSendingAccount</code> parameter:</p> <ul> <li> <p>If
-     * you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as
-     * the custom FROM address when it emails your users using its built-in email
-     * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
-     * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
-     * indicate a supported Amazon Web Services Region of your user pool. Typically,
-     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
-     * For more information, see <a
+     * <p>The ARN of a verified email address or an address from a verified domain in
+     * Amazon SES. You can set a <code>SourceArn</code> email from a verified domain
+     * only with an API request. You can set a verified email address, but not an
+     * address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses
+     * the email address that you provide in one of the following ways, depending on
+     * the value that you specify for the <code>EmailSendingAccount</code>
+     * parameter:</p> <ul> <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon
+     * Cognito uses this address as the custom FROM address when it emails your users
+     * using its built-in email account.</p> </li> <li> <p>If you specify
+     * <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by
+     * calling Amazon SES on your behalf.</p> </li> </ul> <p>The Region value of the
+     * <code>SourceArn</code> parameter must indicate a supported Amazon Web Services
+     * Region of your user pool. Typically, the Region in the <code>SourceArn</code>
+     * and the user pool Region are the same. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
      * SES email configuration regions</a> in the <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
@@ -85,17 +91,20 @@ namespace Model
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this
-     * email address in one of the following ways, depending on the value that you
-     * specify for the <code>EmailSendingAccount</code> parameter:</p> <ul> <li> <p>If
-     * you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as
-     * the custom FROM address when it emails your users using its built-in email
-     * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
-     * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
-     * indicate a supported Amazon Web Services Region of your user pool. Typically,
-     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
-     * For more information, see <a
+     * <p>The ARN of a verified email address or an address from a verified domain in
+     * Amazon SES. You can set a <code>SourceArn</code> email from a verified domain
+     * only with an API request. You can set a verified email address, but not an
+     * address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses
+     * the email address that you provide in one of the following ways, depending on
+     * the value that you specify for the <code>EmailSendingAccount</code>
+     * parameter:</p> <ul> <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon
+     * Cognito uses this address as the custom FROM address when it emails your users
+     * using its built-in email account.</p> </li> <li> <p>If you specify
+     * <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by
+     * calling Amazon SES on your behalf.</p> </li> </ul> <p>The Region value of the
+     * <code>SourceArn</code> parameter must indicate a supported Amazon Web Services
+     * Region of your user pool. Typically, the Region in the <code>SourceArn</code>
+     * and the user pool Region are the same. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
      * SES email configuration regions</a> in the <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
@@ -104,17 +113,20 @@ namespace Model
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
-     * <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this
-     * email address in one of the following ways, depending on the value that you
-     * specify for the <code>EmailSendingAccount</code> parameter:</p> <ul> <li> <p>If
-     * you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as
-     * the custom FROM address when it emails your users using its built-in email
-     * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
-     * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
-     * indicate a supported Amazon Web Services Region of your user pool. Typically,
-     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
-     * For more information, see <a
+     * <p>The ARN of a verified email address or an address from a verified domain in
+     * Amazon SES. You can set a <code>SourceArn</code> email from a verified domain
+     * only with an API request. You can set a verified email address, but not an
+     * address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses
+     * the email address that you provide in one of the following ways, depending on
+     * the value that you specify for the <code>EmailSendingAccount</code>
+     * parameter:</p> <ul> <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon
+     * Cognito uses this address as the custom FROM address when it emails your users
+     * using its built-in email account.</p> </li> <li> <p>If you specify
+     * <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by
+     * calling Amazon SES on your behalf.</p> </li> </ul> <p>The Region value of the
+     * <code>SourceArn</code> parameter must indicate a supported Amazon Web Services
+     * Region of your user pool. Typically, the Region in the <code>SourceArn</code>
+     * and the user pool Region are the same. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
      * SES email configuration regions</a> in the <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
@@ -123,17 +135,20 @@ namespace Model
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this
-     * email address in one of the following ways, depending on the value that you
-     * specify for the <code>EmailSendingAccount</code> parameter:</p> <ul> <li> <p>If
-     * you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as
-     * the custom FROM address when it emails your users using its built-in email
-     * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
-     * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
-     * indicate a supported Amazon Web Services Region of your user pool. Typically,
-     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
-     * For more information, see <a
+     * <p>The ARN of a verified email address or an address from a verified domain in
+     * Amazon SES. You can set a <code>SourceArn</code> email from a verified domain
+     * only with an API request. You can set a verified email address, but not an
+     * address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses
+     * the email address that you provide in one of the following ways, depending on
+     * the value that you specify for the <code>EmailSendingAccount</code>
+     * parameter:</p> <ul> <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon
+     * Cognito uses this address as the custom FROM address when it emails your users
+     * using its built-in email account.</p> </li> <li> <p>If you specify
+     * <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by
+     * calling Amazon SES on your behalf.</p> </li> </ul> <p>The Region value of the
+     * <code>SourceArn</code> parameter must indicate a supported Amazon Web Services
+     * Region of your user pool. Typically, the Region in the <code>SourceArn</code>
+     * and the user pool Region are the same. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
      * SES email configuration regions</a> in the <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
@@ -142,17 +157,20 @@ namespace Model
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
-     * <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this
-     * email address in one of the following ways, depending on the value that you
-     * specify for the <code>EmailSendingAccount</code> parameter:</p> <ul> <li> <p>If
-     * you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as
-     * the custom FROM address when it emails your users using its built-in email
-     * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
-     * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
-     * indicate a supported Amazon Web Services Region of your user pool. Typically,
-     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
-     * For more information, see <a
+     * <p>The ARN of a verified email address or an address from a verified domain in
+     * Amazon SES. You can set a <code>SourceArn</code> email from a verified domain
+     * only with an API request. You can set a verified email address, but not an
+     * address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses
+     * the email address that you provide in one of the following ways, depending on
+     * the value that you specify for the <code>EmailSendingAccount</code>
+     * parameter:</p> <ul> <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon
+     * Cognito uses this address as the custom FROM address when it emails your users
+     * using its built-in email account.</p> </li> <li> <p>If you specify
+     * <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by
+     * calling Amazon SES on your behalf.</p> </li> </ul> <p>The Region value of the
+     * <code>SourceArn</code> parameter must indicate a supported Amazon Web Services
+     * Region of your user pool. Typically, the Region in the <code>SourceArn</code>
+     * and the user pool Region are the same. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
      * SES email configuration regions</a> in the <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
@@ -161,17 +179,20 @@ namespace Model
     inline EmailConfigurationType& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this
-     * email address in one of the following ways, depending on the value that you
-     * specify for the <code>EmailSendingAccount</code> parameter:</p> <ul> <li> <p>If
-     * you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as
-     * the custom FROM address when it emails your users using its built-in email
-     * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
-     * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
-     * indicate a supported Amazon Web Services Region of your user pool. Typically,
-     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
-     * For more information, see <a
+     * <p>The ARN of a verified email address or an address from a verified domain in
+     * Amazon SES. You can set a <code>SourceArn</code> email from a verified domain
+     * only with an API request. You can set a verified email address, but not an
+     * address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses
+     * the email address that you provide in one of the following ways, depending on
+     * the value that you specify for the <code>EmailSendingAccount</code>
+     * parameter:</p> <ul> <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon
+     * Cognito uses this address as the custom FROM address when it emails your users
+     * using its built-in email account.</p> </li> <li> <p>If you specify
+     * <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by
+     * calling Amazon SES on your behalf.</p> </li> </ul> <p>The Region value of the
+     * <code>SourceArn</code> parameter must indicate a supported Amazon Web Services
+     * Region of your user pool. Typically, the Region in the <code>SourceArn</code>
+     * and the user pool Region are the same. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
      * SES email configuration regions</a> in the <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
@@ -180,17 +201,20 @@ namespace Model
     inline EmailConfigurationType& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of a verified email address in Amazon SES. Amazon Cognito uses this
-     * email address in one of the following ways, depending on the value that you
-     * specify for the <code>EmailSendingAccount</code> parameter:</p> <ul> <li> <p>If
-     * you specify <code>COGNITO_DEFAULT</code>, Amazon Cognito uses this address as
-     * the custom FROM address when it emails your users using its built-in email
-     * account.</p> </li> <li> <p>If you specify <code>DEVELOPER</code>, Amazon Cognito
-     * emails your users with this address by calling Amazon SES on your behalf.</p>
-     * </li> </ul> <p>The Region value of the <code>SourceArn</code> parameter must
-     * indicate a supported Amazon Web Services Region of your user pool. Typically,
-     * the Region in the <code>SourceArn</code> and the user pool Region are the same.
-     * For more information, see <a
+     * <p>The ARN of a verified email address or an address from a verified domain in
+     * Amazon SES. You can set a <code>SourceArn</code> email from a verified domain
+     * only with an API request. You can set a verified email address, but not an
+     * address in a verified domain, in the Amazon Cognito console. Amazon Cognito uses
+     * the email address that you provide in one of the following ways, depending on
+     * the value that you specify for the <code>EmailSendingAccount</code>
+     * parameter:</p> <ul> <li> <p>If you specify <code>COGNITO_DEFAULT</code>, Amazon
+     * Cognito uses this address as the custom FROM address when it emails your users
+     * using its built-in email account.</p> </li> <li> <p>If you specify
+     * <code>DEVELOPER</code>, Amazon Cognito emails your users with this address by
+     * calling Amazon SES on your behalf.</p> </li> </ul> <p>The Region value of the
+     * <code>SourceArn</code> parameter must indicate a supported Amazon Web Services
+     * Region of your user pool. Typically, the Region in the <code>SourceArn</code>
+     * and the user pool Region are the same. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html#user-pool-email-developer-region-mapping">Amazon
      * SES email configuration regions</a> in the <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon

@@ -21,6 +21,10 @@ namespace Model
 RecommendationItem::RecommendationItem() : 
     m_alreadyImplemented(false),
     m_alreadyImplementedHasBeenSet(false),
+    m_excludeReason(ExcludeRecommendationReason::NOT_SET),
+    m_excludeReasonHasBeenSet(false),
+    m_excluded(false),
+    m_excludedHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_targetAccountIdHasBeenSet(false),
     m_targetRegionHasBeenSet(false)
@@ -30,6 +34,10 @@ RecommendationItem::RecommendationItem() :
 RecommendationItem::RecommendationItem(JsonView jsonValue) : 
     m_alreadyImplemented(false),
     m_alreadyImplementedHasBeenSet(false),
+    m_excludeReason(ExcludeRecommendationReason::NOT_SET),
+    m_excludeReasonHasBeenSet(false),
+    m_excluded(false),
+    m_excludedHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_targetAccountIdHasBeenSet(false),
     m_targetRegionHasBeenSet(false)
@@ -44,6 +52,20 @@ RecommendationItem& RecommendationItem::operator =(JsonView jsonValue)
     m_alreadyImplemented = jsonValue.GetBool("alreadyImplemented");
 
     m_alreadyImplementedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("excludeReason"))
+  {
+    m_excludeReason = ExcludeRecommendationReasonMapper::GetExcludeRecommendationReasonForName(jsonValue.GetString("excludeReason"));
+
+    m_excludeReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("excluded"))
+  {
+    m_excluded = jsonValue.GetBool("excluded");
+
+    m_excludedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceId"))
@@ -77,6 +99,17 @@ JsonValue RecommendationItem::Jsonize() const
   if(m_alreadyImplementedHasBeenSet)
   {
    payload.WithBool("alreadyImplemented", m_alreadyImplemented);
+
+  }
+
+  if(m_excludeReasonHasBeenSet)
+  {
+   payload.WithString("excludeReason", ExcludeRecommendationReasonMapper::GetNameForExcludeRecommendationReason(m_excludeReason));
+  }
+
+  if(m_excludedHasBeenSet)
+  {
+   payload.WithBool("excluded", m_excluded);
 
   }
 

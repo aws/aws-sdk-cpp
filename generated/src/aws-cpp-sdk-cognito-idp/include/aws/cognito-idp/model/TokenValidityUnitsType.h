@@ -43,7 +43,9 @@ namespace Model
      * <p> A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>AccessTokenValidity</code> parameter. The default
-     * <code>AccessTokenValidity</code> time unit is hours.</p>
+     * <code>AccessTokenValidity</code> time unit is hours.
+     * <code>AccessTokenValidity</code> duration can range from five minutes to one
+     * day.</p>
      */
     inline const TimeUnitsType& GetAccessToken() const{ return m_accessToken; }
 
@@ -51,7 +53,9 @@ namespace Model
      * <p> A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>AccessTokenValidity</code> parameter. The default
-     * <code>AccessTokenValidity</code> time unit is hours.</p>
+     * <code>AccessTokenValidity</code> time unit is hours.
+     * <code>AccessTokenValidity</code> duration can range from five minutes to one
+     * day.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
@@ -59,7 +63,9 @@ namespace Model
      * <p> A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>AccessTokenValidity</code> parameter. The default
-     * <code>AccessTokenValidity</code> time unit is hours.</p>
+     * <code>AccessTokenValidity</code> time unit is hours.
+     * <code>AccessTokenValidity</code> duration can range from five minutes to one
+     * day.</p>
      */
     inline void SetAccessToken(const TimeUnitsType& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
@@ -67,7 +73,9 @@ namespace Model
      * <p> A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>AccessTokenValidity</code> parameter. The default
-     * <code>AccessTokenValidity</code> time unit is hours.</p>
+     * <code>AccessTokenValidity</code> time unit is hours.
+     * <code>AccessTokenValidity</code> duration can range from five minutes to one
+     * day.</p>
      */
     inline void SetAccessToken(TimeUnitsType&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
@@ -75,7 +83,9 @@ namespace Model
      * <p> A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>AccessTokenValidity</code> parameter. The default
-     * <code>AccessTokenValidity</code> time unit is hours.</p>
+     * <code>AccessTokenValidity</code> time unit is hours.
+     * <code>AccessTokenValidity</code> duration can range from five minutes to one
+     * day.</p>
      */
     inline TokenValidityUnitsType& WithAccessToken(const TimeUnitsType& value) { SetAccessToken(value); return *this;}
 
@@ -83,7 +93,9 @@ namespace Model
      * <p> A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>AccessTokenValidity</code> parameter. The default
-     * <code>AccessTokenValidity</code> time unit is hours.</p>
+     * <code>AccessTokenValidity</code> time unit is hours.
+     * <code>AccessTokenValidity</code> duration can range from five minutes to one
+     * day.</p>
      */
     inline TokenValidityUnitsType& WithAccessToken(TimeUnitsType&& value) { SetAccessToken(std::move(value)); return *this;}
 
@@ -92,7 +104,8 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code>
-     * time unit is hours.</p>
+     * time unit is hours. <code>IdTokenValidity</code> duration can range from five
+     * minutes to one day.</p>
      */
     inline const TimeUnitsType& GetIdToken() const{ return m_idToken; }
 
@@ -100,7 +113,8 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code>
-     * time unit is hours.</p>
+     * time unit is hours. <code>IdTokenValidity</code> duration can range from five
+     * minutes to one day.</p>
      */
     inline bool IdTokenHasBeenSet() const { return m_idTokenHasBeenSet; }
 
@@ -108,7 +122,8 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code>
-     * time unit is hours.</p>
+     * time unit is hours. <code>IdTokenValidity</code> duration can range from five
+     * minutes to one day.</p>
      */
     inline void SetIdToken(const TimeUnitsType& value) { m_idTokenHasBeenSet = true; m_idToken = value; }
 
@@ -116,7 +131,8 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code>
-     * time unit is hours.</p>
+     * time unit is hours. <code>IdTokenValidity</code> duration can range from five
+     * minutes to one day.</p>
      */
     inline void SetIdToken(TimeUnitsType&& value) { m_idTokenHasBeenSet = true; m_idToken = std::move(value); }
 
@@ -124,7 +140,8 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code>
-     * time unit is hours.</p>
+     * time unit is hours. <code>IdTokenValidity</code> duration can range from five
+     * minutes to one day.</p>
      */
     inline TokenValidityUnitsType& WithIdToken(const TimeUnitsType& value) { SetIdToken(value); return *this;}
 
@@ -132,7 +149,8 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code>
-     * time unit is hours.</p>
+     * time unit is hours. <code>IdTokenValidity</code> duration can range from five
+     * minutes to one day.</p>
      */
     inline TokenValidityUnitsType& WithIdToken(TimeUnitsType&& value) { SetIdToken(std::move(value)); return *this;}
 
@@ -141,7 +159,9 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>RefreshTokenValidity</code> parameter. The default
-     * <code>RefreshTokenValidity</code> time unit is days.</p>
+     * <code>RefreshTokenValidity</code> time unit is days.
+     * <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10
+     * years.</p>
      */
     inline const TimeUnitsType& GetRefreshToken() const{ return m_refreshToken; }
 
@@ -149,7 +169,9 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>RefreshTokenValidity</code> parameter. The default
-     * <code>RefreshTokenValidity</code> time unit is days.</p>
+     * <code>RefreshTokenValidity</code> time unit is days.
+     * <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10
+     * years.</p>
      */
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
 
@@ -157,7 +179,9 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>RefreshTokenValidity</code> parameter. The default
-     * <code>RefreshTokenValidity</code> time unit is days.</p>
+     * <code>RefreshTokenValidity</code> time unit is days.
+     * <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10
+     * years.</p>
      */
     inline void SetRefreshToken(const TimeUnitsType& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
 
@@ -165,7 +189,9 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>RefreshTokenValidity</code> parameter. The default
-     * <code>RefreshTokenValidity</code> time unit is days.</p>
+     * <code>RefreshTokenValidity</code> time unit is days.
+     * <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10
+     * years.</p>
      */
     inline void SetRefreshToken(TimeUnitsType&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
 
@@ -173,7 +199,9 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>RefreshTokenValidity</code> parameter. The default
-     * <code>RefreshTokenValidity</code> time unit is days.</p>
+     * <code>RefreshTokenValidity</code> time unit is days.
+     * <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10
+     * years.</p>
      */
     inline TokenValidityUnitsType& WithRefreshToken(const TimeUnitsType& value) { SetRefreshToken(value); return *this;}
 
@@ -181,7 +209,9 @@ namespace Model
      * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
      * <code>hours</code>, or <code>days</code> for the value that you set in the
      * <code>RefreshTokenValidity</code> parameter. The default
-     * <code>RefreshTokenValidity</code> time unit is days.</p>
+     * <code>RefreshTokenValidity</code> time unit is days.
+     * <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10
+     * years.</p>
      */
     inline TokenValidityUnitsType& WithRefreshToken(TimeUnitsType&& value) { SetRefreshToken(std::move(value)); return *this;}
 

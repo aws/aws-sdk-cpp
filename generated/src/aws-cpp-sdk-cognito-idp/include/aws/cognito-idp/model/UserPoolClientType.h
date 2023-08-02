@@ -209,63 +209,87 @@ namespace Model
 
 
     /**
-     * <p>The date the user pool client was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * <p>The date the user pool client was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
-     * <p>The date the user pool client was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * <p>The date the user pool client was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * <p>The date the user pool client was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline UserPoolClientType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * <p>The date the user pool client was last modified.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was modified.</p>
      */
     inline UserPoolClientType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date the user pool client was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date the user pool client was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The date the user pool client was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date the user pool client was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The date the user pool client was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline UserPoolClientType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date the user pool client was created.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline UserPoolClientType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
@@ -412,10 +436,10 @@ namespace Model
      * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
-     * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
-     * specify otherwise in the configuration of your app client, your ID tokens are
-     * valid for one hour.</p>
+     * default time unit for <code>IdTokenValidity</code> in an API request is hours.
+     * <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't specify
+     * otherwise in the configuration of your app client, your ID tokens are valid for
+     * one hour.</p>
      */
     inline int GetIdTokenValidity() const{ return m_idTokenValidity; }
 
@@ -427,10 +451,10 @@ namespace Model
      * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
-     * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
-     * specify otherwise in the configuration of your app client, your ID tokens are
-     * valid for one hour.</p>
+     * default time unit for <code>IdTokenValidity</code> in an API request is hours.
+     * <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't specify
+     * otherwise in the configuration of your app client, your ID tokens are valid for
+     * one hour.</p>
      */
     inline bool IdTokenValidityHasBeenSet() const { return m_idTokenValidityHasBeenSet; }
 
@@ -442,10 +466,10 @@ namespace Model
      * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
-     * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
-     * specify otherwise in the configuration of your app client, your ID tokens are
-     * valid for one hour.</p>
+     * default time unit for <code>IdTokenValidity</code> in an API request is hours.
+     * <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't specify
+     * otherwise in the configuration of your app client, your ID tokens are valid for
+     * one hour.</p>
      */
     inline void SetIdTokenValidity(int value) { m_idTokenValidityHasBeenSet = true; m_idTokenValidity = value; }
 
@@ -457,10 +481,10 @@ namespace Model
      * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
-     * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
-     * specify otherwise in the configuration of your app client, your ID tokens are
-     * valid for one hour.</p>
+     * default time unit for <code>IdTokenValidity</code> in an API request is hours.
+     * <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't specify
+     * otherwise in the configuration of your app client, your ID tokens are valid for
+     * one hour.</p>
      */
     inline UserPoolClientType& WithIdTokenValidity(int value) { SetIdTokenValidity(value); return *this;}
 
@@ -1340,26 +1364,74 @@ namespace Model
 
 
     /**
-     * <p>Set to true if the client is allowed to follow the OAuth protocol when
-     * interacting with Amazon Cognito user pools.</p>
+     * <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app
+     * client.</p> <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be
+     * <code>true</code> before you can configure the following features in your app
+     * client.</p> <ul> <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+     * <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li> <li> <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li> <li> <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and
+     * client credentials OAuth 2.0 grants.</p> </li> </ul> <p>To use OAuth 2.0
+     * features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a
+     * <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API
+     * request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs,
+     * it defaults to <code>false</code>.</p>
      */
     inline bool GetAllowedOAuthFlowsUserPoolClient() const{ return m_allowedOAuthFlowsUserPoolClient; }
 
     /**
-     * <p>Set to true if the client is allowed to follow the OAuth protocol when
-     * interacting with Amazon Cognito user pools.</p>
+     * <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app
+     * client.</p> <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be
+     * <code>true</code> before you can configure the following features in your app
+     * client.</p> <ul> <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+     * <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li> <li> <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li> <li> <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and
+     * client credentials OAuth 2.0 grants.</p> </li> </ul> <p>To use OAuth 2.0
+     * features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a
+     * <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API
+     * request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs,
+     * it defaults to <code>false</code>.</p>
      */
     inline bool AllowedOAuthFlowsUserPoolClientHasBeenSet() const { return m_allowedOAuthFlowsUserPoolClientHasBeenSet; }
 
     /**
-     * <p>Set to true if the client is allowed to follow the OAuth protocol when
-     * interacting with Amazon Cognito user pools.</p>
+     * <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app
+     * client.</p> <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be
+     * <code>true</code> before you can configure the following features in your app
+     * client.</p> <ul> <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+     * <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li> <li> <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li> <li> <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and
+     * client credentials OAuth 2.0 grants.</p> </li> </ul> <p>To use OAuth 2.0
+     * features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a
+     * <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API
+     * request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs,
+     * it defaults to <code>false</code>.</p>
      */
     inline void SetAllowedOAuthFlowsUserPoolClient(bool value) { m_allowedOAuthFlowsUserPoolClientHasBeenSet = true; m_allowedOAuthFlowsUserPoolClient = value; }
 
     /**
-     * <p>Set to true if the client is allowed to follow the OAuth protocol when
-     * interacting with Amazon Cognito user pools.</p>
+     * <p>Set to <code>true</code> to use OAuth 2.0 features in your user pool app
+     * client.</p> <p> <code>AllowedOAuthFlowsUserPoolClient</code> must be
+     * <code>true</code> before you can configure the following features in your app
+     * client.</p> <ul> <li> <p> <code>CallBackURLs</code>: Callback URLs.</p> </li>
+     * <li> <p> <code>LogoutURLs</code>: Sign-out redirect URLs.</p> </li> <li> <p>
+     * <code>AllowedOAuthScopes</code>: OAuth 2.0 scopes.</p> </li> <li> <p>
+     * <code>AllowedOAuthFlows</code>: Support for authorization code, implicit, and
+     * client credentials OAuth 2.0 grants.</p> </li> </ul> <p>To use OAuth 2.0
+     * features, configure one of these features in the Amazon Cognito console or set
+     * <code>AllowedOAuthFlowsUserPoolClient</code> to <code>true</code> in a
+     * <code>CreateUserPoolClient</code> or <code>UpdateUserPoolClient</code> API
+     * request. If you don't set a value for
+     * <code>AllowedOAuthFlowsUserPoolClient</code> in a request with the CLI or SDKs,
+     * it defaults to <code>false</code>.</p>
      */
     inline UserPoolClientType& WithAllowedOAuthFlowsUserPoolClient(bool value) { SetAllowedOAuthFlowsUserPoolClient(value); return *this;}
 

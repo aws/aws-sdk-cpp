@@ -91,8 +91,8 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -101,8 +101,8 @@ namespace Model
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -111,8 +111,8 @@ namespace Model
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -121,8 +121,8 @@ namespace Model
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -131,8 +131,8 @@ namespace Model
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -141,8 +141,8 @@ namespace Model
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -151,8 +151,8 @@ namespace Model
     inline DeleteResiliencyPolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -161,8 +161,8 @@ namespace Model
     inline DeleteResiliencyPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">

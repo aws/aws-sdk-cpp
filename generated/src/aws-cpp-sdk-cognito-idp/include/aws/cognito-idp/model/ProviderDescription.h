@@ -143,32 +143,44 @@ namespace Model
 
 
     /**
-     * <p>The date the provider was added to the user pool.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date the provider was added to the user pool.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The date the provider was added to the user pool.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date the provider was added to the user pool.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The date the provider was added to the user pool.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline ProviderDescription& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date the provider was added to the user pool.</p>
+     * <p>The date and time, in <a
+     * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+     * format, when the item was created.</p>
      */
     inline ProviderDescription& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 

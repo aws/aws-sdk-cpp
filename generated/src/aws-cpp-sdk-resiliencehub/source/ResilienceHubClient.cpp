@@ -22,6 +22,7 @@
 #include <aws/resiliencehub/ResilienceHubErrorMarshaller.h>
 #include <aws/resiliencehub/ResilienceHubEndpointProvider.h>
 #include <aws/resiliencehub/model/AddDraftAppVersionResourceMappingsRequest.h>
+#include <aws/resiliencehub/model/BatchUpdateRecommendationStatusRequest.h>
 #include <aws/resiliencehub/model/CreateAppRequest.h>
 #include <aws/resiliencehub/model/CreateAppVersionAppComponentRequest.h>
 #include <aws/resiliencehub/model/CreateAppVersionResourceRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/resiliencehub/model/DescribeResiliencyPolicyRequest.h>
 #include <aws/resiliencehub/model/ImportResourcesToDraftAppVersionRequest.h>
 #include <aws/resiliencehub/model/ListAlarmRecommendationsRequest.h>
+#include <aws/resiliencehub/model/ListAppAssessmentComplianceDriftsRequest.h>
 #include <aws/resiliencehub/model/ListAppAssessmentsRequest.h>
 #include <aws/resiliencehub/model/ListAppComponentCompliancesRequest.h>
 #include <aws/resiliencehub/model/ListAppComponentRecommendationsRequest.h>
@@ -227,6 +229,33 @@ AddDraftAppVersionResourceMappingsOutcome ResilienceHubClient::AddDraftAppVersio
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddDraftAppVersionResourceMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/add-draft-app-version-resource-mappings");
       return AddDraftAppVersionResourceMappingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+BatchUpdateRecommendationStatusOutcome ResilienceHubClient::BatchUpdateRecommendationStatus(const BatchUpdateRecommendationStatusRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchUpdateRecommendationStatus);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateRecommendationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, BatchUpdateRecommendationStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, BatchUpdateRecommendationStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".BatchUpdateRecommendationStatus",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<BatchUpdateRecommendationStatusOutcome>(
+    [&]()-> BatchUpdateRecommendationStatusOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateRecommendationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/batch-update-recommendation-status");
+      return BatchUpdateRecommendationStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -848,6 +877,33 @@ ListAlarmRecommendationsOutcome ResilienceHubClient::ListAlarmRecommendations(co
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAlarmRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/list-alarm-recommendations");
       return ListAlarmRecommendationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListAppAssessmentComplianceDriftsOutcome ResilienceHubClient::ListAppAssessmentComplianceDrifts(const ListAppAssessmentComplianceDriftsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListAppAssessmentComplianceDrifts);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppAssessmentComplianceDrifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAppAssessmentComplianceDrifts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListAppAssessmentComplianceDrifts, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAppAssessmentComplianceDrifts",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListAppAssessmentComplianceDriftsOutcome>(
+    [&]()-> ListAppAssessmentComplianceDriftsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAppAssessmentComplianceDrifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/list-app-assessment-compliance-drifts");
+      return ListAppAssessmentComplianceDriftsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

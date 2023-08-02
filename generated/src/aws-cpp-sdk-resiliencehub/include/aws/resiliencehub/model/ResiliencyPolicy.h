@@ -195,8 +195,8 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -205,8 +205,8 @@ namespace Model
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -215,8 +215,8 @@ namespace Model
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -225,8 +225,8 @@ namespace Model
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -235,8 +235,8 @@ namespace Model
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -245,8 +245,8 @@ namespace Model
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -255,8 +255,8 @@ namespace Model
     inline ResiliencyPolicy& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -265,8 +265,8 @@ namespace Model
     inline ResiliencyPolicy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this
-     * ARN is:
+     * <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN
+     * is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -358,80 +358,80 @@ namespace Model
 
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline ResiliencyPolicy& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline ResiliencyPolicy& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline ResiliencyPolicy& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline ResiliencyPolicy& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline ResiliencyPolicy& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline ResiliencyPolicy& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline ResiliencyPolicy& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline ResiliencyPolicy& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags assigned to the resource. A tag is a label that you assign to an
-     * Amazon Web Services resource. Each tag consists of a key/value pair.</p>
+     * <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon
+     * Web Services resource. Each tag consists of a key/value pair.</p>
      */
     inline ResiliencyPolicy& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

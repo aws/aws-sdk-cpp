@@ -237,42 +237,42 @@ namespace Model
 
 
     /**
-     * <p>The RPO reference identifier.</p>
+     * <p>Reference identifier of the RPO .</p>
      */
     inline const Aws::String& GetRpoReferenceId() const{ return m_rpoReferenceId; }
 
     /**
-     * <p>The RPO reference identifier.</p>
+     * <p>Reference identifier of the RPO .</p>
      */
     inline bool RpoReferenceIdHasBeenSet() const { return m_rpoReferenceIdHasBeenSet; }
 
     /**
-     * <p>The RPO reference identifier.</p>
+     * <p>Reference identifier of the RPO .</p>
      */
     inline void SetRpoReferenceId(const Aws::String& value) { m_rpoReferenceIdHasBeenSet = true; m_rpoReferenceId = value; }
 
     /**
-     * <p>The RPO reference identifier.</p>
+     * <p>Reference identifier of the RPO .</p>
      */
     inline void SetRpoReferenceId(Aws::String&& value) { m_rpoReferenceIdHasBeenSet = true; m_rpoReferenceId = std::move(value); }
 
     /**
-     * <p>The RPO reference identifier.</p>
+     * <p>Reference identifier of the RPO .</p>
      */
     inline void SetRpoReferenceId(const char* value) { m_rpoReferenceIdHasBeenSet = true; m_rpoReferenceId.assign(value); }
 
     /**
-     * <p>The RPO reference identifier.</p>
+     * <p>Reference identifier of the RPO .</p>
      */
     inline DisruptionCompliance& WithRpoReferenceId(const Aws::String& value) { SetRpoReferenceId(value); return *this;}
 
     /**
-     * <p>The RPO reference identifier.</p>
+     * <p>Reference identifier of the RPO .</p>
      */
     inline DisruptionCompliance& WithRpoReferenceId(Aws::String&& value) { SetRpoReferenceId(std::move(value)); return *this;}
 
     /**
-     * <p>The RPO reference identifier.</p>
+     * <p>Reference identifier of the RPO .</p>
      */
     inline DisruptionCompliance& WithRpoReferenceId(const char* value) { SetRpoReferenceId(value); return *this;}
 
@@ -319,42 +319,42 @@ namespace Model
 
 
     /**
-     * <p>The RTO reference identifier.</p>
+     * <p>Reference identifier of the RTO.</p>
      */
     inline const Aws::String& GetRtoReferenceId() const{ return m_rtoReferenceId; }
 
     /**
-     * <p>The RTO reference identifier.</p>
+     * <p>Reference identifier of the RTO.</p>
      */
     inline bool RtoReferenceIdHasBeenSet() const { return m_rtoReferenceIdHasBeenSet; }
 
     /**
-     * <p>The RTO reference identifier.</p>
+     * <p>Reference identifier of the RTO.</p>
      */
     inline void SetRtoReferenceId(const Aws::String& value) { m_rtoReferenceIdHasBeenSet = true; m_rtoReferenceId = value; }
 
     /**
-     * <p>The RTO reference identifier.</p>
+     * <p>Reference identifier of the RTO.</p>
      */
     inline void SetRtoReferenceId(Aws::String&& value) { m_rtoReferenceIdHasBeenSet = true; m_rtoReferenceId = std::move(value); }
 
     /**
-     * <p>The RTO reference identifier.</p>
+     * <p>Reference identifier of the RTO.</p>
      */
     inline void SetRtoReferenceId(const char* value) { m_rtoReferenceIdHasBeenSet = true; m_rtoReferenceId.assign(value); }
 
     /**
-     * <p>The RTO reference identifier.</p>
+     * <p>Reference identifier of the RTO.</p>
      */
     inline DisruptionCompliance& WithRtoReferenceId(const Aws::String& value) { SetRtoReferenceId(value); return *this;}
 
     /**
-     * <p>The RTO reference identifier.</p>
+     * <p>Reference identifier of the RTO.</p>
      */
     inline DisruptionCompliance& WithRtoReferenceId(Aws::String&& value) { SetRtoReferenceId(std::move(value)); return *this;}
 
     /**
-     * <p>The RTO reference identifier.</p>
+     * <p>Reference identifier of the RTO.</p>
      */
     inline DisruptionCompliance& WithRtoReferenceId(const char* value) { SetRtoReferenceId(value); return *this;}
 

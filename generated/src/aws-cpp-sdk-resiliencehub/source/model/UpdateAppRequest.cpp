@@ -19,6 +19,8 @@ UpdateAppRequest::UpdateAppRequest() :
     m_clearResiliencyPolicyArn(false),
     m_clearResiliencyPolicyArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_eventSubscriptionsHasBeenSet(false),
+    m_permissionModelHasBeenSet(false),
     m_policyArnHasBeenSet(false)
 {
 }
@@ -47,6 +49,23 @@ Aws::String UpdateAppRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_eventSubscriptionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> eventSubscriptionsJsonList(m_eventSubscriptions.size());
+   for(unsigned eventSubscriptionsIndex = 0; eventSubscriptionsIndex < eventSubscriptionsJsonList.GetLength(); ++eventSubscriptionsIndex)
+   {
+     eventSubscriptionsJsonList[eventSubscriptionsIndex].AsObject(m_eventSubscriptions[eventSubscriptionsIndex].Jsonize());
+   }
+   payload.WithArray("eventSubscriptions", std::move(eventSubscriptionsJsonList));
+
+  }
+
+  if(m_permissionModelHasBeenSet)
+  {
+   payload.WithObject("permissionModel", m_permissionModel.Jsonize());
 
   }
 
