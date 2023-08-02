@@ -419,12 +419,6 @@ static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
     }
   }
 
-  if (meta_request_result->error_code || meta_request_result->response_status != static_cast<int>(Aws::Http::HttpResponseCode::OK))
-  {
-    AWS_LOGSTREAM_ERROR(S3CrtClient::ALLOCATION_TAG, "S3CrtClient received error response for s3_meta_request with response code: " << meta_request_result->response_status
-      << ", with error_code: " << meta_request_result->error_code);
-  }
-
   auto& bodyStream = userData->response->GetResponseBody();
 
   if (meta_request_result->error_response_body)
@@ -433,6 +427,16 @@ static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
     bodyStream.seekg(0);
     bodyStream.seekp(0);
     bodyStream.write(reinterpret_cast<char*>(meta_request_result->error_response_body->buffer), static_cast<std::streamsize>(meta_request_result->error_response_body->len));
+  } else if (meta_request_result->error_code) {
+    // If the response body is empty, the parent class BuildAWSError() does not generate a useful error message ("No response body").
+    // Fill in a ClientErrorMessage to prevent BuildAWSError from any further processing, extracting the lower-level error details.
+    Aws::StringStream ss;
+
+    ss << aws_error_str(meta_request_result->error_code)
+       << " (" << aws_error_lib_name(meta_request_result->error_code) << ": " << aws_error_name(meta_request_result->error_code) << ")";
+
+    userData->response->SetClientErrorMessage(ss.str());
+    userData->response->SetClientErrorType(CoreErrors::INTERNAL_FAILURE);
   }
 
   aws_s3_meta_request_release(meta_request);
