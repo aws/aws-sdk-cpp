@@ -50,6 +50,18 @@ namespace Aws
             /* Callback and associated user data for when the client has completed its shutdown process. */
             std::function<void(void*)> clientShutdownCallback;
             void *shutdownCallbackUserData = nullptr;
+
+            /**
+             * Retry-configuration, using truncated exponential backoff.
+             */
+            /* Maximum number of request retries. Set to 0 to disable retries. */
+            size_t exponentialBackoffTotalRetries = 0;
+
+            /* Scale factor (in seconds) for the back-off value. */
+            double exponentialBackoffScaleFactor = 1.0;
+
+            /* Maximum delay between retries (in seconds). Set to 0 to disable upper bound. */
+            int exponentialBackoffMaxDelay = 0;
         };
     }
 }
