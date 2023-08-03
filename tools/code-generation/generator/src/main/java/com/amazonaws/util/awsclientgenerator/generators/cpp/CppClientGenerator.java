@@ -16,6 +16,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.Cpp
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.EnumModel;
 import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -28,8 +29,13 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 public abstract class CppClientGenerator implements ClientGenerator {
+
+    private static final int OPERATIONS_PER_CLIENT_FILE = 100;
+    private static final int MAX_OPERATIONS_IN_CLIENT_FILE = 200;
 
     protected final VelocityEngine velocityEngine;
 
@@ -65,7 +71,24 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.addAll(generateModelSourceFiles(serviceModel));
         fileList.add(generateClientHeaderFile(serviceModel));
         fileList.add(generateServiceClientModelInclude(serviceModel));
-        fileList.add(generateClientSourceFile(serviceModel));
+
+        AtomicInteger operationCount = new AtomicInteger();
+
+        final List<ServiceModel> serviceModels;
+        if (serviceModel.getOperations().size() > MAX_OPERATIONS_IN_CLIENT_FILE) {
+            serviceModels = serviceModel.getOperations().entrySet().stream()
+                    .collect(Collectors.groupingBy(x -> operationCount.getAndIncrement() / OPERATIONS_PER_CLIENT_FILE))
+                    .entrySet().stream()
+                    .map(operationList -> serviceModel.toBuilder()
+                            .operations(operationList.getValue().stream()
+                                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)))
+                            .build())
+                    .collect(Collectors.toList());
+        } else {
+            serviceModels = ImmutableList.of(serviceModel);
+        }
+
+        fileList.addAll(generateClientSourceFile(serviceModels));
         if (serviceModel.getEndpointRules() == null) {
             fileList.add(generateARNHeaderFile(serviceModel));
             fileList.add(generateARNSourceFile(serviceModel));
@@ -293,7 +316,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, fileName, true);
     }
 
-    protected abstract SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception;
+    protected abstract List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception;
 
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         Shape shape = shapeEntry.getValue();

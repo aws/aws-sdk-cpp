@@ -19,8 +19,10 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -247,22 +249,32 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     }
 
     @Override
-    protected SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception {
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientSource.vm");
+    protected List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception {
+        List<SdkFileEntry> sourceFiles = new ArrayList<>();
+        for (int i = 0; i < serviceModels.size(); i++) {
+            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ClientSource.vm");
 
-        Map<String, String> templateOverride = new HashMap<>();
-        if ("S3-CRT".equalsIgnoreCase(serviceModel.getMetadata().getProjectName())) {
-            templateOverride.put("ServiceClientSourceInit_template",
-                    "/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtServiceClientSourceInit.vm");
+            Map<String, String> templateOverride = new HashMap<>();
+            if ("S3-CRT".equalsIgnoreCase(serviceModels.get(i).getMetadata().getProjectName())) {
+                templateOverride.put("ServiceClientSourceInit_template",
+                        "/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtServiceClientSourceInit.vm");
+            }
+            VelocityContext context = createContext(serviceModels.get(i));
+            context.put("CppViewHelper", CppViewHelper.class);
+            context.put("TemplateOverride", templateOverride);
+
+            final String fileName;
+            if (i == 0) {
+                context.put("onlyGeneratedOperations", false);
+                fileName = String.format("source/%sClient.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix());
+            } else {
+                context.put("onlyGeneratedOperations", true);
+                fileName = String.format("source/%sClient%d.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix(), i);
+            }
+
+            sourceFiles.add(makeFile(template, context, fileName, true));
         }
-        VelocityContext context = createContext(serviceModel);
-        context.put("CppViewHelper", CppViewHelper.class);
-        context.put("TemplateOverride", templateOverride);
-
-
-        String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
-
-        return makeFile(template, context, fileName, true);
+        return sourceFiles;
     }
 
     @Override
