@@ -12,6 +12,7 @@
 #set($ForRegionExtraArgsString = ", m_USEast1RegionalEndpointOption == Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
 
+#if(!${onlyGeneratedOperations})
 #if(!$serviceModel.endpointRules)
 static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
 static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
@@ -350,3 +351,4 @@ bool ${className}::MultipartUploadSupported() const
 {
     return true;
 }
+#end
