@@ -779,6 +779,43 @@ namespace Model
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithIpv6PrefixCount(int value) { SetIpv6PrefixCount(value); return *this;}
 
+
+    /**
+     * <p>The primary IPv6 address of the network interface. When you enable an IPv6
+     * GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline bool GetPrimaryIpv6() const{ return m_primaryIpv6; }
+
+    /**
+     * <p>The primary IPv6 address of the network interface. When you enable an IPv6
+     * GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline bool PrimaryIpv6HasBeenSet() const { return m_primaryIpv6HasBeenSet; }
+
+    /**
+     * <p>The primary IPv6 address of the network interface. When you enable an IPv6
+     * GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline void SetPrimaryIpv6(bool value) { m_primaryIpv6HasBeenSet = true; m_primaryIpv6 = value; }
+
+    /**
+     * <p>The primary IPv6 address of the network interface. When you enable an IPv6
+     * GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is
+     * detached. For more information about primary IPv6 addresses, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecificationRequest& WithPrimaryIpv6(bool value) { SetPrimaryIpv6(value); return *this;}
+
   private:
 
     bool m_associateCarrierIpAddress;
@@ -837,6 +874,9 @@ namespace Model
 
     int m_ipv6PrefixCount;
     bool m_ipv6PrefixCountHasBeenSet = false;
+
+    bool m_primaryIpv6;
+    bool m_primaryIpv6HasBeenSet = false;
   };
 
 } // namespace Model
