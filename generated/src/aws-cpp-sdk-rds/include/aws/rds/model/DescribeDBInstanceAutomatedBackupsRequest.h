@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>(Optional) The user-supplied instance identifier. If this parameter is
      * specified, it must match the identifier of an existing DB instance. It returns
-     * information from the specific DB instance' automated backup. This parameter
+     * information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.</p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>(Optional) The user-supplied instance identifier. If this parameter is
      * specified, it must match the identifier of an existing DB instance. It returns
-     * information from the specific DB instance' automated backup. This parameter
+     * information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.</p>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
@@ -110,7 +110,7 @@ namespace Model
     /**
      * <p>(Optional) The user-supplied instance identifier. If this parameter is
      * specified, it must match the identifier of an existing DB instance. It returns
-     * information from the specific DB instance' automated backup. This parameter
+     * information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.</p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>(Optional) The user-supplied instance identifier. If this parameter is
      * specified, it must match the identifier of an existing DB instance. It returns
-     * information from the specific DB instance' automated backup. This parameter
+     * information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.</p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>(Optional) The user-supplied instance identifier. If this parameter is
      * specified, it must match the identifier of an existing DB instance. It returns
-     * information from the specific DB instance' automated backup. This parameter
+     * information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.</p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>(Optional) The user-supplied instance identifier. If this parameter is
      * specified, it must match the identifier of an existing DB instance. It returns
-     * information from the specific DB instance' automated backup. This parameter
+     * information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.</p>
      */
     inline DescribeDBInstanceAutomatedBackupsRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
@@ -142,7 +142,7 @@ namespace Model
     /**
      * <p>(Optional) The user-supplied instance identifier. If this parameter is
      * specified, it must match the identifier of an existing DB instance. It returns
-     * information from the specific DB instance' automated backup. This parameter
+     * information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.</p>
      */
     inline DescribeDBInstanceAutomatedBackupsRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
@@ -150,7 +150,7 @@ namespace Model
     /**
      * <p>(Optional) The user-supplied instance identifier. If this parameter is
      * specified, it must match the identifier of an existing DB instance. It returns
-     * information from the specific DB instance' automated backup. This parameter
+     * information from the specific DB instance's automated backup. This parameter
      * isn't case-sensitive.</p>
      */
     inline DescribeDBInstanceAutomatedBackupsRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
@@ -159,11 +159,11 @@ namespace Model
     /**
      * <p>A filter that specifies which resources to return based on status.</p>
      * <p>Supported filters are the following:</p> <ul> <li> <p> <code>status</code>
-     * </p> <ul> <li> <p> <code>active</code> - automated backups for current
-     * instances</p> </li> <li> <p> <code>retained</code> - automated backups for
-     * deleted instances and after backup replication is stopped</p> </li> <li> <p>
-     * <code>creating</code> - automated backups that are waiting for the first
-     * automated snapshot to be available</p> </li> </ul> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>active</code> - Automated backups for current
+     * instances.</p> </li> <li> <p> <code>creating</code> - Automated backups that are
+     * waiting for the first automated snapshot to be available.</p> </li> <li> <p>
+     * <code>retained</code> - Automated backups for deleted instances and after backup
+     * replication is stopped.</p> </li> </ul> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon
      * Resource Names (ARNs). The results list includes only information about the DB
      * instance automated backups identified by these ARNs.</p> </li> <li> <p>
@@ -178,11 +178,11 @@ namespace Model
     /**
      * <p>A filter that specifies which resources to return based on status.</p>
      * <p>Supported filters are the following:</p> <ul> <li> <p> <code>status</code>
-     * </p> <ul> <li> <p> <code>active</code> - automated backups for current
-     * instances</p> </li> <li> <p> <code>retained</code> - automated backups for
-     * deleted instances and after backup replication is stopped</p> </li> <li> <p>
-     * <code>creating</code> - automated backups that are waiting for the first
-     * automated snapshot to be available</p> </li> </ul> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>active</code> - Automated backups for current
+     * instances.</p> </li> <li> <p> <code>creating</code> - Automated backups that are
+     * waiting for the first automated snapshot to be available.</p> </li> <li> <p>
+     * <code>retained</code> - Automated backups for deleted instances and after backup
+     * replication is stopped.</p> </li> </ul> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon
      * Resource Names (ARNs). The results list includes only information about the DB
      * instance automated backups identified by these ARNs.</p> </li> <li> <p>
@@ -197,11 +197,11 @@ namespace Model
     /**
      * <p>A filter that specifies which resources to return based on status.</p>
      * <p>Supported filters are the following:</p> <ul> <li> <p> <code>status</code>
-     * </p> <ul> <li> <p> <code>active</code> - automated backups for current
-     * instances</p> </li> <li> <p> <code>retained</code> - automated backups for
-     * deleted instances and after backup replication is stopped</p> </li> <li> <p>
-     * <code>creating</code> - automated backups that are waiting for the first
-     * automated snapshot to be available</p> </li> </ul> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>active</code> - Automated backups for current
+     * instances.</p> </li> <li> <p> <code>creating</code> - Automated backups that are
+     * waiting for the first automated snapshot to be available.</p> </li> <li> <p>
+     * <code>retained</code> - Automated backups for deleted instances and after backup
+     * replication is stopped.</p> </li> </ul> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon
      * Resource Names (ARNs). The results list includes only information about the DB
      * instance automated backups identified by these ARNs.</p> </li> <li> <p>
@@ -216,11 +216,11 @@ namespace Model
     /**
      * <p>A filter that specifies which resources to return based on status.</p>
      * <p>Supported filters are the following:</p> <ul> <li> <p> <code>status</code>
-     * </p> <ul> <li> <p> <code>active</code> - automated backups for current
-     * instances</p> </li> <li> <p> <code>retained</code> - automated backups for
-     * deleted instances and after backup replication is stopped</p> </li> <li> <p>
-     * <code>creating</code> - automated backups that are waiting for the first
-     * automated snapshot to be available</p> </li> </ul> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>active</code> - Automated backups for current
+     * instances.</p> </li> <li> <p> <code>creating</code> - Automated backups that are
+     * waiting for the first automated snapshot to be available.</p> </li> <li> <p>
+     * <code>retained</code> - Automated backups for deleted instances and after backup
+     * replication is stopped.</p> </li> </ul> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon
      * Resource Names (ARNs). The results list includes only information about the DB
      * instance automated backups identified by these ARNs.</p> </li> <li> <p>
@@ -235,11 +235,11 @@ namespace Model
     /**
      * <p>A filter that specifies which resources to return based on status.</p>
      * <p>Supported filters are the following:</p> <ul> <li> <p> <code>status</code>
-     * </p> <ul> <li> <p> <code>active</code> - automated backups for current
-     * instances</p> </li> <li> <p> <code>retained</code> - automated backups for
-     * deleted instances and after backup replication is stopped</p> </li> <li> <p>
-     * <code>creating</code> - automated backups that are waiting for the first
-     * automated snapshot to be available</p> </li> </ul> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>active</code> - Automated backups for current
+     * instances.</p> </li> <li> <p> <code>creating</code> - Automated backups that are
+     * waiting for the first automated snapshot to be available.</p> </li> <li> <p>
+     * <code>retained</code> - Automated backups for deleted instances and after backup
+     * replication is stopped.</p> </li> </ul> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon
      * Resource Names (ARNs). The results list includes only information about the DB
      * instance automated backups identified by these ARNs.</p> </li> <li> <p>
@@ -254,11 +254,11 @@ namespace Model
     /**
      * <p>A filter that specifies which resources to return based on status.</p>
      * <p>Supported filters are the following:</p> <ul> <li> <p> <code>status</code>
-     * </p> <ul> <li> <p> <code>active</code> - automated backups for current
-     * instances</p> </li> <li> <p> <code>retained</code> - automated backups for
-     * deleted instances and after backup replication is stopped</p> </li> <li> <p>
-     * <code>creating</code> - automated backups that are waiting for the first
-     * automated snapshot to be available</p> </li> </ul> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>active</code> - Automated backups for current
+     * instances.</p> </li> <li> <p> <code>creating</code> - Automated backups that are
+     * waiting for the first automated snapshot to be available.</p> </li> <li> <p>
+     * <code>retained</code> - Automated backups for deleted instances and after backup
+     * replication is stopped.</p> </li> </ul> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon
      * Resource Names (ARNs). The results list includes only information about the DB
      * instance automated backups identified by these ARNs.</p> </li> <li> <p>
@@ -273,11 +273,11 @@ namespace Model
     /**
      * <p>A filter that specifies which resources to return based on status.</p>
      * <p>Supported filters are the following:</p> <ul> <li> <p> <code>status</code>
-     * </p> <ul> <li> <p> <code>active</code> - automated backups for current
-     * instances</p> </li> <li> <p> <code>retained</code> - automated backups for
-     * deleted instances and after backup replication is stopped</p> </li> <li> <p>
-     * <code>creating</code> - automated backups that are waiting for the first
-     * automated snapshot to be available</p> </li> </ul> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>active</code> - Automated backups for current
+     * instances.</p> </li> <li> <p> <code>creating</code> - Automated backups that are
+     * waiting for the first automated snapshot to be available.</p> </li> <li> <p>
+     * <code>retained</code> - Automated backups for deleted instances and after backup
+     * replication is stopped.</p> </li> </ul> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon
      * Resource Names (ARNs). The results list includes only information about the DB
      * instance automated backups identified by these ARNs.</p> </li> <li> <p>
@@ -292,11 +292,11 @@ namespace Model
     /**
      * <p>A filter that specifies which resources to return based on status.</p>
      * <p>Supported filters are the following:</p> <ul> <li> <p> <code>status</code>
-     * </p> <ul> <li> <p> <code>active</code> - automated backups for current
-     * instances</p> </li> <li> <p> <code>retained</code> - automated backups for
-     * deleted instances and after backup replication is stopped</p> </li> <li> <p>
-     * <code>creating</code> - automated backups that are waiting for the first
-     * automated snapshot to be available</p> </li> </ul> </li> <li> <p>
+     * </p> <ul> <li> <p> <code>active</code> - Automated backups for current
+     * instances.</p> </li> <li> <p> <code>creating</code> - Automated backups that are
+     * waiting for the first automated snapshot to be available.</p> </li> <li> <p>
+     * <code>retained</code> - Automated backups for deleted instances and after backup
+     * replication is stopped.</p> </li> </ul> </li> <li> <p>
      * <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon
      * Resource Names (ARNs). The results list includes only information about the DB
      * instance automated backups identified by these ARNs.</p> </li> <li> <p>

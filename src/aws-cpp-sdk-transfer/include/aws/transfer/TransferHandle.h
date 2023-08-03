@@ -77,6 +77,8 @@ namespace Aws
                 bool IsLastPart() { return m_lastPart; }
                 void SetLastPart() { m_lastPart = true; }
 
+                Aws::String GetChecksum() const { return m_checksum; };
+                void SetChecksum(const Aws::String& checksum) { m_checksum = checksum; }
             private:
 
                 int m_partId;
@@ -90,6 +92,7 @@ namespace Aws
                 std::atomic<Aws::IOStream *> m_downloadPartStream;
                 std::atomic<unsigned char*> m_downloadBuffer;
                 bool m_lastPart;
+                Aws::String m_checksum;
         };
 
         using PartPointer = std::shared_ptr< PartState >;

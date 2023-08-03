@@ -115,7 +115,9 @@ DBCluster::DBCluster() :
     m_networkTypeHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
     m_masterUserSecretHasBeenSet(false),
-    m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false)
+    m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false),
+    m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
+    m_localWriteForwardingStatusHasBeenSet(false)
 {
 }
 
@@ -214,7 +216,9 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_networkTypeHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
     m_masterUserSecretHasBeenSet(false),
-    m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false)
+    m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false),
+    m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
+    m_localWriteForwardingStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -717,6 +721,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_iOOptimizedNextAllowedModificationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iOOptimizedNextAllowedModificationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_iOOptimizedNextAllowedModificationTimeHasBeenSet = true;
     }
+    XmlNode localWriteForwardingStatusNode = resultNode.FirstChild("LocalWriteForwardingStatus");
+    if(!localWriteForwardingStatusNode.IsNull())
+    {
+      m_localWriteForwardingStatus = LocalWriteForwardingStatusMapper::GetLocalWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localWriteForwardingStatusNode.GetText()).c_str()).c_str());
+      m_localWriteForwardingStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1144,6 +1154,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".IOOptimizedNextAllowedModificationTime=" << StringUtils::URLEncode(m_iOOptimizedNextAllowedModificationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_localWriteForwardingStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LocalWriteForwardingStatus=" << LocalWriteForwardingStatusMapper::GetNameForLocalWriteForwardingStatus(m_localWriteForwardingStatus) << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1495,6 +1510,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_iOOptimizedNextAllowedModificationTimeHasBeenSet)
   {
       oStream << location << ".IOOptimizedNextAllowedModificationTime=" << StringUtils::URLEncode(m_iOOptimizedNextAllowedModificationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_localWriteForwardingStatusHasBeenSet)
+  {
+      oStream << location << ".LocalWriteForwardingStatus=" << LocalWriteForwardingStatusMapper::GetNameForLocalWriteForwardingStatus(m_localWriteForwardingStatus) << "&";
   }
 }
 

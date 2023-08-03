@@ -46,6 +46,7 @@
 #include <aws/dms/model/DescribeEndpointSettingsResult.h>
 #include <aws/dms/model/DescribeEndpointTypesResult.h>
 #include <aws/dms/model/DescribeEndpointsResult.h>
+#include <aws/dms/model/DescribeEngineVersionsResult.h>
 #include <aws/dms/model/DescribeEventCategoriesResult.h>
 #include <aws/dms/model/DescribeEventSubscriptionsResult.h>
 #include <aws/dms/model/DescribeEventsResult.h>
@@ -164,6 +165,7 @@ namespace Aws
       class DescribeEndpointSettingsRequest;
       class DescribeEndpointTypesRequest;
       class DescribeEndpointsRequest;
+      class DescribeEngineVersionsRequest;
       class DescribeEventCategoriesRequest;
       class DescribeEventSubscriptionsRequest;
       class DescribeEventsRequest;
@@ -244,6 +246,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeEndpointSettingsResult, DatabaseMigrationServiceError> DescribeEndpointSettingsOutcome;
       typedef Aws::Utils::Outcome<DescribeEndpointTypesResult, DatabaseMigrationServiceError> DescribeEndpointTypesOutcome;
       typedef Aws::Utils::Outcome<DescribeEndpointsResult, DatabaseMigrationServiceError> DescribeEndpointsOutcome;
+      typedef Aws::Utils::Outcome<DescribeEngineVersionsResult, DatabaseMigrationServiceError> DescribeEngineVersionsOutcome;
       typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, DatabaseMigrationServiceError> DescribeEventCategoriesOutcome;
       typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, DatabaseMigrationServiceError> DescribeEventSubscriptionsOutcome;
       typedef Aws::Utils::Outcome<DescribeEventsResult, DatabaseMigrationServiceError> DescribeEventsOutcome;
@@ -325,6 +328,7 @@ namespace Aws
       typedef std::future<DescribeEndpointSettingsOutcome> DescribeEndpointSettingsOutcomeCallable;
       typedef std::future<DescribeEndpointTypesOutcome> DescribeEndpointTypesOutcomeCallable;
       typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
+      typedef std::future<DescribeEngineVersionsOutcome> DescribeEngineVersionsOutcomeCallable;
       typedef std::future<DescribeEventCategoriesOutcome> DescribeEventCategoriesOutcomeCallable;
       typedef std::future<DescribeEventSubscriptionsOutcome> DescribeEventSubscriptionsOutcomeCallable;
       typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
@@ -409,6 +413,7 @@ namespace Aws
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEndpointSettingsRequest&, const Model::DescribeEndpointSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointSettingsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEndpointTypesRequest&, const Model::DescribeEndpointTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointTypesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEngineVersionsRequest&, const Model::DescribeEngineVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEngineVersionsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEventCategoriesRequest&, const Model::DescribeEventCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventCategoriesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEventSubscriptionsRequest&, const Model::DescribeEventSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;

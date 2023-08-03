@@ -19,7 +19,7 @@ namespace Model
 {
 
 AlarmRecommendation::AlarmRecommendation() : 
-    m_appComponentNameHasBeenSet(false),
+    m_appComponentNamesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_itemsHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -32,7 +32,7 @@ AlarmRecommendation::AlarmRecommendation() :
 }
 
 AlarmRecommendation::AlarmRecommendation(JsonView jsonValue) : 
-    m_appComponentNameHasBeenSet(false),
+    m_appComponentNamesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_itemsHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -47,11 +47,14 @@ AlarmRecommendation::AlarmRecommendation(JsonView jsonValue) :
 
 AlarmRecommendation& AlarmRecommendation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("appComponentName"))
+  if(jsonValue.ValueExists("appComponentNames"))
   {
-    m_appComponentName = jsonValue.GetString("appComponentName");
-
-    m_appComponentNameHasBeenSet = true;
+    Aws::Utils::Array<JsonView> appComponentNamesJsonList = jsonValue.GetArray("appComponentNames");
+    for(unsigned appComponentNamesIndex = 0; appComponentNamesIndex < appComponentNamesJsonList.GetLength(); ++appComponentNamesIndex)
+    {
+      m_appComponentNames.push_back(appComponentNamesJsonList[appComponentNamesIndex].AsString());
+    }
+    m_appComponentNamesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -113,9 +116,14 @@ JsonValue AlarmRecommendation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_appComponentNameHasBeenSet)
+  if(m_appComponentNamesHasBeenSet)
   {
-   payload.WithString("appComponentName", m_appComponentName);
+   Aws::Utils::Array<JsonValue> appComponentNamesJsonList(m_appComponentNames.size());
+   for(unsigned appComponentNamesIndex = 0; appComponentNamesIndex < appComponentNamesJsonList.GetLength(); ++appComponentNamesIndex)
+   {
+     appComponentNamesJsonList[appComponentNamesIndex].AsString(m_appComponentNames[appComponentNamesIndex]);
+   }
+   payload.WithArray("appComponentNames", std::move(appComponentNamesJsonList));
 
   }
 

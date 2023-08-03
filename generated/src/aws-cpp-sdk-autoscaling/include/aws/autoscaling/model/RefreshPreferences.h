@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/ScaleInProtectedInstances.h>
 #include <aws/autoscaling/model/StandbyInstances.h>
+#include <aws/autoscaling/model/AlarmSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -322,53 +323,69 @@ namespace Model
 
     /**
      * <p>(Optional) Indicates whether to roll back the Auto Scaling group to its
-     * previous configuration if the instance refresh fails. The default is
-     * <code>false</code>.</p> <p>A rollback is not supported in the following
-     * situations: </p> <ul> <li> <p>There is no desired configuration specified for
-     * the instance refresh.</p> </li> <li> <p>The Auto Scaling group has a launch
-     * template that uses an Amazon Web Services Systems Manager parameter instead of
-     * an AMI ID for the <code>ImageId</code> property.</p> </li> <li> <p>The Auto
-     * Scaling group uses the launch template's <code>$Latest</code> or
-     * <code>$Default</code> version.</p> </li> </ul>
+     * previous configuration if the instance refresh fails or a CloudWatch alarm
+     * threshold is met. The default is <code>false</code>.</p> <p>A rollback is not
+     * supported in the following situations: </p> <ul> <li> <p>There is no desired
+     * configuration specified for the instance refresh.</p> </li> <li> <p>The Auto
+     * Scaling group has a launch template that uses an Amazon Web Services Systems
+     * Manager parameter instead of an AMI ID for the <code>ImageId</code>
+     * property.</p> </li> <li> <p>The Auto Scaling group uses the launch template's
+     * <code>$Latest</code> or <code>$Default</code> version.</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo
+     * changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool GetAutoRollback() const{ return m_autoRollback; }
 
     /**
      * <p>(Optional) Indicates whether to roll back the Auto Scaling group to its
-     * previous configuration if the instance refresh fails. The default is
-     * <code>false</code>.</p> <p>A rollback is not supported in the following
-     * situations: </p> <ul> <li> <p>There is no desired configuration specified for
-     * the instance refresh.</p> </li> <li> <p>The Auto Scaling group has a launch
-     * template that uses an Amazon Web Services Systems Manager parameter instead of
-     * an AMI ID for the <code>ImageId</code> property.</p> </li> <li> <p>The Auto
-     * Scaling group uses the launch template's <code>$Latest</code> or
-     * <code>$Default</code> version.</p> </li> </ul>
+     * previous configuration if the instance refresh fails or a CloudWatch alarm
+     * threshold is met. The default is <code>false</code>.</p> <p>A rollback is not
+     * supported in the following situations: </p> <ul> <li> <p>There is no desired
+     * configuration specified for the instance refresh.</p> </li> <li> <p>The Auto
+     * Scaling group has a launch template that uses an Amazon Web Services Systems
+     * Manager parameter instead of an AMI ID for the <code>ImageId</code>
+     * property.</p> </li> <li> <p>The Auto Scaling group uses the launch template's
+     * <code>$Latest</code> or <code>$Default</code> version.</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo
+     * changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool AutoRollbackHasBeenSet() const { return m_autoRollbackHasBeenSet; }
 
     /**
      * <p>(Optional) Indicates whether to roll back the Auto Scaling group to its
-     * previous configuration if the instance refresh fails. The default is
-     * <code>false</code>.</p> <p>A rollback is not supported in the following
-     * situations: </p> <ul> <li> <p>There is no desired configuration specified for
-     * the instance refresh.</p> </li> <li> <p>The Auto Scaling group has a launch
-     * template that uses an Amazon Web Services Systems Manager parameter instead of
-     * an AMI ID for the <code>ImageId</code> property.</p> </li> <li> <p>The Auto
-     * Scaling group uses the launch template's <code>$Latest</code> or
-     * <code>$Default</code> version.</p> </li> </ul>
+     * previous configuration if the instance refresh fails or a CloudWatch alarm
+     * threshold is met. The default is <code>false</code>.</p> <p>A rollback is not
+     * supported in the following situations: </p> <ul> <li> <p>There is no desired
+     * configuration specified for the instance refresh.</p> </li> <li> <p>The Auto
+     * Scaling group has a launch template that uses an Amazon Web Services Systems
+     * Manager parameter instead of an AMI ID for the <code>ImageId</code>
+     * property.</p> </li> <li> <p>The Auto Scaling group uses the launch template's
+     * <code>$Latest</code> or <code>$Default</code> version.</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo
+     * changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetAutoRollback(bool value) { m_autoRollbackHasBeenSet = true; m_autoRollback = value; }
 
     /**
      * <p>(Optional) Indicates whether to roll back the Auto Scaling group to its
-     * previous configuration if the instance refresh fails. The default is
-     * <code>false</code>.</p> <p>A rollback is not supported in the following
-     * situations: </p> <ul> <li> <p>There is no desired configuration specified for
-     * the instance refresh.</p> </li> <li> <p>The Auto Scaling group has a launch
-     * template that uses an Amazon Web Services Systems Manager parameter instead of
-     * an AMI ID for the <code>ImageId</code> property.</p> </li> <li> <p>The Auto
-     * Scaling group uses the launch template's <code>$Latest</code> or
-     * <code>$Default</code> version.</p> </li> </ul>
+     * previous configuration if the instance refresh fails or a CloudWatch alarm
+     * threshold is met. The default is <code>false</code>.</p> <p>A rollback is not
+     * supported in the following situations: </p> <ul> <li> <p>There is no desired
+     * configuration specified for the instance refresh.</p> </li> <li> <p>The Auto
+     * Scaling group has a launch template that uses an Amazon Web Services Systems
+     * Manager parameter instead of an AMI ID for the <code>ImageId</code>
+     * property.</p> </li> <li> <p>The Auto Scaling group uses the launch template's
+     * <code>$Latest</code> or <code>$Default</code> version.</p> </li> </ul> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo
+     * changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline RefreshPreferences& WithAutoRollback(bool value) { SetAutoRollback(value); return *this;}
 
@@ -524,6 +541,43 @@ namespace Model
      */
     inline RefreshPreferences& WithStandbyInstances(StandbyInstances&& value) { SetStandbyInstances(std::move(value)); return *this;}
 
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline const AlarmSpecification& GetAlarmSpecification() const{ return m_alarmSpecification; }
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline bool AlarmSpecificationHasBeenSet() const { return m_alarmSpecificationHasBeenSet; }
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline void SetAlarmSpecification(const AlarmSpecification& value) { m_alarmSpecificationHasBeenSet = true; m_alarmSpecification = value; }
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline void SetAlarmSpecification(AlarmSpecification&& value) { m_alarmSpecificationHasBeenSet = true; m_alarmSpecification = std::move(value); }
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline RefreshPreferences& WithAlarmSpecification(const AlarmSpecification& value) { SetAlarmSpecification(value); return *this;}
+
+    /**
+     * <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used
+     * to identify any issues and fail the operation if an alarm threshold is met.</p>
+     */
+    inline RefreshPreferences& WithAlarmSpecification(AlarmSpecification&& value) { SetAlarmSpecification(std::move(value)); return *this;}
+
   private:
 
     int m_minHealthyPercentage;
@@ -549,6 +603,9 @@ namespace Model
 
     StandbyInstances m_standbyInstances;
     bool m_standbyInstancesHasBeenSet = false;
+
+    AlarmSpecification m_alarmSpecification;
+    bool m_alarmSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

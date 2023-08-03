@@ -81,56 +81,56 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this
      * resource belongs to.</p>  <p>This parameter accepts values in
      * "eks-cluster/namespace" format.</p> 
      */
     inline const Aws::String& GetEksSourceName() const{ return m_eksSourceName; }
 
     /**
-     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this
      * resource belongs to.</p>  <p>This parameter accepts values in
      * "eks-cluster/namespace" format.</p> 
      */
     inline bool EksSourceNameHasBeenSet() const { return m_eksSourceNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this
      * resource belongs to.</p>  <p>This parameter accepts values in
      * "eks-cluster/namespace" format.</p> 
      */
     inline void SetEksSourceName(const Aws::String& value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName = value; }
 
     /**
-     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this
      * resource belongs to.</p>  <p>This parameter accepts values in
      * "eks-cluster/namespace" format.</p> 
      */
     inline void SetEksSourceName(Aws::String&& value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this
      * resource belongs to.</p>  <p>This parameter accepts values in
      * "eks-cluster/namespace" format.</p> 
      */
     inline void SetEksSourceName(const char* value) { m_eksSourceNameHasBeenSet = true; m_eksSourceName.assign(value); }
 
     /**
-     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this
      * resource belongs to.</p>  <p>This parameter accepts values in
      * "eks-cluster/namespace" format.</p> 
      */
     inline ResourceMapping& WithEksSourceName(const Aws::String& value) { SetEksSourceName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this
      * resource belongs to.</p>  <p>This parameter accepts values in
      * "eks-cluster/namespace" format.</p> 
      */
     inline ResourceMapping& WithEksSourceName(Aws::String&& value) { SetEksSourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon Elastic Kubernetes Service cluster and namespace this
+     * <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this
      * resource belongs to.</p>  <p>This parameter accepts values in
      * "eks-cluster/namespace" format.</p> 
      */
@@ -264,114 +264,114 @@ namespace Model
 
 
     /**
-     * <p>The identifier of this resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline const PhysicalResourceId& GetPhysicalResourceId() const{ return m_physicalResourceId; }
 
     /**
-     * <p>The identifier of this resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of this resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline void SetPhysicalResourceId(const PhysicalResourceId& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
 
     /**
-     * <p>The identifier of this resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline void SetPhysicalResourceId(PhysicalResourceId&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
 
     /**
-     * <p>The identifier of this resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline ResourceMapping& WithPhysicalResourceId(const PhysicalResourceId& value) { SetPhysicalResourceId(value); return *this;}
 
     /**
-     * <p>The identifier of this resource.</p>
+     * <p>Identifier of the physical resource.</p>
      */
     inline ResourceMapping& WithPhysicalResourceId(PhysicalResourceId&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the resource group this resource is mapped to.</p>
+     * <p>Name of the resource group that the resource is mapped to.</p>
      */
     inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
 
     /**
-     * <p>The name of the resource group this resource is mapped to.</p>
+     * <p>Name of the resource group that the resource is mapped to.</p>
      */
     inline bool ResourceGroupNameHasBeenSet() const { return m_resourceGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the resource group this resource is mapped to.</p>
+     * <p>Name of the resource group that the resource is mapped to.</p>
      */
     inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = value; }
 
     /**
-     * <p>The name of the resource group this resource is mapped to.</p>
+     * <p>Name of the resource group that the resource is mapped to.</p>
      */
     inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::move(value); }
 
     /**
-     * <p>The name of the resource group this resource is mapped to.</p>
+     * <p>Name of the resource group that the resource is mapped to.</p>
      */
     inline void SetResourceGroupName(const char* value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName.assign(value); }
 
     /**
-     * <p>The name of the resource group this resource is mapped to.</p>
+     * <p>Name of the resource group that the resource is mapped to.</p>
      */
     inline ResourceMapping& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
 
     /**
-     * <p>The name of the resource group this resource is mapped to.</p>
+     * <p>Name of the resource group that the resource is mapped to.</p>
      */
     inline ResourceMapping& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the resource group this resource is mapped to.</p>
+     * <p>Name of the resource group that the resource is mapped to.</p>
      */
     inline ResourceMapping& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
 
 
     /**
-     * <p>The name of the resource this resource is mapped to.</p>
+     * <p>Name of the resource that the resource is mapped to.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p>The name of the resource this resource is mapped to.</p>
+     * <p>Name of the resource that the resource is mapped to.</p>
      */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
-     * <p>The name of the resource this resource is mapped to.</p>
+     * <p>Name of the resource that the resource is mapped to.</p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>The name of the resource this resource is mapped to.</p>
+     * <p>Name of the resource that the resource is mapped to.</p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
-     * <p>The name of the resource this resource is mapped to.</p>
+     * <p>Name of the resource that the resource is mapped to.</p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p>The name of the resource this resource is mapped to.</p>
+     * <p>Name of the resource that the resource is mapped to.</p>
      */
     inline ResourceMapping& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>The name of the resource this resource is mapped to.</p>
+     * <p>Name of the resource that the resource is mapped to.</p>
      */
     inline ResourceMapping& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the resource this resource is mapped to.</p>
+     * <p>Name of the resource that the resource is mapped to.</p>
      */
     inline ResourceMapping& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 

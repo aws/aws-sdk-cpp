@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Describes the configuration information for rendering the UI component
-   * associated the code generation job.</p><p><h3>See Also:</h3>   <a
+   * associated with the code generation job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CodegenJobRenderConfig">AWS
    * API Reference</a></p>
    */

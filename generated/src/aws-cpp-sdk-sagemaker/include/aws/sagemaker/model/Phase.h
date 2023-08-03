@@ -36,22 +36,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies how many concurrent users to start with.</p>
+     * <p>Specifies how many concurrent users to start with. The value should be
+     * between 1 and 3.</p>
      */
     inline int GetInitialNumberOfUsers() const{ return m_initialNumberOfUsers; }
 
     /**
-     * <p>Specifies how many concurrent users to start with.</p>
+     * <p>Specifies how many concurrent users to start with. The value should be
+     * between 1 and 3.</p>
      */
     inline bool InitialNumberOfUsersHasBeenSet() const { return m_initialNumberOfUsersHasBeenSet; }
 
     /**
-     * <p>Specifies how many concurrent users to start with.</p>
+     * <p>Specifies how many concurrent users to start with. The value should be
+     * between 1 and 3.</p>
      */
     inline void SetInitialNumberOfUsers(int value) { m_initialNumberOfUsersHasBeenSet = true; m_initialNumberOfUsers = value; }
 
     /**
-     * <p>Specifies how many concurrent users to start with.</p>
+     * <p>Specifies how many concurrent users to start with. The value should be
+     * between 1 and 3.</p>
      */
     inline Phase& WithInitialNumberOfUsers(int value) { SetInitialNumberOfUsers(value); return *this;}
 
@@ -78,22 +82,30 @@ namespace Model
 
 
     /**
-     * <p>Specifies how long traffic phase should be.</p>
+     * <p>Specifies how long a traffic phase should be. For custom load tests, the
+     * value should be between 120 and 3600. This value should not exceed
+     * <code>JobDurationInSeconds</code>.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
 
     /**
-     * <p>Specifies how long traffic phase should be.</p>
+     * <p>Specifies how long a traffic phase should be. For custom load tests, the
+     * value should be between 120 and 3600. This value should not exceed
+     * <code>JobDurationInSeconds</code>.</p>
      */
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
 
     /**
-     * <p>Specifies how long traffic phase should be.</p>
+     * <p>Specifies how long a traffic phase should be. For custom load tests, the
+     * value should be between 120 and 3600. This value should not exceed
+     * <code>JobDurationInSeconds</code>.</p>
      */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
 
     /**
-     * <p>Specifies how long traffic phase should be.</p>
+     * <p>Specifies how long a traffic phase should be. For custom load tests, the
+     * value should be between 120 and 3600. This value should not exceed
+     * <code>JobDurationInSeconds</code>.</p>
      */
     inline Phase& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
 

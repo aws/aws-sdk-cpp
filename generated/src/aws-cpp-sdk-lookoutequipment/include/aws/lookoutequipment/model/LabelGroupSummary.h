@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p> The ARN of the label group. </p>
+     * <p> The Amazon Resource Name (ARN) of the label group. </p>
      */
     inline const Aws::String& GetLabelGroupArn() const{ return m_labelGroupArn; }
 
     /**
-     * <p> The ARN of the label group. </p>
+     * <p> The Amazon Resource Name (ARN) of the label group. </p>
      */
     inline bool LabelGroupArnHasBeenSet() const { return m_labelGroupArnHasBeenSet; }
 
     /**
-     * <p> The ARN of the label group. </p>
+     * <p> The Amazon Resource Name (ARN) of the label group. </p>
      */
     inline void SetLabelGroupArn(const Aws::String& value) { m_labelGroupArnHasBeenSet = true; m_labelGroupArn = value; }
 
     /**
-     * <p> The ARN of the label group. </p>
+     * <p> The Amazon Resource Name (ARN) of the label group. </p>
      */
     inline void SetLabelGroupArn(Aws::String&& value) { m_labelGroupArnHasBeenSet = true; m_labelGroupArn = std::move(value); }
 
     /**
-     * <p> The ARN of the label group. </p>
+     * <p> The Amazon Resource Name (ARN) of the label group. </p>
      */
     inline void SetLabelGroupArn(const char* value) { m_labelGroupArnHasBeenSet = true; m_labelGroupArn.assign(value); }
 
     /**
-     * <p> The ARN of the label group. </p>
+     * <p> The Amazon Resource Name (ARN) of the label group. </p>
      */
     inline LabelGroupSummary& WithLabelGroupArn(const Aws::String& value) { SetLabelGroupArn(value); return *this;}
 
     /**
-     * <p> The ARN of the label group. </p>
+     * <p> The Amazon Resource Name (ARN) of the label group. </p>
      */
     inline LabelGroupSummary& WithLabelGroupArn(Aws::String&& value) { SetLabelGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN of the label group. </p>
+     * <p> The Amazon Resource Name (ARN) of the label group. </p>
      */
     inline LabelGroupSummary& WithLabelGroupArn(const char* value) { SetLabelGroupArn(value); return *this;}
 

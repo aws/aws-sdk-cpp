@@ -29,6 +29,8 @@ AppAssessment::AppAssessment() :
     m_complianceStatus(ComplianceStatus::NOT_SET),
     m_complianceStatusHasBeenSet(false),
     m_costHasBeenSet(false),
+    m_driftStatus(DriftStatus::NOT_SET),
+    m_driftStatusHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_invoker(AssessmentInvoker::NOT_SET),
     m_invokerHasBeenSet(false),
@@ -37,7 +39,8 @@ AppAssessment::AppAssessment() :
     m_resiliencyScoreHasBeenSet(false),
     m_resourceErrorsDetailsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
 }
 
@@ -52,6 +55,8 @@ AppAssessment::AppAssessment(JsonView jsonValue) :
     m_complianceStatus(ComplianceStatus::NOT_SET),
     m_complianceStatusHasBeenSet(false),
     m_costHasBeenSet(false),
+    m_driftStatus(DriftStatus::NOT_SET),
+    m_driftStatusHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_invoker(AssessmentInvoker::NOT_SET),
     m_invokerHasBeenSet(false),
@@ -60,7 +65,8 @@ AppAssessment::AppAssessment(JsonView jsonValue) :
     m_resiliencyScoreHasBeenSet(false),
     m_resourceErrorsDetailsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +132,13 @@ AppAssessment& AppAssessment::operator =(JsonView jsonValue)
     m_costHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("driftStatus"))
+  {
+    m_driftStatus = DriftStatusMapper::GetDriftStatusForName(jsonValue.GetString("driftStatus"));
+
+    m_driftStatusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
@@ -183,6 +196,13 @@ AppAssessment& AppAssessment::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("versionName"))
+  {
+    m_versionName = jsonValue.GetString("versionName");
+
+    m_versionNameHasBeenSet = true;
   }
 
   return *this;
@@ -243,6 +263,11 @@ JsonValue AppAssessment::Jsonize() const
 
   }
 
+  if(m_driftStatusHasBeenSet)
+  {
+   payload.WithString("driftStatus", DriftStatusMapper::GetNameForDriftStatus(m_driftStatus));
+  }
+
   if(m_endTimeHasBeenSet)
   {
    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
@@ -290,6 +315,12 @@ JsonValue AppAssessment::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("versionName", m_versionName);
 
   }
 

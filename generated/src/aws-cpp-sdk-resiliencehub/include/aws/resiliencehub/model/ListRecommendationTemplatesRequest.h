@@ -41,7 +41,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -50,7 +50,7 @@ namespace Model
     inline const Aws::String& GetAssessmentArn() const{ return m_assessmentArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -59,7 +59,7 @@ namespace Model
     inline bool AssessmentArnHasBeenSet() const { return m_assessmentArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -68,7 +68,7 @@ namespace Model
     inline void SetAssessmentArn(const Aws::String& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -77,7 +77,7 @@ namespace Model
     inline void SetAssessmentArn(Aws::String&& value) { m_assessmentArnHasBeenSet = true; m_assessmentArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -86,7 +86,7 @@ namespace Model
     inline void SetAssessmentArn(const char* value) { m_assessmentArnHasBeenSet = true; m_assessmentArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -95,7 +95,7 @@ namespace Model
     inline ListRecommendationTemplatesRequest& WithAssessmentArn(const Aws::String& value) { SetAssessmentArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -104,7 +104,7 @@ namespace Model
     inline ListRecommendationTemplatesRequest& WithAssessmentArn(Aws::String&& value) { SetAssessmentArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -114,30 +114,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to include in the response. If more results
-     * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved.</p>
+     * <p>Maximum number of results to include in the response. If more results exist
+     * than the specified <code>MaxResults</code> value, a token is included in the
+     * response so that the remaining results can be retrieved.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to include in the response. If more results
-     * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved.</p>
+     * <p>Maximum number of results to include in the response. If more results exist
+     * than the specified <code>MaxResults</code> value, a token is included in the
+     * response so that the remaining results can be retrieved.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to include in the response. If more results
-     * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved.</p>
+     * <p>Maximum number of results to include in the response. If more results exist
+     * than the specified <code>MaxResults</code> value, a token is included in the
+     * response so that the remaining results can be retrieved.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to include in the response. If more results
-     * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved.</p>
+     * <p>Maximum number of results to include in the response. If more results exist
+     * than the specified <code>MaxResults</code> value, a token is included in the
+     * response so that the remaining results can be retrieved.</p>
      */
     inline ListRecommendationTemplatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -291,42 +291,42 @@ namespace Model
 
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline const Aws::Vector<RecommendationTemplateStatus>& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline void SetStatus(const Aws::Vector<RecommendationTemplateStatus>& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline void SetStatus(Aws::Vector<RecommendationTemplateStatus>&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline ListRecommendationTemplatesRequest& WithStatus(const Aws::Vector<RecommendationTemplateStatus>& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline ListRecommendationTemplatesRequest& WithStatus(Aws::Vector<RecommendationTemplateStatus>&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline ListRecommendationTemplatesRequest& AddStatus(const RecommendationTemplateStatus& value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline ListRecommendationTemplatesRequest& AddStatus(RecommendationTemplateStatus&& value) { m_statusHasBeenSet = true; m_status.push_back(std::move(value)); return *this; }
 

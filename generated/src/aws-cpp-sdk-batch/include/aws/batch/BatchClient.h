@@ -176,13 +176,13 @@ namespace Batch
          * service role (<code>serviceRole</code>) parameter or set it to the
          * <b>AWSBatchServiceRole</b> service-linked role.</p> </li> <li> <p>Set the
          * allocation strategy (<code>allocationStrategy</code>) parameter to
-         * <code>BEST_FIT_PROGRESSIVE</code> or <code>SPOT_CAPACITY_OPTIMIZED</code>.</p>
-         * </li> <li> <p>Set the update to latest image version
-         * (<code>updateToLatestImageVersion</code>) parameter to <code>true</code>. The
-         * <code>updateToLatestImageVersion</code> parameter is used when you update a
-         * compute environment. This parameter is ignored when you create a compute
-         * environment.</p> </li> <li> <p>Don't specify an AMI ID in <code>imageId</code>,
-         * <code>imageIdOverride</code> (in <a
+         * <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, or
+         * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code>.</p> </li> <li> <p>Set the update to
+         * latest image version (<code>updateToLatestImageVersion</code>) parameter to
+         * <code>true</code>. The <code>updateToLatestImageVersion</code> parameter is used
+         * when you update a compute environment. This parameter is ignored when you create
+         * a compute environment.</p> </li> <li> <p>Don't specify an AMI ID in
+         * <code>imageId</code>, <code>imageIdOverride</code> (in <a
          * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
          * <code>ec2Configuration</code> </a>), or in the launch template
          * (<code>launchTemplate</code>). In that case, Batch selects the latest Amazon ECS

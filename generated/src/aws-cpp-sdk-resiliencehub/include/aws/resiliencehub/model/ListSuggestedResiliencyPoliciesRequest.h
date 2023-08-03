@@ -39,30 +39,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to include in the response. If more results
-     * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved.</p>
+     * <p>Maximum number of results to include in the response. If more results exist
+     * than the specified <code>MaxResults</code> value, a token is included in the
+     * response so that the remaining results can be retrieved.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to include in the response. If more results
-     * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved.</p>
+     * <p>Maximum number of results to include in the response. If more results exist
+     * than the specified <code>MaxResults</code> value, a token is included in the
+     * response so that the remaining results can be retrieved.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to include in the response. If more results
-     * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved.</p>
+     * <p>Maximum number of results to include in the response. If more results exist
+     * than the specified <code>MaxResults</code> value, a token is included in the
+     * response so that the remaining results can be retrieved.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to include in the response. If more results
-     * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved.</p>
+     * <p>Maximum number of results to include in the response. If more results exist
+     * than the specified <code>MaxResults</code> value, a token is included in the
+     * response so that the remaining results can be retrieved.</p>
      */
     inline ListSuggestedResiliencyPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

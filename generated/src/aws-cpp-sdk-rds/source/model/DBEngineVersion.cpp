@@ -57,7 +57,9 @@ DBEngineVersion::DBEngineVersion() :
     m_customDBEngineVersionManifestHasBeenSet(false),
     m_supportsCertificateRotationWithoutRestart(false),
     m_supportsCertificateRotationWithoutRestartHasBeenSet(false),
-    m_supportedCACertificateIdentifiersHasBeenSet(false)
+    m_supportedCACertificateIdentifiersHasBeenSet(false),
+    m_supportsLocalWriteForwarding(false),
+    m_supportsLocalWriteForwardingHasBeenSet(false)
 {
 }
 
@@ -98,7 +100,9 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_customDBEngineVersionManifestHasBeenSet(false),
     m_supportsCertificateRotationWithoutRestart(false),
     m_supportsCertificateRotationWithoutRestartHasBeenSet(false),
-    m_supportedCACertificateIdentifiersHasBeenSet(false)
+    m_supportedCACertificateIdentifiersHasBeenSet(false),
+    m_supportsLocalWriteForwarding(false),
+    m_supportsLocalWriteForwardingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -349,6 +353,12 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
 
       m_supportedCACertificateIdentifiersHasBeenSet = true;
     }
+    XmlNode supportsLocalWriteForwardingNode = resultNode.FirstChild("SupportsLocalWriteForwarding");
+    if(!supportsLocalWriteForwardingNode.IsNull())
+    {
+      m_supportsLocalWriteForwarding = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLocalWriteForwardingNode.GetText()).c_str()).c_str());
+      m_supportsLocalWriteForwardingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -561,6 +571,11 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_supportsLocalWriteForwardingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsLocalWriteForwarding=" << std::boolalpha << m_supportsLocalWriteForwarding << "&";
+  }
+
   Aws::StringStream responseMetadataLocationAndMemberSs;
   responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
@@ -741,6 +756,10 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       {
         oStream << location << ".SupportedCACertificateIdentifiers.member." << supportedCACertificateIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_supportsLocalWriteForwardingHasBeenSet)
+  {
+      oStream << location << ".SupportsLocalWriteForwarding=" << std::boolalpha << m_supportsLocalWriteForwarding << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

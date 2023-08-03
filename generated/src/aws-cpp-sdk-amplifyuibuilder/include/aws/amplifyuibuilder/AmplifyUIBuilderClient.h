@@ -115,7 +115,7 @@ namespace AmplifyUIBuilder
         }
 
         /**
-         * <p>Creates a new form for an Amplify.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new form for an Amplify app.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm">AWS
          * API Reference</a></p>
          */
@@ -626,7 +626,7 @@ namespace AmplifyUIBuilder
         }
 
         /**
-         * <p>Starts a code generation job for for a specified Amplify app and backend
+         * <p>Starts a code generation job for a specified Amplify app and backend
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">AWS
          * API Reference</a></p>

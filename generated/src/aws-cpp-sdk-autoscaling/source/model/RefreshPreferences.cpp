@@ -35,7 +35,8 @@ RefreshPreferences::RefreshPreferences() :
     m_scaleInProtectedInstances(ScaleInProtectedInstances::NOT_SET),
     m_scaleInProtectedInstancesHasBeenSet(false),
     m_standbyInstances(StandbyInstances::NOT_SET),
-    m_standbyInstancesHasBeenSet(false)
+    m_standbyInstancesHasBeenSet(false),
+    m_alarmSpecificationHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ RefreshPreferences::RefreshPreferences(const XmlNode& xmlNode) :
     m_scaleInProtectedInstances(ScaleInProtectedInstances::NOT_SET),
     m_scaleInProtectedInstancesHasBeenSet(false),
     m_standbyInstances(StandbyInstances::NOT_SET),
-    m_standbyInstancesHasBeenSet(false)
+    m_standbyInstancesHasBeenSet(false),
+    m_alarmSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -119,6 +121,12 @@ RefreshPreferences& RefreshPreferences::operator =(const XmlNode& xmlNode)
       m_standbyInstances = StandbyInstancesMapper::GetStandbyInstancesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(standbyInstancesNode.GetText()).c_str()).c_str());
       m_standbyInstancesHasBeenSet = true;
     }
+    XmlNode alarmSpecificationNode = resultNode.FirstChild("AlarmSpecification");
+    if(!alarmSpecificationNode.IsNull())
+    {
+      m_alarmSpecification = alarmSpecificationNode;
+      m_alarmSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -170,6 +178,13 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".StandbyInstances=" << StandbyInstancesMapper::GetNameForStandbyInstances(m_standbyInstances) << "&";
   }
 
+  if(m_alarmSpecificationHasBeenSet)
+  {
+      Aws::StringStream alarmSpecificationLocationAndMemberSs;
+      alarmSpecificationLocationAndMemberSs << location << index << locationValue << ".AlarmSpecification";
+      m_alarmSpecification.OutputToStream(oStream, alarmSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -209,6 +224,12 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_standbyInstancesHasBeenSet)
   {
       oStream << location << ".StandbyInstances=" << StandbyInstancesMapper::GetNameForStandbyInstances(m_standbyInstances) << "&";
+  }
+  if(m_alarmSpecificationHasBeenSet)
+  {
+      Aws::String alarmSpecificationLocationAndMember(location);
+      alarmSpecificationLocationAndMember += ".AlarmSpecification";
+      m_alarmSpecification.OutputToStream(oStream, alarmSpecificationLocationAndMember.c_str());
   }
 }
 

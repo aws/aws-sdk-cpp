@@ -456,6 +456,49 @@ namespace Model
     inline DescribeDataIngestionJobResult& WithDataEndTime(Aws::Utils::DateTime&& value) { SetDataEndTime(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source dataset from which the data used
+     * for the data ingestion job was imported from.</p>
+     */
+    inline const Aws::String& GetSourceDatasetArn() const{ return m_sourceDatasetArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source dataset from which the data used
+     * for the data ingestion job was imported from.</p>
+     */
+    inline void SetSourceDatasetArn(const Aws::String& value) { m_sourceDatasetArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source dataset from which the data used
+     * for the data ingestion job was imported from.</p>
+     */
+    inline void SetSourceDatasetArn(Aws::String&& value) { m_sourceDatasetArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source dataset from which the data used
+     * for the data ingestion job was imported from.</p>
+     */
+    inline void SetSourceDatasetArn(const char* value) { m_sourceDatasetArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source dataset from which the data used
+     * for the data ingestion job was imported from.</p>
+     */
+    inline DescribeDataIngestionJobResult& WithSourceDatasetArn(const Aws::String& value) { SetSourceDatasetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source dataset from which the data used
+     * for the data ingestion job was imported from.</p>
+     */
+    inline DescribeDataIngestionJobResult& WithSourceDatasetArn(Aws::String&& value) { SetSourceDatasetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source dataset from which the data used
+     * for the data ingestion job was imported from.</p>
+     */
+    inline DescribeDataIngestionJobResult& WithSourceDatasetArn(const char* value) { SetSourceDatasetArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -504,6 +547,8 @@ namespace Model
     Aws::Utils::DateTime m_dataStartTime;
 
     Aws::Utils::DateTime m_dataEndTime;
+
+    Aws::String m_sourceDatasetArn;
 
     Aws::String m_requestId;
   };

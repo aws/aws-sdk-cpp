@@ -230,7 +230,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetChallengeResponses() const{ return m_challengeResponses; }
 
@@ -265,7 +270,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline bool ChallengeResponsesHasBeenSet() const { return m_challengeResponsesHasBeenSet; }
 
@@ -300,7 +310,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline void SetChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = value; }
 
@@ -335,7 +350,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline void SetChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = std::move(value); }
 
@@ -370,7 +390,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline RespondToAuthChallengeRequest& WithChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { SetChallengeResponses(value); return *this;}
 
@@ -405,7 +430,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline RespondToAuthChallengeRequest& WithChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { SetChallengeResponses(std::move(value)); return *this;}
 
@@ -440,7 +470,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 
@@ -475,7 +510,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
@@ -510,7 +550,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
@@ -545,7 +590,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -580,7 +630,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const char* key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
@@ -615,7 +670,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
@@ -650,7 +710,12 @@ namespace Model
      * <code>PASSWORD_VERIFIER</code> requires, plus <code>DEVICE_KEY</code>.</p> </li>
      * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must
      * use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul>
+     * <code>Session</code> parameter.</p> </li> </ul> <p>For more information about
+     * <code>SECRET_HASH</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>.</p>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const char* key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 

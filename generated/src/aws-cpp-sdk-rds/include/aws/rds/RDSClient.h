@@ -1238,6 +1238,33 @@ namespace Aws
         }
 
         /**
+         * <p>Deletes automated backups using the <code>DbClusterResourceId</code> value of
+         * the source DB cluster or the Amazon Resource Name (ARN) of the automated
+         * backups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDBClusterAutomatedBackupOutcome DeleteDBClusterAutomatedBackup(const Model::DeleteDBClusterAutomatedBackupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDBClusterAutomatedBackup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDBClusterAutomatedBackupRequestT = Model::DeleteDBClusterAutomatedBackupRequest>
+        Model::DeleteDBClusterAutomatedBackupOutcomeCallable DeleteDBClusterAutomatedBackupCallable(const DeleteDBClusterAutomatedBackupRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DeleteDBClusterAutomatedBackup, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDBClusterAutomatedBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDBClusterAutomatedBackupRequestT = Model::DeleteDBClusterAutomatedBackupRequest>
+        void DeleteDBClusterAutomatedBackupAsync(const DeleteDBClusterAutomatedBackupRequestT& request, const DeleteDBClusterAutomatedBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DeleteDBClusterAutomatedBackup, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a custom endpoint and removes it from an Amazon Aurora DB
          * cluster.</p>  <p>This action only applies to Aurora DB clusters.</p>
          * <p><h3>See Also:</h3>   <a
@@ -1765,6 +1792,36 @@ namespace Aws
         void DescribeCertificatesAsync(const DescribeCertificatesRequestT& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::DescribeCertificates, request, handler, context);
+        }
+
+        /**
+         * <p>Displays backups for both current and deleted DB clusters. For example, use
+         * this operation to find details about automated backups for previously deleted
+         * clusters. Current clusters are returned for both the
+         * <code>DescribeDBClusterAutomatedBackups</code> and
+         * <code>DescribeDBClusters</code> operations.</p> <p>All parameters are
+         * optional.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBClusterAutomatedBackupsOutcome DescribeDBClusterAutomatedBackups(const Model::DescribeDBClusterAutomatedBackupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDBClusterAutomatedBackups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDBClusterAutomatedBackupsRequestT = Model::DescribeDBClusterAutomatedBackupsRequest>
+        Model::DescribeDBClusterAutomatedBackupsOutcomeCallable DescribeDBClusterAutomatedBackupsCallable(const DescribeDBClusterAutomatedBackupsRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::DescribeDBClusterAutomatedBackups, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDBClusterAutomatedBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDBClusterAutomatedBackupsRequestT = Model::DescribeDBClusterAutomatedBackupsRequest>
+        void DescribeDBClusterAutomatedBackupsAsync(const DescribeDBClusterAutomatedBackupsRequestT& request, const DescribeDBClusterAutomatedBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::DescribeDBClusterAutomatedBackups, request, handler, context);
         }
 
         /**

@@ -150,12 +150,17 @@ namespace Model
      * one or more instance types that are large enough to meet the requirements of the
      * jobs in the queue. Its preference is for instance types that are less likely to
      * be interrupted. This allocation strategy is only available for Spot Instance
-     * compute resources.</p> </dd> </dl> <p>With both
-     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
-     * strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code>
-     * strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
-     * to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.</p>
+     * compute resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The
+     * price and capacity optimized allocation strategy looks at both price and
+     * capacity to select the Spot Instance pools that are the least likely to be
+     * interrupted and have the lowest possible price. This allocation strategy is only
+     * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
+     * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
+     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
+     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.</p>
      */
     inline const CRAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
@@ -190,12 +195,17 @@ namespace Model
      * one or more instance types that are large enough to meet the requirements of the
      * jobs in the queue. Its preference is for instance types that are less likely to
      * be interrupted. This allocation strategy is only available for Spot Instance
-     * compute resources.</p> </dd> </dl> <p>With both
-     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
-     * strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code>
-     * strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
-     * to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.</p>
+     * compute resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The
+     * price and capacity optimized allocation strategy looks at both price and
+     * capacity to select the Spot Instance pools that are the least likely to be
+     * interrupted and have the lowest possible price. This allocation strategy is only
+     * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
+     * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
+     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
+     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.</p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
@@ -230,12 +240,17 @@ namespace Model
      * one or more instance types that are large enough to meet the requirements of the
      * jobs in the queue. Its preference is for instance types that are less likely to
      * be interrupted. This allocation strategy is only available for Spot Instance
-     * compute resources.</p> </dd> </dl> <p>With both
-     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
-     * strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code>
-     * strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
-     * to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.</p>
+     * compute resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The
+     * price and capacity optimized allocation strategy looks at both price and
+     * capacity to select the Spot Instance pools that are the least likely to be
+     * interrupted and have the lowest possible price. This allocation strategy is only
+     * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
+     * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
+     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
+     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.</p>
      */
     inline void SetAllocationStrategy(const CRAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
@@ -270,12 +285,17 @@ namespace Model
      * one or more instance types that are large enough to meet the requirements of the
      * jobs in the queue. Its preference is for instance types that are less likely to
      * be interrupted. This allocation strategy is only available for Spot Instance
-     * compute resources.</p> </dd> </dl> <p>With both
-     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
-     * strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code>
-     * strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
-     * to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.</p>
+     * compute resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The
+     * price and capacity optimized allocation strategy looks at both price and
+     * capacity to select the Spot Instance pools that are the least likely to be
+     * interrupted and have the lowest possible price. This allocation strategy is only
+     * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
+     * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
+     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
+     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.</p>
      */
     inline void SetAllocationStrategy(CRAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
@@ -310,12 +330,17 @@ namespace Model
      * one or more instance types that are large enough to meet the requirements of the
      * jobs in the queue. Its preference is for instance types that are less likely to
      * be interrupted. This allocation strategy is only available for Spot Instance
-     * compute resources.</p> </dd> </dl> <p>With both
-     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
-     * strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code>
-     * strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
-     * to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.</p>
+     * compute resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The
+     * price and capacity optimized allocation strategy looks at both price and
+     * capacity to select the Spot Instance pools that are the least likely to be
+     * interrupted and have the lowest possible price. This allocation strategy is only
+     * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
+     * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
+     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
+     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.</p>
      */
     inline ComputeResource& WithAllocationStrategy(const CRAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
@@ -350,12 +375,17 @@ namespace Model
      * one or more instance types that are large enough to meet the requirements of the
      * jobs in the queue. Its preference is for instance types that are less likely to
      * be interrupted. This allocation strategy is only available for Spot Instance
-     * compute resources.</p> </dd> </dl> <p>With both
-     * <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
-     * strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code>
-     * strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
-     * to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.</p>
+     * compute resources.</p> </dd> <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt> <dd> <p>The
+     * price and capacity optimized allocation strategy looks at both price and
+     * capacity to select the Spot Instance pools that are the least likely to be
+     * interrupted and have the lowest possible price. This allocation strategy is only
+     * available for Spot Instance compute resources.</p> </dd> </dl> <p>With
+     * <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot
+     * Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
+     * might need to exceed <code>maxvCpus</code> to meet your capacity requirements.
+     * In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.</p>
      */
     inline ComputeResource& WithAllocationStrategy(CRAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 
@@ -395,9 +425,10 @@ namespace Model
 
     /**
      * <p>The maximum number of vCPUs that a compute environment can support.</p>
-     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
-     * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
+     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
+     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
      * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
      * than a single instance. For example, no more than a single instance from among
@@ -407,9 +438,10 @@ namespace Model
 
     /**
      * <p>The maximum number of vCPUs that a compute environment can support.</p>
-     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
-     * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
+     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
+     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
      * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
      * than a single instance. For example, no more than a single instance from among
@@ -419,9 +451,10 @@ namespace Model
 
     /**
      * <p>The maximum number of vCPUs that a compute environment can support.</p>
-     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
-     * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
+     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
+     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
      * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
      * than a single instance. For example, no more than a single instance from among
@@ -431,9 +464,10 @@ namespace Model
 
     /**
      * <p>The maximum number of vCPUs that a compute environment can support.</p>
-     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
-     * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
-     * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
+     *  <p>With <code>BEST_FIT_PROGRESSIVE</code>,
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand
+     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
      * requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more
      * than a single instance. For example, no more than a single instance from among

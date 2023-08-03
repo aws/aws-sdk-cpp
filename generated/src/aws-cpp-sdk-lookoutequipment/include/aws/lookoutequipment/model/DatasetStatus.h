@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     CREATED,
     INGESTION_IN_PROGRESS,
-    ACTIVE
+    ACTIVE,
+    IMPORT_IN_PROGRESS
   };
 
 namespace DatasetStatusMapper

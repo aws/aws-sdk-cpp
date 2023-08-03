@@ -469,7 +469,7 @@ namespace Model
 
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -477,7 +477,7 @@ namespace Model
     inline const Aws::String& GetEndTimeOffset() const{ return m_endTimeOffset; }
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -485,7 +485,7 @@ namespace Model
     inline bool EndTimeOffsetHasBeenSet() const { return m_endTimeOffsetHasBeenSet; }
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -493,7 +493,7 @@ namespace Model
     inline void SetEndTimeOffset(const Aws::String& value) { m_endTimeOffsetHasBeenSet = true; m_endTimeOffset = value; }
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -501,7 +501,7 @@ namespace Model
     inline void SetEndTimeOffset(Aws::String&& value) { m_endTimeOffsetHasBeenSet = true; m_endTimeOffset = std::move(value); }
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -509,7 +509,7 @@ namespace Model
     inline void SetEndTimeOffset(const char* value) { m_endTimeOffsetHasBeenSet = true; m_endTimeOffset.assign(value); }
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -517,7 +517,7 @@ namespace Model
     inline BatchTransformInput& WithEndTimeOffset(const Aws::String& value) { SetEndTimeOffset(value); return *this;}
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>
@@ -525,7 +525,7 @@ namespace Model
     inline BatchTransformInput& WithEndTimeOffset(Aws::String&& value) { SetEndTimeOffset(std::move(value)); return *this;}
 
     /**
-     * <p>If specified, monitoring jobs substract this time from the end time. For
+     * <p>If specified, monitoring jobs subtract this time from the end time. For
      * information about using offsets for scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      * Model Quality Monitoring Jobs</a>.</p>

@@ -77,6 +77,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_manageMasterUserPassword(false),
     m_manageMasterUserPasswordHasBeenSet(false),
     m_masterUserSecretKmsKeyIdHasBeenSet(false),
+    m_enableLocalWriteForwarding(false),
+    m_enableLocalWriteForwardingHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -351,6 +353,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_masterUserSecretKmsKeyIdHasBeenSet)
   {
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_enableLocalWriteForwardingHasBeenSet)
+  {
+    ss << "EnableLocalWriteForwarding=" << std::boolalpha << m_enableLocalWriteForwarding << "&";
   }
 
   ss << "Version=2014-10-31";

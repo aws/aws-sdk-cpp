@@ -769,42 +769,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
     inline const Aws::String& GetDBClusterSnapshotArn() const{ return m_dBClusterSnapshotArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
     inline bool DBClusterSnapshotArnHasBeenSet() const { return m_dBClusterSnapshotArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
     inline void SetDBClusterSnapshotArn(const Aws::String& value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
     inline void SetDBClusterSnapshotArn(Aws::String&& value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
     inline void SetDBClusterSnapshotArn(const char* value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithDBClusterSnapshotArn(const Aws::String& value) { SetDBClusterSnapshotArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithDBClusterSnapshotArn(Aws::String&& value) { SetDBClusterSnapshotArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithDBClusterSnapshotArn(const char* value) { SetDBClusterSnapshotArn(value); return *this;}
 
@@ -1005,6 +1005,55 @@ namespace Model
      */
     inline DBClusterSnapshot& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
+
+    /**
+     * <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was
+     * created from.</p>
+     */
+    inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
+
+    /**
+     * <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was
+     * created from.</p>
+     */
+    inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was
+     * created from.</p>
+     */
+    inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
+
+    /**
+     * <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was
+     * created from.</p>
+     */
+    inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
+
+    /**
+     * <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was
+     * created from.</p>
+     */
+    inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
+
+    /**
+     * <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was
+     * created from.</p>
+     */
+    inline DBClusterSnapshot& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
+
+    /**
+     * <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was
+     * created from.</p>
+     */
+    inline DBClusterSnapshot& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the resource ID of the DB cluster that this DB cluster snapshot was
+     * created from.</p>
+     */
+    inline DBClusterSnapshot& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -1078,6 +1127,9 @@ namespace Model
 
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
+
+    Aws::String m_dbClusterResourceId;
+    bool m_dbClusterResourceIdHasBeenSet = false;
   };
 
 } // namespace Model

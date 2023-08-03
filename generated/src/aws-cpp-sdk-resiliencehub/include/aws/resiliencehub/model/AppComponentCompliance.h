@@ -45,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline const Aws::String& GetAppComponentName() const{ return m_appComponentName; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline bool AppComponentNameHasBeenSet() const { return m_appComponentNameHasBeenSet; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetAppComponentName(const Aws::String& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = value; }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetAppComponentName(Aws::String&& value) { m_appComponentNameHasBeenSet = true; m_appComponentName = std::move(value); }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline void SetAppComponentName(const char* value) { m_appComponentNameHasBeenSet = true; m_appComponentName.assign(value); }
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline AppComponentCompliance& WithAppComponentName(const Aws::String& value) { SetAppComponentName(value); return *this;}
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline AppComponentCompliance& WithAppComponentName(Aws::String&& value) { SetAppComponentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Application Component.</p>
+     * <p>Name of the Application Component.</p>
      */
     inline AppComponentCompliance& WithAppComponentName(const char* value) { SetAppComponentName(value); return *this;}
 
@@ -250,32 +250,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline const ComplianceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline void SetStatus(const ComplianceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline void SetStatus(ComplianceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline AppComponentCompliance& WithStatus(const ComplianceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the action.</p>
+     * <p>Status of the action.</p>
      */
     inline AppComponentCompliance& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

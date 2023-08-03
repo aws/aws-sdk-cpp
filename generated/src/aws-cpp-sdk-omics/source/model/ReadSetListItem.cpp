@@ -33,7 +33,9 @@ ReadSetListItem::ReadSetListItem() :
     m_fileTypeHasBeenSet(false),
     m_sequenceInformationHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+    m_statusMessageHasBeenSet(false),
+    m_creationType(CreationType::NOT_SET),
+    m_creationTypeHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ ReadSetListItem::ReadSetListItem(JsonView jsonValue) :
     m_fileTypeHasBeenSet(false),
     m_sequenceInformationHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+    m_statusMessageHasBeenSet(false),
+    m_creationType(CreationType::NOT_SET),
+    m_creationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +154,13 @@ ReadSetListItem& ReadSetListItem::operator =(JsonView jsonValue)
     m_statusMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("creationType"))
+  {
+    m_creationType = CreationTypeMapper::GetCreationTypeForName(jsonValue.GetString("creationType"));
+
+    m_creationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -230,6 +241,11 @@ JsonValue ReadSetListItem::Jsonize() const
   {
    payload.WithString("statusMessage", m_statusMessage);
 
+  }
+
+  if(m_creationTypeHasBeenSet)
+  {
+   payload.WithString("creationType", CreationTypeMapper::GetNameForCreationType(m_creationType));
   }
 
   return payload;

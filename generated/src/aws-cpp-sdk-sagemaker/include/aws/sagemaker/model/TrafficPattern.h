@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/TrafficType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/Stairs.h>
 #include <aws/sagemaker/model/Phase.h>
 #include <utility>
 
@@ -40,32 +41,38 @@ namespace Model
 
 
     /**
-     * <p>Defines the traffic patterns.</p>
+     * <p>Defines the traffic patterns. Choose either <code>PHASES</code> or
+     * <code>STAIRS</code>.</p>
      */
     inline const TrafficType& GetTrafficType() const{ return m_trafficType; }
 
     /**
-     * <p>Defines the traffic patterns.</p>
+     * <p>Defines the traffic patterns. Choose either <code>PHASES</code> or
+     * <code>STAIRS</code>.</p>
      */
     inline bool TrafficTypeHasBeenSet() const { return m_trafficTypeHasBeenSet; }
 
     /**
-     * <p>Defines the traffic patterns.</p>
+     * <p>Defines the traffic patterns. Choose either <code>PHASES</code> or
+     * <code>STAIRS</code>.</p>
      */
     inline void SetTrafficType(const TrafficType& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
 
     /**
-     * <p>Defines the traffic patterns.</p>
+     * <p>Defines the traffic patterns. Choose either <code>PHASES</code> or
+     * <code>STAIRS</code>.</p>
      */
     inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = std::move(value); }
 
     /**
-     * <p>Defines the traffic patterns.</p>
+     * <p>Defines the traffic patterns. Choose either <code>PHASES</code> or
+     * <code>STAIRS</code>.</p>
      */
     inline TrafficPattern& WithTrafficType(const TrafficType& value) { SetTrafficType(value); return *this;}
 
     /**
-     * <p>Defines the traffic patterns.</p>
+     * <p>Defines the traffic patterns. Choose either <code>PHASES</code> or
+     * <code>STAIRS</code>.</p>
      */
     inline TrafficPattern& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
 
@@ -110,6 +117,37 @@ namespace Model
      */
     inline TrafficPattern& AddPhases(Phase&& value) { m_phasesHasBeenSet = true; m_phases.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Defines the stairs traffic pattern.</p>
+     */
+    inline const Stairs& GetStairs() const{ return m_stairs; }
+
+    /**
+     * <p>Defines the stairs traffic pattern.</p>
+     */
+    inline bool StairsHasBeenSet() const { return m_stairsHasBeenSet; }
+
+    /**
+     * <p>Defines the stairs traffic pattern.</p>
+     */
+    inline void SetStairs(const Stairs& value) { m_stairsHasBeenSet = true; m_stairs = value; }
+
+    /**
+     * <p>Defines the stairs traffic pattern.</p>
+     */
+    inline void SetStairs(Stairs&& value) { m_stairsHasBeenSet = true; m_stairs = std::move(value); }
+
+    /**
+     * <p>Defines the stairs traffic pattern.</p>
+     */
+    inline TrafficPattern& WithStairs(const Stairs& value) { SetStairs(value); return *this;}
+
+    /**
+     * <p>Defines the stairs traffic pattern.</p>
+     */
+    inline TrafficPattern& WithStairs(Stairs&& value) { SetStairs(std::move(value)); return *this;}
+
   private:
 
     TrafficType m_trafficType;
@@ -117,6 +155,9 @@ namespace Model
 
     Aws::Vector<Phase> m_phases;
     bool m_phasesHasBeenSet = false;
+
+    Stairs m_stairs;
+    bool m_stairsHasBeenSet = false;
   };
 
 } // namespace Model

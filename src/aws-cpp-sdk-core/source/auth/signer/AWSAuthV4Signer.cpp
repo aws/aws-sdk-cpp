@@ -466,6 +466,17 @@ bool AWSAuthV4Signer::ServiceRequireUnsignedPayload(const Aws::String& serviceNa
     return "s3" == serviceName || "s3-object-lambda" == serviceName;
 }
 
+Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials &credentials,
+    const String &stringToSign,
+    const String &simpleDate) const
+{
+    return GenerateSignature(credentials,
+        stringToSign,
+        simpleDate,
+        GetRegion(),
+        GetServiceName());
+}
+
 Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials, const Aws::String& stringToSign,
         const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const
 {

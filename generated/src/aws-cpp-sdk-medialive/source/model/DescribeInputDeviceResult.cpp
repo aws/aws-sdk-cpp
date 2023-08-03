@@ -118,6 +118,12 @@ DescribeInputDeviceResult& DescribeInputDeviceResult::operator =(const Aws::Amaz
     }
   }
 
+  if(jsonValue.ValueExists("availabilityZone"))
+  {
+    m_availabilityZone = jsonValue.GetString("availabilityZone");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -220,42 +220,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
+     * you set up with your Domain Name Service (DNS) provider.</p>
      */
     inline const Aws::String& GetCloudFrontDistribution() const{ return m_cloudFrontDistribution; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
+     * you set up with your Domain Name Service (DNS) provider.</p>
      */
     inline bool CloudFrontDistributionHasBeenSet() const { return m_cloudFrontDistributionHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
+     * you set up with your Domain Name Service (DNS) provider.</p>
      */
     inline void SetCloudFrontDistribution(const Aws::String& value) { m_cloudFrontDistributionHasBeenSet = true; m_cloudFrontDistribution = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
+     * you set up with your Domain Name Service (DNS) provider.</p>
      */
     inline void SetCloudFrontDistribution(Aws::String&& value) { m_cloudFrontDistributionHasBeenSet = true; m_cloudFrontDistribution = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
+     * you set up with your Domain Name Service (DNS) provider.</p>
      */
     inline void SetCloudFrontDistribution(const char* value) { m_cloudFrontDistributionHasBeenSet = true; m_cloudFrontDistribution.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
+     * you set up with your Domain Name Service (DNS) provider.</p>
      */
     inline DomainDescriptionType& WithCloudFrontDistribution(const Aws::String& value) { SetCloudFrontDistribution(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
+     * you set up with your Domain Name Service (DNS) provider.</p>
      */
     inline DomainDescriptionType& WithCloudFrontDistribution(Aws::String&& value) { SetCloudFrontDistribution(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
+     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
+     * you set up with your Domain Name Service (DNS) provider.</p>
      */
     inline DomainDescriptionType& WithCloudFrontDistribution(const char* value) { SetCloudFrontDistribution(value); return *this;}
 

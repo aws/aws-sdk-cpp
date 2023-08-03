@@ -67,6 +67,7 @@
 #include <aws/cognito-idp/model/GetDeviceResult.h>
 #include <aws/cognito-idp/model/GetGroupResult.h>
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierResult.h>
+#include <aws/cognito-idp/model/GetLogDeliveryConfigurationResult.h>
 #include <aws/cognito-idp/model/GetSigningCertificateResult.h>
 #include <aws/cognito-idp/model/GetUICustomizationResult.h>
 #include <aws/cognito-idp/model/GetUserResult.h>
@@ -87,6 +88,7 @@
 #include <aws/cognito-idp/model/ResendConfirmationCodeResult.h>
 #include <aws/cognito-idp/model/RespondToAuthChallengeResult.h>
 #include <aws/cognito-idp/model/RevokeTokenResult.h>
+#include <aws/cognito-idp/model/SetLogDeliveryConfigurationResult.h>
 #include <aws/cognito-idp/model/SetRiskConfigurationResult.h>
 #include <aws/cognito-idp/model/SetUICustomizationResult.h>
 #include <aws/cognito-idp/model/SetUserMFAPreferenceResult.h>
@@ -209,6 +211,7 @@ namespace Aws
       class GetDeviceRequest;
       class GetGroupRequest;
       class GetIdentityProviderByIdentifierRequest;
+      class GetLogDeliveryConfigurationRequest;
       class GetSigningCertificateRequest;
       class GetUICustomizationRequest;
       class GetUserRequest;
@@ -229,6 +232,7 @@ namespace Aws
       class ResendConfirmationCodeRequest;
       class RespondToAuthChallengeRequest;
       class RevokeTokenRequest;
+      class SetLogDeliveryConfigurationRequest;
       class SetRiskConfigurationRequest;
       class SetUICustomizationRequest;
       class SetUserMFAPreferenceRequest;
@@ -313,6 +317,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDeviceResult, CognitoIdentityProviderError> GetDeviceOutcome;
       typedef Aws::Utils::Outcome<GetGroupResult, CognitoIdentityProviderError> GetGroupOutcome;
       typedef Aws::Utils::Outcome<GetIdentityProviderByIdentifierResult, CognitoIdentityProviderError> GetIdentityProviderByIdentifierOutcome;
+      typedef Aws::Utils::Outcome<GetLogDeliveryConfigurationResult, CognitoIdentityProviderError> GetLogDeliveryConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetSigningCertificateResult, CognitoIdentityProviderError> GetSigningCertificateOutcome;
       typedef Aws::Utils::Outcome<GetUICustomizationResult, CognitoIdentityProviderError> GetUICustomizationOutcome;
       typedef Aws::Utils::Outcome<GetUserResult, CognitoIdentityProviderError> GetUserOutcome;
@@ -333,6 +338,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ResendConfirmationCodeResult, CognitoIdentityProviderError> ResendConfirmationCodeOutcome;
       typedef Aws::Utils::Outcome<RespondToAuthChallengeResult, CognitoIdentityProviderError> RespondToAuthChallengeOutcome;
       typedef Aws::Utils::Outcome<RevokeTokenResult, CognitoIdentityProviderError> RevokeTokenOutcome;
+      typedef Aws::Utils::Outcome<SetLogDeliveryConfigurationResult, CognitoIdentityProviderError> SetLogDeliveryConfigurationOutcome;
       typedef Aws::Utils::Outcome<SetRiskConfigurationResult, CognitoIdentityProviderError> SetRiskConfigurationOutcome;
       typedef Aws::Utils::Outcome<SetUICustomizationResult, CognitoIdentityProviderError> SetUICustomizationOutcome;
       typedef Aws::Utils::Outcome<SetUserMFAPreferenceResult, CognitoIdentityProviderError> SetUserMFAPreferenceOutcome;
@@ -417,6 +423,7 @@ namespace Aws
       typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
       typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
       typedef std::future<GetIdentityProviderByIdentifierOutcome> GetIdentityProviderByIdentifierOutcomeCallable;
+      typedef std::future<GetLogDeliveryConfigurationOutcome> GetLogDeliveryConfigurationOutcomeCallable;
       typedef std::future<GetSigningCertificateOutcome> GetSigningCertificateOutcomeCallable;
       typedef std::future<GetUICustomizationOutcome> GetUICustomizationOutcomeCallable;
       typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
@@ -437,6 +444,7 @@ namespace Aws
       typedef std::future<ResendConfirmationCodeOutcome> ResendConfirmationCodeOutcomeCallable;
       typedef std::future<RespondToAuthChallengeOutcome> RespondToAuthChallengeOutcomeCallable;
       typedef std::future<RevokeTokenOutcome> RevokeTokenOutcomeCallable;
+      typedef std::future<SetLogDeliveryConfigurationOutcome> SetLogDeliveryConfigurationOutcomeCallable;
       typedef std::future<SetRiskConfigurationOutcome> SetRiskConfigurationOutcomeCallable;
       typedef std::future<SetUICustomizationOutcome> SetUICustomizationOutcomeCallable;
       typedef std::future<SetUserMFAPreferenceOutcome> SetUserMFAPreferenceOutcomeCallable;
@@ -524,6 +532,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetIdentityProviderByIdentifierRequest&, const Model::GetIdentityProviderByIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityProviderByIdentifierResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetLogDeliveryConfigurationRequest&, const Model::GetLogDeliveryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogDeliveryConfigurationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetSigningCertificateRequest&, const Model::GetSigningCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSigningCertificateResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUICustomizationRequest&, const Model::GetUICustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUICustomizationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
@@ -544,6 +553,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ResendConfirmationCodeRequest&, const Model::ResendConfirmationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResendConfirmationCodeResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::RespondToAuthChallengeRequest&, const Model::RespondToAuthChallengeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RespondToAuthChallengeResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::RevokeTokenRequest&, const Model::RevokeTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeTokenResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetLogDeliveryConfigurationRequest&, const Model::SetLogDeliveryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetLogDeliveryConfigurationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetRiskConfigurationRequest&, const Model::SetRiskConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRiskConfigurationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetUICustomizationRequest&, const Model::SetUICustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUICustomizationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetUserMFAPreferenceRequest&, const Model::SetUserMFAPreferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUserMFAPreferenceResponseReceivedHandler;

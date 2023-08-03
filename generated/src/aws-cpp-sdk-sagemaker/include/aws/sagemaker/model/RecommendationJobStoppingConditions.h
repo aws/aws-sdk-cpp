@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/FlatInvocations.h>
 #include <aws/sagemaker/model/ModelLatencyThreshold.h>
 #include <utility>
 
@@ -124,6 +125,55 @@ namespace Model
      */
     inline RecommendationJobStoppingConditions& AddModelLatencyThresholds(ModelLatencyThreshold&& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
+     * which means that the instance has reached capacity. The default value is
+     * <code>Stop</code>. If you want the load test to continue after invocations have
+     * flattened, set the value to <code>Continue</code>.</p>
+     */
+    inline const FlatInvocations& GetFlatInvocations() const{ return m_flatInvocations; }
+
+    /**
+     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
+     * which means that the instance has reached capacity. The default value is
+     * <code>Stop</code>. If you want the load test to continue after invocations have
+     * flattened, set the value to <code>Continue</code>.</p>
+     */
+    inline bool FlatInvocationsHasBeenSet() const { return m_flatInvocationsHasBeenSet; }
+
+    /**
+     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
+     * which means that the instance has reached capacity. The default value is
+     * <code>Stop</code>. If you want the load test to continue after invocations have
+     * flattened, set the value to <code>Continue</code>.</p>
+     */
+    inline void SetFlatInvocations(const FlatInvocations& value) { m_flatInvocationsHasBeenSet = true; m_flatInvocations = value; }
+
+    /**
+     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
+     * which means that the instance has reached capacity. The default value is
+     * <code>Stop</code>. If you want the load test to continue after invocations have
+     * flattened, set the value to <code>Continue</code>.</p>
+     */
+    inline void SetFlatInvocations(FlatInvocations&& value) { m_flatInvocationsHasBeenSet = true; m_flatInvocations = std::move(value); }
+
+    /**
+     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
+     * which means that the instance has reached capacity. The default value is
+     * <code>Stop</code>. If you want the load test to continue after invocations have
+     * flattened, set the value to <code>Continue</code>.</p>
+     */
+    inline RecommendationJobStoppingConditions& WithFlatInvocations(const FlatInvocations& value) { SetFlatInvocations(value); return *this;}
+
+    /**
+     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
+     * which means that the instance has reached capacity. The default value is
+     * <code>Stop</code>. If you want the load test to continue after invocations have
+     * flattened, set the value to <code>Continue</code>.</p>
+     */
+    inline RecommendationJobStoppingConditions& WithFlatInvocations(FlatInvocations&& value) { SetFlatInvocations(std::move(value)); return *this;}
+
   private:
 
     int m_maxInvocations;
@@ -131,6 +181,9 @@ namespace Model
 
     Aws::Vector<ModelLatencyThreshold> m_modelLatencyThresholds;
     bool m_modelLatencyThresholdsHasBeenSet = false;
+
+    FlatInvocations m_flatInvocations;
+    bool m_flatInvocationsHasBeenSet = false;
   };
 
 } // namespace Model

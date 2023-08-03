@@ -26,6 +26,8 @@ AppSummary::AppSummary() :
     m_complianceStatusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_driftStatus(AppDriftStatusType::NOT_SET),
+    m_driftStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_resiliencyScore(0.0),
     m_resiliencyScoreHasBeenSet(false),
@@ -42,6 +44,8 @@ AppSummary::AppSummary(JsonView jsonValue) :
     m_complianceStatusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_driftStatus(AppDriftStatusType::NOT_SET),
+    m_driftStatusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_resiliencyScore(0.0),
     m_resiliencyScoreHasBeenSet(false),
@@ -86,6 +90,13 @@ AppSummary& AppSummary::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("driftStatus"))
+  {
+    m_driftStatus = AppDriftStatusTypeMapper::GetAppDriftStatusTypeForName(jsonValue.GetString("driftStatus"));
+
+    m_driftStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -141,6 +152,11 @@ JsonValue AppSummary::Jsonize() const
   {
    payload.WithString("description", m_description);
 
+  }
+
+  if(m_driftStatusHasBeenSet)
+  {
+   payload.WithString("driftStatus", AppDriftStatusTypeMapper::GetNameForAppDriftStatusType(m_driftStatus));
   }
 
   if(m_nameHasBeenSet)

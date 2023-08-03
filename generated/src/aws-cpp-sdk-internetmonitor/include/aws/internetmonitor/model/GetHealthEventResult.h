@@ -281,17 +281,29 @@ namespace Model
 
 
     /**
-     * <p>The impact on total traffic that a health event has.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline double GetPercentOfTotalTrafficImpacted() const{ return m_percentOfTotalTrafficImpacted; }
 
     /**
-     * <p>The impact on total traffic that a health event has.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpacted = value; }
 
     /**
-     * <p>The impact on total traffic that a health event has.</p>
+     * <p>The impact on total traffic that a health event has, in increased latency or
+     * reduced availability. This is the percentage of how much latency has increased
+     * or availability has decreased during the event, compared to what is typical for
+     * traffic from this client location to the Amazon Web Services location using this
+     * client network.</p>
      */
     inline GetHealthEventResult& WithPercentOfTotalTrafficImpacted(double value) { SetPercentOfTotalTrafficImpacted(value); return *this;}
 
@@ -323,20 +335,23 @@ namespace Model
 
 
     /**
-     * <p>The threshold percentage for health events when Amazon CloudWatch Internet
-     * Monitor creates a health event.</p>
+     * <p>The threshold percentage for a health score that determines, along with other
+     * configuration information, when Internet Monitor creates a health event when
+     * there's an internet issue that affects your application end users.</p>
      */
     inline double GetHealthScoreThreshold() const{ return m_healthScoreThreshold; }
 
     /**
-     * <p>The threshold percentage for health events when Amazon CloudWatch Internet
-     * Monitor creates a health event.</p>
+     * <p>The threshold percentage for a health score that determines, along with other
+     * configuration information, when Internet Monitor creates a health event when
+     * there's an internet issue that affects your application end users.</p>
      */
     inline void SetHealthScoreThreshold(double value) { m_healthScoreThreshold = value; }
 
     /**
-     * <p>The threshold percentage for health events when Amazon CloudWatch Internet
-     * Monitor creates a health event.</p>
+     * <p>The threshold percentage for a health score that determines, along with other
+     * configuration information, when Internet Monitor creates a health event when
+     * there's an internet issue that affects your application end users.</p>
      */
     inline GetHealthEventResult& WithHealthScoreThreshold(double value) { SetHealthScoreThreshold(value); return *this;}
 

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     NONE,
-    BASIC
+    BASIC,
+    IN_AWS
   };
 
 namespace TargetInstanceTypeRightSizingMethodMapper

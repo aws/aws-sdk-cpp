@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PublishAppVersionResult::PublishAppVersionResult()
+PublishAppVersionResult::PublishAppVersionResult() : 
+    m_identifier(0)
 {
 }
 
-PublishAppVersionResult::PublishAppVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+PublishAppVersionResult::PublishAppVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_identifier(0)
 {
   *this = result;
 }
@@ -38,6 +40,18 @@ PublishAppVersionResult& PublishAppVersionResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("appVersion"))
   {
     m_appVersion = jsonValue.GetString("appVersion");
+
+  }
+
+  if(jsonValue.ValueExists("identifier"))
+  {
+    m_identifier = jsonValue.GetInt64("identifier");
+
+  }
+
+  if(jsonValue.ValueExists("versionName"))
+  {
+    m_versionName = jsonValue.GetString("versionName");
 
   }
 

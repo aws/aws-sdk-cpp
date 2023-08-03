@@ -41,63 +41,63 @@ namespace Model
 
 
     /**
-     * <p>The logical resource identifier for the unsupported resource.</p>
+     * <p>Logical resource identifier for the unsupported resource.</p>
      */
     inline const LogicalResourceId& GetLogicalResourceId() const{ return m_logicalResourceId; }
 
     /**
-     * <p>The logical resource identifier for the unsupported resource.</p>
+     * <p>Logical resource identifier for the unsupported resource.</p>
      */
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
 
     /**
-     * <p>The logical resource identifier for the unsupported resource.</p>
+     * <p>Logical resource identifier for the unsupported resource.</p>
      */
     inline void SetLogicalResourceId(const LogicalResourceId& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
 
     /**
-     * <p>The logical resource identifier for the unsupported resource.</p>
+     * <p>Logical resource identifier for the unsupported resource.</p>
      */
     inline void SetLogicalResourceId(LogicalResourceId&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
 
     /**
-     * <p>The logical resource identifier for the unsupported resource.</p>
+     * <p>Logical resource identifier for the unsupported resource.</p>
      */
     inline UnsupportedResource& WithLogicalResourceId(const LogicalResourceId& value) { SetLogicalResourceId(value); return *this;}
 
     /**
-     * <p>The logical resource identifier for the unsupported resource.</p>
+     * <p>Logical resource identifier for the unsupported resource.</p>
      */
     inline UnsupportedResource& WithLogicalResourceId(LogicalResourceId&& value) { SetLogicalResourceId(std::move(value)); return *this;}
 
 
     /**
-     * <p>The physical resource identifier for the unsupported resource.</p>
+     * <p>Physical resource identifier for the unsupported resource.</p>
      */
     inline const PhysicalResourceId& GetPhysicalResourceId() const{ return m_physicalResourceId; }
 
     /**
-     * <p>The physical resource identifier for the unsupported resource.</p>
+     * <p>Physical resource identifier for the unsupported resource.</p>
      */
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
-     * <p>The physical resource identifier for the unsupported resource.</p>
+     * <p>Physical resource identifier for the unsupported resource.</p>
      */
     inline void SetPhysicalResourceId(const PhysicalResourceId& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
 
     /**
-     * <p>The physical resource identifier for the unsupported resource.</p>
+     * <p>Physical resource identifier for the unsupported resource.</p>
      */
     inline void SetPhysicalResourceId(PhysicalResourceId&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
 
     /**
-     * <p>The physical resource identifier for the unsupported resource.</p>
+     * <p>Physical resource identifier for the unsupported resource.</p>
      */
     inline UnsupportedResource& WithPhysicalResourceId(const PhysicalResourceId& value) { SetPhysicalResourceId(value); return *this;}
 
     /**
-     * <p>The physical resource identifier for the unsupported resource.</p>
+     * <p>Physical resource identifier for the unsupported resource.</p>
      */
     inline UnsupportedResource& WithPhysicalResourceId(PhysicalResourceId&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
 

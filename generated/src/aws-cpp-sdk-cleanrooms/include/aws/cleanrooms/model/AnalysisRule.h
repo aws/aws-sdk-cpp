@@ -83,32 +83,32 @@ namespace Model
 
 
     /**
-     * <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline const AnalysisRuleType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline void SetType(const AnalysisRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline void SetType(AnalysisRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline AnalysisRule& WithType(const AnalysisRuleType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of analysis rule. Valid values are `AGGREGATION` and `LIST`.</p>
+     * <p>The type of analysis rule.</p>
      */
     inline AnalysisRule& WithType(AnalysisRuleType&& value) { SetType(std::move(value)); return *this;}
 

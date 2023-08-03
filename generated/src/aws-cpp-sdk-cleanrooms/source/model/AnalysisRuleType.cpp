@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AGGREGATION_HASH = HashingUtils::HashString("AGGREGATION");
         static const int LIST_HASH = HashingUtils::HashString("LIST");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
 
         AnalysisRuleType GetAnalysisRuleTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == LIST_HASH)
           {
             return AnalysisRuleType::LIST;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return AnalysisRuleType::CUSTOM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "AGGREGATION";
           case AnalysisRuleType::LIST:
             return "LIST";
+          case AnalysisRuleType::CUSTOM:
+            return "CUSTOM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

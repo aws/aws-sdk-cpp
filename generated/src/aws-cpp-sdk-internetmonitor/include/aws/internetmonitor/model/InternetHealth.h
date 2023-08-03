@@ -32,9 +32,9 @@ namespace Model
    * network providers and geographies. By applying statistical analysis to the data,
    * Internet Monitor can detect when the performance and availability for your
    * application has dropped, compared to an estimated baseline that's already
-   * calculated. To make it easier to see those drops, we report that information to
-   * you in the form of health scores: a performance score and an availability
-   * score.</p><p><h3>See Also:</h3>   <a
+   * calculated. To make it easier to see those drops, Internet Monitor reports the
+   * information to you in the form of health scores: a performance score and an
+   * availability score.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/InternetHealth">AWS
    * API Reference</a></p>
    */

@@ -200,32 +200,68 @@ namespace Model
 
 
     /**
-     * <p>The authentication event feedback value.</p>
+     * <p>The authentication event feedback value. When you provide a
+     * <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito
+     * that you trust a user session where Amazon Cognito has evaluated some level of
+     * risk. When you provide a <code>FeedbackValue</code> value of
+     * <code>invalid</code>, you tell Amazon Cognito that you don't trust a user
+     * session, or you don't believe that Amazon Cognito evaluated a high-enough risk
+     * level.</p>
      */
     inline const FeedbackValueType& GetFeedbackValue() const{ return m_feedbackValue; }
 
     /**
-     * <p>The authentication event feedback value.</p>
+     * <p>The authentication event feedback value. When you provide a
+     * <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito
+     * that you trust a user session where Amazon Cognito has evaluated some level of
+     * risk. When you provide a <code>FeedbackValue</code> value of
+     * <code>invalid</code>, you tell Amazon Cognito that you don't trust a user
+     * session, or you don't believe that Amazon Cognito evaluated a high-enough risk
+     * level.</p>
      */
     inline bool FeedbackValueHasBeenSet() const { return m_feedbackValueHasBeenSet; }
 
     /**
-     * <p>The authentication event feedback value.</p>
+     * <p>The authentication event feedback value. When you provide a
+     * <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito
+     * that you trust a user session where Amazon Cognito has evaluated some level of
+     * risk. When you provide a <code>FeedbackValue</code> value of
+     * <code>invalid</code>, you tell Amazon Cognito that you don't trust a user
+     * session, or you don't believe that Amazon Cognito evaluated a high-enough risk
+     * level.</p>
      */
     inline void SetFeedbackValue(const FeedbackValueType& value) { m_feedbackValueHasBeenSet = true; m_feedbackValue = value; }
 
     /**
-     * <p>The authentication event feedback value.</p>
+     * <p>The authentication event feedback value. When you provide a
+     * <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito
+     * that you trust a user session where Amazon Cognito has evaluated some level of
+     * risk. When you provide a <code>FeedbackValue</code> value of
+     * <code>invalid</code>, you tell Amazon Cognito that you don't trust a user
+     * session, or you don't believe that Amazon Cognito evaluated a high-enough risk
+     * level.</p>
      */
     inline void SetFeedbackValue(FeedbackValueType&& value) { m_feedbackValueHasBeenSet = true; m_feedbackValue = std::move(value); }
 
     /**
-     * <p>The authentication event feedback value.</p>
+     * <p>The authentication event feedback value. When you provide a
+     * <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito
+     * that you trust a user session where Amazon Cognito has evaluated some level of
+     * risk. When you provide a <code>FeedbackValue</code> value of
+     * <code>invalid</code>, you tell Amazon Cognito that you don't trust a user
+     * session, or you don't believe that Amazon Cognito evaluated a high-enough risk
+     * level.</p>
      */
     inline UpdateAuthEventFeedbackRequest& WithFeedbackValue(const FeedbackValueType& value) { SetFeedbackValue(value); return *this;}
 
     /**
-     * <p>The authentication event feedback value.</p>
+     * <p>The authentication event feedback value. When you provide a
+     * <code>FeedbackValue</code> value of <code>valid</code>, you tell Amazon Cognito
+     * that you trust a user session where Amazon Cognito has evaluated some level of
+     * risk. When you provide a <code>FeedbackValue</code> value of
+     * <code>invalid</code>, you tell Amazon Cognito that you don't trust a user
+     * session, or you don't believe that Amazon Cognito evaluated a high-enough risk
+     * level.</p>
      */
     inline UpdateAuthEventFeedbackRequest& WithFeedbackValue(FeedbackValueType&& value) { SetFeedbackValue(std::move(value)); return *this;}
 

@@ -28,7 +28,8 @@ ReactStartCodegenJobData::ReactStartCodegenJobData() :
     m_renderTypeDeclarations(false),
     m_renderTypeDeclarationsHasBeenSet(false),
     m_inlineSourceMap(false),
-    m_inlineSourceMapHasBeenSet(false)
+    m_inlineSourceMapHasBeenSet(false),
+    m_apiConfigurationHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ReactStartCodegenJobData::ReactStartCodegenJobData(JsonView jsonValue) :
     m_renderTypeDeclarations(false),
     m_renderTypeDeclarationsHasBeenSet(false),
     m_inlineSourceMap(false),
-    m_inlineSourceMapHasBeenSet(false)
+    m_inlineSourceMapHasBeenSet(false),
+    m_apiConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +86,13 @@ ReactStartCodegenJobData& ReactStartCodegenJobData::operator =(JsonView jsonValu
     m_inlineSourceMapHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("apiConfiguration"))
+  {
+    m_apiConfiguration = jsonValue.GetObject("apiConfiguration");
+
+    m_apiConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -115,6 +124,12 @@ JsonValue ReactStartCodegenJobData::Jsonize() const
   if(m_inlineSourceMapHasBeenSet)
   {
    payload.WithBool("inlineSourceMap", m_inlineSourceMap);
+
+  }
+
+  if(m_apiConfigurationHasBeenSet)
+  {
+   payload.WithObject("apiConfiguration", m_apiConfiguration.Jsonize());
 
   }
 

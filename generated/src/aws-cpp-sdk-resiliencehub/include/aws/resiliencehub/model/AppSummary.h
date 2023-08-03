@@ -9,6 +9,7 @@
 #include <aws/resiliencehub/model/AppAssessmentScheduleType.h>
 #include <aws/resiliencehub/model/AppComplianceStatusType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/resiliencehub/model/AppDriftStatusType.h>
 #include <aws/resiliencehub/model/AppStatusType.h>
 #include <utility>
 
@@ -42,8 +43,8 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -52,8 +53,8 @@ namespace Model
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -62,8 +63,8 @@ namespace Model
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -72,8 +73,8 @@ namespace Model
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -82,8 +83,8 @@ namespace Model
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -92,8 +93,8 @@ namespace Model
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -102,8 +103,8 @@ namespace Model
     inline AppSummary& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -112,8 +113,8 @@ namespace Model
     inline AppSummary& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
-     * for this ARN is:
+     * <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for
+     * this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -257,6 +258,43 @@ namespace Model
 
 
     /**
+     * <p>Indicates if compliance drifts (deviations) were detected while running an
+     * assessment for your application.</p>
+     */
+    inline const AppDriftStatusType& GetDriftStatus() const{ return m_driftStatus; }
+
+    /**
+     * <p>Indicates if compliance drifts (deviations) were detected while running an
+     * assessment for your application.</p>
+     */
+    inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates if compliance drifts (deviations) were detected while running an
+     * assessment for your application.</p>
+     */
+    inline void SetDriftStatus(const AppDriftStatusType& value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
+
+    /**
+     * <p>Indicates if compliance drifts (deviations) were detected while running an
+     * assessment for your application.</p>
+     */
+    inline void SetDriftStatus(AppDriftStatusType&& value) { m_driftStatusHasBeenSet = true; m_driftStatus = std::move(value); }
+
+    /**
+     * <p>Indicates if compliance drifts (deviations) were detected while running an
+     * assessment for your application.</p>
+     */
+    inline AppSummary& WithDriftStatus(const AppDriftStatusType& value) { SetDriftStatus(value); return *this;}
+
+    /**
+     * <p>Indicates if compliance drifts (deviations) were detected while running an
+     * assessment for your application.</p>
+     */
+    inline AppSummary& WithDriftStatus(AppDriftStatusType&& value) { SetDriftStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name of the application.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -319,32 +357,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the application.</p>
+     * <p>Status of the application.</p>
      */
     inline const AppStatusType& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the application.</p>
+     * <p>Status of the application.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the application.</p>
+     * <p>Status of the application.</p>
      */
     inline void SetStatus(const AppStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the application.</p>
+     * <p>Status of the application.</p>
      */
     inline void SetStatus(AppStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the application.</p>
+     * <p>Status of the application.</p>
      */
     inline AppSummary& WithStatus(const AppStatusType& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the application.</p>
+     * <p>Status of the application.</p>
      */
     inline AppSummary& WithStatus(AppStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -364,6 +402,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    AppDriftStatusType m_driftStatus;
+    bool m_driftStatusHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

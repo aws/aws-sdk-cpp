@@ -81,8 +81,8 @@ namespace LookoutEquipment
         /**
          * <p>Creates a container for a collection of data being ingested for analysis. The
          * dataset contains the metadata describing where the data is and what the data
-         * actually looks like. In other words, it contains the location of the data
-         * source, the data schema, and other information. A dataset also contains any tags
+         * actually looks like. For example, it contains the location of the data source,
+         * the data schema, and other information. A dataset also contains any tags
          * associated with the ingested data. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateDataset">AWS
          * API Reference</a></p>
@@ -354,6 +354,32 @@ namespace LookoutEquipment
         }
 
         /**
+         * <p>Deletes the resource policy attached to the resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&LookoutEquipmentClient::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LookoutEquipmentClient::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Provides information on a specific data ingestion job such as creation time,
          * dataset ARN, and status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeDataIngestionJob">AWS
@@ -506,6 +532,109 @@ namespace LookoutEquipment
         void DescribeModelAsync(const DescribeModelRequestT& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LookoutEquipmentClient::DescribeModel, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a specific machine learning model
+         * version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeModelVersionOutcome DescribeModelVersion(const Model::DescribeModelVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeModelVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeModelVersionRequestT = Model::DescribeModelVersionRequest>
+        Model::DescribeModelVersionOutcomeCallable DescribeModelVersionCallable(const DescribeModelVersionRequestT& request) const
+        {
+            return SubmitCallable(&LookoutEquipmentClient::DescribeModelVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeModelVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeModelVersionRequestT = Model::DescribeModelVersionRequest>
+        void DescribeModelVersionAsync(const DescribeModelVersionRequestT& request, const DescribeModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LookoutEquipmentClient::DescribeModelVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Provides the details of a resource policy attached to a
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeResourcePolicyOutcome DescribeResourcePolicy(const Model::DescribeResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeResourcePolicyRequestT = Model::DescribeResourcePolicyRequest>
+        Model::DescribeResourcePolicyOutcomeCallable DescribeResourcePolicyCallable(const DescribeResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&LookoutEquipmentClient::DescribeResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeResourcePolicyRequestT = Model::DescribeResourcePolicyRequest>
+        void DescribeResourcePolicyAsync(const DescribeResourcePolicyRequestT& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LookoutEquipmentClient::DescribeResourcePolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Imports a dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportDatasetOutcome ImportDataset(const Model::ImportDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for ImportDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ImportDatasetRequestT = Model::ImportDatasetRequest>
+        Model::ImportDatasetOutcomeCallable ImportDatasetCallable(const ImportDatasetRequestT& request) const
+        {
+            return SubmitCallable(&LookoutEquipmentClient::ImportDataset, request);
+        }
+
+        /**
+         * An Async wrapper for ImportDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ImportDatasetRequestT = Model::ImportDatasetRequest>
+        void ImportDatasetAsync(const ImportDatasetRequestT& request, const ImportDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LookoutEquipmentClient::ImportDataset, request, handler, context);
+        }
+
+        /**
+         * <p>Imports a model that has been trained successfully.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportModelVersionOutcome ImportModelVersion(const Model::ImportModelVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ImportModelVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ImportModelVersionRequestT = Model::ImportModelVersionRequest>
+        Model::ImportModelVersionOutcomeCallable ImportModelVersionCallable(const ImportModelVersionRequestT& request) const
+        {
+            return SubmitCallable(&LookoutEquipmentClient::ImportModelVersion, request);
+        }
+
+        /**
+         * An Async wrapper for ImportModelVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ImportModelVersionRequestT = Model::ImportModelVersionRequest>
+        void ImportModelVersionAsync(const ImportModelVersionRequestT& request, const ImportModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LookoutEquipmentClient::ImportModelVersion, request, handler, context);
         }
 
         /**
@@ -689,6 +818,34 @@ namespace LookoutEquipment
         }
 
         /**
+         * <p>Generates a list of all model versions for a given model, including the model
+         * version, model version ARN, and status. To list a subset of versions, use the
+         * <code>MaxModelVersion</code> and <code>MinModelVersion</code>
+         * fields.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListModelVersionsOutcome ListModelVersions(const Model::ListModelVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListModelVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListModelVersionsRequestT = Model::ListModelVersionsRequest>
+        Model::ListModelVersionsOutcomeCallable ListModelVersionsCallable(const ListModelVersionsRequestT& request) const
+        {
+            return SubmitCallable(&LookoutEquipmentClient::ListModelVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListModelVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListModelVersionsRequestT = Model::ListModelVersionsRequest>
+        void ListModelVersionsAsync(const ListModelVersionsRequestT& request, const ListModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LookoutEquipmentClient::ListModelVersions, request, handler, context);
+        }
+
+        /**
          * <p>Generates a list of all models in the account, including model name and ARN,
          * dataset, and status. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModels">AWS
@@ -766,6 +923,32 @@ namespace LookoutEquipment
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LookoutEquipmentClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a resource control policy for a given resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&LookoutEquipmentClient::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LookoutEquipmentClient::PutResourcePolicy, request, handler, context);
         }
 
         /**
@@ -898,6 +1081,32 @@ namespace LookoutEquipment
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LookoutEquipmentClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Sets the active model version for a given machine learning
+         * model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateActiveModelVersionOutcome UpdateActiveModelVersion(const Model::UpdateActiveModelVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateActiveModelVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateActiveModelVersionRequestT = Model::UpdateActiveModelVersionRequest>
+        Model::UpdateActiveModelVersionOutcomeCallable UpdateActiveModelVersionCallable(const UpdateActiveModelVersionRequestT& request) const
+        {
+            return SubmitCallable(&LookoutEquipmentClient::UpdateActiveModelVersion, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateActiveModelVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateActiveModelVersionRequestT = Model::UpdateActiveModelVersionRequest>
+        void UpdateActiveModelVersionAsync(const UpdateActiveModelVersionRequestT& request, const UpdateActiveModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LookoutEquipmentClient::UpdateActiveModelVersion, request, handler, context);
         }
 
         /**

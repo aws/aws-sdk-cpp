@@ -72,6 +72,7 @@ static const int CERTIFICATE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("Ce
 static const int D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBParameterGroupAlreadyExists");
 static const int INVALID_D_B_CLUSTER_ENDPOINT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterEndpointStateFault");
 static const int SOURCE_CLUSTER_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("SourceClusterNotSupportedFault");
+static const int INVALID_D_B_CLUSTER_AUTOMATED_BACKUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterAutomatedBackupStateFault");
 static const int STORAGE_TYPE_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("StorageTypeNotSupported");
 static const int S_N_S_INVALID_TOPIC_FAULT_HASH = HashingUtils::HashString("SNSInvalidTopic");
 static const int INVALID_D_B_SUBNET_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSubnetStateFault");
@@ -113,6 +114,7 @@ static const int GLOBAL_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString(
 static const int D_B_PROXY_ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBProxyEndpointAlreadyExistsFault");
 static const int NETWORK_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("NetworkTypeNotSupported");
 static const int PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT_HASH = HashingUtils::HashString("ProvisionedIopsNotAvailableInAZFault");
+static const int D_B_CLUSTER_AUTOMATED_BACKUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBClusterAutomatedBackupQuotaExceededFault");
 static const int IAM_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("IamRoleNotFound");
 static const int GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("GlobalClusterQuotaExceededFault");
 static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResourceNotFoundFault");
@@ -127,6 +129,7 @@ static const int INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("
 static const int GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("GlobalClusterAlreadyExistsFault");
 static const int D_B_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSnapshotNotFound");
 static const int CUSTOM_AVAILABILITY_ZONE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CustomAvailabilityZoneNotFound");
+static const int D_B_CLUSTER_AUTOMATED_BACKUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterAutomatedBackupNotFoundFault");
 static const int K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH = HashingUtils::HashString("KMSKeyNotAccessibleFault");
 static const int D_B_CLUSTER_BACKTRACK_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterBacktrackNotFoundFault");
 static const int CREATE_CUSTOM_D_B_ENGINE_VERSION_FAULT_HASH = HashingUtils::HashString("CreateCustomDBEngineVersionFault");
@@ -424,6 +427,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::SOURCE_CLUSTER_NOT_SUPPORTED_FAULT), false);
     return true;
   }
+  else if (hashCode == INVALID_D_B_CLUSTER_AUTOMATED_BACKUP_STATE_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_D_B_CLUSTER_AUTOMATED_BACKUP_STATE_FAULT), false);
+    return true;
+  }
   else if (hashCode == STORAGE_TYPE_NOT_SUPPORTED_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::STORAGE_TYPE_NOT_SUPPORTED_FAULT), false);
@@ -629,6 +637,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT), false);
     return true;
   }
+  else if (hashCode == D_B_CLUSTER_AUTOMATED_BACKUP_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_CLUSTER_AUTOMATED_BACKUP_QUOTA_EXCEEDED_FAULT), false);
+    return true;
+  }
   else if (hashCode == IAM_ROLE_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::IAM_ROLE_NOT_FOUND_FAULT), false);
@@ -699,6 +712,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::CUSTOM_AVAILABILITY_ZONE_NOT_FOUND_FAULT), false);
     return true;
   }
+  else if (hashCode == D_B_CLUSTER_AUTOMATED_BACKUP_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_CLUSTER_AUTOMATED_BACKUP_NOT_FOUND_FAULT), false);
+    return true;
+  }
   else if (hashCode == K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::K_M_S_KEY_NOT_ACCESSIBLE_FAULT), false);
@@ -749,7 +767,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::CUSTOM_D_B_ENGINE_VERSION_ALREADY_EXISTS_FAULT), false);
     return true;
   }
-  else if (hashCode == EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::EC2_IMAGE_PROPERTIES_NOT_SUPPORTED_FAULT), false);
     return true;
@@ -764,12 +787,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::POINT_IN_TIME_RESTORE_NOT_ENABLED_FAULT), false);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
+  else if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::SOURCE_NOT_FOUND_FAULT), false);
     return true;
