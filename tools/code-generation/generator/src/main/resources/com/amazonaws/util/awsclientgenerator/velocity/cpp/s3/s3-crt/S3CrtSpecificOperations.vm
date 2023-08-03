@@ -1,3 +1,4 @@
+#if(!${onlyGeneratedOperations})
 static const int SUCCESS_RESPONSE_MIN = 200;
 static const int SUCCESS_RESPONSE_MAX = 299;
 
@@ -185,6 +186,7 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
   const auto endpointCursor{ aws_byte_cursor_from_array(endpointStr.c_str(), endpointStr.size()) };
   aws_uri_init_parse(options->endpoint, Aws::get_aws_allocator(), &endpointCursor);
 }
+#end
 
 #foreach($operation in $serviceModel.operations)
 #if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)

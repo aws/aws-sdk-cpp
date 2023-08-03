@@ -1,3 +1,4 @@
+#if(!${onlyGeneratedOperations})
 #set($additionalCtorSignatureArgs = {})
 #set($ctorMemberInitList = [])
 #set($signerCtorArgs = [])
@@ -416,3 +417,4 @@ void ${className}::OverrideEndpoint(const Aws::String& endpoint)
 #end
 #end##-#if($serviceModel.endpointRules)
 }
+#end

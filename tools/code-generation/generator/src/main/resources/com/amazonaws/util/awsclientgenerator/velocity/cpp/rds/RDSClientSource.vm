@@ -1,4 +1,5 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
+#if(!$onlyGeneratedOperations)
 Aws::String RDSClient::GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const
 {
     Aws::StringStream ss;
@@ -11,3 +12,4 @@ Aws::String RDSClient::GenerateConnectAuthToken(const char* dbHostName, const ch
 
     return url;
 }
+#end
