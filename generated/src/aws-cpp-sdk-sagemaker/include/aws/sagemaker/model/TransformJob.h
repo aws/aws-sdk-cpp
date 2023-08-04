@@ -17,6 +17,7 @@
 #include <aws/sagemaker/model/DataProcessing.h>
 #include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/BatchDataCaptureConfig.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -874,6 +875,25 @@ namespace Model
      */
     inline TransformJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const BatchDataCaptureConfig& GetDataCaptureConfig() const{ return m_dataCaptureConfig; }
+
+    
+    inline bool DataCaptureConfigHasBeenSet() const { return m_dataCaptureConfigHasBeenSet; }
+
+    
+    inline void SetDataCaptureConfig(const BatchDataCaptureConfig& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = value; }
+
+    
+    inline void SetDataCaptureConfig(BatchDataCaptureConfig&& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = std::move(value); }
+
+    
+    inline TransformJob& WithDataCaptureConfig(const BatchDataCaptureConfig& value) { SetDataCaptureConfig(value); return *this;}
+
+    
+    inline TransformJob& WithDataCaptureConfig(BatchDataCaptureConfig&& value) { SetDataCaptureConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transformJobName;
@@ -938,6 +958,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    BatchDataCaptureConfig m_dataCaptureConfig;
+    bool m_dataCaptureConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5215,6 +5215,33 @@ namespace Connect
         }
 
         /**
+         * <p>Whether agents with this routing profile will have their routing order
+         * calculated based on <i>time since their last inbound contact</i> or <i>longest
+         * idle time</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileAgentAvailabilityTimer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRoutingProfileAgentAvailabilityTimerOutcome UpdateRoutingProfileAgentAvailabilityTimer(const Model::UpdateRoutingProfileAgentAvailabilityTimerRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRoutingProfileAgentAvailabilityTimer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateRoutingProfileAgentAvailabilityTimerRequestT = Model::UpdateRoutingProfileAgentAvailabilityTimerRequest>
+        Model::UpdateRoutingProfileAgentAvailabilityTimerOutcomeCallable UpdateRoutingProfileAgentAvailabilityTimerCallable(const UpdateRoutingProfileAgentAvailabilityTimerRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdateRoutingProfileAgentAvailabilityTimer, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateRoutingProfileAgentAvailabilityTimer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateRoutingProfileAgentAvailabilityTimerRequestT = Model::UpdateRoutingProfileAgentAvailabilityTimerRequest>
+        void UpdateRoutingProfileAgentAvailabilityTimerAsync(const UpdateRoutingProfileAgentAvailabilityTimerRequestT& request, const UpdateRoutingProfileAgentAvailabilityTimerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdateRoutingProfileAgentAvailabilityTimer, request, handler, context);
+        }
+
+        /**
          * <p>Updates the channels that agents can handle in the Contact Control Panel
          * (CCP) for a routing profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRoutingProfileConcurrency">AWS

@@ -206,42 +206,50 @@ namespace Model
 
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateTaskSetRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateTaskSetRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The task definition for the tasks in the task set to use.</p>
+     * <p>The task definition for the tasks in the task set to use. If a revision isn't
+     * specified, the latest <code>ACTIVE</code> revision is used.</p>
      */
     inline CreateTaskSetRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 

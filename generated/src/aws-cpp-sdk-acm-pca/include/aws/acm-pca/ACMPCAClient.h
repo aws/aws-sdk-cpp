@@ -31,7 +31,7 @@ namespace ACMPCA
    * rejects an otherwise valid request because the request exceeds the operation's
    * quota for the number of requests per second. When a request is throttled, Amazon
    * Web Services Private CA returns a <a
-   * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/CommonErrors.html">ThrottlingException</a>
+   * href="https://docs.aws.amazon.com/privateca/latest/APIReference/CommonErrors.html">ThrottlingException</a>
    * error. Amazon Web Services Private CA does not guarantee a minimum request rate
    * for APIs. </p> <p>To see an up-to-date list of your Amazon Web Services Private
    * CA quotas, or to request a quota increase, log into your Amazon Web Services

@@ -1112,8 +1112,9 @@ namespace Model
 
 
     /**
-     * <p>The task launch types the task definition was validated against. For more
-     * information, see <a
+     * <p>The task launch types the task definition was validated against. The valid
+     * values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1121,8 +1122,9 @@ namespace Model
     inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const{ return m_requiresCompatibilities; }
 
     /**
-     * <p>The task launch types the task definition was validated against. For more
-     * information, see <a
+     * <p>The task launch types the task definition was validated against. The valid
+     * values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1130,8 +1132,9 @@ namespace Model
     inline bool RequiresCompatibilitiesHasBeenSet() const { return m_requiresCompatibilitiesHasBeenSet; }
 
     /**
-     * <p>The task launch types the task definition was validated against. For more
-     * information, see <a
+     * <p>The task launch types the task definition was validated against. The valid
+     * values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1139,8 +1142,9 @@ namespace Model
     inline void SetRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = value; }
 
     /**
-     * <p>The task launch types the task definition was validated against. For more
-     * information, see <a
+     * <p>The task launch types the task definition was validated against. The valid
+     * values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1148,8 +1152,9 @@ namespace Model
     inline void SetRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::move(value); }
 
     /**
-     * <p>The task launch types the task definition was validated against. For more
-     * information, see <a
+     * <p>The task launch types the task definition was validated against. The valid
+     * values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1157,8 +1162,9 @@ namespace Model
     inline TaskDefinition& WithRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { SetRequiresCompatibilities(value); return *this;}
 
     /**
-     * <p>The task launch types the task definition was validated against. For more
-     * information, see <a
+     * <p>The task launch types the task definition was validated against. The valid
+     * values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1166,8 +1172,9 @@ namespace Model
     inline TaskDefinition& WithRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { SetRequiresCompatibilities(std::move(value)); return *this;}
 
     /**
-     * <p>The task launch types the task definition was validated against. For more
-     * information, see <a
+     * <p>The task launch types the task definition was validated against. The valid
+     * values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -1175,8 +1182,9 @@ namespace Model
     inline TaskDefinition& AddRequiresCompatibilities(const Compatibility& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
 
     /**
-     * <p>The task launch types the task definition was validated against. For more
-     * information, see <a
+     * <p>The task launch types the task definition was validated against. The valid
+     * values are <code>EC2</code>, <code>FARGATE</code>, and <code>EXTERNAL</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
