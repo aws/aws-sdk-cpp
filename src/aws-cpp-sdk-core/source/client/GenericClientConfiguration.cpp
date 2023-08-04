@@ -44,8 +44,8 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
   return enabled;
 }
 
-GenericClientConfiguration<true>::GenericClientConfiguration()
-    : ClientConfiguration(),
+GenericClientConfiguration<true>::GenericClientConfiguration(bool shouldDisableIMDS)
+    : ClientConfiguration(shouldDisableIMDS),
       enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
 {

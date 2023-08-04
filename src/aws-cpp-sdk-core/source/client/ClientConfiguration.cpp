@@ -139,9 +139,9 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     }
 }
 
-ClientConfiguration::ClientConfiguration()
+ClientConfiguration::ClientConfiguration(bool shouldDisableIMDS)
 {
-    this->disableIMDS = false;
+    this->disableIMDS = shouldDisableIMDS;
     setLegacyClientConfigurationParameters(*this);
     retryStrategy = InitRetryStrategy();
 

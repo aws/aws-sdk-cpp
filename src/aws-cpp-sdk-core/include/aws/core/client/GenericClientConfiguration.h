@@ -20,8 +20,8 @@ namespace Aws
         {
             static const bool EndpointDiscoverySupported = HasEndpointDiscovery;
 
-            GenericClientConfiguration()
-              : ClientConfiguration()
+            GenericClientConfiguration(bool shouldDisableIMDS = false)
+              : ClientConfiguration(shouldDisableIMDS)
             {}
 
             /**

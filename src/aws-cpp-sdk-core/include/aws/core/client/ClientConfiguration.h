@@ -67,7 +67,7 @@ namespace Aws
          */
         struct AWS_CORE_API ClientConfiguration
         {
-            ClientConfiguration();
+            ClientConfiguration(bool shouldDisableIMDS = false);
 
             /**
              * Create a configuration based on settings in the aws configuration file for the given profile name.
