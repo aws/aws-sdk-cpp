@@ -40,10 +40,10 @@ namespace Model
    * For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
    * environment variables</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p> <p>This parameter is only supported for tasks hosted on Fargate
-   * using the following platform versions:</p> <ul> <li> <p>Linux platform version
-   * <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version
-   * <code>1.0.0</code> or later.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * Guide</i>.</p> <p>You must use the following platforms for the Fargate launch
+   * type:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p>
+   * </li> <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/EnvironmentFile">AWS
    * API Reference</a></p>
    */

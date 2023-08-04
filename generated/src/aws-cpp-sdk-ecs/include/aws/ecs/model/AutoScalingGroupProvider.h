@@ -41,79 +41,81 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline const Aws::String& GetAutoScalingGroupArn() const{ return m_autoScalingGroupArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline bool AutoScalingGroupArnHasBeenSet() const { return m_autoScalingGroupArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline void SetAutoScalingGroupArn(const Aws::String& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline void SetAutoScalingGroupArn(Aws::String&& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline void SetAutoScalingGroupArn(const char* value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline AutoScalingGroupProvider& WithAutoScalingGroupArn(const Aws::String& value) { SetAutoScalingGroupArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline AutoScalingGroupProvider& WithAutoScalingGroupArn(Aws::String&& value) { SetAutoScalingGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
+     * Auto Scaling group name.</p>
      */
     inline AutoScalingGroupProvider& WithAutoScalingGroupArn(const char* value) { SetAutoScalingGroupArn(value); return *this;}
 
 
     /**
-     * <p>The managed scaling settings for the Auto Scaling group capacity
-     * provider.</p>
+     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
      */
     inline const ManagedScaling& GetManagedScaling() const{ return m_managedScaling; }
 
     /**
-     * <p>The managed scaling settings for the Auto Scaling group capacity
-     * provider.</p>
+     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
      */
     inline bool ManagedScalingHasBeenSet() const { return m_managedScalingHasBeenSet; }
 
     /**
-     * <p>The managed scaling settings for the Auto Scaling group capacity
-     * provider.</p>
+     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
      */
     inline void SetManagedScaling(const ManagedScaling& value) { m_managedScalingHasBeenSet = true; m_managedScaling = value; }
 
     /**
-     * <p>The managed scaling settings for the Auto Scaling group capacity
-     * provider.</p>
+     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
      */
     inline void SetManagedScaling(ManagedScaling&& value) { m_managedScalingHasBeenSet = true; m_managedScaling = std::move(value); }
 
     /**
-     * <p>The managed scaling settings for the Auto Scaling group capacity
-     * provider.</p>
+     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
      */
     inline AutoScalingGroupProvider& WithManagedScaling(const ManagedScaling& value) { SetManagedScaling(value); return *this;}
 
     /**
-     * <p>The managed scaling settings for the Auto Scaling group capacity
-     * provider.</p>
+     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
      */
     inline AutoScalingGroupProvider& WithManagedScaling(ManagedScaling&& value) { SetManagedScaling(std::move(value)); return *this;}
 

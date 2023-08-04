@@ -2505,7 +2505,7 @@ namespace Model
      * of the container agent and <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are 2-120 seconds.</p>
      */
     inline int GetStartTimeout() const{ return m_startTimeout; }
 
@@ -2537,7 +2537,7 @@ namespace Model
      * of the container agent and <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are 2-120 seconds.</p>
      */
     inline bool StartTimeoutHasBeenSet() const { return m_startTimeoutHasBeenSet; }
 
@@ -2569,7 +2569,7 @@ namespace Model
      * of the container agent and <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are 2-120 seconds.</p>
      */
     inline void SetStartTimeout(int value) { m_startTimeoutHasBeenSet = true; m_startTimeout = value; }
 
@@ -2601,7 +2601,7 @@ namespace Model
      * of the container agent and <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are 2-120 seconds.</p>
      */
     inline ContainerDefinition& WithStartTimeout(int value) { SetStartTimeout(value); return *this;}
 
@@ -2633,7 +2633,7 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are 2-120 seconds.</p>
      */
     inline int GetStopTimeout() const{ return m_stopTimeout; }
 
@@ -2664,7 +2664,7 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are 2-120 seconds.</p>
      */
     inline bool StopTimeoutHasBeenSet() const { return m_stopTimeoutHasBeenSet; }
 
@@ -2695,7 +2695,7 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are 2-120 seconds.</p>
      */
     inline void SetStopTimeout(int value) { m_stopTimeoutHasBeenSet = true; m_stopTimeout = value; }
 
@@ -2726,7 +2726,7 @@ namespace Model
      * <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>The valid values are 2-120 seconds.</p>
      */
     inline ContainerDefinition& WithStopTimeout(int value) { SetStopTimeout(value); return *this;}
 
@@ -4969,16 +4969,27 @@ namespace Model
 
     /**
      * <p>A list of ARNs in SSM or Amazon S3 to a credential spec
-     * (<code>credspec</code>code&gt;) file that configures a container for Active
-     * Directory authentication. This parameter is only used with domainless
-     * authentication.</p> <p>The format for each ARN is
-     * <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the
-     * ARN in SSM or Amazon S3.</p> <p>The <code>credspec</code> must provide a ARN in
-     * Secrets Manager for a secret containing the username, password, and the domain
-     * to connect to. For better security, the instance isn't joined to the domain for
-     * domainless authentication. Other applications on the instance can't use the
-     * domainless credentials. You can use this parameter to run tasks on the same
-     * instance, even it the tasks need to join different domains. For more
+     * (<code>CredSpec</code>) file that configures the container for Active Directory
+     * authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     * <p>There are two formats for each ARN.</p> <dl>
+     * <dt>credentialspecdomainless:MyARN</dt> <dd> <p>You use
+     * <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code>
+     * with an additional section for a secret in Secrets Manager. You provide the
+     * login credentials to the domain in the secret.</p> <p>Each task that runs on any
+     * container instance can join different domains.</p> <p>You can use this format
+     * without joining the container instance to a domain.</p> </dd>
+     * <dt>credentialspec:MyARN</dt> <dd> <p>You use <code>credentialspec:MyARN</code>
+     * to provide a <code>CredSpec</code> for a single domain.</p> <p>You must join the
+     * container instance to the domain before you start any tasks that use this task
+     * definition.</p> </dd> </dl> <p>In both formats, replace <code>MyARN</code> with
+     * the ARN in SSM or Amazon S3.</p> <p>If you provide a
+     * <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must
+     * provide a ARN in Secrets Manager for a secret containing the username, password,
+     * and the domain to connect to. For better security, the instance isn't joined to
+     * the domain for domainless authentication. Other applications on the instance
+     * can't use the domainless credentials. You can use this parameter to run tasks on
+     * the same instance, even it the tasks need to join different domains. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
      * gMSAs for Windows Containers</a> and <a
@@ -4989,16 +5000,27 @@ namespace Model
 
     /**
      * <p>A list of ARNs in SSM or Amazon S3 to a credential spec
-     * (<code>credspec</code>code&gt;) file that configures a container for Active
-     * Directory authentication. This parameter is only used with domainless
-     * authentication.</p> <p>The format for each ARN is
-     * <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the
-     * ARN in SSM or Amazon S3.</p> <p>The <code>credspec</code> must provide a ARN in
-     * Secrets Manager for a secret containing the username, password, and the domain
-     * to connect to. For better security, the instance isn't joined to the domain for
-     * domainless authentication. Other applications on the instance can't use the
-     * domainless credentials. You can use this parameter to run tasks on the same
-     * instance, even it the tasks need to join different domains. For more
+     * (<code>CredSpec</code>) file that configures the container for Active Directory
+     * authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     * <p>There are two formats for each ARN.</p> <dl>
+     * <dt>credentialspecdomainless:MyARN</dt> <dd> <p>You use
+     * <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code>
+     * with an additional section for a secret in Secrets Manager. You provide the
+     * login credentials to the domain in the secret.</p> <p>Each task that runs on any
+     * container instance can join different domains.</p> <p>You can use this format
+     * without joining the container instance to a domain.</p> </dd>
+     * <dt>credentialspec:MyARN</dt> <dd> <p>You use <code>credentialspec:MyARN</code>
+     * to provide a <code>CredSpec</code> for a single domain.</p> <p>You must join the
+     * container instance to the domain before you start any tasks that use this task
+     * definition.</p> </dd> </dl> <p>In both formats, replace <code>MyARN</code> with
+     * the ARN in SSM or Amazon S3.</p> <p>If you provide a
+     * <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must
+     * provide a ARN in Secrets Manager for a secret containing the username, password,
+     * and the domain to connect to. For better security, the instance isn't joined to
+     * the domain for domainless authentication. Other applications on the instance
+     * can't use the domainless credentials. You can use this parameter to run tasks on
+     * the same instance, even it the tasks need to join different domains. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
      * gMSAs for Windows Containers</a> and <a
@@ -5009,16 +5031,27 @@ namespace Model
 
     /**
      * <p>A list of ARNs in SSM or Amazon S3 to a credential spec
-     * (<code>credspec</code>code&gt;) file that configures a container for Active
-     * Directory authentication. This parameter is only used with domainless
-     * authentication.</p> <p>The format for each ARN is
-     * <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the
-     * ARN in SSM or Amazon S3.</p> <p>The <code>credspec</code> must provide a ARN in
-     * Secrets Manager for a secret containing the username, password, and the domain
-     * to connect to. For better security, the instance isn't joined to the domain for
-     * domainless authentication. Other applications on the instance can't use the
-     * domainless credentials. You can use this parameter to run tasks on the same
-     * instance, even it the tasks need to join different domains. For more
+     * (<code>CredSpec</code>) file that configures the container for Active Directory
+     * authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     * <p>There are two formats for each ARN.</p> <dl>
+     * <dt>credentialspecdomainless:MyARN</dt> <dd> <p>You use
+     * <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code>
+     * with an additional section for a secret in Secrets Manager. You provide the
+     * login credentials to the domain in the secret.</p> <p>Each task that runs on any
+     * container instance can join different domains.</p> <p>You can use this format
+     * without joining the container instance to a domain.</p> </dd>
+     * <dt>credentialspec:MyARN</dt> <dd> <p>You use <code>credentialspec:MyARN</code>
+     * to provide a <code>CredSpec</code> for a single domain.</p> <p>You must join the
+     * container instance to the domain before you start any tasks that use this task
+     * definition.</p> </dd> </dl> <p>In both formats, replace <code>MyARN</code> with
+     * the ARN in SSM or Amazon S3.</p> <p>If you provide a
+     * <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must
+     * provide a ARN in Secrets Manager for a secret containing the username, password,
+     * and the domain to connect to. For better security, the instance isn't joined to
+     * the domain for domainless authentication. Other applications on the instance
+     * can't use the domainless credentials. You can use this parameter to run tasks on
+     * the same instance, even it the tasks need to join different domains. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
      * gMSAs for Windows Containers</a> and <a
@@ -5029,16 +5062,27 @@ namespace Model
 
     /**
      * <p>A list of ARNs in SSM or Amazon S3 to a credential spec
-     * (<code>credspec</code>code&gt;) file that configures a container for Active
-     * Directory authentication. This parameter is only used with domainless
-     * authentication.</p> <p>The format for each ARN is
-     * <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the
-     * ARN in SSM or Amazon S3.</p> <p>The <code>credspec</code> must provide a ARN in
-     * Secrets Manager for a secret containing the username, password, and the domain
-     * to connect to. For better security, the instance isn't joined to the domain for
-     * domainless authentication. Other applications on the instance can't use the
-     * domainless credentials. You can use this parameter to run tasks on the same
-     * instance, even it the tasks need to join different domains. For more
+     * (<code>CredSpec</code>) file that configures the container for Active Directory
+     * authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     * <p>There are two formats for each ARN.</p> <dl>
+     * <dt>credentialspecdomainless:MyARN</dt> <dd> <p>You use
+     * <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code>
+     * with an additional section for a secret in Secrets Manager. You provide the
+     * login credentials to the domain in the secret.</p> <p>Each task that runs on any
+     * container instance can join different domains.</p> <p>You can use this format
+     * without joining the container instance to a domain.</p> </dd>
+     * <dt>credentialspec:MyARN</dt> <dd> <p>You use <code>credentialspec:MyARN</code>
+     * to provide a <code>CredSpec</code> for a single domain.</p> <p>You must join the
+     * container instance to the domain before you start any tasks that use this task
+     * definition.</p> </dd> </dl> <p>In both formats, replace <code>MyARN</code> with
+     * the ARN in SSM or Amazon S3.</p> <p>If you provide a
+     * <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must
+     * provide a ARN in Secrets Manager for a secret containing the username, password,
+     * and the domain to connect to. For better security, the instance isn't joined to
+     * the domain for domainless authentication. Other applications on the instance
+     * can't use the domainless credentials. You can use this parameter to run tasks on
+     * the same instance, even it the tasks need to join different domains. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
      * gMSAs for Windows Containers</a> and <a
@@ -5049,16 +5093,27 @@ namespace Model
 
     /**
      * <p>A list of ARNs in SSM or Amazon S3 to a credential spec
-     * (<code>credspec</code>code&gt;) file that configures a container for Active
-     * Directory authentication. This parameter is only used with domainless
-     * authentication.</p> <p>The format for each ARN is
-     * <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the
-     * ARN in SSM or Amazon S3.</p> <p>The <code>credspec</code> must provide a ARN in
-     * Secrets Manager for a secret containing the username, password, and the domain
-     * to connect to. For better security, the instance isn't joined to the domain for
-     * domainless authentication. Other applications on the instance can't use the
-     * domainless credentials. You can use this parameter to run tasks on the same
-     * instance, even it the tasks need to join different domains. For more
+     * (<code>CredSpec</code>) file that configures the container for Active Directory
+     * authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     * <p>There are two formats for each ARN.</p> <dl>
+     * <dt>credentialspecdomainless:MyARN</dt> <dd> <p>You use
+     * <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code>
+     * with an additional section for a secret in Secrets Manager. You provide the
+     * login credentials to the domain in the secret.</p> <p>Each task that runs on any
+     * container instance can join different domains.</p> <p>You can use this format
+     * without joining the container instance to a domain.</p> </dd>
+     * <dt>credentialspec:MyARN</dt> <dd> <p>You use <code>credentialspec:MyARN</code>
+     * to provide a <code>CredSpec</code> for a single domain.</p> <p>You must join the
+     * container instance to the domain before you start any tasks that use this task
+     * definition.</p> </dd> </dl> <p>In both formats, replace <code>MyARN</code> with
+     * the ARN in SSM or Amazon S3.</p> <p>If you provide a
+     * <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must
+     * provide a ARN in Secrets Manager for a secret containing the username, password,
+     * and the domain to connect to. For better security, the instance isn't joined to
+     * the domain for domainless authentication. Other applications on the instance
+     * can't use the domainless credentials. You can use this parameter to run tasks on
+     * the same instance, even it the tasks need to join different domains. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
      * gMSAs for Windows Containers</a> and <a
@@ -5069,16 +5124,27 @@ namespace Model
 
     /**
      * <p>A list of ARNs in SSM or Amazon S3 to a credential spec
-     * (<code>credspec</code>code&gt;) file that configures a container for Active
-     * Directory authentication. This parameter is only used with domainless
-     * authentication.</p> <p>The format for each ARN is
-     * <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the
-     * ARN in SSM or Amazon S3.</p> <p>The <code>credspec</code> must provide a ARN in
-     * Secrets Manager for a secret containing the username, password, and the domain
-     * to connect to. For better security, the instance isn't joined to the domain for
-     * domainless authentication. Other applications on the instance can't use the
-     * domainless credentials. You can use this parameter to run tasks on the same
-     * instance, even it the tasks need to join different domains. For more
+     * (<code>CredSpec</code>) file that configures the container for Active Directory
+     * authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     * <p>There are two formats for each ARN.</p> <dl>
+     * <dt>credentialspecdomainless:MyARN</dt> <dd> <p>You use
+     * <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code>
+     * with an additional section for a secret in Secrets Manager. You provide the
+     * login credentials to the domain in the secret.</p> <p>Each task that runs on any
+     * container instance can join different domains.</p> <p>You can use this format
+     * without joining the container instance to a domain.</p> </dd>
+     * <dt>credentialspec:MyARN</dt> <dd> <p>You use <code>credentialspec:MyARN</code>
+     * to provide a <code>CredSpec</code> for a single domain.</p> <p>You must join the
+     * container instance to the domain before you start any tasks that use this task
+     * definition.</p> </dd> </dl> <p>In both formats, replace <code>MyARN</code> with
+     * the ARN in SSM or Amazon S3.</p> <p>If you provide a
+     * <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must
+     * provide a ARN in Secrets Manager for a secret containing the username, password,
+     * and the domain to connect to. For better security, the instance isn't joined to
+     * the domain for domainless authentication. Other applications on the instance
+     * can't use the domainless credentials. You can use this parameter to run tasks on
+     * the same instance, even it the tasks need to join different domains. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
      * gMSAs for Windows Containers</a> and <a
@@ -5089,16 +5155,27 @@ namespace Model
 
     /**
      * <p>A list of ARNs in SSM or Amazon S3 to a credential spec
-     * (<code>credspec</code>code&gt;) file that configures a container for Active
-     * Directory authentication. This parameter is only used with domainless
-     * authentication.</p> <p>The format for each ARN is
-     * <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the
-     * ARN in SSM or Amazon S3.</p> <p>The <code>credspec</code> must provide a ARN in
-     * Secrets Manager for a secret containing the username, password, and the domain
-     * to connect to. For better security, the instance isn't joined to the domain for
-     * domainless authentication. Other applications on the instance can't use the
-     * domainless credentials. You can use this parameter to run tasks on the same
-     * instance, even it the tasks need to join different domains. For more
+     * (<code>CredSpec</code>) file that configures the container for Active Directory
+     * authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     * <p>There are two formats for each ARN.</p> <dl>
+     * <dt>credentialspecdomainless:MyARN</dt> <dd> <p>You use
+     * <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code>
+     * with an additional section for a secret in Secrets Manager. You provide the
+     * login credentials to the domain in the secret.</p> <p>Each task that runs on any
+     * container instance can join different domains.</p> <p>You can use this format
+     * without joining the container instance to a domain.</p> </dd>
+     * <dt>credentialspec:MyARN</dt> <dd> <p>You use <code>credentialspec:MyARN</code>
+     * to provide a <code>CredSpec</code> for a single domain.</p> <p>You must join the
+     * container instance to the domain before you start any tasks that use this task
+     * definition.</p> </dd> </dl> <p>In both formats, replace <code>MyARN</code> with
+     * the ARN in SSM or Amazon S3.</p> <p>If you provide a
+     * <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must
+     * provide a ARN in Secrets Manager for a secret containing the username, password,
+     * and the domain to connect to. For better security, the instance isn't joined to
+     * the domain for domainless authentication. Other applications on the instance
+     * can't use the domainless credentials. You can use this parameter to run tasks on
+     * the same instance, even it the tasks need to join different domains. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
      * gMSAs for Windows Containers</a> and <a
@@ -5109,16 +5186,27 @@ namespace Model
 
     /**
      * <p>A list of ARNs in SSM or Amazon S3 to a credential spec
-     * (<code>credspec</code>code&gt;) file that configures a container for Active
-     * Directory authentication. This parameter is only used with domainless
-     * authentication.</p> <p>The format for each ARN is
-     * <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the
-     * ARN in SSM or Amazon S3.</p> <p>The <code>credspec</code> must provide a ARN in
-     * Secrets Manager for a secret containing the username, password, and the domain
-     * to connect to. For better security, the instance isn't joined to the domain for
-     * domainless authentication. Other applications on the instance can't use the
-     * domainless credentials. You can use this parameter to run tasks on the same
-     * instance, even it the tasks need to join different domains. For more
+     * (<code>CredSpec</code>) file that configures the container for Active Directory
+     * authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     * <p>There are two formats for each ARN.</p> <dl>
+     * <dt>credentialspecdomainless:MyARN</dt> <dd> <p>You use
+     * <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code>
+     * with an additional section for a secret in Secrets Manager. You provide the
+     * login credentials to the domain in the secret.</p> <p>Each task that runs on any
+     * container instance can join different domains.</p> <p>You can use this format
+     * without joining the container instance to a domain.</p> </dd>
+     * <dt>credentialspec:MyARN</dt> <dd> <p>You use <code>credentialspec:MyARN</code>
+     * to provide a <code>CredSpec</code> for a single domain.</p> <p>You must join the
+     * container instance to the domain before you start any tasks that use this task
+     * definition.</p> </dd> </dl> <p>In both formats, replace <code>MyARN</code> with
+     * the ARN in SSM or Amazon S3.</p> <p>If you provide a
+     * <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must
+     * provide a ARN in Secrets Manager for a secret containing the username, password,
+     * and the domain to connect to. For better security, the instance isn't joined to
+     * the domain for domainless authentication. Other applications on the instance
+     * can't use the domainless credentials. You can use this parameter to run tasks on
+     * the same instance, even it the tasks need to join different domains. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
      * gMSAs for Windows Containers</a> and <a
@@ -5129,16 +5217,27 @@ namespace Model
 
     /**
      * <p>A list of ARNs in SSM or Amazon S3 to a credential spec
-     * (<code>credspec</code>code&gt;) file that configures a container for Active
-     * Directory authentication. This parameter is only used with domainless
-     * authentication.</p> <p>The format for each ARN is
-     * <code>credentialspecdomainless:MyARN</code>. Replace <code>MyARN</code> with the
-     * ARN in SSM or Amazon S3.</p> <p>The <code>credspec</code> must provide a ARN in
-     * Secrets Manager for a secret containing the username, password, and the domain
-     * to connect to. For better security, the instance isn't joined to the domain for
-     * domainless authentication. Other applications on the instance can't use the
-     * domainless credentials. You can use this parameter to run tasks on the same
-     * instance, even it the tasks need to join different domains. For more
+     * (<code>CredSpec</code>) file that configures the container for Active Directory
+     * authentication. We recommend that you use this parameter instead of the
+     * <code>dockerSecurityOptions</code>. The maximum number of ARNs is 1.</p>
+     * <p>There are two formats for each ARN.</p> <dl>
+     * <dt>credentialspecdomainless:MyARN</dt> <dd> <p>You use
+     * <code>credentialspecdomainless:MyARN</code> to provide a <code>CredSpec</code>
+     * with an additional section for a secret in Secrets Manager. You provide the
+     * login credentials to the domain in the secret.</p> <p>Each task that runs on any
+     * container instance can join different domains.</p> <p>You can use this format
+     * without joining the container instance to a domain.</p> </dd>
+     * <dt>credentialspec:MyARN</dt> <dd> <p>You use <code>credentialspec:MyARN</code>
+     * to provide a <code>CredSpec</code> for a single domain.</p> <p>You must join the
+     * container instance to the domain before you start any tasks that use this task
+     * definition.</p> </dd> </dl> <p>In both formats, replace <code>MyARN</code> with
+     * the ARN in SSM or Amazon S3.</p> <p>If you provide a
+     * <code>credentialspecdomainless:MyARN</code>, the <code>credspec</code> must
+     * provide a ARN in Secrets Manager for a secret containing the username, password,
+     * and the domain to connect to. For better security, the instance isn't joined to
+     * the domain for domainless authentication. Other applications on the instance
+     * can't use the domainless credentials. You can use this parameter to run tasks on
+     * the same instance, even it the tasks need to join different domains. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
      * gMSAs for Windows Containers</a> and <a

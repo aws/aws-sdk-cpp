@@ -36,7 +36,9 @@ NetAppONTAPCluster::NetAppONTAPCluster() :
     m_recommendationStatus(RecommendationStatus::NOT_SET),
     m_recommendationStatusHasBeenSet(false),
     m_lunCount(0),
-    m_lunCountHasBeenSet(false)
+    m_lunCountHasBeenSet(false),
+    m_clusterCloudStorageUsed(0),
+    m_clusterCloudStorageUsedHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ NetAppONTAPCluster::NetAppONTAPCluster(JsonView jsonValue) :
     m_recommendationStatus(RecommendationStatus::NOT_SET),
     m_recommendationStatusHasBeenSet(false),
     m_lunCount(0),
-    m_lunCountHasBeenSet(false)
+    m_lunCountHasBeenSet(false),
+    m_clusterCloudStorageUsed(0),
+    m_clusterCloudStorageUsedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -145,6 +149,13 @@ NetAppONTAPCluster& NetAppONTAPCluster::operator =(JsonView jsonValue)
     m_lunCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClusterCloudStorageUsed"))
+  {
+    m_clusterCloudStorageUsed = jsonValue.GetInt64("ClusterCloudStorageUsed");
+
+    m_clusterCloudStorageUsedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -219,6 +230,12 @@ JsonValue NetAppONTAPCluster::Jsonize() const
   if(m_lunCountHasBeenSet)
   {
    payload.WithInt64("LunCount", m_lunCount);
+
+  }
+
+  if(m_clusterCloudStorageUsedHasBeenSet)
+  {
+   payload.WithInt64("ClusterCloudStorageUsed", m_clusterCloudStorageUsed);
 
   }
 

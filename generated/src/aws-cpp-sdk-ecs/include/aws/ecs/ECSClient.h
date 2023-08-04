@@ -790,7 +790,10 @@ namespace ECS
 
         /**
          * <p>Describes a specified task or tasks.</p> <p>Currently, stopped tasks appear
-         * in the returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
+         * in the returned results for at least one hour.</p> <p>If you have tasks with
+         * tags, and then delete the cluster, the tagged tasks are returned in the
+         * response. If you create a new cluster with the same name as the deleted cluster,
+         * the tagged tasks are not included in the response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">AWS
          * API Reference</a></p>
          */
@@ -1160,8 +1163,7 @@ namespace ECS
          * <p>Returns a list of tasks. You can filter the results by cluster, task
          * definition family, container instance, launch type, what IAM principal started
          * the task, or by the desired status of the task.</p> <p>Recently stopped tasks
-         * might appear in the returned results. Currently, stopped tasks appear in the
-         * returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
+         * might appear in the returned results. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
          * Reference</a></p>
          */
@@ -1951,16 +1953,11 @@ namespace ECS
          * Zone (based on the previous steps), favoring container instances with the
          * largest number of running tasks for this service.</p> </li> </ul>  <p>You
          * must have a service-linked role when you update any of the following service
-         * properties. If you specified a custom role when you created the service, Amazon
-         * ECS automatically replaces the <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Service.html#ECS-Type-Service-roleArn">roleARN</a>
-         * associated with the service with the ARN of your service-linked role. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Service-linked
-         * roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-         * <ul> <li> <p> <code>loadBalancers,</code> </p> </li> <li> <p>
-         * <code>serviceRegistries</code> </p> </li> </ul> <p><h3>See Also:</h3>  
-         * <a
+         * properties:</p> <ul> <li> <p> <code>loadBalancers</code>,</p> </li> <li> <p>
+         * <code>serviceRegistries</code> </p> </li> </ul> <p>For more information about
+         * the role see the <code>CreateService</code> request parameter <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
+         * <code>role</code> </a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">AWS
          * API Reference</a></p>
          */

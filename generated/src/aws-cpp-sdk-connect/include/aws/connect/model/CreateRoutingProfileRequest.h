@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/AgentAvailabilityTimer.h>
 #include <aws/connect/model/RoutingProfileQueueConfig.h>
 #include <aws/connect/model/MediaConcurrency.h>
 #include <utility>
@@ -440,6 +441,49 @@ namespace Model
      */
     inline CreateRoutingProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Whether agents with this routing profile will have their routing order
+     * calculated based on <i>time since their last inbound contact</i> or <i>longest
+     * idle time</i>. </p>
+     */
+    inline const AgentAvailabilityTimer& GetAgentAvailabilityTimer() const{ return m_agentAvailabilityTimer; }
+
+    /**
+     * <p>Whether agents with this routing profile will have their routing order
+     * calculated based on <i>time since their last inbound contact</i> or <i>longest
+     * idle time</i>. </p>
+     */
+    inline bool AgentAvailabilityTimerHasBeenSet() const { return m_agentAvailabilityTimerHasBeenSet; }
+
+    /**
+     * <p>Whether agents with this routing profile will have their routing order
+     * calculated based on <i>time since their last inbound contact</i> or <i>longest
+     * idle time</i>. </p>
+     */
+    inline void SetAgentAvailabilityTimer(const AgentAvailabilityTimer& value) { m_agentAvailabilityTimerHasBeenSet = true; m_agentAvailabilityTimer = value; }
+
+    /**
+     * <p>Whether agents with this routing profile will have their routing order
+     * calculated based on <i>time since their last inbound contact</i> or <i>longest
+     * idle time</i>. </p>
+     */
+    inline void SetAgentAvailabilityTimer(AgentAvailabilityTimer&& value) { m_agentAvailabilityTimerHasBeenSet = true; m_agentAvailabilityTimer = std::move(value); }
+
+    /**
+     * <p>Whether agents with this routing profile will have their routing order
+     * calculated based on <i>time since their last inbound contact</i> or <i>longest
+     * idle time</i>. </p>
+     */
+    inline CreateRoutingProfileRequest& WithAgentAvailabilityTimer(const AgentAvailabilityTimer& value) { SetAgentAvailabilityTimer(value); return *this;}
+
+    /**
+     * <p>Whether agents with this routing profile will have their routing order
+     * calculated based on <i>time since their last inbound contact</i> or <i>longest
+     * idle time</i>. </p>
+     */
+    inline CreateRoutingProfileRequest& WithAgentAvailabilityTimer(AgentAvailabilityTimer&& value) { SetAgentAvailabilityTimer(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -462,6 +506,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    AgentAvailabilityTimer m_agentAvailabilityTimer;
+    bool m_agentAvailabilityTimerHasBeenSet = false;
   };
 
 } // namespace Model

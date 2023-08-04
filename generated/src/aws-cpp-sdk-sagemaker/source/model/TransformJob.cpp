@@ -43,7 +43,8 @@ TransformJob::TransformJob() :
     m_autoMLJobArnHasBeenSet(false),
     m_dataProcessingHasBeenSet(false),
     m_experimentConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dataCaptureConfigHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ TransformJob::TransformJob(JsonView jsonValue) :
     m_autoMLJobArnHasBeenSet(false),
     m_dataProcessingHasBeenSet(false),
     m_experimentConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dataCaptureConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -232,6 +234,13 @@ TransformJob& TransformJob::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataCaptureConfig"))
+  {
+    m_dataCaptureConfig = jsonValue.GetObject("DataCaptureConfig");
+
+    m_dataCaptureConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -367,6 +376,12 @@ JsonValue TransformJob::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_dataCaptureConfigHasBeenSet)
+  {
+   payload.WithObject("DataCaptureConfig", m_dataCaptureConfig.Jsonize());
 
   }
 
