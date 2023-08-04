@@ -33,7 +33,9 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_subnetIdHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_enablePrimaryIpv6(false),
+    m_enablePrimaryIpv6HasBeenSet(false)
 {
 }
 
@@ -150,6 +152,11 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
+  if(m_enablePrimaryIpv6HasBeenSet)
+  {
+    ss << "EnablePrimaryIpv6=" << std::boolalpha << m_enablePrimaryIpv6 << "&";
   }
 
   ss << "Version=2016-11-15";

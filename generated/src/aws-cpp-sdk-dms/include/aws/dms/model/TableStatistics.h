@@ -613,7 +613,7 @@ namespace Model
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
      * records – Some records in the table don't match between the source and
      * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * be validated.</p> </li> <li> <p>No primary key ��The table couldn't be validated
      * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
      * </li> <li> <p>Validated – All rows in the table are validated. If the table is
@@ -633,7 +633,7 @@ namespace Model
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
      * records – Some records in the table don't match between the source and
      * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * be validated.</p> </li> <li> <p>No primary key ��The table couldn't be validated
      * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
      * </li> <li> <p>Validated – All rows in the table are validated. If the table is
@@ -653,7 +653,7 @@ namespace Model
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
      * records – Some records in the table don't match between the source and
      * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * be validated.</p> </li> <li> <p>No primary key ��The table couldn't be validated
      * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
      * </li> <li> <p>Validated – All rows in the table are validated. If the table is
@@ -673,7 +673,7 @@ namespace Model
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
      * records – Some records in the table don't match between the source and
      * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * be validated.</p> </li> <li> <p>No primary key ��The table couldn't be validated
      * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
      * </li> <li> <p>Validated – All rows in the table are validated. If the table is
@@ -693,7 +693,7 @@ namespace Model
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
      * records – Some records in the table don't match between the source and
      * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * be validated.</p> </li> <li> <p>No primary key ��The table couldn't be validated
      * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
      * </li> <li> <p>Validated – All rows in the table are validated. If the table is
@@ -713,7 +713,7 @@ namespace Model
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
      * records – Some records in the table don't match between the source and
      * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * be validated.</p> </li> <li> <p>No primary key ��The table couldn't be validated
      * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
      * </li> <li> <p>Validated – All rows in the table are validated. If the table is
@@ -733,7 +733,7 @@ namespace Model
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
      * records – Some records in the table don't match between the source and
      * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * be validated.</p> </li> <li> <p>No primary key ��The table couldn't be validated
      * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
      * </li> <li> <p>Validated – All rows in the table are validated. If the table is
@@ -753,7 +753,7 @@ namespace Model
      * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
      * records – Some records in the table don't match between the source and
      * target.</p> </li> <li> <p>Suspended records – Some records in the table couldn't
-     * be validated.</p> </li> <li> <p>No primary key –The table couldn't be validated
+     * be validated.</p> </li> <li> <p>No primary key ��The table couldn't be validated
      * because it has no primary key.</p> </li> <li> <p>Table error – The table wasn't
      * validated because it's in an error state and some data wasn't migrated.</p>
      * </li> <li> <p>Validated – All rows in the table are validated. If the table is

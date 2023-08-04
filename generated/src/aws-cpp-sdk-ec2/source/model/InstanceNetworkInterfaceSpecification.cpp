@@ -48,7 +48,9 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification() :
     m_ipv4PrefixCountHasBeenSet(false),
     m_ipv6PrefixesHasBeenSet(false),
     m_ipv6PrefixCount(0),
-    m_ipv6PrefixCountHasBeenSet(false)
+    m_ipv6PrefixCountHasBeenSet(false),
+    m_primaryIpv6(false),
+    m_primaryIpv6HasBeenSet(false)
 {
 }
 
@@ -80,7 +82,9 @@ InstanceNetworkInterfaceSpecification::InstanceNetworkInterfaceSpecification(con
     m_ipv4PrefixCountHasBeenSet(false),
     m_ipv6PrefixesHasBeenSet(false),
     m_ipv6PrefixCount(0),
-    m_ipv6PrefixCountHasBeenSet(false)
+    m_ipv6PrefixCountHasBeenSet(false),
+    m_primaryIpv6(false),
+    m_primaryIpv6HasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -235,6 +239,12 @@ InstanceNetworkInterfaceSpecification& InstanceNetworkInterfaceSpecification::op
       m_ipv6PrefixCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6PrefixCountNode.GetText()).c_str()).c_str());
       m_ipv6PrefixCountHasBeenSet = true;
     }
+    XmlNode primaryIpv6Node = resultNode.FirstChild("PrimaryIpv6");
+    if(!primaryIpv6Node.IsNull())
+    {
+      m_primaryIpv6 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(primaryIpv6Node.GetText()).c_str()).c_str());
+      m_primaryIpv6HasBeenSet = true;
+    }
   }
 
   return *this;
@@ -365,6 +375,11 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".Ipv6PrefixCount=" << m_ipv6PrefixCount << "&";
   }
 
+  if(m_primaryIpv6HasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrimaryIpv6=" << std::boolalpha << m_primaryIpv6 << "&";
+  }
+
 }
 
 void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -472,6 +487,10 @@ void InstanceNetworkInterfaceSpecification::OutputToStream(Aws::OStream& oStream
   if(m_ipv6PrefixCountHasBeenSet)
   {
       oStream << location << ".Ipv6PrefixCount=" << m_ipv6PrefixCount << "&";
+  }
+  if(m_primaryIpv6HasBeenSet)
+  {
+      oStream << location << ".PrimaryIpv6=" << std::boolalpha << m_primaryIpv6 << "&";
   }
 }
 

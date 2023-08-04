@@ -21,12 +21,16 @@ namespace Model
 {
 
 NetworkInterfaceIpv6Address::NetworkInterfaceIpv6Address() : 
-    m_ipv6AddressHasBeenSet(false)
+    m_ipv6AddressHasBeenSet(false),
+    m_isPrimaryIpv6(false),
+    m_isPrimaryIpv6HasBeenSet(false)
 {
 }
 
 NetworkInterfaceIpv6Address::NetworkInterfaceIpv6Address(const XmlNode& xmlNode) : 
-    m_ipv6AddressHasBeenSet(false)
+    m_ipv6AddressHasBeenSet(false),
+    m_isPrimaryIpv6(false),
+    m_isPrimaryIpv6HasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,6 +47,12 @@ NetworkInterfaceIpv6Address& NetworkInterfaceIpv6Address::operator =(const XmlNo
       m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
       m_ipv6AddressHasBeenSet = true;
     }
+    XmlNode isPrimaryIpv6Node = resultNode.FirstChild("isPrimaryIpv6");
+    if(!isPrimaryIpv6Node.IsNull())
+    {
+      m_isPrimaryIpv6 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isPrimaryIpv6Node.GetText()).c_str()).c_str());
+      m_isPrimaryIpv6HasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +65,11 @@ void NetworkInterfaceIpv6Address::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
   }
 
+  if(m_isPrimaryIpv6HasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IsPrimaryIpv6=" << std::boolalpha << m_isPrimaryIpv6 << "&";
+  }
+
 }
 
 void NetworkInterfaceIpv6Address::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -62,6 +77,10 @@ void NetworkInterfaceIpv6Address::OutputToStream(Aws::OStream& oStream, const ch
   if(m_ipv6AddressHasBeenSet)
   {
       oStream << location << ".Ipv6Address=" << StringUtils::URLEncode(m_ipv6Address.c_str()) << "&";
+  }
+  if(m_isPrimaryIpv6HasBeenSet)
+  {
+      oStream << location << ".IsPrimaryIpv6=" << std::boolalpha << m_isPrimaryIpv6 << "&";
   }
 }
 
