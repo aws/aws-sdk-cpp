@@ -129,6 +129,7 @@
 #include <aws/crt/io/Uri.h>
 #include <aws/http/request_response.h>
 #include <aws/common/string.h>
+#include <aws/crt/http/HttpProxyStrategy.h>
 
 using namespace Aws::Utils;
 
@@ -314,6 +315,64 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const std::shar
   else
   {
     s3CrtConfig.tls_connection_options = nullptr;
+  }
+
+  Aws::Crt::Http::HttpClientConnectionProxyOptions proxyOptions;
+  aws_http_proxy_options raw_proxy_options;
+
+  if (!config.proxyHost.empty())
+  {
+    if (!config.proxyUserName.empty() || !config.proxyPassword.empty())
+    {
+      Aws::Crt::Http::HttpProxyStrategyBasicAuthConfig basicAuthConfig;
+      basicAuthConfig.ConnectionType = Aws::Crt::Http::AwsHttpProxyConnectionType::Tunneling;
+      basicAuthConfig.Username = config.proxyUserName.c_str();
+      basicAuthConfig.Password = config.proxyPassword.c_str();
+      proxyOptions.ProxyStrategy = Aws::Crt::Http::HttpProxyStrategy::CreateBasicHttpProxyStrategy(basicAuthConfig, Aws::get_aws_allocator());
+    }
+
+    proxyOptions.HostName = config.proxyHost.c_str();
+
+    if (config.proxyPort != 0)
+    {
+      proxyOptions.Port = static_cast<uint16_t>(config.proxyPort);
+    }
+    else
+    {
+      proxyOptions.Port = config.proxyScheme == Scheme::HTTPS ? 443 : 80;
+    }
+
+    if (config.proxyScheme == Scheme::HTTPS)
+    {
+      Crt::Io::TlsContextOptions contextOptions = Crt::Io::TlsContextOptions::InitDefaultClient();
+
+      if (config.proxySSLKeyPassword.empty() && !config.proxySSLCertPath.empty())
+      {
+        const char* certPath = config.proxySSLCertPath.empty() ? nullptr : config.proxySSLCertPath.c_str();
+        const char* certFile = config.proxySSLKeyPath.empty() ? nullptr : config.proxySSLKeyPath.c_str();
+        contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtls(certPath, certFile);
+      }
+      else if (!config.proxySSLKeyPassword.empty())
+      {
+        const char* pkcs12CertFile = config.proxySSLKeyPath.empty() ? nullptr : config.proxySSLKeyPath.c_str();
+        const char* pkcs12Pwd = config.proxySSLKeyPassword.c_str();
+        contextOptions = Crt::Io::TlsContextOptions::InitClientWithMtlsPkcs12(pkcs12CertFile, pkcs12Pwd);
+      }
+
+      if (!config.caFile.empty() || !config.caPath.empty())
+      {
+        const char* caPath = config.caPath.empty() ? nullptr : config.caPath.c_str();
+        const char* caFile = config.caFile.empty() ? nullptr : config.caFile.c_str();
+        contextOptions.OverrideDefaultTrustStore(caPath, caFile);
+      }
+
+      contextOptions.SetVerifyPeer(config.verifySSL);
+      Crt::Io::TlsContext context = Crt::Io::TlsContext(contextOptions, Crt::Io::TlsMode::CLIENT);
+      proxyOptions.TlsOptions = context.NewConnectionOptions();
+    }
+
+    proxyOptions.InitializeRawProxyOptions(raw_proxy_options);
+    s3CrtConfig.proxy_options = &raw_proxy_options;
   }
 
   s3CrtConfig.tls_mode = config.scheme == Aws::Http::Scheme::HTTPS ? AWS_MR_TLS_ENABLED : AWS_MR_TLS_DISABLED;
