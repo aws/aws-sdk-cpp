@@ -30,7 +30,9 @@ RoutingProfile::RoutingProfile() :
     m_numberOfAssociatedQueues(0),
     m_numberOfAssociatedQueuesHasBeenSet(false),
     m_numberOfAssociatedUsers(0),
-    m_numberOfAssociatedUsersHasBeenSet(false)
+    m_numberOfAssociatedUsersHasBeenSet(false),
+    m_agentAvailabilityTimer(AgentAvailabilityTimer::NOT_SET),
+    m_agentAvailabilityTimerHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ RoutingProfile::RoutingProfile(JsonView jsonValue) :
     m_numberOfAssociatedQueues(0),
     m_numberOfAssociatedQueuesHasBeenSet(false),
     m_numberOfAssociatedUsers(0),
-    m_numberOfAssociatedUsersHasBeenSet(false)
+    m_numberOfAssociatedUsersHasBeenSet(false),
+    m_agentAvailabilityTimer(AgentAvailabilityTimer::NOT_SET),
+    m_agentAvailabilityTimerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -129,6 +133,13 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
     m_numberOfAssociatedUsersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AgentAvailabilityTimer"))
+  {
+    m_agentAvailabilityTimer = AgentAvailabilityTimerMapper::GetAgentAvailabilityTimerForName(jsonValue.GetString("AgentAvailabilityTimer"));
+
+    m_agentAvailabilityTimerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -204,6 +215,11 @@ JsonValue RoutingProfile::Jsonize() const
   {
    payload.WithInt64("NumberOfAssociatedUsers", m_numberOfAssociatedUsers);
 
+  }
+
+  if(m_agentAvailabilityTimerHasBeenSet)
+  {
+   payload.WithString("AgentAvailabilityTimer", AgentAvailabilityTimerMapper::GetNameForAgentAvailabilityTimer(m_agentAvailabilityTimer));
   }
 
   return payload;

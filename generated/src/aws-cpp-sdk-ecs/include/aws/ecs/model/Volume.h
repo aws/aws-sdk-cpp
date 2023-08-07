@@ -54,7 +54,8 @@ namespace Model
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
      * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
+     * volume.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -62,7 +63,8 @@ namespace Model
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
      * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
+     * volume.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -70,7 +72,8 @@ namespace Model
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
      * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
+     * volume.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -78,7 +81,8 @@ namespace Model
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
      * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
+     * volume.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -86,7 +90,8 @@ namespace Model
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
      * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
+     * volume.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -94,7 +99,8 @@ namespace Model
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
      * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
+     * volume.</p>
      */
     inline Volume& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -102,7 +108,8 @@ namespace Model
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
      * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
+     * volume.</p>
      */
     inline Volume& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -110,7 +117,8 @@ namespace Model
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
      * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.</p>
+     * <code>mountPoints</code>.</p> <p>This is required wwhen you use an Amazon EFS
+     * volume.</p>
      */
     inline Volume& WithName(const char* value) { SetName(value); return *this;}
 

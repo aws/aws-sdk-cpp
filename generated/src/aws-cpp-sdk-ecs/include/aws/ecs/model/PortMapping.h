@@ -133,15 +133,15 @@ namespace Model
      * version.</p> <p>The default ephemeral port range for Docker version 1.6.0 and
      * later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is
-     * unavailable, the default ephemeral port range from 49153 through 65535 is used.
-     * Do not attempt to specify a host port in the ephemeral port range as these are
-     * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <p>The default reserved ports are 22 for SSH, the
-     * Docker ports 2375 and 2376, and the Amazon ECS container agent ports
-     * 51678-51680. Any host port that was previously specified in a running task is
-     * also reserved while the task is running. That is, after a task stops, the host
-     * port is released. The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a
+     * unavailable, the default ephemeral port range from 49153 through 65535 (Linux)
+     * or 49152 through 65535 (Windows) is used. Do not attempt to specify a host port
+     * in the ephemeral port range as these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.</p> <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
+     * Amazon ECS container agent ports 51678-51680. Any host port that was previously
+     * specified in a running task is also reserved while the task is running. That is,
+     * after a task stops, the host port is released. The current reserved ports are
+     * displayed in the <code>remainingResources</code> of <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a>
      * output. A container instance can have up to 100 reserved ports at a time. This
      * number includes the default reserved ports. Automatically assigned ports aren't
@@ -170,15 +170,15 @@ namespace Model
      * version.</p> <p>The default ephemeral port range for Docker version 1.6.0 and
      * later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is
-     * unavailable, the default ephemeral port range from 49153 through 65535 is used.
-     * Do not attempt to specify a host port in the ephemeral port range as these are
-     * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <p>The default reserved ports are 22 for SSH, the
-     * Docker ports 2375 and 2376, and the Amazon ECS container agent ports
-     * 51678-51680. Any host port that was previously specified in a running task is
-     * also reserved while the task is running. That is, after a task stops, the host
-     * port is released. The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a
+     * unavailable, the default ephemeral port range from 49153 through 65535 (Linux)
+     * or 49152 through 65535 (Windows) is used. Do not attempt to specify a host port
+     * in the ephemeral port range as these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.</p> <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
+     * Amazon ECS container agent ports 51678-51680. Any host port that was previously
+     * specified in a running task is also reserved while the task is running. That is,
+     * after a task stops, the host port is released. The current reserved ports are
+     * displayed in the <code>remainingResources</code> of <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a>
      * output. A container instance can have up to 100 reserved ports at a time. This
      * number includes the default reserved ports. Automatically assigned ports aren't
@@ -207,15 +207,15 @@ namespace Model
      * version.</p> <p>The default ephemeral port range for Docker version 1.6.0 and
      * later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is
-     * unavailable, the default ephemeral port range from 49153 through 65535 is used.
-     * Do not attempt to specify a host port in the ephemeral port range as these are
-     * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <p>The default reserved ports are 22 for SSH, the
-     * Docker ports 2375 and 2376, and the Amazon ECS container agent ports
-     * 51678-51680. Any host port that was previously specified in a running task is
-     * also reserved while the task is running. That is, after a task stops, the host
-     * port is released. The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a
+     * unavailable, the default ephemeral port range from 49153 through 65535 (Linux)
+     * or 49152 through 65535 (Windows) is used. Do not attempt to specify a host port
+     * in the ephemeral port range as these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.</p> <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
+     * Amazon ECS container agent ports 51678-51680. Any host port that was previously
+     * specified in a running task is also reserved while the task is running. That is,
+     * after a task stops, the host port is released. The current reserved ports are
+     * displayed in the <code>remainingResources</code> of <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a>
      * output. A container instance can have up to 100 reserved ports at a time. This
      * number includes the default reserved ports. Automatically assigned ports aren't
@@ -244,15 +244,15 @@ namespace Model
      * version.</p> <p>The default ephemeral port range for Docker version 1.6.0 and
      * later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is
-     * unavailable, the default ephemeral port range from 49153 through 65535 is used.
-     * Do not attempt to specify a host port in the ephemeral port range as these are
-     * reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.</p> <p>The default reserved ports are 22 for SSH, the
-     * Docker ports 2375 and 2376, and the Amazon ECS container agent ports
-     * 51678-51680. Any host port that was previously specified in a running task is
-     * also reserved while the task is running. That is, after a task stops, the host
-     * port is released. The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a
+     * unavailable, the default ephemeral port range from 49153 through 65535 (Linux)
+     * or 49152 through 65535 (Windows) is used. Do not attempt to specify a host port
+     * in the ephemeral port range as these are reserved for automatic assignment. In
+     * general, ports below 32768 are outside of the ephemeral port range.</p> <p>The
+     * default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
+     * Amazon ECS container agent ports 51678-51680. Any host port that was previously
+     * specified in a running task is also reserved while the task is running. That is,
+     * after a task stops, the host port is released. The current reserved ports are
+     * displayed in the <code>remainingResources</code> of <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a>
      * output. A container instance can have up to 100 reserved ports at a time. This
      * number includes the default reserved ports. Automatically assigned ports aren't

@@ -105,7 +105,7 @@ public class C2jModelToGeneratorModelTransformer {
     }
 
     public ServiceModel convert() {
-        ServiceModel serviceModel = new ServiceModel();
+        ServiceModel serviceModel = ServiceModel.builder().build();
         serviceModel.setMetadata(convertMetadata());
         serviceModel.setVersion(c2jServiceModel.getVersion());
         serviceModel.setDocumentation(formatDocumentation(c2jServiceModel.getDocumentation(), 3));

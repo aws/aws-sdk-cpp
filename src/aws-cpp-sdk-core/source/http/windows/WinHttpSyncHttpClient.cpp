@@ -5,7 +5,7 @@
 
 #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
 
-#include <aws/core/Http/HttpRequest.h>
+#include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -27,8 +27,6 @@ using namespace Aws::Http;
 using namespace Aws::Http::Standard;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
-
-static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
 
 static void WinHttpEnableHttp2(void* handle)
 {

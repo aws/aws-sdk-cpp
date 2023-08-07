@@ -44,14 +44,20 @@ namespace Model
    * drivers</a> in the Docker documentation.</p> <p>Understand the following when
    * specifying a log configuration for your containers.</p> <ul> <li> <p>Amazon ECS
    * currently supports a subset of the logging drivers available to the Docker
-   * daemon (shown in the valid values below). Additional log drivers may be
-   * available in future releases of the Amazon ECS container agent.</p> </li> <li>
-   * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
-   * your container instance.</p> </li> <li> <p>For tasks that are hosted on Amazon
-   * EC2 instances, the Amazon ECS container agent must register the available
-   * logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-   * variable before containers placed on that instance can use these log
-   * configuration options. For more information, see <a
+   * daemon. Additional log drivers may be available in future releases of the Amazon
+   * ECS container agent.</p> <p>For tasks on Fargate, the supported log drivers are
+   * <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
+   * <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are
+   * <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
+   * <code>json-file</code>, <code>journald</code>,
+   * <code>logentries</code>,<code>syslog</code>, <code>splunk</code>, and
+   * <code>awsfirelens</code>.</p> </li> <li> <p>This parameter requires version 1.18
+   * of the Docker Remote API or greater on your container instance.</p> </li> <li>
+   * <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container
+   * agent must register the available logging drivers with the
+   * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+   * containers placed on that instance can use these log configuration options. For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
    * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
    * Developer Guide</i>.</p> </li> <li> <p>For tasks that are on Fargate, because

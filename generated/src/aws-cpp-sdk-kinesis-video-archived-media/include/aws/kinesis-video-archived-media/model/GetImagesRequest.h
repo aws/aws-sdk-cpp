@@ -224,73 +224,91 @@ namespace Model
 
 
     /**
-     * <p>The end timestamp for the range of images to be generated.</p>
+     * <p>The end timestamp for the range of images to be generated. If the time range
+     * between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than
+     * 300 seconds above <code>StartTimestamp</code>, you will receive an
+     * <code>IllegalArgumentException</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTimestamp() const{ return m_endTimestamp; }
 
     /**
-     * <p>The end timestamp for the range of images to be generated.</p>
+     * <p>The end timestamp for the range of images to be generated. If the time range
+     * between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than
+     * 300 seconds above <code>StartTimestamp</code>, you will receive an
+     * <code>IllegalArgumentException</code>.</p>
      */
     inline bool EndTimestampHasBeenSet() const { return m_endTimestampHasBeenSet; }
 
     /**
-     * <p>The end timestamp for the range of images to be generated.</p>
+     * <p>The end timestamp for the range of images to be generated. If the time range
+     * between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than
+     * 300 seconds above <code>StartTimestamp</code>, you will receive an
+     * <code>IllegalArgumentException</code>.</p>
      */
     inline void SetEndTimestamp(const Aws::Utils::DateTime& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = value; }
 
     /**
-     * <p>The end timestamp for the range of images to be generated.</p>
+     * <p>The end timestamp for the range of images to be generated. If the time range
+     * between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than
+     * 300 seconds above <code>StartTimestamp</code>, you will receive an
+     * <code>IllegalArgumentException</code>.</p>
      */
     inline void SetEndTimestamp(Aws::Utils::DateTime&& value) { m_endTimestampHasBeenSet = true; m_endTimestamp = std::move(value); }
 
     /**
-     * <p>The end timestamp for the range of images to be generated.</p>
+     * <p>The end timestamp for the range of images to be generated. If the time range
+     * between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than
+     * 300 seconds above <code>StartTimestamp</code>, you will receive an
+     * <code>IllegalArgumentException</code>.</p>
      */
     inline GetImagesRequest& WithEndTimestamp(const Aws::Utils::DateTime& value) { SetEndTimestamp(value); return *this;}
 
     /**
-     * <p>The end timestamp for the range of images to be generated.</p>
+     * <p>The end timestamp for the range of images to be generated. If the time range
+     * between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than
+     * 300 seconds above <code>StartTimestamp</code>, you will receive an
+     * <code>IllegalArgumentException</code>.</p>
      */
     inline GetImagesRequest& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
 
 
     /**
      * <p>The time interval in milliseconds (ms) at which the images need to be
-     * generated from the stream. The minimum value that can be provided is 3000 ms. If
-     * the timestamp range is less than the sampling interval, the Image from the
-     * <code>startTimestamp</code> will be returned if available. </p>  <p>The
-     * minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency
-     * can be requested.</p> 
+     * generated from the stream, with a default of 3000 ms. The minimum value that can
+     * be provided is 200 ms. If the timestamp range is less than the sampling
+     * interval, the Image from the <code>startTimestamp</code> will be returned if
+     * available. </p>  <p>The minimum value of 200 ms is a hard limit.</p>
+     * 
      */
     inline int GetSamplingInterval() const{ return m_samplingInterval; }
 
     /**
      * <p>The time interval in milliseconds (ms) at which the images need to be
-     * generated from the stream. The minimum value that can be provided is 3000 ms. If
-     * the timestamp range is less than the sampling interval, the Image from the
-     * <code>startTimestamp</code> will be returned if available. </p>  <p>The
-     * minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency
-     * can be requested.</p> 
+     * generated from the stream, with a default of 3000 ms. The minimum value that can
+     * be provided is 200 ms. If the timestamp range is less than the sampling
+     * interval, the Image from the <code>startTimestamp</code> will be returned if
+     * available. </p>  <p>The minimum value of 200 ms is a hard limit.</p>
+     * 
      */
     inline bool SamplingIntervalHasBeenSet() const { return m_samplingIntervalHasBeenSet; }
 
     /**
      * <p>The time interval in milliseconds (ms) at which the images need to be
-     * generated from the stream. The minimum value that can be provided is 3000 ms. If
-     * the timestamp range is less than the sampling interval, the Image from the
-     * <code>startTimestamp</code> will be returned if available. </p>  <p>The
-     * minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency
-     * can be requested.</p> 
+     * generated from the stream, with a default of 3000 ms. The minimum value that can
+     * be provided is 200 ms. If the timestamp range is less than the sampling
+     * interval, the Image from the <code>startTimestamp</code> will be returned if
+     * available. </p>  <p>The minimum value of 200 ms is a hard limit.</p>
+     * 
      */
     inline void SetSamplingInterval(int value) { m_samplingIntervalHasBeenSet = true; m_samplingInterval = value; }
 
     /**
      * <p>The time interval in milliseconds (ms) at which the images need to be
-     * generated from the stream. The minimum value that can be provided is 3000 ms. If
-     * the timestamp range is less than the sampling interval, the Image from the
-     * <code>startTimestamp</code> will be returned if available. </p>  <p>The
-     * minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency
-     * can be requested.</p> 
+     * generated from the stream, with a default of 3000 ms. The minimum value that can
+     * be provided is 200 ms. If the timestamp range is less than the sampling
+     * interval, the Image from the <code>startTimestamp</code> will be returned if
+     * available. </p>  <p>The minimum value of 200 ms is a hard limit.</p>
+     * 
      */
     inline GetImagesRequest& WithSamplingInterval(int value) { SetSamplingInterval(value); return *this;}
 
@@ -563,29 +581,33 @@ namespace Model
 
     /**
      * <p>The maximum number of images to be returned by the API. </p>  <p>The
-     * default limit is 100 images per API response. The additional results will be
-     * paginated. </p> 
+     * default limit is 25 images per API response. Providing a <code>MaxResults</code>
+     * greater than this value will result in a page size of 25. Any additional results
+     * will be paginated. </p> 
      */
     inline long long GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of images to be returned by the API. </p>  <p>The
-     * default limit is 100 images per API response. The additional results will be
-     * paginated. </p> 
+     * default limit is 25 images per API response. Providing a <code>MaxResults</code>
+     * greater than this value will result in a page size of 25. Any additional results
+     * will be paginated. </p> 
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of images to be returned by the API. </p>  <p>The
-     * default limit is 100 images per API response. The additional results will be
-     * paginated. </p> 
+     * default limit is 25 images per API response. Providing a <code>MaxResults</code>
+     * greater than this value will result in a page size of 25. Any additional results
+     * will be paginated. </p> 
      */
     inline void SetMaxResults(long long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of images to be returned by the API. </p>  <p>The
-     * default limit is 100 images per API response. The additional results will be
-     * paginated. </p> 
+     * default limit is 25 images per API response. Providing a <code>MaxResults</code>
+     * greater than this value will result in a page size of 25. Any additional results
+     * will be paginated. </p> 
      */
     inline GetImagesRequest& WithMaxResults(long long value) { SetMaxResults(value); return *this;}
 
