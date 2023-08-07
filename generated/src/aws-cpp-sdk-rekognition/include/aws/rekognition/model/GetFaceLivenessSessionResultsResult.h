@@ -177,7 +177,8 @@ namespace Model
      * purposes. It includes a bounding box of the face and the Base64-encoded bytes
      * that return an image. If the CreateFaceLivenessSession request included an
      * OutputConfig argument, the image will be uploaded to an S3Object specified in
-     * the output configuration.</p>
+     * the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent
+     * instead.</p>
      */
     inline const Aws::Vector<AuditImage>& GetAuditImages() const{ return m_auditImages; }
 
@@ -186,7 +187,8 @@ namespace Model
      * purposes. It includes a bounding box of the face and the Base64-encoded bytes
      * that return an image. If the CreateFaceLivenessSession request included an
      * OutputConfig argument, the image will be uploaded to an S3Object specified in
-     * the output configuration.</p>
+     * the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent
+     * instead.</p>
      */
     inline void SetAuditImages(const Aws::Vector<AuditImage>& value) { m_auditImages = value; }
 
@@ -195,7 +197,8 @@ namespace Model
      * purposes. It includes a bounding box of the face and the Base64-encoded bytes
      * that return an image. If the CreateFaceLivenessSession request included an
      * OutputConfig argument, the image will be uploaded to an S3Object specified in
-     * the output configuration.</p>
+     * the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent
+     * instead.</p>
      */
     inline void SetAuditImages(Aws::Vector<AuditImage>&& value) { m_auditImages = std::move(value); }
 
@@ -204,7 +207,8 @@ namespace Model
      * purposes. It includes a bounding box of the face and the Base64-encoded bytes
      * that return an image. If the CreateFaceLivenessSession request included an
      * OutputConfig argument, the image will be uploaded to an S3Object specified in
-     * the output configuration.</p>
+     * the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent
+     * instead.</p>
      */
     inline GetFaceLivenessSessionResultsResult& WithAuditImages(const Aws::Vector<AuditImage>& value) { SetAuditImages(value); return *this;}
 
@@ -213,7 +217,8 @@ namespace Model
      * purposes. It includes a bounding box of the face and the Base64-encoded bytes
      * that return an image. If the CreateFaceLivenessSession request included an
      * OutputConfig argument, the image will be uploaded to an S3Object specified in
-     * the output configuration.</p>
+     * the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent
+     * instead.</p>
      */
     inline GetFaceLivenessSessionResultsResult& WithAuditImages(Aws::Vector<AuditImage>&& value) { SetAuditImages(std::move(value)); return *this;}
 
@@ -222,7 +227,8 @@ namespace Model
      * purposes. It includes a bounding box of the face and the Base64-encoded bytes
      * that return an image. If the CreateFaceLivenessSession request included an
      * OutputConfig argument, the image will be uploaded to an S3Object specified in
-     * the output configuration.</p>
+     * the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent
+     * instead.</p>
      */
     inline GetFaceLivenessSessionResultsResult& AddAuditImages(const AuditImage& value) { m_auditImages.push_back(value); return *this; }
 
@@ -231,7 +237,8 @@ namespace Model
      * purposes. It includes a bounding box of the face and the Base64-encoded bytes
      * that return an image. If the CreateFaceLivenessSession request included an
      * OutputConfig argument, the image will be uploaded to an S3Object specified in
-     * the output configuration.</p>
+     * the output configuration. If no Amazon S3 bucket is defined, raw bytes are sent
+     * instead.</p>
      */
     inline GetFaceLivenessSessionResultsResult& AddAuditImages(AuditImage&& value) { m_auditImages.push_back(std::move(value)); return *this; }
 

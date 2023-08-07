@@ -100,25 +100,33 @@ namespace Model
 
     /**
      * <p>Maximum number of labels you want the service to return in the response. The
-     * service returns the specified number of highest confidence labels. </p>
+     * service returns the specified number of highest confidence labels. Only valid
+     * when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.</p>
      */
     inline int GetMaxLabels() const{ return m_maxLabels; }
 
     /**
      * <p>Maximum number of labels you want the service to return in the response. The
-     * service returns the specified number of highest confidence labels. </p>
+     * service returns the specified number of highest confidence labels. Only valid
+     * when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.</p>
      */
     inline bool MaxLabelsHasBeenSet() const { return m_maxLabelsHasBeenSet; }
 
     /**
      * <p>Maximum number of labels you want the service to return in the response. The
-     * service returns the specified number of highest confidence labels. </p>
+     * service returns the specified number of highest confidence labels. Only valid
+     * when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.</p>
      */
     inline void SetMaxLabels(int value) { m_maxLabelsHasBeenSet = true; m_maxLabels = value; }
 
     /**
      * <p>Maximum number of labels you want the service to return in the response. The
-     * service returns the specified number of highest confidence labels. </p>
+     * service returns the specified number of highest confidence labels. Only valid
+     * when GENERAL_LABELS is specified as a feature type in the Feature input
+     * parameter.</p>
      */
     inline DetectLabelsRequest& WithMaxLabels(int value) { SetMaxLabels(value); return *this;}
 
@@ -127,7 +135,9 @@ namespace Model
      * <p>Specifies the minimum confidence level for the labels to return. Amazon
      * Rekognition doesn't return any labels with confidence lower than this specified
      * value.</p> <p>If <code>MinConfidence</code> is not specified, the operation
-     * returns labels with a confidence values greater than or equal to 55 percent.</p>
+     * returns labels with a confidence values greater than or equal to 55 percent.
+     * Only valid when GENERAL_LABELS is specified as a feature type in the Feature
+     * input parameter.</p>
      */
     inline double GetMinConfidence() const{ return m_minConfidence; }
 
@@ -135,7 +145,9 @@ namespace Model
      * <p>Specifies the minimum confidence level for the labels to return. Amazon
      * Rekognition doesn't return any labels with confidence lower than this specified
      * value.</p> <p>If <code>MinConfidence</code> is not specified, the operation
-     * returns labels with a confidence values greater than or equal to 55 percent.</p>
+     * returns labels with a confidence values greater than or equal to 55 percent.
+     * Only valid when GENERAL_LABELS is specified as a feature type in the Feature
+     * input parameter.</p>
      */
     inline bool MinConfidenceHasBeenSet() const { return m_minConfidenceHasBeenSet; }
 
@@ -143,7 +155,9 @@ namespace Model
      * <p>Specifies the minimum confidence level for the labels to return. Amazon
      * Rekognition doesn't return any labels with confidence lower than this specified
      * value.</p> <p>If <code>MinConfidence</code> is not specified, the operation
-     * returns labels with a confidence values greater than or equal to 55 percent.</p>
+     * returns labels with a confidence values greater than or equal to 55 percent.
+     * Only valid when GENERAL_LABELS is specified as a feature type in the Feature
+     * input parameter.</p>
      */
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
 
@@ -151,7 +165,9 @@ namespace Model
      * <p>Specifies the minimum confidence level for the labels to return. Amazon
      * Rekognition doesn't return any labels with confidence lower than this specified
      * value.</p> <p>If <code>MinConfidence</code> is not specified, the operation
-     * returns labels with a confidence values greater than or equal to 55 percent.</p>
+     * returns labels with a confidence values greater than or equal to 55 percent.
+     * Only valid when GENERAL_LABELS is specified as a feature type in the Feature
+     * input parameter.</p>
      */
     inline DetectLabelsRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
 

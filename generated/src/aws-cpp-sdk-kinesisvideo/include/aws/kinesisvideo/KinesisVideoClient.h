@@ -852,7 +852,12 @@ namespace KinesisVideo
          * <code>StorageStatus</code> is disabled, no data will be stored, and the
          * <code>StreamARN</code> parameter will not be needed. </p> </li> <li> <p>If the
          * <code>StorageStatus</code> is enabled, the data will be stored in the
-         * <code>StreamARN</code> provided. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>StreamARN</code> provided. </p> </li> </ul>  <p>If
+         * <code>StorageStatus</code> is enabled, direct peer-to-peer (master-viewer)
+         * connections no longer occur. Peers connect directly to the storage session. You
+         * must call the <code>JoinStorageSession</code> API to trigger an SDP offer send
+         * and establish a connection between a peer and the storage session. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration">AWS
          * API Reference</a></p>
          */

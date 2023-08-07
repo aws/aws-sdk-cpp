@@ -145,32 +145,38 @@ namespace Model
 
 
     /**
-     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the Amazon Web Services server corresponding to the
+     * fragment.</p>
      */
     inline const Aws::Utils::DateTime& GetServerTimestamp() const{ return m_serverTimestamp; }
 
     /**
-     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the Amazon Web Services server corresponding to the
+     * fragment.</p>
      */
     inline bool ServerTimestampHasBeenSet() const { return m_serverTimestampHasBeenSet; }
 
     /**
-     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the Amazon Web Services server corresponding to the
+     * fragment.</p>
      */
     inline void SetServerTimestamp(const Aws::Utils::DateTime& value) { m_serverTimestampHasBeenSet = true; m_serverTimestamp = value; }
 
     /**
-     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the Amazon Web Services server corresponding to the
+     * fragment.</p>
      */
     inline void SetServerTimestamp(Aws::Utils::DateTime&& value) { m_serverTimestampHasBeenSet = true; m_serverTimestamp = std::move(value); }
 
     /**
-     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the Amazon Web Services server corresponding to the
+     * fragment.</p>
      */
     inline Fragment& WithServerTimestamp(const Aws::Utils::DateTime& value) { SetServerTimestamp(value); return *this;}
 
     /**
-     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the Amazon Web Services server corresponding to the
+     * fragment.</p>
      */
     inline Fragment& WithServerTimestamp(Aws::Utils::DateTime&& value) { SetServerTimestamp(std::move(value)); return *this;}
 

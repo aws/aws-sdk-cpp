@@ -422,9 +422,9 @@ namespace Rekognition
          * <p>Creates a new Amazon Rekognition Custom Labels dataset. You can create a
          * dataset by using an Amazon Sagemaker format manifest file or by copying an
          * existing Amazon Rekognition Custom Labels dataset.</p> <p>To create a training
-         * dataset for a project, specify <code>train</code> for the value of
+         * dataset for a project, specify <code>TRAIN</code> for the value of
          * <code>DatasetType</code>. To create the test dataset for a project, specify
-         * <code>test</code> for the value of <code>DatasetType</code>. </p> <p>The
+         * <code>TEST</code> for the value of <code>DatasetType</code>. </p> <p>The
          * response from <code>CreateDataset</code> is the Amazon Resource Name (ARN) for
          * the dataset. Creating a dataset takes a while to complete. Use
          * <a>DescribeDataset</a> to check the current status. The dataset created
@@ -466,13 +466,14 @@ namespace Rekognition
         /**
          * <p>This API operation initiates a Face Liveness session. It returns a
          * <code>SessionId</code>, which you can use to start streaming Face Liveness video
-         * and get the results for a Face Liveness session. You can use the
+         * and get the results for a Face Liveness session. </p> <p>You can use the
          * <code>OutputConfig</code> option in the Settings parameter to provide an Amazon
          * S3 bucket location. The Amazon S3 bucket stores reference images and audit
-         * images. You can use <code>AuditImagesLimit</code> to limit the number of audit
-         * images returned. This number is between 0 and 4. By default, it is set to 0. The
-         * limit is best effort and based on the duration of the selfie-video.
-         * </p><p><h3>See Also:</h3>   <a
+         * images. If no Amazon S3 bucket is defined, raw bytes are sent instead. </p>
+         * <p>You can use <code>AuditImagesLimit</code> to limit the number of audit images
+         * returned when <code>GetFaceLivenessSessionResults</code> is called. This number
+         * is between 0 and 4. By default, it is set to 0. The limit is best effort and
+         * based on the duration of the selfie-video. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">AWS
          * API Reference</a></p>
          */
@@ -1164,54 +1165,55 @@ namespace Rekognition
          * inclusive filters, exclusive filters, or a combination of inclusive and
          * exclusive filters. For more information on filtering see <a
          * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detect-labels-image.html">Detecting
-         * Labels in an Image</a>.</p> <p>You can specify <code>MinConfidence</code> to
-         * control the confidence threshold for the labels returned. The default is 55%.
-         * You can also add the <code>MaxLabels</code> parameter to limit the number of
-         * labels returned. The default and upper limit is 1000 labels.</p> <p> <b>Response
-         * Elements</b> </p> <p> For each object, scene, and concept the API returns one or
-         * more labels. The API returns the following types of information about
-         * labels:</p> <ul> <li> <p> Name - The name of the detected label. </p> </li> <li>
-         * <p> Confidence - The level of confidence in the label assigned to a detected
-         * object. </p> </li> <li> <p> Parents - The ancestor labels for a detected label.
-         * DetectLabels returns a hierarchical taxonomy of detected labels. For example, a
-         * detected car might be assigned the label car. The label car has two parent
-         * labels: Vehicle (its parent) and Transportation (its grandparent). The response
-         * includes the all ancestors for a label, where every ancestor is a unique label.
-         * In the previous example, Car, Vehicle, and Transportation are returned as unique
-         * labels in the response. </p> </li> <li> <p> Aliases - Possible Aliases for the
-         * label. </p> </li> <li> <p> Categories - The label categories that the detected
-         * label belongs to. </p> </li> <li> <p> BoundingBox — Bounding boxes are described
-         * for all instances of detected common object labels, returned in an array of
-         * Instance objects. An Instance object contains a BoundingBox object, describing
-         * the location of the label on the input image. It also includes the confidence
-         * for the accuracy of the detected bounding box. </p> </li> </ul> <p> The API
-         * returns the following information regarding the image, as part of the
-         * ImageProperties structure:</p> <ul> <li> <p>Quality - Information about the
-         * Sharpness, Brightness, and Contrast of the input image, scored between 0 to 100.
-         * Image quality is returned for the entire image, as well as the background and
-         * the foreground. </p> </li> <li> <p>Dominant Color - An array of the dominant
-         * colors in the image. </p> </li> <li> <p>Foreground - Information about the
-         * sharpness, brightness, and dominant colors of the input image’s foreground. </p>
-         * </li> <li> <p>Background - Information about the sharpness, brightness, and
-         * dominant colors of the input image’s background.</p> </li> </ul> <p>The list of
-         * returned labels will include at least one label for every detected object, along
-         * with information about that label. In the following example, suppose the input
-         * image has a lighthouse, the sea, and a rock. The response includes all three
-         * labels, one for each object, as well as the confidence in the label:</p> <p>
-         * <code>{Name: lighthouse, Confidence: 98.4629}</code> </p> <p> <code>{Name:
-         * rock,Confidence: 79.2097}</code> </p> <p> <code> {Name: sea,Confidence:
-         * 75.061}</code> </p> <p>The list of labels can include multiple labels for the
-         * same object. For example, if the input image shows a flower (for example, a
-         * tulip), the operation might return the following three labels. </p> <p>
-         * <code>{Name: flower,Confidence: 99.0562}</code> </p> <p> <code>{Name:
-         * plant,Confidence: 99.0562}</code> </p> <p> <code>{Name: tulip,Confidence:
-         * 99.0562}</code> </p> <p>In this example, the detection algorithm more precisely
-         * identifies the flower as a tulip.</p>  <p>If the object detected is a
-         * person, the operation doesn't provide the same facial details that the
-         * <a>DetectFaces</a> operation provides.</p>  <p>This is a stateless API
-         * operation that doesn't return any data.</p> <p>This operation requires
-         * permissions to perform the <code>rekognition:DetectLabels</code> action.
-         * </p><p><h3>See Also:</h3>   <a
+         * Labels in an Image</a>.</p> <p>When getting labels, you can specify
+         * <code>MinConfidence</code> to control the confidence threshold for the labels
+         * returned. The default is 55%. You can also add the <code>MaxLabels</code>
+         * parameter to limit the number of labels returned. The default and upper limit is
+         * 1000 labels. These arguments are only valid when supplying GENERAL_LABELS as a
+         * feature type.</p> <p> <b>Response Elements</b> </p> <p> For each object, scene,
+         * and concept the API returns one or more labels. The API returns the following
+         * types of information about labels:</p> <ul> <li> <p> Name - The name of the
+         * detected label. </p> </li> <li> <p> Confidence - The level of confidence in the
+         * label assigned to a detected object. </p> </li> <li> <p> Parents - The ancestor
+         * labels for a detected label. DetectLabels returns a hierarchical taxonomy of
+         * detected labels. For example, a detected car might be assigned the label car.
+         * The label car has two parent labels: Vehicle (its parent) and Transportation
+         * (its grandparent). The response includes the all ancestors for a label, where
+         * every ancestor is a unique label. In the previous example, Car, Vehicle, and
+         * Transportation are returned as unique labels in the response. </p> </li> <li>
+         * <p> Aliases - Possible Aliases for the label. </p> </li> <li> <p> Categories -
+         * The label categories that the detected label belongs to. </p> </li> <li> <p>
+         * BoundingBox — Bounding boxes are described for all instances of detected common
+         * object labels, returned in an array of Instance objects. An Instance object
+         * contains a BoundingBox object, describing the location of the label on the input
+         * image. It also includes the confidence for the accuracy of the detected bounding
+         * box. </p> </li> </ul> <p> The API returns the following information regarding
+         * the image, as part of the ImageProperties structure:</p> <ul> <li> <p>Quality -
+         * Information about the Sharpness, Brightness, and Contrast of the input image,
+         * scored between 0 to 100. Image quality is returned for the entire image, as well
+         * as the background and the foreground. </p> </li> <li> <p>Dominant Color - An
+         * array of the dominant colors in the image. </p> </li> <li> <p>Foreground -
+         * Information about the sharpness, brightness, and dominant colors of the input
+         * image’s foreground. </p> </li> <li> <p>Background - Information about the
+         * sharpness, brightness, and dominant colors of the input image’s background.</p>
+         * </li> </ul> <p>The list of returned labels will include at least one label for
+         * every detected object, along with information about that label. In the following
+         * example, suppose the input image has a lighthouse, the sea, and a rock. The
+         * response includes all three labels, one for each object, as well as the
+         * confidence in the label:</p> <p> <code>{Name: lighthouse, Confidence:
+         * 98.4629}</code> </p> <p> <code>{Name: rock,Confidence: 79.2097}</code> </p> <p>
+         * <code> {Name: sea,Confidence: 75.061}</code> </p> <p>The list of labels can
+         * include multiple labels for the same object. For example, if the input image
+         * shows a flower (for example, a tulip), the operation might return the following
+         * three labels. </p> <p> <code>{Name: flower,Confidence: 99.0562}</code> </p> <p>
+         * <code>{Name: plant,Confidence: 99.0562}</code> </p> <p> <code>{Name:
+         * tulip,Confidence: 99.0562}</code> </p> <p>In this example, the detection
+         * algorithm more precisely identifies the flower as a tulip.</p>  <p>If the
+         * object detected is a person, the operation doesn't provide the same facial
+         * details that the <a>DetectFaces</a> operation provides.</p>  <p>This is a
+         * stateless API operation that doesn't return any data.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:DetectLabels</code>
+         * action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">AWS
          * API Reference</a></p>
          */
@@ -1613,7 +1615,10 @@ namespace Rekognition
          * pagination token for getting the next set of results. To get the next page of
          * results, call <code>GetFaceDetection</code> and populate the
          * <code>NextToken</code> request parameter with the token value returned from the
-         * previous call to <code>GetFaceDetection</code>.</p><p><h3>See Also:</h3>   <a
+         * previous call to <code>GetFaceDetection</code>.</p> <p>Note that for the
+         * <code>GetFaceDetection</code> operation, the returned values for
+         * <code>FaceOccluded</code> and <code>EyeDirection</code> will always be
+         * "null".</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceDetection">AWS
          * API Reference</a></p>
          */
@@ -1643,8 +1648,11 @@ namespace Rekognition
          * <code>CreateFaceLivenessSession</code>. Returns the corresponding Face Liveness
          * confidence score, a reference image that includes a face bounding box, and audit
          * images that also contain face bounding boxes. The Face Liveness confidence score
-         * ranges from 0 to 100. The reference image can optionally be
-         * returned.</p><p><h3>See Also:</h3>   <a
+         * ranges from 0 to 100. </p> <p>The number of audit images returned by
+         * <code>GetFaceLivenessSessionResults</code> is defined by the
+         * <code>AuditImagesLimit</code> paramater when calling
+         * <code>CreateFaceLivenessSession</code>. Reference images are always returned
+         * when possible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceLivenessSessionResults">AWS
          * API Reference</a></p>
          */
@@ -1917,11 +1925,11 @@ namespace Rekognition
          * <code>GetTextDetection</code> and pass the job identifier (<code>JobId</code>)
          * from the initial call of <code>StartLabelDetection</code>.</p> <p>
          * <code>GetTextDetection</code> returns an array of detected text
-         * (<code>TextDetections</code>) sorted by the time the text was detected, up to 50
-         * words per frame of video.</p> <p>Each element of the array includes the detected
-         * text, the precentage confidence in the acuracy of the detected text, the time
-         * the text was detected, bounding box information for where the text was located,
-         * and unique identifiers for words and their lines.</p> <p>Use MaxResults
+         * (<code>TextDetections</code>) sorted by the time the text was detected, up to
+         * 100 words per frame of video.</p> <p>Each element of the array includes the
+         * detected text, the precentage confidence in the acuracy of the detected text,
+         * the time the text was detected, bounding box information for where the text was
+         * located, and unique identifiers for words and their lines.</p> <p>Use MaxResults
          * parameter to limit the number of text detections returned. If there are more
          * results than specified in <code>MaxResults</code>, the value of
          * <code>NextToken</code> in the operation response contains a pagination token for
