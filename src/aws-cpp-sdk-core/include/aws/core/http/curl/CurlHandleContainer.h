@@ -6,6 +6,7 @@
 #pragma once
 
 #include <aws/core/utils/ResourceManager.h>
+#include <aws/core/http/Version.h>
 
 #include <utility>
 #include <curl/curl.h>
@@ -29,7 +30,8 @@ public:
       * then a small size is best. For async support, a good value would be 6 * number of Processors.   *
       */
     CurlHandleContainer(unsigned maxSize = 50, long httpRequestTimeout = 0, long connectTimeout = 1000, bool tcpKeepAlive = true,
-                        unsigned long tcpKeepAliveIntervalMs = 30000, long lowSpeedTime = 3000, unsigned long lowSpeedLimit = 1);
+                        unsigned long tcpKeepAliveIntervalMs = 30000, long lowSpeedTime = 3000, unsigned long lowSpeedLimit = 1,
+                        Version version = Version::HTTP_VERSION_2TLS);
     ~CurlHandleContainer();
 
     /**
@@ -56,6 +58,7 @@ private:
     CURL* CreateCurlHandleInPool();
     bool CheckAndGrowPool();
     void SetDefaultOptionsOnHandle(CURL* handle);
+    static long ConvertHttpVersion(Version version);
 
     Aws::Utils::ExclusiveOwnershipResourceManager<CURL*> m_handleContainer;
     unsigned m_maxPoolSize;
@@ -67,6 +70,7 @@ private:
     unsigned long m_lowSpeedLimit;
     unsigned m_poolSize;
     std::mutex m_containerLock;
+    Version m_version;
 };
 
 } // namespace Http
