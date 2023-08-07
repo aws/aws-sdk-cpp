@@ -107,7 +107,10 @@ namespace Model
      * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
      * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
      * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p>
+     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
+     * attributes are supported when using <code>DetectFaces</code>, they aren't
+     * supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
@@ -121,7 +124,10 @@ namespace Model
      * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
      * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
      * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p>
+     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
+     * attributes are supported when using <code>DetectFaces</code>, they aren't
+     * supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
@@ -135,7 +141,10 @@ namespace Model
      * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
      * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
      * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p>
+     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
+     * attributes are supported when using <code>DetectFaces</code>, they aren't
+     * supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.</p>
      */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -149,7 +158,10 @@ namespace Model
      * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
      * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
      * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p>
+     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
+     * attributes are supported when using <code>DetectFaces</code>, they aren't
+     * supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.</p>
      */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -163,7 +175,10 @@ namespace Model
      * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
      * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
      * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p>
+     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
+     * attributes are supported when using <code>DetectFaces</code>, they aren't
+     * supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.</p>
      */
     inline DetectFacesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
@@ -177,7 +192,10 @@ namespace Model
      * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
      * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
      * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p>
+     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
+     * attributes are supported when using <code>DetectFaces</code>, they aren't
+     * supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.</p>
      */
     inline DetectFacesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -191,7 +209,10 @@ namespace Model
      * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
      * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
      * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p>
+     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
+     * attributes are supported when using <code>DetectFaces</code>, they aren't
+     * supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.</p>
      */
     inline DetectFacesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
@@ -205,7 +226,10 @@ namespace Model
      * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
      * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
      * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p>
+     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
+     * attributes are supported when using <code>DetectFaces</code>, they aren't
+     * supported when analyzing videos with <code>StartFaceDetection</code> and
+     * <code>GetFaceDetection</code>.</p>
      */
     inline DetectFacesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
 

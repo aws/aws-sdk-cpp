@@ -86,9 +86,9 @@ namespace Model
      * Producer-side timestamp of the fragment.</p> </li> </ul> <p>The following tags
      * will be included if an exception occurs:</p> <ul> <li>
      * <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the
-     * exception</p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer
-     * code of the exception</p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A
-     * text description of the exception</p> </li> </ul>
+     * exception </p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer
+     * code of the </p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text
+     * description of the exception </p> </li> </ul>
      */
     inline Aws::IOStream& GetPayload() const { return m_payload.GetUnderlyingStream(); }
 
@@ -105,9 +105,9 @@ namespace Model
      * Producer-side timestamp of the fragment.</p> </li> </ul> <p>The following tags
      * will be included if an exception occurs:</p> <ul> <li>
      * <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the
-     * exception</p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer
-     * code of the exception</p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A
-     * text description of the exception</p> </li> </ul>
+     * exception </p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer
+     * code of the </p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text
+     * description of the exception </p> </li> </ul>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
 

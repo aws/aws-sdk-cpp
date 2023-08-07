@@ -16,22 +16,22 @@ namespace Aws
 namespace ivsrealtime
 {
   /**
-   * <p> <b>Introduction</b> </p> <p>The Amazon Interactive Video Service (IVS) stage
-   * API is REST compatible, using a standard HTTP API and an AWS EventBridge event
-   * stream for responses. JSON is used for both requests and responses, including
-   * errors. </p> <p>Terminology:</p> <ul> <li> <p>The IVS stage API sometimes is
-   * referred to as the IVS <i>RealTime</i> API.</p> </li> <li> <p>A <i>participant
-   * token</i> is an authorization token used to publish/subscribe to a stage.</p>
-   * </li> <li> <p>A <i>participant object</i> represents participants (people) in
-   * the stage and contains information about them. When a token is created, it
-   * includes a participant ID; when a participant uses that token to join a stage,
-   * the participant is associated with that participant ID There is a 1:1 mapping
-   * between participant tokens and participants.</p> </li> </ul> <p>
-   * <b>Resources</b> </p> <p>The following resources contain information about your
-   * IVS live stream (see <a
-   * href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">Getting
-   * Started with Amazon IVS</a>):</p> <ul> <li> <p> <b>Stage</b> — A stage is a
-   * virtual space where multiple participants can exchange audio and video in real
+   * <p> <b>Introduction</b> </p> <p>The Amazon Interactive Video Service (IVS)
+   * real-time API is REST compatible, using a standard HTTP API and an AWS
+   * EventBridge event stream for responses. JSON is used for both requests and
+   * responses, including errors. </p> <p>Terminology:</p> <ul> <li> <p>A
+   * <i>stage</i> is a virtual space where participants can exchange video in real
+   * time.</p> </li> <li> <p>A <i>participant token</i> is a token that authenticates
+   * a participant when they join a stage.</p> </li> <li> <p>A <i>participant
+   * object</i> represents participants (people) in the stage and contains
+   * information about them. When a token is created, it includes a participant ID;
+   * when a participant uses that token to join a stage, the participant is
+   * associated with that participant ID There is a 1:1 mapping between participant
+   * tokens and participants.</p> </li> </ul> <p> <b>Resources</b> </p> <p>The
+   * following resources contain information about your IVS live stream (see <a
+   * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html">Getting
+   * Started with Amazon IVS Real-Time Streaming</a>):</p> <ul> <li> <p> <b>Stage</b>
+   * — A stage is a virtual space where participants can exchange video in real
    * time.</p> </li> </ul> <p> <b>Tagging</b> </p> <p>A <i>tag</i> is a metadata
    * label that you assign to an AWS resource. A tag comprises a <i>key</i> and a
    * <i>value</i>, both set by you. For example, you might set a tag as
@@ -44,7 +44,7 @@ namespace ivsrealtime
    * same tag for different resources to indicate that they are related. You can also
    * use tags to manage access (see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Access
-   * Tags</a>).</p> <p>The Amazon IVS stage API has these tag-related endpoints:
+   * Tags</a>).</p> <p>The Amazon IVS real-time API has these tag-related endpoints:
    * <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>. The
    * following resource supports tagging: Stage.</p> <p>At most 50 tags can be
    * applied to a resource.</p> <p> <b>Stages Endpoints</b> </p> <ul> <li> <p>

@@ -46,7 +46,12 @@ namespace Model
      * field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the
      * participant tried to take an action that the participant’s token is not allowed
      * to do. For more information about participant capabilities, see the
-     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.</p>
+     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.
+     * <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want
+     * to publish/subscribe to a stage exceeds the quota; for more information, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service
+     * Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant
+     * tried to subscribe to a publisher that doesn’t exist. </p>
      */
     inline const EventErrorCode& GetErrorCode() const{ return m_errorCode; }
 
@@ -56,7 +61,12 @@ namespace Model
      * field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the
      * participant tried to take an action that the participant’s token is not allowed
      * to do. For more information about participant capabilities, see the
-     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.</p>
+     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.
+     * <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want
+     * to publish/subscribe to a stage exceeds the quota; for more information, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service
+     * Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant
+     * tried to subscribe to a publisher that doesn’t exist. </p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
@@ -66,7 +76,12 @@ namespace Model
      * field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the
      * participant tried to take an action that the participant’s token is not allowed
      * to do. For more information about participant capabilities, see the
-     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.</p>
+     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.
+     * <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want
+     * to publish/subscribe to a stage exceeds the quota; for more information, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service
+     * Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant
+     * tried to subscribe to a publisher that doesn’t exist. </p>
      */
     inline void SetErrorCode(const EventErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
@@ -76,7 +91,12 @@ namespace Model
      * field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the
      * participant tried to take an action that the participant’s token is not allowed
      * to do. For more information about participant capabilities, see the
-     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.</p>
+     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.
+     * <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want
+     * to publish/subscribe to a stage exceeds the quota; for more information, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service
+     * Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant
+     * tried to subscribe to a publisher that doesn’t exist. </p>
      */
     inline void SetErrorCode(EventErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
@@ -86,7 +106,12 @@ namespace Model
      * field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the
      * participant tried to take an action that the participant’s token is not allowed
      * to do. For more information about participant capabilities, see the
-     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.</p>
+     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.
+     * <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want
+     * to publish/subscribe to a stage exceeds the quota; for more information, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service
+     * Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant
+     * tried to subscribe to a publisher that doesn’t exist. </p>
      */
     inline Event& WithErrorCode(const EventErrorCode& value) { SetErrorCode(value); return *this;}
 
@@ -96,7 +121,12 @@ namespace Model
      * field is null. <code>INSUFFICIENT_CAPABILITIES</code> indicates that the
      * participant tried to take an action that the participant’s token is not allowed
      * to do. For more information about participant capabilities, see the
-     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.</p>
+     * <code>capabilities</code> field in <a>CreateParticipantToken</a>.
+     * <code>QUOTA_EXCEEDED</code> indicates that the number of participants who want
+     * to publish/subscribe to a stage exceeds the quota; for more information, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service
+     * Quotas</a>. <code>PUBLISHER_NOT_FOUND</code> indicates that the participant
+     * tried to subscribe to a publisher that doesn’t exist. </p>
      */
     inline Event& WithErrorCode(EventErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
 
