@@ -7,6 +7,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/http/Scheme.h>
+#include <aws/core/http/Version.h>
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/http/HttpTypes.h>
@@ -294,6 +295,16 @@ namespace Aws
              * Disable all internal IMDS Calls
              */
             bool disableIMDS = false;
+
+            /**
+             * Request HTTP client to use specific http version. Currently supported for
+             * only Curl. More or less is a one to one conversion of the CURLOPT_HTTP_VERSION
+             * configuration option.
+             *
+             * Default to Version 2 TLS which is the default after curl version 7.62.0. Will
+             * fall back to 1.1 if compiled against a earlier version of curl.
+             */
+            Aws::Http::Version version = Http::Version::HTTP_VERSION_2TLS;
 
             /**
              * A helper function to read config value from env variable or aws profile config
