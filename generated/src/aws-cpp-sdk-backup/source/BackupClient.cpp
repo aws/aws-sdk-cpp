@@ -27,6 +27,7 @@
 #include <aws/backup/model/CreateBackupVaultRequest.h>
 #include <aws/backup/model/CreateFrameworkRequest.h>
 #include <aws/backup/model/CreateLegalHoldRequest.h>
+#include <aws/backup/model/CreateLogicallyAirGappedBackupVaultRequest.h>
 #include <aws/backup/model/CreateReportPlanRequest.h>
 #include <aws/backup/model/DeleteBackupPlanRequest.h>
 #include <aws/backup/model/DeleteBackupSelectionRequest.h>
@@ -69,6 +70,7 @@
 #include <aws/backup/model/ListFrameworksRequest.h>
 #include <aws/backup/model/ListLegalHoldsRequest.h>
 #include <aws/backup/model/ListProtectedResourcesRequest.h>
+#include <aws/backup/model/ListProtectedResourcesByBackupVaultRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByBackupVaultRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByLegalHoldRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByResourceRequest.h>
@@ -405,6 +407,39 @@ CreateLegalHoldOutcome BackupClient::CreateLegalHold(const CreateLegalHoldReques
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/legal-holds/");
       return CreateLegalHoldOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateLogicallyAirGappedBackupVaultOutcome BackupClient::CreateLogicallyAirGappedBackupVault(const CreateLogicallyAirGappedBackupVaultRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateLogicallyAirGappedBackupVault);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLogicallyAirGappedBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateLogicallyAirGappedBackupVault", "Required field: BackupVaultName, is not set");
+    return CreateLogicallyAirGappedBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateLogicallyAirGappedBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateLogicallyAirGappedBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateLogicallyAirGappedBackupVault",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateLogicallyAirGappedBackupVaultOutcome>(
+    [&]()-> CreateLogicallyAirGappedBackupVaultOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLogicallyAirGappedBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/logically-air-gapped-backup-vaults/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
+      return CreateLogicallyAirGappedBackupVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1809,6 +1844,40 @@ ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListPro
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProtectedResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/resources/");
       return ListProtectedResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListProtectedResourcesByBackupVaultOutcome BackupClient::ListProtectedResourcesByBackupVault(const ListProtectedResourcesByBackupVaultRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListProtectedResourcesByBackupVault);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProtectedResourcesByBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListProtectedResourcesByBackupVault", "Required field: BackupVaultName, is not set");
+    return ListProtectedResourcesByBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListProtectedResourcesByBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListProtectedResourcesByBackupVault, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListProtectedResourcesByBackupVault",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListProtectedResourcesByBackupVaultOutcome>(
+    [&]()-> ListProtectedResourcesByBackupVaultOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProtectedResourcesByBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/backup-vaults/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupVaultName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/resources/");
+      return ListProtectedResourcesByBackupVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

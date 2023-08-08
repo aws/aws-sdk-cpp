@@ -337,10 +337,7 @@ namespace Model
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> <li> <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
      * file</p> </li> </ul>
      */
     inline const ProvisioningArtifactType& GetType() const{ return m_type; }
@@ -348,10 +345,7 @@ namespace Model
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> <li> <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
      * file</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -359,10 +353,7 @@ namespace Model
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> <li> <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
      * file</p> </li> </ul>
      */
     inline void SetType(const ProvisioningArtifactType& value) { m_typeHasBeenSet = true; m_type = value; }
@@ -370,10 +361,7 @@ namespace Model
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> <li> <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
      * file</p> </li> </ul>
      */
     inline void SetType(ProvisioningArtifactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
@@ -381,10 +369,7 @@ namespace Model
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> <li> <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
      * file</p> </li> </ul>
      */
     inline ProvisioningArtifactProperties& WithType(const ProvisioningArtifactType& value) { SetType(value); return *this;}
@@ -392,10 +377,7 @@ namespace Model
     /**
      * <p>The type of provisioning artifact.</p> <ul> <li> <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p> </li> <li>
-     * <p> <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI</p> </li>
-     * <li> <p> <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters
-     * and Amazon Web Services Resources</p> </li> <li> <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
+     * <p> <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration
      * file</p> </li> </ul>
      */
     inline ProvisioningArtifactProperties& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
@@ -403,25 +385,29 @@ namespace Model
 
     /**
      * <p>If set to true, Service Catalog stops validating the specified provisioning
-     * artifact even if it is invalid.</p>
+     * artifact even if it is invalid. </p> <p>Service Catalog does not support
+     * template validation for the <code>TERRAFORM_OS</code> product type. </p>
      */
     inline bool GetDisableTemplateValidation() const{ return m_disableTemplateValidation; }
 
     /**
      * <p>If set to true, Service Catalog stops validating the specified provisioning
-     * artifact even if it is invalid.</p>
+     * artifact even if it is invalid. </p> <p>Service Catalog does not support
+     * template validation for the <code>TERRAFORM_OS</code> product type. </p>
      */
     inline bool DisableTemplateValidationHasBeenSet() const { return m_disableTemplateValidationHasBeenSet; }
 
     /**
      * <p>If set to true, Service Catalog stops validating the specified provisioning
-     * artifact even if it is invalid.</p>
+     * artifact even if it is invalid. </p> <p>Service Catalog does not support
+     * template validation for the <code>TERRAFORM_OS</code> product type. </p>
      */
     inline void SetDisableTemplateValidation(bool value) { m_disableTemplateValidationHasBeenSet = true; m_disableTemplateValidation = value; }
 
     /**
      * <p>If set to true, Service Catalog stops validating the specified provisioning
-     * artifact even if it is invalid.</p>
+     * artifact even if it is invalid. </p> <p>Service Catalog does not support
+     * template validation for the <code>TERRAFORM_OS</code> product type. </p>
      */
     inline ProvisioningArtifactProperties& WithDisableTemplateValidation(bool value) { SetDisableTemplateValidation(value); return *this;}
 

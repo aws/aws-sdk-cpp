@@ -80,6 +80,7 @@
 #include <aws/elasticache/model/RevokeCacheSecurityGroupIngressResult.h>
 #include <aws/elasticache/model/StartMigrationResult.h>
 #include <aws/elasticache/model/TestFailoverResult.h>
+#include <aws/elasticache/model/TestMigrationResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ElastiCacheClient header */
 
@@ -186,6 +187,7 @@ namespace Aws
       class RevokeCacheSecurityGroupIngressRequest;
       class StartMigrationRequest;
       class TestFailoverRequest;
+      class TestMigrationRequest;
       /* End of service model forward declarations required in ElastiCacheClient header */
 
       /* Service model Outcome class definitions */
@@ -254,6 +256,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RevokeCacheSecurityGroupIngressResult, ElastiCacheError> RevokeCacheSecurityGroupIngressOutcome;
       typedef Aws::Utils::Outcome<StartMigrationResult, ElastiCacheError> StartMigrationOutcome;
       typedef Aws::Utils::Outcome<TestFailoverResult, ElastiCacheError> TestFailoverOutcome;
+      typedef Aws::Utils::Outcome<TestMigrationResult, ElastiCacheError> TestMigrationOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -322,6 +325,7 @@ namespace Aws
       typedef std::future<RevokeCacheSecurityGroupIngressOutcome> RevokeCacheSecurityGroupIngressOutcomeCallable;
       typedef std::future<StartMigrationOutcome> StartMigrationOutcomeCallable;
       typedef std::future<TestFailoverOutcome> TestFailoverOutcomeCallable;
+      typedef std::future<TestMigrationOutcome> TestMigrationOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -393,6 +397,7 @@ namespace Aws
     typedef std::function<void(const ElastiCacheClient*, const Model::RevokeCacheSecurityGroupIngressRequest&, const Model::RevokeCacheSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeCacheSecurityGroupIngressResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::StartMigrationRequest&, const Model::StartMigrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMigrationResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::TestFailoverRequest&, const Model::TestFailoverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestFailoverResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::TestMigrationRequest&, const Model::TestMigrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestMigrationResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace ElastiCache
 } // namespace Aws

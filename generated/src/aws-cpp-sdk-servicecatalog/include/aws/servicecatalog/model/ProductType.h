@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     CLOUD_FORMATION_TEMPLATE,
     MARKETPLACE,
-    TERRAFORM_OPEN_SOURCE
+    TERRAFORM_OPEN_SOURCE,
+    TERRAFORM_CLOUD
   };
 
 namespace ProductTypeMapper
