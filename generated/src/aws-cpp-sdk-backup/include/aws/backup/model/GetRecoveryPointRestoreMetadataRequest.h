@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace Backup
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "GetRecoveryPointRestoreMetadata"; }
 
     AWS_BACKUP_API Aws::String SerializePayload() const override;
+
+    AWS_BACKUP_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -153,6 +159,47 @@ namespace Model
      */
     inline GetRecoveryPointRestoreMetadataRequest& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}
 
+
+    /**
+     * <p>This is the account ID of the specified backup vault.</p>
+     */
+    inline const Aws::String& GetBackupVaultAccountId() const{ return m_backupVaultAccountId; }
+
+    /**
+     * <p>This is the account ID of the specified backup vault.</p>
+     */
+    inline bool BackupVaultAccountIdHasBeenSet() const { return m_backupVaultAccountIdHasBeenSet; }
+
+    /**
+     * <p>This is the account ID of the specified backup vault.</p>
+     */
+    inline void SetBackupVaultAccountId(const Aws::String& value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId = value; }
+
+    /**
+     * <p>This is the account ID of the specified backup vault.</p>
+     */
+    inline void SetBackupVaultAccountId(Aws::String&& value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId = std::move(value); }
+
+    /**
+     * <p>This is the account ID of the specified backup vault.</p>
+     */
+    inline void SetBackupVaultAccountId(const char* value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId.assign(value); }
+
+    /**
+     * <p>This is the account ID of the specified backup vault.</p>
+     */
+    inline GetRecoveryPointRestoreMetadataRequest& WithBackupVaultAccountId(const Aws::String& value) { SetBackupVaultAccountId(value); return *this;}
+
+    /**
+     * <p>This is the account ID of the specified backup vault.</p>
+     */
+    inline GetRecoveryPointRestoreMetadataRequest& WithBackupVaultAccountId(Aws::String&& value) { SetBackupVaultAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the account ID of the specified backup vault.</p>
+     */
+    inline GetRecoveryPointRestoreMetadataRequest& WithBackupVaultAccountId(const char* value) { SetBackupVaultAccountId(value); return *this;}
+
   private:
 
     Aws::String m_backupVaultName;
@@ -160,6 +207,9 @@ namespace Model
 
     Aws::String m_recoveryPointArn;
     bool m_recoveryPointArnHasBeenSet = false;
+
+    Aws::String m_backupVaultAccountId;
+    bool m_backupVaultAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

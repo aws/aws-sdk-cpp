@@ -24,6 +24,7 @@ namespace Aws
         static const int MARKETPLACE_AMI_HASH = HashingUtils::HashString("MARKETPLACE_AMI");
         static const int MARKETPLACE_CAR_HASH = HashingUtils::HashString("MARKETPLACE_CAR");
         static const int TERRAFORM_OPEN_SOURCE_HASH = HashingUtils::HashString("TERRAFORM_OPEN_SOURCE");
+        static const int TERRAFORM_CLOUD_HASH = HashingUtils::HashString("TERRAFORM_CLOUD");
 
 
         ProvisioningArtifactType GetProvisioningArtifactTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == TERRAFORM_OPEN_SOURCE_HASH)
           {
             return ProvisioningArtifactType::TERRAFORM_OPEN_SOURCE;
+          }
+          else if (hashCode == TERRAFORM_CLOUD_HASH)
+          {
+            return ProvisioningArtifactType::TERRAFORM_CLOUD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "MARKETPLACE_CAR";
           case ProvisioningArtifactType::TERRAFORM_OPEN_SOURCE:
             return "TERRAFORM_OPEN_SOURCE";
+          case ProvisioningArtifactType::TERRAFORM_CLOUD:
+            return "TERRAFORM_CLOUD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

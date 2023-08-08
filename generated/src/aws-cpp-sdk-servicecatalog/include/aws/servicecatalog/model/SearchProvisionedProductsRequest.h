@@ -130,7 +130,7 @@ namespace Model
      * searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-     * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+     * <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>,
      * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>,
      * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -144,7 +144,7 @@ namespace Model
      * searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-     * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+     * <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>,
      * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>,
      * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -158,7 +158,7 @@ namespace Model
      * searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-     * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+     * <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>,
      * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>,
      * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -172,7 +172,7 @@ namespace Model
      * searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-     * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+     * <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>,
      * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>,
      * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -186,7 +186,7 @@ namespace Model
      * searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-     * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+     * <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>,
      * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>,
      * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -200,7 +200,7 @@ namespace Model
      * searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-     * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+     * <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>,
      * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>,
      * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -214,7 +214,7 @@ namespace Model
      * searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-     * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+     * <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>,
      * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>,
      * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -228,7 +228,7 @@ namespace Model
      * searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-     * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+     * <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>,
      * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>,
      * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -242,7 +242,7 @@ namespace Model
      * searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-     * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+     * <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>,
      * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>,
      * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and
@@ -256,7 +256,7 @@ namespace Model
      * searchable fields are <code>arn</code>, <code>createdTime</code>,
      * <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
      * <code>name</code>, <code>physicalId</code>, <code>productId</code>,
-     * <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>,
+     * <code>provisioningArtifactId</code>, <code>type</code>, <code>status</code>,
      * <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
      * <code>lastProvisioningRecordId</code>,
      * <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and

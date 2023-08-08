@@ -520,7 +520,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -529,7 +529,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -538,7 +538,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -547,7 +547,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -556,7 +556,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -565,7 +565,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -574,7 +574,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -583,7 +583,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last request performed on this provisioned
-     * product of the following types:</p> <ul> <li> <p> ProvisionedProduct </p> </li>
+     * product of the following types:</p> <ul> <li> <p> ProvisionProduct </p> </li>
      * <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -593,7 +593,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -602,7 +602,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -611,7 +611,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -620,7 +620,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -629,7 +629,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -638,7 +638,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -647,7 +647,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
@@ -656,7 +656,7 @@ namespace Model
 
     /**
      * <p>The record identifier of the last successful request performed on this
-     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionedProduct
+     * provisioned product of the following types:</p> <ul> <li> <p> ProvisionProduct
      * </p> </li> <li> <p> UpdateProvisionedProduct </p> </li> <li> <p>
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>

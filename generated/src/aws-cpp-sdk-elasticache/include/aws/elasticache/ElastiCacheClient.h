@@ -2057,6 +2057,32 @@ namespace ElastiCache
             return SubmitAsync(&ElastiCacheClient::TestFailover, request, handler, context);
         }
 
+        /**
+         * <p> Async API to test connection between source and target replication group.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TestMigrationOutcome TestMigration(const Model::TestMigrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for TestMigration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TestMigrationRequestT = Model::TestMigrationRequest>
+        Model::TestMigrationOutcomeCallable TestMigrationCallable(const TestMigrationRequestT& request) const
+        {
+            return SubmitCallable(&ElastiCacheClient::TestMigration, request);
+        }
+
+        /**
+         * An Async wrapper for TestMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TestMigrationRequestT = Model::TestMigrationRequest>
+        void TestMigrationAsync(const TestMigrationRequestT& request, const TestMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElastiCacheClient::TestMigration, request, handler, context);
+        }
+
 
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<ElastiCacheEndpointProviderBase>& accessEndpointProvider();

@@ -267,49 +267,57 @@ namespace Model
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
      */
     inline const Aws::String& GetProvisionedProductType() const{ return m_provisionedProductType; }
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
      */
     inline bool ProvisionedProductTypeHasBeenSet() const { return m_provisionedProductTypeHasBeenSet; }
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
      */
     inline void SetProvisionedProductType(const Aws::String& value) { m_provisionedProductTypeHasBeenSet = true; m_provisionedProductType = value; }
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
      */
     inline void SetProvisionedProductType(Aws::String&& value) { m_provisionedProductTypeHasBeenSet = true; m_provisionedProductType = std::move(value); }
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
      */
     inline void SetProvisionedProductType(const char* value) { m_provisionedProductTypeHasBeenSet = true; m_provisionedProductType.assign(value); }
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
      */
     inline RecordDetail& WithProvisionedProductType(const Aws::String& value) { SetProvisionedProductType(value); return *this;}
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
      */
     inline RecordDetail& WithProvisionedProductType(Aws::String&& value) { SetProvisionedProductType(std::move(value)); return *this;}
 
     /**
      * <p>The type of provisioned product. The supported values are
-     * <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.</p>
+     * <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.</p>
      */
     inline RecordDetail& WithProvisionedProductType(const char* value) { SetProvisionedProductType(value); return *this;}
 
