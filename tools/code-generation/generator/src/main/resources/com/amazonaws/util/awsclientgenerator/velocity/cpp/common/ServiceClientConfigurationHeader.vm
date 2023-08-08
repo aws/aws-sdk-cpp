@@ -34,7 +34,7 @@ namespace ${rootNamespace}
         {
             using BaseClientConfigClass = Aws::Client::GenericClientConfiguration<${EndpointDiscoveryTraitSupported}>;
 
-            ${metadata.classNamePrefix}ClientConfiguration();
+            ${metadata.classNamePrefix}ClientConfiguration(bool shouldDisableIMDS = false);
 
             /**
             * Create a configuration based on settings in the aws configuration file for the given profile name.
