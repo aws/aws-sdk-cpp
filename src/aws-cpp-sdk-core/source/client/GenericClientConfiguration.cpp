@@ -44,7 +44,7 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
   return enabled;
 }
 
-GenericClientConfiguration<true>::GenericClientConfiguration(bool shouldDisableIMDS)
+GenericClientConfiguration<true>::GenericClientConfiguration(bool shouldDisableIMDS = false)
     : ClientConfiguration(shouldDisableIMDS),
       enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
@@ -53,7 +53,7 @@ GenericClientConfiguration<true>::GenericClientConfiguration(bool shouldDisableI
     enableHostPrefixInjection = false; // disabled by default in the SDK
 }
 
-GenericClientConfiguration<true>::GenericClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
+GenericClientConfiguration<true>::GenericClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS = false)
     : ClientConfiguration(inputProfileName, shouldDisableIMDS),
       enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
@@ -62,7 +62,7 @@ GenericClientConfiguration<true>::GenericClientConfiguration(const char* inputPr
     enableHostPrefixInjection = false; // disabled by default in the SDK
 }
 
-GenericClientConfiguration<true>::GenericClientConfiguration(bool useSmartDefaults, const char* inputDefaultMode, bool shouldDisableIMDS)
+GenericClientConfiguration<true>::GenericClientConfiguration(bool useSmartDefaults, const char* inputDefaultMode, bool shouldDisableIMDS = false)
     : ClientConfiguration(useSmartDefaults, inputDefaultMode, shouldDisableIMDS),
       enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)

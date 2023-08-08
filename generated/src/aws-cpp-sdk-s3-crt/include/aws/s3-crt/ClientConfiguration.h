@@ -19,7 +19,7 @@ namespace Aws
     {
         struct AWS_S3CRT_API ClientConfiguration : Aws::S3Crt::S3CrtClientConfiguration
         {
-            ClientConfiguration() : Aws::S3Crt::S3CrtClientConfiguration(),
+            ClientConfiguration(bool shouldDisableIMDS = false) : Aws::S3Crt::S3CrtClientConfiguration(shouldDisableIMDS),
                 partSize(5 * 1024 * 1024),
                 throughputTargetGbps(2.0) {}
 

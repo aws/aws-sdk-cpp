@@ -25,7 +25,7 @@ namespace Aws
         {
             using BaseClientConfigClass = Aws::Client::GenericClientConfiguration</*EndpointDiscoverySupported*/true>;
 
-            S3CrtClientConfiguration();
+            S3CrtClientConfiguration(bool shouldDisableIMDS = false);
 
             /**
             * Create a configuration based on settings in the aws configuration file for the given profile name.
