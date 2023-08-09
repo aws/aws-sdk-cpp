@@ -26,7 +26,8 @@ UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration() :
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
-    m_auditLogConfigurationHasBeenSet(false)
+    m_auditLogConfigurationHasBeenSet(false),
+    m_diskIopsConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ UpdateFileSystemWindowsConfiguration::UpdateFileSystemWindowsConfiguration(JsonV
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
-    m_auditLogConfigurationHasBeenSet(false)
+    m_auditLogConfigurationHasBeenSet(false),
+    m_diskIopsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ UpdateFileSystemWindowsConfiguration& UpdateFileSystemWindowsConfiguration::oper
     m_auditLogConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DiskIopsConfiguration"))
+  {
+    m_diskIopsConfiguration = jsonValue.GetObject("DiskIopsConfiguration");
+
+    m_diskIopsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +136,12 @@ JsonValue UpdateFileSystemWindowsConfiguration::Jsonize() const
   if(m_auditLogConfigurationHasBeenSet)
   {
    payload.WithObject("AuditLogConfiguration", m_auditLogConfiguration.Jsonize());
+
+  }
+
+  if(m_diskIopsConfigurationHasBeenSet)
+  {
+   payload.WithObject("DiskIopsConfiguration", m_diskIopsConfiguration.Jsonize());
 
   }
 

@@ -29,7 +29,9 @@ UpdateFileSystemOpenZFSConfiguration::UpdateFileSystemOpenZFSConfiguration() :
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false)
+    m_diskIopsConfigurationHasBeenSet(false),
+    m_addRouteTableIdsHasBeenSet(false),
+    m_removeRouteTableIdsHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ UpdateFileSystemOpenZFSConfiguration::UpdateFileSystemOpenZFSConfiguration(JsonV
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false)
+    m_diskIopsConfigurationHasBeenSet(false),
+    m_addRouteTableIdsHasBeenSet(false),
+    m_removeRouteTableIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +104,26 @@ UpdateFileSystemOpenZFSConfiguration& UpdateFileSystemOpenZFSConfiguration::oper
     m_diskIopsConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AddRouteTableIds"))
+  {
+    Aws::Utils::Array<JsonView> addRouteTableIdsJsonList = jsonValue.GetArray("AddRouteTableIds");
+    for(unsigned addRouteTableIdsIndex = 0; addRouteTableIdsIndex < addRouteTableIdsJsonList.GetLength(); ++addRouteTableIdsIndex)
+    {
+      m_addRouteTableIds.push_back(addRouteTableIdsJsonList[addRouteTableIdsIndex].AsString());
+    }
+    m_addRouteTableIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RemoveRouteTableIds"))
+  {
+    Aws::Utils::Array<JsonView> removeRouteTableIdsJsonList = jsonValue.GetArray("RemoveRouteTableIds");
+    for(unsigned removeRouteTableIdsIndex = 0; removeRouteTableIdsIndex < removeRouteTableIdsJsonList.GetLength(); ++removeRouteTableIdsIndex)
+    {
+      m_removeRouteTableIds.push_back(removeRouteTableIdsJsonList[removeRouteTableIdsIndex].AsString());
+    }
+    m_removeRouteTableIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +170,28 @@ JsonValue UpdateFileSystemOpenZFSConfiguration::Jsonize() const
   if(m_diskIopsConfigurationHasBeenSet)
   {
    payload.WithObject("DiskIopsConfiguration", m_diskIopsConfiguration.Jsonize());
+
+  }
+
+  if(m_addRouteTableIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> addRouteTableIdsJsonList(m_addRouteTableIds.size());
+   for(unsigned addRouteTableIdsIndex = 0; addRouteTableIdsIndex < addRouteTableIdsJsonList.GetLength(); ++addRouteTableIdsIndex)
+   {
+     addRouteTableIdsJsonList[addRouteTableIdsIndex].AsString(m_addRouteTableIds[addRouteTableIdsIndex]);
+   }
+   payload.WithArray("AddRouteTableIds", std::move(addRouteTableIdsJsonList));
+
+  }
+
+  if(m_removeRouteTableIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> removeRouteTableIdsJsonList(m_removeRouteTableIds.size());
+   for(unsigned removeRouteTableIdsIndex = 0; removeRouteTableIdsIndex < removeRouteTableIdsJsonList.GetLength(); ++removeRouteTableIdsIndex)
+   {
+     removeRouteTableIdsJsonList[removeRouteTableIdsIndex].AsString(m_removeRouteTableIds[removeRouteTableIdsIndex]);
+   }
+   payload.WithArray("RemoveRouteTableIds", std::move(removeRouteTableIdsJsonList));
 
   }
 

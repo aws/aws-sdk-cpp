@@ -110,6 +110,47 @@ namespace Model
      */
     inline CreatePhoneNumberOrderRequest& AddE164PhoneNumbers(const char* value) { m_e164PhoneNumbersHasBeenSet = true; m_e164PhoneNumbers.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     */
+    inline CreatePhoneNumberOrderRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     */
+    inline CreatePhoneNumberOrderRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the name assigned to one or more phone numbers.</p>
+     */
+    inline CreatePhoneNumberOrderRequest& WithName(const char* value) { SetName(value); return *this;}
+
   private:
 
     PhoneNumberProductType m_productType;
@@ -117,6 +158,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_e164PhoneNumbers;
     bool m_e164PhoneNumbersHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model
