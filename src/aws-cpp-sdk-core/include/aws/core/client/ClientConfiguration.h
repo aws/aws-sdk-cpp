@@ -60,8 +60,11 @@ namespace Aws
           UseRequestCompression useRequestCompression=UseRequestCompression::ENABLE;
           size_t requestMinCompressionSizeBytes = 10240;
         };
-
-        struct DefaultClientConfiguration {
+         /**
+         * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
+          * - disableIMDS
+         */
+        struct ClientConfigurationInitValues {
             bool shouldDisableIMDS = false;
         };
 
@@ -71,7 +74,11 @@ namespace Aws
          */
         struct AWS_CORE_API ClientConfiguration
         {
-            ClientConfiguration(const DefaultClientConfiguration &configuration = {});
+                /**
+                 * Create a configuration with default settings. By default IMDS calls are enabled.
+                 * @param ClientConfigurationInitValues ClientConfiguration initial customizable values
+                 */
+            ClientConfiguration(const ClientConfigurationInitValues &configuration = {});
 
             /**
              * Create a configuration based on settings in the aws configuration file for the given profile name.

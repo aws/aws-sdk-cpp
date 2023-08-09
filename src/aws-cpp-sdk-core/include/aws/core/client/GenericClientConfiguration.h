@@ -20,7 +20,7 @@ namespace Aws
         {
             static const bool EndpointDiscoverySupported = HasEndpointDiscovery;
 
-            GenericClientConfiguration(const DefaultClientConfiguration &configuration = {})
+            GenericClientConfiguration(const ClientConfigurationInitValues &configuration = {})
               : ClientConfiguration(configuration)
             {}
 
@@ -56,7 +56,7 @@ namespace Aws
         {
             static const bool EndpointDiscoverySupported = true;
 
-            GenericClientConfiguration(const DefaultClientConfiguration &configuration = {});
+            GenericClientConfiguration(const ClientConfigurationInitValues &configuration = {});
             GenericClientConfiguration(const char* profileName, bool shouldDisableIMDS = false);
             explicit GenericClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
             GenericClientConfiguration(const ClientConfiguration& config);

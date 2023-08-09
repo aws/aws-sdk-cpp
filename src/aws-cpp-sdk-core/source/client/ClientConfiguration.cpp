@@ -139,7 +139,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     }
 }
 
-ClientConfiguration::ClientConfiguration(const DefaultClientConfiguration &configuration)
+ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &configuration)
 {
     this->disableIMDS = configuration.shouldDisableIMDS;
     setLegacyClientConfigurationParameters(*this);

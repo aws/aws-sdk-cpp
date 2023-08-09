@@ -44,7 +44,7 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
   return enabled;
 }
 
-GenericClientConfiguration<true>::GenericClientConfiguration(const DefaultClientConfiguration &configuration)
+GenericClientConfiguration<true>::GenericClientConfiguration(const ClientConfigurationInitValues &configuration)
     : ClientConfiguration(configuration),
       enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)

@@ -18,7 +18,7 @@ namespace Aws
         {
             using BaseClientConfigClass = Aws::Client::GenericClientConfiguration</*EndpointDiscoverySupported*/true>;
 
-            S3ControlClientConfiguration(const Client::DefaultClientConfiguration &configuration = {});
+            S3ControlClientConfiguration(const Client::ClientConfigurationInitValues &configuration = {});
 
             /**
             * Create a configuration based on settings in the aws configuration file for the given profile name.

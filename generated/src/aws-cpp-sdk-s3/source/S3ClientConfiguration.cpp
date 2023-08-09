@@ -54,7 +54,7 @@ void S3ClientConfiguration::LoadS3SpecificConfig(const Aws::String& inputProfile
   }
 }
 
-S3ClientConfiguration::S3ClientConfiguration(const Client::DefaultClientConfiguration &configuration)
+S3ClientConfiguration::S3ClientConfiguration(const Client::ClientConfigurationInitValues &configuration)
 : BaseClientConfigClass(configuration)
 {
   LoadS3SpecificConfig(this->profileName);
