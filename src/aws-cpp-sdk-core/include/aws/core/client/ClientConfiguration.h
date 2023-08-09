@@ -61,13 +61,17 @@ namespace Aws
           size_t requestMinCompressionSizeBytes = 10240;
         };
 
+        struct DefaultClientConfiguration {
+            bool shouldDisableIMDS = false;
+        };
+
         /**
          * This mutable structure is used to configure any of the AWS clients.
          * Default values can only be overwritten prior to passing to the client constructors.
          */
         struct AWS_CORE_API ClientConfiguration
         {
-            ClientConfiguration(bool shouldDisableIMDS = false);
+            ClientConfiguration(const DefaultClientConfiguration &configuration = {});
 
             /**
              * Create a configuration based on settings in the aws configuration file for the given profile name.

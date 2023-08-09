@@ -54,8 +54,8 @@ void S3CrtClientConfiguration::LoadS3CrtSpecificConfig(const Aws::String& inputP
   }
 }
 
-S3CrtClientConfiguration::S3CrtClientConfiguration(bool shouldDisableIMDS = false)
-: BaseClientConfigClass(shouldDisableIMDS)
+S3CrtClientConfiguration::S3CrtClientConfiguration(const Client::DefaultClientConfiguration &configuration)
+: BaseClientConfigClass(configuration)
 {
   LoadS3CrtSpecificConfig(this->profileName);
 }
