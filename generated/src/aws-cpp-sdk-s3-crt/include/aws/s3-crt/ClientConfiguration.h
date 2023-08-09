@@ -19,7 +19,7 @@ namespace Aws
     {
         struct AWS_S3CRT_API ClientConfiguration : Aws::S3Crt::S3CrtClientConfiguration
         {
-            ClientConfiguration(const Client::DefaultClientConfiguration &configuration = {}) : Aws::S3Crt::S3CrtClientConfiguration(configuration),
+            ClientConfiguration() : Aws::S3Crt::S3CrtClientConfiguration(),
                 partSize(5 * 1024 * 1024),
                 throughputTargetGbps(2.0) {}
 
