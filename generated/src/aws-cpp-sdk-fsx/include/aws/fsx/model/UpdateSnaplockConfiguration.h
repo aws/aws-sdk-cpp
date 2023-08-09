@@ -130,7 +130,7 @@ namespace Model
      * If privileged delete is permanently disabled on a SnapLock volume, you can't
      * re-enable it. The default value is <code>DISABLED</code>. </p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline const PrivilegedDelete& GetPrivilegedDelete() const{ return m_privilegedDelete; }
@@ -143,7 +143,7 @@ namespace Model
      * If privileged delete is permanently disabled on a SnapLock volume, you can't
      * re-enable it. The default value is <code>DISABLED</code>. </p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline bool PrivilegedDeleteHasBeenSet() const { return m_privilegedDeleteHasBeenSet; }
@@ -156,7 +156,7 @@ namespace Model
      * If privileged delete is permanently disabled on a SnapLock volume, you can't
      * re-enable it. The default value is <code>DISABLED</code>. </p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline void SetPrivilegedDelete(const PrivilegedDelete& value) { m_privilegedDeleteHasBeenSet = true; m_privilegedDelete = value; }
@@ -169,7 +169,7 @@ namespace Model
      * If privileged delete is permanently disabled on a SnapLock volume, you can't
      * re-enable it. The default value is <code>DISABLED</code>. </p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline void SetPrivilegedDelete(PrivilegedDelete&& value) { m_privilegedDeleteHasBeenSet = true; m_privilegedDelete = std::move(value); }
@@ -182,7 +182,7 @@ namespace Model
      * If privileged delete is permanently disabled on a SnapLock volume, you can't
      * re-enable it. The default value is <code>DISABLED</code>. </p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline UpdateSnaplockConfiguration& WithPrivilegedDelete(const PrivilegedDelete& value) { SetPrivilegedDelete(value); return *this;}
@@ -195,7 +195,7 @@ namespace Model
      * If privileged delete is permanently disabled on a SnapLock volume, you can't
      * re-enable it. The default value is <code>DISABLED</code>. </p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline UpdateSnaplockConfiguration& WithPrivilegedDelete(PrivilegedDelete&& value) { SetPrivilegedDelete(std::move(value)); return *this;}

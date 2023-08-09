@@ -7,6 +7,7 @@
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/DiskIopsConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -255,6 +256,134 @@ namespace Model
     
     inline UpdateFileSystemOpenZFSConfiguration& WithDiskIopsConfiguration(DiskIopsConfiguration&& value) { SetDiskIopsConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAddRouteTableIds() const{ return m_addRouteTableIds; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+     */
+    inline bool AddRouteTableIdsHasBeenSet() const { return m_addRouteTableIdsHasBeenSet; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+     */
+    inline void SetAddRouteTableIds(const Aws::Vector<Aws::String>& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = value; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+     */
+    inline void SetAddRouteTableIds(Aws::Vector<Aws::String>&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = std::move(value); }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+     */
+    inline UpdateFileSystemOpenZFSConfiguration& WithAddRouteTableIds(const Aws::Vector<Aws::String>& value) { SetAddRouteTableIds(value); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+     */
+    inline UpdateFileSystemOpenZFSConfiguration& WithAddRouteTableIds(Aws::Vector<Aws::String>&& value) { SetAddRouteTableIds(std::move(value)); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+     */
+    inline UpdateFileSystemOpenZFSConfiguration& AddAddRouteTableIds(const Aws::String& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+     */
+    inline UpdateFileSystemOpenZFSConfiguration& AddAddRouteTableIds(Aws::String&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
+     * to associate (add) with your Amazon FSx for OpenZFS file system.</p>
+     */
+    inline UpdateFileSystemOpenZFSConfiguration& AddAddRouteTableIds(const char* value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for OpenZFS file system.
+     * You can use the API operation to retrieve the list of VPC route table IDs for a
+     * file system.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRemoveRouteTableIds() const{ return m_removeRouteTableIds; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for OpenZFS file system.
+     * You can use the API operation to retrieve the list of VPC route table IDs for a
+     * file system.</p>
+     */
+    inline bool RemoveRouteTableIdsHasBeenSet() const { return m_removeRouteTableIdsHasBeenSet; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for OpenZFS file system.
+     * You can use the API operation to retrieve the list of VPC route table IDs for a
+     * file system.</p>
+     */
+    inline void SetRemoveRouteTableIds(const Aws::Vector<Aws::String>& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = value; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for OpenZFS file system.
+     * You can use the API operation to retrieve the list of VPC route table IDs for a
+     * file system.</p>
+     */
+    inline void SetRemoveRouteTableIds(Aws::Vector<Aws::String>&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = std::move(value); }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for OpenZFS file system.
+     * You can use the API operation to retrieve the list of VPC route table IDs for a
+     * file system.</p>
+     */
+    inline UpdateFileSystemOpenZFSConfiguration& WithRemoveRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRemoveRouteTableIds(value); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for OpenZFS file system.
+     * You can use the API operation to retrieve the list of VPC route table IDs for a
+     * file system.</p>
+     */
+    inline UpdateFileSystemOpenZFSConfiguration& WithRemoveRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRemoveRouteTableIds(std::move(value)); return *this;}
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for OpenZFS file system.
+     * You can use the API operation to retrieve the list of VPC route table IDs for a
+     * file system.</p>
+     */
+    inline UpdateFileSystemOpenZFSConfiguration& AddRemoveRouteTableIds(const Aws::String& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for OpenZFS file system.
+     * You can use the API operation to retrieve the list of VPC route table IDs for a
+     * file system.</p>
+     */
+    inline UpdateFileSystemOpenZFSConfiguration& AddRemoveRouteTableIds(Aws::String&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route
+     * tables to disassociate (remove) from your Amazon FSx for OpenZFS file system.
+     * You can use the API operation to retrieve the list of VPC route table IDs for a
+     * file system.</p>
+     */
+    inline UpdateFileSystemOpenZFSConfiguration& AddRemoveRouteTableIds(const char* value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
+
   private:
 
     int m_automaticBackupRetentionDays;
@@ -277,6 +406,12 @@ namespace Model
 
     DiskIopsConfiguration m_diskIopsConfiguration;
     bool m_diskIopsConfigurationHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_addRouteTableIds;
+    bool m_addRouteTableIdsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_removeRouteTableIds;
+    bool m_removeRouteTableIdsHasBeenSet = false;
   };
 
 } // namespace Model

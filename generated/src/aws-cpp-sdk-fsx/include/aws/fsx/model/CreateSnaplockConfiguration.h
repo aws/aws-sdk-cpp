@@ -130,7 +130,7 @@ namespace Model
      * <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is
      * permanently disabled on a SnapLock volume, you can't re-enable it. The default
      * value is <code>DISABLED</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline const PrivilegedDelete& GetPrivilegedDelete() const{ return m_privilegedDelete; }
@@ -142,7 +142,7 @@ namespace Model
      * <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is
      * permanently disabled on a SnapLock volume, you can't re-enable it. The default
      * value is <code>DISABLED</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline bool PrivilegedDeleteHasBeenSet() const { return m_privilegedDeleteHasBeenSet; }
@@ -154,7 +154,7 @@ namespace Model
      * <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is
      * permanently disabled on a SnapLock volume, you can't re-enable it. The default
      * value is <code>DISABLED</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline void SetPrivilegedDelete(const PrivilegedDelete& value) { m_privilegedDeleteHasBeenSet = true; m_privilegedDelete = value; }
@@ -166,7 +166,7 @@ namespace Model
      * <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is
      * permanently disabled on a SnapLock volume, you can't re-enable it. The default
      * value is <code>DISABLED</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline void SetPrivilegedDelete(PrivilegedDelete&& value) { m_privilegedDeleteHasBeenSet = true; m_privilegedDelete = std::move(value); }
@@ -178,7 +178,7 @@ namespace Model
      * <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is
      * permanently disabled on a SnapLock volume, you can't re-enable it. The default
      * value is <code>DISABLED</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline CreateSnaplockConfiguration& WithPrivilegedDelete(const PrivilegedDelete& value) { SetPrivilegedDelete(value); return *this;}
@@ -190,7 +190,7 @@ namespace Model
      * <code>PERMANENTLY_DISABLED</code> is a terminal state. If privileged delete is
      * permanently disabled on a SnapLock volume, you can't re-enable it. The default
      * value is <code>DISABLED</code>. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#privileged-delete">Privileged
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html#privileged-delete">Privileged
      * delete</a>. </p>
      */
     inline CreateSnaplockConfiguration& WithPrivilegedDelete(PrivilegedDelete&& value) { SetPrivilegedDelete(std::move(value)); return *this;}
@@ -242,7 +242,7 @@ namespace Model
      * advance an organization's data integrity and internal compliance or to test
      * retention settings before using SnapLock Compliance. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.htmlFile">SnapLock
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html">SnapLock
      * Enterprise</a>. </p> </li> </ul>
      */
     inline const SnaplockType& GetSnaplockType() const{ return m_snaplockType; }
@@ -262,7 +262,7 @@ namespace Model
      * advance an organization's data integrity and internal compliance or to test
      * retention settings before using SnapLock Compliance. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.htmlFile">SnapLock
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html">SnapLock
      * Enterprise</a>. </p> </li> </ul>
      */
     inline bool SnaplockTypeHasBeenSet() const { return m_snaplockTypeHasBeenSet; }
@@ -282,7 +282,7 @@ namespace Model
      * advance an organization's data integrity and internal compliance or to test
      * retention settings before using SnapLock Compliance. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.htmlFile">SnapLock
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html">SnapLock
      * Enterprise</a>. </p> </li> </ul>
      */
     inline void SetSnaplockType(const SnaplockType& value) { m_snaplockTypeHasBeenSet = true; m_snaplockType = value; }
@@ -302,7 +302,7 @@ namespace Model
      * advance an organization's data integrity and internal compliance or to test
      * retention settings before using SnapLock Compliance. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.htmlFile">SnapLock
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html">SnapLock
      * Enterprise</a>. </p> </li> </ul>
      */
     inline void SetSnaplockType(SnaplockType&& value) { m_snaplockTypeHasBeenSet = true; m_snaplockType = std::move(value); }
@@ -322,7 +322,7 @@ namespace Model
      * advance an organization's data integrity and internal compliance or to test
      * retention settings before using SnapLock Compliance. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.htmlFile">SnapLock
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html">SnapLock
      * Enterprise</a>. </p> </li> </ul>
      */
     inline CreateSnaplockConfiguration& WithSnaplockType(const SnaplockType& value) { SetSnaplockType(value); return *this;}
@@ -342,7 +342,7 @@ namespace Model
      * advance an organization's data integrity and internal compliance or to test
      * retention settings before using SnapLock Compliance. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.htmlFile">SnapLock
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html">SnapLock
      * Enterprise</a>. </p> </li> </ul>
      */
     inline CreateSnaplockConfiguration& WithSnaplockType(SnaplockType&& value) { SetSnaplockType(std::move(value)); return *this;}

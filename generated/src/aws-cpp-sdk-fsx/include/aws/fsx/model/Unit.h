@@ -13,20 +13,18 @@ namespace FSx
 {
 namespace Model
 {
-  enum class OpenZFSDeploymentType
+  enum class Unit
   {
     NOT_SET,
-    SINGLE_AZ_1,
-    SINGLE_AZ_2,
-    MULTI_AZ_1
+    DAYS
   };
 
-namespace OpenZFSDeploymentTypeMapper
+namespace UnitMapper
 {
-AWS_FSX_API OpenZFSDeploymentType GetOpenZFSDeploymentTypeForName(const Aws::String& name);
+AWS_FSX_API Unit GetUnitForName(const Aws::String& name);
 
-AWS_FSX_API Aws::String GetNameForOpenZFSDeploymentType(OpenZFSDeploymentType value);
-} // namespace OpenZFSDeploymentTypeMapper
+AWS_FSX_API Aws::String GetNameForUnit(Unit value);
+} // namespace UnitMapper
 } // namespace Model
 } // namespace FSx
 } // namespace Aws

@@ -160,37 +160,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the model card that the model export job exports.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card that the model
+     * export job exports.</p>
      */
     inline const Aws::String& GetModelCardName() const{ return m_modelCardName; }
 
     /**
-     * <p>The name of the model card that the model export job exports.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card that the model
+     * export job exports.</p>
      */
     inline void SetModelCardName(const Aws::String& value) { m_modelCardName = value; }
 
     /**
-     * <p>The name of the model card that the model export job exports.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card that the model
+     * export job exports.</p>
      */
     inline void SetModelCardName(Aws::String&& value) { m_modelCardName = std::move(value); }
 
     /**
-     * <p>The name of the model card that the model export job exports.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card that the model
+     * export job exports.</p>
      */
     inline void SetModelCardName(const char* value) { m_modelCardName.assign(value); }
 
     /**
-     * <p>The name of the model card that the model export job exports.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card that the model
+     * export job exports.</p>
      */
     inline DescribeModelCardExportJobResult& WithModelCardName(const Aws::String& value) { SetModelCardName(value); return *this;}
 
     /**
-     * <p>The name of the model card that the model export job exports.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card that the model
+     * export job exports.</p>
      */
     inline DescribeModelCardExportJobResult& WithModelCardName(Aws::String&& value) { SetModelCardName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the model card that the model export job exports.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the model card that the model
+     * export job exports.</p>
      */
     inline DescribeModelCardExportJobResult& WithModelCardName(const char* value) { SetModelCardName(value); return *this;}
 

@@ -350,9 +350,9 @@ namespace Model
      * options passed in as a JSON string. For example, <code>"CompilerOptions":
      * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
      * supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
-     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a
+     * href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html">
+     * Neuron Compiler CLI Reference Guide</a>. </p> </li> <li> <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
      * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
      * <p> <code>class_labels</code>: Specifies the classification labels file name
@@ -410,9 +410,9 @@ namespace Model
      * options passed in as a JSON string. For example, <code>"CompilerOptions":
      * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
      * supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
-     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a
+     * href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html">
+     * Neuron Compiler CLI Reference Guide</a>. </p> </li> <li> <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
      * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
      * <p> <code>class_labels</code>: Specifies the classification labels file name
@@ -470,9 +470,9 @@ namespace Model
      * options passed in as a JSON string. For example, <code>"CompilerOptions":
      * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
      * supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
-     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a
+     * href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html">
+     * Neuron Compiler CLI Reference Guide</a>. </p> </li> <li> <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
      * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
      * <p> <code>class_labels</code>: Specifies the classification labels file name
@@ -530,9 +530,9 @@ namespace Model
      * options passed in as a JSON string. For example, <code>"CompilerOptions":
      * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
      * supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
-     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a
+     * href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html">
+     * Neuron Compiler CLI Reference Guide</a>. </p> </li> <li> <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
      * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
      * <p> <code>class_labels</code>: Specifies the classification labels file name
@@ -590,9 +590,9 @@ namespace Model
      * options passed in as a JSON string. For example, <code>"CompilerOptions":
      * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
      * supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
-     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a
+     * href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html">
+     * Neuron Compiler CLI Reference Guide</a>. </p> </li> <li> <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
      * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
      * <p> <code>class_labels</code>: Specifies the classification labels file name
@@ -650,9 +650,9 @@ namespace Model
      * options passed in as a JSON string. For example, <code>"CompilerOptions":
      * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
      * supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
-     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a
+     * href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html">
+     * Neuron Compiler CLI Reference Guide</a>. </p> </li> <li> <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
      * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
      * <p> <code>class_labels</code>: Specifies the classification labels file name
@@ -710,9 +710,9 @@ namespace Model
      * options passed in as a JSON string. For example, <code>"CompilerOptions":
      * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
      * supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
-     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a
+     * href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html">
+     * Neuron Compiler CLI Reference Guide</a>. </p> </li> <li> <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
      * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
      * <p> <code>class_labels</code>: Specifies the classification labels file name
@@ -770,9 +770,9 @@ namespace Model
      * options passed in as a JSON string. For example, <code>"CompilerOptions":
      * "\"--verbose 1 --num-neuroncores 2 -O2\""</code>. </p> <p>For information about
      * supported compiler options, see <a
-     * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
-     * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a
+     * href="https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/neuron-compiler-cli-reference-guide.html">
+     * Neuron Compiler CLI Reference Guide</a>. </p> </li> <li> <p>
+     * <code>CoreML</code>: Compilation for the CoreML <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
      * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
      * <p> <code>class_labels</code>: Specifies the classification labels file name
