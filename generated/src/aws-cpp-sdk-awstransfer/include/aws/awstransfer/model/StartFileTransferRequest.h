@@ -79,63 +79,81 @@ namespace Model
     /**
      * <p>One or more source paths for the Transfer Family server. Each string
      * represents a source file path for one outbound file transfer. For example,
-     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p> 
+     * <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual
+     * buckets.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetSendFilePaths() const{ return m_sendFilePaths; }
 
     /**
      * <p>One or more source paths for the Transfer Family server. Each string
      * represents a source file path for one outbound file transfer. For example,
-     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p> 
+     * <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual
+     * buckets.</p> 
      */
     inline bool SendFilePathsHasBeenSet() const { return m_sendFilePathsHasBeenSet; }
 
     /**
      * <p>One or more source paths for the Transfer Family server. Each string
      * represents a source file path for one outbound file transfer. For example,
-     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p> 
+     * <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual
+     * buckets.</p> 
      */
     inline void SetSendFilePaths(const Aws::Vector<Aws::String>& value) { m_sendFilePathsHasBeenSet = true; m_sendFilePaths = value; }
 
     /**
      * <p>One or more source paths for the Transfer Family server. Each string
      * represents a source file path for one outbound file transfer. For example,
-     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p> 
+     * <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual
+     * buckets.</p> 
      */
     inline void SetSendFilePaths(Aws::Vector<Aws::String>&& value) { m_sendFilePathsHasBeenSet = true; m_sendFilePaths = std::move(value); }
 
     /**
      * <p>One or more source paths for the Transfer Family server. Each string
      * represents a source file path for one outbound file transfer. For example,
-     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p> 
+     * <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual
+     * buckets.</p> 
      */
     inline StartFileTransferRequest& WithSendFilePaths(const Aws::Vector<Aws::String>& value) { SetSendFilePaths(value); return *this;}
 
     /**
      * <p>One or more source paths for the Transfer Family server. Each string
      * represents a source file path for one outbound file transfer. For example,
-     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p> 
+     * <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual
+     * buckets.</p> 
      */
     inline StartFileTransferRequest& WithSendFilePaths(Aws::Vector<Aws::String>&& value) { SetSendFilePaths(std::move(value)); return *this;}
 
     /**
      * <p>One or more source paths for the Transfer Family server. Each string
      * represents a source file path for one outbound file transfer. For example,
-     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p> 
+     * <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual
+     * buckets.</p> 
      */
     inline StartFileTransferRequest& AddSendFilePaths(const Aws::String& value) { m_sendFilePathsHasBeenSet = true; m_sendFilePaths.push_back(value); return *this; }
 
     /**
      * <p>One or more source paths for the Transfer Family server. Each string
      * represents a source file path for one outbound file transfer. For example,
-     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p> 
+     * <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual
+     * buckets.</p> 
      */
     inline StartFileTransferRequest& AddSendFilePaths(Aws::String&& value) { m_sendFilePathsHasBeenSet = true; m_sendFilePaths.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more source paths for the Transfer Family server. Each string
      * represents a source file path for one outbound file transfer. For example,
-     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+     * <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p> 
+     * <p>Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual
+     * buckets.</p> 
      */
     inline StartFileTransferRequest& AddSendFilePaths(const char* value) { m_sendFilePathsHasBeenSet = true; m_sendFilePaths.push_back(value); return *this; }
 

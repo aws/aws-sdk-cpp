@@ -158,26 +158,26 @@ namespace Model
 
 
     /**
-     * <p>The port on which the targets are listening. Not used if the target is a
-     * Lambda function.</p>
+     * <p>The port on which the targets are listening. This parameter is not used if
+     * the target is a Lambda function.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port on which the targets are listening. Not used if the target is a
-     * Lambda function.</p>
+     * <p>The port on which the targets are listening. This parameter is not used if
+     * the target is a Lambda function.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port on which the targets are listening. Not used if the target is a
-     * Lambda function.</p>
+     * <p>The port on which the targets are listening. This parameter is not used if
+     * the target is a Lambda function.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port on which the targets are listening. Not used if the target is a
-     * Lambda function.</p>
+     * <p>The port on which the targets are listening. This parameter is not used if
+     * the target is a Lambda function.</p>
      */
     inline TargetGroup& WithPort(int value) { SetPort(value); return *this;}
 
@@ -501,56 +501,65 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
-     * this target group.</p>
+     * <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to
+     * this target group. You can use each target group with only one load
+     * balancer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerArns() const{ return m_loadBalancerArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
-     * this target group.</p>
+     * <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to
+     * this target group. You can use each target group with only one load
+     * balancer.</p>
      */
     inline bool LoadBalancerArnsHasBeenSet() const { return m_loadBalancerArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
-     * this target group.</p>
+     * <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to
+     * this target group. You can use each target group with only one load
+     * balancer.</p>
      */
     inline void SetLoadBalancerArns(const Aws::Vector<Aws::String>& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
-     * this target group.</p>
+     * <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to
+     * this target group. You can use each target group with only one load
+     * balancer.</p>
      */
     inline void SetLoadBalancerArns(Aws::Vector<Aws::String>&& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
-     * this target group.</p>
+     * <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to
+     * this target group. You can use each target group with only one load
+     * balancer.</p>
      */
     inline TargetGroup& WithLoadBalancerArns(const Aws::Vector<Aws::String>& value) { SetLoadBalancerArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
-     * this target group.</p>
+     * <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to
+     * this target group. You can use each target group with only one load
+     * balancer.</p>
      */
     inline TargetGroup& WithLoadBalancerArns(Aws::Vector<Aws::String>&& value) { SetLoadBalancerArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
-     * this target group.</p>
+     * <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to
+     * this target group. You can use each target group with only one load
+     * balancer.</p>
      */
     inline TargetGroup& AddLoadBalancerArns(const Aws::String& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
-     * this target group.</p>
+     * <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to
+     * this target group. You can use each target group with only one load
+     * balancer.</p>
      */
     inline TargetGroup& AddLoadBalancerArns(Aws::String&& value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the load balancers that route traffic to
-     * this target group.</p>
+     * <p>The Amazon Resource Name (ARN) of the load balancer that routes traffic to
+     * this target group. You can use each target group with only one load
+     * balancer.</p>
      */
     inline TargetGroup& AddLoadBalancerArns(const char* value) { m_loadBalancerArnsHasBeenSet = true; m_loadBalancerArns.push_back(value); return *this; }
 

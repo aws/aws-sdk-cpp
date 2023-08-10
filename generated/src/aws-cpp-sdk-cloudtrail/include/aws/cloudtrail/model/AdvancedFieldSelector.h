@@ -83,14 +83,18 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
-     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
-     * one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
+     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
+     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -164,10 +168,20 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:::networks/&lt;network_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:medical-imaging:&lt;region&gt;:&lt;account_ID&gt;:datastore/&lt;data_store_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -198,6 +212,16 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:verifiedpermissions:&lt;region&gt;:&lt;account_ID&gt;:policy-store/&lt;policy_store_UUID&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetField() const{ return m_field; }
@@ -246,14 +270,18 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
-     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
-     * one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
+     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
+     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -327,10 +355,20 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:::networks/&lt;network_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:medical-imaging:&lt;region&gt;:&lt;account_ID&gt;:datastore/&lt;data_store_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -361,6 +399,16 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:verifiedpermissions:&lt;region&gt;:&lt;account_ID&gt;:policy-store/&lt;policy_store_UUID&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
@@ -409,14 +457,18 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
-     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
-     * one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
+     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
+     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -490,10 +542,20 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:::networks/&lt;network_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:medical-imaging:&lt;region&gt;:&lt;account_ID&gt;:datastore/&lt;data_store_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -524,6 +586,16 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:verifiedpermissions:&lt;region&gt;:&lt;account_ID&gt;:policy-store/&lt;policy_store_UUID&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
@@ -572,14 +644,18 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
-     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
-     * one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
+     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
+     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -653,10 +729,20 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:::networks/&lt;network_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:medical-imaging:&lt;region&gt;:&lt;account_ID&gt;:datastore/&lt;data_store_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -687,6 +773,16 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:verifiedpermissions:&lt;region&gt;:&lt;account_ID&gt;:policy-store/&lt;policy_store_UUID&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
@@ -735,14 +831,18 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
-     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
-     * one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
+     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
+     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -816,10 +916,20 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:::networks/&lt;network_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:medical-imaging:&lt;region&gt;:&lt;account_ID&gt;:datastore/&lt;data_store_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -850,6 +960,16 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:verifiedpermissions:&lt;region&gt;:&lt;account_ID&gt;:policy-store/&lt;policy_store_UUID&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
@@ -898,14 +1018,18 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
-     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
-     * one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
+     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
+     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -979,10 +1103,20 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:::networks/&lt;network_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:medical-imaging:&lt;region&gt;:&lt;account_ID&gt;:datastore/&lt;data_store_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -1013,6 +1147,16 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:verifiedpermissions:&lt;region&gt;:&lt;account_ID&gt;:policy-store/&lt;policy_store_UUID&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(const Aws::String& value) { SetField(value); return *this;}
@@ -1061,14 +1205,18 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
-     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
-     * one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
+     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
+     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -1142,10 +1290,20 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:::networks/&lt;network_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:medical-imaging:&lt;region&gt;:&lt;account_ID&gt;:datastore/&lt;data_store_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -1176,6 +1334,16 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:verifiedpermissions:&lt;region&gt;:&lt;account_ID&gt;:policy-store/&lt;policy_store_UUID&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
@@ -1224,14 +1392,18 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
-     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
-     * one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul> <p> You can
+     * have only one <code>resources.type</code> ﬁeld per selector. To log data events
+     * on more than one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -1305,10 +1477,20 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Network</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:::networks/&lt;network_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::MedicalImaging::Datastore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:medical-imaging:&lt;region&gt;:&lt;account_ID&gt;:datastore/&lt;data_store_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -1339,6 +1521,16 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:ssmmessages:&lt;region&gt;:&lt;account_ID&gt;:control-channel/&lt;channel_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::VerifiedPermissions::PolicyStore</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:verifiedpermissions:&lt;region&gt;:&lt;account_ID&gt;:policy-store/&lt;policy_store_UUID&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(const char* value) { SetField(value); return *this;}

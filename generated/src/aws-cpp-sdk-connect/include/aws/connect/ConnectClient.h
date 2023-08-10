@@ -400,6 +400,32 @@ namespace Connect
         }
 
         /**
+         * <p>Associates an agent with a traffic distribution group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateTrafficDistributionGroupUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateTrafficDistributionGroupUserOutcome AssociateTrafficDistributionGroupUser(const Model::AssociateTrafficDistributionGroupUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateTrafficDistributionGroupUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateTrafficDistributionGroupUserRequestT = Model::AssociateTrafficDistributionGroupUserRequest>
+        Model::AssociateTrafficDistributionGroupUserOutcomeCallable AssociateTrafficDistributionGroupUserCallable(const AssociateTrafficDistributionGroupUserRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::AssociateTrafficDistributionGroupUser, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateTrafficDistributionGroupUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateTrafficDistributionGroupUserRequestT = Model::AssociateTrafficDistributionGroupUserRequest>
+        void AssociateTrafficDistributionGroupUserAsync(const AssociateTrafficDistributionGroupUserRequestT& request, const AssociateTrafficDistributionGroupUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::AssociateTrafficDistributionGroupUser, request, handler, context);
+        }
+
+        /**
          * <p>Claims an available phone number to your Amazon Connect instance or traffic
          * distribution group. You can call this API only in the same Amazon Web Services
          * Region where the Amazon Connect instance or traffic distribution group was
@@ -2393,6 +2419,32 @@ namespace Connect
         }
 
         /**
+         * <p>Disassociates an agent from a traffic distribution group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateTrafficDistributionGroupUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateTrafficDistributionGroupUserOutcome DisassociateTrafficDistributionGroupUser(const Model::DisassociateTrafficDistributionGroupUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateTrafficDistributionGroupUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateTrafficDistributionGroupUserRequestT = Model::DisassociateTrafficDistributionGroupUserRequest>
+        Model::DisassociateTrafficDistributionGroupUserOutcomeCallable DisassociateTrafficDistributionGroupUserCallable(const DisassociateTrafficDistributionGroupUserRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DisassociateTrafficDistributionGroupUser, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateTrafficDistributionGroupUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateTrafficDistributionGroupUserRequestT = Model::DisassociateTrafficDistributionGroupUserRequest>
+        void DisassociateTrafficDistributionGroupUserAsync(const DisassociateTrafficDistributionGroupUserRequestT& request, const DisassociateTrafficDistributionGroupUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DisassociateTrafficDistributionGroupUser, request, handler, context);
+        }
+
+        /**
          * <p>Dismisses contacts from an agent’s CCP and returns the agent to an available
          * state, which allows the agent to receive a new routed contact. Contacts can only
          * be dismissed if they are in a <code>MISSED</code>, <code>ERROR</code>,
@@ -3182,7 +3234,11 @@ namespace Connect
          * phone numbers, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
          * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Administrator Guide</i>.</p>  <ul> <li> <p>When given an instance ARN,
+         * <code>ListPhoneNumbersV2</code> returns only the phone numbers claimed to the
+         * instance.</p> </li> <li> <p>When given a traffic distribution group ARN
+         * <code>ListPhoneNumbersV2</code> returns only the phone numbers claimed to the
+         * traffic distribution group.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbersV2">AWS
          * API Reference</a></p>
          */
@@ -3539,6 +3595,31 @@ namespace Connect
         void ListTaskTemplatesAsync(const ListTaskTemplatesRequestT& request, const ListTaskTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListTaskTemplates, request, handler, context);
+        }
+
+        /**
+         * <p>Lists traffic distribution group users.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroupUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrafficDistributionGroupUsersOutcome ListTrafficDistributionGroupUsers(const Model::ListTrafficDistributionGroupUsersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTrafficDistributionGroupUsers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTrafficDistributionGroupUsersRequestT = Model::ListTrafficDistributionGroupUsersRequest>
+        Model::ListTrafficDistributionGroupUsersOutcomeCallable ListTrafficDistributionGroupUsersCallable(const ListTrafficDistributionGroupUsersRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListTrafficDistributionGroupUsers, request);
+        }
+
+        /**
+         * An Async wrapper for ListTrafficDistributionGroupUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTrafficDistributionGroupUsersRequestT = Model::ListTrafficDistributionGroupUsersRequest>
+        void ListTrafficDistributionGroupUsersAsync(const ListTrafficDistributionGroupUsersRequestT& request, const ListTrafficDistributionGroupUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListTrafficDistributionGroupUsers, request, handler, context);
         }
 
         /**
@@ -5429,7 +5510,12 @@ namespace Connect
 
         /**
          * <p>Updates the traffic distribution for a given traffic distribution group. </p>
-         * <p>For more information about updating a traffic distribution group, see <a
+         *  <p>You can change the <code>SignInConfig</code> only for a default
+         * <code>TrafficDistributionGroup</code>. If you call
+         * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+         * and a non-default <code>TrafficDistributionGroup</code>, an
+         * <code>InvalidRequestException</code> is returned.</p>  <p>For more
+         * information about updating a traffic distribution group, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
          * telephony traffic distribution across Amazon Web Services Regions </a> in the
          * <i>Amazon Connect Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a

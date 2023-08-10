@@ -150,12 +150,15 @@ namespace Transfer
         }
 
         /**
-         * <p>Creates the connector, which captures the parameters for an outbound
-         * connection for the AS2 or SFTP protocol. The connector is required for sending
-         * files to an externally hosted AS2 or SFTP server. For more details about AS2
-         * connectors, see <a
+         * <p>Creates the connector, which captures the parameters for a connection for the
+         * AS2 or SFTP protocol. For AS2, the connector is required for sending files to an
+         * externally hosted AS2 server. For SFTP, the connector is required when sending
+         * files to an SFTP server or receiving files from an SFTP server. For more details
+         * about connectors, see <a
          * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
-         * AS2 connectors</a>.</p>  <p>You must specify exactly one configuration
+         * AS2 connectors</a> and <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-sftp-connector.html">Create
+         * SFTP connectors</a>.</p>  <p>You must specify exactly one configuration
          * object: either for AS2 (<code>As2Config</code>) or SFTP
          * (<code>SftpConfig</code>).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">AWS
@@ -1300,7 +1303,7 @@ namespace Transfer
          * file transfer can be either outbound or inbound. In both cases, you specify the
          * <code>ConnectorId</code>. Depending on the direction of the transfer, you also
          * specify the following items:</p> <ul> <li> <p>If you are transferring file from
-         * a partner's SFTP server to a Transfer Family server, you specify one or more
+         * a partner's SFTP server to Amazon Web Services storage, you specify one or more
          * <code>RetreiveFilePaths</code> to identify the files you want to transfer, and a
          * <code>LocalDirectoryPath</code> to specify the destination folder.</p> </li>
          * <li> <p>If you are transferring file to a partner's SFTP server from Amazon Web

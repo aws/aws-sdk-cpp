@@ -423,7 +423,8 @@ namespace ElasticLoadBalancingv2
         /**
          * <p>Deregisters the specified targets from the specified target group. After the
          * targets are deregistered, they no longer receive traffic from the load
-         * balancer.</p><p><h3>See Also:</h3>   <a
+         * balancer.</p> <p>Note: If the specified target does not exist, the action
+         * returns successfully.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets">AWS
          * API Reference</a></p>
          */
@@ -1067,9 +1068,11 @@ namespace ElasticLoadBalancingv2
 
         /**
          * <p>Associates the specified security groups with the specified Application Load
-         * Balancer. The specified security groups override the previously associated
-         * security groups.</p> <p>You can't specify a security group for a Network Load
-         * Balancer or Gateway Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * Balancer or Network Load Balancer. The specified security groups override the
+         * previously associated security groups.</p> <p>You can't perform this operation
+         * on a Network Load Balancer unless you specified a security group for the load
+         * balancer when you created it.</p> <p>You can't associate a security group with a
+         * Gateway Load Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">AWS
          * API Reference</a></p>
          */

@@ -444,43 +444,43 @@ namespace Model
 
     /**
      * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
+     * calculated based on <i>longest idle time</i> or <i>time since their last inbound
+     * contact</i>. </p>
      */
     inline const AgentAvailabilityTimer& GetAgentAvailabilityTimer() const{ return m_agentAvailabilityTimer; }
 
     /**
      * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
+     * calculated based on <i>longest idle time</i> or <i>time since their last inbound
+     * contact</i>. </p>
      */
     inline bool AgentAvailabilityTimerHasBeenSet() const { return m_agentAvailabilityTimerHasBeenSet; }
 
     /**
      * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
+     * calculated based on <i>longest idle time</i> or <i>time since their last inbound
+     * contact</i>. </p>
      */
     inline void SetAgentAvailabilityTimer(const AgentAvailabilityTimer& value) { m_agentAvailabilityTimerHasBeenSet = true; m_agentAvailabilityTimer = value; }
 
     /**
      * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
+     * calculated based on <i>longest idle time</i> or <i>time since their last inbound
+     * contact</i>. </p>
      */
     inline void SetAgentAvailabilityTimer(AgentAvailabilityTimer&& value) { m_agentAvailabilityTimerHasBeenSet = true; m_agentAvailabilityTimer = std::move(value); }
 
     /**
      * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
+     * calculated based on <i>longest idle time</i> or <i>time since their last inbound
+     * contact</i>. </p>
      */
     inline CreateRoutingProfileRequest& WithAgentAvailabilityTimer(const AgentAvailabilityTimer& value) { SetAgentAvailabilityTimer(value); return *this;}
 
     /**
      * <p>Whether agents with this routing profile will have their routing order
-     * calculated based on <i>time since their last inbound contact</i> or <i>longest
-     * idle time</i>. </p>
+     * calculated based on <i>longest idle time</i> or <i>time since their last inbound
+     * contact</i>. </p>
      */
     inline CreateRoutingProfileRequest& WithAgentAvailabilityTimer(AgentAvailabilityTimer&& value) { SetAgentAvailabilityTimer(std::move(value)); return *this;}
 

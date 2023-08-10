@@ -132,37 +132,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the user.</p>
+     * <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The identifier for the user.</p>
+     * <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userId = value; }
 
     /**
-     * <p>The identifier for the user.</p>
+     * <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userId = std::move(value); }
 
     /**
-     * <p>The identifier for the user.</p>
+     * <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
      */
     inline void SetUserId(const char* value) { m_userId.assign(value); }
 
     /**
-     * <p>The identifier for the user.</p>
+     * <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
      */
     inline GetFederationTokenResult& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The identifier for the user.</p>
+     * <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
      */
     inline GetFederationTokenResult& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the user.</p>
+     * <p>The identifier for the user. This can be the ID or the ARN of the user.</p>
      */
     inline GetFederationTokenResult& WithUserId(const char* value) { SetUserId(value); return *this;}
 
