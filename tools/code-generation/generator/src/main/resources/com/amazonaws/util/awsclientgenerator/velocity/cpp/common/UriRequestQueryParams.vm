@@ -1,5 +1,5 @@
 #if($serviceModel.endpointRules)
-#if(($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled) || $serviceNamespace == "TranscribeStreamingService" || ($serviceNamespace == "LexRuntimeV2" && $operation.name == "StartConversation"))
+#if(($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled) || $operation.getRequest().getShape().hasEventStreamMembers())
 #set($meterNeeded = true)
 #set($indent = "")
 #else
