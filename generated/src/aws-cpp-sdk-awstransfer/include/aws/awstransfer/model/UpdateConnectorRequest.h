@@ -150,9 +150,12 @@ namespace Model
 
 
     /**
-     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
-     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
-     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * <p>Connectors are used to send files using either the AS2 or SFTP protocol. For
+     * the access role, provide the Amazon Resource Name (ARN) of the Identity and
+     * Access Management role to use.</p> <p> <b>For AS2 connectors</b> </p> <p>With
+     * AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
+     * the file paths in the request parameter, <code>SendFilePaths</code>. We use the
+     * file’s parent directory (for example, for <code>--send-file-paths
      * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
      * temporarily store a processed AS2 message file, store the MDN when we receive
      * them from the partner, and write a final JSON file containing relevant metadata
@@ -165,14 +168,22 @@ namespace Model
      * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
      * secret is encrypted using a customer-managed key instead of the Amazon Web
      * Services managed key in Secrets Manager, then the role also needs the
-     * <code>kms:Decrypt</code> permission for that key.</p>
+     * <code>kms:Decrypt</code> permission for that key.</p> <p> <b>For SFTP
+     * connectors</b> </p> <p>Make sure that the access role provides read and write
+     * access to the parent directory of the file location that's used in the
+     * <code>StartFileTransfer</code> request. Additionally, make sure that the role
+     * provides <code>secretsmanager:GetSecretValue</code> permission to Secrets
+     * Manager.</p>
      */
     inline const Aws::String& GetAccessRole() const{ return m_accessRole; }
 
     /**
-     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
-     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
-     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * <p>Connectors are used to send files using either the AS2 or SFTP protocol. For
+     * the access role, provide the Amazon Resource Name (ARN) of the Identity and
+     * Access Management role to use.</p> <p> <b>For AS2 connectors</b> </p> <p>With
+     * AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
+     * the file paths in the request parameter, <code>SendFilePaths</code>. We use the
+     * file’s parent directory (for example, for <code>--send-file-paths
      * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
      * temporarily store a processed AS2 message file, store the MDN when we receive
      * them from the partner, and write a final JSON file containing relevant metadata
@@ -185,14 +196,22 @@ namespace Model
      * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
      * secret is encrypted using a customer-managed key instead of the Amazon Web
      * Services managed key in Secrets Manager, then the role also needs the
-     * <code>kms:Decrypt</code> permission for that key.</p>
+     * <code>kms:Decrypt</code> permission for that key.</p> <p> <b>For SFTP
+     * connectors</b> </p> <p>Make sure that the access role provides read and write
+     * access to the parent directory of the file location that's used in the
+     * <code>StartFileTransfer</code> request. Additionally, make sure that the role
+     * provides <code>secretsmanager:GetSecretValue</code> permission to Secrets
+     * Manager.</p>
      */
     inline bool AccessRoleHasBeenSet() const { return m_accessRoleHasBeenSet; }
 
     /**
-     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
-     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
-     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * <p>Connectors are used to send files using either the AS2 or SFTP protocol. For
+     * the access role, provide the Amazon Resource Name (ARN) of the Identity and
+     * Access Management role to use.</p> <p> <b>For AS2 connectors</b> </p> <p>With
+     * AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
+     * the file paths in the request parameter, <code>SendFilePaths</code>. We use the
+     * file’s parent directory (for example, for <code>--send-file-paths
      * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
      * temporarily store a processed AS2 message file, store the MDN when we receive
      * them from the partner, and write a final JSON file containing relevant metadata
@@ -205,14 +224,22 @@ namespace Model
      * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
      * secret is encrypted using a customer-managed key instead of the Amazon Web
      * Services managed key in Secrets Manager, then the role also needs the
-     * <code>kms:Decrypt</code> permission for that key.</p>
+     * <code>kms:Decrypt</code> permission for that key.</p> <p> <b>For SFTP
+     * connectors</b> </p> <p>Make sure that the access role provides read and write
+     * access to the parent directory of the file location that's used in the
+     * <code>StartFileTransfer</code> request. Additionally, make sure that the role
+     * provides <code>secretsmanager:GetSecretValue</code> permission to Secrets
+     * Manager.</p>
      */
     inline void SetAccessRole(const Aws::String& value) { m_accessRoleHasBeenSet = true; m_accessRole = value; }
 
     /**
-     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
-     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
-     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * <p>Connectors are used to send files using either the AS2 or SFTP protocol. For
+     * the access role, provide the Amazon Resource Name (ARN) of the Identity and
+     * Access Management role to use.</p> <p> <b>For AS2 connectors</b> </p> <p>With
+     * AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
+     * the file paths in the request parameter, <code>SendFilePaths</code>. We use the
+     * file’s parent directory (for example, for <code>--send-file-paths
      * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
      * temporarily store a processed AS2 message file, store the MDN when we receive
      * them from the partner, and write a final JSON file containing relevant metadata
@@ -225,14 +252,22 @@ namespace Model
      * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
      * secret is encrypted using a customer-managed key instead of the Amazon Web
      * Services managed key in Secrets Manager, then the role also needs the
-     * <code>kms:Decrypt</code> permission for that key.</p>
+     * <code>kms:Decrypt</code> permission for that key.</p> <p> <b>For SFTP
+     * connectors</b> </p> <p>Make sure that the access role provides read and write
+     * access to the parent directory of the file location that's used in the
+     * <code>StartFileTransfer</code> request. Additionally, make sure that the role
+     * provides <code>secretsmanager:GetSecretValue</code> permission to Secrets
+     * Manager.</p>
      */
     inline void SetAccessRole(Aws::String&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::move(value); }
 
     /**
-     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
-     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
-     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * <p>Connectors are used to send files using either the AS2 or SFTP protocol. For
+     * the access role, provide the Amazon Resource Name (ARN) of the Identity and
+     * Access Management role to use.</p> <p> <b>For AS2 connectors</b> </p> <p>With
+     * AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
+     * the file paths in the request parameter, <code>SendFilePaths</code>. We use the
+     * file’s parent directory (for example, for <code>--send-file-paths
      * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
      * temporarily store a processed AS2 message file, store the MDN when we receive
      * them from the partner, and write a final JSON file containing relevant metadata
@@ -245,14 +280,22 @@ namespace Model
      * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
      * secret is encrypted using a customer-managed key instead of the Amazon Web
      * Services managed key in Secrets Manager, then the role also needs the
-     * <code>kms:Decrypt</code> permission for that key.</p>
+     * <code>kms:Decrypt</code> permission for that key.</p> <p> <b>For SFTP
+     * connectors</b> </p> <p>Make sure that the access role provides read and write
+     * access to the parent directory of the file location that's used in the
+     * <code>StartFileTransfer</code> request. Additionally, make sure that the role
+     * provides <code>secretsmanager:GetSecretValue</code> permission to Secrets
+     * Manager.</p>
      */
     inline void SetAccessRole(const char* value) { m_accessRoleHasBeenSet = true; m_accessRole.assign(value); }
 
     /**
-     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
-     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
-     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * <p>Connectors are used to send files using either the AS2 or SFTP protocol. For
+     * the access role, provide the Amazon Resource Name (ARN) of the Identity and
+     * Access Management role to use.</p> <p> <b>For AS2 connectors</b> </p> <p>With
+     * AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
+     * the file paths in the request parameter, <code>SendFilePaths</code>. We use the
+     * file’s parent directory (for example, for <code>--send-file-paths
      * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
      * temporarily store a processed AS2 message file, store the MDN when we receive
      * them from the partner, and write a final JSON file containing relevant metadata
@@ -265,14 +308,22 @@ namespace Model
      * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
      * secret is encrypted using a customer-managed key instead of the Amazon Web
      * Services managed key in Secrets Manager, then the role also needs the
-     * <code>kms:Decrypt</code> permission for that key.</p>
+     * <code>kms:Decrypt</code> permission for that key.</p> <p> <b>For SFTP
+     * connectors</b> </p> <p>Make sure that the access role provides read and write
+     * access to the parent directory of the file location that's used in the
+     * <code>StartFileTransfer</code> request. Additionally, make sure that the role
+     * provides <code>secretsmanager:GetSecretValue</code> permission to Secrets
+     * Manager.</p>
      */
     inline UpdateConnectorRequest& WithAccessRole(const Aws::String& value) { SetAccessRole(value); return *this;}
 
     /**
-     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
-     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
-     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * <p>Connectors are used to send files using either the AS2 or SFTP protocol. For
+     * the access role, provide the Amazon Resource Name (ARN) of the Identity and
+     * Access Management role to use.</p> <p> <b>For AS2 connectors</b> </p> <p>With
+     * AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
+     * the file paths in the request parameter, <code>SendFilePaths</code>. We use the
+     * file’s parent directory (for example, for <code>--send-file-paths
      * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
      * temporarily store a processed AS2 message file, store the MDN when we receive
      * them from the partner, and write a final JSON file containing relevant metadata
@@ -285,14 +336,22 @@ namespace Model
      * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
      * secret is encrypted using a customer-managed key instead of the Amazon Web
      * Services managed key in Secrets Manager, then the role also needs the
-     * <code>kms:Decrypt</code> permission for that key.</p>
+     * <code>kms:Decrypt</code> permission for that key.</p> <p> <b>For SFTP
+     * connectors</b> </p> <p>Make sure that the access role provides read and write
+     * access to the parent directory of the file location that's used in the
+     * <code>StartFileTransfer</code> request. Additionally, make sure that the role
+     * provides <code>secretsmanager:GetSecretValue</code> permission to Secrets
+     * Manager.</p>
      */
     inline UpdateConnectorRequest& WithAccessRole(Aws::String&& value) { SetAccessRole(std::move(value)); return *this;}
 
     /**
-     * <p>With AS2, you can send files by calling <code>StartFileTransfer</code> and
-     * specifying the file paths in the request parameter, <code>SendFilePaths</code>.
-     * We use the file’s parent directory (for example, for <code>--send-file-paths
+     * <p>Connectors are used to send files using either the AS2 or SFTP protocol. For
+     * the access role, provide the Amazon Resource Name (ARN) of the Identity and
+     * Access Management role to use.</p> <p> <b>For AS2 connectors</b> </p> <p>With
+     * AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
+     * the file paths in the request parameter, <code>SendFilePaths</code>. We use the
+     * file’s parent directory (for example, for <code>--send-file-paths
      * /bucket/dir/file.txt</code>, parent directory is <code>/bucket/dir/</code>) to
      * temporarily store a processed AS2 message file, store the MDN when we receive
      * them from the partner, and write a final JSON file containing relevant metadata
@@ -305,7 +364,12 @@ namespace Model
      * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
      * secret is encrypted using a customer-managed key instead of the Amazon Web
      * Services managed key in Secrets Manager, then the role also needs the
-     * <code>kms:Decrypt</code> permission for that key.</p>
+     * <code>kms:Decrypt</code> permission for that key.</p> <p> <b>For SFTP
+     * connectors</b> </p> <p>Make sure that the access role provides read and write
+     * access to the parent directory of the file location that's used in the
+     * <code>StartFileTransfer</code> request. Additionally, make sure that the role
+     * provides <code>secretsmanager:GetSecretValue</code> permission to Secrets
+     * Manager.</p>
      */
     inline UpdateConnectorRequest& WithAccessRole(const char* value) { SetAccessRole(value); return *this;}
 

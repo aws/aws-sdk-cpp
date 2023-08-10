@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -75,6 +76,37 @@ namespace Model
     inline SetSecurityGroupsResult& AddSecurityGroupIds(const char* value) { m_securityGroupIds.push_back(value); return *this; }
 
 
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline const EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum& GetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() const{ return m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic; }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline void SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(const EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum& value) { m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = value; }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline void SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum&& value) { m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = std::move(value); }
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline SetSecurityGroupsResult& WithEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(const EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum& value) { SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(value); return *this;}
+
+    /**
+     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
+     * to a Network Load Balancer through Amazon Web Services PrivateLink.</p>
+     */
+    inline SetSecurityGroupsResult& WithEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum&& value) { SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -93,6 +125,8 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_securityGroupIds;
+
+    EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
 
     ResponseMetadata m_responseMetadata;
   };

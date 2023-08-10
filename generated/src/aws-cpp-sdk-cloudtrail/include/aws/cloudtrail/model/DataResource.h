@@ -95,12 +95,16 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
@@ -125,12 +129,16 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -155,12 +163,16 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -185,12 +197,16 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -215,12 +231,16 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
@@ -245,12 +265,16 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
@@ -275,12 +299,16 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline DataResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
@@ -305,12 +333,16 @@ namespace Model
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
      * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
+     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
      * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
      * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
+     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> </ul>
      */
     inline DataResource& WithType(const char* value) { SetType(value); return *this;}
 

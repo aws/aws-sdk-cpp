@@ -364,6 +364,39 @@ namespace Model
      */
     inline TrafficDistributionGroupSummary& WithStatus(TrafficDistributionGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether this is the default traffic distribution group created during
+     * instance replication. The default traffic distribution group cannot be deleted
+     * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.</p>
+     */
+    inline bool GetIsDefault() const{ return m_isDefault; }
+
+    /**
+     * <p>Whether this is the default traffic distribution group created during
+     * instance replication. The default traffic distribution group cannot be deleted
+     * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.</p>
+     */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+
+    /**
+     * <p>Whether this is the default traffic distribution group created during
+     * instance replication. The default traffic distribution group cannot be deleted
+     * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.</p>
+     */
+    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
+
+    /**
+     * <p>Whether this is the default traffic distribution group created during
+     * instance replication. The default traffic distribution group cannot be deleted
+     * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.</p>
+     */
+    inline TrafficDistributionGroupSummary& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -380,6 +413,9 @@ namespace Model
 
     TrafficDistributionGroupStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    bool m_isDefault;
+    bool m_isDefaultHasBeenSet = false;
   };
 
 } // namespace Model

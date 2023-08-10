@@ -485,6 +485,59 @@ namespace Model
      */
     inline TrafficDistributionGroup& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Whether this is the default traffic distribution group created during
+     * instance replication. The default traffic distribution group cannot be deleted
+     * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.</p>
+     *  <p>You can change the <code>SignInConfig</code> only for a default
+     * <code>TrafficDistributionGroup</code>. If you call
+     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+     * and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.</p> 
+     */
+    inline bool GetIsDefault() const{ return m_isDefault; }
+
+    /**
+     * <p>Whether this is the default traffic distribution group created during
+     * instance replication. The default traffic distribution group cannot be deleted
+     * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.</p>
+     *  <p>You can change the <code>SignInConfig</code> only for a default
+     * <code>TrafficDistributionGroup</code>. If you call
+     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+     * and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.</p> 
+     */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+
+    /**
+     * <p>Whether this is the default traffic distribution group created during
+     * instance replication. The default traffic distribution group cannot be deleted
+     * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.</p>
+     *  <p>You can change the <code>SignInConfig</code> only for a default
+     * <code>TrafficDistributionGroup</code>. If you call
+     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+     * and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.</p> 
+     */
+    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
+
+    /**
+     * <p>Whether this is the default traffic distribution group created during
+     * instance replication. The default traffic distribution group cannot be deleted
+     * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
+     * distribution group is deleted as part of the process for deleting a replica.</p>
+     *  <p>You can change the <code>SignInConfig</code> only for a default
+     * <code>TrafficDistributionGroup</code>. If you call
+     * <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
+     * and a non-default <code>TrafficDistributionGroup</code>, an
+     * <code>InvalidRequestException</code> is returned.</p> 
+     */
+    inline TrafficDistributionGroup& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -507,6 +560,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    bool m_isDefault;
+    bool m_isDefaultHasBeenSet = false;
   };
 
 } // namespace Model

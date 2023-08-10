@@ -12,7 +12,9 @@ using namespace Aws::Utils;
 
 SetSecurityGroupsRequest::SetSecurityGroupsRequest() : 
     m_loadBalancerArnHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::NOT_SET),
+    m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,11 @@ Aws::String SetSecurityGroupsRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupsCount++;
     }
+  }
+
+  if(m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet)
+  {
+    ss << "EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic=" << EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnumMapper::GetNameForEnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum(m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic) << "&";
   }
 
   ss << "Version=2015-12-01";
