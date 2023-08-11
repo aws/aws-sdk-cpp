@@ -135,93 +135,93 @@ namespace Model
 
     /**
      * <p>Human-readable text for the bounce message to explain the failure. If not
-     * specified, the text will be auto-generated based on the bounced recipient
+     * specified, the text is auto-generated based on the bounced recipient
      * information.</p>
      */
     inline const Aws::String& GetExplanation() const{ return m_explanation; }
 
     /**
      * <p>Human-readable text for the bounce message to explain the failure. If not
-     * specified, the text will be auto-generated based on the bounced recipient
+     * specified, the text is auto-generated based on the bounced recipient
      * information.</p>
      */
     inline bool ExplanationHasBeenSet() const { return m_explanationHasBeenSet; }
 
     /**
      * <p>Human-readable text for the bounce message to explain the failure. If not
-     * specified, the text will be auto-generated based on the bounced recipient
+     * specified, the text is auto-generated based on the bounced recipient
      * information.</p>
      */
     inline void SetExplanation(const Aws::String& value) { m_explanationHasBeenSet = true; m_explanation = value; }
 
     /**
      * <p>Human-readable text for the bounce message to explain the failure. If not
-     * specified, the text will be auto-generated based on the bounced recipient
+     * specified, the text is auto-generated based on the bounced recipient
      * information.</p>
      */
     inline void SetExplanation(Aws::String&& value) { m_explanationHasBeenSet = true; m_explanation = std::move(value); }
 
     /**
      * <p>Human-readable text for the bounce message to explain the failure. If not
-     * specified, the text will be auto-generated based on the bounced recipient
+     * specified, the text is auto-generated based on the bounced recipient
      * information.</p>
      */
     inline void SetExplanation(const char* value) { m_explanationHasBeenSet = true; m_explanation.assign(value); }
 
     /**
      * <p>Human-readable text for the bounce message to explain the failure. If not
-     * specified, the text will be auto-generated based on the bounced recipient
+     * specified, the text is auto-generated based on the bounced recipient
      * information.</p>
      */
     inline SendBounceRequest& WithExplanation(const Aws::String& value) { SetExplanation(value); return *this;}
 
     /**
      * <p>Human-readable text for the bounce message to explain the failure. If not
-     * specified, the text will be auto-generated based on the bounced recipient
+     * specified, the text is auto-generated based on the bounced recipient
      * information.</p>
      */
     inline SendBounceRequest& WithExplanation(Aws::String&& value) { SetExplanation(std::move(value)); return *this;}
 
     /**
      * <p>Human-readable text for the bounce message to explain the failure. If not
-     * specified, the text will be auto-generated based on the bounced recipient
+     * specified, the text is auto-generated based on the bounced recipient
      * information.</p>
      */
     inline SendBounceRequest& WithExplanation(const char* value) { SetExplanation(value); return *this;}
 
 
     /**
-     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * <p>Message-related DSN fields. If not specified, Amazon SES chooses the
      * values.</p>
      */
     inline const MessageDsn& GetMessageDsn() const{ return m_messageDsn; }
 
     /**
-     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * <p>Message-related DSN fields. If not specified, Amazon SES chooses the
      * values.</p>
      */
     inline bool MessageDsnHasBeenSet() const { return m_messageDsnHasBeenSet; }
 
     /**
-     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * <p>Message-related DSN fields. If not specified, Amazon SES chooses the
      * values.</p>
      */
     inline void SetMessageDsn(const MessageDsn& value) { m_messageDsnHasBeenSet = true; m_messageDsn = value; }
 
     /**
-     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * <p>Message-related DSN fields. If not specified, Amazon SES chooses the
      * values.</p>
      */
     inline void SetMessageDsn(MessageDsn&& value) { m_messageDsnHasBeenSet = true; m_messageDsn = std::move(value); }
 
     /**
-     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * <p>Message-related DSN fields. If not specified, Amazon SES chooses the
      * values.</p>
      */
     inline SendBounceRequest& WithMessageDsn(const MessageDsn& value) { SetMessageDsn(value); return *this;}
 
     /**
-     * <p>Message-related DSN fields. If not specified, Amazon SES will choose the
+     * <p>Message-related DSN fields. If not specified, Amazon SES chooses the
      * values.</p>
      */
     inline SendBounceRequest& WithMessageDsn(MessageDsn&& value) { SetMessageDsn(std::move(value)); return *this;}
@@ -289,7 +289,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetBounceSenderArn() const{ return m_bounceSenderArn; }
@@ -299,7 +299,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline bool BounceSenderArnHasBeenSet() const { return m_bounceSenderArnHasBeenSet; }
@@ -309,7 +309,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetBounceSenderArn(const Aws::String& value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn = value; }
@@ -319,7 +319,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetBounceSenderArn(Aws::String&& value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn = std::move(value); }
@@ -329,7 +329,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetBounceSenderArn(const char* value) { m_bounceSenderArnHasBeenSet = true; m_bounceSenderArn.assign(value); }
@@ -339,7 +339,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBounceRequest& WithBounceSenderArn(const Aws::String& value) { SetBounceSenderArn(value); return *this;}
@@ -349,7 +349,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBounceRequest& WithBounceSenderArn(Aws::String&& value) { SetBounceSenderArn(std::move(value)); return *this;}
@@ -359,7 +359,7 @@ namespace Model
      * identity that is associated with the sending authorization policy that permits
      * you to use the address in the "From" header of the bounce. For more information
      * about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBounceRequest& WithBounceSenderArn(const char* value) { SetBounceSenderArn(value); return *this;}

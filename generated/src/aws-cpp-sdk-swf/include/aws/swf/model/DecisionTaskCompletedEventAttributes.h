@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/swf/model/TaskList.h>
 #include <utility>
 
 namespace Aws
@@ -136,6 +137,74 @@ namespace Model
      */
     inline DecisionTaskCompletedEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
 
+
+    
+    inline const TaskList& GetTaskList() const{ return m_taskList; }
+
+    
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
+
+    
+    inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
+
+    
+    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
+
+    
+    inline DecisionTaskCompletedEventAttributes& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
+
+    
+    inline DecisionTaskCompletedEventAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline const Aws::String& GetTaskListScheduleToStartTimeout() const{ return m_taskListScheduleToStartTimeout; }
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline bool TaskListScheduleToStartTimeoutHasBeenSet() const { return m_taskListScheduleToStartTimeoutHasBeenSet; }
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline void SetTaskListScheduleToStartTimeout(const Aws::String& value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout = value; }
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline void SetTaskListScheduleToStartTimeout(Aws::String&& value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout = std::move(value); }
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline void SetTaskListScheduleToStartTimeout(const char* value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout.assign(value); }
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline DecisionTaskCompletedEventAttributes& WithTaskListScheduleToStartTimeout(const Aws::String& value) { SetTaskListScheduleToStartTimeout(value); return *this;}
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline DecisionTaskCompletedEventAttributes& WithTaskListScheduleToStartTimeout(Aws::String&& value) { SetTaskListScheduleToStartTimeout(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline DecisionTaskCompletedEventAttributes& WithTaskListScheduleToStartTimeout(const char* value) { SetTaskListScheduleToStartTimeout(value); return *this;}
+
   private:
 
     Aws::String m_executionContext;
@@ -146,6 +215,12 @@ namespace Model
 
     long long m_startedEventId;
     bool m_startedEventIdHasBeenSet = false;
+
+    TaskList m_taskList;
+    bool m_taskListHasBeenSet = false;
+
+    Aws::String m_taskListScheduleToStartTimeout;
+    bool m_taskListScheduleToStartTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

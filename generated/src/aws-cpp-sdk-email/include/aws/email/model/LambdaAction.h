@@ -25,16 +25,16 @@ namespace Model
 {
 
   /**
-   * <p>When included in a receipt rule, this action calls an AWS Lambda function
-   * and, optionally, publishes a notification to Amazon Simple Notification Service
-   * (Amazon SNS).</p> <p>To enable Amazon SES to call your AWS Lambda function or to
-   * publish to an Amazon SNS topic of another account, Amazon SES must have
-   * permission to access those resources. For information about giving permissions,
-   * see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon
-   * SES Developer Guide</a>.</p> <p>For information about using AWS Lambda actions
-   * in receipt rules, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda.html">Amazon
+   * <p>When included in a receipt rule, this action calls an Amazon Web Services
+   * Lambda function and, optionally, publishes a notification to Amazon Simple
+   * Notification Service (Amazon SNS).</p> <p>To enable Amazon SES to call your
+   * Amazon Web Services Lambda function or to publish to an Amazon SNS topic of
+   * another account, Amazon SES must have permission to access those resources. For
+   * information about giving permissions, see the <a
+   * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon
+   * SES Developer Guide</a>.</p> <p>For information about using Amazon Web Services
+   * Lambda actions in receipt rules, see the <a
+   * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-action-lambda.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/LambdaAction">AWS
    * API Reference</a></p>
@@ -52,9 +52,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * Lambda action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * Lambda action is executed. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -62,9 +63,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * Lambda action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * Lambda action is executed. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -72,9 +74,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * Lambda action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * Lambda action is executed. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -82,9 +85,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * Lambda action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * Lambda action is executed. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -92,9 +96,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * Lambda action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * Lambda action is executed. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -102,9 +107,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * Lambda action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * Lambda action is executed. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -112,9 +118,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * Lambda action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * Lambda action is executed. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -122,9 +129,10 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
-     * Lambda action is taken. An example of an Amazon SNS topic ARN is
-     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
-     * about Amazon SNS topics, see the <a
+     * Lambda action is executed. You can find the ARN of a topic by using the <a
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
+     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
+     * see the <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
@@ -132,173 +140,173 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
-     * AWS Lambda function ARN is
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An
+     * example of an Amazon Web Services Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more
-     * information about AWS Lambda, see the <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda
-     * Developer Guide</a>.</p>
+     * information about Amazon Web Services Lambda, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>
      */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
-     * AWS Lambda function ARN is
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An
+     * example of an Amazon Web Services Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more
-     * information about AWS Lambda, see the <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda
-     * Developer Guide</a>.</p>
+     * information about Amazon Web Services Lambda, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>
      */
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
-     * AWS Lambda function ARN is
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An
+     * example of an Amazon Web Services Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more
-     * information about AWS Lambda, see the <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda
-     * Developer Guide</a>.</p>
+     * information about Amazon Web Services Lambda, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>
      */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
-     * AWS Lambda function ARN is
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An
+     * example of an Amazon Web Services Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more
-     * information about AWS Lambda, see the <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda
-     * Developer Guide</a>.</p>
+     * information about Amazon Web Services Lambda, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>
      */
     inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
-     * AWS Lambda function ARN is
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An
+     * example of an Amazon Web Services Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more
-     * information about AWS Lambda, see the <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda
-     * Developer Guide</a>.</p>
+     * information about Amazon Web Services Lambda, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>
      */
     inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
-     * AWS Lambda function ARN is
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An
+     * example of an Amazon Web Services Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more
-     * information about AWS Lambda, see the <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda
-     * Developer Guide</a>.</p>
+     * information about Amazon Web Services Lambda, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>
      */
     inline LambdaAction& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
-     * AWS Lambda function ARN is
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An
+     * example of an Amazon Web Services Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more
-     * information about AWS Lambda, see the <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda
-     * Developer Guide</a>.</p>
+     * information about Amazon Web Services Lambda, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>
      */
     inline LambdaAction& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function. An example of an
-     * AWS Lambda function ARN is
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An
+     * example of an Amazon Web Services Lambda function ARN is
      * <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>. For more
-     * information about AWS Lambda, see the <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">AWS Lambda
-     * Developer Guide</a>.</p>
+     * information about Amazon Web Services Lambda, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>
      */
     inline LambdaAction& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
 
     /**
-     * <p>The invocation type of the AWS Lambda function. An invocation type of
-     * <code>RequestResponse</code> means that the execution of the function will
-     * immediately result in a response, and a value of <code>Event</code> means that
-     * the function will be invoked asynchronously. The default value is
-     * <code>Event</code>. For information about AWS Lambda invocation types, see the
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
-     * <code>RequestResponse</code> invocations. You should use <code>Event</code>
-     * invocation in most cases. Use <code>RequestResponse</code> only when you want to
-     * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> 
+     * <p>The invocation type of the Amazon Web Services Lambda function. An invocation
+     * type of <code>RequestResponse</code> means that the execution of the function
+     * immediately results in a response, and a value of <code>Event</code> means that
+     * the function is invoked asynchronously. The default value is <code>Event</code>.
+     * For information about Amazon Web Services Lambda invocation types, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>  <p>There is a 30-second
+     * timeout on <code>RequestResponse</code> invocations. You should use
+     * <code>Event</code> invocation in most cases. Use <code>RequestResponse</code>
+     * only to make a mail flow decision, such as whether to stop the receipt rule or
+     * the receipt rule set.</p> 
      */
     inline const InvocationType& GetInvocationType() const{ return m_invocationType; }
 
     /**
-     * <p>The invocation type of the AWS Lambda function. An invocation type of
-     * <code>RequestResponse</code> means that the execution of the function will
-     * immediately result in a response, and a value of <code>Event</code> means that
-     * the function will be invoked asynchronously. The default value is
-     * <code>Event</code>. For information about AWS Lambda invocation types, see the
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
-     * <code>RequestResponse</code> invocations. You should use <code>Event</code>
-     * invocation in most cases. Use <code>RequestResponse</code> only when you want to
-     * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> 
+     * <p>The invocation type of the Amazon Web Services Lambda function. An invocation
+     * type of <code>RequestResponse</code> means that the execution of the function
+     * immediately results in a response, and a value of <code>Event</code> means that
+     * the function is invoked asynchronously. The default value is <code>Event</code>.
+     * For information about Amazon Web Services Lambda invocation types, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>  <p>There is a 30-second
+     * timeout on <code>RequestResponse</code> invocations. You should use
+     * <code>Event</code> invocation in most cases. Use <code>RequestResponse</code>
+     * only to make a mail flow decision, such as whether to stop the receipt rule or
+     * the receipt rule set.</p> 
      */
     inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
 
     /**
-     * <p>The invocation type of the AWS Lambda function. An invocation type of
-     * <code>RequestResponse</code> means that the execution of the function will
-     * immediately result in a response, and a value of <code>Event</code> means that
-     * the function will be invoked asynchronously. The default value is
-     * <code>Event</code>. For information about AWS Lambda invocation types, see the
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
-     * <code>RequestResponse</code> invocations. You should use <code>Event</code>
-     * invocation in most cases. Use <code>RequestResponse</code> only when you want to
-     * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> 
+     * <p>The invocation type of the Amazon Web Services Lambda function. An invocation
+     * type of <code>RequestResponse</code> means that the execution of the function
+     * immediately results in a response, and a value of <code>Event</code> means that
+     * the function is invoked asynchronously. The default value is <code>Event</code>.
+     * For information about Amazon Web Services Lambda invocation types, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>  <p>There is a 30-second
+     * timeout on <code>RequestResponse</code> invocations. You should use
+     * <code>Event</code> invocation in most cases. Use <code>RequestResponse</code>
+     * only to make a mail flow decision, such as whether to stop the receipt rule or
+     * the receipt rule set.</p> 
      */
     inline void SetInvocationType(const InvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
 
     /**
-     * <p>The invocation type of the AWS Lambda function. An invocation type of
-     * <code>RequestResponse</code> means that the execution of the function will
-     * immediately result in a response, and a value of <code>Event</code> means that
-     * the function will be invoked asynchronously. The default value is
-     * <code>Event</code>. For information about AWS Lambda invocation types, see the
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
-     * <code>RequestResponse</code> invocations. You should use <code>Event</code>
-     * invocation in most cases. Use <code>RequestResponse</code> only when you want to
-     * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> 
+     * <p>The invocation type of the Amazon Web Services Lambda function. An invocation
+     * type of <code>RequestResponse</code> means that the execution of the function
+     * immediately results in a response, and a value of <code>Event</code> means that
+     * the function is invoked asynchronously. The default value is <code>Event</code>.
+     * For information about Amazon Web Services Lambda invocation types, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>  <p>There is a 30-second
+     * timeout on <code>RequestResponse</code> invocations. You should use
+     * <code>Event</code> invocation in most cases. Use <code>RequestResponse</code>
+     * only to make a mail flow decision, such as whether to stop the receipt rule or
+     * the receipt rule set.</p> 
      */
     inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
 
     /**
-     * <p>The invocation type of the AWS Lambda function. An invocation type of
-     * <code>RequestResponse</code> means that the execution of the function will
-     * immediately result in a response, and a value of <code>Event</code> means that
-     * the function will be invoked asynchronously. The default value is
-     * <code>Event</code>. For information about AWS Lambda invocation types, see the
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
-     * <code>RequestResponse</code> invocations. You should use <code>Event</code>
-     * invocation in most cases. Use <code>RequestResponse</code> only when you want to
-     * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> 
+     * <p>The invocation type of the Amazon Web Services Lambda function. An invocation
+     * type of <code>RequestResponse</code> means that the execution of the function
+     * immediately results in a response, and a value of <code>Event</code> means that
+     * the function is invoked asynchronously. The default value is <code>Event</code>.
+     * For information about Amazon Web Services Lambda invocation types, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>  <p>There is a 30-second
+     * timeout on <code>RequestResponse</code> invocations. You should use
+     * <code>Event</code> invocation in most cases. Use <code>RequestResponse</code>
+     * only to make a mail flow decision, such as whether to stop the receipt rule or
+     * the receipt rule set.</p> 
      */
     inline LambdaAction& WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
 
     /**
-     * <p>The invocation type of the AWS Lambda function. An invocation type of
-     * <code>RequestResponse</code> means that the execution of the function will
-     * immediately result in a response, and a value of <code>Event</code> means that
-     * the function will be invoked asynchronously. The default value is
-     * <code>Event</code>. For information about AWS Lambda invocation types, see the
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">AWS
-     * Lambda Developer Guide</a>.</p>  <p>There is a 30-second timeout on
-     * <code>RequestResponse</code> invocations. You should use <code>Event</code>
-     * invocation in most cases. Use <code>RequestResponse</code> only when you want to
-     * make a mail flow decision, such as whether to stop the receipt rule or the
-     * receipt rule set.</p> 
+     * <p>The invocation type of the Amazon Web Services Lambda function. An invocation
+     * type of <code>RequestResponse</code> means that the execution of the function
+     * immediately results in a response, and a value of <code>Event</code> means that
+     * the function is invoked asynchronously. The default value is <code>Event</code>.
+     * For information about Amazon Web Services Lambda invocation types, see the <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">Amazon Web
+     * Services Lambda Developer Guide</a>.</p>  <p>There is a 30-second
+     * timeout on <code>RequestResponse</code> invocations. You should use
+     * <code>Event</code> invocation in most cases. Use <code>RequestResponse</code>
+     * only to make a mail flow decision, such as whether to stop the receipt rule or
+     * the receipt rule set.</p> 
      */
     inline LambdaAction& WithInvocationType(InvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
 

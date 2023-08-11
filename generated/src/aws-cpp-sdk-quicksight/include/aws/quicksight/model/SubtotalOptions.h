@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/TableCellStyle.h>
 #include <aws/quicksight/model/PivotTableFieldSubtotalOptions.h>
+#include <aws/quicksight/model/TableStyleTarget.h>
 #include <utility>
 
 namespace Aws
@@ -278,6 +279,47 @@ namespace Model
      */
     inline SubtotalOptions& WithMetricHeaderCellStyle(TableCellStyle&& value) { SetMetricHeaderCellStyle(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The style targets options for subtotals.</p>
+     */
+    inline const Aws::Vector<TableStyleTarget>& GetStyleTargets() const{ return m_styleTargets; }
+
+    /**
+     * <p>The style targets options for subtotals.</p>
+     */
+    inline bool StyleTargetsHasBeenSet() const { return m_styleTargetsHasBeenSet; }
+
+    /**
+     * <p>The style targets options for subtotals.</p>
+     */
+    inline void SetStyleTargets(const Aws::Vector<TableStyleTarget>& value) { m_styleTargetsHasBeenSet = true; m_styleTargets = value; }
+
+    /**
+     * <p>The style targets options for subtotals.</p>
+     */
+    inline void SetStyleTargets(Aws::Vector<TableStyleTarget>&& value) { m_styleTargetsHasBeenSet = true; m_styleTargets = std::move(value); }
+
+    /**
+     * <p>The style targets options for subtotals.</p>
+     */
+    inline SubtotalOptions& WithStyleTargets(const Aws::Vector<TableStyleTarget>& value) { SetStyleTargets(value); return *this;}
+
+    /**
+     * <p>The style targets options for subtotals.</p>
+     */
+    inline SubtotalOptions& WithStyleTargets(Aws::Vector<TableStyleTarget>&& value) { SetStyleTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>The style targets options for subtotals.</p>
+     */
+    inline SubtotalOptions& AddStyleTargets(const TableStyleTarget& value) { m_styleTargetsHasBeenSet = true; m_styleTargets.push_back(value); return *this; }
+
+    /**
+     * <p>The style targets options for subtotals.</p>
+     */
+    inline SubtotalOptions& AddStyleTargets(TableStyleTarget&& value) { m_styleTargetsHasBeenSet = true; m_styleTargets.push_back(std::move(value)); return *this; }
+
   private:
 
     Visibility m_totalsVisibility;
@@ -300,6 +342,9 @@ namespace Model
 
     TableCellStyle m_metricHeaderCellStyle;
     bool m_metricHeaderCellStyleHasBeenSet = false;
+
+    Aws::Vector<TableStyleTarget> m_styleTargets;
+    bool m_styleTargetsHasBeenSet = false;
   };
 
 } // namespace Model

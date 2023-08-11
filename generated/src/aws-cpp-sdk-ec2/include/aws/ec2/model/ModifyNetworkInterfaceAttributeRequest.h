@@ -328,37 +328,37 @@ namespace Model
 
 
     /**
-     * <p>Updates the ENA Express configuration for the network interface that��s
+     * <p>Updates the ENA Express configuration for the network interface that’s
      * attached to the instance.</p>
      */
     inline const EnaSrdSpecification& GetEnaSrdSpecification() const{ return m_enaSrdSpecification; }
 
     /**
-     * <p>Updates the ENA Express configuration for the network interface that��s
+     * <p>Updates the ENA Express configuration for the network interface that’s
      * attached to the instance.</p>
      */
     inline bool EnaSrdSpecificationHasBeenSet() const { return m_enaSrdSpecificationHasBeenSet; }
 
     /**
-     * <p>Updates the ENA Express configuration for the network interface that��s
+     * <p>Updates the ENA Express configuration for the network interface that’s
      * attached to the instance.</p>
      */
     inline void SetEnaSrdSpecification(const EnaSrdSpecification& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = value; }
 
     /**
-     * <p>Updates the ENA Express configuration for the network interface that��s
+     * <p>Updates the ENA Express configuration for the network interface that’s
      * attached to the instance.</p>
      */
     inline void SetEnaSrdSpecification(EnaSrdSpecification&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::move(value); }
 
     /**
-     * <p>Updates the ENA Express configuration for the network interface that��s
+     * <p>Updates the ENA Express configuration for the network interface that’s
      * attached to the instance.</p>
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithEnaSrdSpecification(const EnaSrdSpecification& value) { SetEnaSrdSpecification(value); return *this;}
 
     /**
-     * <p>Updates the ENA Express configuration for the network interface that��s
+     * <p>Updates the ENA Express configuration for the network interface that’s
      * attached to the instance.</p>
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithEnaSrdSpecification(EnaSrdSpecification&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}

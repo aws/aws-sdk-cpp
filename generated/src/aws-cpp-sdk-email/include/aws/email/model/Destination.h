@@ -28,13 +28,17 @@ namespace Model
    * <p>Represents the destination of the message, consisting of To:, CC:, and BCC:
    * fields.</p>  <p>Amazon SES does not support the SMTPUTF8 extension, as
    * described in <a href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this
-   * reason, the <i>local part</i> of a destination email address (the part of the
-   * email address that precedes the @ sign) may only contain <a
-   * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-   * characters</a>. If the <i>domain part</i> of an address (the part after the @
-   * sign) contains non-ASCII characters, they must be encoded using Punycode, as
-   * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
-   * <p><h3>See Also:</h3>   <a
+   * reason, the email address string must be 7-bit ASCII. If you want to send to or
+   * from email addresses that contain Unicode characters in the domain part of an
+   * address, you must encode the domain using Punycode. Punycode is not permitted in
+   * the local part of the email address (the part before the @ sign) nor in the
+   * "friendly from" name. If you want to use Unicode characters in the "friendly
+   * from" name, you must encode the "friendly from" name using MIME encoded-word
+   * syntax, as described in <a
+   * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw
+   * email using the Amazon SES API</a>. For more information about Punycode, see <a
+   * href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Destination">AWS
    * API Reference</a></p>
    */

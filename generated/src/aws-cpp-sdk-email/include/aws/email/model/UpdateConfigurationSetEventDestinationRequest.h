@@ -21,7 +21,7 @@ namespace Model
    * <p>Represents a request to update the event destination of a configuration set.
    * Configuration sets enable you to publish email sending events. For information
    * about using configuration sets, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestinationRequest">AWS
    * API Reference</a></p>
@@ -45,87 +45,73 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the configuration set that contains the event destination that
-     * you want to update.</p>
+     * <p>The name of the configuration set that contains the event destination.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
 
     /**
-     * <p>The name of the configuration set that contains the event destination that
-     * you want to update.</p>
+     * <p>The name of the configuration set that contains the event destination.</p>
      */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
-     * <p>The name of the configuration set that contains the event destination that
-     * you want to update.</p>
+     * <p>The name of the configuration set that contains the event destination.</p>
      */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
-     * <p>The name of the configuration set that contains the event destination that
-     * you want to update.</p>
+     * <p>The name of the configuration set that contains the event destination.</p>
      */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
-     * <p>The name of the configuration set that contains the event destination that
-     * you want to update.</p>
+     * <p>The name of the configuration set that contains the event destination.</p>
      */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
 
     /**
-     * <p>The name of the configuration set that contains the event destination that
-     * you want to update.</p>
+     * <p>The name of the configuration set that contains the event destination.</p>
      */
     inline UpdateConfigurationSetEventDestinationRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
 
     /**
-     * <p>The name of the configuration set that contains the event destination that
-     * you want to update.</p>
+     * <p>The name of the configuration set that contains the event destination.</p>
      */
     inline UpdateConfigurationSetEventDestinationRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the configuration set that contains the event destination that
-     * you want to update.</p>
+     * <p>The name of the configuration set that contains the event destination.</p>
      */
     inline UpdateConfigurationSetEventDestinationRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
 
     /**
-     * <p>The event destination object that you want to apply to the specified
-     * configuration set.</p>
+     * <p>The event destination object.</p>
      */
     inline const EventDestination& GetEventDestination() const{ return m_eventDestination; }
 
     /**
-     * <p>The event destination object that you want to apply to the specified
-     * configuration set.</p>
+     * <p>The event destination object.</p>
      */
     inline bool EventDestinationHasBeenSet() const { return m_eventDestinationHasBeenSet; }
 
     /**
-     * <p>The event destination object that you want to apply to the specified
-     * configuration set.</p>
+     * <p>The event destination object.</p>
      */
     inline void SetEventDestination(const EventDestination& value) { m_eventDestinationHasBeenSet = true; m_eventDestination = value; }
 
     /**
-     * <p>The event destination object that you want to apply to the specified
-     * configuration set.</p>
+     * <p>The event destination object.</p>
      */
     inline void SetEventDestination(EventDestination&& value) { m_eventDestinationHasBeenSet = true; m_eventDestination = std::move(value); }
 
     /**
-     * <p>The event destination object that you want to apply to the specified
-     * configuration set.</p>
+     * <p>The event destination object.</p>
      */
     inline UpdateConfigurationSetEventDestinationRequest& WithEventDestination(const EventDestination& value) { SetEventDestination(value); return *this;}
 
     /**
-     * <p>The event destination object that you want to apply to the specified
-     * configuration set.</p>
+     * <p>The event destination object.</p>
      */
     inline UpdateConfigurationSetEventDestinationRequest& WithEventDestination(EventDestination&& value) { SetEventDestination(std::move(value)); return *this;}
 

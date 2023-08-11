@@ -28,7 +28,7 @@ namespace Model
 {
   /**
    * <p>A list of email addresses that you have verified with Amazon SES under your
-   * AWS account.</p><p><h3>See Also:</h3>   <a
+   * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListVerifiedEmailAddressesResponse">AWS
    * API Reference</a></p>
    */

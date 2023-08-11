@@ -115,6 +115,37 @@ namespace Model
      */
     inline RowAlternateColorOptions& AddRowAlternateColors(const char* value) { m_rowAlternateColorsHasBeenSet = true; m_rowAlternateColors.push_back(value); return *this; }
 
+
+    /**
+     * <p>The primary background color options for alternate rows.</p>
+     */
+    inline const WidgetStatus& GetUsePrimaryBackgroundColor() const{ return m_usePrimaryBackgroundColor; }
+
+    /**
+     * <p>The primary background color options for alternate rows.</p>
+     */
+    inline bool UsePrimaryBackgroundColorHasBeenSet() const { return m_usePrimaryBackgroundColorHasBeenSet; }
+
+    /**
+     * <p>The primary background color options for alternate rows.</p>
+     */
+    inline void SetUsePrimaryBackgroundColor(const WidgetStatus& value) { m_usePrimaryBackgroundColorHasBeenSet = true; m_usePrimaryBackgroundColor = value; }
+
+    /**
+     * <p>The primary background color options for alternate rows.</p>
+     */
+    inline void SetUsePrimaryBackgroundColor(WidgetStatus&& value) { m_usePrimaryBackgroundColorHasBeenSet = true; m_usePrimaryBackgroundColor = std::move(value); }
+
+    /**
+     * <p>The primary background color options for alternate rows.</p>
+     */
+    inline RowAlternateColorOptions& WithUsePrimaryBackgroundColor(const WidgetStatus& value) { SetUsePrimaryBackgroundColor(value); return *this;}
+
+    /**
+     * <p>The primary background color options for alternate rows.</p>
+     */
+    inline RowAlternateColorOptions& WithUsePrimaryBackgroundColor(WidgetStatus&& value) { SetUsePrimaryBackgroundColor(std::move(value)); return *this;}
+
   private:
 
     WidgetStatus m_status;
@@ -122,6 +153,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_rowAlternateColors;
     bool m_rowAlternateColorsHasBeenSet = false;
+
+    WidgetStatus m_usePrimaryBackgroundColor;
+    bool m_usePrimaryBackgroundColorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,7 @@ namespace Model
   /**
    * <p>Represents a request to send a templated email to multiple destinations using
    * Amazon SES. For more information, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmailRequest">AWS
    * API Reference</a></p>
@@ -49,26 +49,25 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-     * <i>local part</i> of a source email address (the part of the email address that
-     * precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-     * characters</a>. If the <i>domain part</i> of an address (the part after the @
-     * sign) contains non-ASCII characters, they must be encoded using Punycode, as
-     * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The
-     * sender name (also known as the <i>friendly name</i>) may contain non-ASCII
-     * characters. These characters must be encoded using MIME encoded-word syntax, as
-     * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
+     * email address string must be 7-bit ASCII. If you want to send to or from email
+     * addresses that contain Unicode characters in the domain part of an address, you
+     * must encode the domain using Punycode. Punycode is not permitted in the local
+     * part of the email address (the part before the @ sign) nor in the "friendly
+     * from" name. If you want to use Unicode characters in the "friendly from" name,
+     * you must encode the "friendly from" name using MIME encoded-word syntax, as
+     * described in <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw
+     * email using the Amazon SES API</a>. For more information about Punycode, see <a
+     * href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p> 
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
@@ -76,26 +75,25 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-     * <i>local part</i> of a source email address (the part of the email address that
-     * precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-     * characters</a>. If the <i>domain part</i> of an address (the part after the @
-     * sign) contains non-ASCII characters, they must be encoded using Punycode, as
-     * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The
-     * sender name (also known as the <i>friendly name</i>) may contain non-ASCII
-     * characters. These characters must be encoded using MIME encoded-word syntax, as
-     * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
+     * email address string must be 7-bit ASCII. If you want to send to or from email
+     * addresses that contain Unicode characters in the domain part of an address, you
+     * must encode the domain using Punycode. Punycode is not permitted in the local
+     * part of the email address (the part before the @ sign) nor in the "friendly
+     * from" name. If you want to use Unicode characters in the "friendly from" name,
+     * you must encode the "friendly from" name using MIME encoded-word syntax, as
+     * described in <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw
+     * email using the Amazon SES API</a>. For more information about Punycode, see <a
+     * href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p> 
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
@@ -103,26 +101,25 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-     * <i>local part</i> of a source email address (the part of the email address that
-     * precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-     * characters</a>. If the <i>domain part</i> of an address (the part after the @
-     * sign) contains non-ASCII characters, they must be encoded using Punycode, as
-     * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The
-     * sender name (also known as the <i>friendly name</i>) may contain non-ASCII
-     * characters. These characters must be encoded using MIME encoded-word syntax, as
-     * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
+     * email address string must be 7-bit ASCII. If you want to send to or from email
+     * addresses that contain Unicode characters in the domain part of an address, you
+     * must encode the domain using Punycode. Punycode is not permitted in the local
+     * part of the email address (the part before the @ sign) nor in the "friendly
+     * from" name. If you want to use Unicode characters in the "friendly from" name,
+     * you must encode the "friendly from" name using MIME encoded-word syntax, as
+     * described in <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw
+     * email using the Amazon SES API</a>. For more information about Punycode, see <a
+     * href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p> 
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
@@ -130,26 +127,25 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-     * <i>local part</i> of a source email address (the part of the email address that
-     * precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-     * characters</a>. If the <i>domain part</i> of an address (the part after the @
-     * sign) contains non-ASCII characters, they must be encoded using Punycode, as
-     * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The
-     * sender name (also known as the <i>friendly name</i>) may contain non-ASCII
-     * characters. These characters must be encoded using MIME encoded-word syntax, as
-     * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
+     * email address string must be 7-bit ASCII. If you want to send to or from email
+     * addresses that contain Unicode characters in the domain part of an address, you
+     * must encode the domain using Punycode. Punycode is not permitted in the local
+     * part of the email address (the part before the @ sign) nor in the "friendly
+     * from" name. If you want to use Unicode characters in the "friendly from" name,
+     * you must encode the "friendly from" name using MIME encoded-word syntax, as
+     * described in <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw
+     * email using the Amazon SES API</a>. For more information about Punycode, see <a
+     * href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p> 
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
@@ -157,26 +153,25 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-     * <i>local part</i> of a source email address (the part of the email address that
-     * precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-     * characters</a>. If the <i>domain part</i> of an address (the part after the @
-     * sign) contains non-ASCII characters, they must be encoded using Punycode, as
-     * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The
-     * sender name (also known as the <i>friendly name</i>) may contain non-ASCII
-     * characters. These characters must be encoded using MIME encoded-word syntax, as
-     * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
+     * email address string must be 7-bit ASCII. If you want to send to or from email
+     * addresses that contain Unicode characters in the domain part of an address, you
+     * must encode the domain using Punycode. Punycode is not permitted in the local
+     * part of the email address (the part before the @ sign) nor in the "friendly
+     * from" name. If you want to use Unicode characters in the "friendly from" name,
+     * you must encode the "friendly from" name using MIME encoded-word syntax, as
+     * described in <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw
+     * email using the Amazon SES API</a>. For more information about Punycode, see <a
+     * href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p> 
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
@@ -184,26 +179,25 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-     * <i>local part</i> of a source email address (the part of the email address that
-     * precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-     * characters</a>. If the <i>domain part</i> of an address (the part after the @
-     * sign) contains non-ASCII characters, they must be encoded using Punycode, as
-     * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The
-     * sender name (also known as the <i>friendly name</i>) may contain non-ASCII
-     * characters. These characters must be encoded using MIME encoded-word syntax, as
-     * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
+     * email address string must be 7-bit ASCII. If you want to send to or from email
+     * addresses that contain Unicode characters in the domain part of an address, you
+     * must encode the domain using Punycode. Punycode is not permitted in the local
+     * part of the email address (the part before the @ sign) nor in the "friendly
+     * from" name. If you want to use Unicode characters in the "friendly from" name,
+     * you must encode the "friendly from" name using MIME encoded-word syntax, as
+     * described in <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw
+     * email using the Amazon SES API</a>. For more information about Punycode, see <a
+     * href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p> 
      */
     inline SendBulkTemplatedEmailRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
@@ -211,26 +205,25 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-     * <i>local part</i> of a source email address (the part of the email address that
-     * precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-     * characters</a>. If the <i>domain part</i> of an address (the part after the @
-     * sign) contains non-ASCII characters, they must be encoded using Punycode, as
-     * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The
-     * sender name (also known as the <i>friendly name</i>) may contain non-ASCII
-     * characters. These characters must be encoded using MIME encoded-word syntax, as
-     * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
+     * email address string must be 7-bit ASCII. If you want to send to or from email
+     * addresses that contain Unicode characters in the domain part of an address, you
+     * must encode the domain using Punycode. Punycode is not permitted in the local
+     * part of the email address (the part before the @ sign) nor in the "friendly
+     * from" name. If you want to use Unicode characters in the "friendly from" name,
+     * you must encode the "friendly from" name using MIME encoded-word syntax, as
+     * described in <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw
+     * email using the Amazon SES API</a>. For more information about Punycode, see <a
+     * href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p> 
      */
     inline SendBulkTemplatedEmailRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
@@ -238,26 +231,25 @@ namespace Model
      * <p>The email address that is sending the email. This email address must be
      * either individually verified with Amazon SES, or from a domain that has been
      * verified with Amazon SES. For information about verifying identities, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
      * SES Developer Guide</a>.</p> <p>If you are sending on behalf of another user and
      * have been permitted to do so by a sending authorization policy, then you must
      * also specify the <code>SourceArn</code> parameter. For more information about
      * sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>  <p>Amazon SES does not support the SMTPUTF8
      * extension, as described in <a
      * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the
-     * <i>local part</i> of a source email address (the part of the email address that
-     * precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII
-     * characters</a>. If the <i>domain part</i> of an address (the part after the @
-     * sign) contains non-ASCII characters, they must be encoded using Punycode, as
-     * described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The
-     * sender name (also known as the <i>friendly name</i>) may contain non-ASCII
-     * characters. These characters must be encoded using MIME encoded-word syntax, as
-     * described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form:
-     * <code>=?charset?encoding?encoded-text?=</code>.</p> 
+     * email address string must be 7-bit ASCII. If you want to send to or from email
+     * addresses that contain Unicode characters in the domain part of an address, you
+     * must encode the domain using Punycode. Punycode is not permitted in the local
+     * part of the email address (the part before the @ sign) nor in the "friendly
+     * from" name. If you want to use Unicode characters in the "friendly from" name,
+     * you must encode the "friendly from" name using MIME encoded-word syntax, as
+     * described in <a
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw
+     * email using the Amazon SES API</a>. For more information about Punycode, see <a
+     * href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.</p> 
      */
     inline SendBulkTemplatedEmailRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
@@ -273,7 +265,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
@@ -289,7 +281,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
@@ -305,7 +297,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
@@ -321,7 +313,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
@@ -337,7 +329,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
@@ -353,7 +345,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
@@ -369,7 +361,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
@@ -385,7 +377,7 @@ namespace Model
      * to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and
      * the <code>Source</code> to be <code>user@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
@@ -393,144 +385,144 @@ namespace Model
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply.</p>
+     * the message, each reply-to address receives the reply.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplyToAddresses() const{ return m_replyToAddresses; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply.</p>
+     * the message, each reply-to address receives the reply.</p>
      */
     inline bool ReplyToAddressesHasBeenSet() const { return m_replyToAddressesHasBeenSet; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply.</p>
+     * the message, each reply-to address receives the reply.</p>
      */
     inline void SetReplyToAddresses(const Aws::Vector<Aws::String>& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = value; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply.</p>
+     * the message, each reply-to address receives the reply.</p>
      */
     inline void SetReplyToAddresses(Aws::Vector<Aws::String>&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = std::move(value); }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply.</p>
+     * the message, each reply-to address receives the reply.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithReplyToAddresses(const Aws::Vector<Aws::String>& value) { SetReplyToAddresses(value); return *this;}
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply.</p>
+     * the message, each reply-to address receives the reply.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithReplyToAddresses(Aws::Vector<Aws::String>&& value) { SetReplyToAddresses(std::move(value)); return *this;}
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply.</p>
+     * the message, each reply-to address receives the reply.</p>
      */
     inline SendBulkTemplatedEmailRequest& AddReplyToAddresses(const Aws::String& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply.</p>
+     * the message, each reply-to address receives the reply.</p>
      */
     inline SendBulkTemplatedEmailRequest& AddReplyToAddresses(Aws::String&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply.</p>
+     * the message, each reply-to address receives the reply.</p>
      */
     inline SendBulkTemplatedEmailRequest& AddReplyToAddresses(const char* value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
 
 
     /**
-     * <p>The email address that bounces and complaints will be forwarded to when
-     * feedback forwarding is enabled. If the message cannot be delivered to the
-     * recipient, then an error message will be returned from the recipient's ISP; this
-     * message will then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is
-     * never overwritten. This email address must be either individually verified with
-     * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
+     * <p>The email address that bounces and complaints are forwarded to when feedback
+     * forwarding is enabled. If the message cannot be delivered to the recipient, then
+     * an error message is returned from the recipient's ISP; this message is forwarded
+     * to the email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email address must
+     * be either individually verified with Amazon SES, or from a domain that has been
+     * verified with Amazon SES. </p>
      */
     inline const Aws::String& GetReturnPath() const{ return m_returnPath; }
 
     /**
-     * <p>The email address that bounces and complaints will be forwarded to when
-     * feedback forwarding is enabled. If the message cannot be delivered to the
-     * recipient, then an error message will be returned from the recipient's ISP; this
-     * message will then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is
-     * never overwritten. This email address must be either individually verified with
-     * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
+     * <p>The email address that bounces and complaints are forwarded to when feedback
+     * forwarding is enabled. If the message cannot be delivered to the recipient, then
+     * an error message is returned from the recipient's ISP; this message is forwarded
+     * to the email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email address must
+     * be either individually verified with Amazon SES, or from a domain that has been
+     * verified with Amazon SES. </p>
      */
     inline bool ReturnPathHasBeenSet() const { return m_returnPathHasBeenSet; }
 
     /**
-     * <p>The email address that bounces and complaints will be forwarded to when
-     * feedback forwarding is enabled. If the message cannot be delivered to the
-     * recipient, then an error message will be returned from the recipient's ISP; this
-     * message will then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is
-     * never overwritten. This email address must be either individually verified with
-     * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
+     * <p>The email address that bounces and complaints are forwarded to when feedback
+     * forwarding is enabled. If the message cannot be delivered to the recipient, then
+     * an error message is returned from the recipient's ISP; this message is forwarded
+     * to the email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email address must
+     * be either individually verified with Amazon SES, or from a domain that has been
+     * verified with Amazon SES. </p>
      */
     inline void SetReturnPath(const Aws::String& value) { m_returnPathHasBeenSet = true; m_returnPath = value; }
 
     /**
-     * <p>The email address that bounces and complaints will be forwarded to when
-     * feedback forwarding is enabled. If the message cannot be delivered to the
-     * recipient, then an error message will be returned from the recipient's ISP; this
-     * message will then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is
-     * never overwritten. This email address must be either individually verified with
-     * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
+     * <p>The email address that bounces and complaints are forwarded to when feedback
+     * forwarding is enabled. If the message cannot be delivered to the recipient, then
+     * an error message is returned from the recipient's ISP; this message is forwarded
+     * to the email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email address must
+     * be either individually verified with Amazon SES, or from a domain that has been
+     * verified with Amazon SES. </p>
      */
     inline void SetReturnPath(Aws::String&& value) { m_returnPathHasBeenSet = true; m_returnPath = std::move(value); }
 
     /**
-     * <p>The email address that bounces and complaints will be forwarded to when
-     * feedback forwarding is enabled. If the message cannot be delivered to the
-     * recipient, then an error message will be returned from the recipient's ISP; this
-     * message will then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is
-     * never overwritten. This email address must be either individually verified with
-     * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
+     * <p>The email address that bounces and complaints are forwarded to when feedback
+     * forwarding is enabled. If the message cannot be delivered to the recipient, then
+     * an error message is returned from the recipient's ISP; this message is forwarded
+     * to the email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email address must
+     * be either individually verified with Amazon SES, or from a domain that has been
+     * verified with Amazon SES. </p>
      */
     inline void SetReturnPath(const char* value) { m_returnPathHasBeenSet = true; m_returnPath.assign(value); }
 
     /**
-     * <p>The email address that bounces and complaints will be forwarded to when
-     * feedback forwarding is enabled. If the message cannot be delivered to the
-     * recipient, then an error message will be returned from the recipient's ISP; this
-     * message will then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is
-     * never overwritten. This email address must be either individually verified with
-     * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
+     * <p>The email address that bounces and complaints are forwarded to when feedback
+     * forwarding is enabled. If the message cannot be delivered to the recipient, then
+     * an error message is returned from the recipient's ISP; this message is forwarded
+     * to the email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email address must
+     * be either individually verified with Amazon SES, or from a domain that has been
+     * verified with Amazon SES. </p>
      */
     inline SendBulkTemplatedEmailRequest& WithReturnPath(const Aws::String& value) { SetReturnPath(value); return *this;}
 
     /**
-     * <p>The email address that bounces and complaints will be forwarded to when
-     * feedback forwarding is enabled. If the message cannot be delivered to the
-     * recipient, then an error message will be returned from the recipient's ISP; this
-     * message will then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is
-     * never overwritten. This email address must be either individually verified with
-     * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
+     * <p>The email address that bounces and complaints are forwarded to when feedback
+     * forwarding is enabled. If the message cannot be delivered to the recipient, then
+     * an error message is returned from the recipient's ISP; this message is forwarded
+     * to the email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email address must
+     * be either individually verified with Amazon SES, or from a domain that has been
+     * verified with Amazon SES. </p>
      */
     inline SendBulkTemplatedEmailRequest& WithReturnPath(Aws::String&& value) { SetReturnPath(std::move(value)); return *this;}
 
     /**
-     * <p>The email address that bounces and complaints will be forwarded to when
-     * feedback forwarding is enabled. If the message cannot be delivered to the
-     * recipient, then an error message will be returned from the recipient's ISP; this
-     * message will then be forwarded to the email address specified by the
-     * <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is
-     * never overwritten. This email address must be either individually verified with
-     * Amazon SES, or from a domain that has been verified with Amazon SES. </p>
+     * <p>The email address that bounces and complaints are forwarded to when feedback
+     * forwarding is enabled. If the message cannot be delivered to the recipient, then
+     * an error message is returned from the recipient's ISP; this message is forwarded
+     * to the email address specified by the <code>ReturnPath</code> parameter. The
+     * <code>ReturnPath</code> parameter is never overwritten. This email address must
+     * be either individually verified with Amazon SES, or from a domain that has been
+     * verified with Amazon SES. </p>
      */
     inline SendBulkTemplatedEmailRequest& WithReturnPath(const char* value) { SetReturnPath(value); return *this;}
 
@@ -547,7 +539,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::String& GetReturnPathArn() const{ return m_returnPathArn; }
@@ -564,7 +556,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline bool ReturnPathArnHasBeenSet() const { return m_returnPathArnHasBeenSet; }
@@ -581,7 +573,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetReturnPathArn(const Aws::String& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = value; }
@@ -598,7 +590,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetReturnPathArn(Aws::String&& value) { m_returnPathArnHasBeenSet = true; m_returnPathArn = std::move(value); }
@@ -615,7 +607,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetReturnPathArn(const char* value) { m_returnPathArnHasBeenSet = true; m_returnPathArn.assign(value); }
@@ -632,7 +624,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithReturnPathArn(const Aws::String& value) { SetReturnPathArn(value); return *this;}
@@ -649,7 +641,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithReturnPathArn(Aws::String&& value) { SetReturnPathArn(std::move(value)); return *this;}
@@ -666,7 +658,7 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>, and the
      * <code>ReturnPath</code> to be <code>feedback@example.com</code>.</p> <p>For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithReturnPathArn(const char* value) { SetReturnPathArn(value); return *this;}
@@ -927,65 +919,65 @@ namespace Model
 
     /**
      * <p>One or more <code>Destination</code> objects. All of the recipients in a
-     * <code>Destination</code> will receive the same version of the email. You can
-     * specify up to 50 <code>Destination</code> objects within a
-     * <code>Destinations</code> array.</p>
+     * <code>Destination</code> receive the same version of the email. You can specify
+     * up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+     * array.</p>
      */
     inline const Aws::Vector<BulkEmailDestination>& GetDestinations() const{ return m_destinations; }
 
     /**
      * <p>One or more <code>Destination</code> objects. All of the recipients in a
-     * <code>Destination</code> will receive the same version of the email. You can
-     * specify up to 50 <code>Destination</code> objects within a
-     * <code>Destinations</code> array.</p>
+     * <code>Destination</code> receive the same version of the email. You can specify
+     * up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+     * array.</p>
      */
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
     /**
      * <p>One or more <code>Destination</code> objects. All of the recipients in a
-     * <code>Destination</code> will receive the same version of the email. You can
-     * specify up to 50 <code>Destination</code> objects within a
-     * <code>Destinations</code> array.</p>
+     * <code>Destination</code> receive the same version of the email. You can specify
+     * up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+     * array.</p>
      */
     inline void SetDestinations(const Aws::Vector<BulkEmailDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
      * <p>One or more <code>Destination</code> objects. All of the recipients in a
-     * <code>Destination</code> will receive the same version of the email. You can
-     * specify up to 50 <code>Destination</code> objects within a
-     * <code>Destinations</code> array.</p>
+     * <code>Destination</code> receive the same version of the email. You can specify
+     * up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+     * array.</p>
      */
     inline void SetDestinations(Aws::Vector<BulkEmailDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
 
     /**
      * <p>One or more <code>Destination</code> objects. All of the recipients in a
-     * <code>Destination</code> will receive the same version of the email. You can
-     * specify up to 50 <code>Destination</code> objects within a
-     * <code>Destinations</code> array.</p>
+     * <code>Destination</code> receive the same version of the email. You can specify
+     * up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+     * array.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithDestinations(const Aws::Vector<BulkEmailDestination>& value) { SetDestinations(value); return *this;}
 
     /**
      * <p>One or more <code>Destination</code> objects. All of the recipients in a
-     * <code>Destination</code> will receive the same version of the email. You can
-     * specify up to 50 <code>Destination</code> objects within a
-     * <code>Destinations</code> array.</p>
+     * <code>Destination</code> receive the same version of the email. You can specify
+     * up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+     * array.</p>
      */
     inline SendBulkTemplatedEmailRequest& WithDestinations(Aws::Vector<BulkEmailDestination>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
      * <p>One or more <code>Destination</code> objects. All of the recipients in a
-     * <code>Destination</code> will receive the same version of the email. You can
-     * specify up to 50 <code>Destination</code> objects within a
-     * <code>Destinations</code> array.</p>
+     * <code>Destination</code> receive the same version of the email. You can specify
+     * up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+     * array.</p>
      */
     inline SendBulkTemplatedEmailRequest& AddDestinations(const BulkEmailDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
 
     /**
      * <p>One or more <code>Destination</code> objects. All of the recipients in a
-     * <code>Destination</code> will receive the same version of the email. You can
-     * specify up to 50 <code>Destination</code> objects within a
-     * <code>Destinations</code> array.</p>
+     * <code>Destination</code> receive the same version of the email. You can specify
+     * up to 50 <code>Destination</code> objects within a <code>Destinations</code>
+     * array.</p>
      */
     inline SendBulkTemplatedEmailRequest& AddDestinations(BulkEmailDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 

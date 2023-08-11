@@ -19,7 +19,7 @@ namespace Model
   /**
    * <p>Represents a request to delete an email template. For more information, see
    * the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteTemplateRequest">AWS
    * API Reference</a></p>

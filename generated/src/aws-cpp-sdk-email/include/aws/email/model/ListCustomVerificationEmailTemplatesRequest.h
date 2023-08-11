@@ -20,7 +20,7 @@ namespace Model
    * <p>Represents a request to list the existing custom verification email templates
    * for your account.</p> <p>For more information about custom verification email
    * templates, see <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using
+   * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
    * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplatesRequest">AWS
@@ -97,7 +97,7 @@ namespace Model
      * <p>The maximum number of custom verification email templates to return. This
      * value must be at least 1 and less than or equal to 50. If you do not specify a
      * value, or if you specify a value less than 1 or greater than 50, the operation
-     * will return up to 50 results.</p>
+     * returns up to 50 results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -105,7 +105,7 @@ namespace Model
      * <p>The maximum number of custom verification email templates to return. This
      * value must be at least 1 and less than or equal to 50. If you do not specify a
      * value, or if you specify a value less than 1 or greater than 50, the operation
-     * will return up to 50 results.</p>
+     * returns up to 50 results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -113,7 +113,7 @@ namespace Model
      * <p>The maximum number of custom verification email templates to return. This
      * value must be at least 1 and less than or equal to 50. If you do not specify a
      * value, or if you specify a value less than 1 or greater than 50, the operation
-     * will return up to 50 results.</p>
+     * returns up to 50 results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -121,7 +121,7 @@ namespace Model
      * <p>The maximum number of custom verification email templates to return. This
      * value must be at least 1 and less than or equal to 50. If you do not specify a
      * value, or if you specify a value less than 1 or greater than 50, the operation
-     * will return up to 50 results.</p>
+     * returns up to 50 results.</p>
      */
     inline ListCustomVerificationEmailTemplatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

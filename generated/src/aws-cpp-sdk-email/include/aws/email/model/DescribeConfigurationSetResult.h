@@ -34,7 +34,7 @@ namespace Model
    * <p>Represents the details of a configuration set. Configuration sets enable you
    * to publish email sending events. For information about using configuration sets,
    * see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSetResponse">AWS
    * API Reference</a></p>

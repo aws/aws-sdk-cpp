@@ -44,9 +44,9 @@ namespace Model
     /**
      * <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code>
      * operation.</p> <p>Possible values for this parameter include:</p> <ul> <li> <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to
-     * deliver it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>:
-     * The message was rejected because it contained a virus.</p> </li> <li> <p>
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver
+     * it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>: The
+     * message was rejected because it contained a virus.</p> </li> <li> <p>
      * <code>MailFromDomainNotVerified</code>: The sender's email address or domain was
      * not verified.</p> </li> <li> <p> <code>ConfigurationSetDoesNotExist</code>: The
      * configuration set you specified does not exist.</p> </li> <li> <p>
@@ -76,9 +76,9 @@ namespace Model
     /**
      * <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code>
      * operation.</p> <p>Possible values for this parameter include:</p> <ul> <li> <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to
-     * deliver it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>:
-     * The message was rejected because it contained a virus.</p> </li> <li> <p>
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver
+     * it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>: The
+     * message was rejected because it contained a virus.</p> </li> <li> <p>
      * <code>MailFromDomainNotVerified</code>: The sender's email address or domain was
      * not verified.</p> </li> <li> <p> <code>ConfigurationSetDoesNotExist</code>: The
      * configuration set you specified does not exist.</p> </li> <li> <p>
@@ -108,9 +108,9 @@ namespace Model
     /**
      * <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code>
      * operation.</p> <p>Possible values for this parameter include:</p> <ul> <li> <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to
-     * deliver it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>:
-     * The message was rejected because it contained a virus.</p> </li> <li> <p>
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver
+     * it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>: The
+     * message was rejected because it contained a virus.</p> </li> <li> <p>
      * <code>MailFromDomainNotVerified</code>: The sender's email address or domain was
      * not verified.</p> </li> <li> <p> <code>ConfigurationSetDoesNotExist</code>: The
      * configuration set you specified does not exist.</p> </li> <li> <p>
@@ -140,9 +140,9 @@ namespace Model
     /**
      * <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code>
      * operation.</p> <p>Possible values for this parameter include:</p> <ul> <li> <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to
-     * deliver it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>:
-     * The message was rejected because it contained a virus.</p> </li> <li> <p>
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver
+     * it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>: The
+     * message was rejected because it contained a virus.</p> </li> <li> <p>
      * <code>MailFromDomainNotVerified</code>: The sender's email address or domain was
      * not verified.</p> </li> <li> <p> <code>ConfigurationSetDoesNotExist</code>: The
      * configuration set you specified does not exist.</p> </li> <li> <p>
@@ -172,9 +172,9 @@ namespace Model
     /**
      * <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code>
      * operation.</p> <p>Possible values for this parameter include:</p> <ul> <li> <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to
-     * deliver it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>:
-     * The message was rejected because it contained a virus.</p> </li> <li> <p>
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver
+     * it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>: The
+     * message was rejected because it contained a virus.</p> </li> <li> <p>
      * <code>MailFromDomainNotVerified</code>: The sender's email address or domain was
      * not verified.</p> </li> <li> <p> <code>ConfigurationSetDoesNotExist</code>: The
      * configuration set you specified does not exist.</p> </li> <li> <p>
@@ -204,9 +204,9 @@ namespace Model
     /**
      * <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code>
      * operation.</p> <p>Possible values for this parameter include:</p> <ul> <li> <p>
-     * <code>Success</code>: Amazon SES accepted the message, and will attempt to
-     * deliver it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>:
-     * The message was rejected because it contained a virus.</p> </li> <li> <p>
+     * <code>Success</code>: Amazon SES accepted the message, and attempts to deliver
+     * it to the recipients.</p> </li> <li> <p> <code>MessageRejected</code>: The
+     * message was rejected because it contained a virus.</p> </li> <li> <p>
      * <code>MailFromDomainNotVerified</code>: The sender's email address or domain was
      * not verified.</p> </li> <li> <p> <code>ConfigurationSetDoesNotExist</code>: The
      * configuration set you specified does not exist.</p> </li> <li> <p>

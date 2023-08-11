@@ -223,6 +223,55 @@ namespace Model
      */
     inline DecisionTaskScheduledEventAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
 
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline const Aws::String& GetScheduleToStartTimeout() const{ return m_scheduleToStartTimeout; }
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline bool ScheduleToStartTimeoutHasBeenSet() const { return m_scheduleToStartTimeoutHasBeenSet; }
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline void SetScheduleToStartTimeout(const Aws::String& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = value; }
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline void SetScheduleToStartTimeout(Aws::String&& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = std::move(value); }
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline void SetScheduleToStartTimeout(const char* value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout.assign(value); }
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline DecisionTaskScheduledEventAttributes& WithScheduleToStartTimeout(const Aws::String& value) { SetScheduleToStartTimeout(value); return *this;}
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline DecisionTaskScheduledEventAttributes& WithScheduleToStartTimeout(Aws::String&& value) { SetScheduleToStartTimeout(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum amount of time the decision task can wait to be assigned to a
+     * worker.</p>
+     */
+    inline DecisionTaskScheduledEventAttributes& WithScheduleToStartTimeout(const char* value) { SetScheduleToStartTimeout(value); return *this;}
+
   private:
 
     TaskList m_taskList;
@@ -233,6 +282,9 @@ namespace Model
 
     Aws::String m_startToCloseTimeout;
     bool m_startToCloseTimeoutHasBeenSet = false;
+
+    Aws::String m_scheduleToStartTimeout;
+    bool m_scheduleToStartTimeoutHasBeenSet = false;
   };
 
 } // namespace Model
