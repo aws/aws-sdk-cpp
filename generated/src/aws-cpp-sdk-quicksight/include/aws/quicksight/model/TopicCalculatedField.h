@@ -708,6 +708,27 @@ namespace Model
      */
     inline TopicCalculatedField& AddCellValueSynonyms(CellValueSynonym&& value) { m_cellValueSynonymsHasBeenSet = true; m_cellValueSynonyms.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The non additive for the table style target.</p>
+     */
+    inline bool GetNonAdditive() const{ return m_nonAdditive; }
+
+    /**
+     * <p>The non additive for the table style target.</p>
+     */
+    inline bool NonAdditiveHasBeenSet() const { return m_nonAdditiveHasBeenSet; }
+
+    /**
+     * <p>The non additive for the table style target.</p>
+     */
+    inline void SetNonAdditive(bool value) { m_nonAdditiveHasBeenSet = true; m_nonAdditive = value; }
+
+    /**
+     * <p>The non additive for the table style target.</p>
+     */
+    inline TopicCalculatedField& WithNonAdditive(bool value) { SetNonAdditive(value); return *this;}
+
   private:
 
     Aws::String m_calculatedFieldName;
@@ -757,6 +778,9 @@ namespace Model
 
     Aws::Vector<CellValueSynonym> m_cellValueSynonyms;
     bool m_cellValueSynonymsHasBeenSet = false;
+
+    bool m_nonAdditive;
+    bool m_nonAdditiveHasBeenSet = false;
   };
 
 } // namespace Model

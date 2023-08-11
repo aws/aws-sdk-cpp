@@ -680,7 +680,22 @@ namespace Model
     c7gn_4xlarge,
     c7gn_8xlarge,
     c7gn_12xlarge,
-    c7gn_16xlarge
+    c7gn_16xlarge,
+    p5_48xlarge,
+    m7i_large,
+    m7i_xlarge,
+    m7i_2xlarge,
+    m7i_4xlarge,
+    m7i_8xlarge,
+    m7i_12xlarge,
+    m7i_16xlarge,
+    m7i_24xlarge,
+    m7i_48xlarge,
+    m7i_flex_large,
+    m7i_flex_xlarge,
+    m7i_flex_2xlarge,
+    m7i_flex_4xlarge,
+    m7i_flex_8xlarge
   };
 
 namespace InstanceTypeMapper

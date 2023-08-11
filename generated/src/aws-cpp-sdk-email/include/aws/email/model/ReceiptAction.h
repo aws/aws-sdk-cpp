@@ -34,7 +34,7 @@ namespace Model
    * or more email addresses or domains that you own. An instance of this data type
    * can represent only one action.</p> <p>For information about setting up receipt
    * rules, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-receipt-rules-console-walkthrough.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptAction">AWS
    * API Reference</a></p>
@@ -168,38 +168,38 @@ namespace Model
 
 
     /**
-     * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
-     * Amazon SNS.</p>
+     * <p>Calls an Amazon Web Services Lambda function, and optionally, publishes a
+     * notification to Amazon SNS.</p>
      */
     inline const LambdaAction& GetLambdaAction() const{ return m_lambdaAction; }
 
     /**
-     * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
-     * Amazon SNS.</p>
+     * <p>Calls an Amazon Web Services Lambda function, and optionally, publishes a
+     * notification to Amazon SNS.</p>
      */
     inline bool LambdaActionHasBeenSet() const { return m_lambdaActionHasBeenSet; }
 
     /**
-     * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
-     * Amazon SNS.</p>
+     * <p>Calls an Amazon Web Services Lambda function, and optionally, publishes a
+     * notification to Amazon SNS.</p>
      */
     inline void SetLambdaAction(const LambdaAction& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = value; }
 
     /**
-     * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
-     * Amazon SNS.</p>
+     * <p>Calls an Amazon Web Services Lambda function, and optionally, publishes a
+     * notification to Amazon SNS.</p>
      */
     inline void SetLambdaAction(LambdaAction&& value) { m_lambdaActionHasBeenSet = true; m_lambdaAction = std::move(value); }
 
     /**
-     * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
-     * Amazon SNS.</p>
+     * <p>Calls an Amazon Web Services Lambda function, and optionally, publishes a
+     * notification to Amazon SNS.</p>
      */
     inline ReceiptAction& WithLambdaAction(const LambdaAction& value) { SetLambdaAction(value); return *this;}
 
     /**
-     * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
-     * Amazon SNS.</p>
+     * <p>Calls an Amazon Web Services Lambda function, and optionally, publishes a
+     * notification to Amazon SNS.</p>
      */
     inline ReceiptAction& WithLambdaAction(LambdaAction&& value) { SetLambdaAction(std::move(value)); return *this;}
 

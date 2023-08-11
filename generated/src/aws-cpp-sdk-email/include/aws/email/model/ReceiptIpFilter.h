@@ -28,7 +28,7 @@ namespace Model
    * <p>A receipt IP address filter enables you to specify whether to accept or
    * reject mail originating from an IP address or range of IP addresses.</p> <p>For
    * information about setting up IP address filters, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-ip-filtering-console-walkthrough.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptIpFilter">AWS
    * API Reference</a></p>
@@ -82,73 +82,73 @@ namespace Model
 
 
     /**
-     * <p>A single IP address or a range of IP addresses that you want to block or
-     * allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example
-     * of a single email address is 10.0.0.1. An example of a range of IP addresses is
-     * 10.0.0.1/24. For more information about CIDR notation, see <a
+     * <p>A single IP address or a range of IP addresses to block or allow, specified
+     * in Classless Inter-Domain Routing (CIDR) notation. An example of a single email
+     * address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For
+     * more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
 
     /**
-     * <p>A single IP address or a range of IP addresses that you want to block or
-     * allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example
-     * of a single email address is 10.0.0.1. An example of a range of IP addresses is
-     * 10.0.0.1/24. For more information about CIDR notation, see <a
+     * <p>A single IP address or a range of IP addresses to block or allow, specified
+     * in Classless Inter-Domain Routing (CIDR) notation. An example of a single email
+     * address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For
+     * more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
 
     /**
-     * <p>A single IP address or a range of IP addresses that you want to block or
-     * allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example
-     * of a single email address is 10.0.0.1. An example of a range of IP addresses is
-     * 10.0.0.1/24. For more information about CIDR notation, see <a
+     * <p>A single IP address or a range of IP addresses to block or allow, specified
+     * in Classless Inter-Domain Routing (CIDR) notation. An example of a single email
+     * address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For
+     * more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**
-     * <p>A single IP address or a range of IP addresses that you want to block or
-     * allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example
-     * of a single email address is 10.0.0.1. An example of a range of IP addresses is
-     * 10.0.0.1/24. For more information about CIDR notation, see <a
+     * <p>A single IP address or a range of IP addresses to block or allow, specified
+     * in Classless Inter-Domain Routing (CIDR) notation. An example of a single email
+     * address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For
+     * more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
 
     /**
-     * <p>A single IP address or a range of IP addresses that you want to block or
-     * allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example
-     * of a single email address is 10.0.0.1. An example of a range of IP addresses is
-     * 10.0.0.1/24. For more information about CIDR notation, see <a
+     * <p>A single IP address or a range of IP addresses to block or allow, specified
+     * in Classless Inter-Domain Routing (CIDR) notation. An example of a single email
+     * address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For
+     * more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
 
     /**
-     * <p>A single IP address or a range of IP addresses that you want to block or
-     * allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example
-     * of a single email address is 10.0.0.1. An example of a range of IP addresses is
-     * 10.0.0.1/24. For more information about CIDR notation, see <a
+     * <p>A single IP address or a range of IP addresses to block or allow, specified
+     * in Classless Inter-Domain Routing (CIDR) notation. An example of a single email
+     * address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For
+     * more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
     inline ReceiptIpFilter& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
 
     /**
-     * <p>A single IP address or a range of IP addresses that you want to block or
-     * allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example
-     * of a single email address is 10.0.0.1. An example of a range of IP addresses is
-     * 10.0.0.1/24. For more information about CIDR notation, see <a
+     * <p>A single IP address or a range of IP addresses to block or allow, specified
+     * in Classless Inter-Domain Routing (CIDR) notation. An example of a single email
+     * address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For
+     * more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
     inline ReceiptIpFilter& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
 
     /**
-     * <p>A single IP address or a range of IP addresses that you want to block or
-     * allow, specified in Classless Inter-Domain Routing (CIDR) notation. An example
-     * of a single email address is 10.0.0.1. An example of a range of IP addresses is
-     * 10.0.0.1/24. For more information about CIDR notation, see <a
+     * <p>A single IP address or a range of IP addresses to block or allow, specified
+     * in Classless Inter-Domain Routing (CIDR) notation. An example of a single email
+     * address is 10.0.0.1. An example of a range of IP addresses is 10.0.0.1/24. For
+     * more information about CIDR notation, see <a
      * href="https://tools.ietf.org/html/rfc2317">RFC 2317</a>.</p>
      */
     inline ReceiptIpFilter& WithCidr(const char* value) { SetCidr(value); return *this;}

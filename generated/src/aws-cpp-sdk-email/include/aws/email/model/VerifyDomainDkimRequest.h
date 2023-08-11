@@ -19,7 +19,7 @@ namespace Model
   /**
    * <p>Represents a request to generate the CNAME records needed to set up Easy DKIM
    * with Amazon SES. For more information about setting up Easy DKIM, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkimRequest">AWS
    * API Reference</a></p>

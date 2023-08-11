@@ -27,8 +27,8 @@ namespace Model
    * <p>Additional X-headers to include in the Delivery Status Notification (DSN)
    * when an email that Amazon SES receives on your behalf bounces.</p> <p>For
    * information about receiving email through Amazon SES, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
-   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email.html">Amazon SES
+   * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ExtensionField">AWS
    * API Reference</a></p>
    */
@@ -101,50 +101,50 @@ namespace Model
 
 
     /**
-     * <p>The value of the header to add. Must be less than 2048 characters, and must
-     * not contain newline characters ("\r" or "\n").</p>
+     * <p>The value of the header to add. Must contain 2048 characters or fewer, and
+     * must not contain newline characters ("\r" or "\n").</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value of the header to add. Must be less than 2048 characters, and must
-     * not contain newline characters ("\r" or "\n").</p>
+     * <p>The value of the header to add. Must contain 2048 characters or fewer, and
+     * must not contain newline characters ("\r" or "\n").</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The value of the header to add. Must be less than 2048 characters, and must
-     * not contain newline characters ("\r" or "\n").</p>
+     * <p>The value of the header to add. Must contain 2048 characters or fewer, and
+     * must not contain newline characters ("\r" or "\n").</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the header to add. Must be less than 2048 characters, and must
-     * not contain newline characters ("\r" or "\n").</p>
+     * <p>The value of the header to add. Must contain 2048 characters or fewer, and
+     * must not contain newline characters ("\r" or "\n").</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The value of the header to add. Must be less than 2048 characters, and must
-     * not contain newline characters ("\r" or "\n").</p>
+     * <p>The value of the header to add. Must contain 2048 characters or fewer, and
+     * must not contain newline characters ("\r" or "\n").</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value of the header to add. Must be less than 2048 characters, and must
-     * not contain newline characters ("\r" or "\n").</p>
+     * <p>The value of the header to add. Must contain 2048 characters or fewer, and
+     * must not contain newline characters ("\r" or "\n").</p>
      */
     inline ExtensionField& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value of the header to add. Must be less than 2048 characters, and must
-     * not contain newline characters ("\r" or "\n").</p>
+     * <p>The value of the header to add. Must contain 2048 characters or fewer, and
+     * must not contain newline characters ("\r" or "\n").</p>
      */
     inline ExtensionField& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value of the header to add. Must be less than 2048 characters, and must
-     * not contain newline characters ("\r" or "\n").</p>
+     * <p>The value of the header to add. Must contain 2048 characters or fewer, and
+     * must not contain newline characters ("\r" or "\n").</p>
      */
     inline ExtensionField& WithValue(const char* value) { SetValue(value); return *this;}
 

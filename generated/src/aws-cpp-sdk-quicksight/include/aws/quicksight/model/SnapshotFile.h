@@ -116,37 +116,37 @@ namespace Model
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> and <code>PDF</code>.</p>
+     * <code>CSV</code> or <code>PDF</code>.</p>
      */
     inline const SnapshotFileFormatType& GetFormatType() const{ return m_formatType; }
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> and <code>PDF</code>.</p>
+     * <code>CSV</code> or <code>PDF</code>.</p>
      */
     inline bool FormatTypeHasBeenSet() const { return m_formatTypeHasBeenSet; }
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> and <code>PDF</code>.</p>
+     * <code>CSV</code> or <code>PDF</code>.</p>
      */
     inline void SetFormatType(const SnapshotFileFormatType& value) { m_formatTypeHasBeenSet = true; m_formatType = value; }
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> and <code>PDF</code>.</p>
+     * <code>CSV</code> or <code>PDF</code>.</p>
      */
     inline void SetFormatType(SnapshotFileFormatType&& value) { m_formatTypeHasBeenSet = true; m_formatType = std::move(value); }
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> and <code>PDF</code>.</p>
+     * <code>CSV</code> or <code>PDF</code>.</p>
      */
     inline SnapshotFile& WithFormatType(const SnapshotFileFormatType& value) { SetFormatType(value); return *this;}
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> and <code>PDF</code>.</p>
+     * <code>CSV</code> or <code>PDF</code>.</p>
      */
     inline SnapshotFile& WithFormatType(SnapshotFileFormatType&& value) { SetFormatType(std::move(value)); return *this;}
 

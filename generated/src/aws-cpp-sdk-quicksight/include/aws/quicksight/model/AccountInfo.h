@@ -278,6 +278,47 @@ namespace Model
      */
     inline AccountInfo& WithAccountSubscriptionStatus(const char* value) { SetAccountSubscriptionStatus(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+     */
+    inline const Aws::String& GetIAMIdentityCenterInstanceArn() const{ return m_iAMIdentityCenterInstanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+     */
+    inline bool IAMIdentityCenterInstanceArnHasBeenSet() const { return m_iAMIdentityCenterInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+     */
+    inline void SetIAMIdentityCenterInstanceArn(const Aws::String& value) { m_iAMIdentityCenterInstanceArnHasBeenSet = true; m_iAMIdentityCenterInstanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+     */
+    inline void SetIAMIdentityCenterInstanceArn(Aws::String&& value) { m_iAMIdentityCenterInstanceArnHasBeenSet = true; m_iAMIdentityCenterInstanceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+     */
+    inline void SetIAMIdentityCenterInstanceArn(const char* value) { m_iAMIdentityCenterInstanceArnHasBeenSet = true; m_iAMIdentityCenterInstanceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+     */
+    inline AccountInfo& WithIAMIdentityCenterInstanceArn(const Aws::String& value) { SetIAMIdentityCenterInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+     */
+    inline AccountInfo& WithIAMIdentityCenterInstanceArn(Aws::String&& value) { SetIAMIdentityCenterInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+     */
+    inline AccountInfo& WithIAMIdentityCenterInstanceArn(const char* value) { SetIAMIdentityCenterInstanceArn(value); return *this;}
+
   private:
 
     Aws::String m_accountName;
@@ -294,6 +335,9 @@ namespace Model
 
     Aws::String m_accountSubscriptionStatus;
     bool m_accountSubscriptionStatusHasBeenSet = false;
+
+    Aws::String m_iAMIdentityCenterInstanceArn;
+    bool m_iAMIdentityCenterInstanceArnHasBeenSet = false;
   };
 
 } // namespace Model
