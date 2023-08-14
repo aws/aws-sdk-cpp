@@ -1062,8 +1062,21 @@ namespace Aws
                 {
                     Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
                     assert(bufferStream);
-                    handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin());
-                    handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
+
+                    Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
+                    if (errMsg.empty()) {
+                        handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
+                    } else {
+                        Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                                                       "InternalFailure", errMsg, false);
+                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                << "] Failed to download object in Bucket: ["
+                                << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                                << "] " << errMsg);
+                        handle->ChangePartToFailed(partState);
+                        handle->SetError(error);
+                        TriggerErrorCallback(handle, error);
+                    }
                 }
                 else
                 {
