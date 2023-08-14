@@ -69,6 +69,12 @@ CreateAnnotationStoreResult& CreateAnnotationStoreResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("versionName"))
+  {
+    m_versionName = jsonValue.GetString("versionName");
+
+  }
+
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");

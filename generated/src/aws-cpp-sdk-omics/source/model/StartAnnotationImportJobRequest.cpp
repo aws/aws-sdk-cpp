@@ -16,6 +16,7 @@ StartAnnotationImportJobRequest::StartAnnotationImportJobRequest() :
     m_destinationNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_itemsHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_formatOptionsHasBeenSet(false),
     m_runLeftNormalization(false),
     m_runLeftNormalizationHasBeenSet(false),
@@ -47,6 +48,12 @@ Aws::String StartAnnotationImportJobRequest::SerializePayload() const
      itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());
    }
    payload.WithArray("items", std::move(itemsJsonList));
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("versionName", m_versionName);
 
   }
 

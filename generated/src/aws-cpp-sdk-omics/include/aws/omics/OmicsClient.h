@@ -104,6 +104,31 @@ namespace Omics
         }
 
         /**
+         * <p> Accepts a share for an analytics store. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptShareOutcome AcceptShare(const Model::AcceptShareRequest& request) const;
+
+        /**
+         * A Callable wrapper for AcceptShare that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AcceptShareRequestT = Model::AcceptShareRequest>
+        Model::AcceptShareOutcomeCallable AcceptShareCallable(const AcceptShareRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::AcceptShare, request);
+        }
+
+        /**
+         * An Async wrapper for AcceptShare that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AcceptShareRequestT = Model::AcceptShareRequest>
+        void AcceptShareAsync(const AcceptShareRequestT& request, const AcceptShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::AcceptShare, request, handler, context);
+        }
+
+        /**
          * <p>Deletes one or more read sets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/BatchDeleteReadSet">AWS
          * API Reference</a></p>
@@ -255,6 +280,31 @@ namespace Omics
         }
 
         /**
+         * <p> Creates a new version of an annotation store. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAnnotationStoreVersionOutcome CreateAnnotationStoreVersion(const Model::CreateAnnotationStoreVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAnnotationStoreVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAnnotationStoreVersionRequestT = Model::CreateAnnotationStoreVersionRequest>
+        Model::CreateAnnotationStoreVersionOutcomeCallable CreateAnnotationStoreVersionCallable(const CreateAnnotationStoreVersionRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::CreateAnnotationStoreVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAnnotationStoreVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAnnotationStoreVersionRequestT = Model::CreateAnnotationStoreVersionRequest>
+        void CreateAnnotationStoreVersionAsync(const CreateAnnotationStoreVersionRequestT& request, const CreateAnnotationStoreVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::CreateAnnotationStoreVersion, request, handler, context);
+        }
+
+        /**
          * <p> Begins a multipart read set upload. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload">AWS
          * API Reference</a></p>
@@ -355,6 +405,33 @@ namespace Omics
         }
 
         /**
+         * <p> Creates a share offer that can be accepted outside the account by a
+         * subscriber. The share is created by the owner and accepted by the principal
+         * subscriber. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateShareOutcome CreateShare(const Model::CreateShareRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateShare that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateShareRequestT = Model::CreateShareRequest>
+        Model::CreateShareOutcomeCallable CreateShareCallable(const CreateShareRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::CreateShare, request);
+        }
+
+        /**
+         * An Async wrapper for CreateShare that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateShareRequestT = Model::CreateShareRequest>
+        void CreateShareAsync(const CreateShareRequestT& request, const CreateShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::CreateShare, request, handler, context);
+        }
+
+        /**
          * <p>Creates a variant store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateVariantStore">AWS
          * API Reference</a></p>
@@ -427,6 +504,32 @@ namespace Omics
         void DeleteAnnotationStoreAsync(const DeleteAnnotationStoreRequestT& request, const DeleteAnnotationStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::DeleteAnnotationStore, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes one or multiple versions of an annotation store. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAnnotationStoreVersionsOutcome DeleteAnnotationStoreVersions(const Model::DeleteAnnotationStoreVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAnnotationStoreVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAnnotationStoreVersionsRequestT = Model::DeleteAnnotationStoreVersionsRequest>
+        Model::DeleteAnnotationStoreVersionsOutcomeCallable DeleteAnnotationStoreVersionsCallable(const DeleteAnnotationStoreVersionsRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::DeleteAnnotationStoreVersions, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAnnotationStoreVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAnnotationStoreVersionsRequestT = Model::DeleteAnnotationStoreVersionsRequest>
+        void DeleteAnnotationStoreVersionsAsync(const DeleteAnnotationStoreVersionsRequestT& request, const DeleteAnnotationStoreVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::DeleteAnnotationStoreVersions, request, handler, context);
         }
 
         /**
@@ -555,6 +658,31 @@ namespace Omics
         }
 
         /**
+         * <p> Deletes a share of an analytics store. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteShareOutcome DeleteShare(const Model::DeleteShareRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteShare that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteShareRequestT = Model::DeleteShareRequest>
+        Model::DeleteShareOutcomeCallable DeleteShareCallable(const DeleteShareRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::DeleteShare, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteShare that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteShareRequestT = Model::DeleteShareRequest>
+        void DeleteShareAsync(const DeleteShareRequestT& request, const DeleteShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::DeleteShare, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a variant store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteVariantStore">AWS
          * API Reference</a></p>
@@ -653,6 +781,32 @@ namespace Omics
         void GetAnnotationStoreAsync(const GetAnnotationStoreRequestT& request, const GetAnnotationStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::GetAnnotationStore, request, handler, context);
+        }
+
+        /**
+         * <p> Retrieves the metadata for an annotation store version. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAnnotationStoreVersionOutcome GetAnnotationStoreVersion(const Model::GetAnnotationStoreVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAnnotationStoreVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAnnotationStoreVersionRequestT = Model::GetAnnotationStoreVersionRequest>
+        Model::GetAnnotationStoreVersionOutcomeCallable GetAnnotationStoreVersionCallable(const GetAnnotationStoreVersionRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::GetAnnotationStoreVersion, request);
+        }
+
+        /**
+         * An Async wrapper for GetAnnotationStoreVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAnnotationStoreVersionRequestT = Model::GetAnnotationStoreVersionRequest>
+        void GetAnnotationStoreVersionAsync(const GetAnnotationStoreVersionRequestT& request, const GetAnnotationStoreVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::GetAnnotationStoreVersion, request, handler, context);
         }
 
         /**
@@ -983,6 +1137,31 @@ namespace Omics
         }
 
         /**
+         * <p> Retrieves the metadata for a share. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetShareOutcome GetShare(const Model::GetShareRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetShare that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetShareRequestT = Model::GetShareRequest>
+        Model::GetShareOutcomeCallable GetShareCallable(const GetShareRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::GetShare, request);
+        }
+
+        /**
+         * An Async wrapper for GetShare that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetShareRequestT = Model::GetShareRequest>
+        void GetShareAsync(const GetShareRequestT& request, const GetShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::GetShare, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about a variant import job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantImportJob">AWS
          * API Reference</a></p>
@@ -1080,6 +1259,31 @@ namespace Omics
         void ListAnnotationImportJobsAsync(const ListAnnotationImportJobsRequestT& request, const ListAnnotationImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::ListAnnotationImportJobs, request, handler, context);
+        }
+
+        /**
+         * <p> Lists the versions of an annotation store. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAnnotationStoreVersionsOutcome ListAnnotationStoreVersions(const Model::ListAnnotationStoreVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAnnotationStoreVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAnnotationStoreVersionsRequestT = Model::ListAnnotationStoreVersionsRequest>
+        Model::ListAnnotationStoreVersionsOutcomeCallable ListAnnotationStoreVersionsCallable(const ListAnnotationStoreVersionsRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::ListAnnotationStoreVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListAnnotationStoreVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAnnotationStoreVersionsRequestT = Model::ListAnnotationStoreVersionsRequest>
+        void ListAnnotationStoreVersionsAsync(const ListAnnotationStoreVersionsRequestT& request, const ListAnnotationStoreVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::ListAnnotationStoreVersions, request, handler, context);
         }
 
         /**
@@ -1435,6 +1639,31 @@ namespace Omics
         }
 
         /**
+         * <p> Lists all shares associated with an account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSharesOutcome ListShares(const Model::ListSharesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListShares that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSharesRequestT = Model::ListSharesRequest>
+        Model::ListSharesOutcomeCallable ListSharesCallable(const ListSharesRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::ListShares, request);
+        }
+
+        /**
+         * An Async wrapper for ListShares that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSharesRequestT = Model::ListSharesRequest>
+        void ListSharesAsync(const ListSharesRequestT& request, const ListSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::ListShares, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a list of tags for a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1783,6 +2012,32 @@ namespace Omics
         void UpdateAnnotationStoreAsync(const UpdateAnnotationStoreRequestT& request, const UpdateAnnotationStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::UpdateAnnotationStore, request, handler, context);
+        }
+
+        /**
+         * <p> Updates the description of an annotation store version. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAnnotationStoreVersionOutcome UpdateAnnotationStoreVersion(const Model::UpdateAnnotationStoreVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAnnotationStoreVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAnnotationStoreVersionRequestT = Model::UpdateAnnotationStoreVersionRequest>
+        Model::UpdateAnnotationStoreVersionOutcomeCallable UpdateAnnotationStoreVersionCallable(const UpdateAnnotationStoreVersionRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::UpdateAnnotationStoreVersion, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAnnotationStoreVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAnnotationStoreVersionRequestT = Model::UpdateAnnotationStoreVersionRequest>
+        void UpdateAnnotationStoreVersionAsync(const UpdateAnnotationStoreVersionRequestT& request, const UpdateAnnotationStoreVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::UpdateAnnotationStoreVersion, request, handler, context);
         }
 
         /**
