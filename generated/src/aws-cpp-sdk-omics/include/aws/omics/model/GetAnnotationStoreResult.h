@@ -478,6 +478,22 @@ namespace Model
     inline GetAnnotationStoreResult& WithStoreSizeBytes(long long value) { SetStoreSizeBytes(value); return *this;}
 
 
+    /**
+     * <p> An integer indicating how many versions of an annotation store exist. </p>
+     */
+    inline int GetNumVersions() const{ return m_numVersions; }
+
+    /**
+     * <p> An integer indicating how many versions of an annotation store exist. </p>
+     */
+    inline void SetNumVersions(int value) { m_numVersions = value; }
+
+    /**
+     * <p> An integer indicating how many versions of an annotation store exist. </p>
+     */
+    inline GetAnnotationStoreResult& WithNumVersions(int value) { SetNumVersions(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -528,6 +544,8 @@ namespace Model
     Aws::String m_statusMessage;
 
     long long m_storeSizeBytes;
+
+    int m_numVersions;
 
     Aws::String m_requestId;
   };
