@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/glue/model/CsvHeaderOption.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/CsvSerdeOption.h>
 #include <utility>
 
 namespace Aws
@@ -453,6 +454,55 @@ namespace Model
      */
     inline CsvClassifier& AddCustomDatatypes(const char* value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.push_back(value); return *this; }
 
+
+    /**
+     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
+     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
+     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.</p>
+     */
+    inline const CsvSerdeOption& GetSerde() const{ return m_serde; }
+
+    /**
+     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
+     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
+     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.</p>
+     */
+    inline bool SerdeHasBeenSet() const { return m_serdeHasBeenSet; }
+
+    /**
+     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
+     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
+     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.</p>
+     */
+    inline void SetSerde(const CsvSerdeOption& value) { m_serdeHasBeenSet = true; m_serde = value; }
+
+    /**
+     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
+     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
+     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.</p>
+     */
+    inline void SetSerde(CsvSerdeOption&& value) { m_serdeHasBeenSet = true; m_serde = std::move(value); }
+
+    /**
+     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
+     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
+     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.</p>
+     */
+    inline CsvClassifier& WithSerde(const CsvSerdeOption& value) { SetSerde(value); return *this;}
+
+    /**
+     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
+     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
+     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
+     * <code>None</code> value when you want the crawler to do the detection.</p>
+     */
+    inline CsvClassifier& WithSerde(CsvSerdeOption&& value) { SetSerde(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -490,6 +540,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_customDatatypes;
     bool m_customDatatypesHasBeenSet = false;
+
+    CsvSerdeOption m_serde;
+    bool m_serdeHasBeenSet = false;
   };
 
 } // namespace Model

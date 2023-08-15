@@ -70,6 +70,42 @@ namespace Model
     inline CheckDomainTransferabilityResult& WithTransferability(DomainTransferability&& value) { SetTransferability(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Provides an explanation for when a domain can't be transferred.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>Provides an explanation for when a domain can't be transferred.</p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_message = value; }
+
+    /**
+     * <p>Provides an explanation for when a domain can't be transferred.</p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
+
+    /**
+     * <p>Provides an explanation for when a domain can't be transferred.</p>
+     */
+    inline void SetMessage(const char* value) { m_message.assign(value); }
+
+    /**
+     * <p>Provides an explanation for when a domain can't be transferred.</p>
+     */
+    inline CheckDomainTransferabilityResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>Provides an explanation for when a domain can't be transferred.</p>
+     */
+    inline CheckDomainTransferabilityResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides an explanation for when a domain can't be transferred.</p>
+     */
+    inline CheckDomainTransferabilityResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -94,6 +130,8 @@ namespace Model
   private:
 
     DomainTransferability m_transferability;
+
+    Aws::String m_message;
 
     Aws::String m_requestId;
   };
