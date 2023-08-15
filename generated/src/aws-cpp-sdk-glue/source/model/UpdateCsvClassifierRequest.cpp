@@ -31,7 +31,9 @@ UpdateCsvClassifierRequest::UpdateCsvClassifierRequest() :
     m_allowSingleColumnHasBeenSet(false),
     m_customDatatypeConfigured(false),
     m_customDatatypeConfiguredHasBeenSet(false),
-    m_customDatatypesHasBeenSet(false)
+    m_customDatatypesHasBeenSet(false),
+    m_serde(CsvSerdeOption::NOT_SET),
+    m_serdeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ UpdateCsvClassifierRequest::UpdateCsvClassifierRequest(JsonView jsonValue) :
     m_allowSingleColumnHasBeenSet(false),
     m_customDatatypeConfigured(false),
     m_customDatatypeConfiguredHasBeenSet(false),
-    m_customDatatypesHasBeenSet(false)
+    m_customDatatypesHasBeenSet(false),
+    m_serde(CsvSerdeOption::NOT_SET),
+    m_serdeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +128,13 @@ UpdateCsvClassifierRequest& UpdateCsvClassifierRequest::operator =(JsonView json
     m_customDatatypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Serde"))
+  {
+    m_serde = CsvSerdeOptionMapper::GetCsvSerdeOptionForName(jsonValue.GetString("Serde"));
+
+    m_serdeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -192,6 +203,11 @@ JsonValue UpdateCsvClassifierRequest::Jsonize() const
    }
    payload.WithArray("CustomDatatypes", std::move(customDatatypesJsonList));
 
+  }
+
+  if(m_serdeHasBeenSet)
+  {
+   payload.WithString("Serde", CsvSerdeOptionMapper::GetNameForCsvSerdeOption(m_serde));
   }
 
   return payload;

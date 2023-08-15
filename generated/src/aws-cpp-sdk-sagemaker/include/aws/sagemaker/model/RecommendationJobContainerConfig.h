@@ -536,6 +536,52 @@ namespace Model
      */
     inline RecommendationJobContainerConfig& WithSupportedEndpointType(RecommendationJobSupportedEndpointType&& value) { SetSupportedEndpointType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedResponseMIMETypes() const{ return m_supportedResponseMIMETypes; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline bool SupportedResponseMIMETypesHasBeenSet() const { return m_supportedResponseMIMETypesHasBeenSet; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline void SetSupportedResponseMIMETypes(const Aws::Vector<Aws::String>& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes = value; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline void SetSupportedResponseMIMETypes(Aws::Vector<Aws::String>&& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes = std::move(value); }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline RecommendationJobContainerConfig& WithSupportedResponseMIMETypes(const Aws::Vector<Aws::String>& value) { SetSupportedResponseMIMETypes(value); return *this;}
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline RecommendationJobContainerConfig& WithSupportedResponseMIMETypes(Aws::Vector<Aws::String>&& value) { SetSupportedResponseMIMETypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline RecommendationJobContainerConfig& AddSupportedResponseMIMETypes(const Aws::String& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline RecommendationJobContainerConfig& AddSupportedResponseMIMETypes(Aws::String&& value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The supported MIME types for the output data.</p>
+     */
+    inline RecommendationJobContainerConfig& AddSupportedResponseMIMETypes(const char* value) { m_supportedResponseMIMETypesHasBeenSet = true; m_supportedResponseMIMETypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_domain;
@@ -564,6 +610,9 @@ namespace Model
 
     RecommendationJobSupportedEndpointType m_supportedEndpointType;
     bool m_supportedEndpointTypeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_supportedResponseMIMETypes;
+    bool m_supportedResponseMIMETypesHasBeenSet = false;
   };
 
 } // namespace Model

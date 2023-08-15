@@ -3556,10 +3556,12 @@ namespace EC2
         }
 
         /**
-         * <p>Creates a subnet CIDR reservation. For information about subnet CIDR
-         * reservations, see <a
+         * <p>Creates a subnet CIDR reservation. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
-         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User
+         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i> and
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign
+         * prefixes to network interfaces</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">AWS
          * API Reference</a></p>
@@ -5053,11 +5055,17 @@ namespace EC2
         }
 
         /**
-         * <p>Deletes one or more versions of a launch template. You cannot delete the
-         * default version of a launch template; you must first assign a different version
-         * as the default. If the default version is the only version for the launch
-         * template, you must delete the entire launch template using
-         * <a>DeleteLaunchTemplate</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more versions of a launch template.</p> <p>You can't delete
+         * the default version of a launch template; you must first assign a different
+         * version as the default. If the default version is the only version for the
+         * launch template, you must delete the entire launch template using
+         * <a>DeleteLaunchTemplate</a>.</p> <p>You can delete up to 200 launch template
+         * versions in a single request. To delete more than 200 versions in a single
+         * request, use <a>DeleteLaunchTemplate</a>, which deletes the launch template and
+         * all of its versions.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-launch-template-versions.html#delete-launch-template-version">Delete
+         * a launch template version</a> in the <i>EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions">AWS
          * API Reference</a></p>
          */

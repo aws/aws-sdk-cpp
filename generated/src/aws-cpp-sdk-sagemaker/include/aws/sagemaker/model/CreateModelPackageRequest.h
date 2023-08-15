@@ -370,7 +370,10 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
-     * Reference Guide</i>.</p>
+     * Reference Guide</i>.</p> <p>If you supply <code>ModelPackageGroupName</code>,
+     * your model package belongs to the model group you specify and uses the tags
+     * associated with the model group. In this case, you cannot supply a
+     * <code>tag</code> argument. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -379,7 +382,10 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
-     * Reference Guide</i>.</p>
+     * Reference Guide</i>.</p> <p>If you supply <code>ModelPackageGroupName</code>,
+     * your model package belongs to the model group you specify and uses the tags
+     * associated with the model group. In this case, you cannot supply a
+     * <code>tag</code> argument. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -388,7 +394,10 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
-     * Reference Guide</i>.</p>
+     * Reference Guide</i>.</p> <p>If you supply <code>ModelPackageGroupName</code>,
+     * your model package belongs to the model group you specify and uses the tags
+     * associated with the model group. In this case, you cannot supply a
+     * <code>tag</code> argument. </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -397,7 +406,10 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
-     * Reference Guide</i>.</p>
+     * Reference Guide</i>.</p> <p>If you supply <code>ModelPackageGroupName</code>,
+     * your model package belongs to the model group you specify and uses the tags
+     * associated with the model group. In this case, you cannot supply a
+     * <code>tag</code> argument. </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -406,7 +418,10 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
-     * Reference Guide</i>.</p>
+     * Reference Guide</i>.</p> <p>If you supply <code>ModelPackageGroupName</code>,
+     * your model package belongs to the model group you specify and uses the tags
+     * associated with the model group. In this case, you cannot supply a
+     * <code>tag</code> argument. </p>
      */
     inline CreateModelPackageRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -415,7 +430,10 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
-     * Reference Guide</i>.</p>
+     * Reference Guide</i>.</p> <p>If you supply <code>ModelPackageGroupName</code>,
+     * your model package belongs to the model group you specify and uses the tags
+     * associated with the model group. In this case, you cannot supply a
+     * <code>tag</code> argument. </p>
      */
     inline CreateModelPackageRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -424,7 +442,10 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
-     * Reference Guide</i>.</p>
+     * Reference Guide</i>.</p> <p>If you supply <code>ModelPackageGroupName</code>,
+     * your model package belongs to the model group you specify and uses the tags
+     * associated with the model group. In this case, you cannot supply a
+     * <code>tag</code> argument. </p>
      */
     inline CreateModelPackageRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -433,7 +454,10 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
-     * Reference Guide</i>.</p>
+     * Reference Guide</i>.</p> <p>If you supply <code>ModelPackageGroupName</code>,
+     * your model package belongs to the model group you specify and uses the tags
+     * associated with the model group. In this case, you cannot supply a
+     * <code>tag</code> argument. </p>
      */
     inline CreateModelPackageRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

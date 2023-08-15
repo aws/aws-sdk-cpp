@@ -6,15 +6,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/route53domains/Route53DomainsErrors.h>
+#include <aws/route53domains/model/DuplicateRequest.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Route53Domains;
+using namespace Aws::Route53Domains::Model;
 
 namespace Aws
 {
 namespace Route53Domains
 {
+template<> AWS_ROUTE53DOMAINS_API DuplicateRequest Route53DomainsError::GetModeledError()
+{
+  assert(this->GetErrorType() == Route53DomainsErrors::DUPLICATE_REQUEST);
+  return DuplicateRequest(this->GetJsonPayload().View());
+}
+
 namespace Route53DomainsErrorMapper
 {
 

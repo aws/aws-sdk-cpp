@@ -28,7 +28,8 @@ RecommendationJobContainerConfig::RecommendationJobContainerConfig() :
     m_supportedInstanceTypesHasBeenSet(false),
     m_dataInputConfigHasBeenSet(false),
     m_supportedEndpointType(RecommendationJobSupportedEndpointType::NOT_SET),
-    m_supportedEndpointTypeHasBeenSet(false)
+    m_supportedEndpointTypeHasBeenSet(false),
+    m_supportedResponseMIMETypesHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ RecommendationJobContainerConfig::RecommendationJobContainerConfig(JsonView json
     m_supportedInstanceTypesHasBeenSet(false),
     m_dataInputConfigHasBeenSet(false),
     m_supportedEndpointType(RecommendationJobSupportedEndpointType::NOT_SET),
-    m_supportedEndpointTypeHasBeenSet(false)
+    m_supportedEndpointTypeHasBeenSet(false),
+    m_supportedResponseMIMETypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,6 +117,16 @@ RecommendationJobContainerConfig& RecommendationJobContainerConfig::operator =(J
     m_supportedEndpointTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SupportedResponseMIMETypes"))
+  {
+    Aws::Utils::Array<JsonView> supportedResponseMIMETypesJsonList = jsonValue.GetArray("SupportedResponseMIMETypes");
+    for(unsigned supportedResponseMIMETypesIndex = 0; supportedResponseMIMETypesIndex < supportedResponseMIMETypesJsonList.GetLength(); ++supportedResponseMIMETypesIndex)
+    {
+      m_supportedResponseMIMETypes.push_back(supportedResponseMIMETypesJsonList[supportedResponseMIMETypesIndex].AsString());
+    }
+    m_supportedResponseMIMETypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +190,17 @@ JsonValue RecommendationJobContainerConfig::Jsonize() const
   if(m_supportedEndpointTypeHasBeenSet)
   {
    payload.WithString("SupportedEndpointType", RecommendationJobSupportedEndpointTypeMapper::GetNameForRecommendationJobSupportedEndpointType(m_supportedEndpointType));
+  }
+
+  if(m_supportedResponseMIMETypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supportedResponseMIMETypesJsonList(m_supportedResponseMIMETypes.size());
+   for(unsigned supportedResponseMIMETypesIndex = 0; supportedResponseMIMETypesIndex < supportedResponseMIMETypesJsonList.GetLength(); ++supportedResponseMIMETypesIndex)
+   {
+     supportedResponseMIMETypesJsonList[supportedResponseMIMETypesIndex].AsString(m_supportedResponseMIMETypes[supportedResponseMIMETypesIndex]);
+   }
+   payload.WithArray("SupportedResponseMIMETypes", std::move(supportedResponseMIMETypesJsonList));
+
   }
 
   return payload;

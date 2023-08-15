@@ -650,8 +650,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
      * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
      * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the CLI, surround this parameter value with single
-     * quotes on Linux or double quotes on Windows.</p>
+     * separated by spaces.</p>
      */
     inline const Aws::String& GetLogFormat() const{ return m_logFormat; }
 
@@ -665,8 +664,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
      * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
      * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the CLI, surround this parameter value with single
-     * quotes on Linux or double quotes on Windows.</p>
+     * separated by spaces.</p>
      */
     inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
 
@@ -680,8 +678,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
      * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
      * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the CLI, surround this parameter value with single
-     * quotes on Linux or double quotes on Windows.</p>
+     * separated by spaces.</p>
      */
     inline void SetLogFormat(const Aws::String& value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
 
@@ -695,8 +692,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
      * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
      * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the CLI, surround this parameter value with single
-     * quotes on Linux or double quotes on Windows.</p>
+     * separated by spaces.</p>
      */
     inline void SetLogFormat(Aws::String&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::move(value); }
 
@@ -710,8 +706,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
      * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
      * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the CLI, surround this parameter value with single
-     * quotes on Linux or double quotes on Windows.</p>
+     * separated by spaces.</p>
      */
     inline void SetLogFormat(const char* value) { m_logFormatHasBeenSet = true; m_logFormat.assign(value); }
 
@@ -725,8 +720,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
      * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
      * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the CLI, surround this parameter value with single
-     * quotes on Linux or double quotes on Windows.</p>
+     * separated by spaces.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(const Aws::String& value) { SetLogFormat(value); return *this;}
 
@@ -740,8 +734,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
      * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
      * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the CLI, surround this parameter value with single
-     * quotes on Linux or double quotes on Windows.</p>
+     * separated by spaces.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(Aws::String&& value) { SetLogFormat(std::move(value)); return *this;}
 
@@ -755,8 +748,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
      * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
      * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
-     * separated by spaces. For the CLI, surround this parameter value with single
-     * quotes on Linux or double quotes on Windows.</p>
+     * separated by spaces.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(const char* value) { SetLogFormat(value); return *this;}
 
