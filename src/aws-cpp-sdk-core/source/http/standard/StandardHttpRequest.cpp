@@ -55,7 +55,7 @@ HeaderValueCollection Aws::Http::Standard::StandardHttpRequest::GetHeaders() con
     return headers;
 }
 
-const Aws::String& Standard::StandardHttpRequest::GetHeaderValue(const char* headerName) const
+const Aws::String& Aws::Http::Standard::StandardHttpRequest::GetHeaderValue(const char* headerName) const
 {
     auto iter = headerMap.find(StringUtils::ToLower(headerName));
     assert (iter != headerMap.end());
