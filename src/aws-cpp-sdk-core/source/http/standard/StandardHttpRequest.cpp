@@ -26,7 +26,7 @@ static bool IsDefaultPort(const Aws::Http::URI& uri)
     }
 }
 
-StandardHttpRequest::StandardHttpRequest(const Aws::Http::URI& uri, Aws::Http::HttpMethod method) :
+Aws::Http::Standard::StandardHttpRequest::StandardHttpRequest(const Aws::Http::URI& uri, Aws::Http::HttpMethod method) :
     HttpRequest(uri, method), 
     bodyStream(nullptr),
     m_responseStreamFactory()
@@ -47,21 +47,21 @@ HeaderValueCollection Aws::Http::Standard::StandardHttpRequest::GetHeaders() con
 {
     HeaderValueCollection headers;
 
-    for (auto iter = headerMap.begin(); iter != headerMap.end(); ++iter)
+    for (const auto & iter : headerMap)
     {
-        headers.emplace(HeaderValuePair(iter->first, iter->second));
+        headers.emplace(HeaderValuePair(iter.first, iter.second));
     }
 
     return headers;
 }
 
-const Aws::String& Aws::Http::Standard::StandardHttpRequest::GetHeaderValue(const char* headerName) const
+const Aws::String& Standard::StandardHttpRequest::GetHeaderValue(const char* headerName) const
 {
     auto iter = headerMap.find(StringUtils::ToLower(headerName));
     assert (iter != headerMap.end());
     if (iter == headerMap.end()) {
-        AWS_LOGSTREAM_ERROR(STANDARD_HTTP_REQUEST_LOG_TAG, "Requested a header value for a missing header key: " << headerName);
-        static const Aws::String EMPTY_STRING = "";
+        AWS_LOGSTREAM_ERROR(STANDARD_HTTP_REQUEST_LOG_TAG, "Requested a header value for a missing header key: " << headerName)
+        static const Aws::String EMPTY_STRING;
         return EMPTY_STRING;
     }
     return iter->second;
