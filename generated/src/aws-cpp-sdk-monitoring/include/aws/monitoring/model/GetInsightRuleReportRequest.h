@@ -425,49 +425,49 @@ namespace Model
 
     /**
      * <p>Determines what statistic to use to rank the contributors. Valid values are
-     * SUM and MAXIMUM.</p>
+     * <code>Sum</code> and <code>Maximum</code>.</p>
      */
     inline const Aws::String& GetOrderBy() const{ return m_orderBy; }
 
     /**
      * <p>Determines what statistic to use to rank the contributors. Valid values are
-     * SUM and MAXIMUM.</p>
+     * <code>Sum</code> and <code>Maximum</code>.</p>
      */
     inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
 
     /**
      * <p>Determines what statistic to use to rank the contributors. Valid values are
-     * SUM and MAXIMUM.</p>
+     * <code>Sum</code> and <code>Maximum</code>.</p>
      */
     inline void SetOrderBy(const Aws::String& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
 
     /**
      * <p>Determines what statistic to use to rank the contributors. Valid values are
-     * SUM and MAXIMUM.</p>
+     * <code>Sum</code> and <code>Maximum</code>.</p>
      */
     inline void SetOrderBy(Aws::String&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
 
     /**
      * <p>Determines what statistic to use to rank the contributors. Valid values are
-     * SUM and MAXIMUM.</p>
+     * <code>Sum</code> and <code>Maximum</code>.</p>
      */
     inline void SetOrderBy(const char* value) { m_orderByHasBeenSet = true; m_orderBy.assign(value); }
 
     /**
      * <p>Determines what statistic to use to rank the contributors. Valid values are
-     * SUM and MAXIMUM.</p>
+     * <code>Sum</code> and <code>Maximum</code>.</p>
      */
     inline GetInsightRuleReportRequest& WithOrderBy(const Aws::String& value) { SetOrderBy(value); return *this;}
 
     /**
      * <p>Determines what statistic to use to rank the contributors. Valid values are
-     * SUM and MAXIMUM.</p>
+     * <code>Sum</code> and <code>Maximum</code>.</p>
      */
     inline GetInsightRuleReportRequest& WithOrderBy(Aws::String&& value) { SetOrderBy(std::move(value)); return *this;}
 
     /**
      * <p>Determines what statistic to use to rank the contributors. Valid values are
-     * SUM and MAXIMUM.</p>
+     * <code>Sum</code> and <code>Maximum</code>.</p>
      */
     inline GetInsightRuleReportRequest& WithOrderBy(const char* value) { SetOrderBy(value); return *this;}
 
