@@ -26,7 +26,7 @@ static bool IsDefaultPort(const Aws::Http::URI& uri)
     }
 }
 
-Aws::Http::Standard::StandardHttpRequest::StandardHttpRequest(const Aws::Http::URI& uri, Aws::Http::HttpMethod method) :
+StandardHttpRequest::StandardHttpRequest(const Aws::Http::URI& uri, Aws::Http::HttpMethod method) :
     HttpRequest(uri, method), 
     bodyStream(nullptr),
     m_responseStreamFactory()
