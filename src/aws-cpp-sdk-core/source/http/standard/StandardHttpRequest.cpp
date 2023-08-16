@@ -11,15 +11,9 @@
 #include <algorithm>
 #include <cassert>
 
-using Aws::Http::Standard::StandardHttpRequest;
-using Aws::Http::HeaderValueCollection;
-using Aws::Http::Scheme;
-using Aws::Http::URI;
-using Aws::Utils::StringUtils;
-
 static const char* STANDARD_HTTP_REQUEST_LOG_TAG = "StandardHttpRequest";
 
-static bool IsDefaultPort(const URI& uri)
+static bool IsDefaultPort(const Aws::Http::URI& uri)
 {
     switch(uri.GetPort())
     {
@@ -32,7 +26,7 @@ static bool IsDefaultPort(const URI& uri)
     }
 }
 
-StandardHttpRequest::StandardHttpRequest(const URI& uri, HttpMethod method) :
+Aws::Http::Standard::StandardHttpRequest::StandardHttpRequest(const Aws::Http::URI& uri, Aws::Http::HttpMethod method) :
     HttpRequest(uri, method), 
     bodyStream(nullptr),
     m_responseStreamFactory()
@@ -49,11 +43,11 @@ StandardHttpRequest::StandardHttpRequest(const URI& uri, HttpMethod method) :
     }
 }
 
-HeaderValueCollection StandardHttpRequest::GetHeaders() const
+HeaderValueCollection Aws::Http::Standard::StandardHttpRequest::GetHeaders() const
 {
     HeaderValueCollection headers;
 
-    for (HeaderValueCollection::const_iterator iter = headerMap.begin(); iter != headerMap.end(); ++iter)
+    for (auto iter = headerMap.begin(); iter != headerMap.end(); ++iter)
     {
         headers.emplace(HeaderValuePair(iter->first, iter->second));
     }
@@ -61,7 +55,7 @@ HeaderValueCollection StandardHttpRequest::GetHeaders() const
     return headers;
 }
 
-const Aws::String& StandardHttpRequest::GetHeaderValue(const char* headerName) const
+const Aws::String& Aws::Http::Standard::StandardHttpRequest::GetHeaderValue(const char* headerName) const
 {
     auto iter = headerMap.find(StringUtils::ToLower(headerName));
     assert (iter != headerMap.end());
@@ -73,27 +67,27 @@ const Aws::String& StandardHttpRequest::GetHeaderValue(const char* headerName) c
     return iter->second;
 }
 
-void StandardHttpRequest::SetHeaderValue(const char* headerName, const Aws::String& headerValue)
+void Aws::Http::Standard::StandardHttpRequest::SetHeaderValue(const char* headerName, const Aws::String& headerValue)
 {
     headerMap[StringUtils::ToLower(headerName)] = StringUtils::Trim(headerValue.c_str());
 }
 
-void StandardHttpRequest::SetHeaderValue(const Aws::String& headerName, const Aws::String& headerValue)
-{
+void Aws::Http::Standard::StandardHttpRequest::SetHeaderValue(const Aws::String &headerName, const Aws::String &headerValue) {
+
     headerMap[StringUtils::ToLower(headerName.c_str())] = StringUtils::Trim(headerValue.c_str());
 }
 
-void StandardHttpRequest::DeleteHeader(const char* headerName)
+void Aws::Http::Standard::StandardHttpRequest::DeleteHeader(const char* headerName)
 {
     headerMap.erase(StringUtils::ToLower(headerName));
 }
 
-bool StandardHttpRequest::HasHeader(const char* headerName) const
+bool Aws::Http::Standard::StandardHttpRequest::HasHeader(const char* headerName) const
 {
     return headerMap.find(StringUtils::ToLower(headerName)) != headerMap.end();
 }
 
-int64_t StandardHttpRequest::GetSize() const
+int64_t Aws::Http::Standard::StandardHttpRequest::GetSize() const
 {
     int64_t size = 0;
 
@@ -102,12 +96,12 @@ int64_t StandardHttpRequest::GetSize() const
     return size;
 }
 
-const Aws::IOStreamFactory& StandardHttpRequest::GetResponseStreamFactory() const 
+const Aws::IOStreamFactory& Aws::Http::Standard::StandardHttpRequest::GetResponseStreamFactory() const
 { 
     return m_responseStreamFactory; 
 }
 
-void StandardHttpRequest::SetResponseStreamFactory(const Aws::IOStreamFactory& factory) 
+void Aws::Http::Standard::StandardHttpRequest::SetResponseStreamFactory(const Aws::IOStreamFactory& factory)
 { 
     m_responseStreamFactory = factory; 
 }
