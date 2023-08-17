@@ -63,8 +63,8 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
 #end
 }
 
-${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration()
-: BaseClientConfigClass()
+${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const Client::ClientConfigurationInitValues &configuration)
+: BaseClientConfigClass(configuration)
 {
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
