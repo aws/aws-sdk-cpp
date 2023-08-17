@@ -18,9 +18,9 @@ static bool IsDefaultPort(const Aws::Http::URI& uri)
     switch(uri.GetPort())
     {
         case 80:
-            return uri.GetScheme() == Scheme::HTTP;
+            return uri.GetScheme() == Aws::Http::Scheme::HTTP;
         case 443:
-            return uri.GetScheme() == Scheme::HTTPS;
+            return uri.GetScheme() == Aws::Http::Scheme::HTTPS;
         default:
             return false;
     }
@@ -43,7 +43,7 @@ Aws::Http::Standard::StandardHttpRequest::StandardHttpRequest(const Aws::Http::U
     }
 }
 
-HeaderValueCollection Aws::Http::Standard::StandardHttpRequest::GetHeaders() const
+Aws::Http::HeaderValueCollection Aws::Http::Standard::StandardHttpRequest::GetHeaders() const
 {
     HeaderValueCollection headers;
 
@@ -57,7 +57,7 @@ HeaderValueCollection Aws::Http::Standard::StandardHttpRequest::GetHeaders() con
 
 const Aws::String& Aws::Http::Standard::StandardHttpRequest::GetHeaderValue(const char* headerName) const
 {
-    auto iter = headerMap.find(StringUtils::ToLower(headerName));
+    auto iter = headerMap.find(Utils::StringUtils::ToLower(headerName));
     assert (iter != headerMap.end());
     if (iter == headerMap.end()) {
         AWS_LOGSTREAM_ERROR(STANDARD_HTTP_REQUEST_LOG_TAG, "Requested a header value for a missing header key: " << headerName)
@@ -69,22 +69,22 @@ const Aws::String& Aws::Http::Standard::StandardHttpRequest::GetHeaderValue(cons
 
 void Aws::Http::Standard::StandardHttpRequest::SetHeaderValue(const char* headerName, const Aws::String& headerValue)
 {
-    headerMap[StringUtils::ToLower(headerName)] = StringUtils::Trim(headerValue.c_str());
+    headerMap[Utils::StringUtils::ToLower(headerName)] = Utils::StringUtils::Trim(headerValue.c_str());
 }
 
 void Aws::Http::Standard::StandardHttpRequest::SetHeaderValue(const Aws::String &headerName, const Aws::String &headerValue) {
 
-    headerMap[StringUtils::ToLower(headerName.c_str())] = StringUtils::Trim(headerValue.c_str());
+    headerMap[Utils::StringUtils::ToLower(headerName.c_str())] = Utils::StringUtils::Trim(headerValue.c_str());
 }
 
 void Aws::Http::Standard::StandardHttpRequest::DeleteHeader(const char* headerName)
 {
-    headerMap.erase(StringUtils::ToLower(headerName));
+    headerMap.erase(Utils::StringUtils::ToLower(headerName));
 }
 
 bool Aws::Http::Standard::StandardHttpRequest::HasHeader(const char* headerName) const
 {
-    return headerMap.find(StringUtils::ToLower(headerName)) != headerMap.end();
+    return headerMap.find(Utils::StringUtils::ToLower(headerName)) != headerMap.end();
 }
 
 int64_t Aws::Http::Standard::StandardHttpRequest::GetSize() const
