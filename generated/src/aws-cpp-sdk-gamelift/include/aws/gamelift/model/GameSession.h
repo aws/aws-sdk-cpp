@@ -32,9 +32,9 @@ namespace Model
   /**
    * <p>Properties describing a game session.</p> <p>A game session in ACTIVE status
    * can host players. When a game session ends, its status is set to
-   * <code>TERMINATED</code>. </p> <p>Once the session ends, the game session object
-   * is retained for 30 days. This means you can reuse idempotency token values after
-   * this time. Game session logs are retained for 14 days.</p> <p> <a
+   * <code>TERMINATED</code>. </p> <p>Amazon GameLift retains a game session resource
+   * for 30 days after the game session ends. You can reuse idempotency token values
+   * after this time. Game session logs are retained for 14 days.</p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSession">AWS
@@ -197,56 +197,56 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that this game session is running on. </p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that this game session is running on. </p>
      */
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that this game session is running on. </p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that this game session is running on. </p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that this game session is running on. </p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that this game session is running on. </p>
      */
     inline GameSession& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that this game session is running on. </p>
      */
     inline GameSession& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that this game session is running on. </p>
      */
@@ -893,112 +893,104 @@ namespace Model
 
 
     /**
-     * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formatted as a string. In addition the
-     * matchmaking configuration used, it contains data on all players assigned to the
-     * match, including player attributes and team assignments. For more details on
-     * matchmaker data, see <a
+     * <p>Information about the matchmaking process that resulted in the game session,
+     * if matchmaking was used. Data is in JSON syntax, formatted as a string.
+     * Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a
+     * successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
      * </p>
      */
     inline const Aws::String& GetMatchmakerData() const{ return m_matchmakerData; }
 
     /**
-     * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formatted as a string. In addition the
-     * matchmaking configuration used, it contains data on all players assigned to the
-     * match, including player attributes and team assignments. For more details on
-     * matchmaker data, see <a
+     * <p>Information about the matchmaking process that resulted in the game session,
+     * if matchmaking was used. Data is in JSON syntax, formatted as a string.
+     * Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a
+     * successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
      * </p>
      */
     inline bool MatchmakerDataHasBeenSet() const { return m_matchmakerDataHasBeenSet; }
 
     /**
-     * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formatted as a string. In addition the
-     * matchmaking configuration used, it contains data on all players assigned to the
-     * match, including player attributes and team assignments. For more details on
-     * matchmaker data, see <a
+     * <p>Information about the matchmaking process that resulted in the game session,
+     * if matchmaking was used. Data is in JSON syntax, formatted as a string.
+     * Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a
+     * successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
      * </p>
      */
     inline void SetMatchmakerData(const Aws::String& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = value; }
 
     /**
-     * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formatted as a string. In addition the
-     * matchmaking configuration used, it contains data on all players assigned to the
-     * match, including player attributes and team assignments. For more details on
-     * matchmaker data, see <a
+     * <p>Information about the matchmaking process that resulted in the game session,
+     * if matchmaking was used. Data is in JSON syntax, formatted as a string.
+     * Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a
+     * successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
      * </p>
      */
     inline void SetMatchmakerData(Aws::String&& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = std::move(value); }
 
     /**
-     * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formatted as a string. In addition the
-     * matchmaking configuration used, it contains data on all players assigned to the
-     * match, including player attributes and team assignments. For more details on
-     * matchmaker data, see <a
+     * <p>Information about the matchmaking process that resulted in the game session,
+     * if matchmaking was used. Data is in JSON syntax, formatted as a string.
+     * Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a
+     * successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
      * </p>
      */
     inline void SetMatchmakerData(const char* value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData.assign(value); }
 
     /**
-     * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formatted as a string. In addition the
-     * matchmaking configuration used, it contains data on all players assigned to the
-     * match, including player attributes and team assignments. For more details on
-     * matchmaker data, see <a
+     * <p>Information about the matchmaking process that resulted in the game session,
+     * if matchmaking was used. Data is in JSON syntax, formatted as a string.
+     * Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a
+     * successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
      * </p>
      */
     inline GameSession& WithMatchmakerData(const Aws::String& value) { SetMatchmakerData(value); return *this;}
 
     /**
-     * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formatted as a string. In addition the
-     * matchmaking configuration used, it contains data on all players assigned to the
-     * match, including player attributes and team assignments. For more details on
-     * matchmaker data, see <a
+     * <p>Information about the matchmaking process that resulted in the game session,
+     * if matchmaking was used. Data is in JSON syntax, formatted as a string.
+     * Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a
+     * successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
      * </p>
      */
     inline GameSession& WithMatchmakerData(Aws::String&& value) { SetMatchmakerData(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the matchmaking process that was used to create the game
-     * session. It is in JSON syntax, formatted as a string. In addition the
-     * matchmaking configuration used, it contains data on all players assigned to the
-     * match, including player attributes and team assignments. For more details on
-     * matchmaker data, see <a
+     * <p>Information about the matchmaking process that resulted in the game session,
+     * if matchmaking was used. Data is in JSON syntax, formatted as a string.
+     * Information includes the matchmaker ID as well as player attributes and team
+     * assignments. For more details on matchmaker data, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
-     * Data</a>. Matchmaker data is useful when requesting match backfills, and is
-     * updated whenever new players are added during a successful backfill (see <a
+     * Data</a>. Matchmaker data is updated whenever new players are added during a
+     * successful backfill (see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
      * </p>
      */

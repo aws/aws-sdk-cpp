@@ -34,32 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The details of the compute resource you registered to the specified
-     * fleet.</p>
+     * <p>The set of properties for the requested compute resource.</p>
      */
     inline const Compute& GetCompute() const{ return m_compute; }
 
     /**
-     * <p>The details of the compute resource you registered to the specified
-     * fleet.</p>
+     * <p>The set of properties for the requested compute resource.</p>
      */
     inline void SetCompute(const Compute& value) { m_compute = value; }
 
     /**
-     * <p>The details of the compute resource you registered to the specified
-     * fleet.</p>
+     * <p>The set of properties for the requested compute resource.</p>
      */
     inline void SetCompute(Compute&& value) { m_compute = std::move(value); }
 
     /**
-     * <p>The details of the compute resource you registered to the specified
-     * fleet.</p>
+     * <p>The set of properties for the requested compute resource.</p>
      */
     inline DescribeComputeResult& WithCompute(const Compute& value) { SetCompute(value); return *this;}
 
     /**
-     * <p>The details of the compute resource you registered to the specified
-     * fleet.</p>
+     * <p>The set of properties for the requested compute resource.</p>
      */
     inline DescribeComputeResult& WithCompute(Compute&& value) { SetCompute(std::move(value)); return *this;}
 

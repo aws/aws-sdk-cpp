@@ -673,7 +673,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -681,7 +682,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
@@ -689,7 +691,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
@@ -697,7 +700,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
@@ -705,7 +709,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
@@ -713,7 +718,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline CreateGameSessionRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
@@ -721,7 +727,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline CreateGameSessionRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -729,7 +736,8 @@ namespace Model
      * <p>A fleet's remote location to place the new game session in. If this parameter
      * is not set, the new game session is placed in the fleet's home Region. Specify a
      * remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>. </p>
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required
+     * and must be set to the Anywhere fleet's custom location.</p>
      */
     inline CreateGameSessionRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 

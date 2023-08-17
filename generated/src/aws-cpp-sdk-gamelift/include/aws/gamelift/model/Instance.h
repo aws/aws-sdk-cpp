@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents an EC2 instance of virtual computing resources that hosts one or
-   * more game servers. In Amazon GameLift, a fleet can contain zero or more
-   * instances.</p> <p> <b>Related actions</b> </p><p><h3>See Also:</h3>   <a
+   * <p>Represents a virtual computing instance that runs game server processes and
+   * hosts game sessions. In Amazon GameLift, one or more instances make up a managed
+   * EC2 fleet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance">AWS
    * API Reference</a></p>
    */
@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline Instance& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline Instance& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet that the instance is in.</p>
+     * <p>A unique identifier for the fleet that the instance belongs to.</p>
      */
     inline Instance& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
@@ -247,9 +247,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
 
@@ -261,9 +261,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
 
@@ -275,9 +275,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
@@ -289,9 +289,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
 
@@ -303,9 +303,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
 
@@ -317,9 +317,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline Instance& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
 
@@ -331,9 +331,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline Instance& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
 
@@ -345,77 +345,71 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
-     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
-     * the IP address.</p>
+     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
+     * connecting to a game session that is running on a TLS-enabled fleet, you must
+     * use the DNS name, not the IP address.</p>
      */
     inline Instance& WithDnsName(const char* value) { SetDnsName(value); return *this;}
 
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline Instance& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
     /**
-     * <p>Operating system that is running on this instance. </p>
+     * <p>Operating system that is running on this EC2 instance. </p>
      */
     inline Instance& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline const EC2InstanceType& GetType() const{ return m_type; }
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline void SetType(const EC2InstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline void SetType(EC2InstanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline Instance& WithType(const EC2InstanceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Amazon EC2 instance type that defines the computing resources of this
-     * instance. </p>
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline Instance& WithType(EC2InstanceType&& value) { SetType(std::move(value)); return *this;}
 
