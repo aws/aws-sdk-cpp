@@ -36,50 +36,50 @@ namespace Model
 
     /**
      * <p>A collection of objects that contains capacity information for each requested
-     * fleet ID. Capacity objects are returned only for fleets that currently
-     * exist.</p>
+     * fleet ID. Capacity objects are returned only for fleets that currently exist.
+     * Changes in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline const Aws::Vector<FleetCapacity>& GetFleetCapacity() const{ return m_fleetCapacity; }
 
     /**
      * <p>A collection of objects that contains capacity information for each requested
-     * fleet ID. Capacity objects are returned only for fleets that currently
-     * exist.</p>
+     * fleet ID. Capacity objects are returned only for fleets that currently exist.
+     * Changes in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline void SetFleetCapacity(const Aws::Vector<FleetCapacity>& value) { m_fleetCapacity = value; }
 
     /**
      * <p>A collection of objects that contains capacity information for each requested
-     * fleet ID. Capacity objects are returned only for fleets that currently
-     * exist.</p>
+     * fleet ID. Capacity objects are returned only for fleets that currently exist.
+     * Changes in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline void SetFleetCapacity(Aws::Vector<FleetCapacity>&& value) { m_fleetCapacity = std::move(value); }
 
     /**
      * <p>A collection of objects that contains capacity information for each requested
-     * fleet ID. Capacity objects are returned only for fleets that currently
-     * exist.</p>
+     * fleet ID. Capacity objects are returned only for fleets that currently exist.
+     * Changes in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline DescribeFleetCapacityResult& WithFleetCapacity(const Aws::Vector<FleetCapacity>& value) { SetFleetCapacity(value); return *this;}
 
     /**
      * <p>A collection of objects that contains capacity information for each requested
-     * fleet ID. Capacity objects are returned only for fleets that currently
-     * exist.</p>
+     * fleet ID. Capacity objects are returned only for fleets that currently exist.
+     * Changes in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline DescribeFleetCapacityResult& WithFleetCapacity(Aws::Vector<FleetCapacity>&& value) { SetFleetCapacity(std::move(value)); return *this;}
 
     /**
      * <p>A collection of objects that contains capacity information for each requested
-     * fleet ID. Capacity objects are returned only for fleets that currently
-     * exist.</p>
+     * fleet ID. Capacity objects are returned only for fleets that currently exist.
+     * Changes in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline DescribeFleetCapacityResult& AddFleetCapacity(const FleetCapacity& value) { m_fleetCapacity.push_back(value); return *this; }
 
     /**
      * <p>A collection of objects that contains capacity information for each requested
-     * fleet ID. Capacity objects are returned only for fleets that currently
-     * exist.</p>
+     * fleet ID. Capacity objects are returned only for fleets that currently exist.
+     * Changes in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline DescribeFleetCapacityResult& AddFleetCapacity(FleetCapacity&& value) { m_fleetCapacity.push_back(std::move(value)); return *this; }
 

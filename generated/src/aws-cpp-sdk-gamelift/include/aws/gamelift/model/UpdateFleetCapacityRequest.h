@@ -86,28 +86,32 @@ namespace Model
     /**
      * <p>The number of Amazon EC2 instances you want to maintain in the specified
      * fleet location. This value must fall between the minimum and maximum size
-     * limits.</p>
+     * limits. Changes in desired instance value can take up to 1 minute to be
+     * reflected when viewing the fleet's capacity settings.</p>
      */
     inline int GetDesiredInstances() const{ return m_desiredInstances; }
 
     /**
      * <p>The number of Amazon EC2 instances you want to maintain in the specified
      * fleet location. This value must fall between the minimum and maximum size
-     * limits.</p>
+     * limits. Changes in desired instance value can take up to 1 minute to be
+     * reflected when viewing the fleet's capacity settings.</p>
      */
     inline bool DesiredInstancesHasBeenSet() const { return m_desiredInstancesHasBeenSet; }
 
     /**
      * <p>The number of Amazon EC2 instances you want to maintain in the specified
      * fleet location. This value must fall between the minimum and maximum size
-     * limits.</p>
+     * limits. Changes in desired instance value can take up to 1 minute to be
+     * reflected when viewing the fleet's capacity settings.</p>
      */
     inline void SetDesiredInstances(int value) { m_desiredInstancesHasBeenSet = true; m_desiredInstances = value; }
 
     /**
      * <p>The number of Amazon EC2 instances you want to maintain in the specified
      * fleet location. This value must fall between the minimum and maximum size
-     * limits.</p>
+     * limits. Changes in desired instance value can take up to 1 minute to be
+     * reflected when viewing the fleet's capacity settings.</p>
      */
     inline UpdateFleetCapacityRequest& WithDesiredInstances(int value) { SetDesiredInstances(value); return *this;}
 

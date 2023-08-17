@@ -198,9 +198,11 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
      * -- The server process did not call InitSDK() within the time expected. Check
@@ -309,9 +311,11 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
      * -- The server process did not call InitSDK() within the time expected. Check
@@ -420,9 +424,11 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
      * -- The server process did not call InitSDK() within the time expected. Check
@@ -531,9 +537,11 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
      * -- The server process did not call InitSDK() within the time expected. Check
@@ -642,9 +650,11 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
      * -- The server process did not call InitSDK() within the time expected. Check
@@ -753,9 +763,11 @@ namespace Model
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> </ul> <p> <b>Server process
-     * events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game server
-     * executable or script could not be found based on the Fleet runtime
+     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
+     * instance was determined to have a high risk of interruption and is scheduled to
+     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
+     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
+     * server executable or script could not be found based on the Fleet runtime
      * configuration. Check that the launch path is correct based on the operating
      * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
      * -- The server process did not call InitSDK() within the time expected. Check
