@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the status of the investigation into a
+   * <p>Provides details about the status of the investigation into a
    * finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Workflow">AWS
    * API Reference</a></p>

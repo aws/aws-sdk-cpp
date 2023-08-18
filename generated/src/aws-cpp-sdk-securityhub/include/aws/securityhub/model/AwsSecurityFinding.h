@@ -21,6 +21,7 @@
 #include <aws/securityhub/model/PatchSummary.h>
 #include <aws/securityhub/model/Action.h>
 #include <aws/securityhub/model/FindingProviderFields.h>
+#include <aws/securityhub/model/GeneratorDetails.h>
 #include <aws/securityhub/model/Malware.h>
 #include <aws/securityhub/model/NetworkPathComponent.h>
 #include <aws/securityhub/model/Threat.h>
@@ -2121,6 +2122,61 @@ namespace Model
      */
     inline AwsSecurityFinding& WithSample(bool value) { SetSample(value); return *this;}
 
+
+    /**
+     * <p>Provides metadata for the Amazon CodeGuru detector associated with a finding.
+     * This field pertains to findings that relate to Lambda functions. Amazon
+     * Inspector identifies policy violations and vulnerabilities in Lambda function
+     * code based on internal detectors developed in collaboration with Amazon
+     * CodeGuru. Security Hub receives those findings. </p>
+     */
+    inline const GeneratorDetails& GetGeneratorDetails() const{ return m_generatorDetails; }
+
+    /**
+     * <p>Provides metadata for the Amazon CodeGuru detector associated with a finding.
+     * This field pertains to findings that relate to Lambda functions. Amazon
+     * Inspector identifies policy violations and vulnerabilities in Lambda function
+     * code based on internal detectors developed in collaboration with Amazon
+     * CodeGuru. Security Hub receives those findings. </p>
+     */
+    inline bool GeneratorDetailsHasBeenSet() const { return m_generatorDetailsHasBeenSet; }
+
+    /**
+     * <p>Provides metadata for the Amazon CodeGuru detector associated with a finding.
+     * This field pertains to findings that relate to Lambda functions. Amazon
+     * Inspector identifies policy violations and vulnerabilities in Lambda function
+     * code based on internal detectors developed in collaboration with Amazon
+     * CodeGuru. Security Hub receives those findings. </p>
+     */
+    inline void SetGeneratorDetails(const GeneratorDetails& value) { m_generatorDetailsHasBeenSet = true; m_generatorDetails = value; }
+
+    /**
+     * <p>Provides metadata for the Amazon CodeGuru detector associated with a finding.
+     * This field pertains to findings that relate to Lambda functions. Amazon
+     * Inspector identifies policy violations and vulnerabilities in Lambda function
+     * code based on internal detectors developed in collaboration with Amazon
+     * CodeGuru. Security Hub receives those findings. </p>
+     */
+    inline void SetGeneratorDetails(GeneratorDetails&& value) { m_generatorDetailsHasBeenSet = true; m_generatorDetails = std::move(value); }
+
+    /**
+     * <p>Provides metadata for the Amazon CodeGuru detector associated with a finding.
+     * This field pertains to findings that relate to Lambda functions. Amazon
+     * Inspector identifies policy violations and vulnerabilities in Lambda function
+     * code based on internal detectors developed in collaboration with Amazon
+     * CodeGuru. Security Hub receives those findings. </p>
+     */
+    inline AwsSecurityFinding& WithGeneratorDetails(const GeneratorDetails& value) { SetGeneratorDetails(value); return *this;}
+
+    /**
+     * <p>Provides metadata for the Amazon CodeGuru detector associated with a finding.
+     * This field pertains to findings that relate to Lambda functions. Amazon
+     * Inspector identifies policy violations and vulnerabilities in Lambda function
+     * code based on internal detectors developed in collaboration with Amazon
+     * CodeGuru. Security Hub receives those findings. </p>
+     */
+    inline AwsSecurityFinding& WithGeneratorDetails(GeneratorDetails&& value) { SetGeneratorDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_schemaVersion;
@@ -2245,6 +2301,9 @@ namespace Model
 
     bool m_sample;
     bool m_sampleHasBeenSet = false;
+
+    GeneratorDetails m_generatorDetails;
+    bool m_generatorDetailsHasBeenSet = false;
   };
 
 } // namespace Model
