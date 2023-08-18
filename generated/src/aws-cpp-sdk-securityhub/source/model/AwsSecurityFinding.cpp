@@ -65,7 +65,8 @@ AwsSecurityFinding::AwsSecurityFinding() :
     m_actionHasBeenSet(false),
     m_findingProviderFieldsHasBeenSet(false),
     m_sample(false),
-    m_sampleHasBeenSet(false)
+    m_sampleHasBeenSet(false),
+    m_generatorDetailsHasBeenSet(false)
 {
 }
 
@@ -116,7 +117,8 @@ AwsSecurityFinding::AwsSecurityFinding(JsonView jsonValue) :
     m_actionHasBeenSet(false),
     m_findingProviderFieldsHasBeenSet(false),
     m_sample(false),
-    m_sampleHasBeenSet(false)
+    m_sampleHasBeenSet(false),
+    m_generatorDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -440,6 +442,13 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     m_sampleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GeneratorDetails"))
+  {
+    m_generatorDetails = jsonValue.GetObject("GeneratorDetails");
+
+    m_generatorDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -737,6 +746,12 @@ JsonValue AwsSecurityFinding::Jsonize() const
   if(m_sampleHasBeenSet)
   {
    payload.WithBool("Sample", m_sample);
+
+  }
+
+  if(m_generatorDetailsHasBeenSet)
+  {
+   payload.WithObject("GeneratorDetails", m_generatorDetails.Jsonize());
 
   }
 

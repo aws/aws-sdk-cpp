@@ -34,50 +34,50 @@ namespace Model
 
 
     /**
-     * <p>The names of all the approval rule templates found in the AWS Region for your
-     * AWS account.</p>
+     * <p>The names of all the approval rule templates found in the Amazon Web Services
+     * Region for your Amazon Web Services account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApprovalRuleTemplateNames() const{ return m_approvalRuleTemplateNames; }
 
     /**
-     * <p>The names of all the approval rule templates found in the AWS Region for your
-     * AWS account.</p>
+     * <p>The names of all the approval rule templates found in the Amazon Web Services
+     * Region for your Amazon Web Services account.</p>
      */
     inline void SetApprovalRuleTemplateNames(const Aws::Vector<Aws::String>& value) { m_approvalRuleTemplateNames = value; }
 
     /**
-     * <p>The names of all the approval rule templates found in the AWS Region for your
-     * AWS account.</p>
+     * <p>The names of all the approval rule templates found in the Amazon Web Services
+     * Region for your Amazon Web Services account.</p>
      */
     inline void SetApprovalRuleTemplateNames(Aws::Vector<Aws::String>&& value) { m_approvalRuleTemplateNames = std::move(value); }
 
     /**
-     * <p>The names of all the approval rule templates found in the AWS Region for your
-     * AWS account.</p>
+     * <p>The names of all the approval rule templates found in the Amazon Web Services
+     * Region for your Amazon Web Services account.</p>
      */
     inline ListApprovalRuleTemplatesResult& WithApprovalRuleTemplateNames(const Aws::Vector<Aws::String>& value) { SetApprovalRuleTemplateNames(value); return *this;}
 
     /**
-     * <p>The names of all the approval rule templates found in the AWS Region for your
-     * AWS account.</p>
+     * <p>The names of all the approval rule templates found in the Amazon Web Services
+     * Region for your Amazon Web Services account.</p>
      */
     inline ListApprovalRuleTemplatesResult& WithApprovalRuleTemplateNames(Aws::Vector<Aws::String>&& value) { SetApprovalRuleTemplateNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of all the approval rule templates found in the AWS Region for your
-     * AWS account.</p>
+     * <p>The names of all the approval rule templates found in the Amazon Web Services
+     * Region for your Amazon Web Services account.</p>
      */
     inline ListApprovalRuleTemplatesResult& AddApprovalRuleTemplateNames(const Aws::String& value) { m_approvalRuleTemplateNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of all the approval rule templates found in the AWS Region for your
-     * AWS account.</p>
+     * <p>The names of all the approval rule templates found in the Amazon Web Services
+     * Region for your Amazon Web Services account.</p>
      */
     inline ListApprovalRuleTemplatesResult& AddApprovalRuleTemplateNames(Aws::String&& value) { m_approvalRuleTemplateNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of all the approval rule templates found in the AWS Region for your
-     * AWS account.</p>
+     * <p>The names of all the approval rule templates found in the Amazon Web Services
+     * Region for your Amazon Web Services account.</p>
      */
     inline ListApprovalRuleTemplatesResult& AddApprovalRuleTemplateNames(const char* value) { m_approvalRuleTemplateNames.push_back(value); return *this; }
 

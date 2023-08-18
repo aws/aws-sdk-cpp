@@ -78,72 +78,72 @@ namespace Model
     /**
      * <p>The emoji reaction you want to add or update. To remove a reaction, provide a
      * value of blank or null. You can also provide the value of none. For information
-     * about emoji reaction values supported in AWS CodeCommit, see the <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS
-     * CodeCommit User Guide</a>.</p>
+     * about emoji reaction values supported in CodeCommit, see the <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit
+     * User Guide</a>.</p>
      */
     inline const Aws::String& GetReactionValue() const{ return m_reactionValue; }
 
     /**
      * <p>The emoji reaction you want to add or update. To remove a reaction, provide a
      * value of blank or null. You can also provide the value of none. For information
-     * about emoji reaction values supported in AWS CodeCommit, see the <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS
-     * CodeCommit User Guide</a>.</p>
+     * about emoji reaction values supported in CodeCommit, see the <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit
+     * User Guide</a>.</p>
      */
     inline bool ReactionValueHasBeenSet() const { return m_reactionValueHasBeenSet; }
 
     /**
      * <p>The emoji reaction you want to add or update. To remove a reaction, provide a
      * value of blank or null. You can also provide the value of none. For information
-     * about emoji reaction values supported in AWS CodeCommit, see the <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS
-     * CodeCommit User Guide</a>.</p>
+     * about emoji reaction values supported in CodeCommit, see the <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit
+     * User Guide</a>.</p>
      */
     inline void SetReactionValue(const Aws::String& value) { m_reactionValueHasBeenSet = true; m_reactionValue = value; }
 
     /**
      * <p>The emoji reaction you want to add or update. To remove a reaction, provide a
      * value of blank or null. You can also provide the value of none. For information
-     * about emoji reaction values supported in AWS CodeCommit, see the <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS
-     * CodeCommit User Guide</a>.</p>
+     * about emoji reaction values supported in CodeCommit, see the <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit
+     * User Guide</a>.</p>
      */
     inline void SetReactionValue(Aws::String&& value) { m_reactionValueHasBeenSet = true; m_reactionValue = std::move(value); }
 
     /**
      * <p>The emoji reaction you want to add or update. To remove a reaction, provide a
      * value of blank or null. You can also provide the value of none. For information
-     * about emoji reaction values supported in AWS CodeCommit, see the <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS
-     * CodeCommit User Guide</a>.</p>
+     * about emoji reaction values supported in CodeCommit, see the <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit
+     * User Guide</a>.</p>
      */
     inline void SetReactionValue(const char* value) { m_reactionValueHasBeenSet = true; m_reactionValue.assign(value); }
 
     /**
      * <p>The emoji reaction you want to add or update. To remove a reaction, provide a
      * value of blank or null. You can also provide the value of none. For information
-     * about emoji reaction values supported in AWS CodeCommit, see the <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS
-     * CodeCommit User Guide</a>.</p>
+     * about emoji reaction values supported in CodeCommit, see the <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit
+     * User Guide</a>.</p>
      */
     inline PutCommentReactionRequest& WithReactionValue(const Aws::String& value) { SetReactionValue(value); return *this;}
 
     /**
      * <p>The emoji reaction you want to add or update. To remove a reaction, provide a
      * value of blank or null. You can also provide the value of none. For information
-     * about emoji reaction values supported in AWS CodeCommit, see the <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS
-     * CodeCommit User Guide</a>.</p>
+     * about emoji reaction values supported in CodeCommit, see the <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit
+     * User Guide</a>.</p>
      */
     inline PutCommentReactionRequest& WithReactionValue(Aws::String&& value) { SetReactionValue(std::move(value)); return *this;}
 
     /**
      * <p>The emoji reaction you want to add or update. To remove a reaction, provide a
      * value of blank or null. You can also provide the value of none. For information
-     * about emoji reaction values supported in AWS CodeCommit, see the <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS
-     * CodeCommit User Guide</a>.</p>
+     * about emoji reaction values supported in CodeCommit, see the <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit
+     * User Guide</a>.</p>
      */
     inline PutCommentReactionRequest& WithReactionValue(const char* value) { SetReactionValue(value); return *this;}
 

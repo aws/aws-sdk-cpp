@@ -23,31 +23,32 @@ namespace SecurityHub
    * accounts, services, and integrated third-party products and helps you analyze
    * security trends in your environment to identify the highest priority security
    * issues. For more information about Security Hub, see the <a
-   * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">Security
-   * HubUser Guide</a>.</p> <p>When you use operations in the Security Hub API, the
-   * requests are executed only in the Amazon Web Services Region that is currently
-   * active or in the specific Amazon Web Services Region that you specify in your
-   * request. Any configuration or settings change that results from the operation is
-   * applied only to that Region. To make the same change in other Regions, run the
-   * same command for each Region in which you want to apply the change.</p> <p>For
-   * example, if your Region is set to <code>us-west-2</code>, when you use
-   * <code>CreateMembers</code> to add a member account to Security Hub, the
-   * association of the member account with the administrator account is created only
-   * in the <code>us-west-2</code> Region. Security Hub must be enabled for the
-   * member account in the same Region that the invitation was sent from.</p> <p>The
-   * following throttling limits apply to using Security Hub API operations.</p> <ul>
-   * <li> <p> <code>BatchEnableStandards</code> - <code>RateLimit</code> of 1 request
-   * per second. <code>BurstLimit</code> of 1 request per second.</p> </li> <li> <p>
-   * <code>GetFindings</code> - <code>RateLimit</code> of 3 requests per second.
-   * <code>BurstLimit</code> of 6 requests per second.</p> </li> <li> <p>
-   * <code>BatchImportFindings</code> - <code>RateLimit</code> of 10 requests per
-   * second. <code>BurstLimit</code> of 30 requests per second.</p> </li> <li> <p>
-   * <code>BatchUpdateFindings</code> - <code>RateLimit</code> of 10 requests per
-   * second. <code>BurstLimit</code> of 30 requests per second.</p> </li> <li> <p>
-   * <code>UpdateStandardsControl</code> - <code>RateLimit</code> of 1 request per
-   * second. <code>BurstLimit</code> of 5 requests per second.</p> </li> <li> <p>All
-   * other operations - <code>RateLimit</code> of 10 requests per second.
-   * <code>BurstLimit</code> of 30 requests per second.</p> </li> </ul>
+   * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
+   * <i>Security Hub User Guide</i> </a>.</p> <p>When you use operations in the
+   * Security Hub API, the requests are executed only in the Amazon Web Services
+   * Region that is currently active or in the specific Amazon Web Services Region
+   * that you specify in your request. Any configuration or settings change that
+   * results from the operation is applied only to that Region. To make the same
+   * change in other Regions, run the same command for each Region in which you want
+   * to apply the change.</p> <p>For example, if your Region is set to
+   * <code>us-west-2</code>, when you use <code>CreateMembers</code> to add a member
+   * account to Security Hub, the association of the member account with the
+   * administrator account is created only in the <code>us-west-2</code> Region.
+   * Security Hub must be enabled for the member account in the same Region that the
+   * invitation was sent from.</p> <p>The following throttling limits apply to using
+   * Security Hub API operations.</p> <ul> <li> <p> <code>BatchEnableStandards</code>
+   * - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 1
+   * request per second.</p> </li> <li> <p> <code>GetFindings</code> -
+   * <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6
+   * requests per second.</p> </li> <li> <p> <code>BatchImportFindings</code> -
+   * <code>RateLimit</code> of 10 requests per second. <code>BurstLimit</code> of 30
+   * requests per second.</p> </li> <li> <p> <code>BatchUpdateFindings</code> -
+   * <code>RateLimit</code> of 10 requests per second. <code>BurstLimit</code> of 30
+   * requests per second.</p> </li> <li> <p> <code>UpdateStandardsControl</code> -
+   * <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5
+   * requests per second.</p> </li> <li> <p>All other operations -
+   * <code>RateLimit</code> of 10 requests per second. <code>BurstLimit</code> of 30
+   * requests per second.</p> </li> </ul>
    */
   class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SecurityHubClient>
   {
@@ -753,9 +754,10 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Deletes the specified member accounts from Security Hub.</p> <p>Can be used
-         * to delete member accounts that belong to an organization as well as member
-         * accounts that were invited manually.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified member accounts from Security Hub.</p> <p>You can
+         * invoke this API only to delete accounts that became members through invitation.
+         * You can't invoke this API to delete accounts that belong to an Organizations
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteMembers">AWS
          * API Reference</a></p>
          */
@@ -996,16 +998,16 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Disables Security Hub in your account only in the current Region. To disable
-         * Security Hub in all Regions, you must submit one request per Region where you
-         * have enabled Security Hub.</p> <p>When you disable Security Hub for an
-         * administrator account, it doesn't disable Security Hub for any associated member
-         * accounts.</p> <p>When you disable Security Hub, your existing findings and
-         * insights and any Security Hub configuration settings are deleted after 90 days
-         * and cannot be recovered. Any standards that were enabled are disabled, and your
-         * administrator and member account associations are removed.</p> <p>If you want to
-         * save your existing findings, you must export them before you disable Security
-         * Hub.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables Security Hub in your account only in the current Amazon Web Services
+         * Region. To disable Security Hub in all Regions, you must submit one request per
+         * Region where you have enabled Security Hub.</p> <p>You can't disable Security
+         * Hub in an account that is currently the Security Hub administrator.</p> <p>When
+         * you disable Security Hub, your existing findings and insights and any Security
+         * Hub configuration settings are deleted after 90 days and cannot be recovered.
+         * Any standards that were enabled are disabled, and your administrator and member
+         * account associations are removed.</p> <p>If you want to save your existing
+         * findings, you must export them before you disable Security Hub.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">AWS
          * API Reference</a></p>
          */
