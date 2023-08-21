@@ -75,11 +75,13 @@ namespace Aws
          */
         struct AWS_CORE_API ClientConfiguration
         {
-                /**
-                 * Create a configuration with default settings. By default IMDS calls are enabled.
-                 * @param ClientConfigurationInitValues ClientConfiguration initial customizable values
-                 */
-            ClientConfiguration(const ClientConfigurationInitValues &configuration = {});
+            ClientConfiguration();
+
+            /**
+             * Create a configuration with default settings. By default IMDS calls are enabled.
+             * @param ClientConfigurationInitValues ClientConfiguration initial customizable values
+             */
+            ClientConfiguration(const ClientConfigurationInitValues &configuration);
 
             /**
              * Create a configuration based on settings in the aws configuration file for the given profile name.
