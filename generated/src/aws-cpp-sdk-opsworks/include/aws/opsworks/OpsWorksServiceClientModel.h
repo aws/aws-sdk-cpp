@@ -126,6 +126,8 @@ namespace Aws
       class DescribeInstancesRequest;
       class DescribeLayersRequest;
       class DescribeLoadBasedAutoScalingRequest;
+      class DescribeMyUserProfileRequest;
+      class DescribeOperatingSystemsRequest;
       class DescribePermissionsRequest;
       class DescribeRaidArraysRequest;
       class DescribeRdsDbInstancesRequest;
@@ -358,8 +360,8 @@ namespace Aws
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeLayersRequest&, const Model::DescribeLayersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLayersResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeLoadBasedAutoScalingRequest&, const Model::DescribeLoadBasedAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBasedAutoScalingResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeMyUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMyUserProfileResponseReceivedHandler;
-    typedef std::function<void(const OpsWorksClient*, const Model::DescribeOperatingSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOperatingSystemsResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksClient*, const Model::DescribeMyUserProfileRequest&, const Model::DescribeMyUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMyUserProfileResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksClient*, const Model::DescribeOperatingSystemsRequest&, const Model::DescribeOperatingSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOperatingSystemsResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribePermissionsRequest&, const Model::DescribePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePermissionsResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeRaidArraysRequest&, const Model::DescribeRaidArraysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRaidArraysResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeRdsDbInstancesRequest&, const Model::DescribeRdsDbInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRdsDbInstancesResponseReceivedHandler;

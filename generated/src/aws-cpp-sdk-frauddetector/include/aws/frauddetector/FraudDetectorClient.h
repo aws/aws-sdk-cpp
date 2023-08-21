@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/frauddetector/FraudDetectorServiceClientModel.h>
+#include <aws/frauddetector/model/GetKMSEncryptionKeyRequest.h>
 
 namespace Aws
 {
@@ -1223,25 +1224,26 @@ namespace FraudDetector
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetKMSEncryptionKeyOutcome GetKMSEncryptionKey() const;
+        virtual Model::GetKMSEncryptionKeyOutcome GetKMSEncryptionKey(const Model::GetKMSEncryptionKeyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetKMSEncryptionKey that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetKMSEncryptionKeyOutcomeCallable GetKMSEncryptionKeyCallable() const
+        template<typename GetKMSEncryptionKeyRequestT = Model::GetKMSEncryptionKeyRequest>
+        Model::GetKMSEncryptionKeyOutcomeCallable GetKMSEncryptionKeyCallable(const GetKMSEncryptionKeyRequestT& request = {}) const
         {
-            return SubmitCallable(&FraudDetectorClient::GetKMSEncryptionKey);
+            return SubmitCallable(&FraudDetectorClient::GetKMSEncryptionKey, request);
         }
 
         /**
          * An Async wrapper for GetKMSEncryptionKey that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetKMSEncryptionKeyAsync(const GetKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetKMSEncryptionKeyRequestT = Model::GetKMSEncryptionKeyRequest>
+        void GetKMSEncryptionKeyAsync(const GetKMSEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetKMSEncryptionKeyRequestT& request = {}) const
         {
-            return SubmitAsync(&FraudDetectorClient::GetKMSEncryptionKey, handler, context);
+            return SubmitAsync(&FraudDetectorClient::GetKMSEncryptionKey, request, handler, context);
         }
+
         /**
          * <p>Gets all labels or a specific label if name is provided. This is a paginated
          * API. If you provide a null <code>maxResults</code>, this action retrieves a
