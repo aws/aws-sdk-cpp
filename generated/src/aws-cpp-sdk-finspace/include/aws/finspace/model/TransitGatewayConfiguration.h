@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/finspace/model/NetworkACLEntry.h>
 #include <utility>
 
 namespace Aws
@@ -152,6 +154,55 @@ namespace Model
      */
     inline TransitGatewayConfiguration& WithRoutableCIDRSpace(const char* value) { SetRoutableCIDRSpace(value); return *this;}
 
+
+    /**
+     * <p> The rules that define how you manage the outbound traffic from kdb network
+     * to your internal network. </p>
+     */
+    inline const Aws::Vector<NetworkACLEntry>& GetAttachmentNetworkAclConfiguration() const{ return m_attachmentNetworkAclConfiguration; }
+
+    /**
+     * <p> The rules that define how you manage the outbound traffic from kdb network
+     * to your internal network. </p>
+     */
+    inline bool AttachmentNetworkAclConfigurationHasBeenSet() const { return m_attachmentNetworkAclConfigurationHasBeenSet; }
+
+    /**
+     * <p> The rules that define how you manage the outbound traffic from kdb network
+     * to your internal network. </p>
+     */
+    inline void SetAttachmentNetworkAclConfiguration(const Aws::Vector<NetworkACLEntry>& value) { m_attachmentNetworkAclConfigurationHasBeenSet = true; m_attachmentNetworkAclConfiguration = value; }
+
+    /**
+     * <p> The rules that define how you manage the outbound traffic from kdb network
+     * to your internal network. </p>
+     */
+    inline void SetAttachmentNetworkAclConfiguration(Aws::Vector<NetworkACLEntry>&& value) { m_attachmentNetworkAclConfigurationHasBeenSet = true; m_attachmentNetworkAclConfiguration = std::move(value); }
+
+    /**
+     * <p> The rules that define how you manage the outbound traffic from kdb network
+     * to your internal network. </p>
+     */
+    inline TransitGatewayConfiguration& WithAttachmentNetworkAclConfiguration(const Aws::Vector<NetworkACLEntry>& value) { SetAttachmentNetworkAclConfiguration(value); return *this;}
+
+    /**
+     * <p> The rules that define how you manage the outbound traffic from kdb network
+     * to your internal network. </p>
+     */
+    inline TransitGatewayConfiguration& WithAttachmentNetworkAclConfiguration(Aws::Vector<NetworkACLEntry>&& value) { SetAttachmentNetworkAclConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p> The rules that define how you manage the outbound traffic from kdb network
+     * to your internal network. </p>
+     */
+    inline TransitGatewayConfiguration& AddAttachmentNetworkAclConfiguration(const NetworkACLEntry& value) { m_attachmentNetworkAclConfigurationHasBeenSet = true; m_attachmentNetworkAclConfiguration.push_back(value); return *this; }
+
+    /**
+     * <p> The rules that define how you manage the outbound traffic from kdb network
+     * to your internal network. </p>
+     */
+    inline TransitGatewayConfiguration& AddAttachmentNetworkAclConfiguration(NetworkACLEntry&& value) { m_attachmentNetworkAclConfigurationHasBeenSet = true; m_attachmentNetworkAclConfiguration.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_transitGatewayID;
@@ -159,6 +210,9 @@ namespace Model
 
     Aws::String m_routableCIDRSpace;
     bool m_routableCIDRSpaceHasBeenSet = false;
+
+    Aws::Vector<NetworkACLEntry> m_attachmentNetworkAclConfiguration;
+    bool m_attachmentNetworkAclConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

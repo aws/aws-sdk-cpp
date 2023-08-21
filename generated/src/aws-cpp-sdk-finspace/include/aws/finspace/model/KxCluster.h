@@ -505,7 +505,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -513,7 +513,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -521,7 +521,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -529,7 +529,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -537,7 +537,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
@@ -545,7 +545,7 @@ namespace Model
 
     /**
      * <p>The number of availability zones assigned per cluster. This can be one of the
-     * following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
+     * following:</p> <ul> <li> <p> <code>SINGLE</code> – Assigns one availability zone
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */

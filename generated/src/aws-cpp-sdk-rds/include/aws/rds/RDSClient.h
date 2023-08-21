@@ -2932,21 +2932,39 @@ namespace Aws
         }
 
         /**
-         * <p>Initiates the failover process for an Aurora global database
-         * (<a>GlobalCluster</a>).</p> <p>A failover for an Aurora global database promotes
-         * one of secondary read-only DB clusters to be the primary DB cluster and demotes
-         * the primary DB cluster to being a secondary (read-only) DB cluster. In other
-         * words, the role of the current primary DB cluster and the selected (target) DB
-         * cluster are switched. The selected secondary DB cluster assumes full read/write
-         * capabilities for the Aurora global database.</p> <p>For more information about
-         * failing over an Amazon Aurora global database, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Managed
-         * planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora
-         * User Guide</i>.</p>  <p>This action applies to <a>GlobalCluster</a>
-         * (Aurora global databases) only. Use this action only on healthy Aurora global
-         * databases with running Aurora DB clusters and no Region-wide outages, to test
-         * disaster recovery scenarios or to reconfigure your Aurora global database
-         * topology.</p> <p><h3>See Also:</h3>   <a
+         * <p>Promotes the specified secondary DB cluster to be the primary DB cluster in
+         * the global database cluster to fail over or switch over a global database.
+         * Switchover operations were previously called "managed planned failovers."</p>
+         *  <p>Although this operation can be used either to fail over or to switch
+         * over a global database cluster, its intended use is for global database
+         * failover. To switch over a global database cluster, we recommend that you use
+         * the <a>SwitchoverGlobalCluster</a> operation instead.</p>  <p>How you use
+         * this operation depends on whether you are failing over or switching over your
+         * global database cluster:</p> <ul> <li> <p>Failing over - Specify the
+         * <code>AllowDataLoss</code> parameter and don't specify the
+         * <code>Switchover</code> parameter.</p> </li> <li> <p>Switching over - Specify
+         * the <code>Switchover</code> parameter or omit it, but don't specify the
+         * <code>AllowDataLoss</code> parameter.</p> </li> </ul> <p> <b>About failing over
+         * and switching over</b> </p> <p>While failing over and switching over a global
+         * database cluster both change the primary DB cluster, you use these operations
+         * for different reasons:</p> <ul> <li> <p> <i>Failing over</i> - Use this
+         * operation to respond to an unplanned event, such as a Regional disaster in the
+         * primary Region. Failing over can result in a loss of write transaction data that
+         * wasn't replicated to the chosen secondary before the failover event occurred.
+         * However, the recovery process that promotes a DB instance on the chosen seconday
+         * DB cluster to be the primary writer DB instance guarantees that the data is in a
+         * transactionally consistent state.</p> <p>For more information about failing over
+         * an Amazon Aurora global database, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-failover.managed-unplanned">Performing
+         * managed failovers for Aurora global databases</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p> </li> <li> <p> <i>Switching over</i> - Use this operation on a
+         * healthy global database cluster for planned events, such as Regional rotation or
+         * to fail back to the original primary DB cluster after a failover operation. With
+         * this operation, there is no data loss.</p> <p>For more information about
+         * switching over an Amazon Aurora global database, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Performing
+         * switchovers for Aurora global databases</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">AWS
          * API Reference</a></p>
          */
@@ -3587,9 +3605,10 @@ namespace Aws
         }
 
         /**
-         * <p>Modifies a setting for an Amazon Aurora global cluster. You can change one or
-         * more database configuration parameters by specifying these parameters and the
-         * new values in the request. For more information on Amazon Aurora, see <a
+         * <p>Modifies a setting for an Amazon Aurora global database cluster. You can
+         * change one or more database configuration parameters by specifying these
+         * parameters and the new values in the request. For more information on Amazon
+         * Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> 
          * <p>This operation only applies to Aurora global database clusters.</p>
@@ -4636,6 +4655,46 @@ namespace Aws
         void SwitchoverBlueGreenDeploymentAsync(const SwitchoverBlueGreenDeploymentRequestT& request, const SwitchoverBlueGreenDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RDSClient::SwitchoverBlueGreenDeployment, request, handler, context);
+        }
+
+        /**
+         * <p>Switches over the specified secondary DB cluster to be the new primary DB
+         * cluster in the global database cluster. Switchover operations were previously
+         * called "managed planned failovers."</p> <p>Aurora promotes the specified
+         * secondary cluster to assume full read/write capabilities and demotes the current
+         * primary cluster to a secondary (read-only) cluster, maintaining the orginal
+         * replication topology. All secondary clusters are synchronized with the primary
+         * at the beginning of the process so the new primary continues operations for the
+         * Aurora global database without losing any data. Your database is unavailable for
+         * a short time while the primary and selected secondary clusters are assuming
+         * their new roles. For more information about switching over an Aurora global
+         * database, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover">Performing
+         * switchovers for Amazon Aurora global databases</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p>  <p>This operation is intended for controlled environments,
+         * for operations such as "regional rotation" or to fall back to the original
+         * primary after a global database failover.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SwitchoverGlobalClusterOutcome SwitchoverGlobalCluster(const Model::SwitchoverGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for SwitchoverGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SwitchoverGlobalClusterRequestT = Model::SwitchoverGlobalClusterRequest>
+        Model::SwitchoverGlobalClusterOutcomeCallable SwitchoverGlobalClusterCallable(const SwitchoverGlobalClusterRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::SwitchoverGlobalCluster, request);
+        }
+
+        /**
+         * An Async wrapper for SwitchoverGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SwitchoverGlobalClusterRequestT = Model::SwitchoverGlobalClusterRequest>
+        void SwitchoverGlobalClusterAsync(const SwitchoverGlobalClusterRequestT& request, const SwitchoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::SwitchoverGlobalCluster, request, handler, context);
         }
 
         /**

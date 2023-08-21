@@ -8,8 +8,10 @@
 #include <aws/finspace/FinspaceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/finspace/model/KxDeploymentConfiguration.h>
 #include <aws/finspace/model/KxDatabaseConfiguration.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -197,6 +199,43 @@ namespace Model
      */
     inline UpdateKxClusterDatabasesRequest& AddDatabases(KxDatabaseConfiguration&& value) { m_databasesHasBeenSet = true; m_databases.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The configuration that allows you to choose how you want to update the
+     * databases on a cluster. </p>
+     */
+    inline const KxDeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
+
+    /**
+     * <p> The configuration that allows you to choose how you want to update the
+     * databases on a cluster. </p>
+     */
+    inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }
+
+    /**
+     * <p> The configuration that allows you to choose how you want to update the
+     * databases on a cluster. </p>
+     */
+    inline void SetDeploymentConfiguration(const KxDeploymentConfiguration& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
+
+    /**
+     * <p> The configuration that allows you to choose how you want to update the
+     * databases on a cluster. </p>
+     */
+    inline void SetDeploymentConfiguration(KxDeploymentConfiguration&& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = std::move(value); }
+
+    /**
+     * <p> The configuration that allows you to choose how you want to update the
+     * databases on a cluster. </p>
+     */
+    inline UpdateKxClusterDatabasesRequest& WithDeploymentConfiguration(const KxDeploymentConfiguration& value) { SetDeploymentConfiguration(value); return *this;}
+
+    /**
+     * <p> The configuration that allows you to choose how you want to update the
+     * databases on a cluster. </p>
+     */
+    inline UpdateKxClusterDatabasesRequest& WithDeploymentConfiguration(KxDeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_environmentId;
@@ -210,6 +249,9 @@ namespace Model
 
     Aws::Vector<KxDatabaseConfiguration> m_databases;
     bool m_databasesHasBeenSet = false;
+
+    KxDeploymentConfiguration m_deploymentConfiguration;
+    bool m_deploymentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model
