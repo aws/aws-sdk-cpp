@@ -12,6 +12,11 @@
 #if(!$operation.documentation)
 #set($operation.documentation = '')
 #end
+#if($operation.isRequestlessDefault())
+#set($defaultOp = " = {}")
+#else
+#set($defaultOp = "")
+#end
 #if($operation.request)
 #if($operation.request.shape.hasEventStreamMembers())
         /**
@@ -30,7 +35,7 @@
         /**
          * ${operation.documentation}
          */
-        $virtual Model::${operation.name}Outcome ${operation.name}(${constText}Model::${operation.request.shape.name}& request) const;
+        $virtual Model::${operation.name}Outcome ${operation.name}(${constText}Model::${operation.request.shape.name}& request${defaultOp}) const;
 
 #if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
 ##S3 CRT-backed Operations do not support Async Callable API
@@ -42,7 +47,7 @@
         $virtual Model::${operation.name}OutcomeCallable ${operation.name}Callable(${constText}Model::${operation.request.shape.name}& request) const;
 #else
         template<typename ${operation.name}RequestT = Model::${operation.request.shape.name}>
-        Model::${operation.name}OutcomeCallable ${operation.name}Callable(${constText}${operation.name}RequestT& request) const
+        Model::${operation.name}OutcomeCallable ${operation.name}Callable(${constText}${operation.name}RequestT& request${defaultOp}) const
         {
             return SubmitCallable(&${className}::${operation.name}, request);
         }
@@ -55,6 +60,12 @@
 #if($serviceModel.metadata.serviceId == "S3" && $operation.s3CrtEnabled)
 ##S3 CRT-backed Operations are primarly based on Async implementation not sync blocking calls
         $virtual void ${operation.name}Async(${constText}Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+#elseif($operation.isRequestlessDefault())
+        template<typename ${operation.name}RequestT = Model::${operation.request.shape.name}>
+        void ${operation.name}Async(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, ${constText}${operation.name}RequestT& request${defaultOp}) const
+        {
+            return SubmitAsync(&${className}::${operation.name}, request, handler, context);
+        }
 #else
         template<typename ${operation.name}RequestT = Model::${operation.request.shape.name}>
         void ${operation.name}Async(${constText}${operation.name}RequestT& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const

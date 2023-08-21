@@ -80,6 +80,9 @@ namespace Aws
       class DescribeEventTypesRequest;
       class DescribeEventsRequest;
       class DescribeEventsForOrganizationRequest;
+      class DescribeHealthServiceStatusForOrganizationRequest;
+      class DisableHealthServiceAccessForOrganizationRequest;
+      class EnableHealthServiceAccessForOrganizationRequest;
       /* End of service model forward declarations required in HealthClient header */
 
       /* Service model Outcome class definitions */
@@ -128,9 +131,9 @@ namespace Aws
     typedef std::function<void(const HealthClient*, const Model::DescribeEventTypesRequest&, const Model::DescribeEventTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventTypesResponseReceivedHandler;
     typedef std::function<void(const HealthClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
     typedef std::function<void(const HealthClient*, const Model::DescribeEventsForOrganizationRequest&, const Model::DescribeEventsForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsForOrganizationResponseReceivedHandler;
-    typedef std::function<void(const HealthClient*, const Model::DescribeHealthServiceStatusForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHealthServiceStatusForOrganizationResponseReceivedHandler;
-    typedef std::function<void(const HealthClient*, const Model::DisableHealthServiceAccessForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableHealthServiceAccessForOrganizationResponseReceivedHandler;
-    typedef std::function<void(const HealthClient*, const Model::EnableHealthServiceAccessForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableHealthServiceAccessForOrganizationResponseReceivedHandler;
+    typedef std::function<void(const HealthClient*, const Model::DescribeHealthServiceStatusForOrganizationRequest&, const Model::DescribeHealthServiceStatusForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHealthServiceStatusForOrganizationResponseReceivedHandler;
+    typedef std::function<void(const HealthClient*, const Model::DisableHealthServiceAccessForOrganizationRequest&, const Model::DisableHealthServiceAccessForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableHealthServiceAccessForOrganizationResponseReceivedHandler;
+    typedef std::function<void(const HealthClient*, const Model::EnableHealthServiceAccessForOrganizationRequest&, const Model::EnableHealthServiceAccessForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableHealthServiceAccessForOrganizationResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Health
 } // namespace Aws

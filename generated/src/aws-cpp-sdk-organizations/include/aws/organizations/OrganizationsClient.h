@@ -10,6 +10,11 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/organizations/OrganizationsServiceClientModel.h>
+#include <aws/organizations/model/LeaveOrganizationRequest.h>
+#include <aws/organizations/model/DescribeResourcePolicyRequest.h>
+#include <aws/organizations/model/DeleteResourcePolicyRequest.h>
+#include <aws/organizations/model/DescribeOrganizationRequest.h>
+#include <aws/organizations/model/DeleteOrganizationRequest.h>
 
 namespace Aws
 {
@@ -658,25 +663,26 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteOrganizationOutcome DeleteOrganization() const;
+        virtual Model::DeleteOrganizationOutcome DeleteOrganization(const Model::DeleteOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DeleteOrganizationOutcomeCallable DeleteOrganizationCallable() const
+        template<typename DeleteOrganizationRequestT = Model::DeleteOrganizationRequest>
+        Model::DeleteOrganizationOutcomeCallable DeleteOrganizationCallable(const DeleteOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&OrganizationsClient::DeleteOrganization);
+            return SubmitCallable(&OrganizationsClient::DeleteOrganization, request);
         }
 
         /**
          * An Async wrapper for DeleteOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DeleteOrganizationAsync(const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DeleteOrganizationRequestT = Model::DeleteOrganizationRequest>
+        void DeleteOrganizationAsync(const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&OrganizationsClient::DeleteOrganization, handler, context);
+            return SubmitAsync(&OrganizationsClient::DeleteOrganization, request, handler, context);
         }
+
         /**
          * <p>Deletes an organizational unit (OU) from a root or another OU. You must first
          * remove all accounts and child OUs from the OU that you want to delete.</p>
@@ -740,25 +746,26 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy() const;
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable() const
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request = {}) const
         {
-            return SubmitCallable(&OrganizationsClient::DeleteResourcePolicy);
+            return SubmitCallable(&OrganizationsClient::DeleteResourcePolicy, request);
         }
 
         /**
          * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DeleteResourcePolicyAsync(const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteResourcePolicyRequestT& request = {}) const
         {
-            return SubmitAsync(&OrganizationsClient::DeleteResourcePolicy, handler, context);
+            return SubmitAsync(&OrganizationsClient::DeleteResourcePolicy, request, handler, context);
         }
+
         /**
          * <p>Removes the specified member Amazon Web Services account as a delegated
          * administrator for the specified Amazon Web Services service.</p> 
@@ -928,25 +935,26 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOrganizationOutcome DescribeOrganization() const;
+        virtual Model::DescribeOrganizationOutcome DescribeOrganization(const Model::DescribeOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeOrganizationOutcomeCallable DescribeOrganizationCallable() const
+        template<typename DescribeOrganizationRequestT = Model::DescribeOrganizationRequest>
+        Model::DescribeOrganizationOutcomeCallable DescribeOrganizationCallable(const DescribeOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&OrganizationsClient::DescribeOrganization);
+            return SubmitCallable(&OrganizationsClient::DescribeOrganization, request);
         }
 
         /**
          * An Async wrapper for DescribeOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeOrganizationAsync(const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeOrganizationRequestT = Model::DescribeOrganizationRequest>
+        void DescribeOrganizationAsync(const DescribeOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&OrganizationsClient::DescribeOrganization, handler, context);
+            return SubmitAsync(&OrganizationsClient::DescribeOrganization, request, handler, context);
         }
+
         /**
          * <p>Retrieves information about an organizational unit (OU).</p> <p>This
          * operation can be called only from the organization's management account or by a
@@ -1011,25 +1019,26 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeResourcePolicy">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeResourcePolicyOutcome DescribeResourcePolicy() const;
+        virtual Model::DescribeResourcePolicyOutcome DescribeResourcePolicy(const Model::DescribeResourcePolicyRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeResourcePolicyOutcomeCallable DescribeResourcePolicyCallable() const
+        template<typename DescribeResourcePolicyRequestT = Model::DescribeResourcePolicyRequest>
+        Model::DescribeResourcePolicyOutcomeCallable DescribeResourcePolicyCallable(const DescribeResourcePolicyRequestT& request = {}) const
         {
-            return SubmitCallable(&OrganizationsClient::DescribeResourcePolicy);
+            return SubmitCallable(&OrganizationsClient::DescribeResourcePolicy, request);
         }
 
         /**
          * An Async wrapper for DescribeResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeResourcePolicyAsync(const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeResourcePolicyRequestT = Model::DescribeResourcePolicyRequest>
+        void DescribeResourcePolicyAsync(const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeResourcePolicyRequestT& request = {}) const
         {
-            return SubmitAsync(&OrganizationsClient::DescribeResourcePolicy, handler, context);
+            return SubmitAsync(&OrganizationsClient::DescribeResourcePolicy, request, handler, context);
         }
+
         /**
          * <p>Detaches a policy from a target root, organizational unit (OU), or
          * account.</p>  <p>If the policy being detached is a service control
@@ -1396,25 +1405,26 @@ namespace Organizations
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::LeaveOrganizationOutcome LeaveOrganization() const;
+        virtual Model::LeaveOrganizationOutcome LeaveOrganization(const Model::LeaveOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for LeaveOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::LeaveOrganizationOutcomeCallable LeaveOrganizationCallable() const
+        template<typename LeaveOrganizationRequestT = Model::LeaveOrganizationRequest>
+        Model::LeaveOrganizationOutcomeCallable LeaveOrganizationCallable(const LeaveOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&OrganizationsClient::LeaveOrganization);
+            return SubmitCallable(&OrganizationsClient::LeaveOrganization, request);
         }
 
         /**
          * An Async wrapper for LeaveOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void LeaveOrganizationAsync(const LeaveOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename LeaveOrganizationRequestT = Model::LeaveOrganizationRequest>
+        void LeaveOrganizationAsync(const LeaveOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const LeaveOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&OrganizationsClient::LeaveOrganization, handler, context);
+            return SubmitAsync(&OrganizationsClient::LeaveOrganization, request, handler, context);
         }
+
         /**
          * <p>Returns a list of the Amazon Web Services services that you enabled to
          * integrate with your organization. After a service on this list creates the

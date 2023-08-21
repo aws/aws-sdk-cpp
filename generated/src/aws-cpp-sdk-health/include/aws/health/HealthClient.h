@@ -10,6 +10,9 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/health/HealthServiceClientModel.h>
+#include <aws/health/model/DescribeHealthServiceStatusForOrganizationRequest.h>
+#include <aws/health/model/DisableHealthServiceAccessForOrganizationRequest.h>
+#include <aws/health/model/EnableHealthServiceAccessForOrganizationRequest.h>
 
 namespace Aws
 {
@@ -513,25 +516,26 @@ namespace Health
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeHealthServiceStatusForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeHealthServiceStatusForOrganizationOutcome DescribeHealthServiceStatusForOrganization() const;
+        virtual Model::DescribeHealthServiceStatusForOrganizationOutcome DescribeHealthServiceStatusForOrganization(const Model::DescribeHealthServiceStatusForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeHealthServiceStatusForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeHealthServiceStatusForOrganizationOutcomeCallable DescribeHealthServiceStatusForOrganizationCallable() const
+        template<typename DescribeHealthServiceStatusForOrganizationRequestT = Model::DescribeHealthServiceStatusForOrganizationRequest>
+        Model::DescribeHealthServiceStatusForOrganizationOutcomeCallable DescribeHealthServiceStatusForOrganizationCallable(const DescribeHealthServiceStatusForOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&HealthClient::DescribeHealthServiceStatusForOrganization);
+            return SubmitCallable(&HealthClient::DescribeHealthServiceStatusForOrganization, request);
         }
 
         /**
          * An Async wrapper for DescribeHealthServiceStatusForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeHealthServiceStatusForOrganizationAsync(const DescribeHealthServiceStatusForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeHealthServiceStatusForOrganizationRequestT = Model::DescribeHealthServiceStatusForOrganizationRequest>
+        void DescribeHealthServiceStatusForOrganizationAsync(const DescribeHealthServiceStatusForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeHealthServiceStatusForOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&HealthClient::DescribeHealthServiceStatusForOrganization, handler, context);
+            return SubmitAsync(&HealthClient::DescribeHealthServiceStatusForOrganization, request, handler, context);
         }
+
         /**
          * <p>Disables Health from working with Organizations. To call this operation, you
          * must sign in to the organization's management account. For more information, see
@@ -553,25 +557,26 @@ namespace Health
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableHealthServiceAccessForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisableHealthServiceAccessForOrganizationOutcome DisableHealthServiceAccessForOrganization() const;
+        virtual Model::DisableHealthServiceAccessForOrganizationOutcome DisableHealthServiceAccessForOrganization(const Model::DisableHealthServiceAccessForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DisableHealthServiceAccessForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DisableHealthServiceAccessForOrganizationOutcomeCallable DisableHealthServiceAccessForOrganizationCallable() const
+        template<typename DisableHealthServiceAccessForOrganizationRequestT = Model::DisableHealthServiceAccessForOrganizationRequest>
+        Model::DisableHealthServiceAccessForOrganizationOutcomeCallable DisableHealthServiceAccessForOrganizationCallable(const DisableHealthServiceAccessForOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&HealthClient::DisableHealthServiceAccessForOrganization);
+            return SubmitCallable(&HealthClient::DisableHealthServiceAccessForOrganization, request);
         }
 
         /**
          * An Async wrapper for DisableHealthServiceAccessForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DisableHealthServiceAccessForOrganizationAsync(const DisableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DisableHealthServiceAccessForOrganizationRequestT = Model::DisableHealthServiceAccessForOrganizationRequest>
+        void DisableHealthServiceAccessForOrganizationAsync(const DisableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableHealthServiceAccessForOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&HealthClient::DisableHealthServiceAccessForOrganization, handler, context);
+            return SubmitAsync(&HealthClient::DisableHealthServiceAccessForOrganization, request, handler, context);
         }
+
         /**
          * <p>Enables Health to work with Organizations. You can use the organizational
          * view feature to aggregate events from all Amazon Web Services accounts in your
@@ -594,25 +599,26 @@ namespace Health
          * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableHealthServiceAccessForOrganization">AWS
          * API Reference</a></p>
          */
-        virtual Model::EnableHealthServiceAccessForOrganizationOutcome EnableHealthServiceAccessForOrganization() const;
+        virtual Model::EnableHealthServiceAccessForOrganizationOutcome EnableHealthServiceAccessForOrganization(const Model::EnableHealthServiceAccessForOrganizationRequest& request = {}) const;
 
         /**
          * A Callable wrapper for EnableHealthServiceAccessForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::EnableHealthServiceAccessForOrganizationOutcomeCallable EnableHealthServiceAccessForOrganizationCallable() const
+        template<typename EnableHealthServiceAccessForOrganizationRequestT = Model::EnableHealthServiceAccessForOrganizationRequest>
+        Model::EnableHealthServiceAccessForOrganizationOutcomeCallable EnableHealthServiceAccessForOrganizationCallable(const EnableHealthServiceAccessForOrganizationRequestT& request = {}) const
         {
-            return SubmitCallable(&HealthClient::EnableHealthServiceAccessForOrganization);
+            return SubmitCallable(&HealthClient::EnableHealthServiceAccessForOrganization, request);
         }
 
         /**
          * An Async wrapper for EnableHealthServiceAccessForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void EnableHealthServiceAccessForOrganizationAsync(const EnableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename EnableHealthServiceAccessForOrganizationRequestT = Model::EnableHealthServiceAccessForOrganizationRequest>
+        void EnableHealthServiceAccessForOrganizationAsync(const EnableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableHealthServiceAccessForOrganizationRequestT& request = {}) const
         {
-            return SubmitAsync(&HealthClient::EnableHealthServiceAccessForOrganization, handler, context);
+            return SubmitAsync(&HealthClient::EnableHealthServiceAccessForOrganization, request, handler, context);
         }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<HealthEndpointProviderBase>& accessEndpointProvider();

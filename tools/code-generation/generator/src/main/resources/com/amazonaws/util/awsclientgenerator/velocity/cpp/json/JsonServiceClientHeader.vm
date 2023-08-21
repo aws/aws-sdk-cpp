@@ -11,6 +11,9 @@
 \#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/core/utils/json/JsonSerializer.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
+#foreach($RequestImport in $RequestlessOperations)
+\#include <aws/$metadata.projectName/model/${RequestImport}Request.h>
+#end
 
 namespace ${rootNamespace}
 {
