@@ -10,6 +10,9 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/directconnect/DirectConnectServiceClientModel.h>
+#include <aws/directconnect/model/DescribeLocationsRequest.h>
+#include <aws/directconnect/model/DescribeCustomerMetadataRequest.h>
+#include <aws/directconnect/model/DescribeVirtualGatewaysRequest.h>
 
 namespace Aws
 {
@@ -1124,25 +1127,26 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeCustomerMetadata">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeCustomerMetadataOutcome DescribeCustomerMetadata() const;
+        virtual Model::DescribeCustomerMetadataOutcome DescribeCustomerMetadata(const Model::DescribeCustomerMetadataRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeCustomerMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeCustomerMetadataOutcomeCallable DescribeCustomerMetadataCallable() const
+        template<typename DescribeCustomerMetadataRequestT = Model::DescribeCustomerMetadataRequest>
+        Model::DescribeCustomerMetadataOutcomeCallable DescribeCustomerMetadataCallable(const DescribeCustomerMetadataRequestT& request = {}) const
         {
-            return SubmitCallable(&DirectConnectClient::DescribeCustomerMetadata);
+            return SubmitCallable(&DirectConnectClient::DescribeCustomerMetadata, request);
         }
 
         /**
          * An Async wrapper for DescribeCustomerMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeCustomerMetadataAsync(const DescribeCustomerMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeCustomerMetadataRequestT = Model::DescribeCustomerMetadataRequest>
+        void DescribeCustomerMetadataAsync(const DescribeCustomerMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCustomerMetadataRequestT& request = {}) const
         {
-            return SubmitAsync(&DirectConnectClient::DescribeCustomerMetadata, handler, context);
+            return SubmitAsync(&DirectConnectClient::DescribeCustomerMetadata, request, handler, context);
         }
+
         /**
          * <p>Describes one or more association proposals for connection between a virtual
          * private gateway or transit gateway and a Direct Connect gateway. </p><p><h3>See
@@ -1383,25 +1387,26 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLocations">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeLocationsOutcome DescribeLocations() const;
+        virtual Model::DescribeLocationsOutcome DescribeLocations(const Model::DescribeLocationsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeLocations that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeLocationsOutcomeCallable DescribeLocationsCallable() const
+        template<typename DescribeLocationsRequestT = Model::DescribeLocationsRequest>
+        Model::DescribeLocationsOutcomeCallable DescribeLocationsCallable(const DescribeLocationsRequestT& request = {}) const
         {
-            return SubmitCallable(&DirectConnectClient::DescribeLocations);
+            return SubmitCallable(&DirectConnectClient::DescribeLocations, request);
         }
 
         /**
          * An Async wrapper for DescribeLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeLocationsAsync(const DescribeLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeLocationsRequestT = Model::DescribeLocationsRequest>
+        void DescribeLocationsAsync(const DescribeLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeLocationsRequestT& request = {}) const
         {
-            return SubmitAsync(&DirectConnectClient::DescribeLocations, handler, context);
+            return SubmitAsync(&DirectConnectClient::DescribeLocations, request, handler, context);
         }
+
         /**
          * <p> Details about the router. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeRouterConfiguration">AWS
@@ -1460,25 +1465,26 @@ namespace DirectConnect
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualGateways">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeVirtualGatewaysOutcome DescribeVirtualGateways() const;
+        virtual Model::DescribeVirtualGatewaysOutcome DescribeVirtualGateways(const Model::DescribeVirtualGatewaysRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeVirtualGateways that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeVirtualGatewaysOutcomeCallable DescribeVirtualGatewaysCallable() const
+        template<typename DescribeVirtualGatewaysRequestT = Model::DescribeVirtualGatewaysRequest>
+        Model::DescribeVirtualGatewaysOutcomeCallable DescribeVirtualGatewaysCallable(const DescribeVirtualGatewaysRequestT& request = {}) const
         {
-            return SubmitCallable(&DirectConnectClient::DescribeVirtualGateways);
+            return SubmitCallable(&DirectConnectClient::DescribeVirtualGateways, request);
         }
 
         /**
          * An Async wrapper for DescribeVirtualGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeVirtualGatewaysAsync(const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeVirtualGatewaysRequestT = Model::DescribeVirtualGatewaysRequest>
+        void DescribeVirtualGatewaysAsync(const DescribeVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVirtualGatewaysRequestT& request = {}) const
         {
-            return SubmitAsync(&DirectConnectClient::DescribeVirtualGateways, handler, context);
+            return SubmitAsync(&DirectConnectClient::DescribeVirtualGateways, request, handler, context);
         }
+
         /**
          * <p>Displays all virtual interfaces for an Amazon Web Services account. Virtual
          * interfaces deleted fewer than 15 minutes before you make the request are also

@@ -253,6 +253,7 @@ namespace Aws
       class ReloadReplicationTablesRequest;
       class ReloadTablesRequest;
       class RemoveTagsFromResourceRequest;
+      class RunFleetAdvisorLsaAnalysisRequest;
       class StartExtensionPackAssociationRequest;
       class StartMetadataModelAssessmentRequest;
       class StartMetadataModelConversionRequest;
@@ -582,7 +583,7 @@ namespace Aws
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ReloadReplicationTablesRequest&, const Model::ReloadReplicationTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReloadReplicationTablesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ReloadTablesRequest&, const Model::ReloadTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReloadTablesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
-    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RunFleetAdvisorLsaAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunFleetAdvisorLsaAnalysisResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RunFleetAdvisorLsaAnalysisRequest&, const Model::RunFleetAdvisorLsaAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunFleetAdvisorLsaAnalysisResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartExtensionPackAssociationRequest&, const Model::StartExtensionPackAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExtensionPackAssociationResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartMetadataModelAssessmentRequest&, const Model::StartMetadataModelAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMetadataModelAssessmentResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartMetadataModelConversionRequest&, const Model::StartMetadataModelConversionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMetadataModelConversionResponseReceivedHandler;

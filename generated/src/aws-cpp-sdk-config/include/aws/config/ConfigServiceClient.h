@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/config/ConfigServiceServiceClientModel.h>
+#include <aws/config/model/GetComplianceSummaryByConfigRuleRequest.h>
 
 namespace Aws
 {
@@ -1590,25 +1591,26 @@ namespace ConfigService
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetComplianceSummaryByConfigRuleOutcome GetComplianceSummaryByConfigRule() const;
+        virtual Model::GetComplianceSummaryByConfigRuleOutcome GetComplianceSummaryByConfigRule(const Model::GetComplianceSummaryByConfigRuleRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetComplianceSummaryByConfigRule that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetComplianceSummaryByConfigRuleOutcomeCallable GetComplianceSummaryByConfigRuleCallable() const
+        template<typename GetComplianceSummaryByConfigRuleRequestT = Model::GetComplianceSummaryByConfigRuleRequest>
+        Model::GetComplianceSummaryByConfigRuleOutcomeCallable GetComplianceSummaryByConfigRuleCallable(const GetComplianceSummaryByConfigRuleRequestT& request = {}) const
         {
-            return SubmitCallable(&ConfigServiceClient::GetComplianceSummaryByConfigRule);
+            return SubmitCallable(&ConfigServiceClient::GetComplianceSummaryByConfigRule, request);
         }
 
         /**
          * An Async wrapper for GetComplianceSummaryByConfigRule that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetComplianceSummaryByConfigRuleAsync(const GetComplianceSummaryByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetComplianceSummaryByConfigRuleRequestT = Model::GetComplianceSummaryByConfigRuleRequest>
+        void GetComplianceSummaryByConfigRuleAsync(const GetComplianceSummaryByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetComplianceSummaryByConfigRuleRequestT& request = {}) const
         {
-            return SubmitAsync(&ConfigServiceClient::GetComplianceSummaryByConfigRule, handler, context);
+            return SubmitAsync(&ConfigServiceClient::GetComplianceSummaryByConfigRule, request, handler, context);
         }
+
         /**
          * <p>Returns the number of resources that are compliant and the number that are
          * noncompliant. You can specify one or more resource types to get these numbers

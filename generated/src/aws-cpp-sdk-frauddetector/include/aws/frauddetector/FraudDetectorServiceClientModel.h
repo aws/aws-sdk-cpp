@@ -172,6 +172,7 @@ namespace Aws
       class GetEventPredictionMetadataRequest;
       class GetEventTypesRequest;
       class GetExternalModelsRequest;
+      class GetKMSEncryptionKeyRequest;
       class GetLabelsRequest;
       class GetListElementsRequest;
       class GetListsMetadataRequest;
@@ -402,7 +403,7 @@ namespace Aws
     typedef std::function<void(const FraudDetectorClient*, const Model::GetEventPredictionMetadataRequest&, const Model::GetEventPredictionMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventPredictionMetadataResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetEventTypesRequest&, const Model::GetEventTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventTypesResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetExternalModelsRequest&, const Model::GetExternalModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExternalModelsResponseReceivedHandler;
-    typedef std::function<void(const FraudDetectorClient*, const Model::GetKMSEncryptionKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKMSEncryptionKeyResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::GetKMSEncryptionKeyRequest&, const Model::GetKMSEncryptionKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKMSEncryptionKeyResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetLabelsRequest&, const Model::GetLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLabelsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetListElementsRequest&, const Model::GetListElementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetListElementsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetListsMetadataRequest&, const Model::GetListsMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetListsMetadataResponseReceivedHandler;

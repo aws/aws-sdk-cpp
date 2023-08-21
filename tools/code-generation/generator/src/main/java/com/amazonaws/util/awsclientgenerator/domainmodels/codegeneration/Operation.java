@@ -73,4 +73,15 @@ public class Operation {
     private List<String> responseAlgorithms;
     private boolean requestCompressionRequired;
     private boolean requestCompressionRequiredGzip;
+
+    // For Requestless Defaults
+    private boolean requestlessDefault = false;
+
+    public boolean hasRequest() {
+        return this.request != null;
+    }
+
+    public void addRequest(final ShapeMember request) {
+        this.request = request;
+    }
 }

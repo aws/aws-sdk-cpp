@@ -10,6 +10,8 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opsworks/OpsWorksServiceClientModel.h>
+#include <aws/opsworks/model/DescribeOperatingSystemsRequest.h>
+#include <aws/opsworks/model/DescribeMyUserProfileRequest.h>
 
 namespace Aws
 {
@@ -1141,50 +1143,52 @@ namespace OpsWorks
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeMyUserProfileOutcome DescribeMyUserProfile() const;
+        virtual Model::DescribeMyUserProfileOutcome DescribeMyUserProfile(const Model::DescribeMyUserProfileRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeMyUserProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeMyUserProfileOutcomeCallable DescribeMyUserProfileCallable() const
+        template<typename DescribeMyUserProfileRequestT = Model::DescribeMyUserProfileRequest>
+        Model::DescribeMyUserProfileOutcomeCallable DescribeMyUserProfileCallable(const DescribeMyUserProfileRequestT& request = {}) const
         {
-            return SubmitCallable(&OpsWorksClient::DescribeMyUserProfile);
+            return SubmitCallable(&OpsWorksClient::DescribeMyUserProfile, request);
         }
 
         /**
          * An Async wrapper for DescribeMyUserProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeMyUserProfileAsync(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeMyUserProfileRequestT = Model::DescribeMyUserProfileRequest>
+        void DescribeMyUserProfileAsync(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeMyUserProfileRequestT& request = {}) const
         {
-            return SubmitAsync(&OpsWorksClient::DescribeMyUserProfile, handler, context);
+            return SubmitAsync(&OpsWorksClient::DescribeMyUserProfile, request, handler, context);
         }
+
         /**
          * <p>Describes the operating systems that are supported by AWS OpsWorks
          * Stacks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeOperatingSystemsOutcome DescribeOperatingSystems() const;
+        virtual Model::DescribeOperatingSystemsOutcome DescribeOperatingSystems(const Model::DescribeOperatingSystemsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DescribeOperatingSystems that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DescribeOperatingSystemsOutcomeCallable DescribeOperatingSystemsCallable() const
+        template<typename DescribeOperatingSystemsRequestT = Model::DescribeOperatingSystemsRequest>
+        Model::DescribeOperatingSystemsOutcomeCallable DescribeOperatingSystemsCallable(const DescribeOperatingSystemsRequestT& request = {}) const
         {
-            return SubmitCallable(&OpsWorksClient::DescribeOperatingSystems);
+            return SubmitCallable(&OpsWorksClient::DescribeOperatingSystems, request);
         }
 
         /**
          * An Async wrapper for DescribeOperatingSystems that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DescribeOperatingSystemsAsync(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DescribeOperatingSystemsRequestT = Model::DescribeOperatingSystemsRequest>
+        void DescribeOperatingSystemsAsync(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeOperatingSystemsRequestT& request = {}) const
         {
-            return SubmitAsync(&OpsWorksClient::DescribeOperatingSystems, handler, context);
+            return SubmitAsync(&OpsWorksClient::DescribeOperatingSystems, request, handler, context);
         }
+
         /**
          * <p>Describes the permissions for a specified stack.</p> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Manage permissions
