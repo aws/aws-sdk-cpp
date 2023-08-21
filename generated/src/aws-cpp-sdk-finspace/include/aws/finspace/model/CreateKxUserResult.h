@@ -71,56 +71,56 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) that identifies the user. For more
      * information about ARNs and how to use ARNs in policies, see <a
-     * href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
-     * the <i>IAM User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
 
     /**
      * <p> The Amazon Resource Name (ARN) that identifies the user. For more
      * information about ARNs and how to use ARNs in policies, see <a
-     * href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
-     * the <i>IAM User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetUserArn(const Aws::String& value) { m_userArn = value; }
 
     /**
      * <p> The Amazon Resource Name (ARN) that identifies the user. For more
      * information about ARNs and how to use ARNs in policies, see <a
-     * href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
-     * the <i>IAM User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetUserArn(Aws::String&& value) { m_userArn = std::move(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) that identifies the user. For more
      * information about ARNs and how to use ARNs in policies, see <a
-     * href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
-     * the <i>IAM User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetUserArn(const char* value) { m_userArn.assign(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) that identifies the user. For more
      * information about ARNs and how to use ARNs in policies, see <a
-     * href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
-     * the <i>IAM User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline CreateKxUserResult& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) that identifies the user. For more
      * information about ARNs and how to use ARNs in policies, see <a
-     * href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
-     * the <i>IAM User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline CreateKxUserResult& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) that identifies the user. For more
      * information about ARNs and how to use ARNs in policies, see <a
-     * href="IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in
-     * the <i>IAM User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline CreateKxUserResult& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 

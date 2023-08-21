@@ -455,49 +455,55 @@ namespace Model
 
     /**
      * <p>A data object containing all properties for the current state of an
-     * in-process or pending failover process for this Aurora global database. This
-     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
-     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     * in-process or pending switchover or failover process for this global cluster
+     * (Aurora global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code>
+     * operation was called on this global cluster.</p>
      */
     inline const FailoverState& GetFailoverState() const{ return m_failoverState; }
 
     /**
      * <p>A data object containing all properties for the current state of an
-     * in-process or pending failover process for this Aurora global database. This
-     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
-     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     * in-process or pending switchover or failover process for this global cluster
+     * (Aurora global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code>
+     * operation was called on this global cluster.</p>
      */
     inline bool FailoverStateHasBeenSet() const { return m_failoverStateHasBeenSet; }
 
     /**
      * <p>A data object containing all properties for the current state of an
-     * in-process or pending failover process for this Aurora global database. This
-     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
-     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     * in-process or pending switchover or failover process for this global cluster
+     * (Aurora global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code>
+     * operation was called on this global cluster.</p>
      */
     inline void SetFailoverState(const FailoverState& value) { m_failoverStateHasBeenSet = true; m_failoverState = value; }
 
     /**
      * <p>A data object containing all properties for the current state of an
-     * in-process or pending failover process for this Aurora global database. This
-     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
-     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     * in-process or pending switchover or failover process for this global cluster
+     * (Aurora global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code>
+     * operation was called on this global cluster.</p>
      */
     inline void SetFailoverState(FailoverState&& value) { m_failoverStateHasBeenSet = true; m_failoverState = std::move(value); }
 
     /**
      * <p>A data object containing all properties for the current state of an
-     * in-process or pending failover process for this Aurora global database. This
-     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
-     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     * in-process or pending switchover or failover process for this global cluster
+     * (Aurora global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code>
+     * operation was called on this global cluster.</p>
      */
     inline GlobalCluster& WithFailoverState(const FailoverState& value) { SetFailoverState(value); return *this;}
 
     /**
      * <p>A data object containing all properties for the current state of an
-     * in-process or pending failover process for this Aurora global database. This
-     * object is empty unless the <a>FailoverGlobalCluster</a> API operation has been
-     * called on this Aurora global database (<a>GlobalCluster</a>).</p>
+     * in-process or pending switchover or failover process for this global cluster
+     * (Aurora global database). This object is empty unless the
+     * <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code>
+     * operation was called on this global cluster.</p>
      */
     inline GlobalCluster& WithFailoverState(FailoverState&& value) { SetFailoverState(std::move(value)); return *this;}
 

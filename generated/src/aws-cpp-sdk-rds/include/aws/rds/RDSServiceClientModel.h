@@ -149,6 +149,7 @@
 #include <aws/rds/model/StopDBInstanceResult.h>
 #include <aws/rds/model/StopDBInstanceAutomatedBackupsReplicationResult.h>
 #include <aws/rds/model/SwitchoverBlueGreenDeploymentResult.h>
+#include <aws/rds/model/SwitchoverGlobalClusterResult.h>
 #include <aws/rds/model/SwitchoverReadReplicaResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in RDSClient header */
@@ -333,6 +334,7 @@ namespace Aws
       class StopDBInstanceRequest;
       class StopDBInstanceAutomatedBackupsReplicationRequest;
       class SwitchoverBlueGreenDeploymentRequest;
+      class SwitchoverGlobalClusterRequest;
       class SwitchoverReadReplicaRequest;
       /* End of service model forward declarations required in RDSClient header */
 
@@ -479,6 +481,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StopDBInstanceResult, RDSError> StopDBInstanceOutcome;
       typedef Aws::Utils::Outcome<StopDBInstanceAutomatedBackupsReplicationResult, RDSError> StopDBInstanceAutomatedBackupsReplicationOutcome;
       typedef Aws::Utils::Outcome<SwitchoverBlueGreenDeploymentResult, RDSError> SwitchoverBlueGreenDeploymentOutcome;
+      typedef Aws::Utils::Outcome<SwitchoverGlobalClusterResult, RDSError> SwitchoverGlobalClusterOutcome;
       typedef Aws::Utils::Outcome<SwitchoverReadReplicaResult, RDSError> SwitchoverReadReplicaOutcome;
       /* End of service model Outcome class definitions */
 
@@ -625,6 +628,7 @@ namespace Aws
       typedef std::future<StopDBInstanceOutcome> StopDBInstanceOutcomeCallable;
       typedef std::future<StopDBInstanceAutomatedBackupsReplicationOutcome> StopDBInstanceAutomatedBackupsReplicationOutcomeCallable;
       typedef std::future<SwitchoverBlueGreenDeploymentOutcome> SwitchoverBlueGreenDeploymentOutcomeCallable;
+      typedef std::future<SwitchoverGlobalClusterOutcome> SwitchoverGlobalClusterOutcomeCallable;
       typedef std::future<SwitchoverReadReplicaOutcome> SwitchoverReadReplicaOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -774,6 +778,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::StopDBInstanceRequest&, const Model::StopDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBInstanceResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopDBInstanceAutomatedBackupsReplicationRequest&, const Model::StopDBInstanceAutomatedBackupsReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBInstanceAutomatedBackupsReplicationResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::SwitchoverBlueGreenDeploymentRequest&, const Model::SwitchoverBlueGreenDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SwitchoverBlueGreenDeploymentResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::SwitchoverGlobalClusterRequest&, const Model::SwitchoverGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SwitchoverGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::SwitchoverReadReplicaRequest&, const Model::SwitchoverReadReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SwitchoverReadReplicaResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace RDS

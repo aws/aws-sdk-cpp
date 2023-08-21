@@ -26,7 +26,9 @@ GlobalClusterMember::GlobalClusterMember() :
     m_isWriter(false),
     m_isWriterHasBeenSet(false),
     m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
-    m_globalWriteForwardingStatusHasBeenSet(false)
+    m_globalWriteForwardingStatusHasBeenSet(false),
+    m_synchronizationStatus(GlobalClusterMemberSynchronizationStatus::NOT_SET),
+    m_synchronizationStatusHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ GlobalClusterMember::GlobalClusterMember(const XmlNode& xmlNode) :
     m_isWriter(false),
     m_isWriterHasBeenSet(false),
     m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
-    m_globalWriteForwardingStatusHasBeenSet(false)
+    m_globalWriteForwardingStatusHasBeenSet(false),
+    m_synchronizationStatus(GlobalClusterMemberSynchronizationStatus::NOT_SET),
+    m_synchronizationStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -77,6 +81,12 @@ GlobalClusterMember& GlobalClusterMember::operator =(const XmlNode& xmlNode)
       m_globalWriteForwardingStatus = WriteForwardingStatusMapper::GetWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingStatusNode.GetText()).c_str()).c_str());
       m_globalWriteForwardingStatusHasBeenSet = true;
     }
+    XmlNode synchronizationStatusNode = resultNode.FirstChild("SynchronizationStatus");
+    if(!synchronizationStatusNode.IsNull())
+    {
+      m_synchronizationStatus = GlobalClusterMemberSynchronizationStatusMapper::GetGlobalClusterMemberSynchronizationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(synchronizationStatusNode.GetText()).c_str()).c_str());
+      m_synchronizationStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -108,6 +118,11 @@ void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
   }
 
+  if(m_synchronizationStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SynchronizationStatus=" << GlobalClusterMemberSynchronizationStatusMapper::GetNameForGlobalClusterMemberSynchronizationStatus(m_synchronizationStatus) << "&";
+  }
+
 }
 
 void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -131,6 +146,10 @@ void GlobalClusterMember::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_globalWriteForwardingStatusHasBeenSet)
   {
       oStream << location << ".GlobalWriteForwardingStatus=" << WriteForwardingStatusMapper::GetNameForWriteForwardingStatus(m_globalWriteForwardingStatus) << "&";
+  }
+  if(m_synchronizationStatusHasBeenSet)
+  {
+      oStream << location << ".SynchronizationStatus=" << GlobalClusterMemberSynchronizationStatusMapper::GetNameForGlobalClusterMemberSynchronizationStatus(m_synchronizationStatus) << "&";
   }
 }
 
