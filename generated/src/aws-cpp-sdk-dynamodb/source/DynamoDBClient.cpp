@@ -248,7 +248,7 @@ BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& requ
   return TracingUtils::MakeCallWithTiming<BatchGetItemOutcome>(
     [&]()-> BatchGetItemOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -309,7 +309,7 @@ BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest
   return TracingUtils::MakeCallWithTiming<BatchWriteItemOutcome>(
     [&]()-> BatchWriteItemOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -370,7 +370,7 @@ CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& requ
   return TracingUtils::MakeCallWithTiming<CreateBackupOutcome>(
     [&]()-> CreateBackupOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -431,7 +431,7 @@ CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTab
   return TracingUtils::MakeCallWithTiming<CreateGlobalTableOutcome>(
     [&]()-> CreateGlobalTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -492,7 +492,7 @@ CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request
   return TracingUtils::MakeCallWithTiming<CreateTableOutcome>(
     [&]()-> CreateTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -553,7 +553,7 @@ DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& requ
   return TracingUtils::MakeCallWithTiming<DeleteBackupOutcome>(
     [&]()-> DeleteBackupOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -614,7 +614,7 @@ DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) c
   return TracingUtils::MakeCallWithTiming<DeleteItemOutcome>(
     [&]()-> DeleteItemOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -675,7 +675,7 @@ DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request
   return TracingUtils::MakeCallWithTiming<DeleteTableOutcome>(
     [&]()-> DeleteTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -736,7 +736,7 @@ DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest
   return TracingUtils::MakeCallWithTiming<DescribeBackupOutcome>(
     [&]()-> DescribeBackupOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -797,7 +797,7 @@ DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const
   return TracingUtils::MakeCallWithTiming<DescribeContinuousBackupsOutcome>(
     [&]()-> DescribeContinuousBackupsOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -936,7 +936,7 @@ DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlo
   return TracingUtils::MakeCallWithTiming<DescribeGlobalTableOutcome>(
     [&]()-> DescribeGlobalTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -997,7 +997,7 @@ DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(c
   return TracingUtils::MakeCallWithTiming<DescribeGlobalTableSettingsOutcome>(
     [&]()-> DescribeGlobalTableSettingsOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1084,7 +1084,7 @@ DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStream
   return TracingUtils::MakeCallWithTiming<DescribeKinesisStreamingDestinationOutcome>(
     [&]()-> DescribeKinesisStreamingDestinationOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1145,7 +1145,7 @@ DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest
   return TracingUtils::MakeCallWithTiming<DescribeLimitsOutcome>(
     [&]()-> DescribeLimitsOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1206,7 +1206,7 @@ DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& r
   return TracingUtils::MakeCallWithTiming<DescribeTableOutcome>(
     [&]()-> DescribeTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1293,7 +1293,7 @@ DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeT
   return TracingUtils::MakeCallWithTiming<DescribeTimeToLiveOutcome>(
     [&]()-> DescribeTimeToLiveOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1354,7 +1354,7 @@ DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamin
   return TracingUtils::MakeCallWithTiming<DisableKinesisStreamingDestinationOutcome>(
     [&]()-> DisableKinesisStreamingDestinationOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1415,7 +1415,7 @@ EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingD
   return TracingUtils::MakeCallWithTiming<EnableKinesisStreamingDestinationOutcome>(
     [&]()-> EnableKinesisStreamingDestinationOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1554,7 +1554,7 @@ GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
   return TracingUtils::MakeCallWithTiming<GetItemOutcome>(
     [&]()-> GetItemOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1641,7 +1641,7 @@ ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request
   return TracingUtils::MakeCallWithTiming<ListBackupsOutcome>(
     [&]()-> ListBackupsOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1754,7 +1754,7 @@ ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesR
   return TracingUtils::MakeCallWithTiming<ListGlobalTablesOutcome>(
     [&]()-> ListGlobalTablesOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1841,7 +1841,7 @@ ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) c
   return TracingUtils::MakeCallWithTiming<ListTablesOutcome>(
     [&]()-> ListTablesOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1902,7 +1902,7 @@ ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfRes
   return TracingUtils::MakeCallWithTiming<ListTagsOfResourceOutcome>(
     [&]()-> ListTagsOfResourceOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1963,7 +1963,7 @@ PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
   return TracingUtils::MakeCallWithTiming<PutItemOutcome>(
     [&]()-> PutItemOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2024,7 +2024,7 @@ QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const
   return TracingUtils::MakeCallWithTiming<QueryOutcome>(
     [&]()-> QueryOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2085,7 +2085,7 @@ RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const Resto
   return TracingUtils::MakeCallWithTiming<RestoreTableFromBackupOutcome>(
     [&]()-> RestoreTableFromBackupOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2146,7 +2146,7 @@ RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const
   return TracingUtils::MakeCallWithTiming<RestoreTableToPointInTimeOutcome>(
     [&]()-> RestoreTableToPointInTimeOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2207,7 +2207,7 @@ ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const
   return TracingUtils::MakeCallWithTiming<ScanOutcome>(
     [&]()-> ScanOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2268,7 +2268,7 @@ TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2329,7 +2329,7 @@ TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsR
   return TracingUtils::MakeCallWithTiming<TransactGetItemsOutcome>(
     [&]()-> TransactGetItemsOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2390,7 +2390,7 @@ TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWrite
   return TracingUtils::MakeCallWithTiming<TransactWriteItemsOutcome>(
     [&]()-> TransactWriteItemsOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2451,7 +2451,7 @@ UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& r
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2512,7 +2512,7 @@ UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const Upd
   return TracingUtils::MakeCallWithTiming<UpdateContinuousBackupsOutcome>(
     [&]()-> UpdateContinuousBackupsOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2599,7 +2599,7 @@ UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTab
   return TracingUtils::MakeCallWithTiming<UpdateGlobalTableOutcome>(
     [&]()-> UpdateGlobalTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2660,7 +2660,7 @@ UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const
   return TracingUtils::MakeCallWithTiming<UpdateGlobalTableSettingsOutcome>(
     [&]()-> UpdateGlobalTableSettingsOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2721,7 +2721,7 @@ UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) c
   return TracingUtils::MakeCallWithTiming<UpdateItemOutcome>(
     [&]()-> UpdateItemOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2782,7 +2782,7 @@ UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request
   return TracingUtils::MakeCallWithTiming<UpdateTableOutcome>(
     [&]()-> UpdateTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -2869,7 +2869,7 @@ UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveR
   return TracingUtils::MakeCallWithTiming<UpdateTimeToLiveOutcome>(
     [&]()-> UpdateTimeToLiveOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
