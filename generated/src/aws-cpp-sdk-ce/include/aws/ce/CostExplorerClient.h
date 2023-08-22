@@ -652,7 +652,7 @@ namespace CostExplorer
 
         /**
          * <p>Retrieves the details for a Savings Plan recommendation. These details
-         * include the hourly data-points that construct the new cost, coverage, and
+         * include the hourly data-points that construct the cost, coverage, and
          * utilization charts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails">AWS
          * API Reference</a></p>

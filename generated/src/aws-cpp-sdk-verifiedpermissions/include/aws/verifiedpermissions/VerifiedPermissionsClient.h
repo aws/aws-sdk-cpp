@@ -544,15 +544,26 @@ namespace VerifiedPermissions
 
         /**
          * <p>Makes an authorization decision about a service request described in the
-         * parameters. The principal in this request comes from an external identity
-         * source. The information in the parameters can also define additional context
-         * that Verified Permissions can include in the evaluation. The request is
-         * evaluated against all matching policies in the specified policy store. The
-         * result of the decision is either <code>Allow</code> or <code>Deny</code>, along
-         * with a list of the policies that resulted in the decision.</p>  <p>If
-         * you delete a Amazon Cognito user pool or user, tokens from that deleted pool or
-         * that deleted user continue to be usable until they expire.</p>
-         * <p><h3>See Also:</h3>   <a
+         * parameters. The principal in this request comes from an external identity source
+         * in the form of an identity token formatted as a <a
+         * href="https://wikipedia.org/wiki/JSON_Web_Token">JSON web token (JWT)</a>. The
+         * information in the parameters can also define additional context that Verified
+         * Permissions can include in the evaluation. The request is evaluated against all
+         * matching policies in the specified policy store. The result of the decision is
+         * either <code>Allow</code> or <code>Deny</code>, along with a list of the
+         * policies that resulted in the decision.</p>  <p>If you specify the
+         * <code>identityToken</code> parameter, then this operation derives the principal
+         * from that token. You must not also include that principal in the
+         * <code>entities</code> parameter or the operation fails and reports a conflict
+         * between the two entity sources.</p> <p>If you provide only an
+         * <code>accessToken</code>, then you can include the entity as part of the
+         * <code>entities</code> parameter to provide additional attributes.</p>
+         *  <p>At this time, Verified Permissions accepts tokens from only
+         * Amazon Cognito.</p> <p>Verified Permissions validates each token that is
+         * specified in a request by checking its expiration date and its signature.</p>
+         *  <p>If you delete a Amazon Cognito user pool or user, tokens from
+         * that deleted pool or that deleted user continue to be usable until they
+         * expire.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/IsAuthorizedWithToken">AWS
          * API Reference</a></p>
          */
@@ -744,10 +755,19 @@ namespace VerifiedPermissions
          * parameter. You can directly update only static policies. To change a
          * template-linked policy, you must update the template instead, using <a
          * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyTemplate.html">UpdatePolicyTemplate</a>.</p>
-         *  <p>If policy validation is enabled in the policy store, then updating a
-         * static policy causes Verified Permissions to validate the policy against the
-         * schema in the policy store. If the updated static policy doesn't pass
-         * validation, the operation fails and the update isn't stored.</p>
+         *  <ul> <li> <p>If policy validation is enabled in the policy store, then
+         * updating a static policy causes Verified Permissions to validate the policy
+         * against the schema in the policy store. If the updated static policy doesn't
+         * pass validation, the operation fails and the update isn't stored.</p> </li> <li>
+         * <p>When you edit a static policy, You can change only certain elements of a
+         * static policy:</p> <ul> <li> <p>The action referenced by the policy. </p> </li>
+         * <li> <p>A condition clause, such as when and unless. </p> </li> </ul> <p>You
+         * can't change these elements of a static policy: </p> <ul> <li> <p>Changing a
+         * policy from a static policy to a template-linked policy. </p> </li> <li>
+         * <p>Changing the effect of a static policy from permit or forbid. </p> </li> <li>
+         * <p>The principal referenced by a static policy. </p> </li> <li> <p>The resource
+         * referenced by a static policy. </p> </li> </ul> </li> <li> <p>To update a
+         * template-linked policy, you must update the template instead. </p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/UpdatePolicy">AWS
          * API Reference</a></p>

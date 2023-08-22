@@ -150,54 +150,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the total number of results that you want included on each page of
-     * the response. If you do not include this parameter, it defaults to a value that
-     * is specific to the operation. If additional items exist beyond the number you
-     * specify, the <code>NextToken</code> response element is returned with a value
-     * (not null). Include the specified value as the <code>NextToken</code> request
-     * parameter in the next call to the operation to get the next part of the results.
-     * Note that the service might return fewer results than the maximum even when
-     * there are more results available. You should check <code>NextToken</code> after
-     * every operation to ensure that you receive all of the results.</p>
+     * <p>Specifies the total number of results that you want included in each
+     * response. If additional items exist beyond the number you specify, the
+     * <code>NextToken</code> response element is returned with a value (not null).
+     * Include the specified value as the <code>NextToken</code> request parameter in
+     * the next call to the operation to get the next set of results. Note that the
+     * service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation
+     * to ensure that you receive all of the results.</p> <p>If you do not specify this
+     * parameter, the operation defaults to 10 policies per response. You can specify a
+     * maximum of 50 policies per response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Specifies the total number of results that you want included on each page of
-     * the response. If you do not include this parameter, it defaults to a value that
-     * is specific to the operation. If additional items exist beyond the number you
-     * specify, the <code>NextToken</code> response element is returned with a value
-     * (not null). Include the specified value as the <code>NextToken</code> request
-     * parameter in the next call to the operation to get the next part of the results.
-     * Note that the service might return fewer results than the maximum even when
-     * there are more results available. You should check <code>NextToken</code> after
-     * every operation to ensure that you receive all of the results.</p>
+     * <p>Specifies the total number of results that you want included in each
+     * response. If additional items exist beyond the number you specify, the
+     * <code>NextToken</code> response element is returned with a value (not null).
+     * Include the specified value as the <code>NextToken</code> request parameter in
+     * the next call to the operation to get the next set of results. Note that the
+     * service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation
+     * to ensure that you receive all of the results.</p> <p>If you do not specify this
+     * parameter, the operation defaults to 10 policies per response. You can specify a
+     * maximum of 50 policies per response.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Specifies the total number of results that you want included on each page of
-     * the response. If you do not include this parameter, it defaults to a value that
-     * is specific to the operation. If additional items exist beyond the number you
-     * specify, the <code>NextToken</code> response element is returned with a value
-     * (not null). Include the specified value as the <code>NextToken</code> request
-     * parameter in the next call to the operation to get the next part of the results.
-     * Note that the service might return fewer results than the maximum even when
-     * there are more results available. You should check <code>NextToken</code> after
-     * every operation to ensure that you receive all of the results.</p>
+     * <p>Specifies the total number of results that you want included in each
+     * response. If additional items exist beyond the number you specify, the
+     * <code>NextToken</code> response element is returned with a value (not null).
+     * Include the specified value as the <code>NextToken</code> request parameter in
+     * the next call to the operation to get the next set of results. Note that the
+     * service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation
+     * to ensure that you receive all of the results.</p> <p>If you do not specify this
+     * parameter, the operation defaults to 10 policies per response. You can specify a
+     * maximum of 50 policies per response.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Specifies the total number of results that you want included on each page of
-     * the response. If you do not include this parameter, it defaults to a value that
-     * is specific to the operation. If additional items exist beyond the number you
-     * specify, the <code>NextToken</code> response element is returned with a value
-     * (not null). Include the specified value as the <code>NextToken</code> request
-     * parameter in the next call to the operation to get the next part of the results.
-     * Note that the service might return fewer results than the maximum even when
-     * there are more results available. You should check <code>NextToken</code> after
-     * every operation to ensure that you receive all of the results.</p>
+     * <p>Specifies the total number of results that you want included in each
+     * response. If additional items exist beyond the number you specify, the
+     * <code>NextToken</code> response element is returned with a value (not null).
+     * Include the specified value as the <code>NextToken</code> request parameter in
+     * the next call to the operation to get the next set of results. Note that the
+     * service might return fewer results than the maximum even when there are more
+     * results available. You should check <code>NextToken</code> after every operation
+     * to ensure that you receive all of the results.</p> <p>If you do not specify this
+     * parameter, the operation defaults to 10 policies per response. You can specify a
+     * maximum of 50 policies per response.</p>
      */
     inline ListPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
