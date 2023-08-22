@@ -1,7 +1,7 @@
 #if($serviceModel.endpointRules)
 #if($operation.hasEndpointDiscoveryTrait)
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDqiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
 #set($hasId=false)
