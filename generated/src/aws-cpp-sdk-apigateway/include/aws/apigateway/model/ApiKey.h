@@ -167,50 +167,50 @@ namespace Model
 
 
     /**
-     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
-     * Marketplace.</p>
+     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
+     * the Amazon Web Services SaaS Marketplace.</p>
      */
     inline const Aws::String& GetCustomerId() const{ return m_customerId; }
 
     /**
-     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
-     * Marketplace.</p>
+     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
+     * the Amazon Web Services SaaS Marketplace.</p>
      */
     inline bool CustomerIdHasBeenSet() const { return m_customerIdHasBeenSet; }
 
     /**
-     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
-     * Marketplace.</p>
+     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
+     * the Amazon Web Services SaaS Marketplace.</p>
      */
     inline void SetCustomerId(const Aws::String& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
 
     /**
-     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
-     * Marketplace.</p>
+     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
+     * the Amazon Web Services SaaS Marketplace.</p>
      */
     inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = std::move(value); }
 
     /**
-     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
-     * Marketplace.</p>
+     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
+     * the Amazon Web Services SaaS Marketplace.</p>
      */
     inline void SetCustomerId(const char* value) { m_customerIdHasBeenSet = true; m_customerId.assign(value); }
 
     /**
-     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
-     * Marketplace.</p>
+     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
+     * the Amazon Web Services SaaS Marketplace.</p>
      */
     inline ApiKey& WithCustomerId(const Aws::String& value) { SetCustomerId(value); return *this;}
 
     /**
-     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
-     * Marketplace.</p>
+     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
+     * the Amazon Web Services SaaS Marketplace.</p>
      */
     inline ApiKey& WithCustomerId(Aws::String&& value) { SetCustomerId(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
-     * Marketplace.</p>
+     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
+     * the Amazon Web Services SaaS Marketplace.</p>
      */
     inline ApiKey& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
 

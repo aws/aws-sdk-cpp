@@ -256,44 +256,44 @@ namespace Model
 
 
     /**
-     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
-     * SaaS product on AWS Marketplace.</p>
+     * <p>The Amazon Web Services Marketplace product identifier to associate with the
+     * usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
      */
     inline const Aws::String& GetProductCode() const{ return m_productCode; }
 
     /**
-     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
-     * SaaS product on AWS Marketplace.</p>
+     * <p>The Amazon Web Services Marketplace product identifier to associate with the
+     * usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
      */
     inline void SetProductCode(const Aws::String& value) { m_productCode = value; }
 
     /**
-     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
-     * SaaS product on AWS Marketplace.</p>
+     * <p>The Amazon Web Services Marketplace product identifier to associate with the
+     * usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
      */
     inline void SetProductCode(Aws::String&& value) { m_productCode = std::move(value); }
 
     /**
-     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
-     * SaaS product on AWS Marketplace.</p>
+     * <p>The Amazon Web Services Marketplace product identifier to associate with the
+     * usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
      */
     inline void SetProductCode(const char* value) { m_productCode.assign(value); }
 
     /**
-     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
-     * SaaS product on AWS Marketplace.</p>
+     * <p>The Amazon Web Services Marketplace product identifier to associate with the
+     * usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
      */
     inline GetUsagePlanResult& WithProductCode(const Aws::String& value) { SetProductCode(value); return *this;}
 
     /**
-     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
-     * SaaS product on AWS Marketplace.</p>
+     * <p>The Amazon Web Services Marketplace product identifier to associate with the
+     * usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
      */
     inline GetUsagePlanResult& WithProductCode(Aws::String&& value) { SetProductCode(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Markeplace product identifier to associate with the usage plan as a
-     * SaaS product on AWS Marketplace.</p>
+     * <p>The Amazon Web Services Marketplace product identifier to associate with the
+     * usage plan as a SaaS product on the Amazon Web Services Marketplace.</p>
      */
     inline GetUsagePlanResult& WithProductCode(const char* value) { SetProductCode(value); return *this;}
 

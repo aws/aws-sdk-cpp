@@ -246,17 +246,17 @@ namespace Model
 
 
     /**
-     * <p>The execution latency of the test invoke request.</p>
+     * <p>The execution latency, in ms, of the test invoke request.</p>
      */
     inline long long GetLatency() const{ return m_latency; }
 
     /**
-     * <p>The execution latency of the test invoke request.</p>
+     * <p>The execution latency, in ms, of the test invoke request.</p>
      */
     inline void SetLatency(long long value) { m_latency = value; }
 
     /**
-     * <p>The execution latency of the test invoke request.</p>
+     * <p>The execution latency, in ms, of the test invoke request.</p>
      */
     inline TestInvokeMethodResult& WithLatency(long long value) { SetLatency(value); return *this;}
 

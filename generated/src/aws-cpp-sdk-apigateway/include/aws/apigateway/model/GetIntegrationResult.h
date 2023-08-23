@@ -32,8 +32,8 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock
-   * integration.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents an <code>HTTP</code>, <code>HTTP_PROXY</code>, <code>AWS</code>,
+   * <code>AWS_PROXY</code>, or Mock integration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Integration">AWS
    * API Reference</a></p>
    */
@@ -102,37 +102,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the integration's HTTP method type.</p>
+     * <p>Specifies the integration's HTTP method type. For the Type property, if you
+     * specify <code>MOCK</code>, this property is optional. For Lambda integrations,
+     * you must set the integration method to <code>POST</code>. For all other types,
+     * you must specify this property.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>Specifies the integration's HTTP method type.</p>
+     * <p>Specifies the integration's HTTP method type. For the Type property, if you
+     * specify <code>MOCK</code>, this property is optional. For Lambda integrations,
+     * you must set the integration method to <code>POST</code>. For all other types,
+     * you must specify this property.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethod = value; }
 
     /**
-     * <p>Specifies the integration's HTTP method type.</p>
+     * <p>Specifies the integration's HTTP method type. For the Type property, if you
+     * specify <code>MOCK</code>, this property is optional. For Lambda integrations,
+     * you must set the integration method to <code>POST</code>. For all other types,
+     * you must specify this property.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethod = std::move(value); }
 
     /**
-     * <p>Specifies the integration's HTTP method type.</p>
+     * <p>Specifies the integration's HTTP method type. For the Type property, if you
+     * specify <code>MOCK</code>, this property is optional. For Lambda integrations,
+     * you must set the integration method to <code>POST</code>. For all other types,
+     * you must specify this property.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethod.assign(value); }
 
     /**
-     * <p>Specifies the integration's HTTP method type.</p>
+     * <p>Specifies the integration's HTTP method type. For the Type property, if you
+     * specify <code>MOCK</code>, this property is optional. For Lambda integrations,
+     * you must set the integration method to <code>POST</code>. For all other types,
+     * you must specify this property.</p>
      */
     inline GetIntegrationResult& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>Specifies the integration's HTTP method type.</p>
+     * <p>Specifies the integration's HTTP method type. For the Type property, if you
+     * specify <code>MOCK</code>, this property is optional. For Lambda integrations,
+     * you must set the integration method to <code>POST</code>. For all other types,
+     * you must specify this property.</p>
      */
     inline GetIntegrationResult& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the integration's HTTP method type.</p>
+     * <p>Specifies the integration's HTTP method type. For the Type property, if you
+     * specify <code>MOCK</code>, this property is optional. For Lambda integrations,
+     * you must set the integration method to <code>POST</code>. For all other types,
+     * you must specify this property.</p>
      */
     inline GetIntegrationResult& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
@@ -140,12 +161,10 @@ namespace Model
     /**
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <p>For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must
-     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification,
-     * for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the
-     * URI is of the form
+     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification
+     * for standard integrations. If <code>connectionType</code> is
+     * <code>VPC_LINK</code> specify the Network Load Balancer DNS name. For
+     * <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the
      * name of the integrated Amazon Web Services service (e.g., s3); and {subdomain}
@@ -153,11 +172,11 @@ namespace Model
      * fast host-name lookup. action can be used for an Amazon Web Services service
      * action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query
      * string. The ensuing {service_api} refers to a supported action {name} plus any
-     * required input parameters. Alternatively, path can be used for an AWS service
-     * path-based API. The ensuing service_api refers to the path to an Amazon Web
-     * Services service resource, including the region of the integrated Amazon Web
-     * Services service, if applicable. For example, for integration with the S3 API of
-     * GetObject, the uri can be either
+     * required input parameters. Alternatively, path can be used for an Amazon Web
+     * Services service path-based API. The ensuing service_api refers to the path to
+     * an Amazon Web Services service resource, including the region of the integrated
+     * Amazon Web Services service, if applicable. For example, for integration with
+     * the S3 API of GetObject, the uri can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> </p>
      */
@@ -166,12 +185,10 @@ namespace Model
     /**
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <p>For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must
-     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification,
-     * for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the
-     * URI is of the form
+     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification
+     * for standard integrations. If <code>connectionType</code> is
+     * <code>VPC_LINK</code> specify the Network Load Balancer DNS name. For
+     * <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the
      * name of the integrated Amazon Web Services service (e.g., s3); and {subdomain}
@@ -179,11 +196,11 @@ namespace Model
      * fast host-name lookup. action can be used for an Amazon Web Services service
      * action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query
      * string. The ensuing {service_api} refers to a supported action {name} plus any
-     * required input parameters. Alternatively, path can be used for an AWS service
-     * path-based API. The ensuing service_api refers to the path to an Amazon Web
-     * Services service resource, including the region of the integrated Amazon Web
-     * Services service, if applicable. For example, for integration with the S3 API of
-     * GetObject, the uri can be either
+     * required input parameters. Alternatively, path can be used for an Amazon Web
+     * Services service path-based API. The ensuing service_api refers to the path to
+     * an Amazon Web Services service resource, including the region of the integrated
+     * Amazon Web Services service, if applicable. For example, for integration with
+     * the S3 API of GetObject, the uri can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> </p>
      */
@@ -192,12 +209,10 @@ namespace Model
     /**
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <p>For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must
-     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification,
-     * for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the
-     * URI is of the form
+     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification
+     * for standard integrations. If <code>connectionType</code> is
+     * <code>VPC_LINK</code> specify the Network Load Balancer DNS name. For
+     * <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the
      * name of the integrated Amazon Web Services service (e.g., s3); and {subdomain}
@@ -205,11 +220,11 @@ namespace Model
      * fast host-name lookup. action can be used for an Amazon Web Services service
      * action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query
      * string. The ensuing {service_api} refers to a supported action {name} plus any
-     * required input parameters. Alternatively, path can be used for an AWS service
-     * path-based API. The ensuing service_api refers to the path to an Amazon Web
-     * Services service resource, including the region of the integrated Amazon Web
-     * Services service, if applicable. For example, for integration with the S3 API of
-     * GetObject, the uri can be either
+     * required input parameters. Alternatively, path can be used for an Amazon Web
+     * Services service path-based API. The ensuing service_api refers to the path to
+     * an Amazon Web Services service resource, including the region of the integrated
+     * Amazon Web Services service, if applicable. For example, for integration with
+     * the S3 API of GetObject, the uri can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> </p>
      */
@@ -218,12 +233,10 @@ namespace Model
     /**
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <p>For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must
-     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification,
-     * for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the
-     * URI is of the form
+     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification
+     * for standard integrations. If <code>connectionType</code> is
+     * <code>VPC_LINK</code> specify the Network Load Balancer DNS name. For
+     * <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the
      * name of the integrated Amazon Web Services service (e.g., s3); and {subdomain}
@@ -231,11 +244,11 @@ namespace Model
      * fast host-name lookup. action can be used for an Amazon Web Services service
      * action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query
      * string. The ensuing {service_api} refers to a supported action {name} plus any
-     * required input parameters. Alternatively, path can be used for an AWS service
-     * path-based API. The ensuing service_api refers to the path to an Amazon Web
-     * Services service resource, including the region of the integrated Amazon Web
-     * Services service, if applicable. For example, for integration with the S3 API of
-     * GetObject, the uri can be either
+     * required input parameters. Alternatively, path can be used for an Amazon Web
+     * Services service path-based API. The ensuing service_api refers to the path to
+     * an Amazon Web Services service resource, including the region of the integrated
+     * Amazon Web Services service, if applicable. For example, for integration with
+     * the S3 API of GetObject, the uri can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> </p>
      */
@@ -244,12 +257,10 @@ namespace Model
     /**
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <p>For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must
-     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification,
-     * for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the
-     * URI is of the form
+     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification
+     * for standard integrations. If <code>connectionType</code> is
+     * <code>VPC_LINK</code> specify the Network Load Balancer DNS name. For
+     * <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the
      * name of the integrated Amazon Web Services service (e.g., s3); and {subdomain}
@@ -257,11 +268,11 @@ namespace Model
      * fast host-name lookup. action can be used for an Amazon Web Services service
      * action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query
      * string. The ensuing {service_api} refers to a supported action {name} plus any
-     * required input parameters. Alternatively, path can be used for an AWS service
-     * path-based API. The ensuing service_api refers to the path to an Amazon Web
-     * Services service resource, including the region of the integrated Amazon Web
-     * Services service, if applicable. For example, for integration with the S3 API of
-     * GetObject, the uri can be either
+     * required input parameters. Alternatively, path can be used for an Amazon Web
+     * Services service path-based API. The ensuing service_api refers to the path to
+     * an Amazon Web Services service resource, including the region of the integrated
+     * Amazon Web Services service, if applicable. For example, for integration with
+     * the S3 API of GetObject, the uri can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> </p>
      */
@@ -270,12 +281,10 @@ namespace Model
     /**
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <p>For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must
-     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification,
-     * for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the
-     * URI is of the form
+     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification
+     * for standard integrations. If <code>connectionType</code> is
+     * <code>VPC_LINK</code> specify the Network Load Balancer DNS name. For
+     * <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the
      * name of the integrated Amazon Web Services service (e.g., s3); and {subdomain}
@@ -283,11 +292,11 @@ namespace Model
      * fast host-name lookup. action can be used for an Amazon Web Services service
      * action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query
      * string. The ensuing {service_api} refers to a supported action {name} plus any
-     * required input parameters. Alternatively, path can be used for an AWS service
-     * path-based API. The ensuing service_api refers to the path to an Amazon Web
-     * Services service resource, including the region of the integrated Amazon Web
-     * Services service, if applicable. For example, for integration with the S3 API of
-     * GetObject, the uri can be either
+     * required input parameters. Alternatively, path can be used for an Amazon Web
+     * Services service path-based API. The ensuing service_api refers to the path to
+     * an Amazon Web Services service resource, including the region of the integrated
+     * Amazon Web Services service, if applicable. For example, for integration with
+     * the S3 API of GetObject, the uri can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> </p>
      */
@@ -296,12 +305,10 @@ namespace Model
     /**
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <p>For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must
-     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification,
-     * for either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the
-     * URI is of the form
+     * be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification
+     * for standard integrations. If <code>connectionType</code> is
+     * <code>VPC_LINK</code> specify the Network Load Balancer DNS name. For
+     * <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the
      * name of the integrated Amazon Web Services service (e.g., s3); and {subdomain}
@@ -309,11 +316,11 @@ namespace Model
      * fast host-name lookup. action can be used for an Amazon Web Services service
      * action-based API, using an Action={name}&amp;{p1}={v1}&amp;p2={v2}... query
      * string. The ensuing {service_api} refers to a supported action {name} plus any
-     * required input parameters. Alternatively, path can be used for an AWS service
-     * path-based API. The ensuing service_api refers to the path to an Amazon Web
-     * Services service resource, including the region of the integrated Amazon Web
-     * Services service, if applicable. For example, for integration with the S3 API of
-     * GetObject, the uri can be either
+     * required input parameters. Alternatively, path can be used for an Amazon Web
+     * Services service path-based API. The ensuing service_api refers to the path to
+     * an Amazon Web Services service resource, including the region of the integrated
+     * Amazon Web Services service, if applicable. For example, for integration with
+     * the S3 API of GetObject, the uri can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> </p>
      */
@@ -415,7 +422,7 @@ namespace Model
      * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
      * the caller's identity be passed through from the request, specify the string
      * <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on
-     * supported AWS services, specify null.</p>
+     * supported Amazon Web Services services, specify null.</p>
      */
     inline const Aws::String& GetCredentials() const{ return m_credentials; }
 
@@ -425,7 +432,7 @@ namespace Model
      * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
      * the caller's identity be passed through from the request, specify the string
      * <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on
-     * supported AWS services, specify null.</p>
+     * supported Amazon Web Services services, specify null.</p>
      */
     inline void SetCredentials(const Aws::String& value) { m_credentials = value; }
 
@@ -435,7 +442,7 @@ namespace Model
      * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
      * the caller's identity be passed through from the request, specify the string
      * <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on
-     * supported AWS services, specify null.</p>
+     * supported Amazon Web Services services, specify null.</p>
      */
     inline void SetCredentials(Aws::String&& value) { m_credentials = std::move(value); }
 
@@ -445,7 +452,7 @@ namespace Model
      * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
      * the caller's identity be passed through from the request, specify the string
      * <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on
-     * supported AWS services, specify null.</p>
+     * supported Amazon Web Services services, specify null.</p>
      */
     inline void SetCredentials(const char* value) { m_credentials.assign(value); }
 
@@ -455,7 +462,7 @@ namespace Model
      * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
      * the caller's identity be passed through from the request, specify the string
      * <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on
-     * supported AWS services, specify null.</p>
+     * supported Amazon Web Services services, specify null.</p>
      */
     inline GetIntegrationResult& WithCredentials(const Aws::String& value) { SetCredentials(value); return *this;}
 
@@ -465,7 +472,7 @@ namespace Model
      * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
      * the caller's identity be passed through from the request, specify the string
      * <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on
-     * supported AWS services, specify null.</p>
+     * supported Amazon Web Services services, specify null.</p>
      */
     inline GetIntegrationResult& WithCredentials(Aws::String&& value) { SetCredentials(std::move(value)); return *this;}
 
@@ -475,7 +482,7 @@ namespace Model
      * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
      * the caller's identity be passed through from the request, specify the string
      * <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on
-     * supported AWS services, specify null.</p>
+     * supported Amazon Web Services services, specify null.</p>
      */
     inline GetIntegrationResult& WithCredentials(const char* value) { SetCredentials(value); return *this;}
 

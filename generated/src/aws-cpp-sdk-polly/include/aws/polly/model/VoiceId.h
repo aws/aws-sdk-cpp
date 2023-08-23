@@ -107,7 +107,8 @@ namespace Model
     Niamh,
     Sofie,
     Lisa,
-    Isabelle
+    Isabelle,
+    Zayd
   };
 
 namespace VoiceIdMapper
