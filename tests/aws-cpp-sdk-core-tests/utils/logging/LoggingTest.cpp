@@ -392,6 +392,15 @@ class LoggingTestLogFileRace : public Aws::Testing::AwsCppSdkGTestSuite
 {
 };
 
+void LogOnCRTLogSystemInterfaceWithoutVaArgs(CRTLogSystemInterface* object, LogLevel logLevel, const char* subjectName, const char* formatStr, ...)
+{
+    va_list args;
+    va_start(args, formatStr);
+    assert(object);
+    object->Log(logLevel, subjectName, formatStr, args);
+    va_end(args);
+}
+
 TEST_F(LoggingTestLogFileRace, testRaceOnLogFile)
 {
     /*
@@ -470,12 +479,12 @@ TEST_F(LoggingTestLogFileRace, testMockCrtRaceOnLogFile)
                                     Aws::UniquePtr<MockCRTLogSystem> logSystem =
                                             Aws::MakeUnique<MockCRTLogSystem>(AllocationTag, LogLevel::Info, crtLogs);
                                     Aws::String logMsgTag = "testMockCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", nullptr);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", nullptr);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", nullptr);
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), "Knock knock");
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), " - Who's there?");
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), " - Race condition!");
                                     for(size_t j = 0; j < 100; ++j)
                                     {
-                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", nullptr);
+                                        LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy");
                                     }
 
                                     return true;
@@ -522,12 +531,12 @@ TEST_F(LoggingTestLogFileRace, testMockCrtRaceOnSingleLogger)
                                     }
 
                                     Aws::String logMsgTag = "testMockCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", nullptr);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", nullptr);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", nullptr);
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), "Knock knock");
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), " - Who's there?");
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), " - Race condition!");
                                     for(size_t j = 0; j < 100; ++j)
                                     {
-                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", nullptr);
+                                        LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy");
                                     }
 
                                     return true;
@@ -572,12 +581,12 @@ TEST_F(LoggingTestLogFileRace, testCrtLoggerRaceMultipleLoggers)
                                     Aws::UniquePtr<DefaultCRTLogSystem> logSystem =
                                             Aws::MakeUnique<DefaultCRTLogSystem>(AllocationTag, LogLevel::Info);
                                     Aws::String logMsgTag = "testCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", nullptr);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", nullptr);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", nullptr);
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), "Knock knock");
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), " - Who's there?");
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), " - Race condition!");
                                     for(size_t j = 0; j < 100; ++j)
                                     {
-                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", nullptr);
+                                        LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy");
                                     }
 
                                     return true;
@@ -623,12 +632,12 @@ TEST_F(LoggingTestLogFileRace, testCrtLoggerRaceSingleLogger)
 
 
                                     Aws::String logMsgTag = "testCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", nullptr);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", nullptr);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", nullptr);
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), "Knock knock");
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), " - Who's there?");
+                                    LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), " - Race condition!");
                                     for(size_t j = 0; j < 100; ++j)
                                     {
-                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", nullptr);
+                                        LogOnCRTLogSystemInterfaceWithoutVaArgs(logSystem.get(), LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy");
                                     }
 
                                     return true;
