@@ -298,7 +298,7 @@ namespace Model
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * Valid values are: <code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
      * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
@@ -306,7 +306,7 @@ namespace Model
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * Valid values are: <code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
      * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
@@ -314,7 +314,7 @@ namespace Model
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * Valid values are: <code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
      * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
@@ -322,7 +322,7 @@ namespace Model
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * Valid values are: <code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
      * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
@@ -330,7 +330,7 @@ namespace Model
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * Valid values are: <code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
      * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
@@ -338,7 +338,7 @@ namespace Model
 
     /**
      * <p>The source of the API key for metering requests according to a usage plan.
-     * Valid values are: &gt;<code>HEADER</code> to read the API key from the
+     * Valid values are: <code>HEADER</code> to read the API key from the
      * <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the
      * API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
      */
