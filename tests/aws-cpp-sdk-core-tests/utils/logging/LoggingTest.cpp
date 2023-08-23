@@ -26,19 +26,26 @@ using namespace Aws::Utils::Logging;
 
 static const char* AllocationTag = "LoggingTests";
 
-class ScopedLogger
+class ScopedLogger final
 {
-    public:
-        ScopedLogger(const std::shared_ptr<LogSystemInterface>& logger)
-        {
-            Aws::Utils::Logging::PushLogger(logger);
-        }
+public:
+    ScopedLogger(const std::shared_ptr<LogSystemInterface>& logger)
+      : m_logger(logger)
+    {
+        Aws::Utils::Logging::PushLogger(logger);
+    }
 
-        ~ScopedLogger()
-        {
-            Aws::Utils::Logging::PopLogger();
-        }
+    ~ScopedLogger()
+    {
+        Aws::Utils::Logging::PopLogger();
+        // GetLogSystem returns a raw pointer, force flush and let all threads possibly having this raw ptr to release it
+        m_logger->Flush();
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+        m_logger.reset();
+    }
 
+private:
+    std::shared_ptr<LogSystemInterface> m_logger;
 };
 
 class MockCRTLogSystem : public DefaultCRTLogSystem
@@ -47,6 +54,18 @@ public:
     MockCRTLogSystem(LogLevel logLevel, std::shared_ptr<Aws::StringStream> crtLogs) :
         DefaultCRTLogSystem(logLevel),
         m_localLogs(crtLogs) {}
+
+    ~MockCRTLogSystem()
+    {
+        // make sure that MockCRTLogSystem::m_localLogs is not freed before MockCRTLogSystem::Log finishes
+        m_stopLogging = true;
+
+        // Allow all other threads running Log(...) to return
+        std::unique_lock<std::mutex> lock(m_stopMutex);
+        m_stopSignal.wait_for(lock,
+                              std::chrono::milliseconds(200),
+                              [&](){ return m_logsProcessed.load() == 0; });
+    }
 
     void Log(LogLevel logLevel, const char* subjectName, const char* formatStr, va_list args) override
     {
@@ -66,14 +85,20 @@ public:
 
         Array<char> outputBuff(requiredLength);
     #ifdef _WIN32
-        vsnprintf_s(outputBuff.GetUnderlyingData(), requiredLength, _TRUNCATE, formatStr, args);
+        vsnprintf_s(outputBuff.GetUnderlyingData(), outputBuff.GetLength(), _TRUNCATE, formatStr, args);
     #else
         vsnprintf(outputBuff.GetUnderlyingData(), requiredLength, formatStr, args);
     #endif // WIN32
 
         Aws::OStringStream logStream;
         logStream << outputBuff.GetUnderlyingData();
-        *m_localLogs << outputBuff.GetUnderlyingData() << std::endl;
+        {
+            /* Apparently, a "stream object" is not thread safe per the C++ standard.
+             *  and MSVS's stringstream conforms to the standard.
+             */
+            std::unique_lock<std::mutex> lock(m_localLogsMutex);
+            *m_localLogs << outputBuff.GetUnderlyingData() << std::endl;
+        }
         Logging::GetLogSystem()->LogStream(logLevel, subjectName, logStream);
         m_logsProcessed--;
         if(m_logsProcessed == 0 && m_stopLogging)
@@ -84,6 +109,7 @@ public:
 
 private:
     std::shared_ptr<Aws::StringStream> m_localLogs;
+    mutable std::mutex m_localLogsMutex;
 };
 
 class ScopedCRTLogger
@@ -312,6 +338,7 @@ void VerifyAllCRTLogsAtOrBelow(LogLevel logLevel, const Aws::Vector<Aws::String>
 void DoCRTLogTest(LogLevel logLevel)
 {
     SCOPED_TRACE(Aws::String("DoCRTLogTest logLevel: ") + GetLogLevelName(logLevel));
+    SCOPED_TRACE(Aws::String("It is ") + Aws::Utils::DateTime::Now().ToGmtString(Aws::Utils::DateFormat::ISO_8601) + " o'clock.");
     auto logs = Aws::MakeShared<Aws::StringStream>(AllocationTag);
     auto crtLogs = Aws::MakeShared<Aws::StringStream>(AllocationTag);
 
@@ -359,4 +386,265 @@ TEST_F(CRTLoggingTest, testDebugLogLevel)
 TEST_F(CRTLoggingTest, testTraceLogLevel)
 {
     DoCRTLogTest(LogLevel::Trace);
+}
+
+class LoggingTestLogFileRace : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(LoggingTestLogFileRace, testRaceOnLogFile)
+{
+    /*
+     * Tests a race condition on the default log file (in case of multiple processes / loggers using the same SDK log file).
+     */
+    static const size_t PARALLEL_COUNT = 32;
+    Aws::Vector<std::future<bool>> futures(PARALLEL_COUNT);
+
+    std::atomic<bool> run;
+    run = false;
+
+    for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+    {
+        futures[i] = std::async(std::launch::async,
+                [i, &run]()-> bool
+                {
+                    while(true)
+                    {
+                        if(run.load())
+                        {
+                            break;
+                        }
+                    }
+
+                    Aws::UniquePtr<DefaultLogSystem> logSystem =
+                            Aws::MakeUnique<DefaultLogSystem>(AllocationTag, LogLevel::Info, "testRaceOnLogFile");
+                    Aws::String logMsgTag = "testRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
+                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock");
+                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?");
+                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!");
+                    for(size_t j = 0; j < 100; ++j)
+                    {
+                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy");
+                    }
+
+                    return true;
+                });
+    }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    run = true;
+
+    for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+    {
+        bool success = futures[i].get();
+        ASSERT_TRUE(success);
+    }
+}
+
+TEST_F(LoggingTestLogFileRace, testMockCrtRaceOnLogFile)
+{
+    /*
+     * Tests a race condition on MockCRTLogSystem, create a logger per each thread.
+     * It is a test on a test helper.
+     */
+    static const size_t PARALLEL_COUNT = 32;
+    Aws::Vector<std::future<bool>> futures(PARALLEL_COUNT);
+
+    std::atomic<bool> run;
+    run = false;
+
+    for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+    {
+        futures[i] = std::async(std::launch::async,
+                                [i, &run]()-> bool
+                                {
+                                    auto crtLogs = Aws::MakeShared<Aws::StringStream>(AllocationTag);
+                                    while(true)
+                                    {
+                                        if(run.load())
+                                        {
+                                            break;
+                                        }
+                                    }
+
+                                    Aws::UniquePtr<MockCRTLogSystem> logSystem =
+                                            Aws::MakeUnique<MockCRTLogSystem>(AllocationTag, LogLevel::Info, crtLogs);
+                                    Aws::String logMsgTag = "testMockCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
+                                    va_list args = nullptr;
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", args);
+                                    for(size_t j = 0; j < 100; ++j)
+                                    {
+                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", args);
+                                    }
+
+                                    return true;
+                                });
+    }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    run = true;
+
+    for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+    {
+        bool success = futures[i].get();
+        ASSERT_TRUE(success);
+    }
+}
+
+TEST_F(LoggingTestLogFileRace, testMockCrtRaceOnSingleLogger)
+{
+    /*
+     * Tests a race condition on MockCRTLogSystem, create a single logger for all threads.
+     * It is a test on a test helper.
+     */
+    static const size_t PARALLEL_COUNT = 32;
+    Aws::Vector<std::future<bool>> futures(PARALLEL_COUNT);
+
+    std::atomic<bool> run;
+    run = false;
+
+    auto crtLogs = Aws::MakeShared<Aws::StringStream>(AllocationTag);
+    Aws::UniquePtr<MockCRTLogSystem> logSystem =
+            Aws::MakeUnique<MockCRTLogSystem>(AllocationTag, LogLevel::Info, crtLogs);
+
+    for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+    {
+        futures[i] = std::async(std::launch::async,
+                                [i, &run, &logSystem]()-> bool
+                                {
+                                    while(true)
+                                    {
+                                        if(run.load())
+                                        {
+                                            break;
+                                        }
+                                    }
+
+                                    Aws::String logMsgTag = "testMockCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
+                                    va_list args = nullptr;
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", args);
+                                    for(size_t j = 0; j < 100; ++j)
+                                    {
+                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", args);
+                                    }
+
+                                    return true;
+                                });
+    }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    run = true;
+
+    for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+    {
+        bool success = futures[i].get();
+        ASSERT_TRUE(success);
+    }
+}
+
+TEST_F(LoggingTestLogFileRace, testCrtLoggerRaceMultipleLoggers)
+{
+    /*
+     * Tests a race condition on the DefaultCRTLogSystem, create CRT logger per each thread.
+     * It is a test on an SDK component, not on a test helper.
+     */
+    static const size_t PARALLEL_COUNT = 32;
+    Aws::Vector<std::future<bool>> futures(PARALLEL_COUNT);
+
+    std::atomic<bool> run;
+    run = false;
+
+    for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+    {
+        futures[i] = std::async(std::launch::async,
+                                [i, &run]()-> bool
+                                {
+                                    while(true)
+                                    {
+                                        if(run.load())
+                                        {
+                                            break;
+                                        }
+                                    }
+
+                                    Aws::UniquePtr<DefaultCRTLogSystem> logSystem =
+                                            Aws::MakeUnique<DefaultCRTLogSystem>(AllocationTag, LogLevel::Info);
+                                    Aws::String logMsgTag = "testCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
+                                    va_list args = nullptr;
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", args);
+                                    for(size_t j = 0; j < 100; ++j)
+                                    {
+                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", args);
+                                    }
+
+                                    return true;
+                                });
+    }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    run = true;
+
+    for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+    {
+        bool success = futures[i].get();
+        ASSERT_TRUE(success);
+    }
+}
+
+TEST_F(LoggingTestLogFileRace, testCrtLoggerRaceSingleLogger)
+{
+    /*
+     * Tests a race condition on the DefaultCRTLogSystem, create single CRT logger for all
+     * It is a test on an SDK component, not on a test helper.
+     */
+    static const size_t PARALLEL_COUNT = 32;
+    Aws::Vector<std::future<bool>> futures(PARALLEL_COUNT);
+
+    std::atomic<bool> run;
+    run = false;
+
+    Aws::UniquePtr<DefaultCRTLogSystem> logSystem =
+            Aws::MakeUnique<DefaultCRTLogSystem>(AllocationTag, LogLevel::Info);
+    for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+    {
+        futures[i] = std::async(std::launch::async,
+                                [i, &run, &logSystem]()-> bool
+                                {
+                                    while(true)
+                                    {
+                                        if(run.load())
+                                        {
+                                            break;
+                                        }
+                                    }
+
+
+                                    Aws::String logMsgTag = "testCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
+                                    va_list args = nullptr;
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", args);
+                                    for(size_t j = 0; j < 100; ++j)
+                                    {
+                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", args);
+                                    }
+
+                                    return true;
+                                });
+    }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    run = true;
+
+    for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+    {
+        bool success = futures[i].get();
+        ASSERT_TRUE(success);
+    }
 }
