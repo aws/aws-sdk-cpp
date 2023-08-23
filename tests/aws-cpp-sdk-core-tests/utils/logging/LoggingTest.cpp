@@ -470,13 +470,12 @@ TEST_F(LoggingTestLogFileRace, testMockCrtRaceOnLogFile)
                                     Aws::UniquePtr<MockCRTLogSystem> logSystem =
                                             Aws::MakeUnique<MockCRTLogSystem>(AllocationTag, LogLevel::Info, crtLogs);
                                     Aws::String logMsgTag = "testMockCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
-                                    va_list args = nullptr;
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", args);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", args);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", nullptr);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", nullptr);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", nullptr);
                                     for(size_t j = 0; j < 100; ++j)
                                     {
-                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", args);
+                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", nullptr);
                                     }
 
                                     return true;
@@ -523,13 +522,12 @@ TEST_F(LoggingTestLogFileRace, testMockCrtRaceOnSingleLogger)
                                     }
 
                                     Aws::String logMsgTag = "testMockCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
-                                    va_list args = nullptr;
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", args);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", args);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", nullptr);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", nullptr);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", nullptr);
                                     for(size_t j = 0; j < 100; ++j)
                                     {
-                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", args);
+                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", nullptr);
                                     }
 
                                     return true;
@@ -574,13 +572,12 @@ TEST_F(LoggingTestLogFileRace, testCrtLoggerRaceMultipleLoggers)
                                     Aws::UniquePtr<DefaultCRTLogSystem> logSystem =
                                             Aws::MakeUnique<DefaultCRTLogSystem>(AllocationTag, LogLevel::Info);
                                     Aws::String logMsgTag = "testCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
-                                    va_list args = nullptr;
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", args);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", args);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", nullptr);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", nullptr);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", nullptr);
                                     for(size_t j = 0; j < 100; ++j)
                                     {
-                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", args);
+                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", nullptr);
                                     }
 
                                     return true;
@@ -626,13 +623,12 @@ TEST_F(LoggingTestLogFileRace, testCrtLoggerRaceSingleLogger)
 
 
                                     Aws::String logMsgTag = "testCrtRaceOnLogFile thread #" + Aws::Utils::StringUtils::to_string(i);
-                                    va_list args = nullptr;
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", args);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", args);
-                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", args);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "Knock knock", nullptr);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Who's there?", nullptr);
+                                    logSystem->Log(LogLevel::Info, logMsgTag.c_str(), " - Race condition!", nullptr);
                                     for(size_t j = 0; j < 100; ++j)
                                     {
-                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", args);
+                                        logSystem->Log(LogLevel::Info, logMsgTag.c_str(), "All work and no play makes Jack a dull boy", nullptr);
                                     }
 
                                     return true;
