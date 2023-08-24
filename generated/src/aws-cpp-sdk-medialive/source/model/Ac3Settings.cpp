@@ -32,7 +32,9 @@ Ac3Settings::Ac3Settings() :
     m_lfeFilter(Ac3LfeFilter::NOT_SET),
     m_lfeFilterHasBeenSet(false),
     m_metadataControl(Ac3MetadataControl::NOT_SET),
-    m_metadataControlHasBeenSet(false)
+    m_metadataControlHasBeenSet(false),
+    m_attenuationControl(Ac3AttenuationControl::NOT_SET),
+    m_attenuationControlHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ Ac3Settings::Ac3Settings(JsonView jsonValue) :
     m_lfeFilter(Ac3LfeFilter::NOT_SET),
     m_lfeFilterHasBeenSet(false),
     m_metadataControl(Ac3MetadataControl::NOT_SET),
-    m_metadataControlHasBeenSet(false)
+    m_metadataControlHasBeenSet(false),
+    m_attenuationControl(Ac3AttenuationControl::NOT_SET),
+    m_attenuationControlHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +110,13 @@ Ac3Settings& Ac3Settings::operator =(JsonView jsonValue)
     m_metadataControlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("attenuationControl"))
+  {
+    m_attenuationControl = Ac3AttenuationControlMapper::GetAc3AttenuationControlForName(jsonValue.GetString("attenuationControl"));
+
+    m_attenuationControlHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +159,11 @@ JsonValue Ac3Settings::Jsonize() const
   if(m_metadataControlHasBeenSet)
   {
    payload.WithString("metadataControl", Ac3MetadataControlMapper::GetNameForAc3MetadataControl(m_metadataControl));
+  }
+
+  if(m_attenuationControlHasBeenSet)
+  {
+   payload.WithString("attenuationControl", Ac3AttenuationControlMapper::GetNameForAc3AttenuationControl(m_attenuationControl));
   }
 
   return payload;

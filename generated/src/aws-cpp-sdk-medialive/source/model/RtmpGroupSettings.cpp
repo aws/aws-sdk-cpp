@@ -31,7 +31,9 @@ RtmpGroupSettings::RtmpGroupSettings() :
     m_inputLossAction(InputLossActionForRtmpOut::NOT_SET),
     m_inputLossActionHasBeenSet(false),
     m_restartDelay(0),
-    m_restartDelayHasBeenSet(false)
+    m_restartDelayHasBeenSet(false),
+    m_includeFillerNalUnits(IncludeFillerNalUnits::NOT_SET),
+    m_includeFillerNalUnitsHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ RtmpGroupSettings::RtmpGroupSettings(JsonView jsonValue) :
     m_inputLossAction(InputLossActionForRtmpOut::NOT_SET),
     m_inputLossActionHasBeenSet(false),
     m_restartDelay(0),
-    m_restartDelayHasBeenSet(false)
+    m_restartDelayHasBeenSet(false),
+    m_includeFillerNalUnits(IncludeFillerNalUnits::NOT_SET),
+    m_includeFillerNalUnitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +111,13 @@ RtmpGroupSettings& RtmpGroupSettings::operator =(JsonView jsonValue)
     m_restartDelayHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("includeFillerNalUnits"))
+  {
+    m_includeFillerNalUnits = IncludeFillerNalUnitsMapper::GetIncludeFillerNalUnitsForName(jsonValue.GetString("includeFillerNalUnits"));
+
+    m_includeFillerNalUnitsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +166,11 @@ JsonValue RtmpGroupSettings::Jsonize() const
   {
    payload.WithInteger("restartDelay", m_restartDelay);
 
+  }
+
+  if(m_includeFillerNalUnitsHasBeenSet)
+  {
+   payload.WithString("includeFillerNalUnits", IncludeFillerNalUnitsMapper::GetNameForIncludeFillerNalUnits(m_includeFillerNalUnits));
   }
 
   return payload;

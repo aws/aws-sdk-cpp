@@ -34,7 +34,18 @@ Session::Session() :
     m_maxCapacity(0.0),
     m_maxCapacityHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
-    m_glueVersionHasBeenSet(false)
+    m_glueVersionHasBeenSet(false),
+    m_numberOfWorkers(0),
+    m_numberOfWorkersHasBeenSet(false),
+    m_workerType(WorkerType::NOT_SET),
+    m_workerTypeHasBeenSet(false),
+    m_completedOnHasBeenSet(false),
+    m_executionTime(0.0),
+    m_executionTimeHasBeenSet(false),
+    m_dPUSeconds(0.0),
+    m_dPUSecondsHasBeenSet(false),
+    m_idleTimeout(0),
+    m_idleTimeoutHasBeenSet(false)
 {
 }
 
@@ -54,7 +65,18 @@ Session::Session(JsonView jsonValue) :
     m_maxCapacity(0.0),
     m_maxCapacityHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
-    m_glueVersionHasBeenSet(false)
+    m_glueVersionHasBeenSet(false),
+    m_numberOfWorkers(0),
+    m_numberOfWorkersHasBeenSet(false),
+    m_workerType(WorkerType::NOT_SET),
+    m_workerTypeHasBeenSet(false),
+    m_completedOnHasBeenSet(false),
+    m_executionTime(0.0),
+    m_executionTimeHasBeenSet(false),
+    m_dPUSeconds(0.0),
+    m_dPUSecondsHasBeenSet(false),
+    m_idleTimeout(0),
+    m_idleTimeoutHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +177,48 @@ Session& Session::operator =(JsonView jsonValue)
     m_glueVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NumberOfWorkers"))
+  {
+    m_numberOfWorkers = jsonValue.GetInteger("NumberOfWorkers");
+
+    m_numberOfWorkersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WorkerType"))
+  {
+    m_workerType = WorkerTypeMapper::GetWorkerTypeForName(jsonValue.GetString("WorkerType"));
+
+    m_workerTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompletedOn"))
+  {
+    m_completedOn = jsonValue.GetDouble("CompletedOn");
+
+    m_completedOnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExecutionTime"))
+  {
+    m_executionTime = jsonValue.GetDouble("ExecutionTime");
+
+    m_executionTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DPUSeconds"))
+  {
+    m_dPUSeconds = jsonValue.GetDouble("DPUSeconds");
+
+    m_dPUSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdleTimeout"))
+  {
+    m_idleTimeout = jsonValue.GetInteger("IdleTimeout");
+
+    m_idleTimeoutHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -240,6 +304,40 @@ JsonValue Session::Jsonize() const
   if(m_glueVersionHasBeenSet)
   {
    payload.WithString("GlueVersion", m_glueVersion);
+
+  }
+
+  if(m_numberOfWorkersHasBeenSet)
+  {
+   payload.WithInteger("NumberOfWorkers", m_numberOfWorkers);
+
+  }
+
+  if(m_workerTypeHasBeenSet)
+  {
+   payload.WithString("WorkerType", WorkerTypeMapper::GetNameForWorkerType(m_workerType));
+  }
+
+  if(m_completedOnHasBeenSet)
+  {
+   payload.WithDouble("CompletedOn", m_completedOn.SecondsWithMSPrecision());
+  }
+
+  if(m_executionTimeHasBeenSet)
+  {
+   payload.WithDouble("ExecutionTime", m_executionTime);
+
+  }
+
+  if(m_dPUSecondsHasBeenSet)
+  {
+   payload.WithDouble("DPUSeconds", m_dPUSeconds);
+
+  }
+
+  if(m_idleTimeoutHasBeenSet)
+  {
+   payload.WithInteger("IdleTimeout", m_idleTimeout);
 
   }
 

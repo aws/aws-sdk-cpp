@@ -695,7 +695,23 @@ namespace Model
     m7i_flex_xlarge,
     m7i_flex_2xlarge,
     m7i_flex_4xlarge,
-    m7i_flex_8xlarge
+    m7i_flex_8xlarge,
+    m7a_medium,
+    m7a_large,
+    m7a_xlarge,
+    m7a_2xlarge,
+    m7a_4xlarge,
+    m7a_8xlarge,
+    m7a_12xlarge,
+    m7a_16xlarge,
+    m7a_24xlarge,
+    m7a_32xlarge,
+    m7a_48xlarge,
+    m7a_metal_48xl,
+    hpc7a_12xlarge,
+    hpc7a_24xlarge,
+    hpc7a_48xlarge,
+    hpc7a_96xlarge
   };
 
 namespace InstanceTypeMapper

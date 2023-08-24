@@ -44,6 +44,10 @@ M3u8Settings::M3u8Settings() :
     m_privateMetadataPidHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
+    m_ptsOffset(0),
+    m_ptsOffsetHasBeenSet(false),
+    m_ptsOffsetMode(TsPtsOffset::NOT_SET),
+    m_ptsOffsetModeHasBeenSet(false),
     m_scte35Pid(0),
     m_scte35PidHasBeenSet(false),
     m_scte35Source(M3u8Scte35Source::NOT_SET),
@@ -85,6 +89,10 @@ M3u8Settings::M3u8Settings(JsonView jsonValue) :
     m_privateMetadataPidHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
+    m_ptsOffset(0),
+    m_ptsOffsetHasBeenSet(false),
+    m_ptsOffsetMode(TsPtsOffset::NOT_SET),
+    m_ptsOffsetModeHasBeenSet(false),
     m_scte35Pid(0),
     m_scte35PidHasBeenSet(false),
     m_scte35Source(M3u8Scte35Source::NOT_SET),
@@ -195,6 +203,20 @@ M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
     m_programNumber = jsonValue.GetInteger("programNumber");
 
     m_programNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ptsOffset"))
+  {
+    m_ptsOffset = jsonValue.GetInteger("ptsOffset");
+
+    m_ptsOffsetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ptsOffsetMode"))
+  {
+    m_ptsOffsetMode = TsPtsOffsetMapper::GetTsPtsOffsetForName(jsonValue.GetString("ptsOffsetMode"));
+
+    m_ptsOffsetModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scte35Pid"))
@@ -323,6 +345,17 @@ JsonValue M3u8Settings::Jsonize() const
   {
    payload.WithInteger("programNumber", m_programNumber);
 
+  }
+
+  if(m_ptsOffsetHasBeenSet)
+  {
+   payload.WithInteger("ptsOffset", m_ptsOffset);
+
+  }
+
+  if(m_ptsOffsetModeHasBeenSet)
+  {
+   payload.WithString("ptsOffsetMode", TsPtsOffsetMapper::GetNameForTsPtsOffset(m_ptsOffsetMode));
   }
 
   if(m_scte35PidHasBeenSet)

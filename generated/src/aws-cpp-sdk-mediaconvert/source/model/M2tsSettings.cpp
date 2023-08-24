@@ -72,6 +72,10 @@ M2tsSettings::M2tsSettings() :
     m_privateMetadataPidHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
+    m_ptsOffset(0),
+    m_ptsOffsetHasBeenSet(false),
+    m_ptsOffsetMode(TsPtsOffset::NOT_SET),
+    m_ptsOffsetModeHasBeenSet(false),
     m_rateMode(M2tsRateMode::NOT_SET),
     m_rateModeHasBeenSet(false),
     m_scte35EsamHasBeenSet(false),
@@ -148,6 +152,10 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_privateMetadataPidHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
+    m_ptsOffset(0),
+    m_ptsOffsetHasBeenSet(false),
+    m_ptsOffsetMode(TsPtsOffset::NOT_SET),
+    m_ptsOffsetModeHasBeenSet(false),
     m_rateMode(M2tsRateMode::NOT_SET),
     m_rateModeHasBeenSet(false),
     m_scte35EsamHasBeenSet(false),
@@ -380,6 +388,20 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_programNumber = jsonValue.GetInteger("programNumber");
 
     m_programNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ptsOffset"))
+  {
+    m_ptsOffset = jsonValue.GetInteger("ptsOffset");
+
+    m_ptsOffsetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ptsOffsetMode"))
+  {
+    m_ptsOffsetMode = TsPtsOffsetMapper::GetTsPtsOffsetForName(jsonValue.GetString("ptsOffsetMode"));
+
+    m_ptsOffsetModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("rateMode"))
@@ -630,6 +652,17 @@ JsonValue M2tsSettings::Jsonize() const
   {
    payload.WithInteger("programNumber", m_programNumber);
 
+  }
+
+  if(m_ptsOffsetHasBeenSet)
+  {
+   payload.WithInteger("ptsOffset", m_ptsOffset);
+
+  }
+
+  if(m_ptsOffsetModeHasBeenSet)
+  {
+   payload.WithString("ptsOffsetMode", TsPtsOffsetMapper::GetNameForTsPtsOffset(m_ptsOffsetMode));
   }
 
   if(m_rateModeHasBeenSet)

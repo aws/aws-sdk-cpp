@@ -10,6 +10,7 @@
 #include <aws/medialive/model/Ac3DrcProfile.h>
 #include <aws/medialive/model/Ac3LfeFilter.h>
 #include <aws/medialive/model/Ac3MetadataControl.h>
+#include <aws/medialive/model/Ac3AttenuationControl.h>
 #include <utility>
 
 namespace Aws
@@ -271,6 +272,43 @@ namespace Model
      */
     inline Ac3Settings& WithMetadataControl(Ac3MetadataControl&& value) { SetMetadataControl(std::move(value)); return *this;}
 
+
+    /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the
+     * coding mode parameter is CODING_MODE_3_2_LFE.
+     */
+    inline const Ac3AttenuationControl& GetAttenuationControl() const{ return m_attenuationControl; }
+
+    /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the
+     * coding mode parameter is CODING_MODE_3_2_LFE.
+     */
+    inline bool AttenuationControlHasBeenSet() const { return m_attenuationControlHasBeenSet; }
+
+    /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the
+     * coding mode parameter is CODING_MODE_3_2_LFE.
+     */
+    inline void SetAttenuationControl(const Ac3AttenuationControl& value) { m_attenuationControlHasBeenSet = true; m_attenuationControl = value; }
+
+    /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the
+     * coding mode parameter is CODING_MODE_3_2_LFE.
+     */
+    inline void SetAttenuationControl(Ac3AttenuationControl&& value) { m_attenuationControlHasBeenSet = true; m_attenuationControl = std::move(value); }
+
+    /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the
+     * coding mode parameter is CODING_MODE_3_2_LFE.
+     */
+    inline Ac3Settings& WithAttenuationControl(const Ac3AttenuationControl& value) { SetAttenuationControl(value); return *this;}
+
+    /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the
+     * coding mode parameter is CODING_MODE_3_2_LFE.
+     */
+    inline Ac3Settings& WithAttenuationControl(Ac3AttenuationControl&& value) { SetAttenuationControl(std::move(value)); return *this;}
+
   private:
 
     double m_bitrate;
@@ -293,6 +331,9 @@ namespace Model
 
     Ac3MetadataControl m_metadataControl;
     bool m_metadataControlHasBeenSet = false;
+
+    Ac3AttenuationControl m_attenuationControl;
+    bool m_attenuationControlHasBeenSet = false;
   };
 
 } // namespace Model

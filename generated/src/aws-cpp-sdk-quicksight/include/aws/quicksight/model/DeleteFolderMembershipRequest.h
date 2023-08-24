@@ -116,87 +116,73 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to
-     * delete.</p>
+     * <p>The ID of the asset that you want to delete.</p>
      */
     inline const Aws::String& GetMemberId() const{ return m_memberId; }
 
     /**
-     * <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to
-     * delete.</p>
+     * <p>The ID of the asset that you want to delete.</p>
      */
     inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
 
     /**
-     * <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to
-     * delete.</p>
+     * <p>The ID of the asset that you want to delete.</p>
      */
     inline void SetMemberId(const Aws::String& value) { m_memberIdHasBeenSet = true; m_memberId = value; }
 
     /**
-     * <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to
-     * delete.</p>
+     * <p>The ID of the asset that you want to delete.</p>
      */
     inline void SetMemberId(Aws::String&& value) { m_memberIdHasBeenSet = true; m_memberId = std::move(value); }
 
     /**
-     * <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to
-     * delete.</p>
+     * <p>The ID of the asset that you want to delete.</p>
      */
     inline void SetMemberId(const char* value) { m_memberIdHasBeenSet = true; m_memberId.assign(value); }
 
     /**
-     * <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to
-     * delete.</p>
+     * <p>The ID of the asset that you want to delete.</p>
      */
     inline DeleteFolderMembershipRequest& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
 
     /**
-     * <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to
-     * delete.</p>
+     * <p>The ID of the asset that you want to delete.</p>
      */
     inline DeleteFolderMembershipRequest& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to
-     * delete.</p>
+     * <p>The ID of the asset that you want to delete.</p>
      */
     inline DeleteFolderMembershipRequest& WithMemberId(const char* value) { SetMemberId(value); return *this;}
 
 
     /**
-     * <p>The type of the member, including <code>DASHBOARD</code>,
-     * <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+     * <p>The member type of the asset that you want to delete from a folder.</p>
      */
     inline const MemberType& GetMemberType() const{ return m_memberType; }
 
     /**
-     * <p>The type of the member, including <code>DASHBOARD</code>,
-     * <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+     * <p>The member type of the asset that you want to delete from a folder.</p>
      */
     inline bool MemberTypeHasBeenSet() const { return m_memberTypeHasBeenSet; }
 
     /**
-     * <p>The type of the member, including <code>DASHBOARD</code>,
-     * <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+     * <p>The member type of the asset that you want to delete from a folder.</p>
      */
     inline void SetMemberType(const MemberType& value) { m_memberTypeHasBeenSet = true; m_memberType = value; }
 
     /**
-     * <p>The type of the member, including <code>DASHBOARD</code>,
-     * <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+     * <p>The member type of the asset that you want to delete from a folder.</p>
      */
     inline void SetMemberType(MemberType&& value) { m_memberTypeHasBeenSet = true; m_memberType = std::move(value); }
 
     /**
-     * <p>The type of the member, including <code>DASHBOARD</code>,
-     * <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+     * <p>The member type of the asset that you want to delete from a folder.</p>
      */
     inline DeleteFolderMembershipRequest& WithMemberType(const MemberType& value) { SetMemberType(value); return *this;}
 
     /**
-     * <p>The type of the member, including <code>DASHBOARD</code>,
-     * <code>ANALYSIS</code>, and <code>DATASET</code> </p>
+     * <p>The member type of the asset that you want to delete from a folder.</p>
      */
     inline DeleteFolderMembershipRequest& WithMemberType(MemberType&& value) { SetMemberType(std::move(value)); return *this;}
 

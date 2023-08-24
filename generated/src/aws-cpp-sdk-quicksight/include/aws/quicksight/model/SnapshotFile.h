@@ -45,8 +45,8 @@ namespace Model
      * <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain
      * information on the dashboard sheet that is exported. These objects provide
      * information about the snapshot artifacts that are generated during the job. This
-     * structure can hold a maximum of 5 CSV configurations or 1 configuration for
-     * PDF.</p>
+     * structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or
+     * 1 configuration for PDF.</p>
      */
     inline const Aws::Vector<SnapshotFileSheetSelection>& GetSheetSelections() const{ return m_sheetSelections; }
 
@@ -54,8 +54,8 @@ namespace Model
      * <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain
      * information on the dashboard sheet that is exported. These objects provide
      * information about the snapshot artifacts that are generated during the job. This
-     * structure can hold a maximum of 5 CSV configurations or 1 configuration for
-     * PDF.</p>
+     * structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or
+     * 1 configuration for PDF.</p>
      */
     inline bool SheetSelectionsHasBeenSet() const { return m_sheetSelectionsHasBeenSet; }
 
@@ -63,8 +63,8 @@ namespace Model
      * <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain
      * information on the dashboard sheet that is exported. These objects provide
      * information about the snapshot artifacts that are generated during the job. This
-     * structure can hold a maximum of 5 CSV configurations or 1 configuration for
-     * PDF.</p>
+     * structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or
+     * 1 configuration for PDF.</p>
      */
     inline void SetSheetSelections(const Aws::Vector<SnapshotFileSheetSelection>& value) { m_sheetSelectionsHasBeenSet = true; m_sheetSelections = value; }
 
@@ -72,8 +72,8 @@ namespace Model
      * <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain
      * information on the dashboard sheet that is exported. These objects provide
      * information about the snapshot artifacts that are generated during the job. This
-     * structure can hold a maximum of 5 CSV configurations or 1 configuration for
-     * PDF.</p>
+     * structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or
+     * 1 configuration for PDF.</p>
      */
     inline void SetSheetSelections(Aws::Vector<SnapshotFileSheetSelection>&& value) { m_sheetSelectionsHasBeenSet = true; m_sheetSelections = std::move(value); }
 
@@ -81,8 +81,8 @@ namespace Model
      * <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain
      * information on the dashboard sheet that is exported. These objects provide
      * information about the snapshot artifacts that are generated during the job. This
-     * structure can hold a maximum of 5 CSV configurations or 1 configuration for
-     * PDF.</p>
+     * structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or
+     * 1 configuration for PDF.</p>
      */
     inline SnapshotFile& WithSheetSelections(const Aws::Vector<SnapshotFileSheetSelection>& value) { SetSheetSelections(value); return *this;}
 
@@ -90,8 +90,8 @@ namespace Model
      * <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain
      * information on the dashboard sheet that is exported. These objects provide
      * information about the snapshot artifacts that are generated during the job. This
-     * structure can hold a maximum of 5 CSV configurations or 1 configuration for
-     * PDF.</p>
+     * structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or
+     * 1 configuration for PDF.</p>
      */
     inline SnapshotFile& WithSheetSelections(Aws::Vector<SnapshotFileSheetSelection>&& value) { SetSheetSelections(std::move(value)); return *this;}
 
@@ -99,8 +99,8 @@ namespace Model
      * <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain
      * information on the dashboard sheet that is exported. These objects provide
      * information about the snapshot artifacts that are generated during the job. This
-     * structure can hold a maximum of 5 CSV configurations or 1 configuration for
-     * PDF.</p>
+     * structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or
+     * 1 configuration for PDF.</p>
      */
     inline SnapshotFile& AddSheetSelections(const SnapshotFileSheetSelection& value) { m_sheetSelectionsHasBeenSet = true; m_sheetSelections.push_back(value); return *this; }
 
@@ -108,45 +108,45 @@ namespace Model
      * <p>A list of <code>SnapshotFileSheetSelection</code> objects that contain
      * information on the dashboard sheet that is exported. These objects provide
      * information about the snapshot artifacts that are generated during the job. This
-     * structure can hold a maximum of 5 CSV configurations or 1 configuration for
-     * PDF.</p>
+     * structure can hold a maximum of 5 CSV configurations, 5 Excel configurations, or
+     * 1 configuration for PDF.</p>
      */
     inline SnapshotFile& AddSheetSelections(SnapshotFileSheetSelection&& value) { m_sheetSelectionsHasBeenSet = true; m_sheetSelections.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> or <code>PDF</code>.</p>
+     * <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
      */
     inline const SnapshotFileFormatType& GetFormatType() const{ return m_formatType; }
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> or <code>PDF</code>.</p>
+     * <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
      */
     inline bool FormatTypeHasBeenSet() const { return m_formatTypeHasBeenSet; }
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> or <code>PDF</code>.</p>
+     * <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
      */
     inline void SetFormatType(const SnapshotFileFormatType& value) { m_formatTypeHasBeenSet = true; m_formatType = value; }
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> or <code>PDF</code>.</p>
+     * <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
      */
     inline void SetFormatType(SnapshotFileFormatType&& value) { m_formatTypeHasBeenSet = true; m_formatType = std::move(value); }
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> or <code>PDF</code>.</p>
+     * <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
      */
     inline SnapshotFile& WithFormatType(const SnapshotFileFormatType& value) { SetFormatType(value); return *this;}
 
     /**
      * <p>The format of the snapshot file to be generated. You can choose between
-     * <code>CSV</code> or <code>PDF</code>.</p>
+     * <code>CSV</code>, <code>Excel</code>, or <code>PDF</code>.</p>
      */
     inline SnapshotFile& WithFormatType(SnapshotFileFormatType&& value) { SetFormatType(std::move(value)); return *this;}
 

@@ -525,8 +525,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -535,8 +535,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -545,8 +545,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -555,8 +555,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -565,8 +565,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -575,8 +575,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -585,8 +585,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -595,8 +595,8 @@ namespace Model
      * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
      * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
      * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
-     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
-     * <code>8.0.mysql_aurora.3.02.0</code> </p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.12.0</code>,
+     * <code>8.0.mysql_aurora.3.04.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1286,57 +1286,57 @@ namespace Model
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline const Aws::String& GetSourceEngineVersion() const{ return m_sourceEngineVersion; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline bool SourceEngineVersionHasBeenSet() const { return m_sourceEngineVersionHasBeenSet; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline void SetSourceEngineVersion(const Aws::String& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = value; }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline void SetSourceEngineVersion(Aws::String&& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = std::move(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline void SetSourceEngineVersion(const char* value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion.assign(value); }
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const Aws::String& value) { SetSourceEngineVersion(value); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(Aws::String&& value) { SetSourceEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the database that the backup files were created from.</p>
-     * <p>MySQL versions 5.5, 5.6, and 5.7 are supported.</p> <p>Example:
-     * <code>5.6.40</code>, <code>5.7.28</code> </p>
+     * <p>MySQL versions 5.7 and 8.0 are supported.</p> <p>Example:
+     * <code>5.7.40</code>, <code>8.0.28</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithSourceEngineVersion(const char* value) { SetSourceEngineVersion(value); return *this;}
 
