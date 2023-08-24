@@ -1426,7 +1426,7 @@ dl.invariant dt, dl.pre dt, dl.post dt {
  memitem
  */
 
-div.memdoc, div.memproto, h2.memtitle {
+div.memdoc, div.memproto, h2.memtitle, h3.memtitle {
     box-shadow: none;
     background-image: none;
     border: none;
@@ -1437,12 +1437,12 @@ div.memdoc {
     background: var(--page-background-color);
 }
 
-h2.memtitle, div.memitem {
+h2.memtitle, h3.memtitle, div.memitem {
     border: 1px solid var(--separator-color);
     box-shadow: var(--box-shadow);
 }
 
-h2.memtitle {
+h2.memtitle, h3.memtitle {
     box-shadow: 0px var(--spacing-medium) 0 -1px var(--fragment-background), var(--box-shadow);
 }
 
@@ -1450,11 +1450,11 @@ div.memitem {
     transition: none;
 }
 
-div.memproto, h2.memtitle {
+div.memproto, h2.memtitle, h3.memtitle {
     background: var(--fragment-background);
 }
 
-h2.memtitle {
+h2.memtitle, h3.memtitle {
     font-weight: 500;
     font-size: var(--memtitle-font-size);
     font-family: var(--font-family-monospace);
@@ -1477,7 +1477,23 @@ h2.memtitle:after {
     border-top-right-radius: var(--border-radius-medium);
 }
 
+h3.memtitle:after {
+    content: "";
+    display: block;
+    background: var(--fragment-background);
+    height: var(--spacing-medium);
+    bottom: calc(0px - var(--spacing-medium));
+    left: 0;
+    right: -14px;
+    position: absolute;
+    border-top-right-radius: var(--border-radius-medium);
+}
+
 h2.memtitle > span.permalink {
+    font-size: inherit;
+}
+
+h3.memtitle > span.permalink {
     font-size: inherit;
 }
 
@@ -1490,11 +1506,24 @@ h2.memtitle > span.permalink > a {
     margin-top: -6px;
 }
 
+h3.memtitle > span.permalink > a {
+    text-decoration: none;
+    padding-left: 3px;
+    margin-right: -4px;
+    user-select: none;
+    display: inline-block;
+    margin-top: -6px;
+}
+
 h2.memtitle > span.permalink > a:hover {
     color: var(--primary-dark-color) !important;
 }
 
-a:target + h2.memtitle, a:target + h2.memtitle + div.memitem {
+h3.memtitle > span.permalink > a:hover {
+    color: var(--primary-dark-color) !important;
+}
+
+a:target + h2.memtitle, a:target + h2.memtitle + div.memitem, a:target + h3.memtitle, a:target + h3.memtitle + div.memitem {
     border-color: var(--primary-light-color);
 }
 
