@@ -138,7 +138,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 11*/
   {"SDK::Host + access point + Dualstack is an error", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"),
      EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"), EpParam("Region", "cn-north-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -319,17 +319,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 31*/
   {"vanilla access point arn with region mismatch and UseArnRegion=false", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint"), EpParam("UseArnRegion", false),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint"),
+     EpParam("UseArnRegion", false), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"} // expect
   },
   /*TEST CASE 32*/
   {"vanilla access point arn with region mismatch and UseArnRegion unset", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"), EpParam("Region", "us-east-1"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.s3-accesspoint.us-west-2.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -338,9 +336,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 33*/
   {"vanilla access point arn with region mismatch and UseArnRegion=true", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"), EpParam("UseArnRegion", true),
-     EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"),
+     EpParam("UseArnRegion", true), EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.s3-accesspoint.us-west-2.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1311,8 +1308,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 143*/
   {"vanilla virtual addressing@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3.us-west-2.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1321,8 +1318,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 144*/
   {"virtual addressing + dualstack@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3.dualstack.us-west-2.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1331,8 +1328,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 145*/
   {"accelerate + dualstack@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", true), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", true), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3-accelerate.dualstack.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1341,8 +1338,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 146*/
   {"accelerate (dualstack=false)@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3-accelerate.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1351,8 +1348,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 147*/
   {"virtual addressing + fips@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3-fips.us-west-2.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1361,8 +1358,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 148*/
   {"virtual addressing + dualstack + fips@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3-fips.dualstack.us-west-2.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1371,15 +1368,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 149*/
   {"accelerate + fips = error@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Accelerate cannot be used with FIPS"} // expect
   },
   /*TEST CASE 150*/
   {"vanilla virtual addressing@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3.cn-north-1.amazonaws.com.cn",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"),
@@ -1388,8 +1385,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 151*/
   {"virtual addressing + dualstack@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3.dualstack.cn-north-1.amazonaws.com.cn",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"),
@@ -1412,8 +1409,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 154*/
   {"vanilla virtual addressing@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3.af-south-1.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1422,8 +1419,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 155*/
   {"virtual addressing + dualstack@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3.dualstack.af-south-1.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1432,8 +1429,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 156*/
   {"accelerate + dualstack@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", true), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", true), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3-accelerate.dualstack.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1442,8 +1439,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 157*/
   {"accelerate (dualstack=false)@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3-accelerate.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1452,8 +1449,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 158*/
   {"virtual addressing + fips@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3-fips.af-south-1.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1462,8 +1459,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 159*/
   {"virtual addressing + dualstack + fips@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://bucket-name.s3-fips.dualstack.af-south-1.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1472,15 +1469,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 160*/
   {"accelerate + fips = error@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Accelerate cannot be used with FIPS"} // expect
   },
   /*TEST CASE 161*/
   {"vanilla path style@us-west-2", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.us-west-2.amazonaws.com/bucket-name",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1499,15 +1496,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 163*/
   {"path style + accelerate = error@us-west-2", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Path-style addressing cannot be used with S3 Accelerate"} // expect
   },
   /*TEST CASE 164*/
   {"path style + dualstack@us-west-2", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.dualstack.us-west-2.amazonaws.com/bucket-name",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1516,16 +1513,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 165*/
   {"path style + arn is error@us-west-2", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Path-style addressing cannot be used with ARN buckets"} // expect
   },
   /*TEST CASE 166*/
   {"path style + invalid DNS name@us-west-2", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "99a_b"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "99a_b"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.us-west-2.amazonaws.com/99a_b",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1534,8 +1530,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 167*/
   {"no path style + invalid DNS name@us-west-2", // documentation
-    {EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "99a_b"), EpParam("Region", "us-west-2"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Bucket", "99a_b"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.us-west-2.amazonaws.com/99a_b",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1544,8 +1540,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 168*/
   {"vanilla path style@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.cn-north-1.amazonaws.com.cn/bucket-name",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"),
@@ -1561,15 +1557,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 170*/
   {"path style + accelerate = error@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "cn-north-1"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"),
+     EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Path-style addressing cannot be used with S3 Accelerate"} // expect
   },
   /*TEST CASE 171*/
   {"path style + dualstack@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.dualstack.cn-north-1.amazonaws.com.cn/bucket-name",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"),
@@ -1578,16 +1574,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 172*/
   {"path style + arn is error@cn-north-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Path-style addressing cannot be used with ARN buckets"} // expect
   },
   /*TEST CASE 173*/
   {"path style + invalid DNS name@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "99a_b"),
-     EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "99a_b"), EpParam("Region", "cn-north-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.cn-north-1.amazonaws.com.cn/99a_b",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"),
@@ -1596,8 +1591,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 174*/
   {"no path style + invalid DNS name@cn-north-1", // documentation
-    {EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "99a_b"), EpParam("Region", "cn-north-1"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Bucket", "99a_b"), EpParam("Region", "cn-north-1"), EpParam("Accelerate", false),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.cn-north-1.amazonaws.com.cn/99a_b",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"),
@@ -1606,8 +1601,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 175*/
   {"vanilla path style@af-south-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.af-south-1.amazonaws.com/bucket-name",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1626,15 +1621,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 177*/
   {"path style + accelerate = error@af-south-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Path-style addressing cannot be used with S3 Accelerate"} // expect
   },
   /*TEST CASE 178*/
   {"path style + dualstack@af-south-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "bucket-name"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.dualstack.af-south-1.amazonaws.com/bucket-name",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1643,16 +1638,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 179*/
   {"path style + arn is error@af-south-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Path-style addressing cannot be used with ARN buckets"} // expect
   },
   /*TEST CASE 180*/
   {"path style + invalid DNS name@af-south-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "99a_b"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Bucket", "99a_b"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.af-south-1.amazonaws.com/99a_b",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1661,8 +1655,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 181*/
   {"no path style + invalid DNS name@af-south-1", // documentation
-    {EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Bucket", "99a_b"), EpParam("Region", "af-south-1"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("UseFIPS", false), EpParam("Bucket", "99a_b"), EpParam("Region", "af-south-1"), EpParam("Accelerate", false),
+     EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3.af-south-1.amazonaws.com/99a_b",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1671,7 +1665,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 182*/
   {"virtual addressing + private link@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "http://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "http://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1682,7 +1676,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 183*/
   {"path style + private link@us-west-2", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1693,7 +1687,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 184*/
   {"SDK::Host + FIPS@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1701,7 +1695,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 185*/
   {"SDK::Host + DualStack@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -1709,16 +1703,16 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 186*/
   {"SDK::HOST + accelerate@us-west-2", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "http://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "http://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "us-west-2"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"A custom endpoint cannot be combined with S3 Accelerate"} // expect
   },
   /*TEST CASE 187*/
   {"SDK::Host + access point ARN@us-west-2", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Endpoint", "https://beta.example.com"), EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"),
+     EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"), EpParam("Region", "us-west-2"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.beta.example.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1727,7 +1721,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 188*/
   {"virtual addressing + private link@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1738,7 +1732,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 189*/
   {"path style + private link@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1756,7 +1750,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 191*/
   {"SDK::Host + DualStack@cn-north-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "cn-north-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -1772,9 +1766,9 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 193*/
   {"SDK::Host + access point ARN@cn-north-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Endpoint", "https://beta.example.com"), EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"),
-     EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"),
+     EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"), EpParam("Region", "cn-north-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.beta.example.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"),
@@ -1783,7 +1777,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 194*/
   {"virtual addressing + private link@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1794,7 +1788,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 195*/
   {"path style + private link@af-south-1", // documentation
-    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", true), EpParam("UseFIPS", false), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1805,7 +1799,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 196*/
   {"SDK::Host + FIPS@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1813,7 +1807,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 197*/
   {"SDK::Host + DualStack@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -1821,7 +1815,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 198*/
   {"SDK::HOST + accelerate@af-south-1", // documentation
-    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"),
      EpParam("Bucket", "bucket-name"), EpParam("Region", "af-south-1"), EpParam("Accelerate", true),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -1829,9 +1823,9 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 199*/
   {"SDK::Host + access point ARN@af-south-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Endpoint", "https://beta.example.com"), EpParam("Bucket", "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint"),
-     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://beta.example.com"),
+     EpParam("Bucket", "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint"), EpParam("Region", "af-south-1"),
+     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.beta.example.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1840,9 +1834,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 200*/
   {"vanilla access point arn@us-west-2", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"), EpParam("Region", "us-west-2"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.s3-accesspoint.us-west-2.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1851,9 +1844,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 201*/
   {"access point arn + FIPS@us-west-2", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"), EpParam("Region", "us-west-2"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.s3-accesspoint-fips.us-west-2.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1862,17 +1854,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 202*/
   {"access point arn + accelerate = error@us-west-2", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"), EpParam("Region", "us-west-2"),
-     EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "us-west-2"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Access Points do not support S3 Accelerate"} // expect
   },
   /*TEST CASE 203*/
   {"access point arn + FIPS + DualStack@us-west-2", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"), EpParam("Region", "us-west-2"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.s3-accesspoint-fips.dualstack.us-west-2.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
@@ -1881,9 +1871,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 204*/
   {"vanilla access point arn@cn-north-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"), EpParam("Region", "cn-north-1"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.s3-accesspoint.cn-north-1.amazonaws.com.cn",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "cn-north-1"), EpProp("name", "sigv4"),
@@ -1892,31 +1881,29 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 205*/
   {"access point arn + FIPS@cn-north-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"),
      EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
   /*TEST CASE 206*/
   {"access point arn + accelerate = error@cn-north-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"), EpParam("Region", "cn-north-1"),
-     EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "cn-north-1"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Access Points do not support S3 Accelerate"} // expect
   },
   /*TEST CASE 207*/
   {"access point arn + FIPS + DualStack@cn-north-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint"),
      EpParam("Region", "cn-north-1"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
   /*TEST CASE 208*/
   {"vanilla access point arn@af-south-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint"), EpParam("Region", "af-south-1"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.s3-accesspoint.af-south-1.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1925,9 +1912,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 209*/
   {"access point arn + FIPS@af-south-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint"), EpParam("Region", "af-south-1"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.s3-accesspoint-fips.af-south-1.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1936,17 +1922,15 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 210*/
   {"access point arn + accelerate = error@af-south-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint"), EpParam("Region", "af-south-1"),
-     EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "af-south-1"), EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Access Points do not support S3 Accelerate"} // expect
   },
   /*TEST CASE 211*/
   {"access point arn + FIPS + DualStack@af-south-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint"), EpParam("Region", "af-south-1"),
-     EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", true), EpParam("Bucket", "arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint"),
+     EpParam("Region", "af-south-1"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://myendpoint-123456789012.s3-accesspoint-fips.dualstack.af-south-1.amazonaws.com",
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "af-south-1"), EpProp("name", "sigv4"),
@@ -1975,24 +1959,22 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 214*/
   {"outposts arn with region mismatch and UseArnRegion=false", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseArnRegion", false), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"} // expect
   },
   /*TEST CASE 215*/
   {"outposts arn with region mismatch, custom region and UseArnRegion=false", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Endpoint", "https://example.com"), EpParam("Bucket", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
+     EpParam("Bucket", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseArnRegion", false), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"} // expect
   },
   /*TEST CASE 216*/
   {"outposts arn with region mismatch and UseArnRegion=true", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseArnRegion", true), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-east-1.amazonaws.com",
@@ -2002,8 +1984,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 217*/
   {"outposts arn with region mismatch and UseArnRegion unset", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-east-1.amazonaws.com",
@@ -2013,8 +1994,7 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 218*/
   {"outposts arn with partition mismatch and UseArnRegion=true", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"),
      EpParam("UseArnRegion", true), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Client was configured for partition `aws` but ARN (`arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint`) has `aws-cn`"} // expect
@@ -2258,9 +2238,8 @@ static const Aws::Vector<S3EndpointProviderEndpointTestCase> TEST_CASES = {
   },
   /*TEST CASE 248*/
   {"object lambda arn with region mismatch and UseArnRegion=false", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("___key", "key"),
-     EpParam("Bucket", "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"), EpParam("UseArnRegion", false),
-     EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {EpParam("ForcePathStyle", false), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"),
+     EpParam("UseArnRegion", false), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"} // expect
   },

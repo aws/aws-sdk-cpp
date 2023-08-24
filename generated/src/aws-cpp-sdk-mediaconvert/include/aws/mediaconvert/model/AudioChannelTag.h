@@ -30,7 +30,20 @@ namespace Model
     TCS,
     VHL,
     VHC,
-    VHR
+    VHR,
+    TBL,
+    TBC,
+    TBR,
+    RSL,
+    RSR,
+    LW,
+    RW,
+    LFE2,
+    LT,
+    RT,
+    HI,
+    NAR,
+    M
   };
 
 namespace AudioChannelTagMapper
