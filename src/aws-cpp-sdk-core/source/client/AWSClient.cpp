@@ -775,6 +775,9 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
     const Aws::AmazonWebServiceRequest& request) const
 {
     Aws::String checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(request.GetChecksumAlgorithmName().c_str());
+    Aws::String checksum_type = "x-amz-checksum-" + checksumAlgorithmName;
+    const HeaderValueCollection &headers = request.GetHeaders();
+    bool checksumValueAndAlgorithmProvided = headers.find(checksum_type) != headers.end();
 
     // Request checksums
     if (!checksumAlgorithmName.empty())
@@ -805,7 +808,13 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
         }
         else if (checksumAlgorithmName == "sha256")
         {
-            if (request.IsStreaming())
+            if (request.IsStreaming() && checksumValueAndAlgorithmProvided) {
+                auto hash = Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG);
+                auto precalculatedValue = request.GetHeaders().find(checksum_type)->second;
+                hash->SetPrecalculatedHash(precalculatedValue);
+                httpRequest->SetRequestHash("sha256", hash);
+            }
+            else if (request.IsStreaming())
             {
                 httpRequest->SetRequestHash("sha256", Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG));
             }

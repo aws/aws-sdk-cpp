@@ -313,7 +313,7 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
         {
             if (amountRead > 0)
             {
-                if (request->GetRequestHash().second != nullptr)
+                if (request->GetRequestHash().second != nullptr && !request->GetRequestHash().second->isPrecalculatedHashSet())
                 {
                     request->GetRequestHash().second->Update(reinterpret_cast<unsigned char*>(ptr), amountRead);
                 }
@@ -329,10 +329,14 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
             {
                 Aws::StringStream chunkedTrailer;
                 chunkedTrailer << "0\r\n";
-                if (request->GetRequestHash().second != nullptr)
-                {
+                if (request->GetRequestHash().second->isPrecalculatedHashSet()) {
                     chunkedTrailer << "x-amz-checksum-" << request->GetRequestHash().first << ":"
-                        << HashingUtils::Base64Encode(request->GetRequestHash().second->GetHash().GetResult()) << "\r\n";
+                                   << request->GetRequestHash().second->GetPrecalculatedHash() << "\r\n";
+                } else if (request->GetRequestHash().second != nullptr) {
+                    auto hash = request->GetRequestHash().second->GetHash().GetResult();
+                    std::cout << hash.GetUnderlyingData();
+                    chunkedTrailer << "x-amz-checksum-" << request->GetRequestHash().first << ":"
+                        << HashingUtils::Base64Encode(hash) << "\r\n";
                 }
                 chunkedTrailer << "\r\n";
                 amountRead = chunkedTrailer.str().size();

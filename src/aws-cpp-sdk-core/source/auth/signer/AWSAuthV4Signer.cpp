@@ -238,7 +238,13 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
         if (request.GetRequestHash().second != nullptr)
         {
             Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
-            Aws::String checksumHeaderValue = HashingUtils::Base64Encode(request.GetRequestHash().second->Calculate(*(request.GetContentBody())).GetResult());
+            auto checksumHeaderValue = [](const std::shared_ptr<Utils::Crypto::Hash> &hash,
+                const std::shared_ptr<Aws::IOStream> &body) -> Aws::String {
+                if (hash->isPrecalculatedHashSet()) {
+                    return hash->GetPrecalculatedHash();
+                }
+                return HashingUtils::Base64Encode(hash->Calculate(*(body)).GetResult());
+            }(request.GetRequestHash().second, request.GetContentBody());
             request.SetHeaderValue(checksumHeaderKey, checksumHeaderValue);
             request.SetRequestHash("", nullptr);
         }
@@ -251,6 +257,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
         {
             payloadHash = STREAMING_UNSIGNED_PAYLOAD_TRAILER;
             Aws::String trailerHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
+            request.DeleteHeader(trailerHeaderValue.c_str());
             request.SetHeaderValue(Http::AWS_TRAILER_HEADER, trailerHeaderValue);
             request.SetTransferEncoding(CHUNKED_VALUE);
             request.SetHeaderValue(Http::CONTENT_ENCODING_HEADER, Http::AWS_CHUNKED_VALUE);
