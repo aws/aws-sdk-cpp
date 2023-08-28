@@ -84,6 +84,10 @@ public:
         va_end(tmp_args);
 
         Array<char> outputBuff(requiredLength);
+        if(!outputBuff.GetUnderlyingData() || !outputBuff.GetLength()) {
+            assert(!"Failed to allocate mock outputBuff!");
+            return;
+        }
     #ifdef _WIN32
         vsnprintf_s(outputBuff.GetUnderlyingData(), outputBuff.GetLength(), _TRUNCATE, formatStr, args);
     #else
