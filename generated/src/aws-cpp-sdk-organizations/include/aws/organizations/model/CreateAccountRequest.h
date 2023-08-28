@@ -240,12 +240,12 @@ namespace Model
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
-     * and Administering the Member Accounts in Your Organization</a> in the
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating
+     * the OrganizationAccountAccessRole in an invited member account</a> in the
      * <i>Organizations User Guide</i> </p> </li> <li> <p>Steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the
-     * <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM
+     * Tutorial: Delegate access across Amazon Web Services accounts using IAM
+     * roles</a> in the <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter. The pattern can include uppercase letters, lowercase
      * letters, digits with no spaces, and any of the following characters: =,.@-</p>
@@ -261,12 +261,12 @@ namespace Model
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
-     * and Administering the Member Accounts in Your Organization</a> in the
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating
+     * the OrganizationAccountAccessRole in an invited member account</a> in the
      * <i>Organizations User Guide</i> </p> </li> <li> <p>Steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the
-     * <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM
+     * Tutorial: Delegate access across Amazon Web Services accounts using IAM
+     * roles</a> in the <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter. The pattern can include uppercase letters, lowercase
      * letters, digits with no spaces, and any of the following characters: =,.@-</p>
@@ -282,12 +282,12 @@ namespace Model
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
-     * and Administering the Member Accounts in Your Organization</a> in the
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating
+     * the OrganizationAccountAccessRole in an invited member account</a> in the
      * <i>Organizations User Guide</i> </p> </li> <li> <p>Steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the
-     * <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM
+     * Tutorial: Delegate access across Amazon Web Services accounts using IAM
+     * roles</a> in the <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter. The pattern can include uppercase letters, lowercase
      * letters, digits with no spaces, and any of the following characters: =,.@-</p>
@@ -303,12 +303,12 @@ namespace Model
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
-     * and Administering the Member Accounts in Your Organization</a> in the
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating
+     * the OrganizationAccountAccessRole in an invited member account</a> in the
      * <i>Organizations User Guide</i> </p> </li> <li> <p>Steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the
-     * <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM
+     * Tutorial: Delegate access across Amazon Web Services accounts using IAM
+     * roles</a> in the <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter. The pattern can include uppercase letters, lowercase
      * letters, digits with no spaces, and any of the following characters: =,.@-</p>
@@ -324,12 +324,12 @@ namespace Model
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
-     * and Administering the Member Accounts in Your Organization</a> in the
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating
+     * the OrganizationAccountAccessRole in an invited member account</a> in the
      * <i>Organizations User Guide</i> </p> </li> <li> <p>Steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the
-     * <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM
+     * Tutorial: Delegate access across Amazon Web Services accounts using IAM
+     * roles</a> in the <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter. The pattern can include uppercase letters, lowercase
      * letters, digits with no spaces, and any of the following characters: =,.@-</p>
@@ -345,12 +345,12 @@ namespace Model
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
-     * and Administering the Member Accounts in Your Organization</a> in the
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating
+     * the OrganizationAccountAccessRole in an invited member account</a> in the
      * <i>Organizations User Guide</i> </p> </li> <li> <p>Steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the
-     * <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM
+     * Tutorial: Delegate access across Amazon Web Services accounts using IAM
+     * roles</a> in the <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter. The pattern can include uppercase letters, lowercase
      * letters, digits with no spaces, and any of the following characters: =,.@-</p>
@@ -366,12 +366,12 @@ namespace Model
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
-     * and Administering the Member Accounts in Your Organization</a> in the
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating
+     * the OrganizationAccountAccessRole in an invited member account</a> in the
      * <i>Organizations User Guide</i> </p> </li> <li> <p>Steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the
-     * <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM
+     * Tutorial: Delegate access across Amazon Web Services accounts using IAM
+     * roles</a> in the <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter. The pattern can include uppercase letters, lowercase
      * letters, digits with no spaces, and any of the following characters: =,.@-</p>
@@ -387,12 +387,12 @@ namespace Model
      * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
      * how to use this role to access the member account, see the following links:</p>
      * <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
-     * and Administering the Member Accounts in Your Organization</a> in the
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Creating
+     * the OrganizationAccountAccessRole in an invited member account</a> in the
      * <i>Organizations User Guide</i> </p> </li> <li> <p>Steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across Amazon Web Services accounts Using IAM Roles</a> in the
-     * <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">IAM
+     * Tutorial: Delegate access across Amazon Web Services accounts using IAM
+     * roles</a> in the <i>IAM User Guide</i> </p> </li> </ul> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
      * validate this parameter. The pattern can include uppercase letters, lowercase
      * letters, digits with no spaces, and any of the following characters: =,.@-</p>
@@ -405,8 +405,8 @@ namespace Model
      * account billing information <i>if</i> they have the required permissions. If set
      * to <code>DENY</code>, only the root user of the new account can access account
      * billing information. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-     * Access to the Billing and Cost Management Console</a> in the <i>Amazon Web
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
+     * IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web
      * Services Billing and Cost Management User Guide</i>.</p> <p>If you don't specify
      * this parameter, the value defaults to <code>ALLOW</code>, and IAM users and
      * roles with the required permissions can access billing information for the new
@@ -419,8 +419,8 @@ namespace Model
      * account billing information <i>if</i> they have the required permissions. If set
      * to <code>DENY</code>, only the root user of the new account can access account
      * billing information. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-     * Access to the Billing and Cost Management Console</a> in the <i>Amazon Web
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
+     * IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web
      * Services Billing and Cost Management User Guide</i>.</p> <p>If you don't specify
      * this parameter, the value defaults to <code>ALLOW</code>, and IAM users and
      * roles with the required permissions can access billing information for the new
@@ -433,8 +433,8 @@ namespace Model
      * account billing information <i>if</i> they have the required permissions. If set
      * to <code>DENY</code>, only the root user of the new account can access account
      * billing information. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-     * Access to the Billing and Cost Management Console</a> in the <i>Amazon Web
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
+     * IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web
      * Services Billing and Cost Management User Guide</i>.</p> <p>If you don't specify
      * this parameter, the value defaults to <code>ALLOW</code>, and IAM users and
      * roles with the required permissions can access billing information for the new
@@ -447,8 +447,8 @@ namespace Model
      * account billing information <i>if</i> they have the required permissions. If set
      * to <code>DENY</code>, only the root user of the new account can access account
      * billing information. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-     * Access to the Billing and Cost Management Console</a> in the <i>Amazon Web
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
+     * IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web
      * Services Billing and Cost Management User Guide</i>.</p> <p>If you don't specify
      * this parameter, the value defaults to <code>ALLOW</code>, and IAM users and
      * roles with the required permissions can access billing information for the new
@@ -461,8 +461,8 @@ namespace Model
      * account billing information <i>if</i> they have the required permissions. If set
      * to <code>DENY</code>, only the root user of the new account can access account
      * billing information. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-     * Access to the Billing and Cost Management Console</a> in the <i>Amazon Web
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
+     * IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web
      * Services Billing and Cost Management User Guide</i>.</p> <p>If you don't specify
      * this parameter, the value defaults to <code>ALLOW</code>, and IAM users and
      * roles with the required permissions can access billing information for the new
@@ -475,8 +475,8 @@ namespace Model
      * account billing information <i>if</i> they have the required permissions. If set
      * to <code>DENY</code>, only the root user of the new account can access account
      * billing information. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-     * Access to the Billing and Cost Management Console</a> in the <i>Amazon Web
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
+     * IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web
      * Services Billing and Cost Management User Guide</i>.</p> <p>If you don't specify
      * this parameter, the value defaults to <code>ALLOW</code>, and IAM users and
      * roles with the required permissions can access billing information for the new

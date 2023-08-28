@@ -542,6 +542,55 @@ namespace Model
      */
     inline BackupRuleInput& WithEnableContinuousBackup(bool value) { SetEnableContinuousBackup(value); return *this;}
 
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline const Aws::String& GetScheduleExpressionTimezone() const{ return m_scheduleExpressionTimezone; }
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline bool ScheduleExpressionTimezoneHasBeenSet() const { return m_scheduleExpressionTimezoneHasBeenSet; }
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline void SetScheduleExpressionTimezone(const Aws::String& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = value; }
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline void SetScheduleExpressionTimezone(Aws::String&& value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone = std::move(value); }
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline void SetScheduleExpressionTimezone(const char* value) { m_scheduleExpressionTimezoneHasBeenSet = true; m_scheduleExpressionTimezone.assign(value); }
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline BackupRuleInput& WithScheduleExpressionTimezone(const Aws::String& value) { SetScheduleExpressionTimezone(value); return *this;}
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline BackupRuleInput& WithScheduleExpressionTimezone(Aws::String&& value) { SetScheduleExpressionTimezone(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the timezone in which the schedule expression is set. By default,
+     * ScheduleExpressions are in UTC. You can modify this to a specified timezone.</p>
+     */
+    inline BackupRuleInput& WithScheduleExpressionTimezone(const char* value) { SetScheduleExpressionTimezone(value); return *this;}
+
   private:
 
     Aws::String m_ruleName;
@@ -570,6 +619,9 @@ namespace Model
 
     bool m_enableContinuousBackup;
     bool m_enableContinuousBackupHasBeenSet = false;
+
+    Aws::String m_scheduleExpressionTimezone;
+    bool m_scheduleExpressionTimezoneHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 GetServiceQuotaRequest::GetServiceQuotaRequest() : 
     m_serviceCodeHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false)
+    m_quotaCodeHasBeenSet(false),
+    m_contextIdHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String GetServiceQuotaRequest::SerializePayload() const
   if(m_quotaCodeHasBeenSet)
   {
    payload.WithString("QuotaCode", m_quotaCode);
+
+  }
+
+  if(m_contextIdHasBeenSet)
+  {
+   payload.WithString("ContextId", m_contextId);
 
   }
 

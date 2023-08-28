@@ -16,10 +16,11 @@ namespace Aws
 namespace ServiceQuotas
 {
   /**
-   * <p>With Service Quotas, you can view and manage your quotas easily as your AWS
-   * workloads grow. Quotas, also referred to as limits, are the maximum number of
-   * resources that you can create in your AWS account. For more information, see the
-   * <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
+   * <p>With Service Quotas, you can view and manage your quotas easily as your
+   * Amazon Web Services workloads grow. Quotas, also referred to as limits, are the
+   * maximum number of resources that you can create in your Amazon Web Services
+   * account. For more information, see the <a
+   * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
    * Quotas User Guide</a>.</p>
    */
   class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServiceQuotasClient>
@@ -82,9 +83,10 @@ namespace ServiceQuotas
 
         /**
          * <p>Associates your quota request template with your organization. When a new
-         * account is created in your organization, the quota increase requests in the
-         * template are automatically applied to the account. You can add a quota increase
-         * request for any adjustable quota to your template.</p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services account is created in your organization, the quota increase
+         * requests in the template are automatically applied to the account. You can add a
+         * quota increase request for any adjustable quota to your template.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/AssociateServiceQuotaTemplate">AWS
          * API Reference</a></p>
          */
@@ -136,9 +138,9 @@ namespace ServiceQuotas
 
         /**
          * <p>Disables your quota request template. After a template is disabled, the quota
-         * increase requests in the template are not applied to new accounts in your
-         * organization. Disabling a quota request template does not apply its quota
-         * increase requests.</p><p><h3>See Also:</h3>   <a
+         * increase requests in the template are not applied to new Amazon Web Services
+         * accounts in your organization. Disabling a quota request template does not apply
+         * its quota increase requests.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/DisassociateServiceQuotaTemplate">AWS
          * API Reference</a></p>
          */
@@ -294,8 +296,8 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Lists the default values for the quotas for the specified AWS service. A
-         * default value does not reflect any quota increases.</p><p><h3>See Also:</h3>  
+         * <p>Lists the default values for the quotas for the specified Amazon Web Service.
+         * A default value does not reflect any quota increases.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListAWSDefaultServiceQuotas">AWS
          * API Reference</a></p>
@@ -321,8 +323,8 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Retrieves the quota increase requests for the specified
-         * service.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the quota increase requests for the specified Amazon Web
+         * Service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListRequestedServiceQuotaChangeHistory">AWS
          * API Reference</a></p>
          */
@@ -399,7 +401,7 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Lists the applied quota values for the specified AWS service. For some
+         * <p>Lists the applied quota values for the specified Amazon Web Service. For some
          * quotas, only the default values are available. If the applied quota value is not
          * available for a quota, the quota is not retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServiceQuotas">AWS
@@ -426,7 +428,7 @@ namespace ServiceQuotas
         }
 
         /**
-         * <p>Lists the names and codes for the services integrated with Service
+         * <p>Lists the names and codes for the Amazon Web Services integrated with Service
          * Quotas.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServices">AWS
          * API Reference</a></p>

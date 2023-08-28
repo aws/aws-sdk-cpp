@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces-web/model/CookieSynchronizationConfiguration.h>
 #include <aws/workspaces-web/model/EnabledType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -86,6 +87,43 @@ namespace Model
      * <p>A list of web portal ARNs that this user settings is associated with.</p>
      */
     inline UserSettings& AddAssociatedPortalArns(const char* value) { m_associatedPortalArnsHasBeenSet = true; m_associatedPortalArns.push_back(value); return *this; }
+
+
+    /**
+     * <p>The configuration that specifies which cookies should be synchronized from
+     * the end user's local browser to the remote browser.</p>
+     */
+    inline const CookieSynchronizationConfiguration& GetCookieSynchronizationConfiguration() const{ return m_cookieSynchronizationConfiguration; }
+
+    /**
+     * <p>The configuration that specifies which cookies should be synchronized from
+     * the end user's local browser to the remote browser.</p>
+     */
+    inline bool CookieSynchronizationConfigurationHasBeenSet() const { return m_cookieSynchronizationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration that specifies which cookies should be synchronized from
+     * the end user's local browser to the remote browser.</p>
+     */
+    inline void SetCookieSynchronizationConfiguration(const CookieSynchronizationConfiguration& value) { m_cookieSynchronizationConfigurationHasBeenSet = true; m_cookieSynchronizationConfiguration = value; }
+
+    /**
+     * <p>The configuration that specifies which cookies should be synchronized from
+     * the end user's local browser to the remote browser.</p>
+     */
+    inline void SetCookieSynchronizationConfiguration(CookieSynchronizationConfiguration&& value) { m_cookieSynchronizationConfigurationHasBeenSet = true; m_cookieSynchronizationConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration that specifies which cookies should be synchronized from
+     * the end user's local browser to the remote browser.</p>
+     */
+    inline UserSettings& WithCookieSynchronizationConfiguration(const CookieSynchronizationConfiguration& value) { SetCookieSynchronizationConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration that specifies which cookies should be synchronized from
+     * the end user's local browser to the remote browser.</p>
+     */
+    inline UserSettings& WithCookieSynchronizationConfiguration(CookieSynchronizationConfiguration&& value) { SetCookieSynchronizationConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -365,6 +403,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_associatedPortalArns;
     bool m_associatedPortalArnsHasBeenSet = false;
+
+    CookieSynchronizationConfiguration m_cookieSynchronizationConfiguration;
+    bool m_cookieSynchronizationConfigurationHasBeenSet = false;
 
     EnabledType m_copyAllowed;
     bool m_copyAllowedHasBeenSet = false;

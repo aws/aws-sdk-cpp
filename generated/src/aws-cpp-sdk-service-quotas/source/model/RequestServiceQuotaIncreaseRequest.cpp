@@ -16,7 +16,8 @@ RequestServiceQuotaIncreaseRequest::RequestServiceQuotaIncreaseRequest() :
     m_serviceCodeHasBeenSet(false),
     m_quotaCodeHasBeenSet(false),
     m_desiredValue(0.0),
-    m_desiredValueHasBeenSet(false)
+    m_desiredValueHasBeenSet(false),
+    m_contextIdHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String RequestServiceQuotaIncreaseRequest::SerializePayload() const
   if(m_desiredValueHasBeenSet)
   {
    payload.WithDouble("DesiredValue", m_desiredValue);
+
+  }
+
+  if(m_contextIdHasBeenSet)
+  {
+   payload.WithString("ContextId", m_contextId);
 
   }
 

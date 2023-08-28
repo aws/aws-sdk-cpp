@@ -38,22 +38,22 @@ namespace Model
 
 
     /**
-     * <p>The value.</p>
+     * <p>The value associated with the reported <code>PeriodUnit</code>.</p>
      */
     inline int GetPeriodValue() const{ return m_periodValue; }
 
     /**
-     * <p>The value.</p>
+     * <p>The value associated with the reported <code>PeriodUnit</code>.</p>
      */
     inline bool PeriodValueHasBeenSet() const { return m_periodValueHasBeenSet; }
 
     /**
-     * <p>The value.</p>
+     * <p>The value associated with the reported <code>PeriodUnit</code>.</p>
      */
     inline void SetPeriodValue(int value) { m_periodValueHasBeenSet = true; m_periodValue = value; }
 
     /**
-     * <p>The value.</p>
+     * <p>The value associated with the reported <code>PeriodUnit</code>.</p>
      */
     inline QuotaPeriod& WithPeriodValue(int value) { SetPeriodValue(value); return *this;}
 
