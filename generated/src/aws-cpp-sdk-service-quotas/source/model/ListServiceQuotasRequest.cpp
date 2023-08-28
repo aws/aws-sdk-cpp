@@ -16,7 +16,10 @@ ListServiceQuotasRequest::ListServiceQuotasRequest() :
     m_serviceCodeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_quotaCodeHasBeenSet(false),
+    m_quotaAppliedAtLevel(AppliedLevelEnum::NOT_SET),
+    m_quotaAppliedAtLevelHasBeenSet(false)
 {
 }
 
@@ -40,6 +43,17 @@ Aws::String ListServiceQuotasRequest::SerializePayload() const
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
+  }
+
+  if(m_quotaCodeHasBeenSet)
+  {
+   payload.WithString("QuotaCode", m_quotaCode);
+
+  }
+
+  if(m_quotaAppliedAtLevelHasBeenSet)
+  {
+   payload.WithString("QuotaAppliedAtLevel", AppliedLevelEnumMapper::GetNameForAppliedLevelEnum(m_quotaAppliedAtLevel));
   }
 
   return payload.View().WriteReadable();

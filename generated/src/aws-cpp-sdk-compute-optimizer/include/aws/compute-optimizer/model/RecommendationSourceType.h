@@ -20,7 +20,8 @@ namespace Model
     AutoScalingGroup,
     EbsVolume,
     LambdaFunction,
-    EcsService
+    EcsService,
+    License
   };
 
 namespace RecommendationSourceTypeMapper
