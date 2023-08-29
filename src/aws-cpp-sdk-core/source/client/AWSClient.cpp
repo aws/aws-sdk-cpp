@@ -774,36 +774,59 @@ void AWSClient::AppendHeaderValueToRequest(const std::shared_ptr<Aws::Http::Http
 void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const Aws::AmazonWebServiceRequest& request) const
 {
+    //check if user has provided the checksum algorithm
     Aws::String checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(request.GetChecksumAlgorithmName().c_str());
-    Aws::String checksum_type = "x-amz-checksum-" + checksumAlgorithmName;
-    const HeaderValueCollection &headers = request.GetHeaders();
-    bool checksumValueAndAlgorithmProvided = headers.find(checksum_type) != headers.end();
+    bool checksumAlgorithmProvided = !checksumAlgorithmName.empty();
 
     // Request checksums
-    if (!checksumAlgorithmName.empty())
+    if (checksumAlgorithmProvided)
     {
+        // Check if user has provided a checksum value for the specified algorithm
+        Aws::String checksum_type = "x-amz-checksum-" + checksumAlgorithmName;
+        const HeaderValueCollection &headers = request.GetHeaders();
+        bool checksumValueAndAlgorithmProvided = headers.find(checksum_type) != headers.end();
+
         // For non-streaming payload, the resolved checksum location is always header.
         // For streaming payload, the resolved checksum location depends on whether it is an unsigned payload, we let AwsAuthSigner decide it.
+
         if (checksumAlgorithmName == "crc32")
         {
-            if (request.IsStreaming())
+            if (request.IsStreaming() && checksumValueAndAlgorithmProvided)
             {
-                httpRequest->SetRequestHash("crc32", Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG));
+                auto hash = Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG);
+                auto precalculatedValue = request.GetHeaders().find(checksum_type)->second;
+                hash->SetPrecalculatedHash(precalculatedValue);
+                httpRequest->SetRequestHash(checksumAlgorithmName, hash); }
+            else if (request.IsStreaming())
+            {
+                httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG));
+            }
+            else if (checksumValueAndAlgorithmProvided){
+                httpRequest->SetHeaderValue(checksum_type, request.GetHeaders().find(checksum_type)->second);
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-crc32", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksum_type, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "crc32c")
         {
-            if (request.IsStreaming())
+            if (request.IsStreaming() && checksumValueAndAlgorithmProvided)
             {
-                httpRequest->SetRequestHash("crc32c", Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG));
+                auto hash = Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG);
+                auto precalculatedValue = request.GetHeaders().find(checksum_type)->second;
+                hash->SetPrecalculatedHash(precalculatedValue);
+                httpRequest->SetRequestHash(checksumAlgorithmName, hash); }
+            else if (request.IsStreaming())
+            {
+                httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG));
+            }
+            else if (checksumValueAndAlgorithmProvided){
+                httpRequest->SetHeaderValue(checksum_type, request.GetHeaders().find(checksum_type)->second);
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-crc32c", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksum_type, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "sha256")
@@ -812,31 +835,39 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
                 auto hash = Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG);
                 auto precalculatedValue = request.GetHeaders().find(checksum_type)->second;
                 hash->SetPrecalculatedHash(precalculatedValue);
-                httpRequest->SetRequestHash("sha256", hash);
+                httpRequest->SetRequestHash(checksumAlgorithmName, hash);
             }
             else if (request.IsStreaming())
             {
-                httpRequest->SetRequestHash("sha256", Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG));
+                httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG));
+            }
+            else if (checksumValueAndAlgorithmProvided){
+                httpRequest->SetHeaderValue(checksum_type, request.GetHeaders().find(checksum_type)->second);
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-sha256", HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksum_type, HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "sha1")
         {
-            if (request.IsStreaming())
+            if (request.IsStreaming() && checksumValueAndAlgorithmProvided) {
+                auto hash = Aws::MakeShared<Crypto::Sha1>(AWS_CLIENT_LOG_TAG);
+                auto precalculatedValue = request.GetHeaders().find(checksum_type)->second;
+                hash->SetPrecalculatedHash(precalculatedValue);
+                httpRequest->SetRequestHash(checksumAlgorithmName, hash);
+            }
+            else if (request.IsStreaming())
             {
-                httpRequest->SetRequestHash("sha1", Aws::MakeShared<Crypto::Sha1>(AWS_CLIENT_LOG_TAG));
+                httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::Sha1>(AWS_CLIENT_LOG_TAG));
+            }
+            else if (checksumValueAndAlgorithmProvided){
+                httpRequest->SetHeaderValue(checksum_type, request.GetHeaders().find(checksum_type)->second);
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-sha1", HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksum_type, HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(GetBodyStream(request)))));
             }
-        }
-        else if (checksumAlgorithmName == "md5")
-        {
-            httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*(GetBodyStream(request)))));
         }
         else
         {
