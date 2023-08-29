@@ -30,7 +30,9 @@ StartRunRequest::StartRunRequest() :
     m_logLevelHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true)
+    m_requestIdHasBeenSet(true),
+    m_retentionMode(RunRetentionMode::NOT_SET),
+    m_retentionModeHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,11 @@ Aws::String StartRunRequest::SerializePayload() const
   {
    payload.WithString("requestId", m_requestId);
 
+  }
+
+  if(m_retentionModeHasBeenSet)
+  {
+   payload.WithString("retentionMode", RunRetentionModeMapper::GetNameForRunRetentionMode(m_retentionMode));
   }
 
   return payload.View().WriteReadable();

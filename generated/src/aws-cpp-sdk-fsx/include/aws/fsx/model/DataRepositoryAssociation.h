@@ -39,7 +39,7 @@ namespace Model
    * </li> <li> <p> <code>UpdateDataRepositoryAssociation</code> </p> </li> <li> <p>
    * <code>DescribeDataRepositoryAssociations</code> </p> </li> </ul> <p>Data
    * repository associations are supported on Amazon File Cache resources and all FSx
-   * for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code>
+   * for Lustre 2.12 and 2.15 file systems, excluding <code>scratch_1</code>
    * deployment type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryAssociation">AWS
    * API Reference</a></p>

@@ -401,74 +401,83 @@ namespace Model
 
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline CreateFileSystemOntapConfiguration& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
