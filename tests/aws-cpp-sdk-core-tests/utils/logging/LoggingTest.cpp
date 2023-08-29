@@ -162,14 +162,13 @@ static const std::vector< std::regex > LOG_LINES_TO_IGNORE =
 {
     std::regex(R"(^.*id=[0-9A-F]+: main loop started)"),
     std::regex(R"(^.*id=[0-9A-F]+: default timeout 100000)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: default timeout \d+)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: waiting for a maximum of \d+ ms)"),
+    std::regex(R"(^.*event-loop \[(0x)?[0-9A-Fa-f]+\] id=(0x)?[0-9A-Fa-f]+: default timeout \d+)"),
+    std::regex(R"(^.*event-loop \[(0x)?[0-9A-Fa-f]+\] id=(0x)?[0-9A-Fa-f]+: waiting for a maximum of \d+ ms)"),
     std::regex(R"(^id=[0-9A-F]+: waiting for a maximum of \d+ ms)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: .*)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: subscribing to events on fd \d+)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: wake up with 0 events to process.)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: no more scheduled tasks using default timeout.)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: .*)"),
+    std::regex(R"(^.*event-loop \[(0x)?[0-9A-Fa-f]+\] id=(0x)?[0-9A-Fa-f]+: .*)"),
+    std::regex(R"(^.*event-loop \[(0x)?[0-9A-Fa-f]+\] id=(0x)?[0-9A-Fa-f]+: subscribing to events on fd \d+)"),
+    std::regex(R"(^.*event-loop \[(0x)?[0-9A-Fa-f]+\] id=(0x)?[0-9A-Fa-f]+: wake up with 0 events to process.)"),
+    std::regex(R"(^.*event-loop \[(0x)?[0-9A-Fa-f]+\] id=(0x)?[0-9A-Fa-f]+: no more scheduled tasks using default timeout.)"),
     std::regex(R"(^id=(0x)?[0-9A-Fa-f]+: .*)"),
 };
 
