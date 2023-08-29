@@ -11,6 +11,7 @@
 #include <aws/core/utils/Document.h>
 #include <aws/omics/model/RunLogLevel.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/omics/model/RunRetentionMode.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -79,73 +80,73 @@ namespace Model
 
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The run's workflow type.</p>
      */
     inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The run's workflow type.</p>
      */
     inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The run's workflow type.</p>
      */
     inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The run's workflow type.</p>
      */
     inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The run's workflow type.</p>
      */
     inline StartRunRequest& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
 
     /**
-     * <p>The run's workflows type.</p>
+     * <p>The run's workflow type.</p>
      */
     inline StartRunRequest& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The run's ID.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
 
     /**
-     * <p>The run's ID.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
     inline StartRunRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
 
     /**
-     * <p>The run's ID.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
     inline StartRunRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
 
     /**
-     * <p>The run's ID.</p>
+     * <p>The ID of a run to duplicate.</p>
      */
     inline StartRunRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
 
@@ -532,6 +533,37 @@ namespace Model
      */
     inline StartRunRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
+    /**
+     * <p>The retention mode for the run.</p>
+     */
+    inline const RunRetentionMode& GetRetentionMode() const{ return m_retentionMode; }
+
+    /**
+     * <p>The retention mode for the run.</p>
+     */
+    inline bool RetentionModeHasBeenSet() const { return m_retentionModeHasBeenSet; }
+
+    /**
+     * <p>The retention mode for the run.</p>
+     */
+    inline void SetRetentionMode(const RunRetentionMode& value) { m_retentionModeHasBeenSet = true; m_retentionMode = value; }
+
+    /**
+     * <p>The retention mode for the run.</p>
+     */
+    inline void SetRetentionMode(RunRetentionMode&& value) { m_retentionModeHasBeenSet = true; m_retentionMode = std::move(value); }
+
+    /**
+     * <p>The retention mode for the run.</p>
+     */
+    inline StartRunRequest& WithRetentionMode(const RunRetentionMode& value) { SetRetentionMode(value); return *this;}
+
+    /**
+     * <p>The retention mode for the run.</p>
+     */
+    inline StartRunRequest& WithRetentionMode(RunRetentionMode&& value) { SetRetentionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workflowId;
@@ -572,6 +604,9 @@ namespace Model
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
+
+    RunRetentionMode m_retentionMode;
+    bool m_retentionModeHasBeenSet = false;
   };
 
 } // namespace Model

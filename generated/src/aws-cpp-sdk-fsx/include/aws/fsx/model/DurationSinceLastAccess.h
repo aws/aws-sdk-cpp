@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>Defines the minimum amount of time since last access for a file to be
-   * eligible for release. Only archived files that were last accessed or modified
-   * before this point-in-time are eligible to be released from the Amazon FSx for
-   * Lustre file system.</p><p><h3>See Also:</h3>   <a
+   * eligible for release. Only files that have been exported to S3 and that were
+   * last accessed or modified before this point-in-time are eligible to be released
+   * from the Amazon FSx for Lustre file system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DurationSinceLastAccess">AWS
    * API Reference</a></p>
    */
@@ -85,11 +85,11 @@ namespace Model
 
     /**
      * <p>An integer that represents the minimum amount of time (in days) since a file
-     * was last accessed in the file system. Only archived files with a
+     * was last accessed in the file system. Only exported files with a
      * <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of
      * time in the past (relative to the task create time) will be released. The
      * default of <code>Value</code> is <code>0</code>. This is a required
-     * parameter.</p>  <p>If an archived file meets the last accessed time
+     * parameter.</p>  <p>If an exported file meets the last accessed time
      * criteria, its file or directory path must also be specified in the
      * <code>Paths</code> parameter of the operation in order for the file to be
      * released.</p> 
@@ -98,11 +98,11 @@ namespace Model
 
     /**
      * <p>An integer that represents the minimum amount of time (in days) since a file
-     * was last accessed in the file system. Only archived files with a
+     * was last accessed in the file system. Only exported files with a
      * <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of
      * time in the past (relative to the task create time) will be released. The
      * default of <code>Value</code> is <code>0</code>. This is a required
-     * parameter.</p>  <p>If an archived file meets the last accessed time
+     * parameter.</p>  <p>If an exported file meets the last accessed time
      * criteria, its file or directory path must also be specified in the
      * <code>Paths</code> parameter of the operation in order for the file to be
      * released.</p> 
@@ -111,11 +111,11 @@ namespace Model
 
     /**
      * <p>An integer that represents the minimum amount of time (in days) since a file
-     * was last accessed in the file system. Only archived files with a
+     * was last accessed in the file system. Only exported files with a
      * <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of
      * time in the past (relative to the task create time) will be released. The
      * default of <code>Value</code> is <code>0</code>. This is a required
-     * parameter.</p>  <p>If an archived file meets the last accessed time
+     * parameter.</p>  <p>If an exported file meets the last accessed time
      * criteria, its file or directory path must also be specified in the
      * <code>Paths</code> parameter of the operation in order for the file to be
      * released.</p> 
@@ -124,11 +124,11 @@ namespace Model
 
     /**
      * <p>An integer that represents the minimum amount of time (in days) since a file
-     * was last accessed in the file system. Only archived files with a
+     * was last accessed in the file system. Only exported files with a
      * <code>MAX(atime, ctime, mtime)</code> timestamp that is more than this amount of
      * time in the past (relative to the task create time) will be released. The
      * default of <code>Value</code> is <code>0</code>. This is a required
-     * parameter.</p>  <p>If an archived file meets the last accessed time
+     * parameter.</p>  <p>If an exported file meets the last accessed time
      * criteria, its file or directory path must also be specified in the
      * <code>Paths</code> parameter of the operation in order for the file to be
      * released.</p> 

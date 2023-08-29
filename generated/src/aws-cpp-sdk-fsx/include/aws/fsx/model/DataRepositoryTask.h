@@ -36,10 +36,11 @@ namespace Model
    * <p>A description of the data repository task.</p> <ul> <li> <p>You use import
    * and export data repository tasks to perform bulk transfer operations between an
    * Amazon FSx for Lustre file system and a linked data repository.</p> </li> <li>
-   * <p>You use release data repository tasks to release archived files from your
-   * Amazon FSx for Lustre file system.</p> </li> <li> <p>An Amazon File Cache
-   * resource uses a task to automatically release files from the cache.</p> </li>
-   * </ul> <p>To learn more about data repository tasks, see <a
+   * <p>You use release data repository tasks to release have been exported to a
+   * linked S3 bucketed files from your Amazon FSx for Lustre file system.</p> </li>
+   * <li> <p>An Amazon File Cache resource uses a task to automatically release files
+   * from the cache.</p> </li> </ul> <p>To learn more about data repository tasks,
+   * see <a
    * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
    * Repository Tasks</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryTask">AWS
@@ -223,9 +224,10 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx
-     * for Lustre file system that are archived and that meet your specified release
-     * criteria.</p> </li> <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically
-     * release files from an Amazon File Cache resource.</p> </li> </ul>
+     * for Lustre file system that have been exported to a linked S3 bucket and that
+     * meet your specified release criteria.</p> </li> <li> <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
+     * File Cache resource.</p> </li> </ul>
      */
     inline const DataRepositoryTaskType& GetType() const{ return m_type; }
 
@@ -236,9 +238,10 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx
-     * for Lustre file system that are archived and that meet your specified release
-     * criteria.</p> </li> <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically
-     * release files from an Amazon File Cache resource.</p> </li> </ul>
+     * for Lustre file system that have been exported to a linked S3 bucket and that
+     * meet your specified release criteria.</p> </li> <li> <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
+     * File Cache resource.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -249,9 +252,10 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx
-     * for Lustre file system that are archived and that meet your specified release
-     * criteria.</p> </li> <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically
-     * release files from an Amazon File Cache resource.</p> </li> </ul>
+     * for Lustre file system that have been exported to a linked S3 bucket and that
+     * meet your specified release criteria.</p> </li> <li> <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
+     * File Cache resource.</p> </li> </ul>
      */
     inline void SetType(const DataRepositoryTaskType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -262,9 +266,10 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx
-     * for Lustre file system that are archived and that meet your specified release
-     * criteria.</p> </li> <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically
-     * release files from an Amazon File Cache resource.</p> </li> </ul>
+     * for Lustre file system that have been exported to a linked S3 bucket and that
+     * meet your specified release criteria.</p> </li> <li> <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
+     * File Cache resource.</p> </li> </ul>
      */
     inline void SetType(DataRepositoryTaskType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -275,9 +280,10 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx
-     * for Lustre file system that are archived and that meet your specified release
-     * criteria.</p> </li> <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically
-     * release files from an Amazon File Cache resource.</p> </li> </ul>
+     * for Lustre file system that have been exported to a linked S3 bucket and that
+     * meet your specified release criteria.</p> </li> <li> <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
+     * File Cache resource.</p> </li> </ul>
      */
     inline DataRepositoryTask& WithType(const DataRepositoryTaskType& value) { SetType(value); return *this;}
 
@@ -288,9 +294,10 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx
-     * for Lustre file system that are archived and that meet your specified release
-     * criteria.</p> </li> <li> <p> <code>AUTO_RELEASE_DATA</code> tasks automatically
-     * release files from an Amazon File Cache resource.</p> </li> </ul>
+     * for Lustre file system that have been exported to a linked S3 bucket and that
+     * meet your specified release criteria.</p> </li> <li> <p>
+     * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
+     * File Cache resource.</p> </li> </ul>
      */
     inline DataRepositoryTask& WithType(DataRepositoryTaskType&& value) { SetType(std::move(value)); return *this;}
 

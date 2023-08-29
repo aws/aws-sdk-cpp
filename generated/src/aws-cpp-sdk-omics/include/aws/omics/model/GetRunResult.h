@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/Accelerators.h>
+#include <aws/omics/model/RunRetentionMode.h>
 #include <utility>
 
 namespace Aws
@@ -833,6 +834,32 @@ namespace Model
     inline GetRunResult& WithAccelerators(Accelerators&& value) { SetAccelerators(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The run's retention mode.</p>
+     */
+    inline const RunRetentionMode& GetRetentionMode() const{ return m_retentionMode; }
+
+    /**
+     * <p>The run's retention mode.</p>
+     */
+    inline void SetRetentionMode(const RunRetentionMode& value) { m_retentionMode = value; }
+
+    /**
+     * <p>The run's retention mode.</p>
+     */
+    inline void SetRetentionMode(RunRetentionMode&& value) { m_retentionMode = std::move(value); }
+
+    /**
+     * <p>The run's retention mode.</p>
+     */
+    inline GetRunResult& WithRetentionMode(const RunRetentionMode& value) { SetRetentionMode(value); return *this;}
+
+    /**
+     * <p>The run's retention mode.</p>
+     */
+    inline GetRunResult& WithRetentionMode(RunRetentionMode&& value) { SetRetentionMode(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -903,6 +930,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Accelerators m_accelerators;
+
+    RunRetentionMode m_retentionMode;
 
     Aws::String m_requestId;
   };

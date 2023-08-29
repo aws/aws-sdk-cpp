@@ -180,16 +180,18 @@ namespace Model
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>MULTI_AZ_1</code>- Creates file systems with high availability that are
      * configured for Multi-AZ redundancy to tolerate temporary unavailability in
-     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available in the following
-     * Amazon Web Services Regions: </p> </li> <li> <p> <code>SINGLE_AZ_1</code>-
-     * (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
-     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where
-     * Amazon FSx for OpenZFS is available.</p> </li> <li> <p>
-     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160
-     * - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available
-     * only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe
-     * (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more information,
-     * see: <a
+     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US
+     * East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore),
+     * Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+     * <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput
+     * capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and
+     * Europe (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
@@ -203,16 +205,18 @@ namespace Model
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>MULTI_AZ_1</code>- Creates file systems with high availability that are
      * configured for Multi-AZ redundancy to tolerate temporary unavailability in
-     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available in the following
-     * Amazon Web Services Regions: </p> </li> <li> <p> <code>SINGLE_AZ_1</code>-
-     * (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
-     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where
-     * Amazon FSx for OpenZFS is available.</p> </li> <li> <p>
-     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160
-     * - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available
-     * only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe
-     * (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more information,
-     * see: <a
+     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US
+     * East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore),
+     * Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+     * <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput
+     * capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and
+     * Europe (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
@@ -226,16 +230,18 @@ namespace Model
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>MULTI_AZ_1</code>- Creates file systems with high availability that are
      * configured for Multi-AZ redundancy to tolerate temporary unavailability in
-     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available in the following
-     * Amazon Web Services Regions: </p> </li> <li> <p> <code>SINGLE_AZ_1</code>-
-     * (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
-     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where
-     * Amazon FSx for OpenZFS is available.</p> </li> <li> <p>
-     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160
-     * - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available
-     * only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe
-     * (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more information,
-     * see: <a
+     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US
+     * East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore),
+     * Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+     * <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput
+     * capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and
+     * Europe (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
@@ -249,16 +255,18 @@ namespace Model
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>MULTI_AZ_1</code>- Creates file systems with high availability that are
      * configured for Multi-AZ redundancy to tolerate temporary unavailability in
-     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available in the following
-     * Amazon Web Services Regions: </p> </li> <li> <p> <code>SINGLE_AZ_1</code>-
-     * (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
-     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where
-     * Amazon FSx for OpenZFS is available.</p> </li> <li> <p>
-     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160
-     * - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available
-     * only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe
-     * (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more information,
-     * see: <a
+     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US
+     * East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore),
+     * Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+     * <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput
+     * capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and
+     * Europe (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
@@ -272,16 +280,18 @@ namespace Model
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>MULTI_AZ_1</code>- Creates file systems with high availability that are
      * configured for Multi-AZ redundancy to tolerate temporary unavailability in
-     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available in the following
-     * Amazon Web Services Regions: </p> </li> <li> <p> <code>SINGLE_AZ_1</code>-
-     * (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
-     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where
-     * Amazon FSx for OpenZFS is available.</p> </li> <li> <p>
-     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160
-     * - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available
-     * only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe
-     * (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more information,
-     * see: <a
+     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US
+     * East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore),
+     * Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+     * <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput
+     * capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and
+     * Europe (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
@@ -295,16 +305,18 @@ namespace Model
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>MULTI_AZ_1</code>- Creates file systems with high availability that are
      * configured for Multi-AZ redundancy to tolerate temporary unavailability in
-     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available in the following
-     * Amazon Web Services Regions: </p> </li> <li> <p> <code>SINGLE_AZ_1</code>-
-     * (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
-     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where
-     * Amazon FSx for OpenZFS is available.</p> </li> <li> <p>
-     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160
-     * - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available
-     * only in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe
-     * (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more information,
-     * see: <a
+     * Availability Zones (AZs). <code>Multi_AZ_1</code> is available only in the US
+     * East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore),
+     * Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.</p>
+     * </li> <li> <p> <code>SINGLE_AZ_1</code>- Creates file systems with throughput
+     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * Amazon Web Services Regions where Amazon FSx for OpenZFS is available.</p> </li>
+     * <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems with throughput
+     * capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     * (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and
+     * Europe (Ireland) Amazon Web Services Regions.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions">Deployment
      * type availability</a> and <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
@@ -316,44 +328,44 @@ namespace Model
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
      * in megabytes per second (MBps). Valid values depend on the DeploymentType you
-     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
-     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> <li> <p>For
+     * choose, as follows:</p> <ul> <li> <p>For <code>MULTI_AZ_1</code> and
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MBps.</p> </li> </ul> <p>You pay for additional throughput
-     * capacity that you provision.</p>
+     * 5120, 7680, or 10240 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> </ul>
+     * <p>You pay for additional throughput capacity that you provision.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
      * in megabytes per second (MBps). Valid values depend on the DeploymentType you
-     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
-     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> <li> <p>For
+     * choose, as follows:</p> <ul> <li> <p>For <code>MULTI_AZ_1</code> and
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MBps.</p> </li> </ul> <p>You pay for additional throughput
-     * capacity that you provision.</p>
+     * 5120, 7680, or 10240 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> </ul>
+     * <p>You pay for additional throughput capacity that you provision.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
      * in megabytes per second (MBps). Valid values depend on the DeploymentType you
-     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
-     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> <li> <p>For
+     * choose, as follows:</p> <ul> <li> <p>For <code>MULTI_AZ_1</code> and
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MBps.</p> </li> </ul> <p>You pay for additional throughput
-     * capacity that you provision.</p>
+     * 5120, 7680, or 10240 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> </ul>
+     * <p>You pay for additional throughput capacity that you provision.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
      * in megabytes per second (MBps). Valid values depend on the DeploymentType you
-     * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
-     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> <li> <p>For
+     * choose, as follows:</p> <ul> <li> <p>For <code>MULTI_AZ_1</code> and
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MBps.</p> </li> </ul> <p>You pay for additional throughput
-     * capacity that you provision.</p>
+     * 5120, 7680, or 10240 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> </ul>
+     * <p>You pay for additional throughput capacity that you provision.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
 
@@ -570,74 +582,83 @@ namespace Model
 
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRouteTableIds() const{ return m_routeTableIds; }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline bool RouteTableIdsHasBeenSet() const { return m_routeTableIdsHasBeenSet; }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline void SetRouteTableIds(const Aws::Vector<Aws::String>& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = value; }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline void SetRouteTableIds(Aws::Vector<Aws::String>&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds = std::move(value); }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRouteTableIds(value); return *this;}
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRouteTableIds(std::move(value)); return *this;}
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& AddRouteTableIds(const Aws::String& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& AddRouteTableIds(Aws::String&& value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>(Multi-AZ only) Specifies the virtual private cloud (VPC) route tables in
-     * which your file system's endpoints will be created. You should specify all VPC
-     * route tables associated with the subnets in which your clients are located. By
-     * default, Amazon FSx selects your VPC's default route table.</p>
+     * <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the
+     * rules for routing traffic to the correct file server. You should specify all
+     * virtual private cloud (VPC) route tables associated with the subnets in which
+     * your clients are located. By default, Amazon FSx selects your VPC's default
+     * route table.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& AddRouteTableIds(const char* value) { m_routeTableIdsHasBeenSet = true; m_routeTableIds.push_back(value); return *this; }
 

@@ -1890,7 +1890,12 @@ namespace Omics
         }
 
         /**
-         * <p>Starts a run.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a workflow run. To duplicate a run, specify the run's ID and a role
+         * ARN. The remaining parameters are copied from the previous run.</p> <p>The total
+         * number of runs in your account is subject to a quota per Region. To avoid
+         * needing to delete runs manually, you can set the retention mode to
+         * <code>REMOVE</code>. Runs with this setting are deleted automatically when the
+         * run quoata is exceeded.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">AWS API
          * Reference</a></p>
          */
