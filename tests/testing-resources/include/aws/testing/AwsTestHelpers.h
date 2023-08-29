@@ -14,10 +14,6 @@
 #include <aws/core/VersionConfig.h>
 #include <aws/core/utils/DateTime.h>
 
-#if defined(GetMessage)
-#undef GetMessage
-#endif
-
 #define AWS_ASSERT_SUCCESS(awsCppSdkOutcome) \
   ASSERT_TRUE(awsCppSdkOutcome.IsSuccess()) << "Error details: " << awsCppSdkOutcome.GetError() \
                                             << "\nNow timestamp: " << Aws::Utils::DateTime::Now().ToGmtString(Aws::Utils::DateFormat::ISO_8601_BASIC)
