@@ -40,88 +40,165 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The keyword for the Suricata compatible rule option. You must include a
+     * <code>sid</code> (signature ID), and can optionally include other keywords. For
+     * information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a> in the Suricata documentation.</p>
      */
     inline const Aws::String& GetKeyword() const{ return m_keyword; }
 
     /**
-     * <p/>
+     * <p>The keyword for the Suricata compatible rule option. You must include a
+     * <code>sid</code> (signature ID), and can optionally include other keywords. For
+     * information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a> in the Suricata documentation.</p>
      */
     inline bool KeywordHasBeenSet() const { return m_keywordHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The keyword for the Suricata compatible rule option. You must include a
+     * <code>sid</code> (signature ID), and can optionally include other keywords. For
+     * information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a> in the Suricata documentation.</p>
      */
     inline void SetKeyword(const Aws::String& value) { m_keywordHasBeenSet = true; m_keyword = value; }
 
     /**
-     * <p/>
+     * <p>The keyword for the Suricata compatible rule option. You must include a
+     * <code>sid</code> (signature ID), and can optionally include other keywords. For
+     * information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a> in the Suricata documentation.</p>
      */
     inline void SetKeyword(Aws::String&& value) { m_keywordHasBeenSet = true; m_keyword = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The keyword for the Suricata compatible rule option. You must include a
+     * <code>sid</code> (signature ID), and can optionally include other keywords. For
+     * information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a> in the Suricata documentation.</p>
      */
     inline void SetKeyword(const char* value) { m_keywordHasBeenSet = true; m_keyword.assign(value); }
 
     /**
-     * <p/>
+     * <p>The keyword for the Suricata compatible rule option. You must include a
+     * <code>sid</code> (signature ID), and can optionally include other keywords. For
+     * information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a> in the Suricata documentation.</p>
      */
     inline RuleOption& WithKeyword(const Aws::String& value) { SetKeyword(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The keyword for the Suricata compatible rule option. You must include a
+     * <code>sid</code> (signature ID), and can optionally include other keywords. For
+     * information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a> in the Suricata documentation.</p>
      */
     inline RuleOption& WithKeyword(Aws::String&& value) { SetKeyword(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The keyword for the Suricata compatible rule option. You must include a
+     * <code>sid</code> (signature ID), and can optionally include other keywords. For
+     * information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a> in the Suricata documentation.</p>
      */
     inline RuleOption& WithKeyword(const char* value) { SetKeyword(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The settings of the Suricata compatible rule option. Rule options have zero
+     * or more setting values, and the number of possible and required settings depends
+     * on the <code>Keyword</code>. For more information about the settings for
+     * specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSettings() const{ return m_settings; }
 
     /**
-     * <p/>
+     * <p>The settings of the Suricata compatible rule option. Rule options have zero
+     * or more setting values, and the number of possible and required settings depends
+     * on the <code>Keyword</code>. For more information about the settings for
+     * specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a>.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The settings of the Suricata compatible rule option. Rule options have zero
+     * or more setting values, and the number of possible and required settings depends
+     * on the <code>Keyword</code>. For more information about the settings for
+     * specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a>.</p>
      */
     inline void SetSettings(const Aws::Vector<Aws::String>& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * <p/>
+     * <p>The settings of the Suricata compatible rule option. Rule options have zero
+     * or more setting values, and the number of possible and required settings depends
+     * on the <code>Keyword</code>. For more information about the settings for
+     * specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a>.</p>
      */
     inline void SetSettings(Aws::Vector<Aws::String>&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The settings of the Suricata compatible rule option. Rule options have zero
+     * or more setting values, and the number of possible and required settings depends
+     * on the <code>Keyword</code>. For more information about the settings for
+     * specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a>.</p>
      */
     inline RuleOption& WithSettings(const Aws::Vector<Aws::String>& value) { SetSettings(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The settings of the Suricata compatible rule option. Rule options have zero
+     * or more setting values, and the number of possible and required settings depends
+     * on the <code>Keyword</code>. For more information about the settings for
+     * specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a>.</p>
      */
     inline RuleOption& WithSettings(Aws::Vector<Aws::String>&& value) { SetSettings(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The settings of the Suricata compatible rule option. Rule options have zero
+     * or more setting values, and the number of possible and required settings depends
+     * on the <code>Keyword</code>. For more information about the settings for
+     * specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a>.</p>
      */
     inline RuleOption& AddSettings(const Aws::String& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The settings of the Suricata compatible rule option. Rule options have zero
+     * or more setting values, and the number of possible and required settings depends
+     * on the <code>Keyword</code>. For more information about the settings for
+     * specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a>.</p>
      */
     inline RuleOption& AddSettings(Aws::String&& value) { m_settingsHasBeenSet = true; m_settings.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The settings of the Suricata compatible rule option. Rule options have zero
+     * or more setting values, and the number of possible and required settings depends
+     * on the <code>Keyword</code>. For more information about the settings for
+     * specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule
+     * options</a>.</p>
      */
     inline RuleOption& AddSettings(const char* value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
 

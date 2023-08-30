@@ -16,7 +16,8 @@ CreateMembershipRequest::CreateMembershipRequest() :
     m_collaborationIdentifierHasBeenSet(false),
     m_queryLogStatus(MembershipQueryLogStatus::NOT_SET),
     m_queryLogStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_defaultResultConfigurationHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String CreateMembershipRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_defaultResultConfigurationHasBeenSet)
+  {
+   payload.WithObject("defaultResultConfiguration", m_defaultResultConfiguration.Jsonize());
 
   }
 

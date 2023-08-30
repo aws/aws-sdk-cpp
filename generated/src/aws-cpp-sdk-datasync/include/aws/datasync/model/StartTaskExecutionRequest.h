@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/Options.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/TaskReportConfig.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <aws/datasync/model/TagListEntry.h>
 #include <utility>
@@ -295,6 +296,43 @@ namespace Model
      */
     inline StartTaskExecutionRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline const TaskReportConfig& GetTaskReportConfig() const{ return m_taskReportConfig; }
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline bool TaskReportConfigHasBeenSet() const { return m_taskReportConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline void SetTaskReportConfig(const TaskReportConfig& value) { m_taskReportConfigHasBeenSet = true; m_taskReportConfig = value; }
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline void SetTaskReportConfig(TaskReportConfig&& value) { m_taskReportConfigHasBeenSet = true; m_taskReportConfig = std::move(value); }
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline StartTaskExecutionRequest& WithTaskReportConfig(const TaskReportConfig& value) { SetTaskReportConfig(value); return *this;}
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline StartTaskExecutionRequest& WithTaskReportConfig(TaskReportConfig&& value) { SetTaskReportConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_taskArn;
@@ -311,6 +349,9 @@ namespace Model
 
     Aws::Vector<TagListEntry> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    TaskReportConfig m_taskReportConfig;
+    bool m_taskReportConfigHasBeenSet = false;
   };
 
 } // namespace Model

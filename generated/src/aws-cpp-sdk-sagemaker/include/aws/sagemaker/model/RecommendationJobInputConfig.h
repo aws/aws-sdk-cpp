@@ -88,25 +88,25 @@ namespace Model
 
     /**
      * <p>Specifies the maximum duration of the job, in seconds. The maximum value is
-     * 7200.</p>
+     * 18,000 seconds.</p>
      */
     inline int GetJobDurationInSeconds() const{ return m_jobDurationInSeconds; }
 
     /**
      * <p>Specifies the maximum duration of the job, in seconds. The maximum value is
-     * 7200.</p>
+     * 18,000 seconds.</p>
      */
     inline bool JobDurationInSecondsHasBeenSet() const { return m_jobDurationInSecondsHasBeenSet; }
 
     /**
      * <p>Specifies the maximum duration of the job, in seconds. The maximum value is
-     * 7200.</p>
+     * 18,000 seconds.</p>
      */
     inline void SetJobDurationInSeconds(int value) { m_jobDurationInSecondsHasBeenSet = true; m_jobDurationInSeconds = value; }
 
     /**
      * <p>Specifies the maximum duration of the job, in seconds. The maximum value is
-     * 7200.</p>
+     * 18,000 seconds.</p>
      */
     inline RecommendationJobInputConfig& WithJobDurationInSeconds(int value) { SetJobDurationInSeconds(value); return *this;}
 

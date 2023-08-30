@@ -10,6 +10,7 @@
 #include <aws/cleanrooms/model/MembershipStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cleanrooms/model/MembershipQueryLogStatus.h>
+#include <aws/cleanrooms/model/MembershipProtectedQueryResultConfiguration.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
 #include <utility>
 
@@ -513,6 +514,43 @@ namespace Model
      */
     inline Membership& WithQueryLogStatus(MembershipQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline const MembershipProtectedQueryResultConfiguration& GetDefaultResultConfiguration() const{ return m_defaultResultConfiguration; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline bool DefaultResultConfigurationHasBeenSet() const { return m_defaultResultConfigurationHasBeenSet; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline void SetDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = value; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline void SetDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::move(value); }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline Membership& WithDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { SetDefaultResultConfiguration(value); return *this;}
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline Membership& WithDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { SetDefaultResultConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -550,6 +588,9 @@ namespace Model
 
     MembershipQueryLogStatus m_queryLogStatus;
     bool m_queryLogStatusHasBeenSet = false;
+
+    MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
+    bool m_defaultResultConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

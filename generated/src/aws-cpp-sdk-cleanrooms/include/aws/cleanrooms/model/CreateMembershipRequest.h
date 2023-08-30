@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanrooms/model/MembershipQueryLogStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/cleanrooms/model/MembershipProtectedQueryResultConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -216,6 +217,43 @@ namespace Model
      */
     inline CreateMembershipRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline const MembershipProtectedQueryResultConfiguration& GetDefaultResultConfiguration() const{ return m_defaultResultConfiguration; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline bool DefaultResultConfigurationHasBeenSet() const { return m_defaultResultConfigurationHasBeenSet; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline void SetDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = value; }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline void SetDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::move(value); }
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline CreateMembershipRequest& WithDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { SetDefaultResultConfiguration(value); return *this;}
+
+    /**
+     * <p>The default protected query result configuration as specified by the member
+     * who can receive results.</p>
+     */
+    inline CreateMembershipRequest& WithDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { SetDefaultResultConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_collaborationIdentifier;
@@ -226,6 +264,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
+    bool m_defaultResultConfigurationHasBeenSet = false;
   };
 
 } // namespace Model
