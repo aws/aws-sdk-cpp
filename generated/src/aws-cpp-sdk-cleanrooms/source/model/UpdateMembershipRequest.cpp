@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateMembershipRequest::UpdateMembershipRequest() : 
     m_membershipIdentifierHasBeenSet(false),
     m_queryLogStatus(MembershipQueryLogStatus::NOT_SET),
-    m_queryLogStatusHasBeenSet(false)
+    m_queryLogStatusHasBeenSet(false),
+    m_defaultResultConfigurationHasBeenSet(false)
 {
 }
 
@@ -26,6 +27,12 @@ Aws::String UpdateMembershipRequest::SerializePayload() const
   if(m_queryLogStatusHasBeenSet)
   {
    payload.WithString("queryLogStatus", MembershipQueryLogStatusMapper::GetNameForMembershipQueryLogStatus(m_queryLogStatus));
+  }
+
+  if(m_defaultResultConfigurationHasBeenSet)
+  {
+   payload.WithObject("defaultResultConfiguration", m_defaultResultConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

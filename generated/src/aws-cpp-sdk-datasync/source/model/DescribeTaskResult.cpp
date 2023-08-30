@@ -139,6 +139,12 @@ DescribeTaskResult& DescribeTaskResult::operator =(const Aws::AmazonWebServiceRe
     }
   }
 
+  if(jsonValue.ValueExists("TaskReportConfig"))
+  {
+    m_taskReportConfig = jsonValue.GetObject("TaskReportConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

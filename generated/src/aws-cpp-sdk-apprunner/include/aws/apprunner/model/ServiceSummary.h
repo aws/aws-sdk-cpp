@@ -308,78 +308,72 @@ namespace Model
     /**
      * <p>The current state of the App Runner service. These particular values mean the
      * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. Read the failure events and logs, change any parameters that need to be
-     * fixed, and retry the call to create the service.</p> <p>The failed service isn't
-     * usable, and still counts towards your service quota. When you're done analyzing
-     * the failure, delete the service.</p> </li> <li> <p> <code>DELETE_FAILED</code> –
-     * The service failed to delete and can't be successfully recovered. Retry the
-     * service deletion call to ensure that all related resources are removed.</p>
-     * </li> </ul>
+     * create. The failed service isn't usable, and still counts towards your service
+     * quota. To troubleshoot this failure, read the failure events and logs, change
+     * any parameters that need to be fixed, and rebuild your service using
+     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
+     * service failed to delete and can't be successfully recovered. Retry the service
+     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
      */
     inline const ServiceStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current state of the App Runner service. These particular values mean the
      * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. Read the failure events and logs, change any parameters that need to be
-     * fixed, and retry the call to create the service.</p> <p>The failed service isn't
-     * usable, and still counts towards your service quota. When you're done analyzing
-     * the failure, delete the service.</p> </li> <li> <p> <code>DELETE_FAILED</code> –
-     * The service failed to delete and can't be successfully recovered. Retry the
-     * service deletion call to ensure that all related resources are removed.</p>
-     * </li> </ul>
+     * create. The failed service isn't usable, and still counts towards your service
+     * quota. To troubleshoot this failure, read the failure events and logs, change
+     * any parameters that need to be fixed, and rebuild your service using
+     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
+     * service failed to delete and can't be successfully recovered. Retry the service
+     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current state of the App Runner service. These particular values mean the
      * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. Read the failure events and logs, change any parameters that need to be
-     * fixed, and retry the call to create the service.</p> <p>The failed service isn't
-     * usable, and still counts towards your service quota. When you're done analyzing
-     * the failure, delete the service.</p> </li> <li> <p> <code>DELETE_FAILED</code> –
-     * The service failed to delete and can't be successfully recovered. Retry the
-     * service deletion call to ensure that all related resources are removed.</p>
-     * </li> </ul>
+     * create. The failed service isn't usable, and still counts towards your service
+     * quota. To troubleshoot this failure, read the failure events and logs, change
+     * any parameters that need to be fixed, and rebuild your service using
+     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
+     * service failed to delete and can't be successfully recovered. Retry the service
+     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
      */
     inline void SetStatus(const ServiceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current state of the App Runner service. These particular values mean the
      * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. Read the failure events and logs, change any parameters that need to be
-     * fixed, and retry the call to create the service.</p> <p>The failed service isn't
-     * usable, and still counts towards your service quota. When you're done analyzing
-     * the failure, delete the service.</p> </li> <li> <p> <code>DELETE_FAILED</code> –
-     * The service failed to delete and can't be successfully recovered. Retry the
-     * service deletion call to ensure that all related resources are removed.</p>
-     * </li> </ul>
+     * create. The failed service isn't usable, and still counts towards your service
+     * quota. To troubleshoot this failure, read the failure events and logs, change
+     * any parameters that need to be fixed, and rebuild your service using
+     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
+     * service failed to delete and can't be successfully recovered. Retry the service
+     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
      */
     inline void SetStatus(ServiceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current state of the App Runner service. These particular values mean the
      * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. Read the failure events and logs, change any parameters that need to be
-     * fixed, and retry the call to create the service.</p> <p>The failed service isn't
-     * usable, and still counts towards your service quota. When you're done analyzing
-     * the failure, delete the service.</p> </li> <li> <p> <code>DELETE_FAILED</code> –
-     * The service failed to delete and can't be successfully recovered. Retry the
-     * service deletion call to ensure that all related resources are removed.</p>
-     * </li> </ul>
+     * create. The failed service isn't usable, and still counts towards your service
+     * quota. To troubleshoot this failure, read the failure events and logs, change
+     * any parameters that need to be fixed, and rebuild your service using
+     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
+     * service failed to delete and can't be successfully recovered. Retry the service
+     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
      */
     inline ServiceSummary& WithStatus(const ServiceStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current state of the App Runner service. These particular values mean the
      * following.</p> <ul> <li> <p> <code>CREATE_FAILED</code> – The service failed to
-     * create. Read the failure events and logs, change any parameters that need to be
-     * fixed, and retry the call to create the service.</p> <p>The failed service isn't
-     * usable, and still counts towards your service quota. When you're done analyzing
-     * the failure, delete the service.</p> </li> <li> <p> <code>DELETE_FAILED</code> –
-     * The service failed to delete and can't be successfully recovered. Retry the
-     * service deletion call to ensure that all related resources are removed.</p>
-     * </li> </ul>
+     * create. The failed service isn't usable, and still counts towards your service
+     * quota. To troubleshoot this failure, read the failure events and logs, change
+     * any parameters that need to be fixed, and rebuild your service using
+     * <code>UpdateService</code>.</p> </li> <li> <p> <code>DELETE_FAILED</code> – The
+     * service failed to delete and can't be successfully recovered. Retry the service
+     * deletion call to ensure that all related resources are removed.</p> </li> </ul>
      */
     inline ServiceSummary& WithStatus(ServiceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

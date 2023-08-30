@@ -16,7 +16,8 @@ namespace Model
   enum class ProviderType
   {
     NOT_SET,
-    GITHUB
+    GITHUB,
+    BITBUCKET
   };
 
 namespace ProviderTypeMapper

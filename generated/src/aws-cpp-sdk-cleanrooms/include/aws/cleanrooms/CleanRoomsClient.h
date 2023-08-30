@@ -24,7 +24,10 @@ namespace CleanRooms
    * learn more about Clean Rooms concepts, procedures, and best practices, see the
    * <a
    * href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/what-is.html">Clean
-   * Rooms User Guide</a>.</p>
+   * Rooms User Guide</a>.</p> <p>To learn more about SQL commands, functions, and
+   * conditions supported in Clean Rooms, see the <a
+   * href="https://docs.aws.amazon.com/clean-rooms/latest/sql-reference/sql-reference.html">Clean
+   * Rooms SQL Reference</a>.</p>
    */
   class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CleanRoomsClient>
   {
@@ -981,7 +984,7 @@ namespace CleanRooms
         }
 
         /**
-         * <p>Creates a protected query that is started by Clean Rooms .</p><p><h3>See
+         * <p>Creates a protected query that is started by Clean Rooms.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartProtectedQuery">AWS
          * API Reference</a></p>

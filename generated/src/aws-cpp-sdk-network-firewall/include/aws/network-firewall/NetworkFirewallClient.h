@@ -285,7 +285,7 @@ namespace NetworkFirewall
          * <p>Creates an Network Firewall TLS inspection configuration. A TLS inspection
          * configuration contains the Certificate Manager certificate references that
          * Network Firewall uses to decrypt and re-encrypt inbound traffic.</p> <p>After
-         * you create a TLS inspection configuration, you associate it with a firewall
+         * you create a TLS inspection configuration, you associate it with a new firewall
          * policy.</p> <p>To update the settings for a TLS inspection configuration, use
          * <a>UpdateTLSInspectionConfiguration</a>.</p> <p>To manage a TLS inspection
          * configuration's tags, use the standard Amazon Web Services resource tagging

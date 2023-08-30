@@ -10,6 +10,7 @@
 #include <aws/datasync/model/Options.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datasync/model/TaskSchedule.h>
+#include <aws/datasync/model/TaskReportConfig.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <utility>
 
@@ -395,6 +396,43 @@ namespace Model
      */
     inline UpdateTaskRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline const TaskReportConfig& GetTaskReportConfig() const{ return m_taskReportConfig; }
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline bool TaskReportConfigHasBeenSet() const { return m_taskReportConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline void SetTaskReportConfig(const TaskReportConfig& value) { m_taskReportConfigHasBeenSet = true; m_taskReportConfig = value; }
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline void SetTaskReportConfig(TaskReportConfig&& value) { m_taskReportConfigHasBeenSet = true; m_taskReportConfig = std::move(value); }
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline UpdateTaskRequest& WithTaskReportConfig(const TaskReportConfig& value) { SetTaskReportConfig(value); return *this;}
+
+    /**
+     * <p>Specifies how you want to configure a task report, which provides detailed
+     * information about for your DataSync transfer.</p>
+     */
+    inline UpdateTaskRequest& WithTaskReportConfig(TaskReportConfig&& value) { SetTaskReportConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_taskArn;
@@ -417,6 +455,9 @@ namespace Model
 
     Aws::Vector<FilterRule> m_includes;
     bool m_includesHasBeenSet = false;
+
+    TaskReportConfig m_taskReportConfig;
+    bool m_taskReportConfigHasBeenSet = false;
   };
 
 } // namespace Model

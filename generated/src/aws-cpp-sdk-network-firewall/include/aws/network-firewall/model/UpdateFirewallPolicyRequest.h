@@ -248,32 +248,50 @@ namespace Model
 
 
     /**
-     * <p>The updated firewall policy to use for the firewall. </p>
+     * <p>The updated firewall policy to use for the firewall. You can't add or remove
+     * a <a>TLSInspectionConfiguration</a> after you create a firewall policy. However,
+     * you can replace an existing TLS inspection configuration with another
+     * <code>TLSInspectionConfiguration</code>.</p>
      */
     inline const FirewallPolicy& GetFirewallPolicy() const{ return m_firewallPolicy; }
 
     /**
-     * <p>The updated firewall policy to use for the firewall. </p>
+     * <p>The updated firewall policy to use for the firewall. You can't add or remove
+     * a <a>TLSInspectionConfiguration</a> after you create a firewall policy. However,
+     * you can replace an existing TLS inspection configuration with another
+     * <code>TLSInspectionConfiguration</code>.</p>
      */
     inline bool FirewallPolicyHasBeenSet() const { return m_firewallPolicyHasBeenSet; }
 
     /**
-     * <p>The updated firewall policy to use for the firewall. </p>
+     * <p>The updated firewall policy to use for the firewall. You can't add or remove
+     * a <a>TLSInspectionConfiguration</a> after you create a firewall policy. However,
+     * you can replace an existing TLS inspection configuration with another
+     * <code>TLSInspectionConfiguration</code>.</p>
      */
     inline void SetFirewallPolicy(const FirewallPolicy& value) { m_firewallPolicyHasBeenSet = true; m_firewallPolicy = value; }
 
     /**
-     * <p>The updated firewall policy to use for the firewall. </p>
+     * <p>The updated firewall policy to use for the firewall. You can't add or remove
+     * a <a>TLSInspectionConfiguration</a> after you create a firewall policy. However,
+     * you can replace an existing TLS inspection configuration with another
+     * <code>TLSInspectionConfiguration</code>.</p>
      */
     inline void SetFirewallPolicy(FirewallPolicy&& value) { m_firewallPolicyHasBeenSet = true; m_firewallPolicy = std::move(value); }
 
     /**
-     * <p>The updated firewall policy to use for the firewall. </p>
+     * <p>The updated firewall policy to use for the firewall. You can't add or remove
+     * a <a>TLSInspectionConfiguration</a> after you create a firewall policy. However,
+     * you can replace an existing TLS inspection configuration with another
+     * <code>TLSInspectionConfiguration</code>.</p>
      */
     inline UpdateFirewallPolicyRequest& WithFirewallPolicy(const FirewallPolicy& value) { SetFirewallPolicy(value); return *this;}
 
     /**
-     * <p>The updated firewall policy to use for the firewall. </p>
+     * <p>The updated firewall policy to use for the firewall. You can't add or remove
+     * a <a>TLSInspectionConfiguration</a> after you create a firewall policy. However,
+     * you can replace an existing TLS inspection configuration with another
+     * <code>TLSInspectionConfiguration</code>.</p>
      */
     inline UpdateFirewallPolicyRequest& WithFirewallPolicy(FirewallPolicy&& value) { SetFirewallPolicy(std::move(value)); return *this;}
 

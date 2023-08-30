@@ -21,14 +21,16 @@ namespace Model
 CanvasAppSettings::CanvasAppSettings() : 
     m_timeSeriesForecastingSettingsHasBeenSet(false),
     m_modelRegisterSettingsHasBeenSet(false),
-    m_workspaceSettingsHasBeenSet(false)
+    m_workspaceSettingsHasBeenSet(false),
+    m_identityProviderOAuthSettingsHasBeenSet(false)
 {
 }
 
 CanvasAppSettings::CanvasAppSettings(JsonView jsonValue) : 
     m_timeSeriesForecastingSettingsHasBeenSet(false),
     m_modelRegisterSettingsHasBeenSet(false),
-    m_workspaceSettingsHasBeenSet(false)
+    m_workspaceSettingsHasBeenSet(false),
+    m_identityProviderOAuthSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,16 @@ CanvasAppSettings& CanvasAppSettings::operator =(JsonView jsonValue)
     m_workspaceSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdentityProviderOAuthSettings"))
+  {
+    Aws::Utils::Array<JsonView> identityProviderOAuthSettingsJsonList = jsonValue.GetArray("IdentityProviderOAuthSettings");
+    for(unsigned identityProviderOAuthSettingsIndex = 0; identityProviderOAuthSettingsIndex < identityProviderOAuthSettingsJsonList.GetLength(); ++identityProviderOAuthSettingsIndex)
+    {
+      m_identityProviderOAuthSettings.push_back(identityProviderOAuthSettingsJsonList[identityProviderOAuthSettingsIndex].AsObject());
+    }
+    m_identityProviderOAuthSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +90,17 @@ JsonValue CanvasAppSettings::Jsonize() const
   if(m_workspaceSettingsHasBeenSet)
   {
    payload.WithObject("WorkspaceSettings", m_workspaceSettings.Jsonize());
+
+  }
+
+  if(m_identityProviderOAuthSettingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> identityProviderOAuthSettingsJsonList(m_identityProviderOAuthSettings.size());
+   for(unsigned identityProviderOAuthSettingsIndex = 0; identityProviderOAuthSettingsIndex < identityProviderOAuthSettingsJsonList.GetLength(); ++identityProviderOAuthSettingsIndex)
+   {
+     identityProviderOAuthSettingsJsonList[identityProviderOAuthSettingsIndex].AsObject(m_identityProviderOAuthSettings[identityProviderOAuthSettingsIndex].Jsonize());
+   }
+   payload.WithArray("IdentityProviderOAuthSettings", std::move(identityProviderOAuthSettingsJsonList));
 
   }
 

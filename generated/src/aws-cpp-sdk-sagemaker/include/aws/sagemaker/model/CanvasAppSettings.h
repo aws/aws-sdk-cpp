@@ -8,6 +8,8 @@
 #include <aws/sagemaker/model/TimeSeriesForecastingSettings.h>
 #include <aws/sagemaker/model/ModelRegisterSettings.h>
 #include <aws/sagemaker/model/WorkspaceSettings.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/IdentityProviderOAuthSetting.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +133,47 @@ namespace Model
      */
     inline CanvasAppSettings& WithWorkspaceSettings(WorkspaceSettings&& value) { SetWorkspaceSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The settings for connecting to an external data source with OAuth.</p>
+     */
+    inline const Aws::Vector<IdentityProviderOAuthSetting>& GetIdentityProviderOAuthSettings() const{ return m_identityProviderOAuthSettings; }
+
+    /**
+     * <p>The settings for connecting to an external data source with OAuth.</p>
+     */
+    inline bool IdentityProviderOAuthSettingsHasBeenSet() const { return m_identityProviderOAuthSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for connecting to an external data source with OAuth.</p>
+     */
+    inline void SetIdentityProviderOAuthSettings(const Aws::Vector<IdentityProviderOAuthSetting>& value) { m_identityProviderOAuthSettingsHasBeenSet = true; m_identityProviderOAuthSettings = value; }
+
+    /**
+     * <p>The settings for connecting to an external data source with OAuth.</p>
+     */
+    inline void SetIdentityProviderOAuthSettings(Aws::Vector<IdentityProviderOAuthSetting>&& value) { m_identityProviderOAuthSettingsHasBeenSet = true; m_identityProviderOAuthSettings = std::move(value); }
+
+    /**
+     * <p>The settings for connecting to an external data source with OAuth.</p>
+     */
+    inline CanvasAppSettings& WithIdentityProviderOAuthSettings(const Aws::Vector<IdentityProviderOAuthSetting>& value) { SetIdentityProviderOAuthSettings(value); return *this;}
+
+    /**
+     * <p>The settings for connecting to an external data source with OAuth.</p>
+     */
+    inline CanvasAppSettings& WithIdentityProviderOAuthSettings(Aws::Vector<IdentityProviderOAuthSetting>&& value) { SetIdentityProviderOAuthSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>The settings for connecting to an external data source with OAuth.</p>
+     */
+    inline CanvasAppSettings& AddIdentityProviderOAuthSettings(const IdentityProviderOAuthSetting& value) { m_identityProviderOAuthSettingsHasBeenSet = true; m_identityProviderOAuthSettings.push_back(value); return *this; }
+
+    /**
+     * <p>The settings for connecting to an external data source with OAuth.</p>
+     */
+    inline CanvasAppSettings& AddIdentityProviderOAuthSettings(IdentityProviderOAuthSetting&& value) { m_identityProviderOAuthSettingsHasBeenSet = true; m_identityProviderOAuthSettings.push_back(std::move(value)); return *this; }
+
   private:
 
     TimeSeriesForecastingSettings m_timeSeriesForecastingSettings;
@@ -141,6 +184,9 @@ namespace Model
 
     WorkspaceSettings m_workspaceSettings;
     bool m_workspaceSettingsHasBeenSet = false;
+
+    Aws::Vector<IdentityProviderOAuthSetting> m_identityProviderOAuthSettings;
+    bool m_identityProviderOAuthSettingsHasBeenSet = false;
   };
 
 } // namespace Model
