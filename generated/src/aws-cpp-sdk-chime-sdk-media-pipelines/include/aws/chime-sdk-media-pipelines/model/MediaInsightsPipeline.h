@@ -12,6 +12,8 @@
 #include <aws/chime-sdk-media-pipelines/model/KinesisVideoStreamRecordingSourceRuntimeConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/model/S3RecordingSinkRuntimeConfiguration.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime-sdk-media-pipelines/model/MediaInsightsPipelineElementStatus.h>
 #include <utility>
 
 namespace Aws
@@ -405,6 +407,55 @@ namespace Model
      */
     inline MediaInsightsPipeline& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The statuses that the elements in a media insights pipeline can have during
+     * data processing.</p>
+     */
+    inline const Aws::Vector<MediaInsightsPipelineElementStatus>& GetElementStatuses() const{ return m_elementStatuses; }
+
+    /**
+     * <p>The statuses that the elements in a media insights pipeline can have during
+     * data processing.</p>
+     */
+    inline bool ElementStatusesHasBeenSet() const { return m_elementStatusesHasBeenSet; }
+
+    /**
+     * <p>The statuses that the elements in a media insights pipeline can have during
+     * data processing.</p>
+     */
+    inline void SetElementStatuses(const Aws::Vector<MediaInsightsPipelineElementStatus>& value) { m_elementStatusesHasBeenSet = true; m_elementStatuses = value; }
+
+    /**
+     * <p>The statuses that the elements in a media insights pipeline can have during
+     * data processing.</p>
+     */
+    inline void SetElementStatuses(Aws::Vector<MediaInsightsPipelineElementStatus>&& value) { m_elementStatusesHasBeenSet = true; m_elementStatuses = std::move(value); }
+
+    /**
+     * <p>The statuses that the elements in a media insights pipeline can have during
+     * data processing.</p>
+     */
+    inline MediaInsightsPipeline& WithElementStatuses(const Aws::Vector<MediaInsightsPipelineElementStatus>& value) { SetElementStatuses(value); return *this;}
+
+    /**
+     * <p>The statuses that the elements in a media insights pipeline can have during
+     * data processing.</p>
+     */
+    inline MediaInsightsPipeline& WithElementStatuses(Aws::Vector<MediaInsightsPipelineElementStatus>&& value) { SetElementStatuses(std::move(value)); return *this;}
+
+    /**
+     * <p>The statuses that the elements in a media insights pipeline can have during
+     * data processing.</p>
+     */
+    inline MediaInsightsPipeline& AddElementStatuses(const MediaInsightsPipelineElementStatus& value) { m_elementStatusesHasBeenSet = true; m_elementStatuses.push_back(value); return *this; }
+
+    /**
+     * <p>The statuses that the elements in a media insights pipeline can have during
+     * data processing.</p>
+     */
+    inline MediaInsightsPipeline& AddElementStatuses(MediaInsightsPipelineElementStatus&& value) { m_elementStatusesHasBeenSet = true; m_elementStatuses.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_mediaPipelineId;
@@ -433,6 +484,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet = false;
+
+    Aws::Vector<MediaInsightsPipelineElementStatus> m_elementStatuses;
+    bool m_elementStatusesHasBeenSet = false;
   };
 
 } // namespace Model

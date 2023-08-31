@@ -7,8 +7,8 @@
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/connectcampaigns/model/FailedRequest.h>
 #include <aws/connectcampaigns/model/SuccessfulRequest.h>
+#include <aws/connectcampaigns/model/FailedRequest.h>
 #include <utility>
 
 namespace Aws
@@ -41,28 +41,6 @@ namespace Model
 
 
     
-    inline const Aws::Vector<FailedRequest>& GetFailedRequests() const{ return m_failedRequests; }
-
-    
-    inline void SetFailedRequests(const Aws::Vector<FailedRequest>& value) { m_failedRequests = value; }
-
-    
-    inline void SetFailedRequests(Aws::Vector<FailedRequest>&& value) { m_failedRequests = std::move(value); }
-
-    
-    inline PutDialRequestBatchResult& WithFailedRequests(const Aws::Vector<FailedRequest>& value) { SetFailedRequests(value); return *this;}
-
-    
-    inline PutDialRequestBatchResult& WithFailedRequests(Aws::Vector<FailedRequest>&& value) { SetFailedRequests(std::move(value)); return *this;}
-
-    
-    inline PutDialRequestBatchResult& AddFailedRequests(const FailedRequest& value) { m_failedRequests.push_back(value); return *this; }
-
-    
-    inline PutDialRequestBatchResult& AddFailedRequests(FailedRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
-
-
-    
     inline const Aws::Vector<SuccessfulRequest>& GetSuccessfulRequests() const{ return m_successfulRequests; }
 
     
@@ -82,6 +60,28 @@ namespace Model
 
     
     inline PutDialRequestBatchResult& AddSuccessfulRequests(SuccessfulRequest&& value) { m_successfulRequests.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const Aws::Vector<FailedRequest>& GetFailedRequests() const{ return m_failedRequests; }
+
+    
+    inline void SetFailedRequests(const Aws::Vector<FailedRequest>& value) { m_failedRequests = value; }
+
+    
+    inline void SetFailedRequests(Aws::Vector<FailedRequest>&& value) { m_failedRequests = std::move(value); }
+
+    
+    inline PutDialRequestBatchResult& WithFailedRequests(const Aws::Vector<FailedRequest>& value) { SetFailedRequests(value); return *this;}
+
+    
+    inline PutDialRequestBatchResult& WithFailedRequests(Aws::Vector<FailedRequest>&& value) { SetFailedRequests(std::move(value)); return *this;}
+
+    
+    inline PutDialRequestBatchResult& AddFailedRequests(const FailedRequest& value) { m_failedRequests.push_back(value); return *this; }
+
+    
+    inline PutDialRequestBatchResult& AddFailedRequests(FailedRequest&& value) { m_failedRequests.push_back(std::move(value)); return *this; }
 
 
     
@@ -107,9 +107,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<FailedRequest> m_failedRequests;
-
     Aws::Vector<SuccessfulRequest> m_successfulRequests;
+
+    Aws::Vector<FailedRequest> m_failedRequests;
 
     Aws::String m_requestId;
   };

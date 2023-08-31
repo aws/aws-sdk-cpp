@@ -65,25 +65,6 @@ namespace Model
 
 
     
-    inline const FailureCode& GetFailureCode() const{ return m_failureCode; }
-
-    
-    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-
-    
-    inline void SetFailureCode(const FailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-
-    
-    inline void SetFailureCode(FailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-
-    
-    inline FailedRequest& WithFailureCode(const FailureCode& value) { SetFailureCode(value); return *this;}
-
-    
-    inline FailedRequest& WithFailureCode(FailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
-
-
-    
     inline const Aws::String& GetId() const{ return m_id; }
 
     
@@ -107,16 +88,35 @@ namespace Model
     
     inline FailedRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
+    
+    inline const FailureCode& GetFailureCode() const{ return m_failureCode; }
+
+    
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
+
+    
+    inline void SetFailureCode(const FailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+
+    
+    inline void SetFailureCode(FailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
+
+    
+    inline FailedRequest& WithFailureCode(const FailureCode& value) { SetFailureCode(value); return *this;}
+
+    
+    inline FailedRequest& WithFailureCode(FailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    FailureCode m_failureCode;
-    bool m_failureCodeHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    FailureCode m_failureCode;
+    bool m_failureCodeHasBeenSet = false;
   };
 
 } // namespace Model

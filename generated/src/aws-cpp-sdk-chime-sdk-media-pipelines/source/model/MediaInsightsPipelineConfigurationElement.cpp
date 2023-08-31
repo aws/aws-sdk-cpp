@@ -28,7 +28,8 @@ MediaInsightsPipelineConfigurationElement::MediaInsightsPipelineConfigurationEle
     m_voiceAnalyticsProcessorConfigurationHasBeenSet(false),
     m_lambdaFunctionSinkConfigurationHasBeenSet(false),
     m_sqsQueueSinkConfigurationHasBeenSet(false),
-    m_snsTopicSinkConfigurationHasBeenSet(false)
+    m_snsTopicSinkConfigurationHasBeenSet(false),
+    m_voiceEnhancementSinkConfigurationHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ MediaInsightsPipelineConfigurationElement::MediaInsightsPipelineConfigurationEle
     m_voiceAnalyticsProcessorConfigurationHasBeenSet(false),
     m_lambdaFunctionSinkConfigurationHasBeenSet(false),
     m_sqsQueueSinkConfigurationHasBeenSet(false),
-    m_snsTopicSinkConfigurationHasBeenSet(false)
+    m_snsTopicSinkConfigurationHasBeenSet(false),
+    m_voiceEnhancementSinkConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,13 @@ MediaInsightsPipelineConfigurationElement& MediaInsightsPipelineConfigurationEle
     m_snsTopicSinkConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VoiceEnhancementSinkConfiguration"))
+  {
+    m_voiceEnhancementSinkConfiguration = jsonValue.GetObject("VoiceEnhancementSinkConfiguration");
+
+    m_voiceEnhancementSinkConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -169,6 +178,12 @@ JsonValue MediaInsightsPipelineConfigurationElement::Jsonize() const
   if(m_snsTopicSinkConfigurationHasBeenSet)
   {
    payload.WithObject("SnsTopicSinkConfiguration", m_snsTopicSinkConfiguration.Jsonize());
+
+  }
+
+  if(m_voiceEnhancementSinkConfigurationHasBeenSet)
+  {
+   payload.WithObject("VoiceEnhancementSinkConfiguration", m_voiceEnhancementSinkConfiguration.Jsonize());
 
   }
 

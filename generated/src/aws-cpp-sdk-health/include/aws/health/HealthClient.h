@@ -263,6 +263,32 @@ namespace Health
         }
 
         /**
+         * <p>Returns a list of entity aggregates for your Organizations that are affected
+         * by each of the specified events.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregatesForOrganization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEntityAggregatesForOrganizationOutcome DescribeEntityAggregatesForOrganization(const Model::DescribeEntityAggregatesForOrganizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEntityAggregatesForOrganization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeEntityAggregatesForOrganizationRequestT = Model::DescribeEntityAggregatesForOrganizationRequest>
+        Model::DescribeEntityAggregatesForOrganizationOutcomeCallable DescribeEntityAggregatesForOrganizationCallable(const DescribeEntityAggregatesForOrganizationRequestT& request) const
+        {
+            return SubmitCallable(&HealthClient::DescribeEntityAggregatesForOrganization, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeEntityAggregatesForOrganization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeEntityAggregatesForOrganizationRequestT = Model::DescribeEntityAggregatesForOrganizationRequest>
+        void DescribeEntityAggregatesForOrganizationAsync(const DescribeEntityAggregatesForOrganizationRequestT& request, const DescribeEntityAggregatesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&HealthClient::DescribeEntityAggregatesForOrganization, request, handler, context);
+        }
+
+        /**
          * <p>Returns the number of events of each event type (issue, scheduled change, and
          * account notification). If no filter is specified, the counts of all events in
          * each category are returned.</p>  <p>This API operation uses pagination.

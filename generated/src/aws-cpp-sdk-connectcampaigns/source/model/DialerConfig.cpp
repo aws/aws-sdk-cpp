@@ -19,20 +19,29 @@ namespace Model
 {
 
 DialerConfig::DialerConfig() : 
+    m_progressiveDialerConfigHasBeenSet(false),
     m_predictiveDialerConfigHasBeenSet(false),
-    m_progressiveDialerConfigHasBeenSet(false)
+    m_agentlessDialerConfigHasBeenSet(false)
 {
 }
 
 DialerConfig::DialerConfig(JsonView jsonValue) : 
+    m_progressiveDialerConfigHasBeenSet(false),
     m_predictiveDialerConfigHasBeenSet(false),
-    m_progressiveDialerConfigHasBeenSet(false)
+    m_agentlessDialerConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DialerConfig& DialerConfig::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("progressiveDialerConfig"))
+  {
+    m_progressiveDialerConfig = jsonValue.GetObject("progressiveDialerConfig");
+
+    m_progressiveDialerConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("predictiveDialerConfig"))
   {
     m_predictiveDialerConfig = jsonValue.GetObject("predictiveDialerConfig");
@@ -40,11 +49,11 @@ DialerConfig& DialerConfig::operator =(JsonView jsonValue)
     m_predictiveDialerConfigHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("progressiveDialerConfig"))
+  if(jsonValue.ValueExists("agentlessDialerConfig"))
   {
-    m_progressiveDialerConfig = jsonValue.GetObject("progressiveDialerConfig");
+    m_agentlessDialerConfig = jsonValue.GetObject("agentlessDialerConfig");
 
-    m_progressiveDialerConfigHasBeenSet = true;
+    m_agentlessDialerConfigHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +63,21 @@ JsonValue DialerConfig::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_progressiveDialerConfigHasBeenSet)
+  {
+   payload.WithObject("progressiveDialerConfig", m_progressiveDialerConfig.Jsonize());
+
+  }
+
   if(m_predictiveDialerConfigHasBeenSet)
   {
    payload.WithObject("predictiveDialerConfig", m_predictiveDialerConfig.Jsonize());
 
   }
 
-  if(m_progressiveDialerConfigHasBeenSet)
+  if(m_agentlessDialerConfigHasBeenSet)
   {
-   payload.WithObject("progressiveDialerConfig", m_progressiveDialerConfig.Jsonize());
+   payload.WithObject("agentlessDialerConfig", m_agentlessDialerConfig.Jsonize());
 
   }
 

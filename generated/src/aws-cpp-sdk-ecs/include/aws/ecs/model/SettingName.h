@@ -22,7 +22,8 @@ namespace Model
     awsvpcTrunking,
     containerInsights,
     fargateFIPSMode,
-    tagResourceAuthorization
+    tagResourceAuthorization,
+    fargateTaskRetirementWaitPeriod
   };
 
 namespace SettingNameMapper

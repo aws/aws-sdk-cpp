@@ -37,50 +37,58 @@ namespace Model
 
 
     /**
-     * <p>Type of connection information required. This can be omitted if
-     * <code>ConnectParticipant</code> is <code>true</code>.</p>
+     * <p>Type of connection information required. If you need
+     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
+     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
      */
     inline const Aws::Vector<ConnectionType>& GetType() const{ return m_type; }
 
     /**
-     * <p>Type of connection information required. This can be omitted if
-     * <code>ConnectParticipant</code> is <code>true</code>.</p>
+     * <p>Type of connection information required. If you need
+     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
+     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Type of connection information required. This can be omitted if
-     * <code>ConnectParticipant</code> is <code>true</code>.</p>
+     * <p>Type of connection information required. If you need
+     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
+     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
      */
     inline void SetType(const Aws::Vector<ConnectionType>& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Type of connection information required. This can be omitted if
-     * <code>ConnectParticipant</code> is <code>true</code>.</p>
+     * <p>Type of connection information required. If you need
+     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
+     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
      */
     inline void SetType(Aws::Vector<ConnectionType>&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Type of connection information required. This can be omitted if
-     * <code>ConnectParticipant</code> is <code>true</code>.</p>
+     * <p>Type of connection information required. If you need
+     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
+     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
      */
     inline CreateParticipantConnectionRequest& WithType(const Aws::Vector<ConnectionType>& value) { SetType(value); return *this;}
 
     /**
-     * <p>Type of connection information required. This can be omitted if
-     * <code>ConnectParticipant</code> is <code>true</code>.</p>
+     * <p>Type of connection information required. If you need
+     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
+     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
      */
     inline CreateParticipantConnectionRequest& WithType(Aws::Vector<ConnectionType>&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>Type of connection information required. This can be omitted if
-     * <code>ConnectParticipant</code> is <code>true</code>.</p>
+     * <p>Type of connection information required. If you need
+     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
+     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
      */
     inline CreateParticipantConnectionRequest& AddType(const ConnectionType& value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
 
     /**
-     * <p>Type of connection information required. This can be omitted if
-     * <code>ConnectParticipant</code> is <code>true</code>.</p>
+     * <p>Type of connection information required. If you need
+     * <code>CONNECTION_CREDENTIALS</code> along with marking participant as connected,
+     * pass <code>CONNECTION_CREDENTIALS</code> in <code>Type</code>.</p>
      */
     inline CreateParticipantConnectionRequest& AddType(ConnectionType&& value) { m_typeHasBeenSet = true; m_type.push_back(std::move(value)); return *this; }
 

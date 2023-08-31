@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeErrors.h>
 #include <aws/sagemaker-runtime/model/ModelError.h>
+#include <aws/sagemaker-runtime/model/ModelStreamError.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -23,11 +24,19 @@ template<> AWS_SAGEMAKERRUNTIME_API ModelError SageMakerRuntimeError::GetModeled
   return ModelError(this->GetJsonPayload().View());
 }
 
+template<> AWS_SAGEMAKERRUNTIME_API ModelStreamError SageMakerRuntimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == SageMakerRuntimeErrors::MODEL_STREAM);
+  return ModelStreamError(this->GetJsonPayload().View());
+}
+
 namespace SageMakerRuntimeErrorMapper
 {
 
 static const int MODEL_HASH = HashingUtils::HashString("ModelError");
 static const int INTERNAL_DEPENDENCY_HASH = HashingUtils::HashString("InternalDependencyException");
+static const int INTERNAL_STREAM_FAILURE_HASH = HashingUtils::HashString("InternalStreamFailure");
+static const int MODEL_STREAM_HASH = HashingUtils::HashString("ModelStreamError");
 static const int MODEL_NOT_READY_HASH = HashingUtils::HashString("ModelNotReadyException");
 
 
@@ -42,6 +51,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_DEPENDENCY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::INTERNAL_DEPENDENCY), false);
+  }
+  else if (hashCode == INTERNAL_STREAM_FAILURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::INTERNAL_STREAM_FAILURE), false);
+  }
+  else if (hashCode == MODEL_STREAM_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::MODEL_STREAM), false);
   }
   else if (hashCode == MODEL_NOT_READY_HASH)
   {

@@ -19,43 +19,36 @@ namespace Model
 {
 
 CampaignSummary::CampaignSummary() : 
-    m_arnHasBeenSet(false),
-    m_connectInstanceIdHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_connectInstanceIdHasBeenSet(false)
 {
 }
 
 CampaignSummary::CampaignSummary(JsonView jsonValue) : 
-    m_arnHasBeenSet(false),
-    m_connectInstanceIdHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_connectInstanceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 CampaignSummary& CampaignSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-
-    m_arnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("connectInstanceId"))
-  {
-    m_connectInstanceId = jsonValue.GetString("connectInstanceId");
-
-    m_connectInstanceIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -65,6 +58,13 @@ CampaignSummary& CampaignSummary::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("connectInstanceId"))
+  {
+    m_connectInstanceId = jsonValue.GetString("connectInstanceId");
+
+    m_connectInstanceIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -72,27 +72,27 @@ JsonValue CampaignSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
-  }
-
-  if(m_connectInstanceIdHasBeenSet)
-  {
-   payload.WithString("connectInstanceId", m_connectInstanceId);
-
-  }
-
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
 
   }
 
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_connectInstanceIdHasBeenSet)
+  {
+   payload.WithString("connectInstanceId", m_connectInstanceId);
 
   }
 

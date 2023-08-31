@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/connectcampaigns/ConnectCampaignsRequest.h>
-#include <aws/connectcampaigns/model/DialerConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcampaigns/model/DialerConfig.h>
 #include <utility>
 
 namespace Aws
@@ -37,25 +37,6 @@ namespace Model
 
 
     
-    inline const DialerConfig& GetDialerConfig() const{ return m_dialerConfig; }
-
-    
-    inline bool DialerConfigHasBeenSet() const { return m_dialerConfigHasBeenSet; }
-
-    
-    inline void SetDialerConfig(const DialerConfig& value) { m_dialerConfigHasBeenSet = true; m_dialerConfig = value; }
-
-    
-    inline void SetDialerConfig(DialerConfig&& value) { m_dialerConfigHasBeenSet = true; m_dialerConfig = std::move(value); }
-
-    
-    inline UpdateCampaignDialerConfigRequest& WithDialerConfig(const DialerConfig& value) { SetDialerConfig(value); return *this;}
-
-    
-    inline UpdateCampaignDialerConfigRequest& WithDialerConfig(DialerConfig&& value) { SetDialerConfig(std::move(value)); return *this;}
-
-
-    
     inline const Aws::String& GetId() const{ return m_id; }
 
     
@@ -79,13 +60,32 @@ namespace Model
     
     inline UpdateCampaignDialerConfigRequest& WithId(const char* value) { SetId(value); return *this;}
 
-  private:
 
-    DialerConfig m_dialerConfig;
-    bool m_dialerConfigHasBeenSet = false;
+    
+    inline const DialerConfig& GetDialerConfig() const{ return m_dialerConfig; }
+
+    
+    inline bool DialerConfigHasBeenSet() const { return m_dialerConfigHasBeenSet; }
+
+    
+    inline void SetDialerConfig(const DialerConfig& value) { m_dialerConfigHasBeenSet = true; m_dialerConfig = value; }
+
+    
+    inline void SetDialerConfig(DialerConfig&& value) { m_dialerConfigHasBeenSet = true; m_dialerConfig = std::move(value); }
+
+    
+    inline UpdateCampaignDialerConfigRequest& WithDialerConfig(const DialerConfig& value) { SetDialerConfig(value); return *this;}
+
+    
+    inline UpdateCampaignDialerConfigRequest& WithDialerConfig(DialerConfig&& value) { SetDialerConfig(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    DialerConfig m_dialerConfig;
+    bool m_dialerConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -90,32 +90,38 @@ namespace Model
 
 
     /**
-     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
      */
     inline const ManagedScaling& GetManagedScaling() const{ return m_managedScaling; }
 
     /**
-     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
      */
     inline bool ManagedScalingHasBeenSet() const { return m_managedScalingHasBeenSet; }
 
     /**
-     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
      */
     inline void SetManagedScaling(const ManagedScaling& value) { m_managedScalingHasBeenSet = true; m_managedScaling = value; }
 
     /**
-     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
      */
     inline void SetManagedScaling(ManagedScaling&& value) { m_managedScalingHasBeenSet = true; m_managedScaling = std::move(value); }
 
     /**
-     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
      */
     inline AutoScalingGroupProvider& WithManagedScaling(const ManagedScaling& value) { SetManagedScaling(value); return *this;}
 
     /**
-     * <p>he managed scaling settings for the Auto Scaling group capacity provider.</p>
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
      */
     inline AutoScalingGroupProvider& WithManagedScaling(ManagedScaling&& value) { SetManagedScaling(std::move(value)); return *this;}
 
