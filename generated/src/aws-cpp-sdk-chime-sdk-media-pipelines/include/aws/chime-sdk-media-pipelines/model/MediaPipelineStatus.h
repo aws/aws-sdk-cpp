@@ -21,7 +21,8 @@ namespace Model
     Failed,
     Stopping,
     Stopped,
-    Paused
+    Paused,
+    NotStarted
   };
 
 namespace MediaPipelineStatusMapper

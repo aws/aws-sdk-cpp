@@ -22,6 +22,7 @@
 #include <aws/health/model/DescribeAffectedEntitiesResult.h>
 #include <aws/health/model/DescribeAffectedEntitiesForOrganizationResult.h>
 #include <aws/health/model/DescribeEntityAggregatesResult.h>
+#include <aws/health/model/DescribeEntityAggregatesForOrganizationResult.h>
 #include <aws/health/model/DescribeEventAggregatesResult.h>
 #include <aws/health/model/DescribeEventDetailsResult.h>
 #include <aws/health/model/DescribeEventDetailsForOrganizationResult.h>
@@ -74,6 +75,7 @@ namespace Aws
       class DescribeAffectedEntitiesRequest;
       class DescribeAffectedEntitiesForOrganizationRequest;
       class DescribeEntityAggregatesRequest;
+      class DescribeEntityAggregatesForOrganizationRequest;
       class DescribeEventAggregatesRequest;
       class DescribeEventDetailsRequest;
       class DescribeEventDetailsForOrganizationRequest;
@@ -90,6 +92,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAffectedEntitiesResult, HealthError> DescribeAffectedEntitiesOutcome;
       typedef Aws::Utils::Outcome<DescribeAffectedEntitiesForOrganizationResult, HealthError> DescribeAffectedEntitiesForOrganizationOutcome;
       typedef Aws::Utils::Outcome<DescribeEntityAggregatesResult, HealthError> DescribeEntityAggregatesOutcome;
+      typedef Aws::Utils::Outcome<DescribeEntityAggregatesForOrganizationResult, HealthError> DescribeEntityAggregatesForOrganizationOutcome;
       typedef Aws::Utils::Outcome<DescribeEventAggregatesResult, HealthError> DescribeEventAggregatesOutcome;
       typedef Aws::Utils::Outcome<DescribeEventDetailsResult, HealthError> DescribeEventDetailsOutcome;
       typedef Aws::Utils::Outcome<DescribeEventDetailsForOrganizationResult, HealthError> DescribeEventDetailsForOrganizationOutcome;
@@ -106,6 +109,7 @@ namespace Aws
       typedef std::future<DescribeAffectedEntitiesOutcome> DescribeAffectedEntitiesOutcomeCallable;
       typedef std::future<DescribeAffectedEntitiesForOrganizationOutcome> DescribeAffectedEntitiesForOrganizationOutcomeCallable;
       typedef std::future<DescribeEntityAggregatesOutcome> DescribeEntityAggregatesOutcomeCallable;
+      typedef std::future<DescribeEntityAggregatesForOrganizationOutcome> DescribeEntityAggregatesForOrganizationOutcomeCallable;
       typedef std::future<DescribeEventAggregatesOutcome> DescribeEventAggregatesOutcomeCallable;
       typedef std::future<DescribeEventDetailsOutcome> DescribeEventDetailsOutcomeCallable;
       typedef std::future<DescribeEventDetailsForOrganizationOutcome> DescribeEventDetailsForOrganizationOutcomeCallable;
@@ -125,6 +129,7 @@ namespace Aws
     typedef std::function<void(const HealthClient*, const Model::DescribeAffectedEntitiesRequest&, const Model::DescribeAffectedEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAffectedEntitiesResponseReceivedHandler;
     typedef std::function<void(const HealthClient*, const Model::DescribeAffectedEntitiesForOrganizationRequest&, const Model::DescribeAffectedEntitiesForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAffectedEntitiesForOrganizationResponseReceivedHandler;
     typedef std::function<void(const HealthClient*, const Model::DescribeEntityAggregatesRequest&, const Model::DescribeEntityAggregatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEntityAggregatesResponseReceivedHandler;
+    typedef std::function<void(const HealthClient*, const Model::DescribeEntityAggregatesForOrganizationRequest&, const Model::DescribeEntityAggregatesForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEntityAggregatesForOrganizationResponseReceivedHandler;
     typedef std::function<void(const HealthClient*, const Model::DescribeEventAggregatesRequest&, const Model::DescribeEventAggregatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventAggregatesResponseReceivedHandler;
     typedef std::function<void(const HealthClient*, const Model::DescribeEventDetailsRequest&, const Model::DescribeEventDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventDetailsResponseReceivedHandler;
     typedef std::function<void(const HealthClient*, const Model::DescribeEventDetailsForOrganizationRequest&, const Model::DescribeEventDetailsForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventDetailsForOrganizationResponseReceivedHandler;

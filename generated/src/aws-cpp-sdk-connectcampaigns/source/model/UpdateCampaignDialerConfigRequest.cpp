@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateCampaignDialerConfigRequest::UpdateCampaignDialerConfigRequest() : 
-    m_dialerConfigHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_dialerConfigHasBeenSet(false)
 {
 }
 

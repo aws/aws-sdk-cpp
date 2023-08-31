@@ -20,13 +20,17 @@ namespace Model
 
 PredictiveDialerConfig::PredictiveDialerConfig() : 
     m_bandwidthAllocation(0.0),
-    m_bandwidthAllocationHasBeenSet(false)
+    m_bandwidthAllocationHasBeenSet(false),
+    m_dialingCapacity(0.0),
+    m_dialingCapacityHasBeenSet(false)
 {
 }
 
 PredictiveDialerConfig::PredictiveDialerConfig(JsonView jsonValue) : 
     m_bandwidthAllocation(0.0),
-    m_bandwidthAllocationHasBeenSet(false)
+    m_bandwidthAllocationHasBeenSet(false),
+    m_dialingCapacity(0.0),
+    m_dialingCapacityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ PredictiveDialerConfig& PredictiveDialerConfig::operator =(JsonView jsonValue)
     m_bandwidthAllocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dialingCapacity"))
+  {
+    m_dialingCapacity = jsonValue.GetDouble("dialingCapacity");
+
+    m_dialingCapacityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,12 @@ JsonValue PredictiveDialerConfig::Jsonize() const
   if(m_bandwidthAllocationHasBeenSet)
   {
    payload.WithDouble("bandwidthAllocation", m_bandwidthAllocation);
+
+  }
+
+  if(m_dialingCapacityHasBeenSet)
+  {
+   payload.WithDouble("dialingCapacity", m_dialingCapacity);
 
   }
 

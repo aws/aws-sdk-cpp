@@ -6,15 +6,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/connectparticipant/ConnectParticipantErrors.h>
+#include <aws/connectparticipant/model/ResourceNotFoundException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ConnectParticipant;
+using namespace Aws::ConnectParticipant::Model;
 
 namespace Aws
 {
 namespace ConnectParticipant
 {
+template<> AWS_CONNECTPARTICIPANT_API ResourceNotFoundException ConnectParticipantError::GetModeledError()
+{
+  assert(this->GetErrorType() == ConnectParticipantErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
 namespace ConnectParticipantErrorMapper
 {
 

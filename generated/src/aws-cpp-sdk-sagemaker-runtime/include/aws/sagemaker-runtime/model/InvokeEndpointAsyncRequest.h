@@ -37,64 +37,64 @@ namespace Model
     /**
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * API.</p>
      */
     inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
 
     /**
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * API.</p>
      */
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
 
     /**
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * API.</p>
      */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
     /**
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * API.</p>
      */
     inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
 
     /**
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * API.</p>
      */
     inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
 
     /**
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * API.</p>
      */
     inline InvokeEndpointAsyncRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
 
     /**
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * API.</p>
      */
     inline InvokeEndpointAsyncRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the endpoint that you specified when you created the endpoint
      * using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
-     * <code>CreateEndpoint</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * API.</p>
      */
     inline InvokeEndpointAsyncRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 
@@ -141,42 +141,42 @@ namespace Model
 
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline const Aws::String& GetAccept() const{ return m_accept; }
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline void SetAccept(const Aws::String& value) { m_acceptHasBeenSet = true; m_accept = value; }
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline void SetAccept(const char* value) { m_acceptHasBeenSet = true; m_accept.assign(value); }
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline InvokeEndpointAsyncRequest& WithAccept(const Aws::String& value) { SetAccept(value); return *this;}
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline InvokeEndpointAsyncRequest& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
 
     /**
-     * <p>The desired MIME type of the inference in the response.</p>
+     * <p>The desired MIME type of the inference response from the model container.</p>
      */
     inline InvokeEndpointAsyncRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
 
@@ -194,7 +194,7 @@ namespace Model
      * attributes in the response. If your code does not set this value in the
      * response, an empty value is returned. For example, if a custom attribute
      * represents the trace ID, your model can prepend the custom attribute with
-     * <code>Trace ID</code>: in your post-processing function. </p> <p>This feature is
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
      * currently supported in the Amazon Web Services SDKs but not in the Amazon
      * SageMaker Python SDK. </p>
      */
@@ -213,7 +213,7 @@ namespace Model
      * attributes in the response. If your code does not set this value in the
      * response, an empty value is returned. For example, if a custom attribute
      * represents the trace ID, your model can prepend the custom attribute with
-     * <code>Trace ID</code>: in your post-processing function. </p> <p>This feature is
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
      * currently supported in the Amazon Web Services SDKs but not in the Amazon
      * SageMaker Python SDK. </p>
      */
@@ -232,7 +232,7 @@ namespace Model
      * attributes in the response. If your code does not set this value in the
      * response, an empty value is returned. For example, if a custom attribute
      * represents the trace ID, your model can prepend the custom attribute with
-     * <code>Trace ID</code>: in your post-processing function. </p> <p>This feature is
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
      * currently supported in the Amazon Web Services SDKs but not in the Amazon
      * SageMaker Python SDK. </p>
      */
@@ -251,7 +251,7 @@ namespace Model
      * attributes in the response. If your code does not set this value in the
      * response, an empty value is returned. For example, if a custom attribute
      * represents the trace ID, your model can prepend the custom attribute with
-     * <code>Trace ID</code>: in your post-processing function. </p> <p>This feature is
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
      * currently supported in the Amazon Web Services SDKs but not in the Amazon
      * SageMaker Python SDK. </p>
      */
@@ -270,7 +270,7 @@ namespace Model
      * attributes in the response. If your code does not set this value in the
      * response, an empty value is returned. For example, if a custom attribute
      * represents the trace ID, your model can prepend the custom attribute with
-     * <code>Trace ID</code>: in your post-processing function. </p> <p>This feature is
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
      * currently supported in the Amazon Web Services SDKs but not in the Amazon
      * SageMaker Python SDK. </p>
      */
@@ -289,7 +289,7 @@ namespace Model
      * attributes in the response. If your code does not set this value in the
      * response, an empty value is returned. For example, if a custom attribute
      * represents the trace ID, your model can prepend the custom attribute with
-     * <code>Trace ID</code>: in your post-processing function. </p> <p>This feature is
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
      * currently supported in the Amazon Web Services SDKs but not in the Amazon
      * SageMaker Python SDK. </p>
      */
@@ -308,7 +308,7 @@ namespace Model
      * attributes in the response. If your code does not set this value in the
      * response, an empty value is returned. For example, if a custom attribute
      * represents the trace ID, your model can prepend the custom attribute with
-     * <code>Trace ID</code>: in your post-processing function. </p> <p>This feature is
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
      * currently supported in the Amazon Web Services SDKs but not in the Amazon
      * SageMaker Python SDK. </p>
      */
@@ -327,7 +327,7 @@ namespace Model
      * attributes in the response. If your code does not set this value in the
      * response, an empty value is returned. For example, if a custom attribute
      * represents the trace ID, your model can prepend the custom attribute with
-     * <code>Trace ID</code>: in your post-processing function. </p> <p>This feature is
+     * <code>Trace ID:</code> in your post-processing function. </p> <p>This feature is
      * currently supported in the Amazon Web Services SDKs but not in the Amazon
      * SageMaker Python SDK. </p>
      */

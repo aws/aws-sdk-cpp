@@ -41,6 +41,31 @@ namespace Model
 
 
     
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+
+    
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    
+    inline Campaign& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    
+    inline Campaign& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    
+    inline Campaign& WithId(const char* value) { SetId(value); return *this;}
+
+
+    
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     
@@ -63,6 +88,31 @@ namespace Model
 
     
     inline Campaign& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    
+    inline Campaign& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline Campaign& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    
+    inline Campaign& WithName(const char* value) { SetName(value); return *this;}
 
 
     
@@ -107,56 +157,6 @@ namespace Model
 
     
     inline Campaign& WithDialerConfig(DialerConfig&& value) { SetDialerConfig(std::move(value)); return *this;}
-
-
-    
-    inline const Aws::String& GetId() const{ return m_id; }
-
-    
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    
-    inline Campaign& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
-    inline Campaign& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    
-    inline Campaign& WithId(const char* value) { SetId(value); return *this;}
-
-
-    
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    
-    inline Campaign& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    
-    inline Campaign& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    
-    inline Campaign& WithName(const char* value) { SetName(value); return *this;}
 
 
     
@@ -219,20 +219,20 @@ namespace Model
 
   private:
 
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_connectInstanceId;
     bool m_connectInstanceIdHasBeenSet = false;
 
     DialerConfig m_dialerConfig;
     bool m_dialerConfigHasBeenSet = false;
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
 
     OutboundCallConfig m_outboundCallConfig;
     bool m_outboundCallConfigHasBeenSet = false;

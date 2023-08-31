@@ -23,6 +23,7 @@ namespace Aws
         static const int AGENT_HASH = HashingUtils::HashString("AGENT");
         static const int CUSTOMER_HASH = HashingUtils::HashString("CUSTOMER");
         static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
+        static const int CUSTOM_BOT_HASH = HashingUtils::HashString("CUSTOM_BOT");
 
 
         ParticipantRole GetParticipantRoleForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == SYSTEM_HASH)
           {
             return ParticipantRole::SYSTEM;
+          }
+          else if (hashCode == CUSTOM_BOT_HASH)
+          {
+            return ParticipantRole::CUSTOM_BOT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "CUSTOMER";
           case ParticipantRole::SYSTEM:
             return "SYSTEM";
+          case ParticipantRole::CUSTOM_BOT:
+            return "CUSTOM_BOT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
