@@ -375,38 +375,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration settings for the
-     * <code>VoiceEnhancementSinkConfiguration</code> element.</p>
+     * <p>The configuration settings for voice enhancement sink in a media insights
+     * pipeline configuration element.</p>
      */
     inline const VoiceEnhancementSinkConfiguration& GetVoiceEnhancementSinkConfiguration() const{ return m_voiceEnhancementSinkConfiguration; }
 
     /**
-     * <p>The configuration settings for the
-     * <code>VoiceEnhancementSinkConfiguration</code> element.</p>
+     * <p>The configuration settings for voice enhancement sink in a media insights
+     * pipeline configuration element.</p>
      */
     inline bool VoiceEnhancementSinkConfigurationHasBeenSet() const { return m_voiceEnhancementSinkConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration settings for the
-     * <code>VoiceEnhancementSinkConfiguration</code> element.</p>
+     * <p>The configuration settings for voice enhancement sink in a media insights
+     * pipeline configuration element.</p>
      */
     inline void SetVoiceEnhancementSinkConfiguration(const VoiceEnhancementSinkConfiguration& value) { m_voiceEnhancementSinkConfigurationHasBeenSet = true; m_voiceEnhancementSinkConfiguration = value; }
 
     /**
-     * <p>The configuration settings for the
-     * <code>VoiceEnhancementSinkConfiguration</code> element.</p>
+     * <p>The configuration settings for voice enhancement sink in a media insights
+     * pipeline configuration element.</p>
      */
     inline void SetVoiceEnhancementSinkConfiguration(VoiceEnhancementSinkConfiguration&& value) { m_voiceEnhancementSinkConfigurationHasBeenSet = true; m_voiceEnhancementSinkConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration settings for the
-     * <code>VoiceEnhancementSinkConfiguration</code> element.</p>
+     * <p>The configuration settings for voice enhancement sink in a media insights
+     * pipeline configuration element.</p>
      */
     inline MediaInsightsPipelineConfigurationElement& WithVoiceEnhancementSinkConfiguration(const VoiceEnhancementSinkConfiguration& value) { SetVoiceEnhancementSinkConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration settings for the
-     * <code>VoiceEnhancementSinkConfiguration</code> element.</p>
+     * <p>The configuration settings for voice enhancement sink in a media insights
+     * pipeline configuration element.</p>
      */
     inline MediaInsightsPipelineConfigurationElement& WithVoiceEnhancementSinkConfiguration(VoiceEnhancementSinkConfiguration&& value) { SetVoiceEnhancementSinkConfiguration(std::move(value)); return *this;}
 

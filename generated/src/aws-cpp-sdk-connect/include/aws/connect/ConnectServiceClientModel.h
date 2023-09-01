@@ -43,12 +43,16 @@
 #include <aws/connect/model/CreateUseCaseResult.h>
 #include <aws/connect/model/CreateUserResult.h>
 #include <aws/connect/model/CreateUserHierarchyGroupResult.h>
+#include <aws/connect/model/CreateViewResult.h>
+#include <aws/connect/model/CreateViewVersionResult.h>
 #include <aws/connect/model/CreateVocabularyResult.h>
 #include <aws/connect/model/DeactivateEvaluationFormResult.h>
 #include <aws/connect/model/DeleteContactFlowResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleResult.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
 #include <aws/connect/model/DeleteTrafficDistributionGroupResult.h>
+#include <aws/connect/model/DeleteViewResult.h>
+#include <aws/connect/model/DeleteViewVersionResult.h>
 #include <aws/connect/model/DeleteVocabularyResult.h>
 #include <aws/connect/model/DescribeAgentStatusResult.h>
 #include <aws/connect/model/DescribeContactResult.h>
@@ -71,6 +75,7 @@
 #include <aws/connect/model/DescribeUserResult.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupResult.h>
 #include <aws/connect/model/DescribeUserHierarchyStructureResult.h>
+#include <aws/connect/model/DescribeViewResult.h>
 #include <aws/connect/model/DescribeVocabularyResult.h>
 #include <aws/connect/model/DisassociateTrafficDistributionGroupUserResult.h>
 #include <aws/connect/model/DismissUserContactResult.h>
@@ -119,6 +124,8 @@
 #include <aws/connect/model/ListUseCasesResult.h>
 #include <aws/connect/model/ListUserHierarchyGroupsResult.h>
 #include <aws/connect/model/ListUsersResult.h>
+#include <aws/connect/model/ListViewVersionsResult.h>
+#include <aws/connect/model/ListViewsResult.h>
 #include <aws/connect/model/MonitorContactResult.h>
 #include <aws/connect/model/PutUserStatusResult.h>
 #include <aws/connect/model/ReplicateInstanceResult.h>
@@ -160,6 +167,8 @@
 #include <aws/connect/model/UpdatePromptResult.h>
 #include <aws/connect/model/UpdateTaskTemplateResult.h>
 #include <aws/connect/model/UpdateTrafficDistributionResult.h>
+#include <aws/connect/model/UpdateViewContentResult.h>
+#include <aws/connect/model/UpdateViewMetadataResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in ConnectClient header */
 
@@ -233,6 +242,8 @@ namespace Aws
       class CreateUseCaseRequest;
       class CreateUserRequest;
       class CreateUserHierarchyGroupRequest;
+      class CreateViewRequest;
+      class CreateViewVersionRequest;
       class CreateVocabularyRequest;
       class DeactivateEvaluationFormRequest;
       class DeleteContactEvaluationRequest;
@@ -253,6 +264,8 @@ namespace Aws
       class DeleteUseCaseRequest;
       class DeleteUserRequest;
       class DeleteUserHierarchyGroupRequest;
+      class DeleteViewRequest;
+      class DeleteViewVersionRequest;
       class DeleteVocabularyRequest;
       class DescribeAgentStatusRequest;
       class DescribeContactRequest;
@@ -275,6 +288,7 @@ namespace Aws
       class DescribeUserRequest;
       class DescribeUserHierarchyGroupRequest;
       class DescribeUserHierarchyStructureRequest;
+      class DescribeViewRequest;
       class DescribeVocabularyRequest;
       class DisassociateApprovedOriginRequest;
       class DisassociateBotRequest;
@@ -332,6 +346,8 @@ namespace Aws
       class ListUseCasesRequest;
       class ListUserHierarchyGroupsRequest;
       class ListUsersRequest;
+      class ListViewVersionsRequest;
+      class ListViewsRequest;
       class MonitorContactRequest;
       class PutUserStatusRequest;
       class ReleasePhoneNumberRequest;
@@ -401,6 +417,8 @@ namespace Aws
       class UpdateUserPhoneConfigRequest;
       class UpdateUserRoutingProfileRequest;
       class UpdateUserSecurityProfilesRequest;
+      class UpdateViewContentRequest;
+      class UpdateViewMetadataRequest;
       /* End of service model forward declarations required in ConnectClient header */
 
       /* Service model Outcome class definitions */
@@ -436,6 +454,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateUseCaseResult, ConnectError> CreateUseCaseOutcome;
       typedef Aws::Utils::Outcome<CreateUserResult, ConnectError> CreateUserOutcome;
       typedef Aws::Utils::Outcome<CreateUserHierarchyGroupResult, ConnectError> CreateUserHierarchyGroupOutcome;
+      typedef Aws::Utils::Outcome<CreateViewResult, ConnectError> CreateViewOutcome;
+      typedef Aws::Utils::Outcome<CreateViewVersionResult, ConnectError> CreateViewVersionOutcome;
       typedef Aws::Utils::Outcome<CreateVocabularyResult, ConnectError> CreateVocabularyOutcome;
       typedef Aws::Utils::Outcome<DeactivateEvaluationFormResult, ConnectError> DeactivateEvaluationFormOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteContactEvaluationOutcome;
@@ -456,6 +476,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUseCaseOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserHierarchyGroupOutcome;
+      typedef Aws::Utils::Outcome<DeleteViewResult, ConnectError> DeleteViewOutcome;
+      typedef Aws::Utils::Outcome<DeleteViewVersionResult, ConnectError> DeleteViewVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteVocabularyResult, ConnectError> DeleteVocabularyOutcome;
       typedef Aws::Utils::Outcome<DescribeAgentStatusResult, ConnectError> DescribeAgentStatusOutcome;
       typedef Aws::Utils::Outcome<DescribeContactResult, ConnectError> DescribeContactOutcome;
@@ -478,6 +500,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeUserResult, ConnectError> DescribeUserOutcome;
       typedef Aws::Utils::Outcome<DescribeUserHierarchyGroupResult, ConnectError> DescribeUserHierarchyGroupOutcome;
       typedef Aws::Utils::Outcome<DescribeUserHierarchyStructureResult, ConnectError> DescribeUserHierarchyStructureOutcome;
+      typedef Aws::Utils::Outcome<DescribeViewResult, ConnectError> DescribeViewOutcome;
       typedef Aws::Utils::Outcome<DescribeVocabularyResult, ConnectError> DescribeVocabularyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateApprovedOriginOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DisassociateBotOutcome;
@@ -535,6 +558,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListUseCasesResult, ConnectError> ListUseCasesOutcome;
       typedef Aws::Utils::Outcome<ListUserHierarchyGroupsResult, ConnectError> ListUserHierarchyGroupsOutcome;
       typedef Aws::Utils::Outcome<ListUsersResult, ConnectError> ListUsersOutcome;
+      typedef Aws::Utils::Outcome<ListViewVersionsResult, ConnectError> ListViewVersionsOutcome;
+      typedef Aws::Utils::Outcome<ListViewsResult, ConnectError> ListViewsOutcome;
       typedef Aws::Utils::Outcome<MonitorContactResult, ConnectError> MonitorContactOutcome;
       typedef Aws::Utils::Outcome<PutUserStatusResult, ConnectError> PutUserStatusOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> ReleasePhoneNumberOutcome;
@@ -604,6 +629,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserPhoneConfigOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserRoutingProfileOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserSecurityProfilesOutcome;
+      typedef Aws::Utils::Outcome<UpdateViewContentResult, ConnectError> UpdateViewContentOutcome;
+      typedef Aws::Utils::Outcome<UpdateViewMetadataResult, ConnectError> UpdateViewMetadataOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -639,6 +666,8 @@ namespace Aws
       typedef std::future<CreateUseCaseOutcome> CreateUseCaseOutcomeCallable;
       typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
       typedef std::future<CreateUserHierarchyGroupOutcome> CreateUserHierarchyGroupOutcomeCallable;
+      typedef std::future<CreateViewOutcome> CreateViewOutcomeCallable;
+      typedef std::future<CreateViewVersionOutcome> CreateViewVersionOutcomeCallable;
       typedef std::future<CreateVocabularyOutcome> CreateVocabularyOutcomeCallable;
       typedef std::future<DeactivateEvaluationFormOutcome> DeactivateEvaluationFormOutcomeCallable;
       typedef std::future<DeleteContactEvaluationOutcome> DeleteContactEvaluationOutcomeCallable;
@@ -659,6 +688,8 @@ namespace Aws
       typedef std::future<DeleteUseCaseOutcome> DeleteUseCaseOutcomeCallable;
       typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
       typedef std::future<DeleteUserHierarchyGroupOutcome> DeleteUserHierarchyGroupOutcomeCallable;
+      typedef std::future<DeleteViewOutcome> DeleteViewOutcomeCallable;
+      typedef std::future<DeleteViewVersionOutcome> DeleteViewVersionOutcomeCallable;
       typedef std::future<DeleteVocabularyOutcome> DeleteVocabularyOutcomeCallable;
       typedef std::future<DescribeAgentStatusOutcome> DescribeAgentStatusOutcomeCallable;
       typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
@@ -681,6 +712,7 @@ namespace Aws
       typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
       typedef std::future<DescribeUserHierarchyGroupOutcome> DescribeUserHierarchyGroupOutcomeCallable;
       typedef std::future<DescribeUserHierarchyStructureOutcome> DescribeUserHierarchyStructureOutcomeCallable;
+      typedef std::future<DescribeViewOutcome> DescribeViewOutcomeCallable;
       typedef std::future<DescribeVocabularyOutcome> DescribeVocabularyOutcomeCallable;
       typedef std::future<DisassociateApprovedOriginOutcome> DisassociateApprovedOriginOutcomeCallable;
       typedef std::future<DisassociateBotOutcome> DisassociateBotOutcomeCallable;
@@ -738,6 +770,8 @@ namespace Aws
       typedef std::future<ListUseCasesOutcome> ListUseCasesOutcomeCallable;
       typedef std::future<ListUserHierarchyGroupsOutcome> ListUserHierarchyGroupsOutcomeCallable;
       typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+      typedef std::future<ListViewVersionsOutcome> ListViewVersionsOutcomeCallable;
+      typedef std::future<ListViewsOutcome> ListViewsOutcomeCallable;
       typedef std::future<MonitorContactOutcome> MonitorContactOutcomeCallable;
       typedef std::future<PutUserStatusOutcome> PutUserStatusOutcomeCallable;
       typedef std::future<ReleasePhoneNumberOutcome> ReleasePhoneNumberOutcomeCallable;
@@ -807,6 +841,8 @@ namespace Aws
       typedef std::future<UpdateUserPhoneConfigOutcome> UpdateUserPhoneConfigOutcomeCallable;
       typedef std::future<UpdateUserRoutingProfileOutcome> UpdateUserRoutingProfileOutcomeCallable;
       typedef std::future<UpdateUserSecurityProfilesOutcome> UpdateUserSecurityProfilesOutcomeCallable;
+      typedef std::future<UpdateViewContentOutcome> UpdateViewContentOutcomeCallable;
+      typedef std::future<UpdateViewMetadataOutcome> UpdateViewMetadataOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -845,6 +881,8 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::CreateUseCaseRequest&, const Model::CreateUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserHierarchyGroupRequest&, const Model::CreateUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserHierarchyGroupResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreateViewRequest&, const Model::CreateViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateViewResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreateViewVersionRequest&, const Model::CreateViewVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateViewVersionResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateVocabularyRequest&, const Model::CreateVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVocabularyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeactivateEvaluationFormRequest&, const Model::DeactivateEvaluationFormOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateEvaluationFormResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteContactEvaluationRequest&, const Model::DeleteContactEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactEvaluationResponseReceivedHandler;
@@ -865,6 +903,8 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::DeleteUseCaseRequest&, const Model::DeleteUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserHierarchyGroupRequest&, const Model::DeleteUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserHierarchyGroupResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteViewRequest&, const Model::DeleteViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteViewResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteViewVersionRequest&, const Model::DeleteViewVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteViewVersionResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteVocabularyRequest&, const Model::DeleteVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVocabularyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeAgentStatusRequest&, const Model::DescribeAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeContactRequest&, const Model::DescribeContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContactResponseReceivedHandler;
@@ -887,6 +927,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyGroupRequest&, const Model::DescribeUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyGroupResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyStructureRequest&, const Model::DescribeUserHierarchyStructureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyStructureResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DescribeViewRequest&, const Model::DescribeViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeViewResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeVocabularyRequest&, const Model::DescribeVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVocabularyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateApprovedOriginRequest&, const Model::DisassociateApprovedOriginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateApprovedOriginResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DisassociateBotRequest&, const Model::DisassociateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateBotResponseReceivedHandler;
@@ -944,6 +985,8 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::ListUseCasesRequest&, const Model::ListUseCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUseCasesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUserHierarchyGroupsRequest&, const Model::ListUserHierarchyGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserHierarchyGroupsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListViewVersionsRequest&, const Model::ListViewVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListViewVersionsResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListViewsRequest&, const Model::ListViewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListViewsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::MonitorContactRequest&, const Model::MonitorContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::PutUserStatusRequest&, const Model::PutUserStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutUserStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ReleasePhoneNumberRequest&, const Model::ReleasePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleasePhoneNumberResponseReceivedHandler;
@@ -1013,6 +1056,8 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserPhoneConfigRequest&, const Model::UpdateUserPhoneConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPhoneConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserRoutingProfileRequest&, const Model::UpdateUserRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserRoutingProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserSecurityProfilesRequest&, const Model::UpdateUserSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserSecurityProfilesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateViewContentRequest&, const Model::UpdateViewContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateViewContentResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateViewMetadataRequest&, const Model::UpdateViewMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateViewMetadataResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Connect
 } // namespace Aws
