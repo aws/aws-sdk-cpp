@@ -87,7 +87,30 @@ namespace Aws
         static const int Ayanda_HASH = HashingUtils::HashString("Ayanda");
         static const int Arlet_HASH = HashingUtils::HashString("Arlet");
         static const int Hannah_HASH = HashingUtils::HashString("Hannah");
-
+        static const int Adriano_HASH = HashingUtils::HashString("Adriano");
+        static const int Andres_HASH = HashingUtils::HashString("Andres");
+        static const int Arthur_HASH = HashingUtils::HashString("Arthur");
+        static const int Daniel_HASH = HashingUtils::HashString("Daniel");
+        static const int Elin_HASH = HashingUtils::HashString("Elin");
+        static const int Hala_HASH = HashingUtils::HashString("Hala");
+        static const int Hiujin_HASH = HashingUtils::HashString("Hiujin");
+        static const int Ida_HASH = HashingUtils::HashString("Ida");
+        static const int Kajal_HASH = HashingUtils::HashString("Kajal");
+        static const int Kazuha_HASH = HashingUtils::HashString("Kazuha");
+        static const int Laura_HASH = HashingUtils::HashString("Laura");
+        static const int Liam_HASH = HashingUtils::HashString("Liam");
+        static const int Lisa_HASH = HashingUtils::HashString("Lisa");
+        static const int Niamh_HASH = HashingUtils::HashString("Niamh");
+        static const int Ola_HASH = HashingUtils::HashString("Ola");
+        static const int Pedro_HASH = HashingUtils::HashString("Pedro");
+        static const int Remi_HASH = HashingUtils::HashString("Remi");
+        static const int Ruth_HASH = HashingUtils::HashString("Ruth");
+        static const int Sergio_HASH = HashingUtils::HashString("Sergio");
+        static const int Sofie_HASH = HashingUtils::HashString("Sofie");
+        static const int Stephen_HASH = HashingUtils::HashString("Stephen");
+        static const int Suvi_HASH = HashingUtils::HashString("Suvi");
+        static const int Thiago_HASH = HashingUtils::HashString("Thiago");
+        static const int Tomoko_HASH = HashingUtils::HashString("Tomoko");
 
         VoiceId GetVoiceIdForName(const Aws::String& name)
         {
@@ -360,6 +383,102 @@ namespace Aws
           {
             return VoiceId::Hannah;
           }
+          else if (hashCode == Adriano_HASH)
+          {
+            return VoiceId::Adriano;
+          }
+          else if (hashCode == Andres_HASH)
+          {
+            return VoiceId::Andres;
+          }
+          else if (hashCode == Arthur_HASH)
+          {
+            return VoiceId::Arthur;
+          }
+          else if (hashCode == Daniel_HASH)
+          {
+            return VoiceId::Daniel;
+          }
+          else if (hashCode == Elin_HASH)
+          {
+            return VoiceId::Elin;
+          }
+          else if (hashCode == Hala_HASH)
+          {
+            return VoiceId::Hala;
+          }
+          else if (hashCode == Hiujin_HASH)
+          {
+            return VoiceId::Hiujin;
+          }
+          else if (hashCode == Ida_HASH)
+          {
+            return VoiceId::Ida;
+          }
+          else if (hashCode == Kajal_HASH)
+          {
+            return VoiceId::Kajal;
+          }
+          else if (hashCode == Kazuha_HASH)
+          {
+            return VoiceId::Kazuha;
+          }
+          else if (hashCode == Laura_HASH)
+          {
+            return VoiceId::Laura;
+          }
+          else if (hashCode == Liam_HASH)
+          {
+            return VoiceId::Liam;
+          }
+          else if (hashCode == Lisa_HASH)
+          {
+            return VoiceId::Lisa;
+          }
+          else if (hashCode == Niamh_HASH)
+          {
+            return VoiceId::Niamh;
+          }
+          else if (hashCode == Ola_HASH)
+          {
+            return VoiceId::Ola;
+          }
+          else if (hashCode == Pedro_HASH)
+          {
+            return VoiceId::Pedro;
+          }
+          else if (hashCode == Remi_HASH)
+          {
+            return VoiceId::Remi;
+          }
+          else if (hashCode == Ruth_HASH)
+          {
+            return VoiceId::Ruth;
+          }
+          else if (hashCode == Sergio_HASH)
+          {
+            return VoiceId::Sergio;
+          }
+          else if (hashCode == Sofie_HASH)
+          {
+            return VoiceId::Sofie;
+          }
+          else if (hashCode == Stephen_HASH)
+          {
+            return VoiceId::Stephen;
+          }
+          else if (hashCode == Suvi_HASH)
+          {
+            return VoiceId::Suvi;
+          }
+          else if (hashCode == Thiago_HASH)
+          {
+            return VoiceId::Thiago;
+          }
+          else if (hashCode == Tomoko_HASH)
+          {
+            return VoiceId::Tomoko;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -508,6 +627,54 @@ namespace Aws
             return "Arlet";
           case VoiceId::Hannah:
             return "Hannah";
+          case VoiceId::Adriano:
+            return "Adriano";
+          case VoiceId::Andres:
+            return "Andres";
+          case VoiceId::Arthur:
+            return "Arthur";
+          case VoiceId::Daniel:
+            return "Daniel";
+          case VoiceId::Elin:
+            return "Elin";
+          case VoiceId::Hala:
+            return "Hala";
+          case VoiceId::Hiujin:
+            return "Hiujin";
+          case VoiceId::Ida:
+            return "Ida";
+          case VoiceId::Kajal:
+            return "Kajal";
+          case VoiceId::Kazuha:
+            return "Kazuha";
+          case VoiceId::Laura:
+            return "Laura";
+          case VoiceId::Liam:
+            return "Liam";
+          case VoiceId::Lisa:
+            return "Lisa";
+          case VoiceId::Niamh:
+            return "Niamh";
+          case VoiceId::Ola:
+            return "Ola";
+          case VoiceId::Pedro:
+            return "Pedro";
+          case VoiceId::Remi:
+            return "Remi";
+          case VoiceId::Ruth:
+            return "Ruth";
+          case VoiceId::Sergio:
+            return "Sergio";
+          case VoiceId::Sofie:
+            return "Sofie";
+          case VoiceId::Stephen:
+            return "Stephen";
+          case VoiceId::Suvi:
+            return "Suvi";
+          case VoiceId::Thiago:
+            return "Thiago";
+          case VoiceId::Tomoko:
+            return "Tomoko";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
