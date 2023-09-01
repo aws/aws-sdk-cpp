@@ -26,10 +26,14 @@
 #include <aws/chime-sdk-media-pipelines/model/GetMediaCapturePipelineResult.h>
 #include <aws/chime-sdk-media-pipelines/model/GetMediaInsightsPipelineConfigurationResult.h>
 #include <aws/chime-sdk-media-pipelines/model/GetMediaPipelineResult.h>
+#include <aws/chime-sdk-media-pipelines/model/GetSpeakerSearchTaskResult.h>
+#include <aws/chime-sdk-media-pipelines/model/GetVoiceToneAnalysisTaskResult.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaCapturePipelinesResult.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaInsightsPipelineConfigurationsResult.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaPipelinesResult.h>
 #include <aws/chime-sdk-media-pipelines/model/ListTagsForResourceResult.h>
+#include <aws/chime-sdk-media-pipelines/model/StartSpeakerSearchTaskResult.h>
+#include <aws/chime-sdk-media-pipelines/model/StartVoiceToneAnalysisTaskResult.h>
 #include <aws/chime-sdk-media-pipelines/model/TagResourceResult.h>
 #include <aws/chime-sdk-media-pipelines/model/UntagResourceResult.h>
 #include <aws/chime-sdk-media-pipelines/model/UpdateMediaInsightsPipelineConfigurationResult.h>
@@ -85,10 +89,16 @@ namespace Aws
       class GetMediaCapturePipelineRequest;
       class GetMediaInsightsPipelineConfigurationRequest;
       class GetMediaPipelineRequest;
+      class GetSpeakerSearchTaskRequest;
+      class GetVoiceToneAnalysisTaskRequest;
       class ListMediaCapturePipelinesRequest;
       class ListMediaInsightsPipelineConfigurationsRequest;
       class ListMediaPipelinesRequest;
       class ListTagsForResourceRequest;
+      class StartSpeakerSearchTaskRequest;
+      class StartVoiceToneAnalysisTaskRequest;
+      class StopSpeakerSearchTaskRequest;
+      class StopVoiceToneAnalysisTaskRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateMediaInsightsPipelineConfigurationRequest;
@@ -107,10 +117,16 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetMediaCapturePipelineResult, ChimeSDKMediaPipelinesError> GetMediaCapturePipelineOutcome;
       typedef Aws::Utils::Outcome<GetMediaInsightsPipelineConfigurationResult, ChimeSDKMediaPipelinesError> GetMediaInsightsPipelineConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetMediaPipelineResult, ChimeSDKMediaPipelinesError> GetMediaPipelineOutcome;
+      typedef Aws::Utils::Outcome<GetSpeakerSearchTaskResult, ChimeSDKMediaPipelinesError> GetSpeakerSearchTaskOutcome;
+      typedef Aws::Utils::Outcome<GetVoiceToneAnalysisTaskResult, ChimeSDKMediaPipelinesError> GetVoiceToneAnalysisTaskOutcome;
       typedef Aws::Utils::Outcome<ListMediaCapturePipelinesResult, ChimeSDKMediaPipelinesError> ListMediaCapturePipelinesOutcome;
       typedef Aws::Utils::Outcome<ListMediaInsightsPipelineConfigurationsResult, ChimeSDKMediaPipelinesError> ListMediaInsightsPipelineConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListMediaPipelinesResult, ChimeSDKMediaPipelinesError> ListMediaPipelinesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ChimeSDKMediaPipelinesError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<StartSpeakerSearchTaskResult, ChimeSDKMediaPipelinesError> StartSpeakerSearchTaskOutcome;
+      typedef Aws::Utils::Outcome<StartVoiceToneAnalysisTaskResult, ChimeSDKMediaPipelinesError> StartVoiceToneAnalysisTaskOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMediaPipelinesError> StopSpeakerSearchTaskOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMediaPipelinesError> StopVoiceToneAnalysisTaskOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ChimeSDKMediaPipelinesError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ChimeSDKMediaPipelinesError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateMediaInsightsPipelineConfigurationResult, ChimeSDKMediaPipelinesError> UpdateMediaInsightsPipelineConfigurationOutcome;
@@ -129,10 +145,16 @@ namespace Aws
       typedef std::future<GetMediaCapturePipelineOutcome> GetMediaCapturePipelineOutcomeCallable;
       typedef std::future<GetMediaInsightsPipelineConfigurationOutcome> GetMediaInsightsPipelineConfigurationOutcomeCallable;
       typedef std::future<GetMediaPipelineOutcome> GetMediaPipelineOutcomeCallable;
+      typedef std::future<GetSpeakerSearchTaskOutcome> GetSpeakerSearchTaskOutcomeCallable;
+      typedef std::future<GetVoiceToneAnalysisTaskOutcome> GetVoiceToneAnalysisTaskOutcomeCallable;
       typedef std::future<ListMediaCapturePipelinesOutcome> ListMediaCapturePipelinesOutcomeCallable;
       typedef std::future<ListMediaInsightsPipelineConfigurationsOutcome> ListMediaInsightsPipelineConfigurationsOutcomeCallable;
       typedef std::future<ListMediaPipelinesOutcome> ListMediaPipelinesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<StartSpeakerSearchTaskOutcome> StartSpeakerSearchTaskOutcomeCallable;
+      typedef std::future<StartVoiceToneAnalysisTaskOutcome> StartVoiceToneAnalysisTaskOutcomeCallable;
+      typedef std::future<StopSpeakerSearchTaskOutcome> StopSpeakerSearchTaskOutcomeCallable;
+      typedef std::future<StopVoiceToneAnalysisTaskOutcome> StopVoiceToneAnalysisTaskOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateMediaInsightsPipelineConfigurationOutcome> UpdateMediaInsightsPipelineConfigurationOutcomeCallable;
@@ -154,10 +176,16 @@ namespace Aws
     typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::GetMediaCapturePipelineRequest&, const Model::GetMediaCapturePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaCapturePipelineResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::GetMediaInsightsPipelineConfigurationRequest&, const Model::GetMediaInsightsPipelineConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaInsightsPipelineConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::GetMediaPipelineRequest&, const Model::GetMediaPipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaPipelineResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::GetSpeakerSearchTaskRequest&, const Model::GetSpeakerSearchTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSpeakerSearchTaskResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::GetVoiceToneAnalysisTaskRequest&, const Model::GetVoiceToneAnalysisTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceToneAnalysisTaskResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::ListMediaCapturePipelinesRequest&, const Model::ListMediaCapturePipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMediaCapturePipelinesResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::ListMediaInsightsPipelineConfigurationsRequest&, const Model::ListMediaInsightsPipelineConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMediaInsightsPipelineConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::ListMediaPipelinesRequest&, const Model::ListMediaPipelinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMediaPipelinesResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::StartSpeakerSearchTaskRequest&, const Model::StartSpeakerSearchTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSpeakerSearchTaskResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::StartVoiceToneAnalysisTaskRequest&, const Model::StartVoiceToneAnalysisTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartVoiceToneAnalysisTaskResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::StopSpeakerSearchTaskRequest&, const Model::StopSpeakerSearchTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSpeakerSearchTaskResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::StopVoiceToneAnalysisTaskRequest&, const Model::StopVoiceToneAnalysisTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopVoiceToneAnalysisTaskResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMediaPipelinesClient*, const Model::UpdateMediaInsightsPipelineConfigurationRequest&, const Model::UpdateMediaInsightsPipelineConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMediaInsightsPipelineConfigurationResponseReceivedHandler;
