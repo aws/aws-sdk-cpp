@@ -774,7 +774,7 @@ void AWSClient::AppendHeaderValueToRequest(const std::shared_ptr<Aws::Http::Http
 void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const Aws::AmazonWebServiceRequest& request) const
 {
-    //check if user has provided the checksum algorithm
+    //Check if user has provided the checksum algorithm
     Aws::String checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(request.GetChecksumAlgorithmName().c_str());
     bool checksumAlgorithmProvided = !checksumAlgorithmName.empty();
 
@@ -782,9 +782,9 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
     if (checksumAlgorithmProvided)
     {
         // Check if user has provided a checksum value for the specified algorithm
-        Aws::String checksum_type = "x-amz-checksum-" + checksumAlgorithmName;
+        Aws::String checksumType = "x-amz-checksum-" + checksumAlgorithmName;
         const HeaderValueCollection &headers = request.GetHeaders();
-        bool checksumValueAndAlgorithmProvided = headers.find(checksum_type) != headers.end();
+        bool checksumValueAndAlgorithmProvided = headers.find(checksumType) != headers.end();
 
         // For non-streaming payload, the resolved checksum location is always header.
         // For streaming payload, the resolved checksum location depends on whether it is an unsigned payload, we let AwsAuthSigner decide it.
@@ -794,7 +794,7 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
             if (request.IsStreaming() && checksumValueAndAlgorithmProvided)
             {
                 auto hash = Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG);
-                auto precalculatedValue = request.GetHeaders().find(checksum_type)->second;
+                auto precalculatedValue = request.GetHeaders().find(checksumType)->second;
                 hash->SetPrecalculatedHash(precalculatedValue);
                 httpRequest->SetRequestHash(checksumAlgorithmName, hash); }
             else if (request.IsStreaming())
@@ -802,19 +802,21 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
                 httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG));
             }
             else if (checksumValueAndAlgorithmProvided){
-                httpRequest->SetHeaderValue(checksum_type, request.GetHeaders().find(checksum_type)->second);
+                httpRequest->SetHeaderValue(checksumType, request.GetHeaders().find(checksumType)->second);
             }
             else
             {
-                httpRequest->SetHeaderValue(checksum_type, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
             }
+
+
         }
         else if (checksumAlgorithmName == "crc32c")
         {
             if (request.IsStreaming() && checksumValueAndAlgorithmProvided)
             {
                 auto hash = Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG);
-                auto precalculatedValue = request.GetHeaders().find(checksum_type)->second;
+                auto precalculatedValue = request.GetHeaders().find(checksumType)->second;
                 hash->SetPrecalculatedHash(precalculatedValue);
                 httpRequest->SetRequestHash(checksumAlgorithmName, hash); }
             else if (request.IsStreaming())
@@ -822,38 +824,40 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
                 httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG));
             }
             else if (checksumValueAndAlgorithmProvided){
-                httpRequest->SetHeaderValue(checksum_type, request.GetHeaders().find(checksum_type)->second);
+                httpRequest->SetHeaderValue(checksumType, request.GetHeaders().find(checksumType)->second);
             }
             else
             {
-                httpRequest->SetHeaderValue(checksum_type, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "sha256")
         {
             if (request.IsStreaming() && checksumValueAndAlgorithmProvided) {
                 auto hash = Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG);
-                auto precalculatedValue = request.GetHeaders().find(checksum_type)->second;
+                auto precalculatedValue = request.GetHeaders().find(checksumType)->second;
                 hash->SetPrecalculatedHash(precalculatedValue);
                 httpRequest->SetRequestHash(checksumAlgorithmName, hash);
+
             }
             else if (request.IsStreaming())
             {
                 httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG));
             }
-            else if (checksumValueAndAlgorithmProvided){
-                httpRequest->SetHeaderValue(checksum_type, request.GetHeaders().find(checksum_type)->second);
+            else if (checksumValueAndAlgorithmProvided)
+            {
+                httpRequest->SetHeaderValue(checksumType, request.GetHeaders().find(checksumType)->second);
             }
             else
             {
-                httpRequest->SetHeaderValue(checksum_type, HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "sha1")
         {
             if (request.IsStreaming() && checksumValueAndAlgorithmProvided) {
                 auto hash = Aws::MakeShared<Crypto::Sha1>(AWS_CLIENT_LOG_TAG);
-                auto precalculatedValue = request.GetHeaders().find(checksum_type)->second;
+                auto precalculatedValue = request.GetHeaders().find(checksumType)->second;
                 hash->SetPrecalculatedHash(precalculatedValue);
                 httpRequest->SetRequestHash(checksumAlgorithmName, hash);
             }
@@ -861,12 +865,13 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
             {
                 httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::Sha1>(AWS_CLIENT_LOG_TAG));
             }
-            else if (checksumValueAndAlgorithmProvided){
-                httpRequest->SetHeaderValue(checksum_type, request.GetHeaders().find(checksum_type)->second);
+            else if (checksumValueAndAlgorithmProvided)
+            {
+                httpRequest->SetHeaderValue(checksumType, request.GetHeaders().find(checksumType)->second);
             }
             else
             {
-                httpRequest->SetHeaderValue(checksum_type, HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(GetBodyStream(request)))));
+                httpRequest->SetHeaderValue(checksumType, HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(GetBodyStream(request)))));
             }
         }
         else
@@ -963,7 +968,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
         //changing the internal state of the hash computation is not a logical state
         //change as far as constness goes for this class. Due to the platform specificness
         //of hash computations, we can't control the fact that computing a hash mutates
-        //state on some platforms such as windows (but that isn't a concern of this class.
+        //state on some platforms such as windows (but that isn't a concern of this class).
         auto md5HashResult = const_cast<AWSClient*>(this)->m_hash->Calculate(*body);
         body->clear();
         if (md5HashResult.IsSuccess())
