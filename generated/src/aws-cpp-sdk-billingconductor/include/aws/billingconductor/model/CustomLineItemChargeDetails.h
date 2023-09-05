@@ -8,6 +8,8 @@
 #include <aws/billingconductor/model/CustomLineItemFlatChargeDetails.h>
 #include <aws/billingconductor/model/CustomLineItemPercentageChargeDetails.h>
 #include <aws/billingconductor/model/CustomLineItemType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/billingconductor/model/LineItemFilter.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +152,47 @@ namespace Model
      */
     inline CustomLineItemChargeDetails& WithType(CustomLineItemType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A representation of the line item filter.</p>
+     */
+    inline const Aws::Vector<LineItemFilter>& GetLineItemFilters() const{ return m_lineItemFilters; }
+
+    /**
+     * <p>A representation of the line item filter.</p>
+     */
+    inline bool LineItemFiltersHasBeenSet() const { return m_lineItemFiltersHasBeenSet; }
+
+    /**
+     * <p>A representation of the line item filter.</p>
+     */
+    inline void SetLineItemFilters(const Aws::Vector<LineItemFilter>& value) { m_lineItemFiltersHasBeenSet = true; m_lineItemFilters = value; }
+
+    /**
+     * <p>A representation of the line item filter.</p>
+     */
+    inline void SetLineItemFilters(Aws::Vector<LineItemFilter>&& value) { m_lineItemFiltersHasBeenSet = true; m_lineItemFilters = std::move(value); }
+
+    /**
+     * <p>A representation of the line item filter.</p>
+     */
+    inline CustomLineItemChargeDetails& WithLineItemFilters(const Aws::Vector<LineItemFilter>& value) { SetLineItemFilters(value); return *this;}
+
+    /**
+     * <p>A representation of the line item filter.</p>
+     */
+    inline CustomLineItemChargeDetails& WithLineItemFilters(Aws::Vector<LineItemFilter>&& value) { SetLineItemFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>A representation of the line item filter.</p>
+     */
+    inline CustomLineItemChargeDetails& AddLineItemFilters(const LineItemFilter& value) { m_lineItemFiltersHasBeenSet = true; m_lineItemFilters.push_back(value); return *this; }
+
+    /**
+     * <p>A representation of the line item filter.</p>
+     */
+    inline CustomLineItemChargeDetails& AddLineItemFilters(LineItemFilter&& value) { m_lineItemFiltersHasBeenSet = true; m_lineItemFilters.push_back(std::move(value)); return *this; }
+
   private:
 
     CustomLineItemFlatChargeDetails m_flat;
@@ -160,6 +203,9 @@ namespace Model
 
     CustomLineItemType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::Vector<LineItemFilter> m_lineItemFilters;
+    bool m_lineItemFiltersHasBeenSet = false;
   };
 
 } // namespace Model

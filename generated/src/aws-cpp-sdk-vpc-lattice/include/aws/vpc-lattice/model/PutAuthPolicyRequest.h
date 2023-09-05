@@ -33,50 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline PutAuthPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline PutAuthPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline PutAuthPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

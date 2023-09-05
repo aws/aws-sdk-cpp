@@ -74,6 +74,12 @@ namespace Aws
         static const int EffectiveRecommendationPreferencesInferredWorkloadTypes_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesInferredWorkloadTypes");
         static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
         static const int RecommendationOptionsMigrationEffort_HASH = HashingUtils::HashString("RecommendationOptionsMigrationEffort");
+        static const int CurrentInstanceGpuInfo_HASH = HashingUtils::HashString("CurrentInstanceGpuInfo");
+        static const int RecommendationOptionsInstanceGpuInfo_HASH = HashingUtils::HashString("RecommendationOptionsInstanceGpuInfo");
+        static const int UtilizationMetricsGpuPercentageMaximum_HASH = HashingUtils::HashString("UtilizationMetricsGpuPercentageMaximum");
+        static const int UtilizationMetricsGpuMemoryPercentageMaximum_HASH = HashingUtils::HashString("UtilizationMetricsGpuMemoryPercentageMaximum");
+        static const int RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum");
+        static const int RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum");
 
 
         ExportableAutoScalingGroupField GetExportableAutoScalingGroupFieldForName(const Aws::String& name)
@@ -295,6 +301,30 @@ namespace Aws
           {
             return ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort;
           }
+          else if (hashCode == CurrentInstanceGpuInfo_HASH)
+          {
+            return ExportableAutoScalingGroupField::CurrentInstanceGpuInfo;
+          }
+          else if (hashCode == RecommendationOptionsInstanceGpuInfo_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsInstanceGpuInfo;
+          }
+          else if (hashCode == UtilizationMetricsGpuPercentageMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsGpuPercentageMaximum;
+          }
+          else if (hashCode == UtilizationMetricsGpuMemoryPercentageMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsGpuMemoryPercentageMaximum;
+          }
+          else if (hashCode == RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum;
+          }
+          else if (hashCode == RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -417,6 +447,18 @@ namespace Aws
             return "InferredWorkloadTypes";
           case ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort:
             return "RecommendationOptionsMigrationEffort";
+          case ExportableAutoScalingGroupField::CurrentInstanceGpuInfo:
+            return "CurrentInstanceGpuInfo";
+          case ExportableAutoScalingGroupField::RecommendationOptionsInstanceGpuInfo:
+            return "RecommendationOptionsInstanceGpuInfo";
+          case ExportableAutoScalingGroupField::UtilizationMetricsGpuPercentageMaximum:
+            return "UtilizationMetricsGpuPercentageMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsGpuMemoryPercentageMaximum:
+            return "UtilizationMetricsGpuMemoryPercentageMaximum";
+          case ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum:
+            return "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum";
+          case ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum:
+            return "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -57,6 +57,14 @@ namespace Model
      * CloudWatch agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
      * Memory Utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the
+     * instance.</p> </li> <li> <p> <code>GPU_MEMORY</code> - The percentage of total
+     * GPU memory that currently runs on the instance.</p>  <p>The
+     * <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for
+     * resources with the unified CloudWatch Agent installed on them. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     * NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
      * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all
      * EBS volumes attached to the instance in a specified period of time.</p> <p>Unit:
      * Count</p> </li> <li> <p> <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed
@@ -116,6 +124,14 @@ namespace Model
      * CloudWatch agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
      * Memory Utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the
+     * instance.</p> </li> <li> <p> <code>GPU_MEMORY</code> - The percentage of total
+     * GPU memory that currently runs on the instance.</p>  <p>The
+     * <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for
+     * resources with the unified CloudWatch Agent installed on them. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     * NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
      * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all
      * EBS volumes attached to the instance in a specified period of time.</p> <p>Unit:
      * Count</p> </li> <li> <p> <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed
@@ -175,6 +191,14 @@ namespace Model
      * CloudWatch agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
      * Memory Utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the
+     * instance.</p> </li> <li> <p> <code>GPU_MEMORY</code> - The percentage of total
+     * GPU memory that currently runs on the instance.</p>  <p>The
+     * <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for
+     * resources with the unified CloudWatch Agent installed on them. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     * NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
      * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all
      * EBS volumes attached to the instance in a specified period of time.</p> <p>Unit:
      * Count</p> </li> <li> <p> <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed
@@ -234,6 +258,14 @@ namespace Model
      * CloudWatch agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
      * Memory Utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the
+     * instance.</p> </li> <li> <p> <code>GPU_MEMORY</code> - The percentage of total
+     * GPU memory that currently runs on the instance.</p>  <p>The
+     * <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for
+     * resources with the unified CloudWatch Agent installed on them. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     * NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
      * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all
      * EBS volumes attached to the instance in a specified period of time.</p> <p>Unit:
      * Count</p> </li> <li> <p> <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed
@@ -293,6 +325,14 @@ namespace Model
      * CloudWatch agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
      * Memory Utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the
+     * instance.</p> </li> <li> <p> <code>GPU_MEMORY</code> - The percentage of total
+     * GPU memory that currently runs on the instance.</p>  <p>The
+     * <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for
+     * resources with the unified CloudWatch Agent installed on them. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     * NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
      * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all
      * EBS volumes attached to the instance in a specified period of time.</p> <p>Unit:
      * Count</p> </li> <li> <p> <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed
@@ -352,6 +392,14 @@ namespace Model
      * CloudWatch agent installed on them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
      * Memory Utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the
+     * instance.</p> </li> <li> <p> <code>GPU_MEMORY</code> - The percentage of total
+     * GPU memory that currently runs on the instance.</p>  <p>The
+     * <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for
+     * resources with the unified CloudWatch Agent installed on them. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     * NVIDIA GPU utilization with the CloudWatch Agent</a>.</p>  </li> <li> <p>
      * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all
      * EBS volumes attached to the instance in a specified period of time.</p> <p>Unit:
      * Count</p> </li> <li> <p> <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed

@@ -711,7 +711,31 @@ namespace Model
     hpc7a_12xlarge,
     hpc7a_24xlarge,
     hpc7a_48xlarge,
-    hpc7a_96xlarge
+    hpc7a_96xlarge,
+    c7gd_medium,
+    c7gd_large,
+    c7gd_xlarge,
+    c7gd_2xlarge,
+    c7gd_4xlarge,
+    c7gd_8xlarge,
+    c7gd_12xlarge,
+    c7gd_16xlarge,
+    m7gd_medium,
+    m7gd_large,
+    m7gd_xlarge,
+    m7gd_2xlarge,
+    m7gd_4xlarge,
+    m7gd_8xlarge,
+    m7gd_12xlarge,
+    m7gd_16xlarge,
+    r7gd_medium,
+    r7gd_large,
+    r7gd_xlarge,
+    r7gd_2xlarge,
+    r7gd_4xlarge,
+    r7gd_8xlarge,
+    r7gd_12xlarge,
+    r7gd_16xlarge
   };
 
 namespace InstanceTypeMapper

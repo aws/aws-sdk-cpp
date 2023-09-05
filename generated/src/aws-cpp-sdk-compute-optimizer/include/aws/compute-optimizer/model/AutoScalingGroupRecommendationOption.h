@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/compute-optimizer/model/MigrationEffort.h>
+#include <aws/compute-optimizer/model/GpuInfo.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <utility>
 
@@ -379,6 +380,43 @@ namespace Model
      */
     inline AutoScalingGroupRecommendationOption& WithMigrationEffort(MigrationEffort&& value) { SetMigrationEffort(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline const GpuInfo& GetInstanceGpuInfo() const{ return m_instanceGpuInfo; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline bool InstanceGpuInfoHasBeenSet() const { return m_instanceGpuInfoHasBeenSet; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline void SetInstanceGpuInfo(const GpuInfo& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = value; }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline void SetInstanceGpuInfo(GpuInfo&& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = std::move(value); }
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline AutoScalingGroupRecommendationOption& WithInstanceGpuInfo(const GpuInfo& value) { SetInstanceGpuInfo(value); return *this;}
+
+    /**
+     * <p> Describes the GPU accelerator settings for the recommended instance type of
+     * the Auto Scaling group. </p>
+     */
+    inline AutoScalingGroupRecommendationOption& WithInstanceGpuInfo(GpuInfo&& value) { SetInstanceGpuInfo(std::move(value)); return *this;}
+
   private:
 
     AutoScalingGroupConfiguration m_configuration;
@@ -398,6 +436,9 @@ namespace Model
 
     MigrationEffort m_migrationEffort;
     bool m_migrationEffortHasBeenSet = false;
+
+    GpuInfo m_instanceGpuInfo;
+    bool m_instanceGpuInfoHasBeenSet = false;
   };
 
 } // namespace Model
