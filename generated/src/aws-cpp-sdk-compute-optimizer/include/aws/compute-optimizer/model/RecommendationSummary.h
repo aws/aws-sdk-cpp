@@ -239,7 +239,7 @@ namespace Model
     /**
      * <p> An array of objects that describes the estimated monthly saving amounts for
      * the instances running on the specified <code>inferredWorkloadTypes</code>. The
-     * array contains the top three savings opportunites for the instances running
+     * array contains the top five savings opportunites for the instances that run
      * inferred workload types. </p>
      */
     inline const Aws::Vector<InferredWorkloadSaving>& GetInferredWorkloadSavings() const{ return m_inferredWorkloadSavings; }
@@ -247,7 +247,7 @@ namespace Model
     /**
      * <p> An array of objects that describes the estimated monthly saving amounts for
      * the instances running on the specified <code>inferredWorkloadTypes</code>. The
-     * array contains the top three savings opportunites for the instances running
+     * array contains the top five savings opportunites for the instances that run
      * inferred workload types. </p>
      */
     inline bool InferredWorkloadSavingsHasBeenSet() const { return m_inferredWorkloadSavingsHasBeenSet; }
@@ -255,7 +255,7 @@ namespace Model
     /**
      * <p> An array of objects that describes the estimated monthly saving amounts for
      * the instances running on the specified <code>inferredWorkloadTypes</code>. The
-     * array contains the top three savings opportunites for the instances running
+     * array contains the top five savings opportunites for the instances that run
      * inferred workload types. </p>
      */
     inline void SetInferredWorkloadSavings(const Aws::Vector<InferredWorkloadSaving>& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings = value; }
@@ -263,7 +263,7 @@ namespace Model
     /**
      * <p> An array of objects that describes the estimated monthly saving amounts for
      * the instances running on the specified <code>inferredWorkloadTypes</code>. The
-     * array contains the top three savings opportunites for the instances running
+     * array contains the top five savings opportunites for the instances that run
      * inferred workload types. </p>
      */
     inline void SetInferredWorkloadSavings(Aws::Vector<InferredWorkloadSaving>&& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings = std::move(value); }
@@ -271,7 +271,7 @@ namespace Model
     /**
      * <p> An array of objects that describes the estimated monthly saving amounts for
      * the instances running on the specified <code>inferredWorkloadTypes</code>. The
-     * array contains the top three savings opportunites for the instances running
+     * array contains the top five savings opportunites for the instances that run
      * inferred workload types. </p>
      */
     inline RecommendationSummary& WithInferredWorkloadSavings(const Aws::Vector<InferredWorkloadSaving>& value) { SetInferredWorkloadSavings(value); return *this;}
@@ -279,7 +279,7 @@ namespace Model
     /**
      * <p> An array of objects that describes the estimated monthly saving amounts for
      * the instances running on the specified <code>inferredWorkloadTypes</code>. The
-     * array contains the top three savings opportunites for the instances running
+     * array contains the top five savings opportunites for the instances that run
      * inferred workload types. </p>
      */
     inline RecommendationSummary& WithInferredWorkloadSavings(Aws::Vector<InferredWorkloadSaving>&& value) { SetInferredWorkloadSavings(std::move(value)); return *this;}
@@ -287,7 +287,7 @@ namespace Model
     /**
      * <p> An array of objects that describes the estimated monthly saving amounts for
      * the instances running on the specified <code>inferredWorkloadTypes</code>. The
-     * array contains the top three savings opportunites for the instances running
+     * array contains the top five savings opportunites for the instances that run
      * inferred workload types. </p>
      */
     inline RecommendationSummary& AddInferredWorkloadSavings(const InferredWorkloadSaving& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings.push_back(value); return *this; }
@@ -295,7 +295,7 @@ namespace Model
     /**
      * <p> An array of objects that describes the estimated monthly saving amounts for
      * the instances running on the specified <code>inferredWorkloadTypes</code>. The
-     * array contains the top three savings opportunites for the instances running
+     * array contains the top five savings opportunites for the instances that run
      * inferred workload types. </p>
      */
     inline RecommendationSummary& AddInferredWorkloadSavings(InferredWorkloadSaving&& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings.push_back(std::move(value)); return *this; }

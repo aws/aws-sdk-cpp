@@ -173,12 +173,12 @@ namespace Model
      * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
      * <code>off</code>.</p> <p>When you specify
      * <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the
-     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - immediately
-     * retire the tasks and patch Fargate </p> <p>There is no advanced notification.
-     * Your tasks are retired immediately, and Fargate is patched without any
-     * notification.</p> </li> <li> <p> <code>7</code> -wait 7 calendar days to retire
-     * the tasks and patch Fargate </p> </li> <li> <p> <code>14</code> - wait 14
-     * calendar days to retire the tasks and patch Fargate </p> </li> </ul>
+     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - Amazon Web
+     * Services sends the notification, and immediately retires the affected tasks.</p>
+     * </li> <li> <p> <code>7</code> - Amazon Web Services sends the notification, and
+     * waits 7 calendar days to retire the tasks.</p> </li> <li> <p> <code>14</code> -
+     * Amazon Web Services sends the notification, and waits 14 calendar days to retire
+     * the tasks.</p> </li> </ul>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -187,12 +187,12 @@ namespace Model
      * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
      * <code>off</code>.</p> <p>When you specify
      * <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the
-     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - immediately
-     * retire the tasks and patch Fargate </p> <p>There is no advanced notification.
-     * Your tasks are retired immediately, and Fargate is patched without any
-     * notification.</p> </li> <li> <p> <code>7</code> -wait 7 calendar days to retire
-     * the tasks and patch Fargate </p> </li> <li> <p> <code>14</code> - wait 14
-     * calendar days to retire the tasks and patch Fargate </p> </li> </ul>
+     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - Amazon Web
+     * Services sends the notification, and immediately retires the affected tasks.</p>
+     * </li> <li> <p> <code>7</code> - Amazon Web Services sends the notification, and
+     * waits 7 calendar days to retire the tasks.</p> </li> <li> <p> <code>14</code> -
+     * Amazon Web Services sends the notification, and waits 14 calendar days to retire
+     * the tasks.</p> </li> </ul>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -201,12 +201,12 @@ namespace Model
      * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
      * <code>off</code>.</p> <p>When you specify
      * <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the
-     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - immediately
-     * retire the tasks and patch Fargate </p> <p>There is no advanced notification.
-     * Your tasks are retired immediately, and Fargate is patched without any
-     * notification.</p> </li> <li> <p> <code>7</code> -wait 7 calendar days to retire
-     * the tasks and patch Fargate </p> </li> <li> <p> <code>14</code> - wait 14
-     * calendar days to retire the tasks and patch Fargate </p> </li> </ul>
+     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - Amazon Web
+     * Services sends the notification, and immediately retires the affected tasks.</p>
+     * </li> <li> <p> <code>7</code> - Amazon Web Services sends the notification, and
+     * waits 7 calendar days to retire the tasks.</p> </li> <li> <p> <code>14</code> -
+     * Amazon Web Services sends the notification, and waits 14 calendar days to retire
+     * the tasks.</p> </li> </ul>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -215,12 +215,12 @@ namespace Model
      * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
      * <code>off</code>.</p> <p>When you specify
      * <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the
-     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - immediately
-     * retire the tasks and patch Fargate </p> <p>There is no advanced notification.
-     * Your tasks are retired immediately, and Fargate is patched without any
-     * notification.</p> </li> <li> <p> <code>7</code> -wait 7 calendar days to retire
-     * the tasks and patch Fargate </p> </li> <li> <p> <code>14</code> - wait 14
-     * calendar days to retire the tasks and patch Fargate </p> </li> </ul>
+     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - Amazon Web
+     * Services sends the notification, and immediately retires the affected tasks.</p>
+     * </li> <li> <p> <code>7</code> - Amazon Web Services sends the notification, and
+     * waits 7 calendar days to retire the tasks.</p> </li> <li> <p> <code>14</code> -
+     * Amazon Web Services sends the notification, and waits 14 calendar days to retire
+     * the tasks.</p> </li> </ul>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -229,12 +229,12 @@ namespace Model
      * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
      * <code>off</code>.</p> <p>When you specify
      * <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the
-     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - immediately
-     * retire the tasks and patch Fargate </p> <p>There is no advanced notification.
-     * Your tasks are retired immediately, and Fargate is patched without any
-     * notification.</p> </li> <li> <p> <code>7</code> -wait 7 calendar days to retire
-     * the tasks and patch Fargate </p> </li> <li> <p> <code>14</code> - wait 14
-     * calendar days to retire the tasks and patch Fargate </p> </li> </ul>
+     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - Amazon Web
+     * Services sends the notification, and immediately retires the affected tasks.</p>
+     * </li> <li> <p> <code>7</code> - Amazon Web Services sends the notification, and
+     * waits 7 calendar days to retire the tasks.</p> </li> <li> <p> <code>14</code> -
+     * Amazon Web Services sends the notification, and waits 14 calendar days to retire
+     * the tasks.</p> </li> </ul>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -243,12 +243,12 @@ namespace Model
      * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
      * <code>off</code>.</p> <p>When you specify
      * <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the
-     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - immediately
-     * retire the tasks and patch Fargate </p> <p>There is no advanced notification.
-     * Your tasks are retired immediately, and Fargate is patched without any
-     * notification.</p> </li> <li> <p> <code>7</code> -wait 7 calendar days to retire
-     * the tasks and patch Fargate </p> </li> <li> <p> <code>14</code> - wait 14
-     * calendar days to retire the tasks and patch Fargate </p> </li> </ul>
+     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - Amazon Web
+     * Services sends the notification, and immediately retires the affected tasks.</p>
+     * </li> <li> <p> <code>7</code> - Amazon Web Services sends the notification, and
+     * waits 7 calendar days to retire the tasks.</p> </li> <li> <p> <code>14</code> -
+     * Amazon Web Services sends the notification, and waits 14 calendar days to retire
+     * the tasks.</p> </li> </ul>
      */
     inline PutAccountSettingRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -257,12 +257,12 @@ namespace Model
      * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
      * <code>off</code>.</p> <p>When you specify
      * <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the
-     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - immediately
-     * retire the tasks and patch Fargate </p> <p>There is no advanced notification.
-     * Your tasks are retired immediately, and Fargate is patched without any
-     * notification.</p> </li> <li> <p> <code>7</code> -wait 7 calendar days to retire
-     * the tasks and patch Fargate </p> </li> <li> <p> <code>14</code> - wait 14
-     * calendar days to retire the tasks and patch Fargate </p> </li> </ul>
+     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - Amazon Web
+     * Services sends the notification, and immediately retires the affected tasks.</p>
+     * </li> <li> <p> <code>7</code> - Amazon Web Services sends the notification, and
+     * waits 7 calendar days to retire the tasks.</p> </li> <li> <p> <code>14</code> -
+     * Amazon Web Services sends the notification, and waits 14 calendar days to retire
+     * the tasks.</p> </li> </ul>
      */
     inline PutAccountSettingRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -271,12 +271,12 @@ namespace Model
      * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
      * <code>off</code>.</p> <p>When you specify
      * <code>fargateTaskRetirementWaitPeriod</code> for the <code>name</code>, the
-     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - immediately
-     * retire the tasks and patch Fargate </p> <p>There is no advanced notification.
-     * Your tasks are retired immediately, and Fargate is patched without any
-     * notification.</p> </li> <li> <p> <code>7</code> -wait 7 calendar days to retire
-     * the tasks and patch Fargate </p> </li> <li> <p> <code>14</code> - wait 14
-     * calendar days to retire the tasks and patch Fargate </p> </li> </ul>
+     * following are the valid values:</p> <ul> <li> <p> <code>0</code> - Amazon Web
+     * Services sends the notification, and immediately retires the affected tasks.</p>
+     * </li> <li> <p> <code>7</code> - Amazon Web Services sends the notification, and
+     * waits 7 calendar days to retire the tasks.</p> </li> <li> <p> <code>14</code> -
+     * Amazon Web Services sends the notification, and waits 14 calendar days to retire
+     * the tasks.</p> </li> </ul>
      */
     inline PutAccountSettingRequest& WithValue(const char* value) { SetValue(value); return *this;}
 

@@ -304,13 +304,16 @@ namespace Model
      * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
      * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
@@ -329,13 +332,16 @@ namespace Model
      * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
      * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
@@ -354,13 +360,16 @@ namespace Model
      * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
      * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
@@ -379,13 +388,16 @@ namespace Model
      * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
      * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
@@ -404,13 +416,16 @@ namespace Model
      * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
      * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
@@ -429,13 +444,16 @@ namespace Model
      * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
      * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline CreateEnvironmentEC2Request& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
@@ -454,13 +472,16 @@ namespace Model
      * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
      * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline CreateEnvironmentEC2Request& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
@@ -479,13 +500,16 @@ namespace Model
      * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
      * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
      * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline CreateEnvironmentEC2Request& WithImageId(const char* value) { SetImageId(value); return *this;}

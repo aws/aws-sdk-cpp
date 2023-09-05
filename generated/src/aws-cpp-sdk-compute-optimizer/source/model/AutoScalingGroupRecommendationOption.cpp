@@ -27,7 +27,8 @@ AutoScalingGroupRecommendationOption::AutoScalingGroupRecommendationOption() :
     m_rankHasBeenSet(false),
     m_savingsOpportunityHasBeenSet(false),
     m_migrationEffort(MigrationEffort::NOT_SET),
-    m_migrationEffortHasBeenSet(false)
+    m_migrationEffortHasBeenSet(false),
+    m_instanceGpuInfoHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ AutoScalingGroupRecommendationOption::AutoScalingGroupRecommendationOption(JsonV
     m_rankHasBeenSet(false),
     m_savingsOpportunityHasBeenSet(false),
     m_migrationEffort(MigrationEffort::NOT_SET),
-    m_migrationEffortHasBeenSet(false)
+    m_migrationEffortHasBeenSet(false),
+    m_instanceGpuInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ AutoScalingGroupRecommendationOption& AutoScalingGroupRecommendationOption::oper
     m_migrationEffortHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceGpuInfo"))
+  {
+    m_instanceGpuInfo = jsonValue.GetObject("instanceGpuInfo");
+
+    m_instanceGpuInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +146,12 @@ JsonValue AutoScalingGroupRecommendationOption::Jsonize() const
   if(m_migrationEffortHasBeenSet)
   {
    payload.WithString("migrationEffort", MigrationEffortMapper::GetNameForMigrationEffort(m_migrationEffort));
+  }
+
+  if(m_instanceGpuInfoHasBeenSet)
+  {
+   payload.WithObject("instanceGpuInfo", m_instanceGpuInfo.Jsonize());
+
   }
 
   return payload;

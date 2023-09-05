@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/vpc-lattice/model/IpAddressType.h>
+#include <aws/vpc-lattice/model/LambdaEventStructureVersion.h>
 #include <aws/vpc-lattice/model/TargetGroupProtocol.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/model/TargetGroupStatus.h>
@@ -203,6 +204,37 @@ namespace Model
      * specified, the IP address type defaults to <code>ipv4</code>.</p>
      */
     inline TargetGroupSummary& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline const LambdaEventStructureVersion& GetLambdaEventStructureVersion() const{ return m_lambdaEventStructureVersion; }
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline bool LambdaEventStructureVersionHasBeenSet() const { return m_lambdaEventStructureVersionHasBeenSet; }
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline void SetLambdaEventStructureVersion(const LambdaEventStructureVersion& value) { m_lambdaEventStructureVersionHasBeenSet = true; m_lambdaEventStructureVersion = value; }
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline void SetLambdaEventStructureVersion(LambdaEventStructureVersion&& value) { m_lambdaEventStructureVersionHasBeenSet = true; m_lambdaEventStructureVersion = std::move(value); }
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline TargetGroupSummary& WithLambdaEventStructureVersion(const LambdaEventStructureVersion& value) { SetLambdaEventStructureVersion(value); return *this;}
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline TargetGroupSummary& WithLambdaEventStructureVersion(LambdaEventStructureVersion&& value) { SetLambdaEventStructureVersion(std::move(value)); return *this;}
 
 
     /**
@@ -496,6 +528,9 @@ namespace Model
 
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet = false;
+
+    LambdaEventStructureVersion m_lambdaEventStructureVersion;
+    bool m_lambdaEventStructureVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet = false;

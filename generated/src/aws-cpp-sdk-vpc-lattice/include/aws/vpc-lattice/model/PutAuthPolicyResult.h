@@ -34,54 +34,47 @@ namespace Model
 
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline PutAuthPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline PutAuthPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The auth policy. The policy string in JSON must not contain newlines or blank
-     * lines.</p>
+     * <p>The auth policy.</p>
      */
     inline PutAuthPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
 
     /**
      * <p>The state of the auth policy. The auth policy is only active when the auth
-     * type is set to <code>AWS_IAM</code>. If you provide a policy, then
-     * authentication and authorization decisions are made based on this policy and the
-     * client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
-     * policy you provide will remain inactive. For more information, see <a
+     * type is set to <code>Amazon Web Services_IAM</code>. If you provide a policy,
+     * then authentication and authorization decisions are made based on this policy
+     * and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any
+     * auth policy you provide will remain inactive. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create
      * a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
      */
@@ -89,10 +82,10 @@ namespace Model
 
     /**
      * <p>The state of the auth policy. The auth policy is only active when the auth
-     * type is set to <code>AWS_IAM</code>. If you provide a policy, then
-     * authentication and authorization decisions are made based on this policy and the
-     * client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
-     * policy you provide will remain inactive. For more information, see <a
+     * type is set to <code>Amazon Web Services_IAM</code>. If you provide a policy,
+     * then authentication and authorization decisions are made based on this policy
+     * and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any
+     * auth policy you provide will remain inactive. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create
      * a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
      */
@@ -100,10 +93,10 @@ namespace Model
 
     /**
      * <p>The state of the auth policy. The auth policy is only active when the auth
-     * type is set to <code>AWS_IAM</code>. If you provide a policy, then
-     * authentication and authorization decisions are made based on this policy and the
-     * client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
-     * policy you provide will remain inactive. For more information, see <a
+     * type is set to <code>Amazon Web Services_IAM</code>. If you provide a policy,
+     * then authentication and authorization decisions are made based on this policy
+     * and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any
+     * auth policy you provide will remain inactive. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create
      * a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
      */
@@ -111,10 +104,10 @@ namespace Model
 
     /**
      * <p>The state of the auth policy. The auth policy is only active when the auth
-     * type is set to <code>AWS_IAM</code>. If you provide a policy, then
-     * authentication and authorization decisions are made based on this policy and the
-     * client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
-     * policy you provide will remain inactive. For more information, see <a
+     * type is set to <code>Amazon Web Services_IAM</code>. If you provide a policy,
+     * then authentication and authorization decisions are made based on this policy
+     * and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any
+     * auth policy you provide will remain inactive. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create
      * a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
      */
@@ -122,10 +115,10 @@ namespace Model
 
     /**
      * <p>The state of the auth policy. The auth policy is only active when the auth
-     * type is set to <code>AWS_IAM</code>. If you provide a policy, then
-     * authentication and authorization decisions are made based on this policy and the
-     * client's IAM policy. If the Auth type is <code>NONE</code>, then, any auth
-     * policy you provide will remain inactive. For more information, see <a
+     * type is set to <code>Amazon Web Services_IAM</code>. If you provide a policy,
+     * then authentication and authorization decisions are made based on this policy
+     * and the client's IAM policy. If the Auth type is <code>NONE</code>, then, any
+     * auth policy you provide will remain inactive. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#create-service-network">Create
      * a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
      */

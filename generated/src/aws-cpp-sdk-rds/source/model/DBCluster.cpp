@@ -117,7 +117,8 @@ DBCluster::DBCluster() :
     m_masterUserSecretHasBeenSet(false),
     m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false),
     m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
-    m_localWriteForwardingStatusHasBeenSet(false)
+    m_localWriteForwardingStatusHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false)
 {
 }
 
@@ -218,7 +219,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_masterUserSecretHasBeenSet(false),
     m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false),
     m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
-    m_localWriteForwardingStatusHasBeenSet(false)
+    m_localWriteForwardingStatusHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -727,6 +729,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_localWriteForwardingStatus = LocalWriteForwardingStatusMapper::GetLocalWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localWriteForwardingStatusNode.GetText()).c_str()).c_str());
       m_localWriteForwardingStatusHasBeenSet = true;
     }
+    XmlNode awsBackupRecoveryPointArnNode = resultNode.FirstChild("AwsBackupRecoveryPointArn");
+    if(!awsBackupRecoveryPointArnNode.IsNull())
+    {
+      m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
+      m_awsBackupRecoveryPointArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1159,6 +1167,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".LocalWriteForwardingStatus=" << LocalWriteForwardingStatusMapper::GetNameForLocalWriteForwardingStatus(m_localWriteForwardingStatus) << "&";
   }
 
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1514,6 +1527,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_localWriteForwardingStatusHasBeenSet)
   {
       oStream << location << ".LocalWriteForwardingStatus=" << LocalWriteForwardingStatusMapper::GetNameForLocalWriteForwardingStatus(m_localWriteForwardingStatus) << "&";
+  }
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+      oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 }
 

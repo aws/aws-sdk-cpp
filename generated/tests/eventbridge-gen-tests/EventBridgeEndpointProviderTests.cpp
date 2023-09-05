@@ -516,6 +516,13 @@ static const Aws::Vector<EventBridgeEndpointProviderEndpointTestCase> TEST_CASES
     {{/*epUrl*/"https://example.com",
        {/*properties*/{"authSchemes", {EpProp("name", "sigv4a"), EpProp("signingName", "events")}}},
        {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 60*/
+  {"Valid EndpointId with DualStack enabled and partition does not support DualStack", // documentation
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-isob-east-1"),
+     EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   }
 };
 

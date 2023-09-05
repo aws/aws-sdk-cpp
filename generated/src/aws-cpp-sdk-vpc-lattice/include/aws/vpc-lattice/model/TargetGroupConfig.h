@@ -7,6 +7,7 @@
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/model/HealthCheckConfig.h>
 #include <aws/vpc-lattice/model/IpAddressType.h>
+#include <aws/vpc-lattice/model/LambdaEventStructureVersion.h>
 #include <aws/vpc-lattice/model/TargetGroupProtocol.h>
 #include <aws/vpc-lattice/model/TargetGroupProtocolVersion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -114,6 +115,37 @@ namespace Model
      * specified, the IP address type defaults to <code>ipv4</code>.</p>
      */
     inline TargetGroupConfig& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline const LambdaEventStructureVersion& GetLambdaEventStructureVersion() const{ return m_lambdaEventStructureVersion; }
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline bool LambdaEventStructureVersionHasBeenSet() const { return m_lambdaEventStructureVersionHasBeenSet; }
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline void SetLambdaEventStructureVersion(const LambdaEventStructureVersion& value) { m_lambdaEventStructureVersionHasBeenSet = true; m_lambdaEventStructureVersion = value; }
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline void SetLambdaEventStructureVersion(LambdaEventStructureVersion&& value) { m_lambdaEventStructureVersionHasBeenSet = true; m_lambdaEventStructureVersion = std::move(value); }
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline TargetGroupConfig& WithLambdaEventStructureVersion(const LambdaEventStructureVersion& value) { SetLambdaEventStructureVersion(value); return *this;}
+
+    /**
+     * <p>Lambda event structure version</p>
+     */
+    inline TargetGroupConfig& WithLambdaEventStructureVersion(LambdaEventStructureVersion&& value) { SetLambdaEventStructureVersion(std::move(value)); return *this;}
 
 
     /**
@@ -256,6 +288,9 @@ namespace Model
 
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet = false;
+
+    LambdaEventStructureVersion m_lambdaEventStructureVersion;
+    bool m_lambdaEventStructureVersionHasBeenSet = false;
 
     int m_port;
     bool m_portHasBeenSet = false;

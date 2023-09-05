@@ -49,7 +49,8 @@ DBClusterAutomatedBackup::DBClusterAutomatedBackup() :
     m_kmsKeyIdHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false)
+    m_iopsHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ DBClusterAutomatedBackup::DBClusterAutomatedBackup(const XmlNode& xmlNode) :
     m_kmsKeyIdHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false)
+    m_iopsHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -237,6 +239,12 @@ DBClusterAutomatedBackup& DBClusterAutomatedBackup::operator =(const XmlNode& xm
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
       m_iopsHasBeenSet = true;
     }
+    XmlNode awsBackupRecoveryPointArnNode = resultNode.FirstChild("AwsBackupRecoveryPointArn");
+    if(!awsBackupRecoveryPointArnNode.IsNull())
+    {
+      m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
+      m_awsBackupRecoveryPointArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -365,6 +373,11 @@ void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
 
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+
 }
 
 void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -466,6 +479,10 @@ void DBClusterAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char*
   if(m_iopsHasBeenSet)
   {
       oStream << location << ".Iops=" << m_iops << "&";
+  }
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+      oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 }
 

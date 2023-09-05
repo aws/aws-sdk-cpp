@@ -716,6 +716,30 @@ namespace Aws
         static const int hpc7a_24xlarge_HASH = HashingUtils::HashString("hpc7a.24xlarge");
         static const int hpc7a_48xlarge_HASH = HashingUtils::HashString("hpc7a.48xlarge");
         static const int hpc7a_96xlarge_HASH = HashingUtils::HashString("hpc7a.96xlarge");
+        static const int c7gd_medium_HASH = HashingUtils::HashString("c7gd.medium");
+        static const int c7gd_large_HASH = HashingUtils::HashString("c7gd.large");
+        static const int c7gd_xlarge_HASH = HashingUtils::HashString("c7gd.xlarge");
+        static const int c7gd_2xlarge_HASH = HashingUtils::HashString("c7gd.2xlarge");
+        static const int c7gd_4xlarge_HASH = HashingUtils::HashString("c7gd.4xlarge");
+        static const int c7gd_8xlarge_HASH = HashingUtils::HashString("c7gd.8xlarge");
+        static const int c7gd_12xlarge_HASH = HashingUtils::HashString("c7gd.12xlarge");
+        static const int c7gd_16xlarge_HASH = HashingUtils::HashString("c7gd.16xlarge");
+        static const int m7gd_medium_HASH = HashingUtils::HashString("m7gd.medium");
+        static const int m7gd_large_HASH = HashingUtils::HashString("m7gd.large");
+        static const int m7gd_xlarge_HASH = HashingUtils::HashString("m7gd.xlarge");
+        static const int m7gd_2xlarge_HASH = HashingUtils::HashString("m7gd.2xlarge");
+        static const int m7gd_4xlarge_HASH = HashingUtils::HashString("m7gd.4xlarge");
+        static const int m7gd_8xlarge_HASH = HashingUtils::HashString("m7gd.8xlarge");
+        static const int m7gd_12xlarge_HASH = HashingUtils::HashString("m7gd.12xlarge");
+        static const int m7gd_16xlarge_HASH = HashingUtils::HashString("m7gd.16xlarge");
+        static const int r7gd_medium_HASH = HashingUtils::HashString("r7gd.medium");
+        static const int r7gd_large_HASH = HashingUtils::HashString("r7gd.large");
+        static const int r7gd_xlarge_HASH = HashingUtils::HashString("r7gd.xlarge");
+        static const int r7gd_2xlarge_HASH = HashingUtils::HashString("r7gd.2xlarge");
+        static const int r7gd_4xlarge_HASH = HashingUtils::HashString("r7gd.4xlarge");
+        static const int r7gd_8xlarge_HASH = HashingUtils::HashString("r7gd.8xlarge");
+        static const int r7gd_12xlarge_HASH = HashingUtils::HashString("r7gd.12xlarge");
+        static const int r7gd_16xlarge_HASH = HashingUtils::HashString("r7gd.16xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -4224,6 +4248,126 @@ namespace Aws
             enumValue = InstanceType::hpc7a_96xlarge;
             return true;
           }
+          else if (hashCode == c7gd_medium_HASH)
+          {
+            enumValue = InstanceType::c7gd_medium;
+            return true;
+          }
+          else if (hashCode == c7gd_large_HASH)
+          {
+            enumValue = InstanceType::c7gd_large;
+            return true;
+          }
+          else if (hashCode == c7gd_xlarge_HASH)
+          {
+            enumValue = InstanceType::c7gd_xlarge;
+            return true;
+          }
+          else if (hashCode == c7gd_2xlarge_HASH)
+          {
+            enumValue = InstanceType::c7gd_2xlarge;
+            return true;
+          }
+          else if (hashCode == c7gd_4xlarge_HASH)
+          {
+            enumValue = InstanceType::c7gd_4xlarge;
+            return true;
+          }
+          else if (hashCode == c7gd_8xlarge_HASH)
+          {
+            enumValue = InstanceType::c7gd_8xlarge;
+            return true;
+          }
+          else if (hashCode == c7gd_12xlarge_HASH)
+          {
+            enumValue = InstanceType::c7gd_12xlarge;
+            return true;
+          }
+          else if (hashCode == c7gd_16xlarge_HASH)
+          {
+            enumValue = InstanceType::c7gd_16xlarge;
+            return true;
+          }
+          else if (hashCode == m7gd_medium_HASH)
+          {
+            enumValue = InstanceType::m7gd_medium;
+            return true;
+          }
+          else if (hashCode == m7gd_large_HASH)
+          {
+            enumValue = InstanceType::m7gd_large;
+            return true;
+          }
+          else if (hashCode == m7gd_xlarge_HASH)
+          {
+            enumValue = InstanceType::m7gd_xlarge;
+            return true;
+          }
+          else if (hashCode == m7gd_2xlarge_HASH)
+          {
+            enumValue = InstanceType::m7gd_2xlarge;
+            return true;
+          }
+          else if (hashCode == m7gd_4xlarge_HASH)
+          {
+            enumValue = InstanceType::m7gd_4xlarge;
+            return true;
+          }
+          else if (hashCode == m7gd_8xlarge_HASH)
+          {
+            enumValue = InstanceType::m7gd_8xlarge;
+            return true;
+          }
+          else if (hashCode == m7gd_12xlarge_HASH)
+          {
+            enumValue = InstanceType::m7gd_12xlarge;
+            return true;
+          }
+          else if (hashCode == m7gd_16xlarge_HASH)
+          {
+            enumValue = InstanceType::m7gd_16xlarge;
+            return true;
+          }
+          else if (hashCode == r7gd_medium_HASH)
+          {
+            enumValue = InstanceType::r7gd_medium;
+            return true;
+          }
+          else if (hashCode == r7gd_large_HASH)
+          {
+            enumValue = InstanceType::r7gd_large;
+            return true;
+          }
+          else if (hashCode == r7gd_xlarge_HASH)
+          {
+            enumValue = InstanceType::r7gd_xlarge;
+            return true;
+          }
+          else if (hashCode == r7gd_2xlarge_HASH)
+          {
+            enumValue = InstanceType::r7gd_2xlarge;
+            return true;
+          }
+          else if (hashCode == r7gd_4xlarge_HASH)
+          {
+            enumValue = InstanceType::r7gd_4xlarge;
+            return true;
+          }
+          else if (hashCode == r7gd_8xlarge_HASH)
+          {
+            enumValue = InstanceType::r7gd_8xlarge;
+            return true;
+          }
+          else if (hashCode == r7gd_12xlarge_HASH)
+          {
+            enumValue = InstanceType::r7gd_12xlarge;
+            return true;
+          }
+          else if (hashCode == r7gd_16xlarge_HASH)
+          {
+            enumValue = InstanceType::r7gd_16xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -6358,6 +6502,78 @@ namespace Aws
             return true;
           case InstanceType::hpc7a_96xlarge:
             value = "hpc7a.96xlarge";
+            return true;
+          case InstanceType::c7gd_medium:
+            value = "c7gd.medium";
+            return true;
+          case InstanceType::c7gd_large:
+            value = "c7gd.large";
+            return true;
+          case InstanceType::c7gd_xlarge:
+            value = "c7gd.xlarge";
+            return true;
+          case InstanceType::c7gd_2xlarge:
+            value = "c7gd.2xlarge";
+            return true;
+          case InstanceType::c7gd_4xlarge:
+            value = "c7gd.4xlarge";
+            return true;
+          case InstanceType::c7gd_8xlarge:
+            value = "c7gd.8xlarge";
+            return true;
+          case InstanceType::c7gd_12xlarge:
+            value = "c7gd.12xlarge";
+            return true;
+          case InstanceType::c7gd_16xlarge:
+            value = "c7gd.16xlarge";
+            return true;
+          case InstanceType::m7gd_medium:
+            value = "m7gd.medium";
+            return true;
+          case InstanceType::m7gd_large:
+            value = "m7gd.large";
+            return true;
+          case InstanceType::m7gd_xlarge:
+            value = "m7gd.xlarge";
+            return true;
+          case InstanceType::m7gd_2xlarge:
+            value = "m7gd.2xlarge";
+            return true;
+          case InstanceType::m7gd_4xlarge:
+            value = "m7gd.4xlarge";
+            return true;
+          case InstanceType::m7gd_8xlarge:
+            value = "m7gd.8xlarge";
+            return true;
+          case InstanceType::m7gd_12xlarge:
+            value = "m7gd.12xlarge";
+            return true;
+          case InstanceType::m7gd_16xlarge:
+            value = "m7gd.16xlarge";
+            return true;
+          case InstanceType::r7gd_medium:
+            value = "r7gd.medium";
+            return true;
+          case InstanceType::r7gd_large:
+            value = "r7gd.large";
+            return true;
+          case InstanceType::r7gd_xlarge:
+            value = "r7gd.xlarge";
+            return true;
+          case InstanceType::r7gd_2xlarge:
+            value = "r7gd.2xlarge";
+            return true;
+          case InstanceType::r7gd_4xlarge:
+            value = "r7gd.4xlarge";
+            return true;
+          case InstanceType::r7gd_8xlarge:
+            value = "r7gd.8xlarge";
+            return true;
+          case InstanceType::r7gd_12xlarge:
+            value = "r7gd.12xlarge";
+            return true;
+          case InstanceType::r7gd_16xlarge:
+            value = "r7gd.16xlarge";
             return true;
           default:
             return false;
