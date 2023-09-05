@@ -782,7 +782,7 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
     if (checksumAlgorithmProvided)
     {
         // Check if user has provided a checksum value for the specified algorithm
-        Aws::String checksumType = "x-amz-checksum-" + checksumAlgorithmName;
+        const Aws::String checksumType = "x-amz-checksum-" + checksumAlgorithmName;
         const HeaderValueCollection &headers = request.GetHeaders();
         bool checksumValueAndAlgorithmProvided = headers.find(checksumType) != headers.end();
 
