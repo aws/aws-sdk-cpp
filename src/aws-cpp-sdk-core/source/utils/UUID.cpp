@@ -35,7 +35,7 @@ namespace Aws
             }
         }
 
-        Aws::Utils::UUID::UUID(const Aws::String& uuidToConvert)
+        UUID::UUID(const Aws::String& uuidToConvert)
         {
             //GUID has 2 characters per byte + 4 dashes = 36 bytes
             assert(uuidToConvert.length() == UUID_STR_SIZE);
@@ -47,12 +47,12 @@ namespace Aws
             memcpy(m_uuid, rawUuid.GetUnderlyingData(), rawUuid.GetLength());
         }
 
-        Aws::Utils::UUID::UUID(const unsigned char toCopy[UUID_BINARY_SIZE])
+        UUID::UUID(const unsigned char toCopy[UUID_BINARY_SIZE])
         {
             memcpy(m_uuid, toCopy, sizeof(m_uuid));
         }
 
-        Aws::Utils::UUID::operator Aws::String() const
+        UUID::operator Aws::String() const
         {
             Aws::String ss;
             ss.reserve(UUID_STR_SIZE);
@@ -73,7 +73,7 @@ namespace Aws
             return ss;
         }
 
-        Aws::Utils::UUID UUID::RandomUUID()
+        UUID UUID::RandomUUID()
         {
             auto secureRandom = Crypto::CreateSecureRandomBytesImplementation();
             assert(secureRandom);
@@ -88,7 +88,7 @@ namespace Aws
             //https://tools.ietf.org/html/rfc4122#section-4.1.1
             randomBytes[VARIANT_LOCATION] = (randomBytes[VARIANT_LOCATION] & VARIANT_MASK) | VARIANT;
 
-            return Aws::Utils::UUID(randomBytes);
+            return UUID(randomBytes);
         }
 
 #ifdef UINT64_MAX
@@ -109,7 +109,7 @@ namespace Aws
             return static_cast<size_t>(std::hash<std::thread::id>{}(std::this_thread::get_id()) ^ threadRandomSeedGen());
         }
 
-        Aws::Utils::UUID UUID::PseudoRandomUUID()
+        UUID UUID::PseudoRandomUUID()
         {
             static const thread_local size_t threadSeed = GetCurrentThreadRandomSeed();
             static thread_local MTEngine gen(threadSeed);
@@ -127,7 +127,7 @@ namespace Aws
             //https://tools.ietf.org/html/rfc4122#section-4.1.1
             randomBytes[VARIANT_LOCATION] = (randomBytes[VARIANT_LOCATION] & VARIANT_MASK) | VARIANT;
 
-            return Aws::Utils::UUID(randomBytes);
+            return UUID(randomBytes);
         }
     }
 }
