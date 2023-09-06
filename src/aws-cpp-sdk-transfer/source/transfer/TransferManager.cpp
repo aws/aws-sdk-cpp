@@ -853,7 +853,7 @@ namespace Aws
             uint64_t bufferSize = m_transferConfig.bufferSize;
             if (!isRetry)
             {
-                auto headObjectRequest = m_transferConfig.headObjectTemplate;
+                Aws::S3::Model::HeadObjectRequest headObjectRequest;
                 headObjectRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                 headObjectRequest.WithBucket(handle->GetBucketName())
                                  .WithKey(handle->GetKey());
