@@ -11,7 +11,6 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/s3/S3Client.h>
-#include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/ListObjectsV2Request.h>
 #include <aws/s3/model/CompleteMultipartUploadRequest.h>
