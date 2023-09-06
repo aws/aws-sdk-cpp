@@ -72,11 +72,6 @@ namespace Aws
              * If you have special arguments you want passed to our head object calls, put them here. We will copy the template for each call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
              */
-            Aws::S3::Model::HeadObjectRequest headObjectTemplate;
-            /**
-             * If you have special arguments you want passed to our create multipart upload calls, put them here. We will copy the template for each call
-             * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
-             */
             Aws::S3::Model::CreateMultipartUploadRequest createMultipartUploadTemplate;
             /**
              * If you have special arguments you want passed to our upload part calls, put them here. We will copy the template for each call
