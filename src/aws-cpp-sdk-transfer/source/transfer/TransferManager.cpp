@@ -679,6 +679,12 @@ namespace Aws
                         .WithKey(handle->GetKey())
                         .WithUploadId(handle->GetMultiPartId())
                         .WithMultipartUpload(completedUpload);
+                    if (m_transferConfig.uploadPartTemplate.SSECustomerAlgorithmHasBeenSet())
+                    {
+                        completeMultipartUploadRequest.WithSSECustomerAlgorithm(m_transferConfig.uploadPartTemplate.GetSSECustomerAlgorithm())
+                                                      .WithSSECustomerKey(m_transferConfig.uploadPartTemplate.GetSSECustomerKey())
+                                                      .WithSSECustomerKeyMD5(m_transferConfig.uploadPartTemplate.GetSSECustomerKeyMD5());
+                    }
 
                     auto completeUploadOutcome = m_transferConfig.s3Client->CompleteMultipartUpload(completeMultipartUploadRequest);
 
@@ -975,6 +981,12 @@ namespace Aws
                     if(handle->GetVersionId().size() > 0)
                     {
                         getObjectRangeRequest.SetVersionId(handle->GetVersionId());
+                    }
+                    if (m_transferConfig.getObjectTemplate.SSECustomerAlgorithmHasBeenSet())
+                    {
+                        getObjectRangeRequest.WithSSECustomerAlgorithm(m_transferConfig.getObjectTemplate.GetSSECustomerAlgorithm())
+                                             .WithSSECustomerKey(m_transferConfig.getObjectTemplate.GetSSECustomerKey())
+                                             .WithSSECustomerKeyMD5(m_transferConfig.getObjectTemplate.GetSSECustomerKeyMD5());
                     }
 
                     auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
