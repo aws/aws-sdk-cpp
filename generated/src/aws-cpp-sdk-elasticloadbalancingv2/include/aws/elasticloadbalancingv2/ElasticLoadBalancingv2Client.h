@@ -423,8 +423,21 @@ namespace ElasticLoadBalancingv2
         /**
          * <p>Deregisters the specified targets from the specified target group. After the
          * targets are deregistered, they no longer receive traffic from the load
-         * balancer.</p> <p>Note: If the specified target does not exist, the action
-         * returns successfully.</p><p><h3>See Also:</h3>   <a
+         * balancer.</p> <p>The load balancer stops sending requests to targets that are
+         * deregistering, but uses connection draining to ensure that in-flight traffic
+         * completes on the existing connections. This deregistration delay is configured
+         * by default but can be updated for each target group.</p> <p>For more
+         * information, see the following:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay">
+         * Deregistration delay</a> in the <i>Application Load Balancers User Guide</i>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#deregistration-delay">
+         * Deregistration delay</a> in the <i>Network Load Balancers User Guide</i> </p>
+         * </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#deregistration-delay">
+         * Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i> </p>
+         * </li> </ul> <p>Note: If the specified target does not exist, the action returns
+         * successfully.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets">AWS
          * API Reference</a></p>
          */

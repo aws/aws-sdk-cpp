@@ -20,13 +20,17 @@ namespace Model
 
 AWSManagedRulesBotControlRuleSet::AWSManagedRulesBotControlRuleSet() : 
     m_inspectionLevel(InspectionLevel::NOT_SET),
-    m_inspectionLevelHasBeenSet(false)
+    m_inspectionLevelHasBeenSet(false),
+    m_enableMachineLearning(false),
+    m_enableMachineLearningHasBeenSet(false)
 {
 }
 
 AWSManagedRulesBotControlRuleSet::AWSManagedRulesBotControlRuleSet(JsonView jsonValue) : 
     m_inspectionLevel(InspectionLevel::NOT_SET),
-    m_inspectionLevelHasBeenSet(false)
+    m_inspectionLevelHasBeenSet(false),
+    m_enableMachineLearning(false),
+    m_enableMachineLearningHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ AWSManagedRulesBotControlRuleSet& AWSManagedRulesBotControlRuleSet::operator =(J
     m_inspectionLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableMachineLearning"))
+  {
+    m_enableMachineLearning = jsonValue.GetBool("EnableMachineLearning");
+
+    m_enableMachineLearningHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,12 @@ JsonValue AWSManagedRulesBotControlRuleSet::Jsonize() const
   if(m_inspectionLevelHasBeenSet)
   {
    payload.WithString("InspectionLevel", InspectionLevelMapper::GetNameForInspectionLevel(m_inspectionLevel));
+  }
+
+  if(m_enableMachineLearningHasBeenSet)
+  {
+   payload.WithBool("EnableMachineLearning", m_enableMachineLearning);
+
   }
 
   return payload;
