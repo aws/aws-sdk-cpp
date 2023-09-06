@@ -121,7 +121,8 @@ namespace Model
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
      * whether the load balancer terminates connections at the end of the
      * deregistration timeout. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.</p> </li> <li> <p>
+     * For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise,
+     * the default is <code>false</code>.</p> </li> <li> <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
@@ -129,10 +130,14 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
-     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
-     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
-     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * <code>false</code>. The default is <code>false</code>. </p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
+     * Indicates whether the load balancer terminates connections to unhealthy targets.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * only by Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is deregistered. The possible
      * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
      * <code>no_rebalance</code>. The two attributes
      * (<code>target_failover.on_deregistration</code> and
@@ -230,7 +235,8 @@ namespace Model
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
      * whether the load balancer terminates connections at the end of the
      * deregistration timeout. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.</p> </li> <li> <p>
+     * For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise,
+     * the default is <code>false</code>.</p> </li> <li> <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
@@ -238,10 +244,14 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
-     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
-     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
-     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * <code>false</code>. The default is <code>false</code>. </p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
+     * Indicates whether the load balancer terminates connections to unhealthy targets.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * only by Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is deregistered. The possible
      * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
      * <code>no_rebalance</code>. The two attributes
      * (<code>target_failover.on_deregistration</code> and
@@ -339,7 +349,8 @@ namespace Model
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
      * whether the load balancer terminates connections at the end of the
      * deregistration timeout. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.</p> </li> <li> <p>
+     * For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise,
+     * the default is <code>false</code>.</p> </li> <li> <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
@@ -347,10 +358,14 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
-     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
-     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
-     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * <code>false</code>. The default is <code>false</code>. </p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
+     * Indicates whether the load balancer terminates connections to unhealthy targets.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * only by Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is deregistered. The possible
      * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
      * <code>no_rebalance</code>. The two attributes
      * (<code>target_failover.on_deregistration</code> and
@@ -448,7 +463,8 @@ namespace Model
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
      * whether the load balancer terminates connections at the end of the
      * deregistration timeout. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.</p> </li> <li> <p>
+     * For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise,
+     * the default is <code>false</code>.</p> </li> <li> <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
@@ -456,10 +472,14 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
-     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
-     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
-     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * <code>false</code>. The default is <code>false</code>. </p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
+     * Indicates whether the load balancer terminates connections to unhealthy targets.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * only by Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is deregistered. The possible
      * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
      * <code>no_rebalance</code>. The two attributes
      * (<code>target_failover.on_deregistration</code> and
@@ -557,7 +577,8 @@ namespace Model
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
      * whether the load balancer terminates connections at the end of the
      * deregistration timeout. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.</p> </li> <li> <p>
+     * For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise,
+     * the default is <code>false</code>.</p> </li> <li> <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
@@ -565,10 +586,14 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
-     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
-     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
-     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * <code>false</code>. The default is <code>false</code>. </p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
+     * Indicates whether the load balancer terminates connections to unhealthy targets.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * only by Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is deregistered. The possible
      * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
      * <code>no_rebalance</code>. The two attributes
      * (<code>target_failover.on_deregistration</code> and
@@ -666,7 +691,8 @@ namespace Model
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
      * whether the load balancer terminates connections at the end of the
      * deregistration timeout. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.</p> </li> <li> <p>
+     * For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise,
+     * the default is <code>false</code>.</p> </li> <li> <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
@@ -674,10 +700,14 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
-     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
-     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
-     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * <code>false</code>. The default is <code>false</code>. </p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
+     * Indicates whether the load balancer terminates connections to unhealthy targets.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * only by Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is deregistered. The possible
      * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
      * <code>no_rebalance</code>. The two attributes
      * (<code>target_failover.on_deregistration</code> and
@@ -775,7 +805,8 @@ namespace Model
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
      * whether the load balancer terminates connections at the end of the
      * deregistration timeout. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.</p> </li> <li> <p>
+     * For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise,
+     * the default is <code>false</code>.</p> </li> <li> <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
@@ -783,10 +814,14 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
-     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
-     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
-     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * <code>false</code>. The default is <code>false</code>. </p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
+     * Indicates whether the load balancer terminates connections to unhealthy targets.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * only by Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is deregistered. The possible
      * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
      * <code>no_rebalance</code>. The two attributes
      * (<code>target_failover.on_deregistration</code> and
@@ -884,7 +919,8 @@ namespace Model
      * <code>deregistration_delay.connection_termination.enabled</code> - Indicates
      * whether the load balancer terminates connections at the end of the
      * deregistration timeout. The value is <code>true</code> or <code>false</code>.
-     * The default is <code>false</code>.</p> </li> <li> <p>
+     * For new UDP/TCP_UDP target groups the default is <code>true</code>. Otherwise,
+     * the default is <code>false</code>.</p> </li> <li> <p>
      * <code>preserve_client_ip.enabled</code> - Indicates whether client IP
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
@@ -892,10 +928,14 @@ namespace Model
      * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
      * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
      * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>. </p> </li> </ul> <p>The
-     * following attributes are supported only by Gateway Load Balancers:</p> <ul> <li>
-     * <p> <code>target_failover.on_deregistration</code> - Indicates how the Gateway
-     * Load Balancer handles existing flows when a target is deregistered. The possible
+     * <code>false</code>. The default is <code>false</code>. </p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
+     * Indicates whether the load balancer terminates connections to unhealthy targets.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * only by Gateway Load Balancers:</p> <ul> <li> <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
+     * Balancer handles existing flows when a target is deregistered. The possible
      * values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
      * <code>no_rebalance</code>. The two attributes
      * (<code>target_failover.on_deregistration</code> and
