@@ -25,6 +25,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
@@ -135,12 +136,29 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
                     .forEach(enumEntry -> locationConstraints.getEnumValues().add(enumEntry));
         }
 
-        // Fix the typo of enum: "COMPLETE" for ReplicationStatus in API description, and "COMPLETED" is expected defined by S3 service.
-        // https://github.com/aws/aws-sdk-cpp/issues/859
-        Shape replicationStatus = serviceModel.getShapes().get("ReplicationStatus");
-        int indexOfComplete = replicationStatus.getEnumValues().indexOf("COMPLETE");
-        if (indexOfComplete != -1) {
-            replicationStatus.getEnumValues().set(indexOfComplete, "COMPLETED");
+        // We created a customization for transforming an incorrect "COMPLETE" to "COMPLETED" enum
+        // value in the past https://github.com/aws/aws-sdk-cpp/issues/859. S3 is fixing their model
+        // for other SDKs that have this modeling issue. They will include both COMPLETED and COMPLETE
+        // in the model for other SDK backwards compat. For C++ we will remove the "COMPLETED" value
+        // to preserve backwards compat and keep the existing customization.
+        //
+        // If "COMPLETE" is removed from the model we will execute none of this customization, and it
+        // is the safe to remove it.
+        final Shape replicationStatus = serviceModel.getShapes().get("ReplicationStatus");
+        final boolean hasCompleted = replicationStatus.getEnumValues().contains("COMPLETED");
+        final boolean hasComplete = replicationStatus.getEnumValues().contains("COMPLETE");
+        if (hasCompleted && hasComplete) {
+            // If we have both we remove the additional COMPLETED to preserve backwards compat
+            replicationStatus.setEnumValues(replicationStatus.getEnumValues().stream()
+                    .filter(value -> !"COMPLETED".equals(value))
+                    .collect(Collectors.toList()));
+        }
+        if (hasComplete) {
+            // Preserve existing customization to transform COMPLETE to COMPLETED
+            int indexOfComplete = replicationStatus.getEnumValues().indexOf("COMPLETE");
+            if (indexOfComplete != -1) {
+                replicationStatus.getEnumValues().set(indexOfComplete, "COMPLETED");
+            }
         }
 
         // Some S3 operations have embedded errors, and we need to search for errors in the response.
