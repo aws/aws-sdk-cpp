@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Specifies the name and path of a customer managed policy. You must have an
-   * IAM policy that matches the name and path in each AWS account where you want to
-   * deploy your permission set.</p><p><h3>See Also:</h3>   <a
+   * IAM policy that matches the name and path in each Amazon Web Services account
+   * where you want to deploy your permission set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CustomerManagedPolicyReference">AWS
    * API Reference</a></p>
    */

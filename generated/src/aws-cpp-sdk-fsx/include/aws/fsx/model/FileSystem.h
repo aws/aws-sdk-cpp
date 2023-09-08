@@ -1080,49 +1080,49 @@ namespace Model
 
 
     /**
-     * <p>The Lustre version of the Amazon FSx for Lustre file system, which is
+     * <p>The Lustre version of the Amazon FSx for Lustre file system, which can be
      * <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
      */
     inline const Aws::String& GetFileSystemTypeVersion() const{ return m_fileSystemTypeVersion; }
 
     /**
-     * <p>The Lustre version of the Amazon FSx for Lustre file system, which is
+     * <p>The Lustre version of the Amazon FSx for Lustre file system, which can be
      * <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
      */
     inline bool FileSystemTypeVersionHasBeenSet() const { return m_fileSystemTypeVersionHasBeenSet; }
 
     /**
-     * <p>The Lustre version of the Amazon FSx for Lustre file system, which is
+     * <p>The Lustre version of the Amazon FSx for Lustre file system, which can be
      * <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
      */
     inline void SetFileSystemTypeVersion(const Aws::String& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = value; }
 
     /**
-     * <p>The Lustre version of the Amazon FSx for Lustre file system, which is
+     * <p>The Lustre version of the Amazon FSx for Lustre file system, which can be
      * <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
      */
     inline void SetFileSystemTypeVersion(Aws::String&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::move(value); }
 
     /**
-     * <p>The Lustre version of the Amazon FSx for Lustre file system, which is
+     * <p>The Lustre version of the Amazon FSx for Lustre file system, which can be
      * <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
      */
     inline void SetFileSystemTypeVersion(const char* value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion.assign(value); }
 
     /**
-     * <p>The Lustre version of the Amazon FSx for Lustre file system, which is
+     * <p>The Lustre version of the Amazon FSx for Lustre file system, which can be
      * <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
      */
     inline FileSystem& WithFileSystemTypeVersion(const Aws::String& value) { SetFileSystemTypeVersion(value); return *this;}
 
     /**
-     * <p>The Lustre version of the Amazon FSx for Lustre file system, which is
+     * <p>The Lustre version of the Amazon FSx for Lustre file system, which can be
      * <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
      */
     inline FileSystem& WithFileSystemTypeVersion(Aws::String&& value) { SetFileSystemTypeVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Lustre version of the Amazon FSx for Lustre file system, which is
+     * <p>The Lustre version of the Amazon FSx for Lustre file system, which can be
      * <code>2.10</code>, <code>2.12</code>, or <code>2.15</code>.</p>
      */
     inline FileSystem& WithFileSystemTypeVersion(const char* value) { SetFileSystemTypeVersion(value); return *this;}

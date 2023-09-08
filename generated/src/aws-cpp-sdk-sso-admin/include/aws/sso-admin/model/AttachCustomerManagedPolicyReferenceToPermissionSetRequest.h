@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/model/CustomerManagedPolicyReference.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +33,49 @@ namespace Model
     AWS_SSOADMIN_API Aws::String SerializePayload() const override;
 
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
+     * where you want to deploy your permission set.</p>
+     */
+    inline const CustomerManagedPolicyReference& GetCustomerManagedPolicyReference() const{ return m_customerManagedPolicyReference; }
+
+    /**
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
+     * where you want to deploy your permission set.</p>
+     */
+    inline bool CustomerManagedPolicyReferenceHasBeenSet() const { return m_customerManagedPolicyReferenceHasBeenSet; }
+
+    /**
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
+     * where you want to deploy your permission set.</p>
+     */
+    inline void SetCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = value; }
+
+    /**
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
+     * where you want to deploy your permission set.</p>
+     */
+    inline void SetCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = std::move(value); }
+
+    /**
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
+     * where you want to deploy your permission set.</p>
+     */
+    inline AttachCustomerManagedPolicyReferenceToPermissionSetRequest& WithCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { SetCustomerManagedPolicyReference(value); return *this;}
+
+    /**
+     * <p>Specifies the name and path of a customer managed policy. You must have an
+     * IAM policy that matches the name and path in each Amazon Web Services account
+     * where you want to deploy your permission set.</p>
+     */
+    inline AttachCustomerManagedPolicyReferenceToPermissionSetRequest& WithCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { SetCustomerManagedPolicyReference(std::move(value)); return *this;}
 
 
     /**
@@ -124,59 +167,16 @@ namespace Model
      */
     inline AttachCustomerManagedPolicyReferenceToPermissionSetRequest& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
 
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each AWS account where you want to
-     * deploy your permission set.</p>
-     */
-    inline const CustomerManagedPolicyReference& GetCustomerManagedPolicyReference() const{ return m_customerManagedPolicyReference; }
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each AWS account where you want to
-     * deploy your permission set.</p>
-     */
-    inline bool CustomerManagedPolicyReferenceHasBeenSet() const { return m_customerManagedPolicyReferenceHasBeenSet; }
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each AWS account where you want to
-     * deploy your permission set.</p>
-     */
-    inline void SetCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = value; }
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each AWS account where you want to
-     * deploy your permission set.</p>
-     */
-    inline void SetCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { m_customerManagedPolicyReferenceHasBeenSet = true; m_customerManagedPolicyReference = std::move(value); }
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each AWS account where you want to
-     * deploy your permission set.</p>
-     */
-    inline AttachCustomerManagedPolicyReferenceToPermissionSetRequest& WithCustomerManagedPolicyReference(const CustomerManagedPolicyReference& value) { SetCustomerManagedPolicyReference(value); return *this;}
-
-    /**
-     * <p>Specifies the name and path of a customer managed policy. You must have an
-     * IAM policy that matches the name and path in each AWS account where you want to
-     * deploy your permission set.</p>
-     */
-    inline AttachCustomerManagedPolicyReferenceToPermissionSetRequest& WithCustomerManagedPolicyReference(CustomerManagedPolicyReference&& value) { SetCustomerManagedPolicyReference(std::move(value)); return *this;}
-
   private:
+
+    CustomerManagedPolicyReference m_customerManagedPolicyReference;
+    bool m_customerManagedPolicyReferenceHasBeenSet = false;
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_permissionSetArn;
     bool m_permissionSetArnHasBeenSet = false;
-
-    CustomerManagedPolicyReference m_customerManagedPolicyReference;
-    bool m_customerManagedPolicyReferenceHasBeenSet = false;
   };
 
 } // namespace Model

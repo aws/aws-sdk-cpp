@@ -33,37 +33,51 @@ namespace Model
 
 
     /**
-     * <p>The inline policy that is attached to the permission set.</p>
+     * <p>The inline policy that is attached to the permission set.</p>  <p>For
+     * <code>Length Constraints</code>, if a valid ARN is provided for a permission
+     * set, it is possible for an empty inline policy to be returned.</p> 
      */
     inline const Aws::String& GetInlinePolicy() const{ return m_inlinePolicy; }
 
     /**
-     * <p>The inline policy that is attached to the permission set.</p>
+     * <p>The inline policy that is attached to the permission set.</p>  <p>For
+     * <code>Length Constraints</code>, if a valid ARN is provided for a permission
+     * set, it is possible for an empty inline policy to be returned.</p> 
      */
     inline void SetInlinePolicy(const Aws::String& value) { m_inlinePolicy = value; }
 
     /**
-     * <p>The inline policy that is attached to the permission set.</p>
+     * <p>The inline policy that is attached to the permission set.</p>  <p>For
+     * <code>Length Constraints</code>, if a valid ARN is provided for a permission
+     * set, it is possible for an empty inline policy to be returned.</p> 
      */
     inline void SetInlinePolicy(Aws::String&& value) { m_inlinePolicy = std::move(value); }
 
     /**
-     * <p>The inline policy that is attached to the permission set.</p>
+     * <p>The inline policy that is attached to the permission set.</p>  <p>For
+     * <code>Length Constraints</code>, if a valid ARN is provided for a permission
+     * set, it is possible for an empty inline policy to be returned.</p> 
      */
     inline void SetInlinePolicy(const char* value) { m_inlinePolicy.assign(value); }
 
     /**
-     * <p>The inline policy that is attached to the permission set.</p>
+     * <p>The inline policy that is attached to the permission set.</p>  <p>For
+     * <code>Length Constraints</code>, if a valid ARN is provided for a permission
+     * set, it is possible for an empty inline policy to be returned.</p> 
      */
     inline GetInlinePolicyForPermissionSetResult& WithInlinePolicy(const Aws::String& value) { SetInlinePolicy(value); return *this;}
 
     /**
-     * <p>The inline policy that is attached to the permission set.</p>
+     * <p>The inline policy that is attached to the permission set.</p>  <p>For
+     * <code>Length Constraints</code>, if a valid ARN is provided for a permission
+     * set, it is possible for an empty inline policy to be returned.</p> 
      */
     inline GetInlinePolicyForPermissionSetResult& WithInlinePolicy(Aws::String&& value) { SetInlinePolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The inline policy that is attached to the permission set.</p>
+     * <p>The inline policy that is attached to the permission set.</p>  <p>For
+     * <code>Length Constraints</code>, if a valid ARN is provided for a permission
+     * set, it is possible for an empty inline policy to be returned.</p> 
      */
     inline GetInlinePolicyForPermissionSetResult& WithInlinePolicy(const char* value) { SetInlinePolicy(value); return *this;}
 
