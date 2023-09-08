@@ -19,32 +19,32 @@ namespace Model
 {
 
 InstanceMetadata::InstanceMetadata() : 
-    m_instanceArnHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false)
+    m_identityStoreIdHasBeenSet(false),
+    m_instanceArnHasBeenSet(false)
 {
 }
 
 InstanceMetadata::InstanceMetadata(JsonView jsonValue) : 
-    m_instanceArnHasBeenSet(false),
-    m_identityStoreIdHasBeenSet(false)
+    m_identityStoreIdHasBeenSet(false),
+    m_instanceArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 InstanceMetadata& InstanceMetadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("InstanceArn"))
-  {
-    m_instanceArn = jsonValue.GetString("InstanceArn");
-
-    m_instanceArnHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("IdentityStoreId"))
   {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
 
     m_identityStoreIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceArn"))
+  {
+    m_instanceArn = jsonValue.GetString("InstanceArn");
+
+    m_instanceArnHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue InstanceMetadata::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_instanceArnHasBeenSet)
-  {
-   payload.WithString("InstanceArn", m_instanceArn);
-
-  }
-
   if(m_identityStoreIdHasBeenSet)
   {
    payload.WithString("IdentityStoreId", m_identityStoreId);
+
+  }
+
+  if(m_instanceArnHasBeenSet)
+  {
+   payload.WithString("InstanceArn", m_instanceArn);
 
   }
 

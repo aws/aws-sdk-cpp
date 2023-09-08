@@ -14,13 +14,13 @@ using namespace Aws::Utils;
 
 CreateAccountAssignmentRequest::CreateAccountAssignmentRequest() : 
     m_instanceArnHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
     m_permissionSetArnHasBeenSet(false),
+    m_principalIdHasBeenSet(false),
     m_principalType(PrincipalType::NOT_SET),
     m_principalTypeHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
+    m_targetIdHasBeenSet(false),
+    m_targetType(TargetType::NOT_SET),
+    m_targetTypeHasBeenSet(false)
 {
 }
 
@@ -34,6 +34,23 @@ Aws::String CreateAccountAssignmentRequest::SerializePayload() const
 
   }
 
+  if(m_permissionSetArnHasBeenSet)
+  {
+   payload.WithString("PermissionSetArn", m_permissionSetArn);
+
+  }
+
+  if(m_principalIdHasBeenSet)
+  {
+   payload.WithString("PrincipalId", m_principalId);
+
+  }
+
+  if(m_principalTypeHasBeenSet)
+  {
+   payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
+  }
+
   if(m_targetIdHasBeenSet)
   {
    payload.WithString("TargetId", m_targetId);
@@ -43,23 +60,6 @@ Aws::String CreateAccountAssignmentRequest::SerializePayload() const
   if(m_targetTypeHasBeenSet)
   {
    payload.WithString("TargetType", TargetTypeMapper::GetNameForTargetType(m_targetType));
-  }
-
-  if(m_permissionSetArnHasBeenSet)
-  {
-   payload.WithString("PermissionSetArn", m_permissionSetArn);
-
-  }
-
-  if(m_principalTypeHasBeenSet)
-  {
-   payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
-  }
-
-  if(m_principalIdHasBeenSet)
-  {
-   payload.WithString("PrincipalId", m_principalId);
-
   }
 
   return payload.View().WriteReadable();

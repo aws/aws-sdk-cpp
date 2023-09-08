@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/sso-admin/model/StatusValues.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/model/StatusValues.h>
 #include <utility>
 
 namespace Aws
@@ -41,34 +41,34 @@ namespace Model
 
 
     /**
-     * <p>The status of the permission set provisioning process.</p>
+     * <p>The date that the permission set was created.</p>
      */
-    inline const StatusValues& GetStatus() const{ return m_status; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
-     * <p>The status of the permission set provisioning process.</p>
+     * <p>The date that the permission set was created.</p>
      */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
 
     /**
-     * <p>The status of the permission set provisioning process.</p>
+     * <p>The date that the permission set was created.</p>
      */
-    inline void SetStatus(const StatusValues& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
-     * <p>The status of the permission set provisioning process.</p>
+     * <p>The date that the permission set was created.</p>
      */
-    inline void SetStatus(StatusValues&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
     /**
-     * <p>The status of the permission set provisioning process.</p>
+     * <p>The date that the permission set was created.</p>
      */
-    inline AccountAssignmentOperationStatusMetadata& WithStatus(const StatusValues& value) { SetStatus(value); return *this;}
+    inline AccountAssignmentOperationStatusMetadata& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     /**
-     * <p>The status of the permission set provisioning process.</p>
+     * <p>The date that the permission set was created.</p>
      */
-    inline AccountAssignmentOperationStatusMetadata& WithStatus(StatusValues&& value) { SetStatus(std::move(value)); return *this;}
+    inline AccountAssignmentOperationStatusMetadata& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
 
     /**
@@ -121,45 +121,45 @@ namespace Model
 
 
     /**
-     * <p>The date that the permission set was created.</p>
+     * <p>The status of the permission set provisioning process.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const StatusValues& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The date that the permission set was created.</p>
+     * <p>The status of the permission set provisioning process.</p>
      */
-    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The date that the permission set was created.</p>
+     * <p>The status of the permission set provisioning process.</p>
      */
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+    inline void SetStatus(const StatusValues& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The date that the permission set was created.</p>
+     * <p>The status of the permission set provisioning process.</p>
      */
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
+    inline void SetStatus(StatusValues&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The date that the permission set was created.</p>
+     * <p>The status of the permission set provisioning process.</p>
      */
-    inline AccountAssignmentOperationStatusMetadata& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
+    inline AccountAssignmentOperationStatusMetadata& WithStatus(const StatusValues& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The date that the permission set was created.</p>
+     * <p>The status of the permission set provisioning process.</p>
      */
-    inline AccountAssignmentOperationStatusMetadata& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline AccountAssignmentOperationStatusMetadata& WithStatus(StatusValues&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
 
-    StatusValues m_status;
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_createdDate;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet = false;
+    StatusValues m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

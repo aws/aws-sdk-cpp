@@ -26,7 +26,8 @@ namespace Model
   /**
    * <p>A set of key-value pairs that are used to manage the resource. Tags can only
    * be applied to permission sets and cannot be applied to corresponding roles that
-   * IAM Identity Center creates in AWS accounts.</p><p><h3>See Also:</h3>   <a
+   * IAM Identity Center creates in Amazon Web Services accounts.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/Tag">AWS API
    * Reference</a></p>
    */

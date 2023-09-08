@@ -155,55 +155,37 @@ namespace Model
 
     /**
      * <p>Settings used to configure an AutoML job V2 for a time-series forecasting
-     * problem type.</p>  <p>The <code>TimeSeriesForecastingJobConfig</code>
-     * problem type is only available in private beta. Contact Amazon Web Services
-     * Support or your account manager to learn more about access privileges.</p>
-     * 
+     * problem type.</p>
      */
     inline const TimeSeriesForecastingJobConfig& GetTimeSeriesForecastingJobConfig() const{ return m_timeSeriesForecastingJobConfig; }
 
     /**
      * <p>Settings used to configure an AutoML job V2 for a time-series forecasting
-     * problem type.</p>  <p>The <code>TimeSeriesForecastingJobConfig</code>
-     * problem type is only available in private beta. Contact Amazon Web Services
-     * Support or your account manager to learn more about access privileges.</p>
-     * 
+     * problem type.</p>
      */
     inline bool TimeSeriesForecastingJobConfigHasBeenSet() const { return m_timeSeriesForecastingJobConfigHasBeenSet; }
 
     /**
      * <p>Settings used to configure an AutoML job V2 for a time-series forecasting
-     * problem type.</p>  <p>The <code>TimeSeriesForecastingJobConfig</code>
-     * problem type is only available in private beta. Contact Amazon Web Services
-     * Support or your account manager to learn more about access privileges.</p>
-     * 
+     * problem type.</p>
      */
     inline void SetTimeSeriesForecastingJobConfig(const TimeSeriesForecastingJobConfig& value) { m_timeSeriesForecastingJobConfigHasBeenSet = true; m_timeSeriesForecastingJobConfig = value; }
 
     /**
      * <p>Settings used to configure an AutoML job V2 for a time-series forecasting
-     * problem type.</p>  <p>The <code>TimeSeriesForecastingJobConfig</code>
-     * problem type is only available in private beta. Contact Amazon Web Services
-     * Support or your account manager to learn more about access privileges.</p>
-     * 
+     * problem type.</p>
      */
     inline void SetTimeSeriesForecastingJobConfig(TimeSeriesForecastingJobConfig&& value) { m_timeSeriesForecastingJobConfigHasBeenSet = true; m_timeSeriesForecastingJobConfig = std::move(value); }
 
     /**
      * <p>Settings used to configure an AutoML job V2 for a time-series forecasting
-     * problem type.</p>  <p>The <code>TimeSeriesForecastingJobConfig</code>
-     * problem type is only available in private beta. Contact Amazon Web Services
-     * Support or your account manager to learn more about access privileges.</p>
-     * 
+     * problem type.</p>
      */
     inline AutoMLProblemTypeConfig& WithTimeSeriesForecastingJobConfig(const TimeSeriesForecastingJobConfig& value) { SetTimeSeriesForecastingJobConfig(value); return *this;}
 
     /**
      * <p>Settings used to configure an AutoML job V2 for a time-series forecasting
-     * problem type.</p>  <p>The <code>TimeSeriesForecastingJobConfig</code>
-     * problem type is only available in private beta. Contact Amazon Web Services
-     * Support or your account manager to learn more about access privileges.</p>
-     * 
+     * problem type.</p>
      */
     inline AutoMLProblemTypeConfig& WithTimeSeriesForecastingJobConfig(TimeSeriesForecastingJobConfig&& value) { SetTimeSeriesForecastingJobConfig(std::move(value)); return *this;}
 

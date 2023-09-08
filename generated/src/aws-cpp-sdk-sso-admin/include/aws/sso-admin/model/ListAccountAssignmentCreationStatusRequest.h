@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/model/OperationStatusFilter.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -36,10 +36,42 @@ namespace Model
 
 
     /**
+     * <p>Filters results based on the passed attribute value.</p>
+     */
+    inline const OperationStatusFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>Filters results based on the passed attribute value.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>Filters results based on the passed attribute value.</p>
+     */
+    inline void SetFilter(const OperationStatusFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>Filters results based on the passed attribute value.</p>
+     */
+    inline void SetFilter(OperationStatusFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>Filters results based on the passed attribute value.</p>
+     */
+    inline ListAccountAssignmentCreationStatusRequest& WithFilter(const OperationStatusFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>Filters results based on the passed attribute value.</p>
+     */
+    inline ListAccountAssignmentCreationStatusRequest& WithFilter(OperationStatusFilter&& value) { SetFilter(std::move(value)); return *this;}
+
+
+    /**
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
@@ -47,7 +79,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
@@ -55,7 +88,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
@@ -63,7 +97,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
@@ -71,7 +106,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
@@ -79,7 +115,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline ListAccountAssignmentCreationStatusRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
@@ -87,7 +124,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline ListAccountAssignmentCreationStatusRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
@@ -95,7 +133,8 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline ListAccountAssignmentCreationStatusRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
 
@@ -169,38 +208,10 @@ namespace Model
      */
     inline ListAccountAssignmentCreationStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>Filters results based on the passed attribute value.</p>
-     */
-    inline const OperationStatusFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>Filters results based on the passed attribute value.</p>
-     */
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>Filters results based on the passed attribute value.</p>
-     */
-    inline void SetFilter(const OperationStatusFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>Filters results based on the passed attribute value.</p>
-     */
-    inline void SetFilter(OperationStatusFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>Filters results based on the passed attribute value.</p>
-     */
-    inline ListAccountAssignmentCreationStatusRequest& WithFilter(const OperationStatusFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>Filters results based on the passed attribute value.</p>
-     */
-    inline ListAccountAssignmentCreationStatusRequest& WithFilter(OperationStatusFilter&& value) { SetFilter(std::move(value)); return *this;}
-
   private:
+
+    OperationStatusFilter m_filter;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
@@ -210,9 +221,6 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    OperationStatusFilter m_filter;
-    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

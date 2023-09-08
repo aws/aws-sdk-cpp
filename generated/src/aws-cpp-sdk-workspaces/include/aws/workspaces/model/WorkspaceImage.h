@@ -11,6 +11,8 @@
 #include <aws/workspaces/model/WorkspaceImageRequiredTenancy.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/workspaces/model/UpdateResult.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces/model/ErrorDetails.h>
 #include <utility>
 
 namespace Aws
@@ -478,6 +480,47 @@ namespace Model
      */
     inline WorkspaceImage& WithUpdates(UpdateResult&& value) { SetUpdates(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details of the error returned for the image.</p>
+     */
+    inline const Aws::Vector<ErrorDetails>& GetErrorDetails() const{ return m_errorDetails; }
+
+    /**
+     * <p>The details of the error returned for the image.</p>
+     */
+    inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
+
+    /**
+     * <p>The details of the error returned for the image.</p>
+     */
+    inline void SetErrorDetails(const Aws::Vector<ErrorDetails>& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
+
+    /**
+     * <p>The details of the error returned for the image.</p>
+     */
+    inline void SetErrorDetails(Aws::Vector<ErrorDetails>&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
+
+    /**
+     * <p>The details of the error returned for the image.</p>
+     */
+    inline WorkspaceImage& WithErrorDetails(const Aws::Vector<ErrorDetails>& value) { SetErrorDetails(value); return *this;}
+
+    /**
+     * <p>The details of the error returned for the image.</p>
+     */
+    inline WorkspaceImage& WithErrorDetails(Aws::Vector<ErrorDetails>&& value) { SetErrorDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>The details of the error returned for the image.</p>
+     */
+    inline WorkspaceImage& AddErrorDetails(const ErrorDetails& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.push_back(value); return *this; }
+
+    /**
+     * <p>The details of the error returned for the image.</p>
+     */
+    inline WorkspaceImage& AddErrorDetails(ErrorDetails&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_imageId;
@@ -512,6 +555,9 @@ namespace Model
 
     UpdateResult m_updates;
     bool m_updatesHasBeenSet = false;
+
+    Aws::Vector<ErrorDetails> m_errorDetails;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

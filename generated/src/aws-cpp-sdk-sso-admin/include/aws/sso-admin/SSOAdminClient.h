@@ -16,31 +16,29 @@ namespace Aws
 namespace SSOAdmin
 {
   /**
-   * <p>AWS IAM Identity Center (successor to AWS Single Sign-On) helps you securely
-   * create, or connect, your workforce identities and manage their access centrally
-   * across AWS accounts and applications. IAM Identity Center is the recommended
-   * approach for workforce authentication and authorization in AWS, for
-   * organizations of any size and type.</p>  <p>Although AWS Single Sign-On
-   * was renamed, the <code>sso</code> and <code>identitystore</code> API namespaces
-   * will continue to retain their original name for backward compatibility purposes.
-   * For more information, see <a
-   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM
-   * Identity Center rename</a>.</p>  <p>This reference guide provides
-   * information on single sign-on operations which could be used for access
-   * management of AWS accounts. For information about IAM Identity Center features,
-   * see the <a
+   * <p>IAM Identity Center (successor to Single Sign-On) helps you securely create,
+   * or connect, your workforce identities and manage their access centrally across
+   * Amazon Web Services accounts and applications. IAM Identity Center is the
+   * recommended approach for workforce authentication and authorization in Amazon
+   * Web Services, for organizations of any size and type.</p>  <p>IAM Identity
+   * Center uses the <code>sso</code> and <code>identitystore</code> API
+   * namespaces.</p>  <p>This reference guide provides information on single
+   * sign-on operations which could be used for access management of Amazon Web
+   * Services accounts. For information about IAM Identity Center features, see the
+   * <a
    * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
    * Identity Center User Guide</a>.</p> <p>Many operations in the IAM Identity
    * Center APIs rely on identifiers for users and groups, known as principals. For
    * more information about how to work with principals and principal IDs in IAM
    * Identity Center, see the <a
    * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity
-   * Store API Reference</a>.</p>  <p>AWS provides SDKs that consist of
-   * libraries and sample code for various programming languages and platforms (Java,
-   * Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create
-   * programmatic access to IAM Identity Center and other AWS services. For more
-   * information about the AWS SDKs, including how to download and install them, see
-   * <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
+   * Store API Reference</a>.</p>  <p>Amazon Web Services provides SDKs that
+   * consist of libraries and sample code for various programming languages and
+   * platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a
+   * convenient way to create programmatic access to IAM Identity Center and other
+   * Amazon Web Services services. For more information about the Amazon Web Services
+   * SDKs, including how to download and install them, see <a
+   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
    * 
    */
   class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSOAdminClient>
@@ -128,12 +126,12 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Attaches an AWS managed policy ARN to a permission set.</p>  <p>If the
-         * permission set is already referenced by one or more account assignments, you
-         * will need to call <code> <a>ProvisionPermissionSet</a> </code> after this
-         * operation. Calling <code>ProvisionPermissionSet</code> applies the corresponding
-         * IAM policy updates to all assigned accounts.</p> <p><h3>See Also:</h3>  
-         * <a
+         * <p>Attaches an Amazon Web Services managed policy ARN to a permission set.</p>
+         *  <p>If the permission set is already referenced by one or more account
+         * assignments, you will need to call <code> <a>ProvisionPermissionSet</a> </code>
+         * after this operation. Calling <code>ProvisionPermissionSet</code> applies the
+         * corresponding IAM policy updates to all assigned accounts.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachManagedPolicyToPermissionSet">AWS
          * API Reference</a></p>
          */
@@ -158,16 +156,17 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Assigns access to a principal for a specified AWS account using a specified
-         * permission set.</p>  <p>The term <i>principal</i> here refers to a user or
-         * group that is defined in IAM Identity Center.</p>   <p>As part of a
-         * successful <code>CreateAccountAssignment</code> call, the specified permission
-         * set will automatically be provisioned to the account in the form of an IAM
-         * policy. That policy is attached to the IAM role created in IAM Identity Center.
-         * If the permission set is subsequently updated, the corresponding IAM policies
-         * attached to roles in your accounts will not be updated automatically. In this
-         * case, you must call <code> <a>ProvisionPermissionSet</a> </code> to make these
-         * updates.</p>   <p> After a successful response, call
+         * <p>Assigns access to a principal for a specified Amazon Web Services account
+         * using a specified permission set.</p>  <p>The term <i>principal</i> here
+         * refers to a user or group that is defined in IAM Identity Center.</p> 
+         *  <p>As part of a successful <code>CreateAccountAssignment</code> call, the
+         * specified permission set will automatically be provisioned to the account in the
+         * form of an IAM policy. That policy is attached to the IAM role created in IAM
+         * Identity Center. If the permission set is subsequently updated, the
+         * corresponding IAM policies attached to roles in your accounts will not be
+         * updated automatically. In this case, you must call <code>
+         * <a>ProvisionPermissionSet</a> </code> to make these updates.</p>  
+         * <p> After a successful response, call
          * <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of
          * an assignment creation request. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateAccountAssignment">AWS
@@ -228,8 +227,9 @@ namespace SSOAdmin
 
         /**
          * <p>Creates a permission set within a specified IAM Identity Center instance.</p>
-         *  <p>To grant users and groups access to AWS account resources, use <code>
-         * <a>CreateAccountAssignment</a> </code>.</p> <p><h3>See Also:</h3>   <a
+         *  <p>To grant users and groups access to Amazon Web Services account
+         * resources, use <code> <a>CreateAccountAssignment</a> </code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreatePermissionSet">AWS
          * API Reference</a></p>
          */
@@ -254,10 +254,10 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Deletes a principal's access from a specified AWS account using a specified
-         * permission set.</p>  <p>After a successful response, call
-         * <code>DescribeAccountAssignmentCreationStatus</code> to describe the status of
-         * an assignment deletion request.</p> <p><h3>See Also:</h3>   <a
+         * <p>Deletes a principal's access from a specified Amazon Web Services account
+         * using a specified permission set.</p>  <p>After a successful response,
+         * call <code>DescribeAccountAssignmentDeletionStatus</code> to describe the status
+         * of an assignment deletion request.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteAccountAssignment">AWS
          * API Reference</a></p>
          */
@@ -551,8 +551,8 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Detaches the attached AWS managed policy ARN from the specified permission
-         * set.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches the attached Amazon Web Services managed policy ARN from the
+         * specified permission set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachManagedPolicyFromPermissionSet">AWS
          * API Reference</a></p>
          */
@@ -629,8 +629,9 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Lists the status of the AWS account assignment creation requests for a
-         * specified IAM Identity Center instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the status of the Amazon Web Services account assignment creation
+         * requests for a specified IAM Identity Center instance.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentCreationStatus">AWS
          * API Reference</a></p>
          */
@@ -655,8 +656,9 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Lists the status of the AWS account assignment deletion requests for a
-         * specified IAM Identity Center instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the status of the Amazon Web Services account assignment deletion
+         * requests for a specified IAM Identity Center instance.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentDeletionStatus">AWS
          * API Reference</a></p>
          */
@@ -681,8 +683,8 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Lists the assignee of the specified AWS account with the specified permission
-         * set.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the assignee of the specified Amazon Web Services account with the
+         * specified permission set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignments">AWS
          * API Reference</a></p>
          */
@@ -707,8 +709,8 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Lists all the AWS accounts where the specified permission set is
-         * provisioned.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the Amazon Web Services accounts where the specified permission set
+         * is provisioned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountsForProvisionedPermissionSet">AWS
          * API Reference</a></p>
          */
@@ -785,8 +787,8 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Lists the AWS managed policy that is attached to a specified permission
-         * set.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon Web Services managed policy that is attached to a specified
+         * permission set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListManagedPoliciesInPermissionSet">AWS
          * API Reference</a></p>
          */
@@ -863,8 +865,8 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Lists all the permission sets that are provisioned to a specified AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the permission sets that are provisioned to a specified Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListPermissionSetsProvisionedToAccount">AWS
          * API Reference</a></p>
          */
@@ -970,8 +972,9 @@ namespace SSOAdmin
         }
 
         /**
-         * <p>Attaches an AWS managed or customer managed policy to the specified
-         * <a>PermissionSet</a> as a permissions boundary.</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches an Amazon Web Services managed or customer managed policy to the
+         * specified <a>PermissionSet</a> as a permissions boundary.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">AWS
          * API Reference</a></p>
          */

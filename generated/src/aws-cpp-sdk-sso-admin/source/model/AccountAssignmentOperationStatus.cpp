@@ -19,45 +19,73 @@ namespace Model
 {
 
 AccountAssignmentOperationStatus::AccountAssignmentOperationStatus() : 
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
+    m_createdDateHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
     m_permissionSetArnHasBeenSet(false),
+    m_principalIdHasBeenSet(false),
     m_principalType(PrincipalType::NOT_SET),
     m_principalTypeHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_status(StatusValues::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_targetIdHasBeenSet(false),
+    m_targetType(TargetType::NOT_SET),
+    m_targetTypeHasBeenSet(false)
 {
 }
 
 AccountAssignmentOperationStatus::AccountAssignmentOperationStatus(JsonView jsonValue) : 
-    m_status(StatusValues::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
+    m_createdDateHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
     m_permissionSetArnHasBeenSet(false),
+    m_principalIdHasBeenSet(false),
     m_principalType(PrincipalType::NOT_SET),
     m_principalTypeHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_requestIdHasBeenSet(false),
+    m_status(StatusValues::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_targetIdHasBeenSet(false),
+    m_targetType(TargetType::NOT_SET),
+    m_targetTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 AccountAssignmentOperationStatus& AccountAssignmentOperationStatus::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Status"))
+  if(jsonValue.ValueExists("CreatedDate"))
   {
-    m_status = StatusValuesMapper::GetStatusValuesForName(jsonValue.GetString("Status"));
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
 
-    m_statusHasBeenSet = true;
+    m_createdDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FailureReason"))
+  {
+    m_failureReason = jsonValue.GetString("FailureReason");
+
+    m_failureReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PermissionSetArn"))
+  {
+    m_permissionSetArn = jsonValue.GetString("PermissionSetArn");
+
+    m_permissionSetArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrincipalId"))
+  {
+    m_principalId = jsonValue.GetString("PrincipalId");
+
+    m_principalIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrincipalType"))
+  {
+    m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("PrincipalType"));
+
+    m_principalTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RequestId"))
@@ -67,11 +95,11 @@ AccountAssignmentOperationStatus& AccountAssignmentOperationStatus::operator =(J
     m_requestIdHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("FailureReason"))
+  if(jsonValue.ValueExists("Status"))
   {
-    m_failureReason = jsonValue.GetString("FailureReason");
+    m_status = StatusValuesMapper::GetStatusValuesForName(jsonValue.GetString("Status"));
 
-    m_failureReasonHasBeenSet = true;
+    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TargetId"))
@@ -88,34 +116,6 @@ AccountAssignmentOperationStatus& AccountAssignmentOperationStatus::operator =(J
     m_targetTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PermissionSetArn"))
-  {
-    m_permissionSetArn = jsonValue.GetString("PermissionSetArn");
-
-    m_permissionSetArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PrincipalType"))
-  {
-    m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("PrincipalType"));
-
-    m_principalTypeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("PrincipalId"))
-  {
-    m_principalId = jsonValue.GetString("PrincipalId");
-
-    m_principalIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("CreatedDate"))
-  {
-    m_createdDate = jsonValue.GetDouble("CreatedDate");
-
-    m_createdDateHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -123,9 +123,32 @@ JsonValue AccountAssignmentOperationStatus::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
+  if(m_createdDateHasBeenSet)
   {
-   payload.WithString("Status", StatusValuesMapper::GetNameForStatusValues(m_status));
+   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if(m_failureReasonHasBeenSet)
+  {
+   payload.WithString("FailureReason", m_failureReason);
+
+  }
+
+  if(m_permissionSetArnHasBeenSet)
+  {
+   payload.WithString("PermissionSetArn", m_permissionSetArn);
+
+  }
+
+  if(m_principalIdHasBeenSet)
+  {
+   payload.WithString("PrincipalId", m_principalId);
+
+  }
+
+  if(m_principalTypeHasBeenSet)
+  {
+   payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
   }
 
   if(m_requestIdHasBeenSet)
@@ -134,10 +157,9 @@ JsonValue AccountAssignmentOperationStatus::Jsonize() const
 
   }
 
-  if(m_failureReasonHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("FailureReason", m_failureReason);
-
+   payload.WithString("Status", StatusValuesMapper::GetNameForStatusValues(m_status));
   }
 
   if(m_targetIdHasBeenSet)
@@ -149,28 +171,6 @@ JsonValue AccountAssignmentOperationStatus::Jsonize() const
   if(m_targetTypeHasBeenSet)
   {
    payload.WithString("TargetType", TargetTypeMapper::GetNameForTargetType(m_targetType));
-  }
-
-  if(m_permissionSetArnHasBeenSet)
-  {
-   payload.WithString("PermissionSetArn", m_permissionSetArn);
-
-  }
-
-  if(m_principalTypeHasBeenSet)
-  {
-   payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
-  }
-
-  if(m_principalIdHasBeenSet)
-  {
-   payload.WithString("PrincipalId", m_principalId);
-
-  }
-
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
   }
 
   return payload;
