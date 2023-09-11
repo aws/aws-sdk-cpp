@@ -21,7 +21,6 @@
 #include <winhttp.h>
 #include <sstream>
 #include <iostream>
-#include <versionhelpers.h>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
@@ -108,7 +107,7 @@ static void GetDataErrorBuffer(char* moreDataBuffer,
     char errorBuffer[128] = "";
     char descriptionBuffer[256] = "";
 
-    snprintf(resultBuffer, sizeof(resultBuffer), "dwResult is %I64d.", dwResult);
+    snprintf(resultBuffer, sizeof(resultBuffer), "dwResult is %lld.", dwResult);
 
     switch (dwResult)
     {
