@@ -69,6 +69,7 @@ private:
     Aws::String m_proxyCaFile;
     bool m_disableExpectHeader = false;
     bool m_allowRedirects = false;
+    bool m_enableHttpClientTrace = false;
     static std::atomic<bool> isInit;
     std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;
 };
