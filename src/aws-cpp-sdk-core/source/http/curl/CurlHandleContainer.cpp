@@ -153,6 +153,7 @@ void CurlHandleContainer::SetDefaultOptionsOnHandle(CURL* handle)
     curl_easy_setopt(handle, CURLOPT_TCP_KEEPINTVL, m_tcpKeepAliveIntervalMs / 1000);
     curl_easy_setopt(handle, CURLOPT_TCP_KEEPIDLE, m_tcpKeepAliveIntervalMs / 1000);
     curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, ConvertHttpVersion(m_version));
+    curl_easy_setopt(handle, CURLOPT_MAXCONNECTS, m_maxPoolSize);
 }
 
 long CurlHandleContainer::ConvertHttpVersion(Version version) {
