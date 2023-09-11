@@ -11,6 +11,8 @@
 #include <aws/quicksight/model/ComparisonConfiguration.h>
 #include <aws/quicksight/model/PrimaryValueDisplayType.h>
 #include <aws/quicksight/model/FontConfiguration.h>
+#include <aws/quicksight/model/KPISparklineOptions.h>
+#include <aws/quicksight/model/KPIVisualLayoutOptions.h>
 #include <utility>
 
 namespace Aws
@@ -277,6 +279,74 @@ namespace Model
      */
     inline KPIOptions& WithSecondaryValueFontConfiguration(FontConfiguration&& value) { SetSecondaryValueFontConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The options that determine the visibility, color, type, and tooltip
+     * visibility of the sparkline of a KPI visual.</p>
+     */
+    inline const KPISparklineOptions& GetSparkline() const{ return m_sparkline; }
+
+    /**
+     * <p>The options that determine the visibility, color, type, and tooltip
+     * visibility of the sparkline of a KPI visual.</p>
+     */
+    inline bool SparklineHasBeenSet() const { return m_sparklineHasBeenSet; }
+
+    /**
+     * <p>The options that determine the visibility, color, type, and tooltip
+     * visibility of the sparkline of a KPI visual.</p>
+     */
+    inline void SetSparkline(const KPISparklineOptions& value) { m_sparklineHasBeenSet = true; m_sparkline = value; }
+
+    /**
+     * <p>The options that determine the visibility, color, type, and tooltip
+     * visibility of the sparkline of a KPI visual.</p>
+     */
+    inline void SetSparkline(KPISparklineOptions&& value) { m_sparklineHasBeenSet = true; m_sparkline = std::move(value); }
+
+    /**
+     * <p>The options that determine the visibility, color, type, and tooltip
+     * visibility of the sparkline of a KPI visual.</p>
+     */
+    inline KPIOptions& WithSparkline(const KPISparklineOptions& value) { SetSparkline(value); return *this;}
+
+    /**
+     * <p>The options that determine the visibility, color, type, and tooltip
+     * visibility of the sparkline of a KPI visual.</p>
+     */
+    inline KPIOptions& WithSparkline(KPISparklineOptions&& value) { SetSparkline(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The options that determine the layout a KPI visual.</p>
+     */
+    inline const KPIVisualLayoutOptions& GetVisualLayoutOptions() const{ return m_visualLayoutOptions; }
+
+    /**
+     * <p>The options that determine the layout a KPI visual.</p>
+     */
+    inline bool VisualLayoutOptionsHasBeenSet() const { return m_visualLayoutOptionsHasBeenSet; }
+
+    /**
+     * <p>The options that determine the layout a KPI visual.</p>
+     */
+    inline void SetVisualLayoutOptions(const KPIVisualLayoutOptions& value) { m_visualLayoutOptionsHasBeenSet = true; m_visualLayoutOptions = value; }
+
+    /**
+     * <p>The options that determine the layout a KPI visual.</p>
+     */
+    inline void SetVisualLayoutOptions(KPIVisualLayoutOptions&& value) { m_visualLayoutOptionsHasBeenSet = true; m_visualLayoutOptions = std::move(value); }
+
+    /**
+     * <p>The options that determine the layout a KPI visual.</p>
+     */
+    inline KPIOptions& WithVisualLayoutOptions(const KPIVisualLayoutOptions& value) { SetVisualLayoutOptions(value); return *this;}
+
+    /**
+     * <p>The options that determine the layout a KPI visual.</p>
+     */
+    inline KPIOptions& WithVisualLayoutOptions(KPIVisualLayoutOptions&& value) { SetVisualLayoutOptions(std::move(value)); return *this;}
+
   private:
 
     ProgressBarOptions m_progressBar;
@@ -299,6 +369,12 @@ namespace Model
 
     FontConfiguration m_secondaryValueFontConfiguration;
     bool m_secondaryValueFontConfigurationHasBeenSet = false;
+
+    KPISparklineOptions m_sparkline;
+    bool m_sparklineHasBeenSet = false;
+
+    KPIVisualLayoutOptions m_visualLayoutOptions;
+    bool m_visualLayoutOptionsHasBeenSet = false;
   };
 
 } // namespace Model

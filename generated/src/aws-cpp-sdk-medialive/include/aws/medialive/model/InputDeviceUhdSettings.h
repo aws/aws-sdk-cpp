@@ -9,6 +9,8 @@
 #include <aws/medialive/model/InputDeviceConfiguredInput.h>
 #include <aws/medialive/model/InputDeviceState.h>
 #include <aws/medialive/model/InputDeviceScanType.h>
+#include <aws/medialive/model/InputDeviceCodec.h>
+#include <aws/medialive/model/InputDeviceMediaConnectSettings.h>
 #include <utility>
 
 namespace Aws
@@ -289,6 +291,74 @@ namespace Model
      */
     inline InputDeviceUhdSettings& WithLatencyMs(int value) { SetLatencyMs(value); return *this;}
 
+
+    /**
+     * The codec for the video that the device produces.
+     */
+    inline const InputDeviceCodec& GetCodec() const{ return m_codec; }
+
+    /**
+     * The codec for the video that the device produces.
+     */
+    inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
+
+    /**
+     * The codec for the video that the device produces.
+     */
+    inline void SetCodec(const InputDeviceCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
+
+    /**
+     * The codec for the video that the device produces.
+     */
+    inline void SetCodec(InputDeviceCodec&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
+
+    /**
+     * The codec for the video that the device produces.
+     */
+    inline InputDeviceUhdSettings& WithCodec(const InputDeviceCodec& value) { SetCodec(value); return *this;}
+
+    /**
+     * The codec for the video that the device produces.
+     */
+    inline InputDeviceUhdSettings& WithCodec(InputDeviceCodec&& value) { SetCodec(std::move(value)); return *this;}
+
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if
+     * the outputType is MEDIACONNECT_FLOW.
+     */
+    inline const InputDeviceMediaConnectSettings& GetMediaconnectSettings() const{ return m_mediaconnectSettings; }
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if
+     * the outputType is MEDIACONNECT_FLOW.
+     */
+    inline bool MediaconnectSettingsHasBeenSet() const { return m_mediaconnectSettingsHasBeenSet; }
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if
+     * the outputType is MEDIACONNECT_FLOW.
+     */
+    inline void SetMediaconnectSettings(const InputDeviceMediaConnectSettings& value) { m_mediaconnectSettingsHasBeenSet = true; m_mediaconnectSettings = value; }
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if
+     * the outputType is MEDIACONNECT_FLOW.
+     */
+    inline void SetMediaconnectSettings(InputDeviceMediaConnectSettings&& value) { m_mediaconnectSettingsHasBeenSet = true; m_mediaconnectSettings = std::move(value); }
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if
+     * the outputType is MEDIACONNECT_FLOW.
+     */
+    inline InputDeviceUhdSettings& WithMediaconnectSettings(const InputDeviceMediaConnectSettings& value) { SetMediaconnectSettings(value); return *this;}
+
+    /**
+     * Information about the MediaConnect flow attached to the device. Returned only if
+     * the outputType is MEDIACONNECT_FLOW.
+     */
+    inline InputDeviceUhdSettings& WithMediaconnectSettings(InputDeviceMediaConnectSettings&& value) { SetMediaconnectSettings(std::move(value)); return *this;}
+
   private:
 
     InputDeviceActiveInput m_activeInput;
@@ -317,6 +387,12 @@ namespace Model
 
     int m_latencyMs;
     bool m_latencyMsHasBeenSet = false;
+
+    InputDeviceCodec m_codec;
+    bool m_codecHasBeenSet = false;
+
+    InputDeviceMediaConnectSettings m_mediaconnectSettings;
+    bool m_mediaconnectSettingsHasBeenSet = false;
   };
 
 } // namespace Model

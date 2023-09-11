@@ -1316,6 +1316,33 @@ namespace MediaLive
         }
 
         /**
+         * Start an input device that is attached to a MediaConnect flow. (There is no need
+         * to start a device that is attached to a MediaLive input; MediaLive starts the
+         * device when the channel starts.)<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDevice">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartInputDeviceOutcome StartInputDevice(const Model::StartInputDeviceRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartInputDevice that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartInputDeviceRequestT = Model::StartInputDeviceRequest>
+        Model::StartInputDeviceOutcomeCallable StartInputDeviceCallable(const StartInputDeviceRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::StartInputDevice, request);
+        }
+
+        /**
+         * An Async wrapper for StartInputDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartInputDeviceRequestT = Model::StartInputDeviceRequest>
+        void StartInputDeviceAsync(const StartInputDeviceRequestT& request, const StartInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::StartInputDevice, request, handler, context);
+        }
+
+        /**
          * Start a maintenance window for the specified input device. Starting a
          * maintenance window will give the device up to two hours to install software. If
          * the device was streaming prior to the maintenance, it will resume streaming when
@@ -1396,6 +1423,33 @@ namespace MediaLive
         void StopChannelAsync(const StopChannelRequestT& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::StopChannel, request, handler, context);
+        }
+
+        /**
+         * Stop an input device that is attached to a MediaConnect flow. (There is no need
+         * to stop a device that is attached to a MediaLive input; MediaLive automatically
+         * stops the device when the channel stops.)<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopInputDevice">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopInputDeviceOutcome StopInputDevice(const Model::StopInputDeviceRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopInputDevice that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopInputDeviceRequestT = Model::StopInputDeviceRequest>
+        Model::StopInputDeviceOutcomeCallable StopInputDeviceCallable(const StopInputDeviceRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::StopInputDevice, request);
+        }
+
+        /**
+         * An Async wrapper for StopInputDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopInputDeviceRequestT = Model::StopInputDeviceRequest>
+        void StopInputDeviceAsync(const StopInputDeviceRequestT& request, const StopInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::StopInputDevice, request, handler, context);
         }
 
         /**

@@ -65,9 +65,11 @@
 #include <aws/medialive/model/RejectInputDeviceTransferResult.h>
 #include <aws/medialive/model/UpdateAccountConfigurationResult.h>
 #include <aws/medialive/model/StartChannelResult.h>
+#include <aws/medialive/model/StartInputDeviceResult.h>
 #include <aws/medialive/model/StartInputDeviceMaintenanceWindowResult.h>
 #include <aws/medialive/model/StartMultiplexResult.h>
 #include <aws/medialive/model/StopChannelResult.h>
+#include <aws/medialive/model/StopInputDeviceResult.h>
 #include <aws/medialive/model/StopMultiplexResult.h>
 #include <aws/medialive/model/TransferInputDeviceResult.h>
 #include <aws/medialive/model/UpdateChannelResult.h>
@@ -168,9 +170,11 @@ namespace Aws
       class RejectInputDeviceTransferRequest;
       class UpdateAccountConfigurationRequest;
       class StartChannelRequest;
+      class StartInputDeviceRequest;
       class StartInputDeviceMaintenanceWindowRequest;
       class StartMultiplexRequest;
       class StopChannelRequest;
+      class StopInputDeviceRequest;
       class StopMultiplexRequest;
       class TransferInputDeviceRequest;
       class UpdateChannelRequest;
@@ -233,9 +237,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<RejectInputDeviceTransferResult, MediaLiveError> RejectInputDeviceTransferOutcome;
       typedef Aws::Utils::Outcome<UpdateAccountConfigurationResult, MediaLiveError> UpdateAccountConfigurationOutcome;
       typedef Aws::Utils::Outcome<StartChannelResult, MediaLiveError> StartChannelOutcome;
+      typedef Aws::Utils::Outcome<StartInputDeviceResult, MediaLiveError> StartInputDeviceOutcome;
       typedef Aws::Utils::Outcome<StartInputDeviceMaintenanceWindowResult, MediaLiveError> StartInputDeviceMaintenanceWindowOutcome;
       typedef Aws::Utils::Outcome<StartMultiplexResult, MediaLiveError> StartMultiplexOutcome;
       typedef Aws::Utils::Outcome<StopChannelResult, MediaLiveError> StopChannelOutcome;
+      typedef Aws::Utils::Outcome<StopInputDeviceResult, MediaLiveError> StopInputDeviceOutcome;
       typedef Aws::Utils::Outcome<StopMultiplexResult, MediaLiveError> StopMultiplexOutcome;
       typedef Aws::Utils::Outcome<TransferInputDeviceResult, MediaLiveError> TransferInputDeviceOutcome;
       typedef Aws::Utils::Outcome<UpdateChannelResult, MediaLiveError> UpdateChannelOutcome;
@@ -298,9 +304,11 @@ namespace Aws
       typedef std::future<RejectInputDeviceTransferOutcome> RejectInputDeviceTransferOutcomeCallable;
       typedef std::future<UpdateAccountConfigurationOutcome> UpdateAccountConfigurationOutcomeCallable;
       typedef std::future<StartChannelOutcome> StartChannelOutcomeCallable;
+      typedef std::future<StartInputDeviceOutcome> StartInputDeviceOutcomeCallable;
       typedef std::future<StartInputDeviceMaintenanceWindowOutcome> StartInputDeviceMaintenanceWindowOutcomeCallable;
       typedef std::future<StartMultiplexOutcome> StartMultiplexOutcomeCallable;
       typedef std::future<StopChannelOutcome> StopChannelOutcomeCallable;
+      typedef std::future<StopInputDeviceOutcome> StopInputDeviceOutcomeCallable;
       typedef std::future<StopMultiplexOutcome> StopMultiplexOutcomeCallable;
       typedef std::future<TransferInputDeviceOutcome> TransferInputDeviceOutcomeCallable;
       typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
@@ -366,9 +374,11 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::RejectInputDeviceTransferRequest&, const Model::RejectInputDeviceTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInputDeviceTransferResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateAccountConfigurationRequest&, const Model::UpdateAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountConfigurationResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartChannelRequest&, const Model::StartChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChannelResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::StartInputDeviceRequest&, const Model::StartInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInputDeviceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartInputDeviceMaintenanceWindowRequest&, const Model::StartInputDeviceMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInputDeviceMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartMultiplexRequest&, const Model::StartMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMultiplexResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StopChannelRequest&, const Model::StopChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopChannelResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::StopInputDeviceRequest&, const Model::StopInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInputDeviceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StopMultiplexRequest&, const Model::StopMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMultiplexResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::TransferInputDeviceRequest&, const Model::TransferInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransferInputDeviceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;

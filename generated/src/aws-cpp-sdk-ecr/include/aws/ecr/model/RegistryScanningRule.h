@@ -44,8 +44,9 @@ namespace Model
      * <p>The frequency that scans are performed at for a private registry. When the
      * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
      * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and
-     * <code>MANUAL</code> scan frequencies are supported.</p>
+     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
+     * frequency is supported. If scan on push is not specified, then the
+     * <code>MANUAL</code> scan frequency is set by default.</p>
      */
     inline const ScanFrequency& GetScanFrequency() const{ return m_scanFrequency; }
 
@@ -53,8 +54,9 @@ namespace Model
      * <p>The frequency that scans are performed at for a private registry. When the
      * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
      * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and
-     * <code>MANUAL</code> scan frequencies are supported.</p>
+     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
+     * frequency is supported. If scan on push is not specified, then the
+     * <code>MANUAL</code> scan frequency is set by default.</p>
      */
     inline bool ScanFrequencyHasBeenSet() const { return m_scanFrequencyHasBeenSet; }
 
@@ -62,8 +64,9 @@ namespace Model
      * <p>The frequency that scans are performed at for a private registry. When the
      * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
      * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and
-     * <code>MANUAL</code> scan frequencies are supported.</p>
+     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
+     * frequency is supported. If scan on push is not specified, then the
+     * <code>MANUAL</code> scan frequency is set by default.</p>
      */
     inline void SetScanFrequency(const ScanFrequency& value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = value; }
 
@@ -71,8 +74,9 @@ namespace Model
      * <p>The frequency that scans are performed at for a private registry. When the
      * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
      * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and
-     * <code>MANUAL</code> scan frequencies are supported.</p>
+     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
+     * frequency is supported. If scan on push is not specified, then the
+     * <code>MANUAL</code> scan frequency is set by default.</p>
      */
     inline void SetScanFrequency(ScanFrequency&& value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = std::move(value); }
 
@@ -80,8 +84,9 @@ namespace Model
      * <p>The frequency that scans are performed at for a private registry. When the
      * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
      * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and
-     * <code>MANUAL</code> scan frequencies are supported.</p>
+     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
+     * frequency is supported. If scan on push is not specified, then the
+     * <code>MANUAL</code> scan frequency is set by default.</p>
      */
     inline RegistryScanningRule& WithScanFrequency(const ScanFrequency& value) { SetScanFrequency(value); return *this;}
 
@@ -89,8 +94,9 @@ namespace Model
      * <p>The frequency that scans are performed at for a private registry. When the
      * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
      * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and
-     * <code>MANUAL</code> scan frequencies are supported.</p>
+     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
+     * frequency is supported. If scan on push is not specified, then the
+     * <code>MANUAL</code> scan frequency is set by default.</p>
      */
     inline RegistryScanningRule& WithScanFrequency(ScanFrequency&& value) { SetScanFrequency(std::move(value)); return *this;}
 
