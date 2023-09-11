@@ -26,7 +26,9 @@ KPIOptions::KPIOptions() :
     m_primaryValueDisplayType(PrimaryValueDisplayType::NOT_SET),
     m_primaryValueDisplayTypeHasBeenSet(false),
     m_primaryValueFontConfigurationHasBeenSet(false),
-    m_secondaryValueFontConfigurationHasBeenSet(false)
+    m_secondaryValueFontConfigurationHasBeenSet(false),
+    m_sparklineHasBeenSet(false),
+    m_visualLayoutOptionsHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ KPIOptions::KPIOptions(JsonView jsonValue) :
     m_primaryValueDisplayType(PrimaryValueDisplayType::NOT_SET),
     m_primaryValueDisplayTypeHasBeenSet(false),
     m_primaryValueFontConfigurationHasBeenSet(false),
-    m_secondaryValueFontConfigurationHasBeenSet(false)
+    m_secondaryValueFontConfigurationHasBeenSet(false),
+    m_sparklineHasBeenSet(false),
+    m_visualLayoutOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +98,20 @@ KPIOptions& KPIOptions::operator =(JsonView jsonValue)
     m_secondaryValueFontConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Sparkline"))
+  {
+    m_sparkline = jsonValue.GetObject("Sparkline");
+
+    m_sparklineHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VisualLayoutOptions"))
+  {
+    m_visualLayoutOptions = jsonValue.GetObject("VisualLayoutOptions");
+
+    m_visualLayoutOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +157,18 @@ JsonValue KPIOptions::Jsonize() const
   if(m_secondaryValueFontConfigurationHasBeenSet)
   {
    payload.WithObject("SecondaryValueFontConfiguration", m_secondaryValueFontConfiguration.Jsonize());
+
+  }
+
+  if(m_sparklineHasBeenSet)
+  {
+   payload.WithObject("Sparkline", m_sparkline.Jsonize());
+
+  }
+
+  if(m_visualLayoutOptionsHasBeenSet)
+  {
+   payload.WithObject("VisualLayoutOptions", m_visualLayoutOptions.Jsonize());
 
   }
 

@@ -27,9 +27,8 @@ namespace Model
   /**
    * <p>The filter settings used with image replication. Specifying a repository
    * filter to a replication rule provides a method for controlling which
-   * repositories in a private registry are replicated. If no repository filter is
-   * specified, all images in the repository are replicated.</p><p><h3>See Also:</h3>
-   * <a
+   * repositories in a private registry are replicated. If no filters are added, the
+   * contents of all repositories are replicated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RepositoryFilter">AWS
    * API Reference</a></p>
    */

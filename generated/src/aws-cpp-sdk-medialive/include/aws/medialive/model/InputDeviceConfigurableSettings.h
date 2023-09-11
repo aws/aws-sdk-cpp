@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/InputDeviceConfiguredInput.h>
+#include <aws/medialive/model/InputDeviceCodec.h>
+#include <aws/medialive/model/InputDeviceMediaConnectConfigurableSettings.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +133,86 @@ namespace Model
      */
     inline InputDeviceConfigurableSettings& WithLatencyMs(int value) { SetLatencyMs(value); return *this;}
 
+
+    /**
+     * Choose the codec for the video that the device produces. Only UHD devices can
+     * specify this parameter.
+     */
+    inline const InputDeviceCodec& GetCodec() const{ return m_codec; }
+
+    /**
+     * Choose the codec for the video that the device produces. Only UHD devices can
+     * specify this parameter.
+     */
+    inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
+
+    /**
+     * Choose the codec for the video that the device produces. Only UHD devices can
+     * specify this parameter.
+     */
+    inline void SetCodec(const InputDeviceCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
+
+    /**
+     * Choose the codec for the video that the device produces. Only UHD devices can
+     * specify this parameter.
+     */
+    inline void SetCodec(InputDeviceCodec&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
+
+    /**
+     * Choose the codec for the video that the device produces. Only UHD devices can
+     * specify this parameter.
+     */
+    inline InputDeviceConfigurableSettings& WithCodec(const InputDeviceCodec& value) { SetCodec(value); return *this;}
+
+    /**
+     * Choose the codec for the video that the device produces. Only UHD devices can
+     * specify this parameter.
+     */
+    inline InputDeviceConfigurableSettings& WithCodec(InputDeviceCodec&& value) { SetCodec(std::move(value)); return *this;}
+
+
+    /**
+     * To attach this device to a MediaConnect flow, specify these parameters. To
+     * detach an existing flow, enter {} for the value of mediaconnectSettings. Only
+     * UHD devices can specify this parameter.
+     */
+    inline const InputDeviceMediaConnectConfigurableSettings& GetMediaconnectSettings() const{ return m_mediaconnectSettings; }
+
+    /**
+     * To attach this device to a MediaConnect flow, specify these parameters. To
+     * detach an existing flow, enter {} for the value of mediaconnectSettings. Only
+     * UHD devices can specify this parameter.
+     */
+    inline bool MediaconnectSettingsHasBeenSet() const { return m_mediaconnectSettingsHasBeenSet; }
+
+    /**
+     * To attach this device to a MediaConnect flow, specify these parameters. To
+     * detach an existing flow, enter {} for the value of mediaconnectSettings. Only
+     * UHD devices can specify this parameter.
+     */
+    inline void SetMediaconnectSettings(const InputDeviceMediaConnectConfigurableSettings& value) { m_mediaconnectSettingsHasBeenSet = true; m_mediaconnectSettings = value; }
+
+    /**
+     * To attach this device to a MediaConnect flow, specify these parameters. To
+     * detach an existing flow, enter {} for the value of mediaconnectSettings. Only
+     * UHD devices can specify this parameter.
+     */
+    inline void SetMediaconnectSettings(InputDeviceMediaConnectConfigurableSettings&& value) { m_mediaconnectSettingsHasBeenSet = true; m_mediaconnectSettings = std::move(value); }
+
+    /**
+     * To attach this device to a MediaConnect flow, specify these parameters. To
+     * detach an existing flow, enter {} for the value of mediaconnectSettings. Only
+     * UHD devices can specify this parameter.
+     */
+    inline InputDeviceConfigurableSettings& WithMediaconnectSettings(const InputDeviceMediaConnectConfigurableSettings& value) { SetMediaconnectSettings(value); return *this;}
+
+    /**
+     * To attach this device to a MediaConnect flow, specify these parameters. To
+     * detach an existing flow, enter {} for the value of mediaconnectSettings. Only
+     * UHD devices can specify this parameter.
+     */
+    inline InputDeviceConfigurableSettings& WithMediaconnectSettings(InputDeviceMediaConnectConfigurableSettings&& value) { SetMediaconnectSettings(std::move(value)); return *this;}
+
   private:
 
     InputDeviceConfiguredInput m_configuredInput;
@@ -141,6 +223,12 @@ namespace Model
 
     int m_latencyMs;
     bool m_latencyMsHasBeenSet = false;
+
+    InputDeviceCodec m_codec;
+    bool m_codecHasBeenSet = false;
+
+    InputDeviceMediaConnectConfigurableSettings m_mediaconnectSettings;
+    bool m_mediaconnectSettingsHasBeenSet = false;
   };
 
 } // namespace Model
