@@ -254,7 +254,7 @@ namespace Aws
             * the file transfers. If an error occurs prior to the transfer being initiated (e.g. list objects fails, then an error will be passed through the errorCallback).
             *
             * directory: the absolute directory on disk to download to
-            * bucketName: the name of the S3 bucket to download to
+            * bucketName: the name of the S3 bucket to download from
             * prefix: the prefix in the bucket to use as the root directory (e.g. download all objects at x prefix in S3 and then store them starting in directory with the prefix stripped out).
             */
             void DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix = Aws::String());
