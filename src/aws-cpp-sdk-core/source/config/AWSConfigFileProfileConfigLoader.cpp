@@ -564,7 +564,7 @@ namespace Aws
 
                     AWS_LOGSTREAM_DEBUG(CONFIG_FILE_LOADER, "Writing profile " << profile.first << " to disk.");
 
-                    outputFile << LEFT_BRACKET << prefix << " " << profile.second.GetName() << RIGHT_BRACKET << std::endl;
+                    outputFile << LEFT_BRACKET << prefix << (m_useProfilePrefix ? " " : "") << profile.second.GetName() << RIGHT_BRACKET << std::endl;
                     const Aws::Auth::AWSCredentials& credentials = profile.second.GetCredentials();
                     if (!credentials.GetAWSAccessKeyId().empty()) {
                         outputFile << ACCESS_KEY_ID_KEY << EQ << credentials.GetAWSAccessKeyId() << std::endl;
