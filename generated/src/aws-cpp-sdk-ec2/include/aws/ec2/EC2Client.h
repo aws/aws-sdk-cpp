@@ -11259,6 +11259,43 @@ namespace EC2
         }
 
         /**
+         * <p>Disables <i>block public access for AMIs</i> at the account level in the
+         * specified Amazon Web Services Region. This removes the <i>block public
+         * access</i> restriction from your account. With the restriction removed, you can
+         * publicly share your AMIs in the specified Amazon Web Services Region.</p> <p>The
+         * API can take up to 10 minutes to configure this setting. During this time, if
+         * you run <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+         * the response will be <code>block-new-sharing</code>. When the API has completed
+         * the configuration, the response will be <code>unblocked</code>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * public access to your AMIs</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableImageBlockPublicAccessOutcome DisableImageBlockPublicAccess(const Model::DisableImageBlockPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableImageBlockPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableImageBlockPublicAccessRequestT = Model::DisableImageBlockPublicAccessRequest>
+        Model::DisableImageBlockPublicAccessOutcomeCallable DisableImageBlockPublicAccessCallable(const DisableImageBlockPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisableImageBlockPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for DisableImageBlockPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableImageBlockPublicAccessRequestT = Model::DisableImageBlockPublicAccessRequest>
+        void DisableImageBlockPublicAccessAsync(const DisableImageBlockPublicAccessRequestT& request, const DisableImageBlockPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisableImageBlockPublicAccess, request, handler, context);
+        }
+
+        /**
          * <p>Cancels the deprecation of the specified AMI.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
@@ -12012,6 +12049,42 @@ namespace EC2
         }
 
         /**
+         * <p>Enables <i>block public access for AMIs</i> at the account level in the
+         * specified Amazon Web Services Region. This prevents the public sharing of your
+         * AMIs. However, if you already have public AMIs, they will remain publicly
+         * available.</p> <p>The API can take up to 10 minutes to configure this setting.
+         * During this time, if you run <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+         * the response will be <code>unblocked</code>. When the API has completed the
+         * configuration, the response will be <code>block-new-sharing</code>.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * public access to your AMIs</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableImageBlockPublicAccessOutcome EnableImageBlockPublicAccess(const Model::EnableImageBlockPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableImageBlockPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableImageBlockPublicAccessRequestT = Model::EnableImageBlockPublicAccessRequest>
+        Model::EnableImageBlockPublicAccessOutcomeCallable EnableImageBlockPublicAccessCallable(const EnableImageBlockPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::EnableImageBlockPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for EnableImageBlockPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableImageBlockPublicAccessRequestT = Model::EnableImageBlockPublicAccessRequest>
+        void EnableImageBlockPublicAccessAsync(const EnableImageBlockPublicAccessRequestT& request, const EnableImageBlockPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::EnableImageBlockPublicAccess, request, handler, context);
+        }
+
+        /**
          * <p>Enables deprecation of the specified AMI at the specified date and time.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
@@ -12762,6 +12835,36 @@ namespace EC2
         void GetHostReservationPurchasePreviewAsync(const GetHostReservationPurchasePreviewRequestT& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::GetHostReservationPurchasePreview, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the current state of <i>block public access for AMIs</i> at the account
+         * level in the specified Amazon Web Services Region.</p> <p>For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * public access to your AMIs</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImageBlockPublicAccessStateOutcome GetImageBlockPublicAccessState(const Model::GetImageBlockPublicAccessStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetImageBlockPublicAccessState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetImageBlockPublicAccessStateRequestT = Model::GetImageBlockPublicAccessStateRequest>
+        Model::GetImageBlockPublicAccessStateOutcomeCallable GetImageBlockPublicAccessStateCallable(const GetImageBlockPublicAccessStateRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetImageBlockPublicAccessState, request);
+        }
+
+        /**
+         * An Async wrapper for GetImageBlockPublicAccessState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetImageBlockPublicAccessStateRequestT = Model::GetImageBlockPublicAccessStateRequest>
+        void GetImageBlockPublicAccessStateAsync(const GetImageBlockPublicAccessStateRequestT& request, const GetImageBlockPublicAccessStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetImageBlockPublicAccessState, request, handler, context);
         }
 
         /**
