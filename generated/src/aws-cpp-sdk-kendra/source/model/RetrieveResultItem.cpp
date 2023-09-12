@@ -24,7 +24,8 @@ RetrieveResultItem::RetrieveResultItem() :
     m_documentTitleHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_documentURIHasBeenSet(false),
-    m_documentAttributesHasBeenSet(false)
+    m_documentAttributesHasBeenSet(false),
+    m_scoreAttributesHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ RetrieveResultItem::RetrieveResultItem(JsonView jsonValue) :
     m_documentTitleHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_documentURIHasBeenSet(false),
-    m_documentAttributesHasBeenSet(false)
+    m_documentAttributesHasBeenSet(false),
+    m_scoreAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ RetrieveResultItem& RetrieveResultItem::operator =(JsonView jsonValue)
     m_documentAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ScoreAttributes"))
+  {
+    m_scoreAttributes = jsonValue.GetObject("ScoreAttributes");
+
+    m_scoreAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +140,12 @@ JsonValue RetrieveResultItem::Jsonize() const
      documentAttributesJsonList[documentAttributesIndex].AsObject(m_documentAttributes[documentAttributesIndex].Jsonize());
    }
    payload.WithArray("DocumentAttributes", std::move(documentAttributesJsonList));
+
+  }
+
+  if(m_scoreAttributesHasBeenSet)
+  {
+   payload.WithObject("ScoreAttributes", m_scoreAttributes.Jsonize());
 
   }
 

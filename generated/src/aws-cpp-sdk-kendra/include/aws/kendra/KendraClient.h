@@ -141,7 +141,11 @@ namespace kendra
          * added with the <code>BatchPutDocument</code> API.</p> <p>The documents are
          * deleted asynchronously. You can see the progress of the deletion by using Amazon
          * Web Services CloudWatch. Any error messages related to the processing of the
-         * batch are sent to you CloudWatch log.</p><p><h3>See Also:</h3>   <a
+         * batch are sent to your Amazon Web Services CloudWatch log. You can also use the
+         * <code>BatchGetDocumentStatus</code> API to monitor the progress of deleting your
+         * documents.</p> <p>Deleting documents from an index using
+         * <code>BatchDeleteDocument</code> could take up to an hour or more, depending on
+         * the number of documents you want to delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocument">AWS
          * API Reference</a></p>
          */
@@ -237,8 +241,10 @@ namespace kendra
          * to attach an access control list to the documents added to the index.</p> <p>The
          * documents are indexed asynchronously. You can see the progress of the batch
          * using Amazon Web Services CloudWatch. Any error messages related to processing
-         * the batch are sent to your Amazon Web Services CloudWatch log.</p> <p>For an
-         * example of ingesting inline documents using Python and Java SDKs, see <a
+         * the batch are sent to your Amazon Web Services CloudWatch log. You can also use
+         * the <code>BatchGetDocumentStatus</code> API to monitor the progress of indexing
+         * your documents.</p> <p>For an example of ingesting inline documents using Python
+         * and Java SDKs, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-binary-doc.html">Adding
          * files directly to an index</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchPutDocument">AWS
@@ -475,10 +481,11 @@ namespace kendra
          * determine if index creation has completed, check the <code>Status</code> field
          * returned from a call to <code>DescribeIndex</code>. The <code>Status</code>
          * field is set to <code>ACTIVE</code> when the index is ready to use.</p> <p>Once
-         * the index is active you can index your documents using the
-         * <code>BatchPutDocument</code> API or using one of the supported data
-         * sources.</p> <p>For an example of creating an index and data source using the
-         * Python SDK, see <a
+         * the index is active, you can index your documents using the
+         * <code>BatchPutDocument</code> API or using one of the supported <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/data-sources.html">data
+         * sources</a>.</p> <p>For an example of creating an index and data source using
+         * the Python SDK, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting
          * started with Python SDK</a>. For an example of creating an index and data source
          * using the Java SDK, see <a
@@ -609,7 +616,10 @@ namespace kendra
          * <code>DescribeDataSource</code> API is set to <code>DELETING</code>. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
-         * Data Sources</a>.</p><p><h3>See Also:</h3>   <a
+         * Data Sources</a>.</p> <p>Deleting an entire data source or re-syncing your index
+         * after deleting specific documents from a data source could take up to an hour or
+         * more, depending on the number of documents you want to delete.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteDataSource">AWS
          * API Reference</a></p>
          */
@@ -1638,13 +1648,20 @@ namespace kendra
          * relevant passages. This doesn't include question-answer or FAQ type responses
          * from your index. The passages are text excerpts that can be semantically
          * extracted from multiple documents and multiple parts of the same document. If in
-         * extreme cases your documents produce no relevant passages using the
-         * <code>Retrieve</code> API, you can alternatively use the <code>Query</code>
-         * API.</p> <p>You can also do the following:</p> <ul> <li> <p>Override boosting at
-         * the index level</p> </li> <li> <p>Filter based on document fields or
-         * attributes</p> </li> <li> <p>Filter based on the user or their group access to
-         * documents</p> </li> </ul> <p>You can also include certain fields in the response
-         * that might provide useful additional information.</p><p><h3>See Also:</h3>   <a
+         * extreme cases your documents produce zero passages using the
+         * <code>Retrieve</code> API, you can alternatively use the <code>Query</code> API
+         * and its types of responses.</p> <p>You can also do the following:</p> <ul> <li>
+         * <p>Override boosting at the index level</p> </li> <li> <p>Filter based on
+         * document fields or attributes</p> </li> <li> <p>Filter based on the user or
+         * their group access to documents</p> </li> </ul> <p>You can also include certain
+         * fields in the response that might provide useful additional information.</p>
+         * <p>The <code>Retrieve</code> API shares the number of <a
+         * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_CapacityUnitsConfiguration.html">query
+         * capacity units</a> that you set for your index. For more information on what's
+         * included in a single capacity unit and the default base capacity for an index,
+         * see <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
+         * capacity</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Retrieve">AWS API
          * Reference</a></p>
          */
@@ -1671,7 +1688,10 @@ namespace kendra
         /**
          * <p>Starts a synchronization job for a data source connector. If a
          * synchronization job is already in progress, Amazon Kendra returns a
-         * <code>ResourceInUseException</code> exception.</p><p><h3>See Also:</h3>   <a
+         * <code>ResourceInUseException</code> exception.</p> <p>Re-syncing your data
+         * source with your index after modifying, adding, or deleting documents from your
+         * data source respository could take up to an hour or more, depending on the
+         * number of documents to sync.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StartDataSourceSyncJob">AWS
          * API Reference</a></p>
          */

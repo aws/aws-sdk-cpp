@@ -361,6 +361,7 @@
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/DisableFastLaunchResponse.h>
 #include <aws/ec2/model/DisableFastSnapshotRestoresResponse.h>
+#include <aws/ec2/model/DisableImageBlockPublicAccessResponse.h>
 #include <aws/ec2/model/DisableImageDeprecationResponse.h>
 #include <aws/ec2/model/DisableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/DisableSerialConsoleAccessResponse.h>
@@ -384,6 +385,7 @@
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/EnableFastLaunchResponse.h>
 #include <aws/ec2/model/EnableFastSnapshotRestoresResponse.h>
+#include <aws/ec2/model/EnableImageBlockPublicAccessResponse.h>
 #include <aws/ec2/model/EnableImageDeprecationResponse.h>
 #include <aws/ec2/model/EnableIpamOrganizationAdminAccountResponse.h>
 #include <aws/ec2/model/EnableReachabilityAnalyzerOrganizationSharingResponse.h>
@@ -408,6 +410,7 @@
 #include <aws/ec2/model/GetFlowLogsIntegrationTemplateResponse.h>
 #include <aws/ec2/model/GetGroupsForCapacityReservationResponse.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
+#include <aws/ec2/model/GetImageBlockPublicAccessStateResponse.h>
 #include <aws/ec2/model/GetInstanceTypesFromInstanceRequirementsResponse.h>
 #include <aws/ec2/model/GetInstanceUefiDataResponse.h>
 #include <aws/ec2/model/GetIpamAddressHistoryResponse.h>
@@ -971,6 +974,7 @@ namespace Aws
       class DisableEbsEncryptionByDefaultRequest;
       class DisableFastLaunchRequest;
       class DisableFastSnapshotRestoresRequest;
+      class DisableImageBlockPublicAccessRequest;
       class DisableImageDeprecationRequest;
       class DisableIpamOrganizationAdminAccountRequest;
       class DisableSerialConsoleAccessRequest;
@@ -997,6 +1001,7 @@ namespace Aws
       class EnableEbsEncryptionByDefaultRequest;
       class EnableFastLaunchRequest;
       class EnableFastSnapshotRestoresRequest;
+      class EnableImageBlockPublicAccessRequest;
       class EnableImageDeprecationRequest;
       class EnableIpamOrganizationAdminAccountRequest;
       class EnableReachabilityAnalyzerOrganizationSharingRequest;
@@ -1023,6 +1028,7 @@ namespace Aws
       class GetFlowLogsIntegrationTemplateRequest;
       class GetGroupsForCapacityReservationRequest;
       class GetHostReservationPurchasePreviewRequest;
+      class GetImageBlockPublicAccessStateRequest;
       class GetInstanceTypesFromInstanceRequirementsRequest;
       class GetInstanceUefiDataRequest;
       class GetIpamAddressHistoryRequest;
@@ -1568,6 +1574,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisableEbsEncryptionByDefaultResponse, EC2Error> DisableEbsEncryptionByDefaultOutcome;
       typedef Aws::Utils::Outcome<DisableFastLaunchResponse, EC2Error> DisableFastLaunchOutcome;
       typedef Aws::Utils::Outcome<DisableFastSnapshotRestoresResponse, EC2Error> DisableFastSnapshotRestoresOutcome;
+      typedef Aws::Utils::Outcome<DisableImageBlockPublicAccessResponse, EC2Error> DisableImageBlockPublicAccessOutcome;
       typedef Aws::Utils::Outcome<DisableImageDeprecationResponse, EC2Error> DisableImageDeprecationOutcome;
       typedef Aws::Utils::Outcome<DisableIpamOrganizationAdminAccountResponse, EC2Error> DisableIpamOrganizationAdminAccountOutcome;
       typedef Aws::Utils::Outcome<DisableSerialConsoleAccessResponse, EC2Error> DisableSerialConsoleAccessOutcome;
@@ -1594,6 +1601,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<EnableEbsEncryptionByDefaultResponse, EC2Error> EnableEbsEncryptionByDefaultOutcome;
       typedef Aws::Utils::Outcome<EnableFastLaunchResponse, EC2Error> EnableFastLaunchOutcome;
       typedef Aws::Utils::Outcome<EnableFastSnapshotRestoresResponse, EC2Error> EnableFastSnapshotRestoresOutcome;
+      typedef Aws::Utils::Outcome<EnableImageBlockPublicAccessResponse, EC2Error> EnableImageBlockPublicAccessOutcome;
       typedef Aws::Utils::Outcome<EnableImageDeprecationResponse, EC2Error> EnableImageDeprecationOutcome;
       typedef Aws::Utils::Outcome<EnableIpamOrganizationAdminAccountResponse, EC2Error> EnableIpamOrganizationAdminAccountOutcome;
       typedef Aws::Utils::Outcome<EnableReachabilityAnalyzerOrganizationSharingResponse, EC2Error> EnableReachabilityAnalyzerOrganizationSharingOutcome;
@@ -1620,6 +1628,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetFlowLogsIntegrationTemplateResponse, EC2Error> GetFlowLogsIntegrationTemplateOutcome;
       typedef Aws::Utils::Outcome<GetGroupsForCapacityReservationResponse, EC2Error> GetGroupsForCapacityReservationOutcome;
       typedef Aws::Utils::Outcome<GetHostReservationPurchasePreviewResponse, EC2Error> GetHostReservationPurchasePreviewOutcome;
+      typedef Aws::Utils::Outcome<GetImageBlockPublicAccessStateResponse, EC2Error> GetImageBlockPublicAccessStateOutcome;
       typedef Aws::Utils::Outcome<GetInstanceTypesFromInstanceRequirementsResponse, EC2Error> GetInstanceTypesFromInstanceRequirementsOutcome;
       typedef Aws::Utils::Outcome<GetInstanceUefiDataResponse, EC2Error> GetInstanceUefiDataOutcome;
       typedef Aws::Utils::Outcome<GetIpamAddressHistoryResponse, EC2Error> GetIpamAddressHistoryOutcome;
@@ -2165,6 +2174,7 @@ namespace Aws
       typedef std::future<DisableEbsEncryptionByDefaultOutcome> DisableEbsEncryptionByDefaultOutcomeCallable;
       typedef std::future<DisableFastLaunchOutcome> DisableFastLaunchOutcomeCallable;
       typedef std::future<DisableFastSnapshotRestoresOutcome> DisableFastSnapshotRestoresOutcomeCallable;
+      typedef std::future<DisableImageBlockPublicAccessOutcome> DisableImageBlockPublicAccessOutcomeCallable;
       typedef std::future<DisableImageDeprecationOutcome> DisableImageDeprecationOutcomeCallable;
       typedef std::future<DisableIpamOrganizationAdminAccountOutcome> DisableIpamOrganizationAdminAccountOutcomeCallable;
       typedef std::future<DisableSerialConsoleAccessOutcome> DisableSerialConsoleAccessOutcomeCallable;
@@ -2191,6 +2201,7 @@ namespace Aws
       typedef std::future<EnableEbsEncryptionByDefaultOutcome> EnableEbsEncryptionByDefaultOutcomeCallable;
       typedef std::future<EnableFastLaunchOutcome> EnableFastLaunchOutcomeCallable;
       typedef std::future<EnableFastSnapshotRestoresOutcome> EnableFastSnapshotRestoresOutcomeCallable;
+      typedef std::future<EnableImageBlockPublicAccessOutcome> EnableImageBlockPublicAccessOutcomeCallable;
       typedef std::future<EnableImageDeprecationOutcome> EnableImageDeprecationOutcomeCallable;
       typedef std::future<EnableIpamOrganizationAdminAccountOutcome> EnableIpamOrganizationAdminAccountOutcomeCallable;
       typedef std::future<EnableReachabilityAnalyzerOrganizationSharingOutcome> EnableReachabilityAnalyzerOrganizationSharingOutcomeCallable;
@@ -2217,6 +2228,7 @@ namespace Aws
       typedef std::future<GetFlowLogsIntegrationTemplateOutcome> GetFlowLogsIntegrationTemplateOutcomeCallable;
       typedef std::future<GetGroupsForCapacityReservationOutcome> GetGroupsForCapacityReservationOutcomeCallable;
       typedef std::future<GetHostReservationPurchasePreviewOutcome> GetHostReservationPurchasePreviewOutcomeCallable;
+      typedef std::future<GetImageBlockPublicAccessStateOutcome> GetImageBlockPublicAccessStateOutcomeCallable;
       typedef std::future<GetInstanceTypesFromInstanceRequirementsOutcome> GetInstanceTypesFromInstanceRequirementsOutcomeCallable;
       typedef std::future<GetInstanceUefiDataOutcome> GetInstanceUefiDataOutcomeCallable;
       typedef std::future<GetIpamAddressHistoryOutcome> GetIpamAddressHistoryOutcomeCallable;
@@ -2765,6 +2777,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DisableEbsEncryptionByDefaultRequest&, const Model::DisableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableFastLaunchRequest&, const Model::DisableFastLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableFastLaunchResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableFastSnapshotRestoresRequest&, const Model::DisableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableFastSnapshotRestoresResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisableImageBlockPublicAccessRequest&, const Model::DisableImageBlockPublicAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableImageBlockPublicAccessResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableImageDeprecationRequest&, const Model::DisableImageDeprecationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableImageDeprecationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableIpamOrganizationAdminAccountRequest&, const Model::DisableIpamOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableIpamOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableSerialConsoleAccessRequest&, const Model::DisableSerialConsoleAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSerialConsoleAccessResponseReceivedHandler;
@@ -2791,6 +2804,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::EnableEbsEncryptionByDefaultRequest&, const Model::EnableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableFastLaunchRequest&, const Model::EnableFastLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFastLaunchResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableFastSnapshotRestoresRequest&, const Model::EnableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFastSnapshotRestoresResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::EnableImageBlockPublicAccessRequest&, const Model::EnableImageBlockPublicAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableImageBlockPublicAccessResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableImageDeprecationRequest&, const Model::EnableImageDeprecationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableImageDeprecationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableIpamOrganizationAdminAccountRequest&, const Model::EnableIpamOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableIpamOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableReachabilityAnalyzerOrganizationSharingRequest&, const Model::EnableReachabilityAnalyzerOrganizationSharingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableReachabilityAnalyzerOrganizationSharingResponseReceivedHandler;
@@ -2817,6 +2831,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::GetFlowLogsIntegrationTemplateRequest&, const Model::GetFlowLogsIntegrationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFlowLogsIntegrationTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetGroupsForCapacityReservationRequest&, const Model::GetGroupsForCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupsForCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetHostReservationPurchasePreviewRequest&, const Model::GetHostReservationPurchasePreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostReservationPurchasePreviewResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetImageBlockPublicAccessStateRequest&, const Model::GetImageBlockPublicAccessStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImageBlockPublicAccessStateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetInstanceTypesFromInstanceRequirementsRequest&, const Model::GetInstanceTypesFromInstanceRequirementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceTypesFromInstanceRequirementsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetInstanceUefiDataRequest&, const Model::GetInstanceUefiDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceUefiDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetIpamAddressHistoryRequest&, const Model::GetIpamAddressHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIpamAddressHistoryResponseReceivedHandler;
