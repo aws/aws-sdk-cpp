@@ -27,7 +27,6 @@ namespace Aws {
                 HashResult GetHash() override;
 
             private:
-                HashResult m_hash;
                 Aws::String m_hash_string;
 
             };
