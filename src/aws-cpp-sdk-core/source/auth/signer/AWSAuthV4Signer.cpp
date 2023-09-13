@@ -238,13 +238,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
         if (request.GetRequestHash().second != nullptr)
         {
             Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
-            auto checksumHeaderValue = [](const std::shared_ptr<Utils::Crypto::Hash> &hash,
-                const std::shared_ptr<Aws::IOStream> &body) -> Aws::String {
-                if (hash->isPrecalculatedHashSet()) {
-                    return hash->GetPrecalculatedHash();
-                }
-                return HashingUtils::Base64Encode(hash->Calculate(*(body)).GetResult());
-            }(request.GetRequestHash().second, request.GetContentBody());
+            auto checksumHeaderValue = request.GetRequestHash().second->GetHashBase64(request.GetRequestHash().second->Calculate(*(request.GetContentBody())).GetResult());
             request.SetHeaderValue(checksumHeaderKey, checksumHeaderValue);
             request.SetRequestHash("", nullptr);
         }

@@ -32,6 +32,7 @@
 #include <aws/core/utils/crypto/CRC32.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/crypto/Sha1.h>
+#include <aws/core/utils/crypto/PrecalculatedHash.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/event/EventStream.h>
@@ -793,10 +794,9 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
         {
             if (request.IsStreaming() && checksumValueAndAlgorithmProvided)
             {
-                auto hash = Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG);
-                auto precalculatedValue = request.GetHeaders().find(checksumType)->second;
-                hash->SetPrecalculatedHash(precalculatedValue);
-                httpRequest->SetRequestHash(checksumAlgorithmName, hash); }
+                auto hash = Aws::MakeShared<Crypto::PrecalculatedHash>(AWS_CLIENT_LOG_TAG,request.GetHeaders().find(checksumType)->second);
+                httpRequest->SetRequestHash(checksumAlgorithmName,hash);
+            }
             else if (request.IsStreaming())
             {
                 httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::CRC32>(AWS_CLIENT_LOG_TAG));
@@ -815,10 +815,9 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
         {
             if (request.IsStreaming() && checksumValueAndAlgorithmProvided)
             {
-                auto hash = Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG);
-                auto precalculatedValue = request.GetHeaders().find(checksumType)->second;
-                hash->SetPrecalculatedHash(precalculatedValue);
-                httpRequest->SetRequestHash(checksumAlgorithmName, hash); }
+                auto hash = Aws::MakeShared<Crypto::PrecalculatedHash>(AWS_CLIENT_LOG_TAG,request.GetHeaders().find(checksumType)->second);
+                httpRequest->SetRequestHash(checksumAlgorithmName,hash);
+            }
             else if (request.IsStreaming())
             {
                 httpRequest->SetRequestHash(checksumAlgorithmName, Aws::MakeShared<Crypto::CRC32C>(AWS_CLIENT_LOG_TAG));
@@ -834,11 +833,8 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
         else if (checksumAlgorithmName == "sha256")
         {
             if (request.IsStreaming() && checksumValueAndAlgorithmProvided) {
-                auto hash = Aws::MakeShared<Crypto::Sha256>(AWS_CLIENT_LOG_TAG);
-                auto precalculatedValue = request.GetHeaders().find(checksumType)->second;
-                hash->SetPrecalculatedHash(precalculatedValue);
-                httpRequest->SetRequestHash(checksumAlgorithmName, hash);
-
+                auto hash = Aws::MakeShared<Crypto::PrecalculatedHash>(AWS_CLIENT_LOG_TAG,request.GetHeaders().find(checksumType)->second);
+                httpRequest->SetRequestHash(checksumAlgorithmName,hash);
             }
             else if (request.IsStreaming())
             {
@@ -856,10 +852,8 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
         else if (checksumAlgorithmName == "sha1")
         {
             if (request.IsStreaming() && checksumValueAndAlgorithmProvided) {
-                auto hash = Aws::MakeShared<Crypto::Sha1>(AWS_CLIENT_LOG_TAG);
-                auto precalculatedValue = request.GetHeaders().find(checksumType)->second;
-                hash->SetPrecalculatedHash(precalculatedValue);
-                httpRequest->SetRequestHash(checksumAlgorithmName, hash);
+                auto hash = Aws::MakeShared<Crypto::PrecalculatedHash>(AWS_CLIENT_LOG_TAG,request.GetHeaders().find(checksumType)->second);
+                httpRequest->SetRequestHash(checksumAlgorithmName,hash);
             }
             else if (request.IsStreaming())
             {
