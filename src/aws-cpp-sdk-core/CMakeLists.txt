@@ -118,6 +118,8 @@ include(CheckCXXSourceRuns)
 if(ENABLE_CURL_CLIENT)
     file(GLOB HTTP_CURL_CLIENT_HEADERS "include/aws/core/http/curl/*.h")
     file(GLOB HTTP_CURL_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
+    file(GLOB HTTP_CURL_MULTI_CLIENT_HEADERS "include/aws/core/http/curl-multi/*.h")
+    file(GLOB HTTP_CURL_MULTI_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl-multi/*.cpp")
     set(CMAKE_REQUIRED_LIBRARIES ${CURL_LIBRARIES})
     set(CHECK_CURL_HAS_H2 "
     #include <curl/curl.h>
@@ -298,6 +300,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${CJSON_HEADERS}
   ${TINYXML2_HEADERS}
   ${HTTP_CURL_CLIENT_HEADERS}
+  ${HTTP_CURL_MULTI_CLIENT_HEADERS}
   ${HTTP_WINDOWS_CLIENT_HEADERS}
   ${UTILS_CRYPTO_BCRYPT_HEADERS}
   ${UTILS_CRYPTO_OPENSSL_HEADERS}
@@ -345,6 +348,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${AWS_SOURCE}
     ${HTTP_WINDOWS_CLIENT_SOURCE}
     ${HTTP_CURL_CLIENT_SOURCE}
+    ${HTTP_CURL_MULTI_CLIENT_SOURCE}
     ${AWS_INTERNAL_SOURCE}
     ${UTILS_CRYPTO_BCRYPT_SOURCE}
     ${AWS_NATIVE_SDK_WINDOWS_SRC}
@@ -424,6 +428,7 @@ if(MSVC)
     # http client conditional headers
     if(ENABLE_CURL_CLIENT)
         source_group("Header Files\\aws\\core\\http\\curl" FILES ${HTTP_CURL_CLIENT_HEADERS})
+        source_group("Header Files\\aws\\core\\http\\curl-multi" FILES ${HTTP_CURL_MULTI_CLIENT_HEADERS})
     elseif(ENABLE_WINDOWS_CLIENT)
         source_group("Header Files\\aws\\core\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_HEADERS})
     endif()
@@ -481,6 +486,7 @@ if(MSVC)
     # http client conditional source
     if(ENABLE_CURL_CLIENT)
         source_group("Source Files\\http\\curl" FILES ${HTTP_CURL_CLIENT_SOURCE})
+        source_group("Source Files\\http\\curl" FILES ${HTTP_CURL_MULTI_CLIENT_SOURCE})
     elseif(ENABLE_WINDOWS_CLIENT)
         source_group("Source Files\\http\\windows" FILES ${HTTP_WINDOWS_CLIENT_SOURCE})
     elseif(USE_CRT_HTTP_CLIENT)
@@ -690,6 +696,7 @@ endif ()
 # http client headers
 if(ENABLE_CURL_CLIENT)
     install (FILES ${HTTP_CURL_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/curl)
+    install (FILES ${HTTP_CURL_MULTI_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/curl-multi)
 elseif(ENABLE_WINDOWS_CLIENT)
     install (FILES ${HTTP_WINDOWS_CLIENT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/windows)
 elseif(USE_CRT_HTTP_CLIENT)

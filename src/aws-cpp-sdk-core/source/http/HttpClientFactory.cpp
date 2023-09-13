@@ -11,6 +11,7 @@
 #endif
 #if ENABLE_CURL_CLIENT
 #include <aws/core/http/curl/CurlHttpClient.h>
+#include <aws/core/http/curl-multi/CurlMultiHttpClient.h>
 #include <signal.h>
 
 #elif ENABLE_WINDOWS_CLIENT
@@ -100,7 +101,7 @@ namespace Aws
                 }
 #endif // ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
 #elif ENABLE_CURL_CLIENT
-                return Aws::MakeShared<CurlHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
+                return Aws::MakeShared<CurlMultiHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
 #else
                 // When neither of these clients is enabled, gcc gives a warning (converted
                 // to error by -Werror) about the unused clientConfiguration parameter. We
