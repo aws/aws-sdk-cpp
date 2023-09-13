@@ -198,6 +198,22 @@ namespace Model
 
 
     /**
+     * <p>Whether we want to activate post-launch actions for the Source Server.</p>
+     */
+    inline bool GetPostLaunchEnabled() const{ return m_postLaunchEnabled; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions for the Source Server.</p>
+     */
+    inline void SetPostLaunchEnabled(bool value) { m_postLaunchEnabled = value; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions for the Source Server.</p>
+     */
+    inline UpdateLaunchConfigurationResult& WithPostLaunchEnabled(bool value) { SetPostLaunchEnabled(value); return *this;}
+
+
+    /**
      * <p>The ID of the Source Server for this launch configuration.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
@@ -298,6 +314,8 @@ namespace Model
     Licensing m_licensing;
 
     Aws::String m_name;
+
+    bool m_postLaunchEnabled;
 
     Aws::String m_sourceServerID;
 

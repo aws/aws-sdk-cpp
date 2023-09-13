@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The details of the VPC of the Amazon ES destination.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>The details of the VPC of the Amazon OpenSearch or Amazon OpenSearch
+   * Serverless destination.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/VpcConfiguration">AWS
    * API Reference</a></p>
    */

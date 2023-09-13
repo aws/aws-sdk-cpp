@@ -29,6 +29,8 @@ LaunchConfigurationTemplate::LaunchConfigurationTemplate() :
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
     m_licensingHasBeenSet(false),
+    m_postLaunchEnabled(false),
+    m_postLaunchEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET),
     m_targetInstanceTypeRightSizingMethodHasBeenSet(false)
@@ -46,6 +48,8 @@ LaunchConfigurationTemplate::LaunchConfigurationTemplate(JsonView jsonValue) :
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
     m_licensingHasBeenSet(false),
+    m_postLaunchEnabled(false),
+    m_postLaunchEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET),
     m_targetInstanceTypeRightSizingMethodHasBeenSet(false)
@@ -102,6 +106,13 @@ LaunchConfigurationTemplate& LaunchConfigurationTemplate::operator =(JsonView js
     m_licensing = jsonValue.GetObject("licensing");
 
     m_licensingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("postLaunchEnabled"))
+  {
+    m_postLaunchEnabled = jsonValue.GetBool("postLaunchEnabled");
+
+    m_postLaunchEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -166,6 +177,12 @@ JsonValue LaunchConfigurationTemplate::Jsonize() const
   if(m_licensingHasBeenSet)
   {
    payload.WithObject("licensing", m_licensing.Jsonize());
+
+  }
+
+  if(m_postLaunchEnabledHasBeenSet)
+  {
+   payload.WithBool("postLaunchEnabled", m_postLaunchEnabled);
 
   }
 

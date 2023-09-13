@@ -222,6 +222,27 @@ namespace Model
 
 
     /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline bool GetPostLaunchEnabled() const{ return m_postLaunchEnabled; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline bool PostLaunchEnabledHasBeenSet() const { return m_postLaunchEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline void SetPostLaunchEnabled(bool value) { m_postLaunchEnabledHasBeenSet = true; m_postLaunchEnabled = value; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline UpdateLaunchConfigurationTemplateRequest& WithPostLaunchEnabled(bool value) { SetPostLaunchEnabled(value); return *this;}
+
+
+    /**
      * <p>Target instance type right-sizing method.</p>
      */
     inline const TargetInstanceTypeRightSizingMethod& GetTargetInstanceTypeRightSizingMethod() const{ return m_targetInstanceTypeRightSizingMethod; }
@@ -270,6 +291,9 @@ namespace Model
 
     Licensing m_licensing;
     bool m_licensingHasBeenSet = false;
+
+    bool m_postLaunchEnabled;
+    bool m_postLaunchEnabledHasBeenSet = false;
 
     TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod;
     bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
