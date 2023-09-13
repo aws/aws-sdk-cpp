@@ -20,7 +20,8 @@ namespace Model
     CLUSTER_NAME,
     RESOURCE_TYPE,
     COVERAGE_STATUS,
-    ADDON_VERSION
+    ADDON_VERSION,
+    MANAGEMENT_TYPE
   };
 
 namespace CoverageFilterCriterionKeyMapper
