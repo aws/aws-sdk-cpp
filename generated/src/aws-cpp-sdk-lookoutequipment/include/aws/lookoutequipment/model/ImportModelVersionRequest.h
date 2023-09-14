@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lookoutequipment/model/LabelsInputConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lookoutequipment/model/InferenceDataImportStrategy.h>
 #include <aws/lookoutequipment/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -383,6 +384,67 @@ namespace Model
      */
     inline ImportModelVersionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates how to import the accumulated inference data when a model version
+     * is imported. The possible values are as follows:</p> <ul> <li> <p>NO_IMPORT –
+     * Don't import the data.</p> </li> <li> <p>ADD_WHEN_EMPTY – Only import the data
+     * from the source model if there is no existing data in the target model.</p>
+     * </li> <li> <p>OVERWRITE – Import the data from the source model and overwrite
+     * the existing data in the target model.</p> </li> </ul>
+     */
+    inline const InferenceDataImportStrategy& GetInferenceDataImportStrategy() const{ return m_inferenceDataImportStrategy; }
+
+    /**
+     * <p>Indicates how to import the accumulated inference data when a model version
+     * is imported. The possible values are as follows:</p> <ul> <li> <p>NO_IMPORT –
+     * Don't import the data.</p> </li> <li> <p>ADD_WHEN_EMPTY – Only import the data
+     * from the source model if there is no existing data in the target model.</p>
+     * </li> <li> <p>OVERWRITE – Import the data from the source model and overwrite
+     * the existing data in the target model.</p> </li> </ul>
+     */
+    inline bool InferenceDataImportStrategyHasBeenSet() const { return m_inferenceDataImportStrategyHasBeenSet; }
+
+    /**
+     * <p>Indicates how to import the accumulated inference data when a model version
+     * is imported. The possible values are as follows:</p> <ul> <li> <p>NO_IMPORT –
+     * Don't import the data.</p> </li> <li> <p>ADD_WHEN_EMPTY – Only import the data
+     * from the source model if there is no existing data in the target model.</p>
+     * </li> <li> <p>OVERWRITE – Import the data from the source model and overwrite
+     * the existing data in the target model.</p> </li> </ul>
+     */
+    inline void SetInferenceDataImportStrategy(const InferenceDataImportStrategy& value) { m_inferenceDataImportStrategyHasBeenSet = true; m_inferenceDataImportStrategy = value; }
+
+    /**
+     * <p>Indicates how to import the accumulated inference data when a model version
+     * is imported. The possible values are as follows:</p> <ul> <li> <p>NO_IMPORT –
+     * Don't import the data.</p> </li> <li> <p>ADD_WHEN_EMPTY – Only import the data
+     * from the source model if there is no existing data in the target model.</p>
+     * </li> <li> <p>OVERWRITE – Import the data from the source model and overwrite
+     * the existing data in the target model.</p> </li> </ul>
+     */
+    inline void SetInferenceDataImportStrategy(InferenceDataImportStrategy&& value) { m_inferenceDataImportStrategyHasBeenSet = true; m_inferenceDataImportStrategy = std::move(value); }
+
+    /**
+     * <p>Indicates how to import the accumulated inference data when a model version
+     * is imported. The possible values are as follows:</p> <ul> <li> <p>NO_IMPORT –
+     * Don't import the data.</p> </li> <li> <p>ADD_WHEN_EMPTY – Only import the data
+     * from the source model if there is no existing data in the target model.</p>
+     * </li> <li> <p>OVERWRITE – Import the data from the source model and overwrite
+     * the existing data in the target model.</p> </li> </ul>
+     */
+    inline ImportModelVersionRequest& WithInferenceDataImportStrategy(const InferenceDataImportStrategy& value) { SetInferenceDataImportStrategy(value); return *this;}
+
+    /**
+     * <p>Indicates how to import the accumulated inference data when a model version
+     * is imported. The possible values are as follows:</p> <ul> <li> <p>NO_IMPORT –
+     * Don't import the data.</p> </li> <li> <p>ADD_WHEN_EMPTY – Only import the data
+     * from the source model if there is no existing data in the target model.</p>
+     * </li> <li> <p>OVERWRITE – Import the data from the source model and overwrite
+     * the existing data in the target model.</p> </li> </ul>
+     */
+    inline ImportModelVersionRequest& WithInferenceDataImportStrategy(InferenceDataImportStrategy&& value) { SetInferenceDataImportStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_sourceModelVersionArn;
@@ -408,6 +470,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    InferenceDataImportStrategy m_inferenceDataImportStrategy;
+    bool m_inferenceDataImportStrategyHasBeenSet = false;
   };
 
 } // namespace Model
