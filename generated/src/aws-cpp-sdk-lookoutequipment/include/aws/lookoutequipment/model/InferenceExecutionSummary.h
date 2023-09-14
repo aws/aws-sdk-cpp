@@ -45,91 +45,99 @@ namespace Model
 
 
     /**
-     * <p>The name of the ML model being used for the inference execution. </p>
+     * <p>The name of the machine learning model being used for the inference
+     * execution. </p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
-     * <p>The name of the ML model being used for the inference execution. </p>
+     * <p>The name of the machine learning model being used for the inference
+     * execution. </p>
      */
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
 
     /**
-     * <p>The name of the ML model being used for the inference execution. </p>
+     * <p>The name of the machine learning model being used for the inference
+     * execution. </p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
 
     /**
-     * <p>The name of the ML model being used for the inference execution. </p>
+     * <p>The name of the machine learning model being used for the inference
+     * execution. </p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
 
     /**
-     * <p>The name of the ML model being used for the inference execution. </p>
+     * <p>The name of the machine learning model being used for the inference
+     * execution. </p>
      */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
 
     /**
-     * <p>The name of the ML model being used for the inference execution. </p>
+     * <p>The name of the machine learning model being used for the inference
+     * execution. </p>
      */
     inline InferenceExecutionSummary& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
-     * <p>The name of the ML model being used for the inference execution. </p>
+     * <p>The name of the machine learning model being used for the inference
+     * execution. </p>
      */
     inline InferenceExecutionSummary& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the ML model being used for the inference execution. </p>
+     * <p>The name of the machine learning model being used for the inference
+     * execution. </p>
      */
     inline InferenceExecutionSummary& WithModelName(const char* value) { SetModelName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used for the inference
-     * execution. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used for the
+     * inference execution. </p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used for the inference
-     * execution. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used for the
+     * inference execution. </p>
      */
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used for the inference
-     * execution. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used for the
+     * inference execution. </p>
      */
     inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used for the inference
-     * execution. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used for the
+     * inference execution. </p>
      */
     inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used for the inference
-     * execution. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used for the
+     * inference execution. </p>
      */
     inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used for the inference
-     * execution. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used for the
+     * inference execution. </p>
      */
     inline InferenceExecutionSummary& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used for the inference
-     * execution. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used for the
+     * inference execution. </p>
      */
     inline InferenceExecutionSummary& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used for the inference
-     * execution. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used for the
+     * inference execution. </p>
      */
     inline InferenceExecutionSummary& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 
@@ -418,32 +426,32 @@ namespace Model
 
 
     /**
-     * <p> </p>
+     * <p>The S3 object that the inference execution results were uploaded to.</p>
      */
     inline const S3Object& GetCustomerResultObject() const{ return m_customerResultObject; }
 
     /**
-     * <p> </p>
+     * <p>The S3 object that the inference execution results were uploaded to.</p>
      */
     inline bool CustomerResultObjectHasBeenSet() const { return m_customerResultObjectHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p>The S3 object that the inference execution results were uploaded to.</p>
      */
     inline void SetCustomerResultObject(const S3Object& value) { m_customerResultObjectHasBeenSet = true; m_customerResultObject = value; }
 
     /**
-     * <p> </p>
+     * <p>The S3 object that the inference execution results were uploaded to.</p>
      */
     inline void SetCustomerResultObject(S3Object&& value) { m_customerResultObjectHasBeenSet = true; m_customerResultObject = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p>The S3 object that the inference execution results were uploaded to.</p>
      */
     inline InferenceExecutionSummary& WithCustomerResultObject(const S3Object& value) { SetCustomerResultObject(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p>The S3 object that the inference execution results were uploaded to.</p>
      */
     inline InferenceExecutionSummary& WithCustomerResultObject(S3Object&& value) { SetCustomerResultObject(std::move(value)); return *this;}
 
@@ -527,6 +535,76 @@ namespace Model
      */
     inline InferenceExecutionSummary& WithFailedReason(const char* value) { SetFailedReason(value); return *this;}
 
+
+    /**
+     * <p>The model version used for the inference execution.</p>
+     */
+    inline long long GetModelVersion() const{ return m_modelVersion; }
+
+    /**
+     * <p>The model version used for the inference execution.</p>
+     */
+    inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
+
+    /**
+     * <p>The model version used for the inference execution.</p>
+     */
+    inline void SetModelVersion(long long value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
+
+    /**
+     * <p>The model version used for the inference execution.</p>
+     */
+    inline InferenceExecutionSummary& WithModelVersion(long long value) { SetModelVersion(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the model version used for the inference
+     * execution.</p>
+     */
+    inline const Aws::String& GetModelVersionArn() const{ return m_modelVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the model version used for the inference
+     * execution.</p>
+     */
+    inline bool ModelVersionArnHasBeenSet() const { return m_modelVersionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the model version used for the inference
+     * execution.</p>
+     */
+    inline void SetModelVersionArn(const Aws::String& value) { m_modelVersionArnHasBeenSet = true; m_modelVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the model version used for the inference
+     * execution.</p>
+     */
+    inline void SetModelVersionArn(Aws::String&& value) { m_modelVersionArnHasBeenSet = true; m_modelVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the model version used for the inference
+     * execution.</p>
+     */
+    inline void SetModelVersionArn(const char* value) { m_modelVersionArnHasBeenSet = true; m_modelVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the model version used for the inference
+     * execution.</p>
+     */
+    inline InferenceExecutionSummary& WithModelVersionArn(const Aws::String& value) { SetModelVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the model version used for the inference
+     * execution.</p>
+     */
+    inline InferenceExecutionSummary& WithModelVersionArn(Aws::String&& value) { SetModelVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Number (ARN) of the model version used for the inference
+     * execution.</p>
+     */
+    inline InferenceExecutionSummary& WithModelVersionArn(const char* value) { SetModelVersionArn(value); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -564,6 +642,12 @@ namespace Model
 
     Aws::String m_failedReason;
     bool m_failedReasonHasBeenSet = false;
+
+    long long m_modelVersion;
+    bool m_modelVersionHasBeenSet = false;
+
+    Aws::String m_modelVersionArn;
+    bool m_modelVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

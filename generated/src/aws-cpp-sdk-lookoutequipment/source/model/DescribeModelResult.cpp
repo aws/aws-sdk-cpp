@@ -20,14 +20,22 @@ using namespace Aws;
 DescribeModelResult::DescribeModelResult() : 
     m_status(ModelStatus::NOT_SET),
     m_activeModelVersion(0),
-    m_previousActiveModelVersion(0)
+    m_previousActiveModelVersion(0),
+    m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
+    m_latestScheduledRetrainingModelVersion(0),
+    m_latestScheduledRetrainingAvailableDataInDays(0),
+    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET)
 {
 }
 
 DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(ModelStatus::NOT_SET),
     m_activeModelVersion(0),
-    m_previousActiveModelVersion(0)
+    m_previousActiveModelVersion(0),
+    m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
+    m_latestScheduledRetrainingModelVersion(0),
+    m_latestScheduledRetrainingAvailableDataInDays(0),
+    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET)
 {
   *this = result;
 }
@@ -212,6 +220,66 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("PreviousModelVersionActivatedAt"))
   {
     m_previousModelVersionActivatedAt = jsonValue.GetDouble("PreviousModelVersionActivatedAt");
+
+  }
+
+  if(jsonValue.ValueExists("PriorModelMetrics"))
+  {
+    m_priorModelMetrics = jsonValue.GetString("PriorModelMetrics");
+
+  }
+
+  if(jsonValue.ValueExists("LatestScheduledRetrainingFailedReason"))
+  {
+    m_latestScheduledRetrainingFailedReason = jsonValue.GetString("LatestScheduledRetrainingFailedReason");
+
+  }
+
+  if(jsonValue.ValueExists("LatestScheduledRetrainingStatus"))
+  {
+    m_latestScheduledRetrainingStatus = ModelVersionStatusMapper::GetModelVersionStatusForName(jsonValue.GetString("LatestScheduledRetrainingStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("LatestScheduledRetrainingModelVersion"))
+  {
+    m_latestScheduledRetrainingModelVersion = jsonValue.GetInt64("LatestScheduledRetrainingModelVersion");
+
+  }
+
+  if(jsonValue.ValueExists("LatestScheduledRetrainingStartTime"))
+  {
+    m_latestScheduledRetrainingStartTime = jsonValue.GetDouble("LatestScheduledRetrainingStartTime");
+
+  }
+
+  if(jsonValue.ValueExists("LatestScheduledRetrainingAvailableDataInDays"))
+  {
+    m_latestScheduledRetrainingAvailableDataInDays = jsonValue.GetInteger("LatestScheduledRetrainingAvailableDataInDays");
+
+  }
+
+  if(jsonValue.ValueExists("NextScheduledRetrainingStartDate"))
+  {
+    m_nextScheduledRetrainingStartDate = jsonValue.GetDouble("NextScheduledRetrainingStartDate");
+
+  }
+
+  if(jsonValue.ValueExists("AccumulatedInferenceDataStartTime"))
+  {
+    m_accumulatedInferenceDataStartTime = jsonValue.GetDouble("AccumulatedInferenceDataStartTime");
+
+  }
+
+  if(jsonValue.ValueExists("AccumulatedInferenceDataEndTime"))
+  {
+    m_accumulatedInferenceDataEndTime = jsonValue.GetDouble("AccumulatedInferenceDataEndTime");
+
+  }
+
+  if(jsonValue.ValueExists("RetrainingSchedulerStatus"))
+  {
+    m_retrainingSchedulerStatus = RetrainingSchedulerStatusMapper::GetRetrainingSchedulerStatusForName(jsonValue.GetString("RetrainingSchedulerStatus"));
 
   }
 

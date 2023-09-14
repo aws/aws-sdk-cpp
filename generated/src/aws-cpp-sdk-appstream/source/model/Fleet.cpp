@@ -51,7 +51,9 @@ Fleet::Fleet() :
     m_maxConcurrentSessions(0),
     m_maxConcurrentSessionsHasBeenSet(false),
     m_usbDeviceFilterStringsHasBeenSet(false),
-    m_sessionScriptS3LocationHasBeenSet(false)
+    m_sessionScriptS3LocationHasBeenSet(false),
+    m_maxSessionsPerInstance(0),
+    m_maxSessionsPerInstanceHasBeenSet(false)
 {
 }
 
@@ -88,7 +90,9 @@ Fleet::Fleet(JsonView jsonValue) :
     m_maxConcurrentSessions(0),
     m_maxConcurrentSessionsHasBeenSet(false),
     m_usbDeviceFilterStringsHasBeenSet(false),
-    m_sessionScriptS3LocationHasBeenSet(false)
+    m_sessionScriptS3LocationHasBeenSet(false),
+    m_maxSessionsPerInstance(0),
+    m_maxSessionsPerInstanceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -269,6 +273,13 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     m_sessionScriptS3LocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaxSessionsPerInstance"))
+  {
+    m_maxSessionsPerInstance = jsonValue.GetInteger("MaxSessionsPerInstance");
+
+    m_maxSessionsPerInstanceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -422,6 +433,12 @@ JsonValue Fleet::Jsonize() const
   if(m_sessionScriptS3LocationHasBeenSet)
   {
    payload.WithObject("SessionScriptS3Location", m_sessionScriptS3Location.Jsonize());
+
+  }
+
+  if(m_maxSessionsPerInstanceHasBeenSet)
+  {
+   payload.WithInteger("MaxSessionsPerInstance", m_maxSessionsPerInstance);
 
   }
 

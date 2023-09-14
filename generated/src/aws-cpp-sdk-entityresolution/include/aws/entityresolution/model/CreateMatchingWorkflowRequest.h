@@ -224,85 +224,85 @@ namespace Model
 
     /**
      * <p>An object which defines the <code>resolutionType</code> and the
-     * <code>ruleBasedProperties</code> </p>
+     * <code>ruleBasedProperties</code>.</p>
      */
     inline const ResolutionTechniques& GetResolutionTechniques() const{ return m_resolutionTechniques; }
 
     /**
      * <p>An object which defines the <code>resolutionType</code> and the
-     * <code>ruleBasedProperties</code> </p>
+     * <code>ruleBasedProperties</code>.</p>
      */
     inline bool ResolutionTechniquesHasBeenSet() const { return m_resolutionTechniquesHasBeenSet; }
 
     /**
      * <p>An object which defines the <code>resolutionType</code> and the
-     * <code>ruleBasedProperties</code> </p>
+     * <code>ruleBasedProperties</code>.</p>
      */
     inline void SetResolutionTechniques(const ResolutionTechniques& value) { m_resolutionTechniquesHasBeenSet = true; m_resolutionTechniques = value; }
 
     /**
      * <p>An object which defines the <code>resolutionType</code> and the
-     * <code>ruleBasedProperties</code> </p>
+     * <code>ruleBasedProperties</code>.</p>
      */
     inline void SetResolutionTechniques(ResolutionTechniques&& value) { m_resolutionTechniquesHasBeenSet = true; m_resolutionTechniques = std::move(value); }
 
     /**
      * <p>An object which defines the <code>resolutionType</code> and the
-     * <code>ruleBasedProperties</code> </p>
+     * <code>ruleBasedProperties</code>.</p>
      */
     inline CreateMatchingWorkflowRequest& WithResolutionTechniques(const ResolutionTechniques& value) { SetResolutionTechniques(value); return *this;}
 
     /**
      * <p>An object which defines the <code>resolutionType</code> and the
-     * <code>ruleBasedProperties</code> </p>
+     * <code>ruleBasedProperties</code>.</p>
      */
     inline CreateMatchingWorkflowRequest& WithResolutionTechniques(ResolutionTechniques&& value) { SetResolutionTechniques(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes
+     * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes
+     * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes
+     * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes
+     * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes
+     * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes
+     * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
     inline CreateMatchingWorkflowRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes
+     * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
     inline CreateMatchingWorkflowRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. AWS Entity Resolution assumes
+     * <p>The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes
      * this role to create resources on your behalf as part of workflow execution.</p>
      */
     inline CreateMatchingWorkflowRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}

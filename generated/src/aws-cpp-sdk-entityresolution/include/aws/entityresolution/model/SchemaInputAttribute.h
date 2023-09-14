@@ -157,7 +157,7 @@ namespace Model
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
      * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i>' to both attributes, Entity
+     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
      * Resolution will match records across these fields to create a consolidated
      * matching group. If no <code>MatchKey</code> is specified for a column, it won't
      * be utilized for matching purposes but will still be included in the output
@@ -169,7 +169,7 @@ namespace Model
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
      * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i>' to both attributes, Entity
+     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
      * Resolution will match records across these fields to create a consolidated
      * matching group. If no <code>MatchKey</code> is specified for a column, it won't
      * be utilized for matching purposes but will still be included in the output
@@ -181,7 +181,7 @@ namespace Model
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
      * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i>' to both attributes, Entity
+     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
      * Resolution will match records across these fields to create a consolidated
      * matching group. If no <code>MatchKey</code> is specified for a column, it won't
      * be utilized for matching purposes but will still be included in the output
@@ -193,7 +193,7 @@ namespace Model
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
      * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i>' to both attributes, Entity
+     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
      * Resolution will match records across these fields to create a consolidated
      * matching group. If no <code>MatchKey</code> is specified for a column, it won't
      * be utilized for matching purposes but will still be included in the output
@@ -205,7 +205,7 @@ namespace Model
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
      * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i>' to both attributes, Entity
+     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
      * Resolution will match records across these fields to create a consolidated
      * matching group. If no <code>MatchKey</code> is specified for a column, it won't
      * be utilized for matching purposes but will still be included in the output
@@ -217,7 +217,7 @@ namespace Model
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
      * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i>' to both attributes, Entity
+     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
      * Resolution will match records across these fields to create a consolidated
      * matching group. If no <code>MatchKey</code> is specified for a column, it won't
      * be utilized for matching purposes but will still be included in the output
@@ -229,7 +229,7 @@ namespace Model
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
      * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i>' to both attributes, Entity
+     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
      * Resolution will match records across these fields to create a consolidated
      * matching group. If no <code>MatchKey</code> is specified for a column, it won't
      * be utilized for matching purposes but will still be included in the output
@@ -241,7 +241,7 @@ namespace Model
      * <p>A key that allows grouping of multiple input attributes into a unified
      * matching group. For example, let's consider a scenario where the source table
      * contains various addresses, such as business_address and shipping_address. By
-     * assigning the <code>MatchKey</code> <i>Address</i>' to both attributes, Entity
+     * assigning the <code>MatchKey</code> <i>Address</i> to both attributes, Entity
      * Resolution will match records across these fields to create a consolidated
      * matching group. If no <code>MatchKey</code> is specified for a column, it won't
      * be utilized for matching purposes but will still be included in the output

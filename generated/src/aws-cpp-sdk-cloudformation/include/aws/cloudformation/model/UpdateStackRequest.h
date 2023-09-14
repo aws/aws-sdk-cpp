@@ -1799,46 +1799,30 @@ namespace Model
 
 
     /**
-     * <p>This deletion policy deletes newly created resources, but retains existing
-     * resources, when a stack operation is rolled back. This ensures new, empty, and
-     * unused resources are deleted, while critical resources and their data are
-     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
-     * that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.</p>
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetRetainExceptOnCreate() const{ return m_retainExceptOnCreate; }
 
     /**
-     * <p>This deletion policy deletes newly created resources, but retains existing
-     * resources, when a stack operation is rolled back. This ensures new, empty, and
-     * unused resources are deleted, while critical resources and their data are
-     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
-     * that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.</p>
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool RetainExceptOnCreateHasBeenSet() const { return m_retainExceptOnCreateHasBeenSet; }
 
     /**
-     * <p>This deletion policy deletes newly created resources, but retains existing
-     * resources, when a stack operation is rolled back. This ensures new, empty, and
-     * unused resources are deleted, while critical resources and their data are
-     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
-     * that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.</p>
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetRetainExceptOnCreate(bool value) { m_retainExceptOnCreateHasBeenSet = true; m_retainExceptOnCreate = value; }
 
     /**
-     * <p>This deletion policy deletes newly created resources, but retains existing
-     * resources, when a stack operation is rolled back. This ensures new, empty, and
-     * unused resources are deleted, while critical resources and their data are
-     * retained. <code>RetainExceptOnCreate</code> can be specified for any resource
-     * that supports the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * DeletionPolicy</a> attribute.</p>
+     * <p>When set to <code>true</code>, newly created resources are deleted when the
+     * operation rolls back. This includes newly created resources marked with a
+     * deletion policy of <code>Retain</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline UpdateStackRequest& WithRetainExceptOnCreate(bool value) { SetRetainExceptOnCreate(value); return *this;}
 

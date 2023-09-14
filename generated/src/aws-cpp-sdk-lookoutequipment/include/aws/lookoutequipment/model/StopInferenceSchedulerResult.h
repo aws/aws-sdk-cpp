@@ -34,80 +34,87 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used by the inference
-     * scheduler being stopped. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used by the
+     * inference scheduler being stopped. </p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used by the inference
-     * scheduler being stopped. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used by the
+     * inference scheduler being stopped. </p>
      */
     inline void SetModelArn(const Aws::String& value) { m_modelArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used by the inference
-     * scheduler being stopped. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used by the
+     * inference scheduler being stopped. </p>
      */
     inline void SetModelArn(Aws::String&& value) { m_modelArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used by the inference
-     * scheduler being stopped. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used by the
+     * inference scheduler being stopped. </p>
      */
     inline void SetModelArn(const char* value) { m_modelArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used by the inference
-     * scheduler being stopped. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used by the
+     * inference scheduler being stopped. </p>
      */
     inline StopInferenceSchedulerResult& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used by the inference
-     * scheduler being stopped. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used by the
+     * inference scheduler being stopped. </p>
      */
     inline StopInferenceSchedulerResult& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the ML model used by the inference
-     * scheduler being stopped. </p>
+     * <p>The Amazon Resource Name (ARN) of the machine learning model used by the
+     * inference scheduler being stopped. </p>
      */
     inline StopInferenceSchedulerResult& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 
 
     /**
-     * <p>The name of the ML model used by the inference scheduler being stopped. </p>
+     * <p>The name of the machine learning model used by the inference scheduler being
+     * stopped. </p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
-     * <p>The name of the ML model used by the inference scheduler being stopped. </p>
+     * <p>The name of the machine learning model used by the inference scheduler being
+     * stopped. </p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelName = value; }
 
     /**
-     * <p>The name of the ML model used by the inference scheduler being stopped. </p>
+     * <p>The name of the machine learning model used by the inference scheduler being
+     * stopped. </p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelName = std::move(value); }
 
     /**
-     * <p>The name of the ML model used by the inference scheduler being stopped. </p>
+     * <p>The name of the machine learning model used by the inference scheduler being
+     * stopped. </p>
      */
     inline void SetModelName(const char* value) { m_modelName.assign(value); }
 
     /**
-     * <p>The name of the ML model used by the inference scheduler being stopped. </p>
+     * <p>The name of the machine learning model used by the inference scheduler being
+     * stopped. </p>
      */
     inline StopInferenceSchedulerResult& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
-     * <p>The name of the ML model used by the inference scheduler being stopped. </p>
+     * <p>The name of the machine learning model used by the inference scheduler being
+     * stopped. </p>
      */
     inline StopInferenceSchedulerResult& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the ML model used by the inference scheduler being stopped. </p>
+     * <p>The name of the machine learning model used by the inference scheduler being
+     * stopped. </p>
      */
     inline StopInferenceSchedulerResult& WithModelName(const char* value) { SetModelName(value); return *this;}
 

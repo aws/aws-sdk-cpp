@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lookoutequipment/model/ModelStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lookoutequipment/model/ModelVersionStatus.h>
+#include <aws/lookoutequipment/model/RetrainingSchedulerStatus.h>
 #include <utility>
 
 namespace Aws
@@ -26,8 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the specified ML model, including dataset and
-   * model names and ARNs, as well as status. </p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the specified machine learning model, including
+   * dataset and model names and ARNs, as well as status. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ModelSummary">AWS
    * API Reference</a></p>
    */
@@ -41,124 +44,124 @@ namespace Model
 
 
     /**
-     * <p>The name of the ML model. </p>
+     * <p>The name of the machine learning model. </p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
-     * <p>The name of the ML model. </p>
+     * <p>The name of the machine learning model. </p>
      */
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
 
     /**
-     * <p>The name of the ML model. </p>
+     * <p>The name of the machine learning model. </p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
 
     /**
-     * <p>The name of the ML model. </p>
+     * <p>The name of the machine learning model. </p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
 
     /**
-     * <p>The name of the ML model. </p>
+     * <p>The name of the machine learning model. </p>
      */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
 
     /**
-     * <p>The name of the ML model. </p>
+     * <p>The name of the machine learning model. </p>
      */
     inline ModelSummary& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
-     * <p>The name of the ML model. </p>
+     * <p>The name of the machine learning model. </p>
      */
     inline ModelSummary& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the ML model. </p>
+     * <p>The name of the machine learning model. </p>
      */
     inline ModelSummary& WithModelName(const char* value) { SetModelName(value); return *this;}
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the ML model. </p>
+     * <p> The Amazon Resource Name (ARN) of the machine learning model. </p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the ML model. </p>
+     * <p> The Amazon Resource Name (ARN) of the machine learning model. </p>
      */
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the ML model. </p>
+     * <p> The Amazon Resource Name (ARN) of the machine learning model. </p>
      */
     inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the ML model. </p>
+     * <p> The Amazon Resource Name (ARN) of the machine learning model. </p>
      */
     inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the ML model. </p>
+     * <p> The Amazon Resource Name (ARN) of the machine learning model. </p>
      */
     inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the ML model. </p>
+     * <p> The Amazon Resource Name (ARN) of the machine learning model. </p>
      */
     inline ModelSummary& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the ML model. </p>
+     * <p> The Amazon Resource Name (ARN) of the machine learning model. </p>
      */
     inline ModelSummary& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the ML model. </p>
+     * <p> The Amazon Resource Name (ARN) of the machine learning model. </p>
      */
     inline ModelSummary& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 
 
     /**
-     * <p>The name of the dataset being used for the ML model. </p>
+     * <p>The name of the dataset being used for the machine learning model. </p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
 
     /**
-     * <p>The name of the dataset being used for the ML model. </p>
+     * <p>The name of the dataset being used for the machine learning model. </p>
      */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
 
     /**
-     * <p>The name of the dataset being used for the ML model. </p>
+     * <p>The name of the dataset being used for the machine learning model. </p>
      */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
-     * <p>The name of the dataset being used for the ML model. </p>
+     * <p>The name of the dataset being used for the machine learning model. </p>
      */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
 
     /**
-     * <p>The name of the dataset being used for the ML model. </p>
+     * <p>The name of the dataset being used for the machine learning model. </p>
      */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
 
     /**
-     * <p>The name of the dataset being used for the ML model. </p>
+     * <p>The name of the dataset being used for the machine learning model. </p>
      */
     inline ModelSummary& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
 
     /**
-     * <p>The name of the dataset being used for the ML model. </p>
+     * <p>The name of the dataset being used for the machine learning model. </p>
      */
     inline ModelSummary& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the dataset being used for the ML model. </p>
+     * <p>The name of the dataset being used for the machine learning model. </p>
      */
     inline ModelSummary& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
 
@@ -205,32 +208,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates the status of the ML model. </p>
+     * <p>Indicates the status of the machine learning model. </p>
      */
     inline const ModelStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Indicates the status of the ML model. </p>
+     * <p>Indicates the status of the machine learning model. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Indicates the status of the ML model. </p>
+     * <p>Indicates the status of the machine learning model. </p>
      */
     inline void SetStatus(const ModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Indicates the status of the ML model. </p>
+     * <p>Indicates the status of the machine learning model. </p>
      */
     inline void SetStatus(ModelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Indicates the status of the ML model. </p>
+     * <p>Indicates the status of the machine learning model. </p>
      */
     inline ModelSummary& WithStatus(const ModelStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Indicates the status of the ML model. </p>
+     * <p>Indicates the status of the machine learning model. </p>
      */
     inline ModelSummary& WithStatus(ModelStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -347,6 +350,173 @@ namespace Model
      */
     inline ModelSummary& WithActiveModelVersionArn(const char* value) { SetActiveModelVersionArn(value); return *this;}
 
+
+    /**
+     * <p>Indicates the status of the most recent scheduled retraining run. </p>
+     */
+    inline const ModelVersionStatus& GetLatestScheduledRetrainingStatus() const{ return m_latestScheduledRetrainingStatus; }
+
+    /**
+     * <p>Indicates the status of the most recent scheduled retraining run. </p>
+     */
+    inline bool LatestScheduledRetrainingStatusHasBeenSet() const { return m_latestScheduledRetrainingStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates the status of the most recent scheduled retraining run. </p>
+     */
+    inline void SetLatestScheduledRetrainingStatus(const ModelVersionStatus& value) { m_latestScheduledRetrainingStatusHasBeenSet = true; m_latestScheduledRetrainingStatus = value; }
+
+    /**
+     * <p>Indicates the status of the most recent scheduled retraining run. </p>
+     */
+    inline void SetLatestScheduledRetrainingStatus(ModelVersionStatus&& value) { m_latestScheduledRetrainingStatusHasBeenSet = true; m_latestScheduledRetrainingStatus = std::move(value); }
+
+    /**
+     * <p>Indicates the status of the most recent scheduled retraining run. </p>
+     */
+    inline ModelSummary& WithLatestScheduledRetrainingStatus(const ModelVersionStatus& value) { SetLatestScheduledRetrainingStatus(value); return *this;}
+
+    /**
+     * <p>Indicates the status of the most recent scheduled retraining run. </p>
+     */
+    inline ModelSummary& WithLatestScheduledRetrainingStatus(ModelVersionStatus&& value) { SetLatestScheduledRetrainingStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates the most recent model version that was generated by retraining.
+     * </p>
+     */
+    inline long long GetLatestScheduledRetrainingModelVersion() const{ return m_latestScheduledRetrainingModelVersion; }
+
+    /**
+     * <p>Indicates the most recent model version that was generated by retraining.
+     * </p>
+     */
+    inline bool LatestScheduledRetrainingModelVersionHasBeenSet() const { return m_latestScheduledRetrainingModelVersionHasBeenSet; }
+
+    /**
+     * <p>Indicates the most recent model version that was generated by retraining.
+     * </p>
+     */
+    inline void SetLatestScheduledRetrainingModelVersion(long long value) { m_latestScheduledRetrainingModelVersionHasBeenSet = true; m_latestScheduledRetrainingModelVersion = value; }
+
+    /**
+     * <p>Indicates the most recent model version that was generated by retraining.
+     * </p>
+     */
+    inline ModelSummary& WithLatestScheduledRetrainingModelVersion(long long value) { SetLatestScheduledRetrainingModelVersion(value); return *this;}
+
+
+    /**
+     * <p>Indicates the start time of the most recent scheduled retraining run. </p>
+     */
+    inline const Aws::Utils::DateTime& GetLatestScheduledRetrainingStartTime() const{ return m_latestScheduledRetrainingStartTime; }
+
+    /**
+     * <p>Indicates the start time of the most recent scheduled retraining run. </p>
+     */
+    inline bool LatestScheduledRetrainingStartTimeHasBeenSet() const { return m_latestScheduledRetrainingStartTimeHasBeenSet; }
+
+    /**
+     * <p>Indicates the start time of the most recent scheduled retraining run. </p>
+     */
+    inline void SetLatestScheduledRetrainingStartTime(const Aws::Utils::DateTime& value) { m_latestScheduledRetrainingStartTimeHasBeenSet = true; m_latestScheduledRetrainingStartTime = value; }
+
+    /**
+     * <p>Indicates the start time of the most recent scheduled retraining run. </p>
+     */
+    inline void SetLatestScheduledRetrainingStartTime(Aws::Utils::DateTime&& value) { m_latestScheduledRetrainingStartTimeHasBeenSet = true; m_latestScheduledRetrainingStartTime = std::move(value); }
+
+    /**
+     * <p>Indicates the start time of the most recent scheduled retraining run. </p>
+     */
+    inline ModelSummary& WithLatestScheduledRetrainingStartTime(const Aws::Utils::DateTime& value) { SetLatestScheduledRetrainingStartTime(value); return *this;}
+
+    /**
+     * <p>Indicates the start time of the most recent scheduled retraining run. </p>
+     */
+    inline ModelSummary& WithLatestScheduledRetrainingStartTime(Aws::Utils::DateTime&& value) { SetLatestScheduledRetrainingStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates the date that the next scheduled retraining run will start on.
+     * Lookout for Equipment truncates the time you provide to <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">the
+     * nearest UTC day</a>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetNextScheduledRetrainingStartDate() const{ return m_nextScheduledRetrainingStartDate; }
+
+    /**
+     * <p>Indicates the date that the next scheduled retraining run will start on.
+     * Lookout for Equipment truncates the time you provide to <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">the
+     * nearest UTC day</a>.</p>
+     */
+    inline bool NextScheduledRetrainingStartDateHasBeenSet() const { return m_nextScheduledRetrainingStartDateHasBeenSet; }
+
+    /**
+     * <p>Indicates the date that the next scheduled retraining run will start on.
+     * Lookout for Equipment truncates the time you provide to <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">the
+     * nearest UTC day</a>.</p>
+     */
+    inline void SetNextScheduledRetrainingStartDate(const Aws::Utils::DateTime& value) { m_nextScheduledRetrainingStartDateHasBeenSet = true; m_nextScheduledRetrainingStartDate = value; }
+
+    /**
+     * <p>Indicates the date that the next scheduled retraining run will start on.
+     * Lookout for Equipment truncates the time you provide to <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">the
+     * nearest UTC day</a>.</p>
+     */
+    inline void SetNextScheduledRetrainingStartDate(Aws::Utils::DateTime&& value) { m_nextScheduledRetrainingStartDateHasBeenSet = true; m_nextScheduledRetrainingStartDate = std::move(value); }
+
+    /**
+     * <p>Indicates the date that the next scheduled retraining run will start on.
+     * Lookout for Equipment truncates the time you provide to <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">the
+     * nearest UTC day</a>.</p>
+     */
+    inline ModelSummary& WithNextScheduledRetrainingStartDate(const Aws::Utils::DateTime& value) { SetNextScheduledRetrainingStartDate(value); return *this;}
+
+    /**
+     * <p>Indicates the date that the next scheduled retraining run will start on.
+     * Lookout for Equipment truncates the time you provide to <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">the
+     * nearest UTC day</a>.</p>
+     */
+    inline ModelSummary& WithNextScheduledRetrainingStartDate(Aws::Utils::DateTime&& value) { SetNextScheduledRetrainingStartDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates the status of the retraining scheduler. </p>
+     */
+    inline const RetrainingSchedulerStatus& GetRetrainingSchedulerStatus() const{ return m_retrainingSchedulerStatus; }
+
+    /**
+     * <p>Indicates the status of the retraining scheduler. </p>
+     */
+    inline bool RetrainingSchedulerStatusHasBeenSet() const { return m_retrainingSchedulerStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates the status of the retraining scheduler. </p>
+     */
+    inline void SetRetrainingSchedulerStatus(const RetrainingSchedulerStatus& value) { m_retrainingSchedulerStatusHasBeenSet = true; m_retrainingSchedulerStatus = value; }
+
+    /**
+     * <p>Indicates the status of the retraining scheduler. </p>
+     */
+    inline void SetRetrainingSchedulerStatus(RetrainingSchedulerStatus&& value) { m_retrainingSchedulerStatusHasBeenSet = true; m_retrainingSchedulerStatus = std::move(value); }
+
+    /**
+     * <p>Indicates the status of the retraining scheduler. </p>
+     */
+    inline ModelSummary& WithRetrainingSchedulerStatus(const RetrainingSchedulerStatus& value) { SetRetrainingSchedulerStatus(value); return *this;}
+
+    /**
+     * <p>Indicates the status of the retraining scheduler. </p>
+     */
+    inline ModelSummary& WithRetrainingSchedulerStatus(RetrainingSchedulerStatus&& value) { SetRetrainingSchedulerStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -372,6 +542,21 @@ namespace Model
 
     Aws::String m_activeModelVersionArn;
     bool m_activeModelVersionArnHasBeenSet = false;
+
+    ModelVersionStatus m_latestScheduledRetrainingStatus;
+    bool m_latestScheduledRetrainingStatusHasBeenSet = false;
+
+    long long m_latestScheduledRetrainingModelVersion;
+    bool m_latestScheduledRetrainingModelVersionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_latestScheduledRetrainingStartTime;
+    bool m_latestScheduledRetrainingStartTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_nextScheduledRetrainingStartDate;
+    bool m_nextScheduledRetrainingStartDateHasBeenSet = false;
+
+    RetrainingSchedulerStatus m_retrainingSchedulerStatus;
+    bool m_retrainingSchedulerStatusHasBeenSet = false;
   };
 
 } // namespace Model
