@@ -180,14 +180,20 @@ Aws::String GetHomeDirectory()
 
 Aws::String GetExecutableDirectory()
 {
-    static const unsigned long long bufferSize = 256;
-    WCHAR buffer[bufferSize];
+    AWS::Vector<wchar_t> buffer(MAX_PATH + 1, NULL);
+    DWORD written = GetModuleFileNameW(nullptr, buffer.data(), static_cast<DWORD>(buffer.size()));
 
-    memset(buffer, 0, sizeof(buffer));
-
-    if (GetModuleFileNameW(nullptr, buffer, static_cast<DWORD>(sizeof(buffer))))
+    if (ERROR_INSUFFICIENT_BUFFER == GetLastError())
     {
-        Aws::String bufferStr(Aws::Utils::StringUtils::FromWString(buffer));
+        /* Max unicode path size is 2^15 - 1 + 1 additional byte for null terminator. */
+        const DWORD unicode_max_path = 0x7FFF + 1;
+        buffer.resize(0xFFFF, NULL);
+        written = GetModuleFileNameW(mod, buffer.data(), static_cast<DWORD>(buffer.size()));
+    }
+
+    if (written > 0)
+    {
+        Aws::String bufferStr(Aws::Utils::StringUtils::FromWString(buffer.data()));
         auto fileNameStart = bufferStr.find_last_of(PATH_DELIM);
         if (fileNameStart != std::string::npos)
         {
