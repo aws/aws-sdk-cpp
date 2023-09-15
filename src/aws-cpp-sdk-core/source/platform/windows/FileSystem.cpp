@@ -7,6 +7,7 @@
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <cassert>
 #include <iostream>
 #include <Userenv.h>
@@ -180,15 +181,15 @@ Aws::String GetHomeDirectory()
 
 Aws::String GetExecutableDirectory()
 {
-    AWS::Vector<wchar_t> buffer(MAX_PATH + 1, NULL);
+    Aws::Vector<wchar_t> buffer(MAX_PATH + 1, NULL);
     DWORD written = GetModuleFileNameW(nullptr, buffer.data(), static_cast<DWORD>(buffer.size()));
 
     if (ERROR_INSUFFICIENT_BUFFER == GetLastError())
     {
-        /* Max unicode path size is 2^15 - 1 + 1 additional byte for null terminator. */
-        const DWORD unicode_max_path = 0x7FFF + 1;
-        buffer.resize(0xFFFF, NULL);
-        written = GetModuleFileNameW(mod, buffer.data(), static_cast<DWORD>(buffer.size()));
+        /* Max unicode path size is 2^15 + 1 additional byte for null terminator. */
+        const DWORD unicode_max_path = 0x8000 + 1;
+        buffer.resize(unicode_max_path, NULL);
+        written = GetModuleFileNameW(nullptr, buffer.data(), static_cast<DWORD>(buffer.size()));
     }
 
     if (written > 0)
