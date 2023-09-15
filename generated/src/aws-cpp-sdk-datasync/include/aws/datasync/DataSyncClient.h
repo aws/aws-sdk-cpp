@@ -1097,11 +1097,7 @@ namespace DataSync
          * provided by DataSync Discovery</a>.</p> <p>Once generated, you can view your
          * recommendations by using the <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeStorageSystemResources.html">DescribeStorageSystemResources</a>
-         * operation.</p>  <p>If your <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#discovery-job-statuses-table">discovery
-         * job completes successfully</a>, you don't need to use this operation. DataSync
-         * Discovery generates the recommendations for you automatically.</p>
-         * <p><h3>See Also:</h3>   <a
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/GenerateRecommendations">AWS
          * API Reference</a></p>
          */

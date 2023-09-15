@@ -55,50 +55,10 @@ namespace Model
      */
     inline ComputeCapacity& WithDesiredInstances(int value) { SetDesiredInstances(value); return *this;}
 
-
-    /**
-     * <p>The desired number of user sessions for a multi-session fleet. This is not
-     * allowed for single-session fleets.</p> <p>When you create a fleet, you must set
-     * either the DesiredSessions or DesiredInstances attribute, based on the type of
-     * fleet you create. You can’t define both attributes or leave both attributes
-     * blank.</p>
-     */
-    inline int GetDesiredSessions() const{ return m_desiredSessions; }
-
-    /**
-     * <p>The desired number of user sessions for a multi-session fleet. This is not
-     * allowed for single-session fleets.</p> <p>When you create a fleet, you must set
-     * either the DesiredSessions or DesiredInstances attribute, based on the type of
-     * fleet you create. You can’t define both attributes or leave both attributes
-     * blank.</p>
-     */
-    inline bool DesiredSessionsHasBeenSet() const { return m_desiredSessionsHasBeenSet; }
-
-    /**
-     * <p>The desired number of user sessions for a multi-session fleet. This is not
-     * allowed for single-session fleets.</p> <p>When you create a fleet, you must set
-     * either the DesiredSessions or DesiredInstances attribute, based on the type of
-     * fleet you create. You can’t define both attributes or leave both attributes
-     * blank.</p>
-     */
-    inline void SetDesiredSessions(int value) { m_desiredSessionsHasBeenSet = true; m_desiredSessions = value; }
-
-    /**
-     * <p>The desired number of user sessions for a multi-session fleet. This is not
-     * allowed for single-session fleets.</p> <p>When you create a fleet, you must set
-     * either the DesiredSessions or DesiredInstances attribute, based on the type of
-     * fleet you create. You can’t define both attributes or leave both attributes
-     * blank.</p>
-     */
-    inline ComputeCapacity& WithDesiredSessions(int value) { SetDesiredSessions(value); return *this;}
-
   private:
 
     int m_desiredInstances;
     bool m_desiredInstancesHasBeenSet = false;
-
-    int m_desiredSessions;
-    bool m_desiredSessionsHasBeenSet = false;
   };
 
 } // namespace Model

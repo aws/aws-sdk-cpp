@@ -78,61 +78,37 @@ namespace Model
 
     /**
      * <p>Specifies the level of reporting for the files, objects, and directories that
-     * DataSync attempted to verify at the end of your transfer. This only applies if
-     * you <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">configure
-     * your task</a> to verify data during and after the transfer (which DataSync does
-     * by default).</p>
+     * DataSync attempted to verify at the end of your transfer.</p>
      */
     inline const ReportOverride& GetVerified() const{ return m_verified; }
 
     /**
      * <p>Specifies the level of reporting for the files, objects, and directories that
-     * DataSync attempted to verify at the end of your transfer. This only applies if
-     * you <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">configure
-     * your task</a> to verify data during and after the transfer (which DataSync does
-     * by default).</p>
+     * DataSync attempted to verify at the end of your transfer.</p>
      */
     inline bool VerifiedHasBeenSet() const { return m_verifiedHasBeenSet; }
 
     /**
      * <p>Specifies the level of reporting for the files, objects, and directories that
-     * DataSync attempted to verify at the end of your transfer. This only applies if
-     * you <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">configure
-     * your task</a> to verify data during and after the transfer (which DataSync does
-     * by default).</p>
+     * DataSync attempted to verify at the end of your transfer.</p>
      */
     inline void SetVerified(const ReportOverride& value) { m_verifiedHasBeenSet = true; m_verified = value; }
 
     /**
      * <p>Specifies the level of reporting for the files, objects, and directories that
-     * DataSync attempted to verify at the end of your transfer. This only applies if
-     * you <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">configure
-     * your task</a> to verify data during and after the transfer (which DataSync does
-     * by default).</p>
+     * DataSync attempted to verify at the end of your transfer.</p>
      */
     inline void SetVerified(ReportOverride&& value) { m_verifiedHasBeenSet = true; m_verified = std::move(value); }
 
     /**
      * <p>Specifies the level of reporting for the files, objects, and directories that
-     * DataSync attempted to verify at the end of your transfer. This only applies if
-     * you <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">configure
-     * your task</a> to verify data during and after the transfer (which DataSync does
-     * by default).</p>
+     * DataSync attempted to verify at the end of your transfer.</p>
      */
     inline ReportOverrides& WithVerified(const ReportOverride& value) { SetVerified(value); return *this;}
 
     /**
      * <p>Specifies the level of reporting for the files, objects, and directories that
-     * DataSync attempted to verify at the end of your transfer. This only applies if
-     * you <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">configure
-     * your task</a> to verify data during and after the transfer (which DataSync does
-     * by default).</p>
+     * DataSync attempted to verify at the end of your transfer.</p>
      */
     inline ReportOverrides& WithVerified(ReportOverride&& value) { SetVerified(std::move(value)); return *this;}
 

@@ -20,17 +20,13 @@ namespace Model
 
 ComputeCapacity::ComputeCapacity() : 
     m_desiredInstances(0),
-    m_desiredInstancesHasBeenSet(false),
-    m_desiredSessions(0),
-    m_desiredSessionsHasBeenSet(false)
+    m_desiredInstancesHasBeenSet(false)
 {
 }
 
 ComputeCapacity::ComputeCapacity(JsonView jsonValue) : 
     m_desiredInstances(0),
-    m_desiredInstancesHasBeenSet(false),
-    m_desiredSessions(0),
-    m_desiredSessionsHasBeenSet(false)
+    m_desiredInstancesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,13 +40,6 @@ ComputeCapacity& ComputeCapacity::operator =(JsonView jsonValue)
     m_desiredInstancesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("DesiredSessions"))
-  {
-    m_desiredSessions = jsonValue.GetInteger("DesiredSessions");
-
-    m_desiredSessionsHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -61,12 +50,6 @@ JsonValue ComputeCapacity::Jsonize() const
   if(m_desiredInstancesHasBeenSet)
   {
    payload.WithInteger("DesiredInstances", m_desiredInstances);
-
-  }
-
-  if(m_desiredSessionsHasBeenSet)
-  {
-   payload.WithInteger("DesiredSessions", m_desiredSessions);
 
   }
 
