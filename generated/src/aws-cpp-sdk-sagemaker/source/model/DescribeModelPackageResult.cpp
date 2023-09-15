@@ -21,7 +21,8 @@ DescribeModelPackageResult::DescribeModelPackageResult() :
     m_modelPackageVersion(0),
     m_modelPackageStatus(ModelPackageStatus::NOT_SET),
     m_certifyForMarketplace(false),
-    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET)
+    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
+    m_skipModelValidation(SkipModelValidation::NOT_SET)
 {
 }
 
@@ -29,7 +30,8 @@ DescribeModelPackageResult::DescribeModelPackageResult(const Aws::AmazonWebServi
     m_modelPackageVersion(0),
     m_modelPackageStatus(ModelPackageStatus::NOT_SET),
     m_certifyForMarketplace(false),
-    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET)
+    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
+    m_skipModelValidation(SkipModelValidation::NOT_SET)
 {
   *this = result;
 }
@@ -191,6 +193,12 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
     {
       m_additionalInferenceSpecifications.push_back(additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("SkipModelValidation"))
+  {
+    m_skipModelValidation = SkipModelValidationMapper::GetSkipModelValidationForName(jsonValue.GetString("SkipModelValidation"));
+
   }
 
 

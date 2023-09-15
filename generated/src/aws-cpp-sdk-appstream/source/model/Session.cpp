@@ -31,8 +31,7 @@ Session::Session() :
     m_maxExpirationTimeHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
-    m_networkAccessConfigurationHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_networkAccessConfigurationHasBeenSet(false)
 {
 }
 
@@ -49,8 +48,7 @@ Session::Session(JsonView jsonValue) :
     m_maxExpirationTimeHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
-    m_networkAccessConfigurationHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_networkAccessConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -127,13 +125,6 @@ Session& Session::operator =(JsonView jsonValue)
     m_networkAccessConfigurationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("InstanceId"))
-  {
-    m_instanceId = jsonValue.GetString("InstanceId");
-
-    m_instanceIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -193,12 +184,6 @@ JsonValue Session::Jsonize() const
   if(m_networkAccessConfigurationHasBeenSet)
   {
    payload.WithObject("NetworkAccessConfiguration", m_networkAccessConfiguration.Jsonize());
-
-  }
-
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
 
   }
 
