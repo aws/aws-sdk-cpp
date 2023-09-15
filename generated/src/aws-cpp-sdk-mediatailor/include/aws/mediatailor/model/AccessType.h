@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     S3_SIGV4,
-    SECRETS_MANAGER_ACCESS_TOKEN
+    SECRETS_MANAGER_ACCESS_TOKEN,
+    AUTODETECT_SIGV4
   };
 
 namespace AccessTypeMapper

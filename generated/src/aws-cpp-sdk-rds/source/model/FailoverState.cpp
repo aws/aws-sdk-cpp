@@ -24,7 +24,9 @@ FailoverState::FailoverState() :
     m_status(FailoverStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_fromDbClusterArnHasBeenSet(false),
-    m_toDbClusterArnHasBeenSet(false)
+    m_toDbClusterArnHasBeenSet(false),
+    m_isDataLossAllowed(false),
+    m_isDataLossAllowedHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ FailoverState::FailoverState(const XmlNode& xmlNode) :
     m_status(FailoverStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_fromDbClusterArnHasBeenSet(false),
-    m_toDbClusterArnHasBeenSet(false)
+    m_toDbClusterArnHasBeenSet(false),
+    m_isDataLossAllowed(false),
+    m_isDataLossAllowedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,6 +65,12 @@ FailoverState& FailoverState::operator =(const XmlNode& xmlNode)
       m_toDbClusterArn = Aws::Utils::Xml::DecodeEscapedXmlText(toDbClusterArnNode.GetText());
       m_toDbClusterArnHasBeenSet = true;
     }
+    XmlNode isDataLossAllowedNode = resultNode.FirstChild("IsDataLossAllowed");
+    if(!isDataLossAllowedNode.IsNull())
+    {
+      m_isDataLossAllowed = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDataLossAllowedNode.GetText()).c_str()).c_str());
+      m_isDataLossAllowedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -83,6 +93,11 @@ void FailoverState::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".ToDbClusterArn=" << StringUtils::URLEncode(m_toDbClusterArn.c_str()) << "&";
   }
 
+  if(m_isDataLossAllowedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IsDataLossAllowed=" << std::boolalpha << m_isDataLossAllowed << "&";
+  }
+
 }
 
 void FailoverState::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -98,6 +113,10 @@ void FailoverState::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_toDbClusterArnHasBeenSet)
   {
       oStream << location << ".ToDbClusterArn=" << StringUtils::URLEncode(m_toDbClusterArn.c_str()) << "&";
+  }
+  if(m_isDataLossAllowedHasBeenSet)
+  {
+      oStream << location << ".IsDataLossAllowed=" << std::boolalpha << m_isDataLossAllowed << "&";
   }
 }
 

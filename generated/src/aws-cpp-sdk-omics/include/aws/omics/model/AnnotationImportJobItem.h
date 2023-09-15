@@ -123,6 +123,47 @@ namespace Model
 
 
     /**
+     * <p> The name of the annotation store version. </p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p> The name of the annotation store version. </p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p> The name of the annotation store version. </p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p> The name of the annotation store version. </p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p> The name of the annotation store version. </p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p> The name of the annotation store version. </p>
+     */
+    inline AnnotationImportJobItem& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p> The name of the annotation store version. </p>
+     */
+    inline AnnotationImportJobItem& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the annotation store version. </p>
+     */
+    inline AnnotationImportJobItem& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
+
+    /**
      * <p>The job's service role ARN.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
@@ -380,6 +421,9 @@ namespace Model
 
     Aws::String m_destinationName;
     bool m_destinationNameHasBeenSet = false;
+
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

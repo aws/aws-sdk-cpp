@@ -30,7 +30,8 @@ ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate() :
     m_retryOptionsHasBeenSet(false),
     m_s3UpdateHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_documentIdOptionsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate(JsonView jsonValu
     m_retryOptionsHasBeenSet(false),
     m_s3UpdateHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_documentIdOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -130,6 +132,13 @@ ElasticsearchDestinationUpdate& ElasticsearchDestinationUpdate::operator =(JsonV
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocumentIdOptions"))
+  {
+    m_documentIdOptions = jsonValue.GetObject("DocumentIdOptions");
+
+    m_documentIdOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,6 +208,12 @@ JsonValue ElasticsearchDestinationUpdate::Jsonize() const
   if(m_cloudWatchLoggingOptionsHasBeenSet)
   {
    payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
+
+  }
+
+  if(m_documentIdOptionsHasBeenSet)
+  {
+   payload.WithObject("DocumentIdOptions", m_documentIdOptions.Jsonize());
 
   }
 

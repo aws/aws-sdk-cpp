@@ -124,7 +124,8 @@ namespace Model
      * <p>The port on which the target is listening. If the target group protocol is
      * GENEVE, the supported port is 6081. If the target type is <code>alb</code>, the
      * targeted Application Load Balancer must have at least one listener whose port
-     * matches the target group port. Not used if the target is a Lambda function.</p>
+     * matches the target group port. This parameter is not used if the target is a
+     * Lambda function.</p>
      */
     inline int GetPort() const{ return m_port; }
 
@@ -132,7 +133,8 @@ namespace Model
      * <p>The port on which the target is listening. If the target group protocol is
      * GENEVE, the supported port is 6081. If the target type is <code>alb</code>, the
      * targeted Application Load Balancer must have at least one listener whose port
-     * matches the target group port. Not used if the target is a Lambda function.</p>
+     * matches the target group port. This parameter is not used if the target is a
+     * Lambda function.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
@@ -140,7 +142,8 @@ namespace Model
      * <p>The port on which the target is listening. If the target group protocol is
      * GENEVE, the supported port is 6081. If the target type is <code>alb</code>, the
      * targeted Application Load Balancer must have at least one listener whose port
-     * matches the target group port. Not used if the target is a Lambda function.</p>
+     * matches the target group port. This parameter is not used if the target is a
+     * Lambda function.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
@@ -148,7 +151,8 @@ namespace Model
      * <p>The port on which the target is listening. If the target group protocol is
      * GENEVE, the supported port is 6081. If the target type is <code>alb</code>, the
      * targeted Application Load Balancer must have at least one listener whose port
-     * matches the target group port. Not used if the target is a Lambda function.</p>
+     * matches the target group port. This parameter is not used if the target is a
+     * Lambda function.</p>
      */
     inline TargetDescription& WithPort(int value) { SetPort(value); return *this;}
 

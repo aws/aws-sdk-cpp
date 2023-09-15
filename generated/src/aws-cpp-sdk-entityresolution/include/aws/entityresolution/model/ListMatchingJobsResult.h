@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>A list of JobSummary objects, each of which contain the ID, status, start
-     * time, and end time of a job.</p>
+     * <p>A list of <code>JobSummary</code> objects, each of which contain the ID,
+     * status, start time, and end time of a job.</p>
      */
     inline const Aws::Vector<JobSummary>& GetJobs() const{ return m_jobs; }
 
     /**
-     * <p>A list of JobSummary objects, each of which contain the ID, status, start
-     * time, and end time of a job.</p>
+     * <p>A list of <code>JobSummary</code> objects, each of which contain the ID,
+     * status, start time, and end time of a job.</p>
      */
     inline void SetJobs(const Aws::Vector<JobSummary>& value) { m_jobs = value; }
 
     /**
-     * <p>A list of JobSummary objects, each of which contain the ID, status, start
-     * time, and end time of a job.</p>
+     * <p>A list of <code>JobSummary</code> objects, each of which contain the ID,
+     * status, start time, and end time of a job.</p>
      */
     inline void SetJobs(Aws::Vector<JobSummary>&& value) { m_jobs = std::move(value); }
 
     /**
-     * <p>A list of JobSummary objects, each of which contain the ID, status, start
-     * time, and end time of a job.</p>
+     * <p>A list of <code>JobSummary</code> objects, each of which contain the ID,
+     * status, start time, and end time of a job.</p>
      */
     inline ListMatchingJobsResult& WithJobs(const Aws::Vector<JobSummary>& value) { SetJobs(value); return *this;}
 
     /**
-     * <p>A list of JobSummary objects, each of which contain the ID, status, start
-     * time, and end time of a job.</p>
+     * <p>A list of <code>JobSummary</code> objects, each of which contain the ID,
+     * status, start time, and end time of a job.</p>
      */
     inline ListMatchingJobsResult& WithJobs(Aws::Vector<JobSummary>&& value) { SetJobs(std::move(value)); return *this;}
 
     /**
-     * <p>A list of JobSummary objects, each of which contain the ID, status, start
-     * time, and end time of a job.</p>
+     * <p>A list of <code>JobSummary</code> objects, each of which contain the ID,
+     * status, start time, and end time of a job.</p>
      */
     inline ListMatchingJobsResult& AddJobs(const JobSummary& value) { m_jobs.push_back(value); return *this; }
 
     /**
-     * <p>A list of JobSummary objects, each of which contain the ID, status, start
-     * time, and end time of a job.</p>
+     * <p>A list of <code>JobSummary</code> objects, each of which contain the ID,
+     * status, start time, and end time of a job.</p>
      */
     inline ListMatchingJobsResult& AddJobs(JobSummary&& value) { m_jobs.push_back(std::move(value)); return *this; }
 

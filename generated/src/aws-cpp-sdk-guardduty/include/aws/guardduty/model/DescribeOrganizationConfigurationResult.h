@@ -138,12 +138,12 @@ namespace Model
      * accounts in the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates that
      * when a new account joins the organization, they will have GuardDuty enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
-     * in the Amazon Web Services Organization have GuardDuty enabled automatically.
-     * This includes <code>NEW</code> accounts that join the organization and accounts
-     * that may have been suspended or removed from the organization in GuardDuty.</p>
-     * </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be
-     * automatically enabled for any accounts in the organization. GuardDuty must be
-     * managed for each account individually by the administrator.</p> </li> </ul>
+     * in the organization have GuardDuty enabled automatically. This includes
+     * <code>NEW</code> accounts that join the organization and accounts that may have
+     * been suspended or removed from the organization in GuardDuty.</p> </li> <li> <p>
+     * <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled
+     * for any account in the organization. The administrator must manage GuardDuty for
+     * each account in the organization individually.</p> </li> </ul>
      */
     inline const AutoEnableMembers& GetAutoEnableOrganizationMembers() const{ return m_autoEnableOrganizationMembers; }
 
@@ -152,12 +152,12 @@ namespace Model
      * accounts in the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates that
      * when a new account joins the organization, they will have GuardDuty enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
-     * in the Amazon Web Services Organization have GuardDuty enabled automatically.
-     * This includes <code>NEW</code> accounts that join the organization and accounts
-     * that may have been suspended or removed from the organization in GuardDuty.</p>
-     * </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be
-     * automatically enabled for any accounts in the organization. GuardDuty must be
-     * managed for each account individually by the administrator.</p> </li> </ul>
+     * in the organization have GuardDuty enabled automatically. This includes
+     * <code>NEW</code> accounts that join the organization and accounts that may have
+     * been suspended or removed from the organization in GuardDuty.</p> </li> <li> <p>
+     * <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled
+     * for any account in the organization. The administrator must manage GuardDuty for
+     * each account in the organization individually.</p> </li> </ul>
      */
     inline void SetAutoEnableOrganizationMembers(const AutoEnableMembers& value) { m_autoEnableOrganizationMembers = value; }
 
@@ -166,12 +166,12 @@ namespace Model
      * accounts in the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates that
      * when a new account joins the organization, they will have GuardDuty enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
-     * in the Amazon Web Services Organization have GuardDuty enabled automatically.
-     * This includes <code>NEW</code> accounts that join the organization and accounts
-     * that may have been suspended or removed from the organization in GuardDuty.</p>
-     * </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be
-     * automatically enabled for any accounts in the organization. GuardDuty must be
-     * managed for each account individually by the administrator.</p> </li> </ul>
+     * in the organization have GuardDuty enabled automatically. This includes
+     * <code>NEW</code> accounts that join the organization and accounts that may have
+     * been suspended or removed from the organization in GuardDuty.</p> </li> <li> <p>
+     * <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled
+     * for any account in the organization. The administrator must manage GuardDuty for
+     * each account in the organization individually.</p> </li> </ul>
      */
     inline void SetAutoEnableOrganizationMembers(AutoEnableMembers&& value) { m_autoEnableOrganizationMembers = std::move(value); }
 
@@ -180,12 +180,12 @@ namespace Model
      * accounts in the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates that
      * when a new account joins the organization, they will have GuardDuty enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
-     * in the Amazon Web Services Organization have GuardDuty enabled automatically.
-     * This includes <code>NEW</code> accounts that join the organization and accounts
-     * that may have been suspended or removed from the organization in GuardDuty.</p>
-     * </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be
-     * automatically enabled for any accounts in the organization. GuardDuty must be
-     * managed for each account individually by the administrator.</p> </li> </ul>
+     * in the organization have GuardDuty enabled automatically. This includes
+     * <code>NEW</code> accounts that join the organization and accounts that may have
+     * been suspended or removed from the organization in GuardDuty.</p> </li> <li> <p>
+     * <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled
+     * for any account in the organization. The administrator must manage GuardDuty for
+     * each account in the organization individually.</p> </li> </ul>
      */
     inline DescribeOrganizationConfigurationResult& WithAutoEnableOrganizationMembers(const AutoEnableMembers& value) { SetAutoEnableOrganizationMembers(value); return *this;}
 
@@ -194,12 +194,12 @@ namespace Model
      * accounts in the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates that
      * when a new account joins the organization, they will have GuardDuty enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
-     * in the Amazon Web Services Organization have GuardDuty enabled automatically.
-     * This includes <code>NEW</code> accounts that join the organization and accounts
-     * that may have been suspended or removed from the organization in GuardDuty.</p>
-     * </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be
-     * automatically enabled for any accounts in the organization. GuardDuty must be
-     * managed for each account individually by the administrator.</p> </li> </ul>
+     * in the organization have GuardDuty enabled automatically. This includes
+     * <code>NEW</code> accounts that join the organization and accounts that may have
+     * been suspended or removed from the organization in GuardDuty.</p> </li> <li> <p>
+     * <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled
+     * for any account in the organization. The administrator must manage GuardDuty for
+     * each account in the organization individually.</p> </li> </ul>
      */
     inline DescribeOrganizationConfigurationResult& WithAutoEnableOrganizationMembers(AutoEnableMembers&& value) { SetAutoEnableOrganizationMembers(std::move(value)); return *this;}
 

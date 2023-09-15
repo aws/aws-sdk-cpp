@@ -71,37 +71,44 @@ namespace Model
 
 
     /**
-     * <p>A pagination token that's included if more results are available.</p>
+     * <p>Specifies the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A pagination token that's included if more results are available.</p>
+     * <p>Specifies the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A pagination token that's included if more results are available.</p>
+     * <p>Specifies the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A pagination token that's included if more results are available.</p>
+     * <p>Specifies the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A pagination token that's included if more results are available.</p>
+     * <p>Specifies the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline ListAnnotationImportJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A pagination token that's included if more results are available.</p>
+     * <p>Specifies the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline ListAnnotationImportJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A pagination token that's included if more results are available.</p>
+     * <p>Specifies the pagination token from a previous request to retrieve the next
+     * page of results.</p>
      */
     inline ListAnnotationImportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

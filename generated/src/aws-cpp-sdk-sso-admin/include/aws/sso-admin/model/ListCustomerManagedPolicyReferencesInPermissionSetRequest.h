@@ -84,47 +84,6 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the <code>PermissionSet</code>. </p>
-     */
-    inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>. </p>
-     */
-    inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>. </p>
-     */
-    inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>. </p>
-     */
-    inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>. </p>
-     */
-    inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>. </p>
-     */
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>. </p>
-     */
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>. </p>
-     */
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
-
-
-    /**
      * <p>The maximum number of results to display for the list call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -193,19 +152,60 @@ namespace Model
      */
     inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the <code>PermissionSet</code>. </p>
+     */
+    inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
+
+    /**
+     * <p>The ARN of the <code>PermissionSet</code>. </p>
+     */
+    inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the <code>PermissionSet</code>. </p>
+     */
+    inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
+
+    /**
+     * <p>The ARN of the <code>PermissionSet</code>. </p>
+     */
+    inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the <code>PermissionSet</code>. </p>
+     */
+    inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
+
+    /**
+     * <p>The ARN of the <code>PermissionSet</code>. </p>
+     */
+    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the <code>PermissionSet</code>. </p>
+     */
+    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the <code>PermissionSet</code>. </p>
+     */
+    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
+
   private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
-
-    Aws::String m_permissionSetArn;
-    bool m_permissionSetArnHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_permissionSetArn;
+    bool m_permissionSetArnHasBeenSet = false;
   };
 
 } // namespace Model

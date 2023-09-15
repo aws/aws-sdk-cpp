@@ -9,6 +9,7 @@
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/s3/model/CompletedPart.h>
@@ -68,6 +69,11 @@ namespace Aws
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
              */
             Aws::S3::Model::GetObjectRequest getObjectTemplate;
+            /**
+             * If you have special arguments you want passed to our head object calls, put them here. We will copy the template for each call
+             * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
+             */
+            Aws::S3::Model::HeadObjectRequest headObjectTemplate;
             /**
              * If you have special arguments you want passed to our create multipart upload calls, put them here. We will copy the template for each call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
@@ -248,7 +254,7 @@ namespace Aws
             * the file transfers. If an error occurs prior to the transfer being initiated (e.g. list objects fails, then an error will be passed through the errorCallback).
             *
             * directory: the absolute directory on disk to download to
-            * bucketName: the name of the S3 bucket to upload to
+            * bucketName: the name of the S3 bucket to download from
             * prefix: the prefix in the bucket to use as the root directory (e.g. download all objects at x prefix in S3 and then store them starting in directory with the prefix stripped out).
             */
             void DownloadToDirectory(const Aws::String& directory, const Aws::String& bucketName, const Aws::String& prefix = Aws::String());

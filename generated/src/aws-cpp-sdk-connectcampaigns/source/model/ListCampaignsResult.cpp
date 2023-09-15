@@ -29,6 +29,12 @@ ListCampaignsResult::ListCampaignsResult(const Aws::AmazonWebServiceResult<JsonV
 ListCampaignsResult& ListCampaignsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("campaignSummaryList"))
   {
     Aws::Utils::Array<JsonView> campaignSummaryListJsonList = jsonValue.GetArray("campaignSummaryList");
@@ -36,12 +42,6 @@ ListCampaignsResult& ListCampaignsResult::operator =(const Aws::AmazonWebService
     {
       m_campaignSummaryList.push_back(campaignSummaryListJsonList[campaignSummaryListIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

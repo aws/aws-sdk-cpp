@@ -234,22 +234,62 @@ namespace Model
 
 
     /**
-     * <p>The retention period, in days.</p>
+     * <p>The retention period of the event data store, in days. You can set a
+     * retention period of up to 2557 days, the equivalent of seven years. CloudTrail
+     * Lake determines whether to retain an event by checking if the
+     * <code>eventTime</code> of the event is within the specified retention period.
+     * For example, if you set a retention period of 90 days, CloudTrail will remove
+     * events when the <code>eventTime</code> is older than 90 days.</p>  <p>If
+     * you decrease the retention period of an event data store, CloudTrail will remove
+     * any events with an <code>eventTime</code> older than the new retention period.
+     * For example, if the previous retention period was 365 days and you decrease it
+     * to 100 days, CloudTrail will remove events with an <code>eventTime</code> older
+     * than 100 days.</p> 
      */
     inline int GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
-     * <p>The retention period, in days.</p>
+     * <p>The retention period of the event data store, in days. You can set a
+     * retention period of up to 2557 days, the equivalent of seven years. CloudTrail
+     * Lake determines whether to retain an event by checking if the
+     * <code>eventTime</code> of the event is within the specified retention period.
+     * For example, if you set a retention period of 90 days, CloudTrail will remove
+     * events when the <code>eventTime</code> is older than 90 days.</p>  <p>If
+     * you decrease the retention period of an event data store, CloudTrail will remove
+     * any events with an <code>eventTime</code> older than the new retention period.
+     * For example, if the previous retention period was 365 days and you decrease it
+     * to 100 days, CloudTrail will remove events with an <code>eventTime</code> older
+     * than 100 days.</p> 
      */
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
-     * <p>The retention period, in days.</p>
+     * <p>The retention period of the event data store, in days. You can set a
+     * retention period of up to 2557 days, the equivalent of seven years. CloudTrail
+     * Lake determines whether to retain an event by checking if the
+     * <code>eventTime</code> of the event is within the specified retention period.
+     * For example, if you set a retention period of 90 days, CloudTrail will remove
+     * events when the <code>eventTime</code> is older than 90 days.</p>  <p>If
+     * you decrease the retention period of an event data store, CloudTrail will remove
+     * any events with an <code>eventTime</code> older than the new retention period.
+     * For example, if the previous retention period was 365 days and you decrease it
+     * to 100 days, CloudTrail will remove events with an <code>eventTime</code> older
+     * than 100 days.</p> 
      */
     inline void SetRetentionPeriod(int value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
-     * <p>The retention period, in days.</p>
+     * <p>The retention period of the event data store, in days. You can set a
+     * retention period of up to 2557 days, the equivalent of seven years. CloudTrail
+     * Lake determines whether to retain an event by checking if the
+     * <code>eventTime</code> of the event is within the specified retention period.
+     * For example, if you set a retention period of 90 days, CloudTrail will remove
+     * events when the <code>eventTime</code> is older than 90 days.</p>  <p>If
+     * you decrease the retention period of an event data store, CloudTrail will remove
+     * any events with an <code>eventTime</code> older than the new retention period.
+     * For example, if the previous retention period was 365 days and you decrease it
+     * to 100 days, CloudTrail will remove events with an <code>eventTime</code> older
+     * than 100 days.</p> 
      */
     inline UpdateEventDataStoreRequest& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
 

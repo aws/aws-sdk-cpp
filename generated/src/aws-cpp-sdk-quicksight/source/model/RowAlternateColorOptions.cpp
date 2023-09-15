@@ -21,14 +21,18 @@ namespace Model
 RowAlternateColorOptions::RowAlternateColorOptions() : 
     m_status(WidgetStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_rowAlternateColorsHasBeenSet(false)
+    m_rowAlternateColorsHasBeenSet(false),
+    m_usePrimaryBackgroundColor(WidgetStatus::NOT_SET),
+    m_usePrimaryBackgroundColorHasBeenSet(false)
 {
 }
 
 RowAlternateColorOptions::RowAlternateColorOptions(JsonView jsonValue) : 
     m_status(WidgetStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_rowAlternateColorsHasBeenSet(false)
+    m_rowAlternateColorsHasBeenSet(false),
+    m_usePrimaryBackgroundColor(WidgetStatus::NOT_SET),
+    m_usePrimaryBackgroundColorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +56,13 @@ RowAlternateColorOptions& RowAlternateColorOptions::operator =(JsonView jsonValu
     m_rowAlternateColorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UsePrimaryBackgroundColor"))
+  {
+    m_usePrimaryBackgroundColor = WidgetStatusMapper::GetWidgetStatusForName(jsonValue.GetString("UsePrimaryBackgroundColor"));
+
+    m_usePrimaryBackgroundColorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +84,11 @@ JsonValue RowAlternateColorOptions::Jsonize() const
    }
    payload.WithArray("RowAlternateColors", std::move(rowAlternateColorsJsonList));
 
+  }
+
+  if(m_usePrimaryBackgroundColorHasBeenSet)
+  {
+   payload.WithString("UsePrimaryBackgroundColor", WidgetStatusMapper::GetNameForWidgetStatus(m_usePrimaryBackgroundColor));
   }
 
   return payload;

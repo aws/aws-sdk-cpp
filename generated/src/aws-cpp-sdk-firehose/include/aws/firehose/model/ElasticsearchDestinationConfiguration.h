@@ -14,6 +14,7 @@
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 #include <aws/firehose/model/VpcConfiguration.h>
+#include <aws/firehose/model/DocumentIdOptions.h>
 #include <utility>
 
 namespace Aws
@@ -705,34 +706,77 @@ namespace Model
 
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon destination.</p>
      */
     inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon destination.</p>
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon destination.</p>
      */
     inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon destination.</p>
      */
     inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon destination.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
-     * <p>The details of the VPC of the Amazon ES destination.</p>
+     * <p>The details of the VPC of the Amazon destination.</p>
      */
     inline ElasticsearchDestinationConfiguration& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline const DocumentIdOptions& GetDocumentIdOptions() const{ return m_documentIdOptions; }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline bool DocumentIdOptionsHasBeenSet() const { return m_documentIdOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline void SetDocumentIdOptions(const DocumentIdOptions& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = value; }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline void SetDocumentIdOptions(DocumentIdOptions&& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = std::move(value); }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline ElasticsearchDestinationConfiguration& WithDocumentIdOptions(const DocumentIdOptions& value) { SetDocumentIdOptions(value); return *this;}
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline ElasticsearchDestinationConfiguration& WithDocumentIdOptions(DocumentIdOptions&& value) { SetDocumentIdOptions(std::move(value)); return *this;}
 
   private:
 
@@ -774,6 +818,9 @@ namespace Model
 
     VpcConfiguration m_vpcConfiguration;
     bool m_vpcConfigurationHasBeenSet = false;
+
+    DocumentIdOptions m_documentIdOptions;
+    bool m_documentIdOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,8 @@ DataRepositoryTask::DataRepositoryTask() :
     m_reportHasBeenSet(false),
     m_capacityToRelease(0),
     m_capacityToReleaseHasBeenSet(false),
-    m_fileCacheIdHasBeenSet(false)
+    m_fileCacheIdHasBeenSet(false),
+    m_releaseConfigurationHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ DataRepositoryTask::DataRepositoryTask(JsonView jsonValue) :
     m_reportHasBeenSet(false),
     m_capacityToRelease(0),
     m_capacityToReleaseHasBeenSet(false),
-    m_fileCacheIdHasBeenSet(false)
+    m_fileCacheIdHasBeenSet(false),
+    m_releaseConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -176,6 +178,13 @@ DataRepositoryTask& DataRepositoryTask::operator =(JsonView jsonValue)
     m_fileCacheIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReleaseConfiguration"))
+  {
+    m_releaseConfiguration = jsonValue.GetObject("ReleaseConfiguration");
+
+    m_releaseConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -275,6 +284,12 @@ JsonValue DataRepositoryTask::Jsonize() const
   if(m_fileCacheIdHasBeenSet)
   {
    payload.WithString("FileCacheId", m_fileCacheId);
+
+  }
+
+  if(m_releaseConfigurationHasBeenSet)
+  {
+   payload.WithObject("ReleaseConfiguration", m_releaseConfiguration.Jsonize());
 
   }
 

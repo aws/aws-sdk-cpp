@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     region,
     availability_zone,
-    availability_zone_id
+    availability_zone_id,
+    outpost
   };
 
 namespace LocationTypeMapper

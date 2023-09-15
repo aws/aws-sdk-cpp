@@ -300,17 +300,21 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
@@ -325,17 +329,21 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
@@ -350,17 +358,21 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
@@ -375,17 +387,21 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
@@ -400,17 +416,21 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
@@ -425,17 +445,21 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline CreateEnvironmentEC2Request& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
@@ -450,17 +474,21 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline CreateEnvironmentEC2Request& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
@@ -475,17 +503,21 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
-     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
+     * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
      * </li> <li> <p>Amazon Linux 2:
      * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
      * </li> <li> <p>Ubuntu 18.04:
      * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * <li> <p>Ubuntu 22.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code> </p> </li>
      * </ul>
      */
     inline CreateEnvironmentEC2Request& WithImageId(const char* value) { SetImageId(value); return *this;}

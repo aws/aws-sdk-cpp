@@ -16,7 +16,8 @@ namespace Model
   enum class DecisionTaskTimeoutType
   {
     NOT_SET,
-    START_TO_CLOSE
+    START_TO_CLOSE,
+    SCHEDULE_TO_START
   };
 
 namespace DecisionTaskTimeoutTypeMapper

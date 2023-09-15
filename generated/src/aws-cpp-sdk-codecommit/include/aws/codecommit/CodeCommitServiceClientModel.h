@@ -60,6 +60,7 @@
 #include <aws/codecommit/model/ListApprovalRuleTemplatesResult.h>
 #include <aws/codecommit/model/ListAssociatedApprovalRuleTemplatesForRepositoryResult.h>
 #include <aws/codecommit/model/ListBranchesResult.h>
+#include <aws/codecommit/model/ListFileCommitHistoryResult.h>
 #include <aws/codecommit/model/ListPullRequestsResult.h>
 #include <aws/codecommit/model/ListRepositoriesResult.h>
 #include <aws/codecommit/model/ListRepositoriesForApprovalRuleTemplateResult.h>
@@ -170,6 +171,7 @@ namespace Aws
       class ListApprovalRuleTemplatesRequest;
       class ListAssociatedApprovalRuleTemplatesForRepositoryRequest;
       class ListBranchesRequest;
+      class ListFileCommitHistoryRequest;
       class ListPullRequestsRequest;
       class ListRepositoriesRequest;
       class ListRepositoriesForApprovalRuleTemplateRequest;
@@ -250,6 +252,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListApprovalRuleTemplatesResult, CodeCommitError> ListApprovalRuleTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListAssociatedApprovalRuleTemplatesForRepositoryResult, CodeCommitError> ListAssociatedApprovalRuleTemplatesForRepositoryOutcome;
       typedef Aws::Utils::Outcome<ListBranchesResult, CodeCommitError> ListBranchesOutcome;
+      typedef Aws::Utils::Outcome<ListFileCommitHistoryResult, CodeCommitError> ListFileCommitHistoryOutcome;
       typedef Aws::Utils::Outcome<ListPullRequestsResult, CodeCommitError> ListPullRequestsOutcome;
       typedef Aws::Utils::Outcome<ListRepositoriesResult, CodeCommitError> ListRepositoriesOutcome;
       typedef Aws::Utils::Outcome<ListRepositoriesForApprovalRuleTemplateResult, CodeCommitError> ListRepositoriesForApprovalRuleTemplateOutcome;
@@ -330,6 +333,7 @@ namespace Aws
       typedef std::future<ListApprovalRuleTemplatesOutcome> ListApprovalRuleTemplatesOutcomeCallable;
       typedef std::future<ListAssociatedApprovalRuleTemplatesForRepositoryOutcome> ListAssociatedApprovalRuleTemplatesForRepositoryOutcomeCallable;
       typedef std::future<ListBranchesOutcome> ListBranchesOutcomeCallable;
+      typedef std::future<ListFileCommitHistoryOutcome> ListFileCommitHistoryOutcomeCallable;
       typedef std::future<ListPullRequestsOutcome> ListPullRequestsOutcomeCallable;
       typedef std::future<ListRepositoriesOutcome> ListRepositoriesOutcomeCallable;
       typedef std::future<ListRepositoriesForApprovalRuleTemplateOutcome> ListRepositoriesForApprovalRuleTemplateOutcomeCallable;
@@ -413,6 +417,7 @@ namespace Aws
     typedef std::function<void(const CodeCommitClient*, const Model::ListApprovalRuleTemplatesRequest&, const Model::ListApprovalRuleTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApprovalRuleTemplatesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListAssociatedApprovalRuleTemplatesForRepositoryRequest&, const Model::ListAssociatedApprovalRuleTemplatesForRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedApprovalRuleTemplatesForRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListBranchesRequest&, const Model::ListBranchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBranchesResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::ListFileCommitHistoryRequest&, const Model::ListFileCommitHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFileCommitHistoryResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListPullRequestsRequest&, const Model::ListPullRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPullRequestsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListRepositoriesRequest&, const Model::ListRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::ListRepositoriesForApprovalRuleTemplateRequest&, const Model::ListRepositoriesForApprovalRuleTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoriesForApprovalRuleTemplateResponseReceivedHandler;

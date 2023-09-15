@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/connectcampaigns/ConnectCampaignsRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connectcampaigns/model/DialRequest.h>
 #include <utility>
 
@@ -38,31 +38,6 @@ namespace Model
 
 
     
-    inline const Aws::Vector<DialRequest>& GetDialRequests() const{ return m_dialRequests; }
-
-    
-    inline bool DialRequestsHasBeenSet() const { return m_dialRequestsHasBeenSet; }
-
-    
-    inline void SetDialRequests(const Aws::Vector<DialRequest>& value) { m_dialRequestsHasBeenSet = true; m_dialRequests = value; }
-
-    
-    inline void SetDialRequests(Aws::Vector<DialRequest>&& value) { m_dialRequestsHasBeenSet = true; m_dialRequests = std::move(value); }
-
-    
-    inline PutDialRequestBatchRequest& WithDialRequests(const Aws::Vector<DialRequest>& value) { SetDialRequests(value); return *this;}
-
-    
-    inline PutDialRequestBatchRequest& WithDialRequests(Aws::Vector<DialRequest>&& value) { SetDialRequests(std::move(value)); return *this;}
-
-    
-    inline PutDialRequestBatchRequest& AddDialRequests(const DialRequest& value) { m_dialRequestsHasBeenSet = true; m_dialRequests.push_back(value); return *this; }
-
-    
-    inline PutDialRequestBatchRequest& AddDialRequests(DialRequest&& value) { m_dialRequestsHasBeenSet = true; m_dialRequests.push_back(std::move(value)); return *this; }
-
-
-    
     inline const Aws::String& GetId() const{ return m_id; }
 
     
@@ -86,13 +61,38 @@ namespace Model
     
     inline PutDialRequestBatchRequest& WithId(const char* value) { SetId(value); return *this;}
 
-  private:
 
-    Aws::Vector<DialRequest> m_dialRequests;
-    bool m_dialRequestsHasBeenSet = false;
+    
+    inline const Aws::Vector<DialRequest>& GetDialRequests() const{ return m_dialRequests; }
+
+    
+    inline bool DialRequestsHasBeenSet() const { return m_dialRequestsHasBeenSet; }
+
+    
+    inline void SetDialRequests(const Aws::Vector<DialRequest>& value) { m_dialRequestsHasBeenSet = true; m_dialRequests = value; }
+
+    
+    inline void SetDialRequests(Aws::Vector<DialRequest>&& value) { m_dialRequestsHasBeenSet = true; m_dialRequests = std::move(value); }
+
+    
+    inline PutDialRequestBatchRequest& WithDialRequests(const Aws::Vector<DialRequest>& value) { SetDialRequests(value); return *this;}
+
+    
+    inline PutDialRequestBatchRequest& WithDialRequests(Aws::Vector<DialRequest>&& value) { SetDialRequests(std::move(value)); return *this;}
+
+    
+    inline PutDialRequestBatchRequest& AddDialRequests(const DialRequest& value) { m_dialRequestsHasBeenSet = true; m_dialRequests.push_back(value); return *this; }
+
+    
+    inline PutDialRequestBatchRequest& AddDialRequests(DialRequest&& value) { m_dialRequestsHasBeenSet = true; m_dialRequests.push_back(std::move(value)); return *this; }
+
+  private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::Vector<DialRequest> m_dialRequests;
+    bool m_dialRequestsHasBeenSet = false;
   };
 
 } // namespace Model

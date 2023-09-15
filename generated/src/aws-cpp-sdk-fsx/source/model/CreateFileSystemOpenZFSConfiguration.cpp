@@ -32,7 +32,10 @@ CreateFileSystemOpenZFSConfiguration::CreateFileSystemOpenZFSConfiguration() :
     m_throughputCapacityHasBeenSet(false),
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
     m_diskIopsConfigurationHasBeenSet(false),
-    m_rootVolumeConfigurationHasBeenSet(false)
+    m_rootVolumeConfigurationHasBeenSet(false),
+    m_preferredSubnetIdHasBeenSet(false),
+    m_endpointIpAddressRangeHasBeenSet(false),
+    m_routeTableIdsHasBeenSet(false)
 {
 }
 
@@ -50,7 +53,10 @@ CreateFileSystemOpenZFSConfiguration::CreateFileSystemOpenZFSConfiguration(JsonV
     m_throughputCapacityHasBeenSet(false),
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
     m_diskIopsConfigurationHasBeenSet(false),
-    m_rootVolumeConfigurationHasBeenSet(false)
+    m_rootVolumeConfigurationHasBeenSet(false),
+    m_preferredSubnetIdHasBeenSet(false),
+    m_endpointIpAddressRangeHasBeenSet(false),
+    m_routeTableIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -120,6 +126,30 @@ CreateFileSystemOpenZFSConfiguration& CreateFileSystemOpenZFSConfiguration::oper
     m_rootVolumeConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PreferredSubnetId"))
+  {
+    m_preferredSubnetId = jsonValue.GetString("PreferredSubnetId");
+
+    m_preferredSubnetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndpointIpAddressRange"))
+  {
+    m_endpointIpAddressRange = jsonValue.GetString("EndpointIpAddressRange");
+
+    m_endpointIpAddressRangeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RouteTableIds"))
+  {
+    Aws::Utils::Array<JsonView> routeTableIdsJsonList = jsonValue.GetArray("RouteTableIds");
+    for(unsigned routeTableIdsIndex = 0; routeTableIdsIndex < routeTableIdsJsonList.GetLength(); ++routeTableIdsIndex)
+    {
+      m_routeTableIds.push_back(routeTableIdsJsonList[routeTableIdsIndex].AsString());
+    }
+    m_routeTableIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -177,6 +207,29 @@ JsonValue CreateFileSystemOpenZFSConfiguration::Jsonize() const
   if(m_rootVolumeConfigurationHasBeenSet)
   {
    payload.WithObject("RootVolumeConfiguration", m_rootVolumeConfiguration.Jsonize());
+
+  }
+
+  if(m_preferredSubnetIdHasBeenSet)
+  {
+   payload.WithString("PreferredSubnetId", m_preferredSubnetId);
+
+  }
+
+  if(m_endpointIpAddressRangeHasBeenSet)
+  {
+   payload.WithString("EndpointIpAddressRange", m_endpointIpAddressRange);
+
+  }
+
+  if(m_routeTableIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> routeTableIdsJsonList(m_routeTableIds.size());
+   for(unsigned routeTableIdsIndex = 0; routeTableIdsIndex < routeTableIdsJsonList.GetLength(); ++routeTableIdsIndex)
+   {
+     routeTableIdsJsonList[routeTableIdsIndex].AsString(m_routeTableIds[routeTableIdsIndex]);
+   }
+   payload.WithArray("RouteTableIds", std::move(routeTableIdsJsonList));
 
   }
 

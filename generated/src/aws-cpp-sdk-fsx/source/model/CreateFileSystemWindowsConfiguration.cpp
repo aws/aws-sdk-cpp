@@ -33,7 +33,8 @@ CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration() :
     m_copyTagsToBackups(false),
     m_copyTagsToBackupsHasBeenSet(false),
     m_aliasesHasBeenSet(false),
-    m_auditLogConfigurationHasBeenSet(false)
+    m_auditLogConfigurationHasBeenSet(false),
+    m_diskIopsConfigurationHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration(JsonV
     m_copyTagsToBackups(false),
     m_copyTagsToBackupsHasBeenSet(false),
     m_aliasesHasBeenSet(false),
-    m_auditLogConfigurationHasBeenSet(false)
+    m_auditLogConfigurationHasBeenSet(false),
+    m_diskIopsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +141,13 @@ CreateFileSystemWindowsConfiguration& CreateFileSystemWindowsConfiguration::oper
     m_auditLogConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DiskIopsConfiguration"))
+  {
+    m_diskIopsConfiguration = jsonValue.GetObject("DiskIopsConfiguration");
+
+    m_diskIopsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +222,12 @@ JsonValue CreateFileSystemWindowsConfiguration::Jsonize() const
   if(m_auditLogConfigurationHasBeenSet)
   {
    payload.WithObject("AuditLogConfiguration", m_auditLogConfiguration.Jsonize());
+
+  }
+
+  if(m_diskIopsConfigurationHasBeenSet)
+  {
+   payload.WithObject("DiskIopsConfiguration", m_diskIopsConfiguration.Jsonize());
 
   }
 

@@ -251,6 +251,36 @@ namespace Backup
         }
 
         /**
+         * <p>This request creates a logical container to where backups may be copied.</p>
+         * <p>This request includes a name, the Region, the maximum number of retention
+         * days, the minimum number of retention days, and optionally can include tags and
+         * a creator request ID.</p>  <p>Do not include sensitive data, such as
+         * passport numbers, in the name of a backup vault.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLogicallyAirGappedBackupVault">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLogicallyAirGappedBackupVaultOutcome CreateLogicallyAirGappedBackupVault(const Model::CreateLogicallyAirGappedBackupVaultRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLogicallyAirGappedBackupVault that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLogicallyAirGappedBackupVaultRequestT = Model::CreateLogicallyAirGappedBackupVaultRequest>
+        Model::CreateLogicallyAirGappedBackupVaultOutcomeCallable CreateLogicallyAirGappedBackupVaultCallable(const CreateLogicallyAirGappedBackupVaultRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::CreateLogicallyAirGappedBackupVault, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLogicallyAirGappedBackupVault that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLogicallyAirGappedBackupVaultRequestT = Model::CreateLogicallyAirGappedBackupVaultRequest>
+        void CreateLogicallyAirGappedBackupVaultAsync(const CreateLogicallyAirGappedBackupVaultRequestT& request, const CreateLogicallyAirGappedBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::CreateLogicallyAirGappedBackupVault, request, handler, context);
+        }
+
+        /**
          * <p>Creates a report plan. A report plan is a document that contains information
          * about the contents of the report and where Backup will deliver it.</p> <p>If you
          * call <code>CreateReportPlan</code> with a plan that already exists, you receive
@@ -1403,6 +1433,32 @@ namespace Backup
         void ListProtectedResourcesAsync(const ListProtectedResourcesRequestT& request, const ListProtectedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BackupClient::ListProtectedResources, request, handler, context);
+        }
+
+        /**
+         * <p>This request lists the protected resources corresponding to each backup
+         * vault.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResourcesByBackupVault">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProtectedResourcesByBackupVaultOutcome ListProtectedResourcesByBackupVault(const Model::ListProtectedResourcesByBackupVaultRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListProtectedResourcesByBackupVault that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListProtectedResourcesByBackupVaultRequestT = Model::ListProtectedResourcesByBackupVaultRequest>
+        Model::ListProtectedResourcesByBackupVaultOutcomeCallable ListProtectedResourcesByBackupVaultCallable(const ListProtectedResourcesByBackupVaultRequestT& request) const
+        {
+            return SubmitCallable(&BackupClient::ListProtectedResourcesByBackupVault, request);
+        }
+
+        /**
+         * An Async wrapper for ListProtectedResourcesByBackupVault that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListProtectedResourcesByBackupVaultRequestT = Model::ListProtectedResourcesByBackupVaultRequest>
+        void ListProtectedResourcesByBackupVaultAsync(const ListProtectedResourcesByBackupVaultRequestT& request, const ListProtectedResourcesByBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BackupClient::ListProtectedResourcesByBackupVault, request, handler, context);
         }
 
         /**

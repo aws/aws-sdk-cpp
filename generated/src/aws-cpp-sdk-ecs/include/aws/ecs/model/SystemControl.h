@@ -97,50 +97,90 @@ namespace Model
 
 
     /**
-     * <p>The value for the namespaced kernel parameter that's specified in
-     * <code>namespace</code>.</p>
+     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p> <p>Valid
+     * IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni"
+     * | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" |
+     * "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with
+     * <code>"fs.mqueue.*"</code> </p> <p>Valid network namespace values:
+     * <code>Sysctls</code> that start with <code>"net.*"</code> </p> <p>All of these
+     * values are supported by Fargate.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value for the namespaced kernel parameter that's specified in
-     * <code>namespace</code>.</p>
+     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p> <p>Valid
+     * IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni"
+     * | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" |
+     * "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with
+     * <code>"fs.mqueue.*"</code> </p> <p>Valid network namespace values:
+     * <code>Sysctls</code> that start with <code>"net.*"</code> </p> <p>All of these
+     * values are supported by Fargate.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The value for the namespaced kernel parameter that's specified in
-     * <code>namespace</code>.</p>
+     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p> <p>Valid
+     * IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni"
+     * | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" |
+     * "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with
+     * <code>"fs.mqueue.*"</code> </p> <p>Valid network namespace values:
+     * <code>Sysctls</code> that start with <code>"net.*"</code> </p> <p>All of these
+     * values are supported by Fargate.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value for the namespaced kernel parameter that's specified in
-     * <code>namespace</code>.</p>
+     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p> <p>Valid
+     * IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni"
+     * | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" |
+     * "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with
+     * <code>"fs.mqueue.*"</code> </p> <p>Valid network namespace values:
+     * <code>Sysctls</code> that start with <code>"net.*"</code> </p> <p>All of these
+     * values are supported by Fargate.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The value for the namespaced kernel parameter that's specified in
-     * <code>namespace</code>.</p>
+     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p> <p>Valid
+     * IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni"
+     * | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" |
+     * "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with
+     * <code>"fs.mqueue.*"</code> </p> <p>Valid network namespace values:
+     * <code>Sysctls</code> that start with <code>"net.*"</code> </p> <p>All of these
+     * values are supported by Fargate.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value for the namespaced kernel parameter that's specified in
-     * <code>namespace</code>.</p>
+     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p> <p>Valid
+     * IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni"
+     * | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" |
+     * "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with
+     * <code>"fs.mqueue.*"</code> </p> <p>Valid network namespace values:
+     * <code>Sysctls</code> that start with <code>"net.*"</code> </p> <p>All of these
+     * values are supported by Fargate.</p>
      */
     inline SystemControl& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value for the namespaced kernel parameter that's specified in
-     * <code>namespace</code>.</p>
+     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p> <p>Valid
+     * IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni"
+     * | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" |
+     * "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with
+     * <code>"fs.mqueue.*"</code> </p> <p>Valid network namespace values:
+     * <code>Sysctls</code> that start with <code>"net.*"</code> </p> <p>All of these
+     * values are supported by Fargate.</p>
      */
     inline SystemControl& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value for the namespaced kernel parameter that's specified in
-     * <code>namespace</code>.</p>
+     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p> <p>Valid
+     * IPC namespace values: <code>"kernel.msgmax" | "kernel.msgmnb" | "kernel.msgmni"
+     * | "kernel.sem" | "kernel.shmall" | "kernel.shmmax" | "kernel.shmmni" |
+     * "kernel.shm_rmid_forced"</code>, and <code>Sysctls</code> that start with
+     * <code>"fs.mqueue.*"</code> </p> <p>Valid network namespace values:
+     * <code>Sysctls</code> that start with <code>"net.*"</code> </p> <p>All of these
+     * values are supported by Fargate.</p>
      */
     inline SystemControl& WithValue(const char* value) { SetValue(value); return *this;}
 

@@ -14,6 +14,8 @@
 #include <aws/medialive/model/InputDeviceType.h>
 #include <aws/medialive/model/InputDeviceUhdSettings.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/InputDeviceOutputType.h>
 #include <utility>
 
 namespace Aws
@@ -597,6 +599,104 @@ namespace Model
      */
     inline InputDeviceSummary& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline const Aws::Vector<Aws::String>& GetMedialiveInputArns() const{ return m_medialiveInputArns; }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline bool MedialiveInputArnsHasBeenSet() const { return m_medialiveInputArnsHasBeenSet; }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline void SetMedialiveInputArns(const Aws::Vector<Aws::String>& value) { m_medialiveInputArnsHasBeenSet = true; m_medialiveInputArns = value; }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline void SetMedialiveInputArns(Aws::Vector<Aws::String>&& value) { m_medialiveInputArnsHasBeenSet = true; m_medialiveInputArns = std::move(value); }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline InputDeviceSummary& WithMedialiveInputArns(const Aws::Vector<Aws::String>& value) { SetMedialiveInputArns(value); return *this;}
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline InputDeviceSummary& WithMedialiveInputArns(Aws::Vector<Aws::String>&& value) { SetMedialiveInputArns(std::move(value)); return *this;}
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline InputDeviceSummary& AddMedialiveInputArns(const Aws::String& value) { m_medialiveInputArnsHasBeenSet = true; m_medialiveInputArns.push_back(value); return *this; }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline InputDeviceSummary& AddMedialiveInputArns(Aws::String&& value) { m_medialiveInputArnsHasBeenSet = true; m_medialiveInputArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned
+     * only if the outputType is MEDIALIVE_INPUT.
+     */
+    inline InputDeviceSummary& AddMedialiveInputArns(const char* value) { m_medialiveInputArnsHasBeenSet = true; m_medialiveInputArns.push_back(value); return *this; }
+
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline const InputDeviceOutputType& GetOutputType() const{ return m_outputType; }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline bool OutputTypeHasBeenSet() const { return m_outputTypeHasBeenSet; }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline void SetOutputType(const InputDeviceOutputType& value) { m_outputTypeHasBeenSet = true; m_outputType = value; }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline void SetOutputType(InputDeviceOutputType&& value) { m_outputTypeHasBeenSet = true; m_outputType = std::move(value); }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline InputDeviceSummary& WithOutputType(const InputDeviceOutputType& value) { SetOutputType(value); return *this;}
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if
+     * this device is the source for a MediaConnect flow. Specifies MEDIALIVE_INPUT if
+     * this device is the source for a MediaLive input.
+     */
+    inline InputDeviceSummary& WithOutputType(InputDeviceOutputType&& value) { SetOutputType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -640,6 +740,12 @@ namespace Model
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_medialiveInputArns;
+    bool m_medialiveInputArnsHasBeenSet = false;
+
+    InputDeviceOutputType m_outputType;
+    bool m_outputTypeHasBeenSet = false;
   };
 
 } // namespace Model

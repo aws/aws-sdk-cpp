@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/TimeSeriesTransformations.h>
 #include <aws/sagemaker/model/TimeSeriesConfig.h>
+#include <aws/sagemaker/model/HolidayConfigAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -29,10 +30,7 @@ namespace Model
 
   /**
    * <p>The collection of settings used by an AutoML job V2 for the time-series
-   * forecasting problem type.</p>  <p>The
-   * <code>TimeSeriesForecastingJobConfig</code> problem type is only available in
-   * private beta. Contact Amazon Web Services Support or your account manager to
-   * learn more about access privileges.</p> <p><h3>See Also:</h3>   <a
+   * forecasting problem type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TimeSeriesForecastingJobConfig">AWS
    * API Reference</a></p>
    */
@@ -500,6 +498,55 @@ namespace Model
      */
     inline TimeSeriesForecastingJobConfig& WithTimeSeriesConfig(TimeSeriesConfig&& value) { SetTimeSeriesConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The collection of holiday featurization attributes used to incorporate
+     * national holiday information into your forecasting model.</p>
+     */
+    inline const Aws::Vector<HolidayConfigAttributes>& GetHolidayConfig() const{ return m_holidayConfig; }
+
+    /**
+     * <p>The collection of holiday featurization attributes used to incorporate
+     * national holiday information into your forecasting model.</p>
+     */
+    inline bool HolidayConfigHasBeenSet() const { return m_holidayConfigHasBeenSet; }
+
+    /**
+     * <p>The collection of holiday featurization attributes used to incorporate
+     * national holiday information into your forecasting model.</p>
+     */
+    inline void SetHolidayConfig(const Aws::Vector<HolidayConfigAttributes>& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig = value; }
+
+    /**
+     * <p>The collection of holiday featurization attributes used to incorporate
+     * national holiday information into your forecasting model.</p>
+     */
+    inline void SetHolidayConfig(Aws::Vector<HolidayConfigAttributes>&& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig = std::move(value); }
+
+    /**
+     * <p>The collection of holiday featurization attributes used to incorporate
+     * national holiday information into your forecasting model.</p>
+     */
+    inline TimeSeriesForecastingJobConfig& WithHolidayConfig(const Aws::Vector<HolidayConfigAttributes>& value) { SetHolidayConfig(value); return *this;}
+
+    /**
+     * <p>The collection of holiday featurization attributes used to incorporate
+     * national holiday information into your forecasting model.</p>
+     */
+    inline TimeSeriesForecastingJobConfig& WithHolidayConfig(Aws::Vector<HolidayConfigAttributes>&& value) { SetHolidayConfig(std::move(value)); return *this;}
+
+    /**
+     * <p>The collection of holiday featurization attributes used to incorporate
+     * national holiday information into your forecasting model.</p>
+     */
+    inline TimeSeriesForecastingJobConfig& AddHolidayConfig(const HolidayConfigAttributes& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig.push_back(value); return *this; }
+
+    /**
+     * <p>The collection of holiday featurization attributes used to incorporate
+     * national holiday information into your forecasting model.</p>
+     */
+    inline TimeSeriesForecastingJobConfig& AddHolidayConfig(HolidayConfigAttributes&& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_featureSpecificationS3Uri;
@@ -522,6 +569,9 @@ namespace Model
 
     TimeSeriesConfig m_timeSeriesConfig;
     bool m_timeSeriesConfigHasBeenSet = false;
+
+    Aws::Vector<HolidayConfigAttributes> m_holidayConfig;
+    bool m_holidayConfigHasBeenSet = false;
   };
 
 } // namespace Model

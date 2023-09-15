@@ -31,7 +31,8 @@ BackupRule::BackupRule() :
     m_ruleIdHasBeenSet(false),
     m_copyActionsHasBeenSet(false),
     m_enableContinuousBackup(false),
-    m_enableContinuousBackupHasBeenSet(false)
+    m_enableContinuousBackupHasBeenSet(false),
+    m_scheduleExpressionTimezoneHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ BackupRule::BackupRule(JsonView jsonValue) :
     m_ruleIdHasBeenSet(false),
     m_copyActionsHasBeenSet(false),
     m_enableContinuousBackup(false),
-    m_enableContinuousBackupHasBeenSet(false)
+    m_enableContinuousBackupHasBeenSet(false),
+    m_scheduleExpressionTimezoneHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +133,13 @@ BackupRule& BackupRule::operator =(JsonView jsonValue)
     m_enableContinuousBackupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ScheduleExpressionTimezone"))
+  {
+    m_scheduleExpressionTimezone = jsonValue.GetString("ScheduleExpressionTimezone");
+
+    m_scheduleExpressionTimezoneHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -205,6 +214,12 @@ JsonValue BackupRule::Jsonize() const
   if(m_enableContinuousBackupHasBeenSet)
   {
    payload.WithBool("EnableContinuousBackup", m_enableContinuousBackup);
+
+  }
+
+  if(m_scheduleExpressionTimezoneHasBeenSet)
+  {
+   payload.WithString("ScheduleExpressionTimezone", m_scheduleExpressionTimezone);
 
   }
 

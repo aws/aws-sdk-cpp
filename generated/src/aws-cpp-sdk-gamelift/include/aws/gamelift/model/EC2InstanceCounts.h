@@ -39,30 +39,34 @@ namespace Model
 
 
     /**
-     * <p>Ideal number of active instances. GameLift will always try to maintain the
-     * desired number of instances. Capacity is scaled up or down by changing the
-     * desired instances. </p>
+     * <p>Requested number of active instances. Amazon GameLift takes action as needed
+     * to maintain the desired number of instances. Capacity is scaled up or down by
+     * changing the desired instances. A change in the desired instances value can take
+     * up to 1 minute to be reflected when viewing a fleet's capacity settings. </p>
      */
     inline int GetDESIRED() const{ return m_dESIRED; }
 
     /**
-     * <p>Ideal number of active instances. GameLift will always try to maintain the
-     * desired number of instances. Capacity is scaled up or down by changing the
-     * desired instances. </p>
+     * <p>Requested number of active instances. Amazon GameLift takes action as needed
+     * to maintain the desired number of instances. Capacity is scaled up or down by
+     * changing the desired instances. A change in the desired instances value can take
+     * up to 1 minute to be reflected when viewing a fleet's capacity settings. </p>
      */
     inline bool DESIREDHasBeenSet() const { return m_dESIREDHasBeenSet; }
 
     /**
-     * <p>Ideal number of active instances. GameLift will always try to maintain the
-     * desired number of instances. Capacity is scaled up or down by changing the
-     * desired instances. </p>
+     * <p>Requested number of active instances. Amazon GameLift takes action as needed
+     * to maintain the desired number of instances. Capacity is scaled up or down by
+     * changing the desired instances. A change in the desired instances value can take
+     * up to 1 minute to be reflected when viewing a fleet's capacity settings. </p>
      */
     inline void SetDESIRED(int value) { m_dESIREDHasBeenSet = true; m_dESIRED = value; }
 
     /**
-     * <p>Ideal number of active instances. GameLift will always try to maintain the
-     * desired number of instances. Capacity is scaled up or down by changing the
-     * desired instances. </p>
+     * <p>Requested number of active instances. Amazon GameLift takes action as needed
+     * to maintain the desired number of instances. Capacity is scaled up or down by
+     * changing the desired instances. A change in the desired instances value can take
+     * up to 1 minute to be reflected when viewing a fleet's capacity settings. </p>
      */
     inline EC2InstanceCounts& WithDESIRED(int value) { SetDESIRED(value); return *this;}
 

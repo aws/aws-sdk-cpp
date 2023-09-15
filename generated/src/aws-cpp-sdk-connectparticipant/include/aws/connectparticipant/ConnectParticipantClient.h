@@ -167,6 +167,32 @@ namespace ConnectParticipant
         }
 
         /**
+         * <p>Retrieves the view for the specified view token.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DescribeView">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeViewOutcome DescribeView(const Model::DescribeViewRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeView that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeViewRequestT = Model::DescribeViewRequest>
+        Model::DescribeViewOutcomeCallable DescribeViewCallable(const DescribeViewRequestT& request) const
+        {
+            return SubmitCallable(&ConnectParticipantClient::DescribeView, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeView that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeViewRequestT = Model::DescribeViewRequest>
+        void DescribeViewAsync(const DescribeViewRequestT& request, const DescribeViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectParticipantClient::DescribeView, request, handler, context);
+        }
+
+        /**
          * <p>Disconnects a participant. </p>  <p> <code>ConnectionToken</code> is
          * used for invoking this API instead of <code>ParticipantToken</code>.</p> 
          * <p>The Amazon Connect Participant Service APIs do not use <a

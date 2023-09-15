@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateInstanceAccessControlAttributeConfigurationRequest::CreateInstanceAccessControlAttributeConfigurationRequest() : 
-    m_instanceArnHasBeenSet(false),
-    m_instanceAccessControlAttributeConfigurationHasBeenSet(false)
+    m_instanceAccessControlAttributeConfigurationHasBeenSet(false),
+    m_instanceArnHasBeenSet(false)
 {
 }
 
@@ -22,15 +22,15 @@ Aws::String CreateInstanceAccessControlAttributeConfigurationRequest::SerializeP
 {
   JsonValue payload;
 
-  if(m_instanceArnHasBeenSet)
-  {
-   payload.WithString("InstanceArn", m_instanceArn);
-
-  }
-
   if(m_instanceAccessControlAttributeConfigurationHasBeenSet)
   {
    payload.WithObject("InstanceAccessControlAttributeConfiguration", m_instanceAccessControlAttributeConfiguration.Jsonize());
+
+  }
+
+  if(m_instanceArnHasBeenSet)
+  {
+   payload.WithString("InstanceArn", m_instanceArn);
 
   }
 

@@ -643,6 +643,47 @@ namespace Model
     inline RestApi& WithDisableExecuteApiEndpoint(bool value) { SetDisableExecuteApiEndpoint(value); return *this;}
 
 
+    /**
+     * <p>The API's root resource ID.</p>
+     */
+    inline const Aws::String& GetRootResourceId() const{ return m_rootResourceId; }
+
+    /**
+     * <p>The API's root resource ID.</p>
+     */
+    inline bool RootResourceIdHasBeenSet() const { return m_rootResourceIdHasBeenSet; }
+
+    /**
+     * <p>The API's root resource ID.</p>
+     */
+    inline void SetRootResourceId(const Aws::String& value) { m_rootResourceIdHasBeenSet = true; m_rootResourceId = value; }
+
+    /**
+     * <p>The API's root resource ID.</p>
+     */
+    inline void SetRootResourceId(Aws::String&& value) { m_rootResourceIdHasBeenSet = true; m_rootResourceId = std::move(value); }
+
+    /**
+     * <p>The API's root resource ID.</p>
+     */
+    inline void SetRootResourceId(const char* value) { m_rootResourceIdHasBeenSet = true; m_rootResourceId.assign(value); }
+
+    /**
+     * <p>The API's root resource ID.</p>
+     */
+    inline RestApi& WithRootResourceId(const Aws::String& value) { SetRootResourceId(value); return *this;}
+
+    /**
+     * <p>The API's root resource ID.</p>
+     */
+    inline RestApi& WithRootResourceId(Aws::String&& value) { SetRootResourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The API's root resource ID.</p>
+     */
+    inline RestApi& WithRootResourceId(const char* value) { SetRootResourceId(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -707,6 +748,9 @@ namespace Model
 
     bool m_disableExecuteApiEndpoint;
     bool m_disableExecuteApiEndpointHasBeenSet = false;
+
+    Aws::String m_rootResourceId;
+    bool m_rootResourceIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

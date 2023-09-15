@@ -113,6 +113,47 @@ namespace Model
 
 
     /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline const Aws::String& GetBackupVaultAccountId() const{ return m_backupVaultAccountId; }
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline bool BackupVaultAccountIdHasBeenSet() const { return m_backupVaultAccountIdHasBeenSet; }
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline void SetBackupVaultAccountId(const Aws::String& value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId = value; }
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline void SetBackupVaultAccountId(Aws::String&& value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId = std::move(value); }
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline void SetBackupVaultAccountId(const char* value) { m_backupVaultAccountIdHasBeenSet = true; m_backupVaultAccountId.assign(value); }
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithBackupVaultAccountId(const Aws::String& value) { SetBackupVaultAccountId(value); return *this;}
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithBackupVaultAccountId(Aws::String&& value) { SetBackupVaultAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>This parameter will sort the list of recovery points by account ID.</p>
+     */
+    inline ListRecoveryPointsByBackupVaultRequest& WithBackupVaultAccountId(const char* value) { SetBackupVaultAccountId(value); return *this;}
+
+
+    /**
      * <p>The next item following a partial list of returned items. For example, if a
      * request is made to return <code>maxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
@@ -455,6 +496,9 @@ namespace Model
 
     Aws::String m_backupVaultName;
     bool m_backupVaultNameHasBeenSet = false;
+
+    Aws::String m_backupVaultAccountId;
+    bool m_backupVaultAccountIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

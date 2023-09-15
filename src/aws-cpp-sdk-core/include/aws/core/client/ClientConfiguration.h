@@ -7,6 +7,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/http/Scheme.h>
+#include <aws/core/http/Version.h>
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/http/HttpTypes.h>
@@ -60,6 +61,13 @@ namespace Aws
           UseRequestCompression useRequestCompression=UseRequestCompression::ENABLE;
           size_t requestMinCompressionSizeBytes = 10240;
         };
+         /**
+         * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
+          * - disableIMDS
+         */
+        struct ClientConfigurationInitValues {
+            bool shouldDisableIMDS = false;
+        };
 
         /**
          * This mutable structure is used to configure any of the AWS clients.
@@ -68,6 +76,12 @@ namespace Aws
         struct AWS_CORE_API ClientConfiguration
         {
             ClientConfiguration();
+
+            /**
+             * Create a configuration with default settings. By default IMDS calls are enabled.
+             * @param ClientConfigurationInitValues ClientConfiguration initial customizable values
+             */
+            ClientConfiguration(const ClientConfigurationInitValues &configuration);
 
             /**
              * Create a configuration based on settings in the aws configuration file for the given profile name.
@@ -294,6 +308,16 @@ namespace Aws
              * Disable all internal IMDS Calls
              */
             bool disableIMDS = false;
+
+            /**
+             * Request HTTP client to use specific http version. Currently supported for
+             * only Curl. More or less is a one to one conversion of the CURLOPT_HTTP_VERSION
+             * configuration option.
+             *
+             * Default to Version 2 TLS which is the default after curl version 7.62.0. Will
+             * fall back to 1.1 if compiled against a earlier version of curl.
+             */
+            Aws::Http::Version version = Http::Version::HTTP_VERSION_2TLS;
 
             /**
              * A helper function to read config value from env variable or aws profile config

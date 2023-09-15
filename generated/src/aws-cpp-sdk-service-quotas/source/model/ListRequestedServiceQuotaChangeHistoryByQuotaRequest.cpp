@@ -19,7 +19,9 @@ ListRequestedServiceQuotaChangeHistoryByQuotaRequest::ListRequestedServiceQuotaC
     m_statusHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_quotaRequestedAtLevel(AppliedLevelEnum::NOT_SET),
+    m_quotaRequestedAtLevelHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,11 @@ Aws::String ListRequestedServiceQuotaChangeHistoryByQuotaRequest::SerializePaylo
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
+  }
+
+  if(m_quotaRequestedAtLevelHasBeenSet)
+  {
+   payload.WithString("QuotaRequestedAtLevel", AppliedLevelEnumMapper::GetNameForAppliedLevelEnum(m_quotaRequestedAtLevel));
   }
 
   return payload.View().WriteReadable();

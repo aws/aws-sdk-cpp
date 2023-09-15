@@ -1109,66 +1109,170 @@ namespace Model
 
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline const Aws::String& GetExtendedStatistic() const{ return m_extendedStatistic; }
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline bool ExtendedStatisticHasBeenSet() const { return m_extendedStatisticHasBeenSet; }
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline void SetExtendedStatistic(const Aws::String& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = value; }
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline void SetExtendedStatistic(Aws::String&& value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic = std::move(value); }
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline void SetExtendedStatistic(const char* value) { m_extendedStatisticHasBeenSet = true; m_extendedStatistic.assign(value); }
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline PutMetricAlarmRequest& WithExtendedStatistic(const Aws::String& value) { SetExtendedStatistic(value); return *this;}
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline PutMetricAlarmRequest& WithExtendedStatistic(Aws::String&& value) { SetExtendedStatistic(std::move(value)); return *this;}
 
     /**
-     * <p>The percentile statistic for the metric specified in <code>MetricName</code>.
-     * Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code>
-     * and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+     * <p>The extended statistic for the metric specified in <code>MetricName</code>.
+     * When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>,
+     * you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code>
+     * but not both.</p> <p>If you specify <code>ExtendedStatistic</code>, the
+     * following are valid values:</p> <ul> <li> <p> <code>p90</code> </p> </li> <li>
+     * <p> <code>tm90</code> </p> </li> <li> <p> <code>tc90</code> </p> </li> <li> <p>
+     * <code>ts90</code> </p> </li> <li> <p> <code>wm90</code> </p> </li> <li> <p>
+     * <code>IQM</code> </p> </li> <li> <p> <code>PR(<i>n</i>:<i>m</i>)</code> where n
+     * and m are values of the metric</p> </li> <li> <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> <li> <p> <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90
+     * inclusive.</p> </li> <li> <p> <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is
+     * between 10 and 90 inclusive.</p> </li> <li> <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.</p>
+     * </li> </ul> <p>For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.</p>
      */
     inline PutMetricAlarmRequest& WithExtendedStatistic(const char* value) { SetExtendedStatistic(value); return *this;}
 
@@ -1963,12 +2067,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -1977,12 +2082,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -1991,12 +2097,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -2005,12 +2112,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -2019,12 +2127,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -2033,12 +2142,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -2047,12 +2157,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
@@ -2061,12 +2172,13 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs to associate with the alarm. You can associate as
-     * many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize
-     * your resources. You can also use them to scope user permissions by granting a
-     * user permission to access or change only resources with certain tag values.</p>
-     * <p>If you are using this operation to update an existing alarm, any tags you
-     * specify in this parameter are ignored. To change the tags of an existing alarm,
-     * use <a
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>

@@ -54,8 +54,8 @@ void S3CrtClientConfiguration::LoadS3CrtSpecificConfig(const Aws::String& inputP
   }
 }
 
-S3CrtClientConfiguration::S3CrtClientConfiguration()
-: BaseClientConfigClass()
+S3CrtClientConfiguration::S3CrtClientConfiguration(const Client::ClientConfigurationInitValues &configuration)
+: BaseClientConfigClass(configuration)
 {
   LoadS3CrtSpecificConfig(this->profileName);
 }

@@ -19,32 +19,32 @@ namespace Model
 {
 
 AttachedManagedPolicy::AttachedManagedPolicy() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
 AttachedManagedPolicy::AttachedManagedPolicy(JsonView jsonValue) : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 AttachedManagedPolicy& AttachedManagedPolicy::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("Name"))
-  {
-    m_name = jsonValue.GetString("Name");
-
-    m_nameHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue AttachedManagedPolicy::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
-  }
-
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
   }
 

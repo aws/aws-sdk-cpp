@@ -360,6 +360,58 @@ namespace ChimeSDKMediaPipelines
         }
 
         /**
+         * <p>Retrieves the details of the specified speaker search task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetSpeakerSearchTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSpeakerSearchTaskOutcome GetSpeakerSearchTask(const Model::GetSpeakerSearchTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSpeakerSearchTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSpeakerSearchTaskRequestT = Model::GetSpeakerSearchTaskRequest>
+        Model::GetSpeakerSearchTaskOutcomeCallable GetSpeakerSearchTaskCallable(const GetSpeakerSearchTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::GetSpeakerSearchTask, request);
+        }
+
+        /**
+         * An Async wrapper for GetSpeakerSearchTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSpeakerSearchTaskRequestT = Model::GetSpeakerSearchTaskRequest>
+        void GetSpeakerSearchTaskAsync(const GetSpeakerSearchTaskRequestT& request, const GetSpeakerSearchTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::GetSpeakerSearchTask, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the details of a voice tone analysis task.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetVoiceToneAnalysisTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVoiceToneAnalysisTaskOutcome GetVoiceToneAnalysisTask(const Model::GetVoiceToneAnalysisTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetVoiceToneAnalysisTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetVoiceToneAnalysisTaskRequestT = Model::GetVoiceToneAnalysisTaskRequest>
+        Model::GetVoiceToneAnalysisTaskOutcomeCallable GetVoiceToneAnalysisTaskCallable(const GetVoiceToneAnalysisTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::GetVoiceToneAnalysisTask, request);
+        }
+
+        /**
+         * An Async wrapper for GetVoiceToneAnalysisTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetVoiceToneAnalysisTaskRequestT = Model::GetVoiceToneAnalysisTaskRequest>
+        void GetVoiceToneAnalysisTaskAsync(const GetVoiceToneAnalysisTaskRequestT& request, const GetVoiceToneAnalysisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::GetVoiceToneAnalysisTask, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of media pipelines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaCapturePipelines">AWS
          * API Reference</a></p>
@@ -458,6 +510,118 @@ namespace ChimeSDKMediaPipelines
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Starts a speaker search task.</p>  <p>Before starting any speaker
+         * search tasks, you must provide all notices and obtain all consents from the
+         * speaker as required under applicable privacy and biometrics laws, and as
+         * required under the <a href="https://aws.amazon.com/service-terms/">AWS service
+         * terms</a> for the Amazon Chime SDK.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StartSpeakerSearchTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSpeakerSearchTaskOutcome StartSpeakerSearchTask(const Model::StartSpeakerSearchTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartSpeakerSearchTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartSpeakerSearchTaskRequestT = Model::StartSpeakerSearchTaskRequest>
+        Model::StartSpeakerSearchTaskOutcomeCallable StartSpeakerSearchTaskCallable(const StartSpeakerSearchTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::StartSpeakerSearchTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartSpeakerSearchTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartSpeakerSearchTaskRequestT = Model::StartSpeakerSearchTaskRequest>
+        void StartSpeakerSearchTaskAsync(const StartSpeakerSearchTaskRequestT& request, const StartSpeakerSearchTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::StartSpeakerSearchTask, request, handler, context);
+        }
+
+        /**
+         * <p>Starts a voice tone analysis task. For more information about voice tone
+         * analysis, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/voice-analytics.html">Using
+         * Amazon Chime SDK voice analytics</a> in the <i>Amazon Chime SDK Developer
+         * Guide</i>.</p>  <p>Before starting any voice tone analysis tasks, you
+         * must provide all notices and obtain all consents from the speaker as required
+         * under applicable privacy and biometrics laws, and as required under the <a
+         * href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the
+         * Amazon Chime SDK.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StartVoiceToneAnalysisTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartVoiceToneAnalysisTaskOutcome StartVoiceToneAnalysisTask(const Model::StartVoiceToneAnalysisTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartVoiceToneAnalysisTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartVoiceToneAnalysisTaskRequestT = Model::StartVoiceToneAnalysisTaskRequest>
+        Model::StartVoiceToneAnalysisTaskOutcomeCallable StartVoiceToneAnalysisTaskCallable(const StartVoiceToneAnalysisTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::StartVoiceToneAnalysisTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartVoiceToneAnalysisTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartVoiceToneAnalysisTaskRequestT = Model::StartVoiceToneAnalysisTaskRequest>
+        void StartVoiceToneAnalysisTaskAsync(const StartVoiceToneAnalysisTaskRequestT& request, const StartVoiceToneAnalysisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::StartVoiceToneAnalysisTask, request, handler, context);
+        }
+
+        /**
+         * <p>Stops a speaker search task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StopSpeakerSearchTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopSpeakerSearchTaskOutcome StopSpeakerSearchTask(const Model::StopSpeakerSearchTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopSpeakerSearchTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopSpeakerSearchTaskRequestT = Model::StopSpeakerSearchTaskRequest>
+        Model::StopSpeakerSearchTaskOutcomeCallable StopSpeakerSearchTaskCallable(const StopSpeakerSearchTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::StopSpeakerSearchTask, request);
+        }
+
+        /**
+         * An Async wrapper for StopSpeakerSearchTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopSpeakerSearchTaskRequestT = Model::StopSpeakerSearchTaskRequest>
+        void StopSpeakerSearchTaskAsync(const StopSpeakerSearchTaskRequestT& request, const StopSpeakerSearchTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::StopSpeakerSearchTask, request, handler, context);
+        }
+
+        /**
+         * <p>Stops a voice tone analysis task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/StopVoiceToneAnalysisTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopVoiceToneAnalysisTaskOutcome StopVoiceToneAnalysisTask(const Model::StopVoiceToneAnalysisTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopVoiceToneAnalysisTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopVoiceToneAnalysisTaskRequestT = Model::StopVoiceToneAnalysisTaskRequest>
+        Model::StopVoiceToneAnalysisTaskOutcomeCallable StopVoiceToneAnalysisTaskCallable(const StopVoiceToneAnalysisTaskRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::StopVoiceToneAnalysisTask, request);
+        }
+
+        /**
+         * An Async wrapper for StopVoiceToneAnalysisTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopVoiceToneAnalysisTaskRequestT = Model::StopVoiceToneAnalysisTaskRequest>
+        void StopVoiceToneAnalysisTaskAsync(const StopVoiceToneAnalysisTaskRequestT& request, const StopVoiceToneAnalysisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::StopVoiceToneAnalysisTask, request, handler, context);
         }
 
         /**

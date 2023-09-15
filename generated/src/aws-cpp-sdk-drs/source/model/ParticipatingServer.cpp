@@ -19,6 +19,7 @@ namespace Model
 {
 
 ParticipatingServer::ParticipatingServer() : 
+    m_launchActionsStatusHasBeenSet(false),
     m_launchStatus(LaunchStatus::NOT_SET),
     m_launchStatusHasBeenSet(false),
     m_recoveryInstanceIDHasBeenSet(false),
@@ -27,6 +28,7 @@ ParticipatingServer::ParticipatingServer() :
 }
 
 ParticipatingServer::ParticipatingServer(JsonView jsonValue) : 
+    m_launchActionsStatusHasBeenSet(false),
     m_launchStatus(LaunchStatus::NOT_SET),
     m_launchStatusHasBeenSet(false),
     m_recoveryInstanceIDHasBeenSet(false),
@@ -37,6 +39,13 @@ ParticipatingServer::ParticipatingServer(JsonView jsonValue) :
 
 ParticipatingServer& ParticipatingServer::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("launchActionsStatus"))
+  {
+    m_launchActionsStatus = jsonValue.GetObject("launchActionsStatus");
+
+    m_launchActionsStatusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("launchStatus"))
   {
     m_launchStatus = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("launchStatus"));
@@ -64,6 +73,12 @@ ParticipatingServer& ParticipatingServer::operator =(JsonView jsonValue)
 JsonValue ParticipatingServer::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_launchActionsStatusHasBeenSet)
+  {
+   payload.WithObject("launchActionsStatus", m_launchActionsStatus.Jsonize());
+
+  }
 
   if(m_launchStatusHasBeenSet)
   {

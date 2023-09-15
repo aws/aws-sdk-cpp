@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     TOP,
     MIDDLE,
-    BOTTOM
+    BOTTOM,
+    AUTO
   };
 
 namespace VerticalTextAlignmentMapper

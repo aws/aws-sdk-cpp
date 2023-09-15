@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>Customizes the maximum size of the request body that your protected
    * CloudFront distributions forward to WAF for inspection. The default size is 16
-   * KB (16,384 kilobytes). </p>  <p>You are charged additional fees when your
+   * KB (16,384 bytes). </p>  <p>You are charged additional fees when your
    * protected resources forward body sizes that are larger than the default. For
    * more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
    * Pricing</a>.</p>  <p>This is used in the <code>AssociationConfig</code>
@@ -47,7 +47,7 @@ namespace Model
      * <p>Specifies the maximum size of the web request body component that an
      * associated CloudFront distribution should send to WAF for inspection. This
      * applies to statements in the web ACL that inspect the body or JSON body. </p>
-     * <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
+     * <p>Default: <code>16 KB (16,384 bytes)</code> </p>
      */
     inline const SizeInspectionLimit& GetDefaultSizeInspectionLimit() const{ return m_defaultSizeInspectionLimit; }
 
@@ -55,7 +55,7 @@ namespace Model
      * <p>Specifies the maximum size of the web request body component that an
      * associated CloudFront distribution should send to WAF for inspection. This
      * applies to statements in the web ACL that inspect the body or JSON body. </p>
-     * <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
+     * <p>Default: <code>16 KB (16,384 bytes)</code> </p>
      */
     inline bool DefaultSizeInspectionLimitHasBeenSet() const { return m_defaultSizeInspectionLimitHasBeenSet; }
 
@@ -63,7 +63,7 @@ namespace Model
      * <p>Specifies the maximum size of the web request body component that an
      * associated CloudFront distribution should send to WAF for inspection. This
      * applies to statements in the web ACL that inspect the body or JSON body. </p>
-     * <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
+     * <p>Default: <code>16 KB (16,384 bytes)</code> </p>
      */
     inline void SetDefaultSizeInspectionLimit(const SizeInspectionLimit& value) { m_defaultSizeInspectionLimitHasBeenSet = true; m_defaultSizeInspectionLimit = value; }
 
@@ -71,7 +71,7 @@ namespace Model
      * <p>Specifies the maximum size of the web request body component that an
      * associated CloudFront distribution should send to WAF for inspection. This
      * applies to statements in the web ACL that inspect the body or JSON body. </p>
-     * <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
+     * <p>Default: <code>16 KB (16,384 bytes)</code> </p>
      */
     inline void SetDefaultSizeInspectionLimit(SizeInspectionLimit&& value) { m_defaultSizeInspectionLimitHasBeenSet = true; m_defaultSizeInspectionLimit = std::move(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * <p>Specifies the maximum size of the web request body component that an
      * associated CloudFront distribution should send to WAF for inspection. This
      * applies to statements in the web ACL that inspect the body or JSON body. </p>
-     * <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
+     * <p>Default: <code>16 KB (16,384 bytes)</code> </p>
      */
     inline RequestBodyAssociatedResourceTypeConfig& WithDefaultSizeInspectionLimit(const SizeInspectionLimit& value) { SetDefaultSizeInspectionLimit(value); return *this;}
 
@@ -87,7 +87,7 @@ namespace Model
      * <p>Specifies the maximum size of the web request body component that an
      * associated CloudFront distribution should send to WAF for inspection. This
      * applies to statements in the web ACL that inspect the body or JSON body. </p>
-     * <p>Default: <code>16 KB (16,384 kilobytes)</code> </p>
+     * <p>Default: <code>16 KB (16,384 bytes)</code> </p>
      */
     inline RequestBodyAssociatedResourceTypeConfig& WithDefaultSizeInspectionLimit(SizeInspectionLimit&& value) { SetDefaultSizeInspectionLimit(std::move(value)); return *this;}
 

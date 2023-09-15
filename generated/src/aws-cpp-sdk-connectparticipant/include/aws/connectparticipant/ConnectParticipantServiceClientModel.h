@@ -20,6 +20,7 @@
 /* Service model headers required in ConnectParticipantClient header */
 #include <aws/connectparticipant/model/CompleteAttachmentUploadResult.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionResult.h>
+#include <aws/connectparticipant/model/DescribeViewResult.h>
 #include <aws/connectparticipant/model/DisconnectParticipantResult.h>
 #include <aws/connectparticipant/model/GetAttachmentResult.h>
 #include <aws/connectparticipant/model/GetTranscriptResult.h>
@@ -68,6 +69,7 @@ namespace Aws
       /* Service model forward declarations required in ConnectParticipantClient header */
       class CompleteAttachmentUploadRequest;
       class CreateParticipantConnectionRequest;
+      class DescribeViewRequest;
       class DisconnectParticipantRequest;
       class GetAttachmentRequest;
       class GetTranscriptRequest;
@@ -79,6 +81,7 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CompleteAttachmentUploadResult, ConnectParticipantError> CompleteAttachmentUploadOutcome;
       typedef Aws::Utils::Outcome<CreateParticipantConnectionResult, ConnectParticipantError> CreateParticipantConnectionOutcome;
+      typedef Aws::Utils::Outcome<DescribeViewResult, ConnectParticipantError> DescribeViewOutcome;
       typedef Aws::Utils::Outcome<DisconnectParticipantResult, ConnectParticipantError> DisconnectParticipantOutcome;
       typedef Aws::Utils::Outcome<GetAttachmentResult, ConnectParticipantError> GetAttachmentOutcome;
       typedef Aws::Utils::Outcome<GetTranscriptResult, ConnectParticipantError> GetTranscriptOutcome;
@@ -90,6 +93,7 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<CompleteAttachmentUploadOutcome> CompleteAttachmentUploadOutcomeCallable;
       typedef std::future<CreateParticipantConnectionOutcome> CreateParticipantConnectionOutcomeCallable;
+      typedef std::future<DescribeViewOutcome> DescribeViewOutcomeCallable;
       typedef std::future<DisconnectParticipantOutcome> DisconnectParticipantOutcomeCallable;
       typedef std::future<GetAttachmentOutcome> GetAttachmentOutcomeCallable;
       typedef std::future<GetTranscriptOutcome> GetTranscriptOutcomeCallable;
@@ -104,6 +108,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const ConnectParticipantClient*, const Model::CompleteAttachmentUploadRequest&, const Model::CompleteAttachmentUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteAttachmentUploadResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::CreateParticipantConnectionRequest&, const Model::CreateParticipantConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateParticipantConnectionResponseReceivedHandler;
+    typedef std::function<void(const ConnectParticipantClient*, const Model::DescribeViewRequest&, const Model::DescribeViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeViewResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::DisconnectParticipantRequest&, const Model::DisconnectParticipantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisconnectParticipantResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::GetAttachmentRequest&, const Model::GetAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttachmentResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::GetTranscriptRequest&, const Model::GetTranscriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTranscriptResponseReceivedHandler;

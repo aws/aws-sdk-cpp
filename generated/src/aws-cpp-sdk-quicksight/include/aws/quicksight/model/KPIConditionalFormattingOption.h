@@ -7,6 +7,8 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/KPIPrimaryValueConditionalFormatting.h>
 #include <aws/quicksight/model/KPIProgressBarConditionalFormatting.h>
+#include <aws/quicksight/model/KPIActualValueConditionalFormatting.h>
+#include <aws/quicksight/model/KPIComparisonValueConditionalFormatting.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +102,68 @@ namespace Model
      */
     inline KPIConditionalFormattingOption& WithProgressBar(KPIProgressBarConditionalFormatting&& value) { SetProgressBar(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The conditional formatting for the actual value of a KPI visual.</p>
+     */
+    inline const KPIActualValueConditionalFormatting& GetActualValue() const{ return m_actualValue; }
+
+    /**
+     * <p>The conditional formatting for the actual value of a KPI visual.</p>
+     */
+    inline bool ActualValueHasBeenSet() const { return m_actualValueHasBeenSet; }
+
+    /**
+     * <p>The conditional formatting for the actual value of a KPI visual.</p>
+     */
+    inline void SetActualValue(const KPIActualValueConditionalFormatting& value) { m_actualValueHasBeenSet = true; m_actualValue = value; }
+
+    /**
+     * <p>The conditional formatting for the actual value of a KPI visual.</p>
+     */
+    inline void SetActualValue(KPIActualValueConditionalFormatting&& value) { m_actualValueHasBeenSet = true; m_actualValue = std::move(value); }
+
+    /**
+     * <p>The conditional formatting for the actual value of a KPI visual.</p>
+     */
+    inline KPIConditionalFormattingOption& WithActualValue(const KPIActualValueConditionalFormatting& value) { SetActualValue(value); return *this;}
+
+    /**
+     * <p>The conditional formatting for the actual value of a KPI visual.</p>
+     */
+    inline KPIConditionalFormattingOption& WithActualValue(KPIActualValueConditionalFormatting&& value) { SetActualValue(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The conditional formatting for the comparison value of a KPI visual.</p>
+     */
+    inline const KPIComparisonValueConditionalFormatting& GetComparisonValue() const{ return m_comparisonValue; }
+
+    /**
+     * <p>The conditional formatting for the comparison value of a KPI visual.</p>
+     */
+    inline bool ComparisonValueHasBeenSet() const { return m_comparisonValueHasBeenSet; }
+
+    /**
+     * <p>The conditional formatting for the comparison value of a KPI visual.</p>
+     */
+    inline void SetComparisonValue(const KPIComparisonValueConditionalFormatting& value) { m_comparisonValueHasBeenSet = true; m_comparisonValue = value; }
+
+    /**
+     * <p>The conditional formatting for the comparison value of a KPI visual.</p>
+     */
+    inline void SetComparisonValue(KPIComparisonValueConditionalFormatting&& value) { m_comparisonValueHasBeenSet = true; m_comparisonValue = std::move(value); }
+
+    /**
+     * <p>The conditional formatting for the comparison value of a KPI visual.</p>
+     */
+    inline KPIConditionalFormattingOption& WithComparisonValue(const KPIComparisonValueConditionalFormatting& value) { SetComparisonValue(value); return *this;}
+
+    /**
+     * <p>The conditional formatting for the comparison value of a KPI visual.</p>
+     */
+    inline KPIConditionalFormattingOption& WithComparisonValue(KPIComparisonValueConditionalFormatting&& value) { SetComparisonValue(std::move(value)); return *this;}
+
   private:
 
     KPIPrimaryValueConditionalFormatting m_primaryValue;
@@ -107,6 +171,12 @@ namespace Model
 
     KPIProgressBarConditionalFormatting m_progressBar;
     bool m_progressBarHasBeenSet = false;
+
+    KPIActualValueConditionalFormatting m_actualValue;
+    bool m_actualValueHasBeenSet = false;
+
+    KPIComparisonValueConditionalFormatting m_comparisonValue;
+    bool m_comparisonValueHasBeenSet = false;
   };
 
 } // namespace Model

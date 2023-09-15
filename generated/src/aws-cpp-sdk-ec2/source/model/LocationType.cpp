@@ -23,6 +23,7 @@ namespace Aws
         static const int region_HASH = HashingUtils::HashString("region");
         static const int availability_zone_HASH = HashingUtils::HashString("availability-zone");
         static const int availability_zone_id_HASH = HashingUtils::HashString("availability-zone-id");
+        static const int outpost_HASH = HashingUtils::HashString("outpost");
 
 
         LocationType GetLocationTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == availability_zone_id_HASH)
           {
             return LocationType::availability_zone_id;
+          }
+          else if (hashCode == outpost_HASH)
+          {
+            return LocationType::outpost;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "availability-zone";
           case LocationType::availability_zone_id:
             return "availability-zone-id";
+          case LocationType::outpost:
+            return "outpost";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

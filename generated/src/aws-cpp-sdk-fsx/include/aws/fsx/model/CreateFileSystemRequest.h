@@ -664,38 +664,38 @@ namespace Model
 
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline const CreateFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline void SetWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline void SetWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline CreateFileSystemRequest& WithWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { SetWindowsConfiguration(value); return *this;}
 
     /**
-     * <p>The Microsoft Windows configuration for the file system that's being created.
-     * </p>
+     * <p>The Microsoft Windows configuration for the file system that's being
+     * created.</p>
      */
     inline CreateFileSystemRequest& WithWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 
@@ -740,11 +740,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -755,11 +756,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -770,11 +772,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -785,11 +788,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -800,11 +804,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -815,11 +820,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -830,11 +836,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for
@@ -845,11 +852,12 @@ namespace Model
 
     /**
      * <p>(Optional) For FSx for Lustre file systems, sets the Lustre version for the
-     * file system that you're creating. Valid values are <code>2.10</code> and
-     * <code>2.12</code>:</p> <ul> <li> <p>2.10 is supported by the Scratch and
-     * Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 is supported by all
-     * Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     * Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
+     * file system that you're creating. Valid values are <code>2.10</code>,
+     * <code>2.12</code>, and <code>2.15</code>:</p> <ul> <li> <p>2.10 is supported by
+     * the Scratch and Persistent_1 Lustre deployment types.</p> </li> <li> <p>2.12 and
+     * 2.15 are supported by all Lustre deployment types. <code>2.12</code> or
+     * <code>2.15</code> is required when setting FSx for Lustre
+     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.</p> </li> </ul>
      * <p>Default value = <code>2.10</code>, except when <code>DeploymentType</code> is
      * set to <code>PERSISTENT_2</code>, then the default is <code>2.12</code>.</p>
      *  <p>If you set <code>FileSystemTypeVersion</code> to <code>2.10</code> for

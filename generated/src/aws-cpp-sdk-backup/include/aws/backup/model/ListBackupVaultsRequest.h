@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/backup/BackupRequest.h>
+#include <aws/backup/model/VaultType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -36,6 +37,58 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
     AWS_BACKUP_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>This parameter will sort the list of vaults by vault type.</p>
+     */
+    inline const VaultType& GetByVaultType() const{ return m_byVaultType; }
+
+    /**
+     * <p>This parameter will sort the list of vaults by vault type.</p>
+     */
+    inline bool ByVaultTypeHasBeenSet() const { return m_byVaultTypeHasBeenSet; }
+
+    /**
+     * <p>This parameter will sort the list of vaults by vault type.</p>
+     */
+    inline void SetByVaultType(const VaultType& value) { m_byVaultTypeHasBeenSet = true; m_byVaultType = value; }
+
+    /**
+     * <p>This parameter will sort the list of vaults by vault type.</p>
+     */
+    inline void SetByVaultType(VaultType&& value) { m_byVaultTypeHasBeenSet = true; m_byVaultType = std::move(value); }
+
+    /**
+     * <p>This parameter will sort the list of vaults by vault type.</p>
+     */
+    inline ListBackupVaultsRequest& WithByVaultType(const VaultType& value) { SetByVaultType(value); return *this;}
+
+    /**
+     * <p>This parameter will sort the list of vaults by vault type.</p>
+     */
+    inline ListBackupVaultsRequest& WithByVaultType(VaultType&& value) { SetByVaultType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This parameter will sort the list of vaults by shared vaults.</p>
+     */
+    inline bool GetByShared() const{ return m_byShared; }
+
+    /**
+     * <p>This parameter will sort the list of vaults by shared vaults.</p>
+     */
+    inline bool BySharedHasBeenSet() const { return m_bySharedHasBeenSet; }
+
+    /**
+     * <p>This parameter will sort the list of vaults by shared vaults.</p>
+     */
+    inline void SetByShared(bool value) { m_bySharedHasBeenSet = true; m_byShared = value; }
+
+    /**
+     * <p>This parameter will sort the list of vaults by shared vaults.</p>
+     */
+    inline ListBackupVaultsRequest& WithByShared(bool value) { SetByShared(value); return *this;}
 
 
     /**
@@ -124,6 +177,12 @@ namespace Model
     inline ListBackupVaultsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
+
+    VaultType m_byVaultType;
+    bool m_byVaultTypeHasBeenSet = false;
+
+    bool m_byShared;
+    bool m_bySharedHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

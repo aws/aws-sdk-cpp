@@ -36,7 +36,10 @@ InputDeviceSummary::InputDeviceSummary() :
     m_typeHasBeenSet(false),
     m_uhdDeviceSettingsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+    m_availabilityZoneHasBeenSet(false),
+    m_medialiveInputArnsHasBeenSet(false),
+    m_outputType(InputDeviceOutputType::NOT_SET),
+    m_outputTypeHasBeenSet(false)
 {
 }
 
@@ -58,7 +61,10 @@ InputDeviceSummary::InputDeviceSummary(JsonView jsonValue) :
     m_typeHasBeenSet(false),
     m_uhdDeviceSettingsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+    m_availabilityZoneHasBeenSet(false),
+    m_medialiveInputArnsHasBeenSet(false),
+    m_outputType(InputDeviceOutputType::NOT_SET),
+    m_outputTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -166,6 +172,23 @@ InputDeviceSummary& InputDeviceSummary::operator =(JsonView jsonValue)
     m_availabilityZoneHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("medialiveInputArns"))
+  {
+    Aws::Utils::Array<JsonView> medialiveInputArnsJsonList = jsonValue.GetArray("medialiveInputArns");
+    for(unsigned medialiveInputArnsIndex = 0; medialiveInputArnsIndex < medialiveInputArnsJsonList.GetLength(); ++medialiveInputArnsIndex)
+    {
+      m_medialiveInputArns.push_back(medialiveInputArnsJsonList[medialiveInputArnsIndex].AsString());
+    }
+    m_medialiveInputArnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("outputType"))
+  {
+    m_outputType = InputDeviceOutputTypeMapper::GetInputDeviceOutputTypeForName(jsonValue.GetString("outputType"));
+
+    m_outputTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -256,6 +279,22 @@ JsonValue InputDeviceSummary::Jsonize() const
   {
    payload.WithString("availabilityZone", m_availabilityZone);
 
+  }
+
+  if(m_medialiveInputArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> medialiveInputArnsJsonList(m_medialiveInputArns.size());
+   for(unsigned medialiveInputArnsIndex = 0; medialiveInputArnsIndex < medialiveInputArnsJsonList.GetLength(); ++medialiveInputArnsIndex)
+   {
+     medialiveInputArnsJsonList[medialiveInputArnsIndex].AsString(m_medialiveInputArns[medialiveInputArnsIndex]);
+   }
+   payload.WithArray("medialiveInputArns", std::move(medialiveInputArnsJsonList));
+
+  }
+
+  if(m_outputTypeHasBeenSet)
+  {
+   payload.WithString("outputType", InputDeviceOutputTypeMapper::GetNameForInputDeviceOutputType(m_outputType));
   }
 
   return payload;

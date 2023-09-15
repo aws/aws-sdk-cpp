@@ -14,8 +14,8 @@ using namespace Aws::Utils;
 
 AttachManagedPolicyToPermissionSetRequest::AttachManagedPolicyToPermissionSetRequest() : 
     m_instanceArnHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_managedPolicyArnHasBeenSet(false)
+    m_managedPolicyArnHasBeenSet(false),
+    m_permissionSetArnHasBeenSet(false)
 {
 }
 
@@ -29,15 +29,15 @@ Aws::String AttachManagedPolicyToPermissionSetRequest::SerializePayload() const
 
   }
 
-  if(m_permissionSetArnHasBeenSet)
-  {
-   payload.WithString("PermissionSetArn", m_permissionSetArn);
-
-  }
-
   if(m_managedPolicyArnHasBeenSet)
   {
    payload.WithString("ManagedPolicyArn", m_managedPolicyArn);
+
+  }
+
+  if(m_permissionSetArnHasBeenSet)
+  {
+   payload.WithString("PermissionSetArn", m_permissionSetArn);
 
   }
 

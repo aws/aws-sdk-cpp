@@ -35,31 +35,36 @@ namespace Model
 
     /**
      * <p>Resource capacity information for the requested fleet location. Capacity
-     * objects are returned only for fleets and locations that currently exist.</p>
+     * objects are returned only for fleets and locations that currently exist. Changes
+     * in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline const FleetCapacity& GetFleetCapacity() const{ return m_fleetCapacity; }
 
     /**
      * <p>Resource capacity information for the requested fleet location. Capacity
-     * objects are returned only for fleets and locations that currently exist.</p>
+     * objects are returned only for fleets and locations that currently exist. Changes
+     * in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline void SetFleetCapacity(const FleetCapacity& value) { m_fleetCapacity = value; }
 
     /**
      * <p>Resource capacity information for the requested fleet location. Capacity
-     * objects are returned only for fleets and locations that currently exist.</p>
+     * objects are returned only for fleets and locations that currently exist. Changes
+     * in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline void SetFleetCapacity(FleetCapacity&& value) { m_fleetCapacity = std::move(value); }
 
     /**
      * <p>Resource capacity information for the requested fleet location. Capacity
-     * objects are returned only for fleets and locations that currently exist.</p>
+     * objects are returned only for fleets and locations that currently exist. Changes
+     * in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline DescribeFleetLocationCapacityResult& WithFleetCapacity(const FleetCapacity& value) { SetFleetCapacity(value); return *this;}
 
     /**
      * <p>Resource capacity information for the requested fleet location. Capacity
-     * objects are returned only for fleets and locations that currently exist.</p>
+     * objects are returned only for fleets and locations that currently exist. Changes
+     * in desired instance value can take up to 1 minute to be reflected.</p>
      */
     inline DescribeFleetLocationCapacityResult& WithFleetCapacity(FleetCapacity&& value) { SetFleetCapacity(std::move(value)); return *this;}
 

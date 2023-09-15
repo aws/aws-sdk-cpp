@@ -254,49 +254,37 @@ namespace Model
 
     /**
      * <p>The type of aggregation that is performed on the column data when it's
-     * queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>,
-     * <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and
-     * <code>AVERAGE</code>.</p>
+     * queried.</p>
      */
     inline const DefaultAggregation& GetAggregation() const{ return m_aggregation; }
 
     /**
      * <p>The type of aggregation that is performed on the column data when it's
-     * queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>,
-     * <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and
-     * <code>AVERAGE</code>.</p>
+     * queried.</p>
      */
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
 
     /**
      * <p>The type of aggregation that is performed on the column data when it's
-     * queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>,
-     * <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and
-     * <code>AVERAGE</code>.</p>
+     * queried.</p>
      */
     inline void SetAggregation(const DefaultAggregation& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
 
     /**
      * <p>The type of aggregation that is performed on the column data when it's
-     * queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>,
-     * <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and
-     * <code>AVERAGE</code>.</p>
+     * queried.</p>
      */
     inline void SetAggregation(DefaultAggregation&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
 
     /**
      * <p>The type of aggregation that is performed on the column data when it's
-     * queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>,
-     * <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and
-     * <code>AVERAGE</code>.</p>
+     * queried.</p>
      */
     inline TopicColumn& WithAggregation(const DefaultAggregation& value) { SetAggregation(value); return *this;}
 
     /**
      * <p>The type of aggregation that is performed on the column data when it's
-     * queried. Valid values for this structure are <code>SUM</code>, <code>MAX</code>,
-     * <code>MIN</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, and
-     * <code>AVERAGE</code>.</p>
+     * queried.</p>
      */
     inline TopicColumn& WithAggregation(DefaultAggregation&& value) { SetAggregation(std::move(value)); return *this;}
 
@@ -698,6 +686,27 @@ namespace Model
      */
     inline TopicColumn& AddCellValueSynonyms(CellValueSynonym&& value) { m_cellValueSynonymsHasBeenSet = true; m_cellValueSynonyms.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The non additive value for the column.</p>
+     */
+    inline bool GetNonAdditive() const{ return m_nonAdditive; }
+
+    /**
+     * <p>The non additive value for the column.</p>
+     */
+    inline bool NonAdditiveHasBeenSet() const { return m_nonAdditiveHasBeenSet; }
+
+    /**
+     * <p>The non additive value for the column.</p>
+     */
+    inline void SetNonAdditive(bool value) { m_nonAdditiveHasBeenSet = true; m_nonAdditive = value; }
+
+    /**
+     * <p>The non additive value for the column.</p>
+     */
+    inline TopicColumn& WithNonAdditive(bool value) { SetNonAdditive(value); return *this;}
+
   private:
 
     Aws::String m_columnName;
@@ -747,6 +756,9 @@ namespace Model
 
     Aws::Vector<CellValueSynonym> m_cellValueSynonyms;
     bool m_cellValueSynonymsHasBeenSet = false;
+
+    bool m_nonAdditive;
+    bool m_nonAdditiveHasBeenSet = false;
   };
 
 } // namespace Model

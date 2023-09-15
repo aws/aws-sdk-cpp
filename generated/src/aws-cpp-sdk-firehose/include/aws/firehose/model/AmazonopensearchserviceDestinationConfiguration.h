@@ -14,6 +14,7 @@
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 #include <aws/firehose/model/VpcConfiguration.h>
+#include <aws/firehose/model/DocumentIdOptions.h>
 #include <utility>
 
 namespace Aws
@@ -582,6 +583,49 @@ namespace Model
     
     inline AmazonopensearchserviceDestinationConfiguration& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline const DocumentIdOptions& GetDocumentIdOptions() const{ return m_documentIdOptions; }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline bool DocumentIdOptionsHasBeenSet() const { return m_documentIdOptionsHasBeenSet; }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline void SetDocumentIdOptions(const DocumentIdOptions& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = value; }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline void SetDocumentIdOptions(DocumentIdOptions&& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = std::move(value); }
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline AmazonopensearchserviceDestinationConfiguration& WithDocumentIdOptions(const DocumentIdOptions& value) { SetDocumentIdOptions(value); return *this;}
+
+    /**
+     * <p>Indicates the method for setting up document ID. The supported methods are
+     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
+     * document ID.</p>
+     */
+    inline AmazonopensearchserviceDestinationConfiguration& WithDocumentIdOptions(DocumentIdOptions&& value) { SetDocumentIdOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleARN;
@@ -622,6 +666,9 @@ namespace Model
 
     VpcConfiguration m_vpcConfiguration;
     bool m_vpcConfigurationHasBeenSet = false;
+
+    DocumentIdOptions m_documentIdOptions;
+    bool m_documentIdOptionsHasBeenSet = false;
   };
 
 } // namespace Model

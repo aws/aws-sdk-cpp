@@ -27,7 +27,8 @@ CreateVpcEndpointRequest::CreateVpcEndpointRequest() :
     m_clientTokenHasBeenSet(false),
     m_privateDnsEnabled(false),
     m_privateDnsEnabledHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_subnetConfigurationsHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,16 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
+    }
+  }
+
+  if(m_subnetConfigurationsHasBeenSet)
+  {
+    unsigned subnetConfigurationsCount = 1;
+    for(auto& item : m_subnetConfigurations)
+    {
+      item.OutputToStream(ss, "SubnetConfiguration.", subnetConfigurationsCount, "");
+      subnetConfigurationsCount++;
     }
   }
 

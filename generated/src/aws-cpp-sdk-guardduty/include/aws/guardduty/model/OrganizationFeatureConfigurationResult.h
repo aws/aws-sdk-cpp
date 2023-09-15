@@ -79,62 +79,86 @@ namespace Model
 
 
     /**
-     * <p>Describes how The status of the feature that are configured for the member
-     * accounts within the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NEW</code>, a feature will be configured for only the new accounts when
-     * they join the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NONE</code>, no feature will be configured for the accounts when they join
-     * the organization.</p>
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that when a new account joins the organization, they will have the feature
+     * enabled automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that
+     * may have been suspended or removed from the organization in GuardDuty.</p> </li>
+     * <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically
+     * enabled for any account in the organization. In this case, each account will be
+     * managed individually by the administrator.</p> </li> </ul>
      */
     inline const OrgFeatureStatus& GetAutoEnable() const{ return m_autoEnable; }
 
     /**
-     * <p>Describes how The status of the feature that are configured for the member
-     * accounts within the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NEW</code>, a feature will be configured for only the new accounts when
-     * they join the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NONE</code>, no feature will be configured for the accounts when they join
-     * the organization.</p>
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that when a new account joins the organization, they will have the feature
+     * enabled automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that
+     * may have been suspended or removed from the organization in GuardDuty.</p> </li>
+     * <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically
+     * enabled for any account in the organization. In this case, each account will be
+     * managed individually by the administrator.</p> </li> </ul>
      */
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
 
     /**
-     * <p>Describes how The status of the feature that are configured for the member
-     * accounts within the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NEW</code>, a feature will be configured for only the new accounts when
-     * they join the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NONE</code>, no feature will be configured for the accounts when they join
-     * the organization.</p>
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that when a new account joins the organization, they will have the feature
+     * enabled automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that
+     * may have been suspended or removed from the organization in GuardDuty.</p> </li>
+     * <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically
+     * enabled for any account in the organization. In this case, each account will be
+     * managed individually by the administrator.</p> </li> </ul>
      */
     inline void SetAutoEnable(const OrgFeatureStatus& value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
 
     /**
-     * <p>Describes how The status of the feature that are configured for the member
-     * accounts within the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NEW</code>, a feature will be configured for only the new accounts when
-     * they join the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NONE</code>, no feature will be configured for the accounts when they join
-     * the organization.</p>
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that when a new account joins the organization, they will have the feature
+     * enabled automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that
+     * may have been suspended or removed from the organization in GuardDuty.</p> </li>
+     * <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically
+     * enabled for any account in the organization. In this case, each account will be
+     * managed individually by the administrator.</p> </li> </ul>
      */
     inline void SetAutoEnable(OrgFeatureStatus&& value) { m_autoEnableHasBeenSet = true; m_autoEnable = std::move(value); }
 
     /**
-     * <p>Describes how The status of the feature that are configured for the member
-     * accounts within the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NEW</code>, a feature will be configured for only the new accounts when
-     * they join the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NONE</code>, no feature will be configured for the accounts when they join
-     * the organization.</p>
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that when a new account joins the organization, they will have the feature
+     * enabled automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that
+     * may have been suspended or removed from the organization in GuardDuty.</p> </li>
+     * <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically
+     * enabled for any account in the organization. In this case, each account will be
+     * managed individually by the administrator.</p> </li> </ul>
      */
     inline OrganizationFeatureConfigurationResult& WithAutoEnable(const OrgFeatureStatus& value) { SetAutoEnable(value); return *this;}
 
     /**
-     * <p>Describes how The status of the feature that are configured for the member
-     * accounts within the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NEW</code>, a feature will be configured for only the new accounts when
-     * they join the organization.</p> <p>If you set <code>AutoEnable</code> to
-     * <code>NONE</code>, no feature will be configured for the accounts when they join
-     * the organization.</p>
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization.</p> <ul> <li> <p> <code>NEW</code>: Indicates
+     * that when a new account joins the organization, they will have the feature
+     * enabled automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all
+     * accounts in the organization have the feature enabled automatically. This
+     * includes <code>NEW</code> accounts that join the organization and accounts that
+     * may have been suspended or removed from the organization in GuardDuty.</p> </li>
+     * <li> <p> <code>NONE</code>: Indicates that the feature will not be automatically
+     * enabled for any account in the organization. In this case, each account will be
+     * managed individually by the administrator.</p> </li> </ul>
      */
     inline OrganizationFeatureConfigurationResult& WithAutoEnable(OrgFeatureStatus&& value) { SetAutoEnable(std::move(value)); return *this;}
 

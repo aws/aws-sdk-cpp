@@ -237,7 +237,7 @@ bool AWSClient::AdjustClockSkew(HttpResponseOutcome& outcome, const char* signer
 
 HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
-    HttpMethod method,
+    Aws::Http::HttpMethod method,
     const char* signerName,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
@@ -381,7 +381,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 }
 
 HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
-    HttpMethod method,
+    Aws::Http::HttpMethod method,
     const char* signerName,
     const char* requestName,
     const char* signerRegionOverride,
@@ -514,7 +514,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     return outcome;
 }
 
-HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpRequest>& httpRequest, const Aws::AmazonWebServiceRequest& request,
+HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Aws::AmazonWebServiceRequest& request,
     const char* signerName, const char* signerRegionOverride, const char* signerServiceNameOverride) const
 {
     TracingUtils::MakeCallWithTiming(
@@ -588,7 +588,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
     return HttpResponseOutcome(std::move(httpResponse));
 }
 
-HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpRequest>& httpRequest,
+HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const char* signerName, const char* requestName, const char* signerRegionOverride, const char* signerServiceNameOverride) const
 {
     AWS_UNREFERENCED_PARAM(requestName);
@@ -757,7 +757,7 @@ void AWSClient::AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest
     AddCommonHeaders(*httpRequest);
 }
 
-void AWSClient::AppendHeaderValueToRequest(const std::shared_ptr<HttpRequest> &httpRequest, const String header, const String value) const
+void AWSClient::AppendHeaderValueToRequest(const std::shared_ptr<Aws::Http::HttpRequest> &httpRequest, const String header, const String value) const
 {
     if (!httpRequest->HasHeader(header.c_str()))
     {
@@ -949,7 +949,7 @@ Aws::String Aws::Client::GetAuthorizationHeader(const Aws::Http::HttpRequest& ht
     return authHeader.substr(signaturePosition + strlen(Aws::Auth::SIGNATURE) + 1);
 }
 
-void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, const std::shared_ptr<HttpRequest>& httpRequest) const
+void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest) const
 {
     //do headers first since the request likely will set content-length as its own header.
     AddHeadersToRequest(httpRequest, request.GetHeaders());
@@ -994,27 +994,27 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
     request.AddQueryStringParameters(httpRequest->GetUri());
 }
 
-void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
+void AWSClient::AddCommonHeaders(Aws::Http::HttpRequest& httpRequest) const
 {
     httpRequest.SetUserAgent(m_userAgent);
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds)
 {
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, expirationInSeconds);
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, long long expirationInSeconds) const
 {
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, expirationInSeconds);
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     return AWSUrlPresigner(*this).GeneratePresignedUrl(uri, method, region, customizedHeaders, expirationInSeconds);
 }

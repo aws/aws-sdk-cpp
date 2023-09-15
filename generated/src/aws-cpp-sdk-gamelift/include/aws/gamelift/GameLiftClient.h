@@ -118,20 +118,20 @@ namespace GameLift
          * proposed match within a specified time limit. </p> <p>When FlexMatch builds a
          * match, all the matchmaking tickets involved in the proposed match are placed
          * into status <code>REQUIRES_ACCEPTANCE</code>. This is a trigger for your game to
-         * get acceptance from all players in the ticket. Acceptances are only valid for
-         * tickets when they are in this status; all other acceptances result in an
-         * error.</p> <p>To register acceptance, specify the ticket ID, a response, and one
-         * or more players. Once all players have registered acceptance, the matchmaking
-         * tickets advance to status <code>PLACING</code>, where a new game session is
-         * created for the match. </p> <p>If any player rejects the match, or if
-         * acceptances are not received before a specified timeout, the proposed match is
-         * dropped. The matchmaking tickets are then handled in one of two ways: For
-         * tickets where one or more players rejected the match or failed to respond, the
-         * ticket status is set to <code>CANCELLED</code>, and processing is terminated.
-         * For tickets where players have accepted or not yet responded, the ticket status
-         * is returned to <code>SEARCHING</code> to find a new match. A new matchmaking
-         * request for these players can be submitted as needed. </p> <p> <b>Learn more</b>
-         * </p> <p> <a
+         * get acceptance from all players in each ticket. Calls to this action are only
+         * valid for tickets that are in this status; calls for tickets not in this status
+         * result in an error.</p> <p>To register acceptance, specify the ticket ID, one or
+         * more players, and an acceptance response. When all players have accepted, Amazon
+         * GameLift advances the matchmaking tickets to status <code>PLACING</code>, and
+         * attempts to create a new game session for the match. </p> <p>If any player
+         * rejects the match, or if acceptances are not received before a specified
+         * timeout, the proposed match is dropped. Each matchmaking ticket in the failed
+         * match is handled as follows: </p> <ul> <li> <p>If the ticket has one or more
+         * players who rejected the match or failed to respond, the ticket status is set
+         * <code>CANCELLED</code> and processing is terminated.</p> </li> <li> <p>If all
+         * players in the ticket accepted the match, the ticket status is returned to
+         * <code>SEARCHING</code> to find a new match. </p> </li> </ul> <p> <b>Learn
+         * more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html">
          * Add FlexMatch to a game client</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html">
@@ -471,25 +471,26 @@ namespace GameLift
          * retrieves connection information for the new game session. As an alternative,
          * consider using the Amazon GameLift game session placement feature with <a
          * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
-         * , which uses FleetIQ algorithms and queues to optimize the placement
+         * , which uses the FleetIQ algorithm and queues to optimize the placement
          * process.</p> <p>When creating a game session, you specify exactly where you want
-         * to place it and provide a set of game session configuration settings. The fleet
-         * must be in <code>ACTIVE</code> status before a game session can be created in
-         * it. </p> <p>This operation can be used in the following ways: </p> <ul> <li>
-         * <p>To create a game session on an instance in a fleet's home Region, provide a
-         * fleet or alias ID along with your game session configuration. </p> </li> <li>
-         * <p>To create a game session on an instance in a fleet's remote location, provide
-         * a fleet or alias ID and a location name, along with your game session
-         * configuration. </p> </li> </ul> <p>If successful, a workflow is initiated to
-         * start a new game session. A <code>GameSession</code> object is returned
-         * containing the game session configuration and status. When the status is
-         * <code>ACTIVE</code>, game session connection information is provided and player
-         * sessions can be created for the game session. By default, newly created game
-         * sessions are open to new players. You can restrict new player access by using <a
+         * to place it and provide a set of game session configuration settings. The target
+         * fleet must be in <code>ACTIVE</code> status. </p> <p>You can use this operation
+         * in the following ways: </p> <ul> <li> <p>To create a game session on an instance
+         * in a fleet's home Region, provide a fleet or alias ID along with your game
+         * session configuration. </p> </li> <li> <p>To create a game session on an
+         * instance in a fleet's remote location, provide a fleet or alias ID and a
+         * location name, along with your game session configuration. </p> </li> <li> <p>To
+         * create a game session on an instance in an Anywhere fleet, specify the fleet's
+         * custom location.</p> </li> </ul> <p>If successful, Amazon GameLift initiates a
+         * workflow to start a new game session and returns a <code>GameSession</code>
+         * object containing the game session configuration and status. When the game
+         * session status is <code>ACTIVE</code>, it is updated with connection information
+         * and you can create player sessions for the game session. By default, newly
+         * created game sessions are open to new players. You can restrict new player
+         * access by using <a
          * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
-         * to change the game session's player session creation policy.</p> <p>Game session
-         * logs are retained for all active game sessions for 14 days. To access the logs,
-         * call <a
+         * to change the game session's player session creation policy.</p> <p>Amazon
+         * GameLift retains logs for active for 14 days. To access the logs, call <a
          * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
          * to download the log files.</p> <p> <i>Available in Amazon GameLift Local.</i>
          * </p> <p> <b>Learn more</b> </p> <p> <a
@@ -1352,8 +1353,9 @@ namespace GameLift
         }
 
         /**
-         * <p>Removes a compute resource from the specified fleet. Deregister your compute
-         * resources before you delete the compute.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a compute resource from an Amazon GameLift Anywhere fleet.
+         * Deregistered computes can no longer host game sessions through Amazon
+         * GameLift.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterCompute">AWS
          * API Reference</a></p>
          */
@@ -1473,9 +1475,14 @@ namespace GameLift
         }
 
         /**
-         * <p>Retrieves properties for a compute resource. To request a compute resource
-         * specify the fleet ID and compute name. If successful, Amazon GameLift returns an
-         * object containing the build properties.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves properties for a compute resource in an Amazon GameLift fleet. Call
+         * <a>ListCompute</a> to get a list of compute resources in a fleet. You can
+         * request information for computes in either managed EC2 fleets or Anywhere
+         * fleets. </p> <p>To request compute properties, specify the compute name and
+         * fleet ID.</p> <p>If successful, this operation returns details for the requested
+         * compute resource. For managed EC2 fleets, this operation returns the fleet's EC2
+         * instances. For Anywhere fleets, this operation returns the fleet's registered
+         * computes. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeCompute">AWS
          * API Reference</a></p>
          */
@@ -2143,21 +2150,26 @@ namespace GameLift
         }
 
         /**
-         * <p>Retrieves information about a fleet's instances, including instance IDs,
-         * connection data, and status. </p> <p>This operation can be used in the following
-         * ways:</p> <ul> <li> <p>To get information on all instances that are deployed to
-         * a fleet's home Region, provide the fleet ID.</p> </li> <li> <p>To get
-         * information on all instances that are deployed to a fleet's remote location,
-         * provide the fleet ID and location name.</p> </li> <li> <p>To get information on
-         * a specific instance in a fleet, provide the fleet ID and instance ID.</p> </li>
-         * </ul> <p>Use the pagination parameters to retrieve results as a set of
-         * sequential pages. </p> <p>If successful, an <code>Instance</code> object is
-         * returned for each requested instance. Instances are not returned in any
-         * particular order. </p> <p> <b>Learn more</b> </p> <p> <a
+         * <p>Retrieves information about the EC2 instances in an Amazon GameLift managed
+         * fleet, including instance ID, connection data, and status. You can use this
+         * operation with a multi-location fleet to get location-specific instance
+         * information. As an alternative, use the operations <a>ListCompute</a> and
+         * <a>DescribeCompute</a> to retrieve information for compute resources, including
+         * EC2 and Anywhere fleets.</p> <p>You can call this operation in the following
+         * ways:</p> <ul> <li> <p>To get information on all instances in a fleet's home
+         * Region, specify the fleet ID.</p> </li> <li> <p>To get information on all
+         * instances in a fleet's remote location, specify the fleet ID and location
+         * name.</p> </li> <li> <p>To get information on a specific instance in a fleet,
+         * specify the fleet ID and instance ID.</p> </li> </ul> <p>Use the pagination
+         * parameters to retrieve results as a set of sequential pages. </p> <p>If
+         * successful, this operation returns <code>Instance</code> objects for each
+         * requested instance, listed in no particular order. If you call this operation
+         * for an Anywhere fleet, you receive an InvalidRequestException.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
-         * Access Fleet Instances</a> </p> <p> <a
+         * connect to fleet instances</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
-         * Fleet Issues</a> </p> <p> <b>Related actions</b> </p> <p> <a
+         * fleet issues</a> </p> <p> <b>Related actions</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
          * APIs by task</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">AWS
@@ -2294,10 +2306,11 @@ namespace GameLift
          * <li> <p>To retrieve all player sessions for a specific player, provide a player
          * ID only.</p> </li> </ul> <p>To request player sessions, specify either a player
          * session ID, game session ID, or player ID. You can filter this request by player
-         * session status. Use the pagination parameters to retrieve results as a set of
-         * sequential pages. </p> <p>If successful, a <code>PlayerSession</code> object is
-         * returned for each session that matches the request.</p> <p> <b>Related
-         * actions</b> </p> <p> <a
+         * session status. If you provide a specific <code>PlayerSessionId</code> or
+         * <code>PlayerId</code>, Amazon GameLift ignores the filter criteria. Use the
+         * pagination parameters to retrieve results as a set of sequential pages. </p>
+         * <p>If successful, a <code>PlayerSession</code> object is returned for each
+         * session that matches the request.</p> <p> <b>Related actions</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
          * APIs by task</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">AWS
@@ -2486,23 +2499,24 @@ namespace GameLift
         }
 
         /**
-         * <p>Requests remote access to a fleet instance. Remote access is useful for
-         * debugging, gathering benchmarking data, or observing activity in real time. </p>
-         * <p>To remotely access an instance, you need credentials that match the operating
-         * system of the instance. For a Windows instance, Amazon GameLift returns a user
-         * name and password as strings for use with a Windows Remote Desktop client. For a
-         * Linux instance, Amazon GameLift returns a user name and RSA private key, also as
-         * strings, for use with an SSH client. The private key must be saved in the proper
-         * format to a <code>.pem</code> file before using. If you're making this request
-         * using the CLI, saving the secret can be handled as part of the
-         * <code>GetInstanceAccess</code> request, as shown in one of the examples for this
-         * operation. </p> <p>To request access to a specific instance, specify the IDs of
-         * both the instance and the fleet it belongs to.</p> <p> <b>Learn more</b> </p>
-         * <p> <a
+         * <p>Requests authorization to remotely connect to a compute resource in an Amazon
+         * GameLift fleet. Call this action to connect to an instance in a managed EC2
+         * fleet if the fleet's game build uses Amazon GameLift server SDK 5.x or later. To
+         * connect to instances with game builds that use server SDK 4.x or earlier, call
+         * <a>GetInstanceAccess</a>.</p> <p>To request access to a compute, identify the
+         * specific EC2 instance and the fleet it belongs to. You can retrieve instances
+         * for a managed EC2 fleet by calling <a>ListCompute</a>. </p> <p>If successful,
+         * this operation returns a set of temporary Amazon Web Services credentials,
+         * including a two-part access key and a session token. Use these credentials with
+         * Amazon EC2 Systems Manager (SSM) to start a session with the compute. For more
+         * details, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html#sessions-start-cli">
+         * Starting a session (CLI)</a> in the <i>Amazon EC2 Systems Manager User
+         * Guide</i>.</p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
-         * Access Fleet Instances</a> </p> <p> <a
+         * connect to fleet instances</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
-         * Fleet Issues</a> </p><p><h3>See Also:</h3>   <a
+         * fleet issues</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetComputeAccess">AWS
          * API Reference</a></p>
          */
@@ -2527,11 +2541,21 @@ namespace GameLift
         }
 
         /**
-         * <p>Requests an authentication token from Amazon GameLift. The authentication
-         * token is used by your game server to authenticate with Amazon GameLift. Each
-         * authentication token has an expiration time. To continue using the compute
-         * resource to host your game server, regularly retrieve a new authorization
-         * token.</p><p><h3>See Also:</h3>   <a
+         * <p>Requests an authentication token from Amazon GameLift for a registered
+         * compute in an Anywhere fleet. The game servers that are running on the compute
+         * use this token to authenticate with the Amazon GameLift service. Each server
+         * process must provide a valid authentication token in its call to the Amazon
+         * GameLift server SDK action <code>InitSDK()</code>.</p> <p>Authentication tokens
+         * are valid for a limited time span. Use a mechanism to regularly request a fresh
+         * authentication token before the current token expires.</p> <p> <b>Learn more</b>
+         * </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html">Create
+         * an Anywhere fleet</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing.html">Test
+         * your integration</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Server
+         * SDK reference guides</a> (for version 5.x)</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetComputeAuthToken">AWS
          * API Reference</a></p>
          */
@@ -2589,25 +2613,29 @@ namespace GameLift
         }
 
         /**
-         * <p>Requests remote access to a fleet instance. Remote access is useful for
-         * debugging, gathering benchmarking data, or observing activity in real time. </p>
-         * <p>To remotely access an instance, you need credentials that match the operating
-         * system of the instance. For a Windows instance, Amazon GameLift returns a user
-         * name and password as strings for use with a Windows Remote Desktop client. For a
-         * Linux instance, Amazon GameLift returns a user name and RSA private key, also as
-         * strings, for use with an SSH client. The private key must be saved in the proper
-         * format to a <code>.pem</code> file before using. If you're making this request
-         * using the CLI, saving the secret can be handled as part of the
-         * <code>GetInstanceAccess</code> request, as shown in one of the examples for this
-         * operation. </p> <p>To request access to a specific instance, specify the IDs of
-         * both the instance and the fleet it belongs to. You can retrieve a fleet's
-         * instance IDs by calling <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeInstances.html">DescribeInstances</a>.
-         * </p> <p> <b>Learn more</b> </p> <p> <a
+         * <p>Requests authorization to remotely connect to an instance in an Amazon
+         * GameLift managed fleet. Use this operation to connect to instances with game
+         * servers that use Amazon GameLift server SDK 4.x or earlier. To connect to
+         * instances with game servers that use server SDK 5.x or later, call
+         * <a>GetComputeAccess</a>.</p> <p>To request access to an instance, specify IDs
+         * for the instance and the fleet it belongs to. You can retrieve instance IDs for
+         * a fleet by calling <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeInstances.html">DescribeInstances</a>
+         * with the fleet ID. </p> <p>If successful, this operation returns an IP address
+         * and credentials. The returned credentials match the operating system of the
+         * instance, as follows: </p> <ul> <li> <p>For a Windows instance: returns a user
+         * name and secret (password) for use with a Windows Remote Desktop client. </p>
+         * </li> <li> <p>For a Linux instance: returns a user name and secret (RSA private
+         * key) for use with an SSH client. You must save the secret to a <code>.pem</code>
+         * file. If you're using the CLI, see the example <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html#API_GetInstanceAccess_Examples">
+         * Get credentials for a Linux instance</a> for tips on automatically saving the
+         * secret to a <code>.pem</code> file. </p> </li> </ul> <p> <b>Learn more</b> </p>
+         * <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
-         * Access Fleet Instances</a> </p> <p> <a
+         * connect to fleet instances</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
-         * Fleet Issues</a> </p> <p> <b>Related actions</b> </p> <p> <a
+         * fleet issues</a> </p> <p> <b>Related actions</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
          * APIs by task</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">AWS
@@ -2699,9 +2727,14 @@ namespace GameLift
         }
 
         /**
-         * <p>Retrieves all compute resources registered to a fleet in your Amazon Web
-         * Services account. You can filter the result set by location.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the compute resources in an Amazon GameLift fleet. You can request
+         * information for either managed EC2 fleets or Anywhere fleets. </p> <p>To request
+         * a list of computes, specify the fleet ID. You can filter the result set by
+         * location. Use the pagination parameters to retrieve results in a set of
+         * sequential pages.</p> <p>If successful, this operation returns the compute
+         * resource for the requested fleet. For managed EC2 fleets, it returns a list of
+         * EC2 instances. For Anywhere fleets, it returns a list of registered compute
+         * names.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListCompute">AWS
          * API Reference</a></p>
          */
@@ -2998,15 +3031,25 @@ namespace GameLift
         }
 
         /**
-         * <p>Registers your compute resources in a fleet you previously created. After you
-         * register a compute to your fleet, you can monitor and manage your compute using
-         * Amazon GameLift. The operation returns the compute resource containing SDK
-         * endpoint you can use to connect your game server to Amazon GameLift.</p> <p>
-         * <b>Learn more</b> </p> <ul> <li> <p> <a
+         * <p>Registers a compute resource to an Amazon GameLift Anywhere fleet. With
+         * Anywhere fleets you can incorporate your own computing hardware into an Amazon
+         * GameLift game hosting solution.</p> <p>To register a compute to a fleet, give
+         * the compute a name (must be unique within the fleet) and specify the compute
+         * resource's DNS name or IP address. Provide the Anywhere fleet ID and a fleet
+         * location to associate with the compute being registered. You can optionally
+         * include the path to a TLS certificate on the compute resource.</p> <p>If
+         * successful, this operation returns the compute details, including an Amazon
+         * GameLift SDK endpoint. Game server processes that run on the compute use this
+         * endpoint to communicate with the Amazon GameLift service. Each server process
+         * includes the SDK endpoint in its call to the Amazon GameLift server SDK action
+         * <code>InitSDK()</code>.</p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html">Create
          * an Anywhere fleet</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing.html">Test
-         * your integration</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * your integration</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Server
+         * SDK reference guides</a> (for version 5.x)</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RegisterCompute">AWS
          * API Reference</a></p>
          */
@@ -3863,23 +3906,24 @@ namespace GameLift
         /**
          * <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game
          * server groups.</b> </p> <p>Updates information about a registered game server to
-         * help Amazon GameLift FleetIQ to track game server availability. This operation
-         * is called by a game server process that is running on an instance in a game
-         * server group. </p> <p>Use this operation to update the following types of game
-         * server information. You can make all three types of updates in the same
-         * request:</p> <ul> <li> <p>To update the game server's utilization status,
-         * identify the game server and game server group and specify the current
-         * utilization status. Use this status to identify when game servers are currently
-         * hosting games and when they are available to be claimed.</p> </li> <li> <p>To
-         * report health status, identify the game server and game server group and set
-         * health check to <code>HEALTHY</code>. If a game server does not report health
-         * status for a certain length of time, the game server is no longer considered
-         * healthy. As a result, it will be eventually deregistered from the game server
-         * group to avoid affecting utilization metrics. The best practice is to report
-         * health every 60 seconds.</p> </li> <li> <p>To change game server metadata,
-         * provide updated game server data.</p> </li> </ul> <p>Once a game server is
-         * successfully updated, the relevant statuses and timestamps are updated.</p> <p>
-         * <b>Learn more</b> </p> <p> <a
+         * help Amazon GameLift FleetIQ track game server availability. This operation is
+         * called by a game server process that is running on an instance in a game server
+         * group. </p> <p>Use this operation to update the following types of game server
+         * information. You can make all three types of updates in the same request:</p>
+         * <ul> <li> <p>To update the game server's utilization status from
+         * <code>AVAILABLE</code> (when the game server is available to be claimed) to
+         * <code>UTILIZED</code> (when the game server is currently hosting games).
+         * Identify the game server and game server group and specify the new utilization
+         * status. You can't change the status from to <code>UTILIZED</code> to
+         * <code>AVAILABLE</code> .</p> </li> <li> <p>To report health status, identify the
+         * game server and game server group and set health check to <code>HEALTHY</code>.
+         * If a game server does not report health status for a certain length of time, the
+         * game server is no longer considered healthy. As a result, it will be eventually
+         * deregistered from the game server group to avoid affecting utilization metrics.
+         * The best practice is to report health every 60 seconds.</p> </li> <li> <p>To
+         * change game server metadata, provide updated game server data.</p> </li> </ul>
+         * <p>Once a game server is successfully updated, the relevant statuses and
+         * timestamps are updated.</p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
          * GameLift FleetIQ Guide</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServer">AWS

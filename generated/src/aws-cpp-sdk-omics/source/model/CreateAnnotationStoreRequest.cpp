@@ -17,6 +17,7 @@ CreateAnnotationStoreRequest::CreateAnnotationStoreRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_sseConfigHasBeenSet(false),
     m_storeFormat(StoreFormat::NOT_SET),
     m_storeFormatHasBeenSet(false),
@@ -54,6 +55,12 @@ Aws::String CreateAnnotationStoreRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("versionName", m_versionName);
 
   }
 

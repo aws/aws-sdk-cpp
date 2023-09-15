@@ -47,9 +47,7 @@ enum class CloudHSMErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLOUD_HSM_INTERNAL= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  CLOUD_HSM_SERVICE,
-  INVALID_REQUEST
+
 };
 
 class AWS_CLOUDHSM_API CloudHSMError : public Aws::Client::AWSError<CloudHSMErrors>

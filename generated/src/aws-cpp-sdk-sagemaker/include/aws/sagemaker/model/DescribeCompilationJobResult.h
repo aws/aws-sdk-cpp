@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/InputConfig.h>
 #include <aws/sagemaker/model/OutputConfig.h>
 #include <aws/sagemaker/model/NeoVpcConfig.h>
+#include <aws/sagemaker/model/DerivedInformation.h>
 #include <utility>
 
 namespace Aws
@@ -663,6 +664,32 @@ namespace Model
     inline DescribeCompilationJobResult& WithVpcConfig(NeoVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Information that SageMaker Neo automatically derived about the model.</p>
+     */
+    inline const DerivedInformation& GetDerivedInformation() const{ return m_derivedInformation; }
+
+    /**
+     * <p>Information that SageMaker Neo automatically derived about the model.</p>
+     */
+    inline void SetDerivedInformation(const DerivedInformation& value) { m_derivedInformation = value; }
+
+    /**
+     * <p>Information that SageMaker Neo automatically derived about the model.</p>
+     */
+    inline void SetDerivedInformation(DerivedInformation&& value) { m_derivedInformation = std::move(value); }
+
+    /**
+     * <p>Information that SageMaker Neo automatically derived about the model.</p>
+     */
+    inline DescribeCompilationJobResult& WithDerivedInformation(const DerivedInformation& value) { SetDerivedInformation(value); return *this;}
+
+    /**
+     * <p>Information that SageMaker Neo automatically derived about the model.</p>
+     */
+    inline DescribeCompilationJobResult& WithDerivedInformation(DerivedInformation&& value) { SetDerivedInformation(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -719,6 +746,8 @@ namespace Model
     OutputConfig m_outputConfig;
 
     NeoVpcConfig m_vpcConfig;
+
+    DerivedInformation m_derivedInformation;
 
     Aws::String m_requestId;
   };

@@ -63,37 +63,37 @@ namespace Model
 
 
     /**
-     * <p>The MIME type of the inference returned in the response body.</p>
+     * <p>The MIME type of the inference returned from the model container.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
     /**
-     * <p>The MIME type of the inference returned in the response body.</p>
+     * <p>The MIME type of the inference returned from the model container.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentType = value; }
 
     /**
-     * <p>The MIME type of the inference returned in the response body.</p>
+     * <p>The MIME type of the inference returned from the model container.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
 
     /**
-     * <p>The MIME type of the inference returned in the response body.</p>
+     * <p>The MIME type of the inference returned from the model container.</p>
      */
     inline void SetContentType(const char* value) { m_contentType.assign(value); }
 
     /**
-     * <p>The MIME type of the inference returned in the response body.</p>
+     * <p>The MIME type of the inference returned from the model container.</p>
      */
     inline InvokeEndpointResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
     /**
-     * <p>The MIME type of the inference returned in the response body.</p>
+     * <p>The MIME type of the inference returned from the model container.</p>
      */
     inline InvokeEndpointResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
-     * <p>The MIME type of the inference returned in the response body.</p>
+     * <p>The MIME type of the inference returned from the model container.</p>
      */
     inline InvokeEndpointResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 

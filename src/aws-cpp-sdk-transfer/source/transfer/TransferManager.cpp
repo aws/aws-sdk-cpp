@@ -679,6 +679,12 @@ namespace Aws
                         .WithKey(handle->GetKey())
                         .WithUploadId(handle->GetMultiPartId())
                         .WithMultipartUpload(completedUpload);
+                    if (m_transferConfig.uploadPartTemplate.SSECustomerAlgorithmHasBeenSet())
+                    {
+                        completeMultipartUploadRequest.WithSSECustomerAlgorithm(m_transferConfig.uploadPartTemplate.GetSSECustomerAlgorithm())
+                                                      .WithSSECustomerKey(m_transferConfig.uploadPartTemplate.GetSSECustomerKey())
+                                                      .WithSSECustomerKeyMD5(m_transferConfig.uploadPartTemplate.GetSSECustomerKeyMD5());
+                    }
 
                     auto completeUploadOutcome = m_transferConfig.s3Client->CompleteMultipartUpload(completeMultipartUploadRequest);
 
@@ -853,7 +859,7 @@ namespace Aws
             uint64_t bufferSize = m_transferConfig.bufferSize;
             if (!isRetry)
             {
-                Aws::S3::Model::HeadObjectRequest headObjectRequest;
+                auto headObjectRequest = m_transferConfig.headObjectTemplate;
                 headObjectRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                 headObjectRequest.WithBucket(handle->GetBucketName())
                                  .WithKey(handle->GetKey());
@@ -976,6 +982,12 @@ namespace Aws
                     {
                         getObjectRangeRequest.SetVersionId(handle->GetVersionId());
                     }
+                    if (m_transferConfig.getObjectTemplate.SSECustomerAlgorithmHasBeenSet())
+                    {
+                        getObjectRangeRequest.WithSSECustomerAlgorithm(m_transferConfig.getObjectTemplate.GetSSECustomerAlgorithm())
+                                             .WithSSECustomerKey(m_transferConfig.getObjectTemplate.GetSSECustomerKey())
+                                             .WithSSECustomerKeyMD5(m_transferConfig.getObjectTemplate.GetSSECustomerKeyMD5());
+                    }
 
                     auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
 
@@ -1062,8 +1074,21 @@ namespace Aws
                 {
                     Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
                     assert(bufferStream);
-                    handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin());
-                    handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
+
+                    Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
+                    if (errMsg.empty()) {
+                        handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
+                    } else {
+                        Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                                                       "InternalFailure", errMsg, false);
+                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                << "] Failed to download object in Bucket: ["
+                                << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                                << "] " << errMsg);
+                        handle->ChangePartToFailed(partState);
+                        handle->SetError(error);
+                        TriggerErrorCallback(handle, error);
+                    }
                 }
                 else
                 {

@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The origin of the timestamps to use, <code>Server</code> or
      * <code>Producer</code>. For more information, see <a
-     * href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a>
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a>
      * in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
      */
     inline const FragmentSelectorType& GetFragmentSelectorType() const{ return m_fragmentSelectorType; }
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>The origin of the timestamps to use, <code>Server</code> or
      * <code>Producer</code>. For more information, see <a
-     * href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a>
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a>
      * in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
      */
     inline bool FragmentSelectorTypeHasBeenSet() const { return m_fragmentSelectorTypeHasBeenSet; }
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>The origin of the timestamps to use, <code>Server</code> or
      * <code>Producer</code>. For more information, see <a
-     * href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a>
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a>
      * in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
      */
     inline void SetFragmentSelectorType(const FragmentSelectorType& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = value; }
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>The origin of the timestamps to use, <code>Server</code> or
      * <code>Producer</code>. For more information, see <a
-     * href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a>
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a>
      * in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
      */
     inline void SetFragmentSelectorType(FragmentSelectorType&& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = std::move(value); }
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>The origin of the timestamps to use, <code>Server</code> or
      * <code>Producer</code>. For more information, see <a
-     * href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a>
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a>
      * in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
      */
     inline FragmentSelector& WithFragmentSelectorType(const FragmentSelectorType& value) { SetFragmentSelectorType(value); return *this;}
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>The origin of the timestamps to use, <code>Server</code> or
      * <code>Producer</code>. For more information, see <a
-     * href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a>
+     * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a>
      * in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
      */
     inline FragmentSelector& WithFragmentSelectorType(FragmentSelectorType&& value) { SetFragmentSelectorType(std::move(value)); return *this;}

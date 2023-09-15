@@ -10,6 +10,7 @@
 #include <aws/medialive/model/M3u8PcrControl.h>
 #include <aws/medialive/model/M3u8Scte35Behavior.h>
 #include <aws/medialive/model/M3u8TimedMetadataBehavior.h>
+#include <aws/medialive/model/M3u8KlvBehavior.h>
 #include <utility>
 
 namespace Aws
@@ -691,6 +692,102 @@ namespace Model
      */
     inline M3u8Settings& WithVideoPid(const char* value) { SetVideoPid(value); return *this;}
 
+
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     */
+    inline const M3u8KlvBehavior& GetKlvBehavior() const{ return m_klvBehavior; }
+
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     */
+    inline bool KlvBehaviorHasBeenSet() const { return m_klvBehaviorHasBeenSet; }
+
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     */
+    inline void SetKlvBehavior(const M3u8KlvBehavior& value) { m_klvBehaviorHasBeenSet = true; m_klvBehavior = value; }
+
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     */
+    inline void SetKlvBehavior(M3u8KlvBehavior&& value) { m_klvBehaviorHasBeenSet = true; m_klvBehavior = std::move(value); }
+
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     */
+    inline M3u8Settings& WithKlvBehavior(const M3u8KlvBehavior& value) { SetKlvBehavior(value); return *this;}
+
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     */
+    inline M3u8Settings& WithKlvBehavior(M3u8KlvBehavior&& value) { SetKlvBehavior(std::move(value)); return *this;}
+
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple
+     * values are accepted, and can be entered in ranges and/or by comma separation.
+     * Can be entered as decimal or hexadecimal values.  Each PID specified must be in
+     * the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline const Aws::String& GetKlvDataPids() const{ return m_klvDataPids; }
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple
+     * values are accepted, and can be entered in ranges and/or by comma separation.
+     * Can be entered as decimal or hexadecimal values.  Each PID specified must be in
+     * the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool KlvDataPidsHasBeenSet() const { return m_klvDataPidsHasBeenSet; }
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple
+     * values are accepted, and can be entered in ranges and/or by comma separation.
+     * Can be entered as decimal or hexadecimal values.  Each PID specified must be in
+     * the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline void SetKlvDataPids(const Aws::String& value) { m_klvDataPidsHasBeenSet = true; m_klvDataPids = value; }
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple
+     * values are accepted, and can be entered in ranges and/or by comma separation.
+     * Can be entered as decimal or hexadecimal values.  Each PID specified must be in
+     * the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline void SetKlvDataPids(Aws::String&& value) { m_klvDataPidsHasBeenSet = true; m_klvDataPids = std::move(value); }
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple
+     * values are accepted, and can be entered in ranges and/or by comma separation.
+     * Can be entered as decimal or hexadecimal values.  Each PID specified must be in
+     * the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline void SetKlvDataPids(const char* value) { m_klvDataPidsHasBeenSet = true; m_klvDataPids.assign(value); }
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple
+     * values are accepted, and can be entered in ranges and/or by comma separation.
+     * Can be entered as decimal or hexadecimal values.  Each PID specified must be in
+     * the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline M3u8Settings& WithKlvDataPids(const Aws::String& value) { SetKlvDataPids(value); return *this;}
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple
+     * values are accepted, and can be entered in ranges and/or by comma separation.
+     * Can be entered as decimal or hexadecimal values.  Each PID specified must be in
+     * the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline M3u8Settings& WithKlvDataPids(Aws::String&& value) { SetKlvDataPids(std::move(value)); return *this;}
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple
+     * values are accepted, and can be entered in ranges and/or by comma separation.
+     * Can be entered as decimal or hexadecimal values.  Each PID specified must be in
+     * the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline M3u8Settings& WithKlvDataPids(const char* value) { SetKlvDataPids(value); return *this;}
+
   private:
 
     int m_audioFramesPerPes;
@@ -743,6 +840,12 @@ namespace Model
 
     Aws::String m_videoPid;
     bool m_videoPidHasBeenSet = false;
+
+    M3u8KlvBehavior m_klvBehavior;
+    bool m_klvBehaviorHasBeenSet = false;
+
+    Aws::String m_klvDataPids;
+    bool m_klvDataPidsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -3685,10 +3685,12 @@ namespace QuickSight
 
         /**
          * <p>Starts an asynchronous job that generates a dashboard snapshot. You can
-         * request up to one paginated PDF and up to five CSVs per API call.</p> <p>Poll
-         * job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once
-         * the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to
-         * obtain the download URIs that the job generates.</p><p><h3>See Also:</h3>   <a
+         * request one of the following format configurations per API call.</p> <ul> <li>
+         * <p>1 paginated PDF</p> </li> <li> <p>1 Excel workbook</p> </li> <li> <p>5
+         * CSVs</p> </li> </ul> <p>Poll job descriptions with a
+         * <code>DescribeDashboardSnapshotJob</code> API call. Once the job succeeds, use
+         * the <code>DescribeDashboardSnapshotJobResult</code> API to obtain the download
+         * URIs that the job generates.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob">AWS
          * API Reference</a></p>
          */

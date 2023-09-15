@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/backup/model/VaultType.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -138,6 +139,32 @@ namespace Model
      * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline DescribeBackupVaultResult& WithBackupVaultArn(const char* value) { SetBackupVaultArn(value); return *this;}
+
+
+    /**
+     * <p>This is the type of vault described.</p>
+     */
+    inline const VaultType& GetVaultType() const{ return m_vaultType; }
+
+    /**
+     * <p>This is the type of vault described.</p>
+     */
+    inline void SetVaultType(const VaultType& value) { m_vaultType = value; }
+
+    /**
+     * <p>This is the type of vault described.</p>
+     */
+    inline void SetVaultType(VaultType&& value) { m_vaultType = std::move(value); }
+
+    /**
+     * <p>This is the type of vault described.</p>
+     */
+    inline DescribeBackupVaultResult& WithVaultType(const VaultType& value) { SetVaultType(value); return *this;}
+
+    /**
+     * <p>This is the type of vault described.</p>
+     */
+    inline DescribeBackupVaultResult& WithVaultType(VaultType&& value) { SetVaultType(std::move(value)); return *this;}
 
 
     /**
@@ -472,6 +499,8 @@ namespace Model
     Aws::String m_backupVaultName;
 
     Aws::String m_backupVaultArn;
+
+    VaultType m_vaultType;
 
     Aws::String m_encryptionKeyArn;
 

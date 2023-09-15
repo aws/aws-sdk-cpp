@@ -28,7 +28,15 @@ ModelSummary::ModelSummary() :
     m_createdAtHasBeenSet(false),
     m_activeModelVersion(0),
     m_activeModelVersionHasBeenSet(false),
-    m_activeModelVersionArnHasBeenSet(false)
+    m_activeModelVersionArnHasBeenSet(false),
+    m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
+    m_latestScheduledRetrainingStatusHasBeenSet(false),
+    m_latestScheduledRetrainingModelVersion(0),
+    m_latestScheduledRetrainingModelVersionHasBeenSet(false),
+    m_latestScheduledRetrainingStartTimeHasBeenSet(false),
+    m_nextScheduledRetrainingStartDateHasBeenSet(false),
+    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
+    m_retrainingSchedulerStatusHasBeenSet(false)
 {
 }
 
@@ -42,7 +50,15 @@ ModelSummary::ModelSummary(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_activeModelVersion(0),
     m_activeModelVersionHasBeenSet(false),
-    m_activeModelVersionArnHasBeenSet(false)
+    m_activeModelVersionArnHasBeenSet(false),
+    m_latestScheduledRetrainingStatus(ModelVersionStatus::NOT_SET),
+    m_latestScheduledRetrainingStatusHasBeenSet(false),
+    m_latestScheduledRetrainingModelVersion(0),
+    m_latestScheduledRetrainingModelVersionHasBeenSet(false),
+    m_latestScheduledRetrainingStartTimeHasBeenSet(false),
+    m_nextScheduledRetrainingStartDateHasBeenSet(false),
+    m_retrainingSchedulerStatus(RetrainingSchedulerStatus::NOT_SET),
+    m_retrainingSchedulerStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +121,41 @@ ModelSummary& ModelSummary::operator =(JsonView jsonValue)
     m_activeModelVersionArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LatestScheduledRetrainingStatus"))
+  {
+    m_latestScheduledRetrainingStatus = ModelVersionStatusMapper::GetModelVersionStatusForName(jsonValue.GetString("LatestScheduledRetrainingStatus"));
+
+    m_latestScheduledRetrainingStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LatestScheduledRetrainingModelVersion"))
+  {
+    m_latestScheduledRetrainingModelVersion = jsonValue.GetInt64("LatestScheduledRetrainingModelVersion");
+
+    m_latestScheduledRetrainingModelVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LatestScheduledRetrainingStartTime"))
+  {
+    m_latestScheduledRetrainingStartTime = jsonValue.GetDouble("LatestScheduledRetrainingStartTime");
+
+    m_latestScheduledRetrainingStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NextScheduledRetrainingStartDate"))
+  {
+    m_nextScheduledRetrainingStartDate = jsonValue.GetDouble("NextScheduledRetrainingStartDate");
+
+    m_nextScheduledRetrainingStartDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RetrainingSchedulerStatus"))
+  {
+    m_retrainingSchedulerStatus = RetrainingSchedulerStatusMapper::GetRetrainingSchedulerStatusForName(jsonValue.GetString("RetrainingSchedulerStatus"));
+
+    m_retrainingSchedulerStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +207,32 @@ JsonValue ModelSummary::Jsonize() const
   {
    payload.WithString("ActiveModelVersionArn", m_activeModelVersionArn);
 
+  }
+
+  if(m_latestScheduledRetrainingStatusHasBeenSet)
+  {
+   payload.WithString("LatestScheduledRetrainingStatus", ModelVersionStatusMapper::GetNameForModelVersionStatus(m_latestScheduledRetrainingStatus));
+  }
+
+  if(m_latestScheduledRetrainingModelVersionHasBeenSet)
+  {
+   payload.WithInt64("LatestScheduledRetrainingModelVersion", m_latestScheduledRetrainingModelVersion);
+
+  }
+
+  if(m_latestScheduledRetrainingStartTimeHasBeenSet)
+  {
+   payload.WithDouble("LatestScheduledRetrainingStartTime", m_latestScheduledRetrainingStartTime.SecondsWithMSPrecision());
+  }
+
+  if(m_nextScheduledRetrainingStartDateHasBeenSet)
+  {
+   payload.WithDouble("NextScheduledRetrainingStartDate", m_nextScheduledRetrainingStartDate.SecondsWithMSPrecision());
+  }
+
+  if(m_retrainingSchedulerStatusHasBeenSet)
+  {
+   payload.WithString("RetrainingSchedulerStatus", RetrainingSchedulerStatusMapper::GetNameForRetrainingSchedulerStatus(m_retrainingSchedulerStatus));
   }
 
   return payload;

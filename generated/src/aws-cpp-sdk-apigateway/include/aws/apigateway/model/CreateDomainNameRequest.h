@@ -325,58 +325,58 @@ namespace Model
 
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by
-     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
-     * only supported source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by
-     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
-     * only supported source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by
-     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
-     * only supported source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by
-     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
-     * only supported source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by
-     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
-     * only supported source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by
-     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
-     * only supported source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline CreateDomainNameRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by
-     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
-     * only supported source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline CreateDomainNameRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by
-     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
-     * only supported source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline CreateDomainNameRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
@@ -431,58 +431,58 @@ namespace Model
 
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by regional
-     * endpoint for this domain name. AWS Certificate Manager is the only supported
-     * source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by regional endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline const Aws::String& GetRegionalCertificateArn() const{ return m_regionalCertificateArn; }
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by regional
-     * endpoint for this domain name. AWS Certificate Manager is the only supported
-     * source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by regional endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline bool RegionalCertificateArnHasBeenSet() const { return m_regionalCertificateArnHasBeenSet; }
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by regional
-     * endpoint for this domain name. AWS Certificate Manager is the only supported
-     * source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by regional endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline void SetRegionalCertificateArn(const Aws::String& value) { m_regionalCertificateArnHasBeenSet = true; m_regionalCertificateArn = value; }
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by regional
-     * endpoint for this domain name. AWS Certificate Manager is the only supported
-     * source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by regional endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline void SetRegionalCertificateArn(Aws::String&& value) { m_regionalCertificateArnHasBeenSet = true; m_regionalCertificateArn = std::move(value); }
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by regional
-     * endpoint for this domain name. AWS Certificate Manager is the only supported
-     * source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by regional endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline void SetRegionalCertificateArn(const char* value) { m_regionalCertificateArnHasBeenSet = true; m_regionalCertificateArn.assign(value); }
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by regional
-     * endpoint for this domain name. AWS Certificate Manager is the only supported
-     * source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by regional endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline CreateDomainNameRequest& WithRegionalCertificateArn(const Aws::String& value) { SetRegionalCertificateArn(value); return *this;}
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by regional
-     * endpoint for this domain name. AWS Certificate Manager is the only supported
-     * source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by regional endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline CreateDomainNameRequest& WithRegionalCertificateArn(Aws::String&& value) { SetRegionalCertificateArn(std::move(value)); return *this;}
 
     /**
-     * <p>The reference to an AWS-managed certificate that will be used by regional
-     * endpoint for this domain name. AWS Certificate Manager is the only supported
-     * source.</p>
+     * <p>The reference to an Amazon Web Services-managed certificate that will be used
+     * by regional endpoint for this domain name. Certificate Manager is the only
+     * supported source.</p>
      */
     inline CreateDomainNameRequest& WithRegionalCertificateArn(const char* value) { SetRegionalCertificateArn(value); return *this;}
 

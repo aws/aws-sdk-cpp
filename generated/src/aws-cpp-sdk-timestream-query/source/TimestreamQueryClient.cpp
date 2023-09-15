@@ -182,7 +182,7 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
   return TracingUtils::MakeCallWithTiming<CancelQueryOutcome>(
     [&]()-> CancelQueryOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -251,7 +251,7 @@ CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const Cr
   return TracingUtils::MakeCallWithTiming<CreateScheduledQueryOutcome>(
     [&]()-> CreateScheduledQueryOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -320,7 +320,7 @@ DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const De
   return TracingUtils::MakeCallWithTiming<DeleteScheduledQueryOutcome>(
     [&]()-> DeleteScheduledQueryOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -415,7 +415,7 @@ DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(cons
   return TracingUtils::MakeCallWithTiming<DescribeScheduledQueryOutcome>(
     [&]()-> DescribeScheduledQueryOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -484,7 +484,7 @@ ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const 
   return TracingUtils::MakeCallWithTiming<ExecuteScheduledQueryOutcome>(
     [&]()-> ExecuteScheduledQueryOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -553,7 +553,7 @@ ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const Li
   return TracingUtils::MakeCallWithTiming<ListScheduledQueriesOutcome>(
     [&]()-> ListScheduledQueriesOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -622,7 +622,7 @@ ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const List
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -691,7 +691,7 @@ PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryReques
   return TracingUtils::MakeCallWithTiming<PrepareQueryOutcome>(
     [&]()-> PrepareQueryOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -760,7 +760,7 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
   return TracingUtils::MakeCallWithTiming<QueryOutcome>(
     [&]()-> QueryOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -829,7 +829,7 @@ TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& 
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -898,7 +898,7 @@ UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceReq
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -967,7 +967,7 @@ UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const Up
   return TracingUtils::MakeCallWithTiming<UpdateScheduledQueryOutcome>(
     [&]()-> UpdateScheduledQueryOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";

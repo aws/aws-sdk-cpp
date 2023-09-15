@@ -366,9 +366,10 @@ namespace SageMaker
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>,
          * which offer backward compatibility.</p> <p> <code>CreateAutoMLJobV2</code> can
          * manage tabular problem types identical to those of its previous version
-         * <code>CreateAutoMLJob</code>, as well as non-tabular problem types such as image
-         * or text classification.</p> <p>Find guidelines about how to migrate a
-         * <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a
+         * <code>CreateAutoMLJob</code>, as well as time-series forecasting, and
+         * non-tabular problem types such as image or text classification.</p> <p>Find
+         * guidelines about how to migrate a <code>CreateAutoMLJob</code> to
+         * <code>CreateAutoMLJobV2</code> in <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
          * a CreateAutoMLJob to CreateAutoMLJobV2</a>.</p>  <p>You can find the
          * best-performing model after you run an AutoML job by calling <a
@@ -411,9 +412,10 @@ namespace SageMaker
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>
          * which offer backward compatibility.</p> <p> <code>CreateAutoMLJobV2</code> can
          * manage tabular problem types identical to those of its previous version
-         * <code>CreateAutoMLJob</code>, as well as non-tabular problem types such as image
-         * or text classification.</p> <p>Find guidelines about how to migrate a
-         * <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a
+         * <code>CreateAutoMLJob</code>, as well as time-series forecasting, and
+         * non-tabular problem types such as image or text classification.</p> <p>Find
+         * guidelines about how to migrate a <code>CreateAutoMLJob</code> to
+         * <code>CreateAutoMLJobV2</code> in <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
          * a CreateAutoMLJob to CreateAutoMLJobV2</a>.</p>  <p>For the list of
          * available problem types supported by <code>CreateAutoMLJobV2</code>, see <a
@@ -749,18 +751,14 @@ namespace SageMaker
          * You create the endpoint configuration with the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
          * API. </p> <p> Use this API to deploy models using SageMaker hosting services.
-         * </p> <p>For an example that calls this method when deploying a model to
-         * SageMaker hosting services, see the <a
-         * href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create
-         * Endpoint example notebook.</a> </p>  <p> You must not delete an
-         * <code>EndpointConfig</code> that is in use by an endpoint that is live or while
-         * the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are
-         * being performed on the endpoint. To update an endpoint, you must create a new
-         * <code>EndpointConfig</code>.</p>  <p>The endpoint name must be unique
-         * within an Amazon Web Services Region in your Amazon Web Services account. </p>
-         * <p>When it receives the request, SageMaker creates the endpoint, launches the
-         * resources (ML compute instances), and deploys the model(s) on them. </p> 
-         * <p>When you call <a
+         * </p>  <p> You must not delete an <code>EndpointConfig</code> that is in
+         * use by an endpoint that is live or while the <code>UpdateEndpoint</code> or
+         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+         *  <p>The endpoint name must be unique within an Amazon Web Services Region
+         * in your Amazon Web Services account. </p> <p>When it receives the request,
+         * SageMaker creates the endpoint, launches the resources (ML compute instances),
+         * and deploys the model(s) on them. </p>  <p>When you call <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>,
          * a load call is made to DynamoDB to verify that your endpoint configuration
          * exists. When you read data from a DynamoDB table supporting <a

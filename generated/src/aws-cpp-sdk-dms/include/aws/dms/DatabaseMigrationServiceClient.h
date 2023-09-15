@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dms/DatabaseMigrationServiceServiceClientModel.h>
+#include <aws/dms/model/RunFleetAdvisorLsaAnalysisRequest.h>
 
 namespace Aws
 {
@@ -2576,25 +2577,26 @@ namespace DatabaseMigrationService
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis">AWS
          * API Reference</a></p>
          */
-        virtual Model::RunFleetAdvisorLsaAnalysisOutcome RunFleetAdvisorLsaAnalysis() const;
+        virtual Model::RunFleetAdvisorLsaAnalysisOutcome RunFleetAdvisorLsaAnalysis(const Model::RunFleetAdvisorLsaAnalysisRequest& request = {}) const;
 
         /**
          * A Callable wrapper for RunFleetAdvisorLsaAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::RunFleetAdvisorLsaAnalysisOutcomeCallable RunFleetAdvisorLsaAnalysisCallable() const
+        template<typename RunFleetAdvisorLsaAnalysisRequestT = Model::RunFleetAdvisorLsaAnalysisRequest>
+        Model::RunFleetAdvisorLsaAnalysisOutcomeCallable RunFleetAdvisorLsaAnalysisCallable(const RunFleetAdvisorLsaAnalysisRequestT& request = {}) const
         {
-            return SubmitCallable(&DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis);
+            return SubmitCallable(&DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis, request);
         }
 
         /**
          * An Async wrapper for RunFleetAdvisorLsaAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void RunFleetAdvisorLsaAnalysisAsync(const RunFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename RunFleetAdvisorLsaAnalysisRequestT = Model::RunFleetAdvisorLsaAnalysisRequest>
+        void RunFleetAdvisorLsaAnalysisAsync(const RunFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const RunFleetAdvisorLsaAnalysisRequestT& request = {}) const
         {
-            return SubmitAsync(&DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis, handler, context);
+            return SubmitAsync(&DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis, request, handler, context);
         }
+
         /**
          * <p>Applies the extension pack to your target database. An extension pack is an
          * add-on module that emulates functions present in a source database that are

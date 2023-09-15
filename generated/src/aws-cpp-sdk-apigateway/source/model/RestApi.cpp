@@ -36,6 +36,7 @@ RestApi::RestApi() :
     m_tagsHasBeenSet(false),
     m_disableExecuteApiEndpoint(false),
     m_disableExecuteApiEndpointHasBeenSet(false),
+    m_rootResourceIdHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
 }
@@ -57,6 +58,7 @@ RestApi::RestApi(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_disableExecuteApiEndpoint(false),
     m_disableExecuteApiEndpointHasBeenSet(false),
+    m_rootResourceIdHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -164,6 +166,13 @@ RestApi& RestApi::operator =(JsonView jsonValue)
     m_disableExecuteApiEndpointHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rootResourceId"))
+  {
+    m_rootResourceId = jsonValue.GetString("rootResourceId");
+
+    m_rootResourceIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -259,6 +268,12 @@ JsonValue RestApi::Jsonize() const
   if(m_disableExecuteApiEndpointHasBeenSet)
   {
    payload.WithBool("disableExecuteApiEndpoint", m_disableExecuteApiEndpoint);
+
+  }
+
+  if(m_rootResourceIdHasBeenSet)
+  {
+   payload.WithString("rootResourceId", m_rootResourceId);
 
   }
 

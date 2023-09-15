@@ -14,10 +14,10 @@ using namespace Aws::Utils;
 
 ListCustomerManagedPolicyReferencesInPermissionSetRequest::ListCustomerManagedPolicyReferencesInPermissionSetRequest() : 
     m_instanceArnHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_permissionSetArnHasBeenSet(false)
 {
 }
 
@@ -31,12 +31,6 @@ Aws::String ListCustomerManagedPolicyReferencesInPermissionSetRequest::Serialize
 
   }
 
-  if(m_permissionSetArnHasBeenSet)
-  {
-   payload.WithString("PermissionSetArn", m_permissionSetArn);
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
@@ -46,6 +40,12 @@ Aws::String ListCustomerManagedPolicyReferencesInPermissionSetRequest::Serialize
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_permissionSetArnHasBeenSet)
+  {
+   payload.WithString("PermissionSetArn", m_permissionSetArn);
 
   }
 

@@ -29,8 +29,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides the configuration information to connect to a index. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides the configuration information to an <a
+   * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Amazon
+   * Kendra supported database</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DatabaseConfiguration">AWS
    * API Reference</a></p>
    */

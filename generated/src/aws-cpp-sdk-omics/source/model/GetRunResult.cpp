@@ -23,7 +23,8 @@ GetRunResult::GetRunResult() :
     m_priority(0),
     m_storageCapacity(0),
     m_logLevel(RunLogLevel::NOT_SET),
-    m_accelerators(Accelerators::NOT_SET)
+    m_accelerators(Accelerators::NOT_SET),
+    m_retentionMode(RunRetentionMode::NOT_SET)
 {
 }
 
@@ -33,7 +34,8 @@ GetRunResult::GetRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
     m_priority(0),
     m_storageCapacity(0),
     m_logLevel(RunLogLevel::NOT_SET),
-    m_accelerators(Accelerators::NOT_SET)
+    m_accelerators(Accelerators::NOT_SET),
+    m_retentionMode(RunRetentionMode::NOT_SET)
 {
   *this = result;
 }
@@ -188,6 +190,12 @@ GetRunResult& GetRunResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("accelerators"))
   {
     m_accelerators = AcceleratorsMapper::GetAcceleratorsForName(jsonValue.GetString("accelerators"));
+
+  }
+
+  if(jsonValue.ValueExists("retentionMode"))
+  {
+    m_retentionMode = RunRetentionModeMapper::GetRunRetentionModeForName(jsonValue.GetString("retentionMode"));
 
   }
 

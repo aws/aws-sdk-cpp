@@ -145,38 +145,32 @@ namespace Model
 
 
     /**
-     * <p>The current status of the job. Either <code>running</code>,
-     * <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+     * <p>The current status of the job.</p>
      */
     inline const JobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the job. Either <code>running</code>,
-     * <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+     * <p>The current status of the job.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current status of the job. Either <code>running</code>,
-     * <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+     * <p>The current status of the job.</p>
      */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status of the job. Either <code>running</code>,
-     * <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+     * <p>The current status of the job.</p>
      */
     inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status of the job. Either <code>running</code>,
-     * <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+     * <p>The current status of the job.</p>
      */
     inline JobSummary& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the job. Either <code>running</code>,
-     * <code>succeeded</code>, <code>queued</code>, or <code>failed</code>.</p>
+     * <p>The current status of the job.</p>
      */
     inline JobSummary& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 

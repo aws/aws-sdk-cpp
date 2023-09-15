@@ -18,11 +18,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents a request to specify the Amazon SNS topic to which Amazon SES will
-   * publish bounce, complaint, or delivery notifications for emails sent with that
-   * identity as the Source. For information about Amazon SES notifications, see the
+   * <p>Represents a request to specify the Amazon SNS topic to which Amazon SES
+   * publishes bounce, complaint, or delivery notifications for emails sent with that
+   * identity as the source. For information about Amazon SES notifications, see the
    * <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications-sns.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopicRequest">AWS
    * API Reference</a></p>
@@ -46,118 +46,118 @@ namespace Model
   public:
 
     /**
-     * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p>  <p>You can only specify a verified identity for this
-     * parameter.</p>  <p>You can specify an identity by using its name or
-     * by using its Amazon Resource Name (ARN). The following examples are all valid
-     * identities: <code>sender@example.com</code>, <code>example.com</code>,
+     * <p>The identity (email address or domain) for the Amazon SNS topic.</p>
+     *  <p>You can only specify a verified identity for this parameter.</p>
+     *  <p>You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). The following examples are all valid identities:
+     * <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
 
     /**
-     * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p>  <p>You can only specify a verified identity for this
-     * parameter.</p>  <p>You can specify an identity by using its name or
-     * by using its Amazon Resource Name (ARN). The following examples are all valid
-     * identities: <code>sender@example.com</code>, <code>example.com</code>,
+     * <p>The identity (email address or domain) for the Amazon SNS topic.</p>
+     *  <p>You can only specify a verified identity for this parameter.</p>
+     *  <p>You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). The following examples are all valid identities:
+     * <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
 
     /**
-     * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p>  <p>You can only specify a verified identity for this
-     * parameter.</p>  <p>You can specify an identity by using its name or
-     * by using its Amazon Resource Name (ARN). The following examples are all valid
-     * identities: <code>sender@example.com</code>, <code>example.com</code>,
+     * <p>The identity (email address or domain) for the Amazon SNS topic.</p>
+     *  <p>You can only specify a verified identity for this parameter.</p>
+     *  <p>You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). The following examples are all valid identities:
+     * <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
-     * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p>  <p>You can only specify a verified identity for this
-     * parameter.</p>  <p>You can specify an identity by using its name or
-     * by using its Amazon Resource Name (ARN). The following examples are all valid
-     * identities: <code>sender@example.com</code>, <code>example.com</code>,
+     * <p>The identity (email address or domain) for the Amazon SNS topic.</p>
+     *  <p>You can only specify a verified identity for this parameter.</p>
+     *  <p>You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). The following examples are all valid identities:
+     * <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
     inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
-     * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p>  <p>You can only specify a verified identity for this
-     * parameter.</p>  <p>You can specify an identity by using its name or
-     * by using its Amazon Resource Name (ARN). The following examples are all valid
-     * identities: <code>sender@example.com</code>, <code>example.com</code>,
+     * <p>The identity (email address or domain) for the Amazon SNS topic.</p>
+     *  <p>You can only specify a verified identity for this parameter.</p>
+     *  <p>You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). The following examples are all valid identities:
+     * <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
     inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
 
     /**
-     * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p>  <p>You can only specify a verified identity for this
-     * parameter.</p>  <p>You can specify an identity by using its name or
-     * by using its Amazon Resource Name (ARN). The following examples are all valid
-     * identities: <code>sender@example.com</code>, <code>example.com</code>,
+     * <p>The identity (email address or domain) for the Amazon SNS topic.</p>
+     *  <p>You can only specify a verified identity for this parameter.</p>
+     *  <p>You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). The following examples are all valid identities:
+     * <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
     inline SetIdentityNotificationTopicRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
 
     /**
-     * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p>  <p>You can only specify a verified identity for this
-     * parameter.</p>  <p>You can specify an identity by using its name or
-     * by using its Amazon Resource Name (ARN). The following examples are all valid
-     * identities: <code>sender@example.com</code>, <code>example.com</code>,
+     * <p>The identity (email address or domain) for the Amazon SNS topic.</p>
+     *  <p>You can only specify a verified identity for this parameter.</p>
+     *  <p>You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). The following examples are all valid identities:
+     * <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
     inline SetIdentityNotificationTopicRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
 
     /**
-     * <p>The identity (email address or domain) that you want to set the Amazon SNS
-     * topic for.</p>  <p>You can only specify a verified identity for this
-     * parameter.</p>  <p>You can specify an identity by using its name or
-     * by using its Amazon Resource Name (ARN). The following examples are all valid
-     * identities: <code>sender@example.com</code>, <code>example.com</code>,
+     * <p>The identity (email address or domain) for the Amazon SNS topic.</p>
+     *  <p>You can only specify a verified identity for this parameter.</p>
+     *  <p>You can specify an identity by using its name or by using its
+     * Amazon Resource Name (ARN). The following examples are all valid identities:
+     * <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
     inline SetIdentityNotificationTopicRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
 
 
     /**
-     * <p>The type of notifications that will be published to the specified Amazon SNS
+     * <p>The type of notifications that are published to the specified Amazon SNS
      * topic.</p>
      */
     inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
 
     /**
-     * <p>The type of notifications that will be published to the specified Amazon SNS
+     * <p>The type of notifications that are published to the specified Amazon SNS
      * topic.</p>
      */
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
 
     /**
-     * <p>The type of notifications that will be published to the specified Amazon SNS
+     * <p>The type of notifications that are published to the specified Amazon SNS
      * topic.</p>
      */
     inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
 
     /**
-     * <p>The type of notifications that will be published to the specified Amazon SNS
+     * <p>The type of notifications that are published to the specified Amazon SNS
      * topic.</p>
      */
     inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
 
     /**
-     * <p>The type of notifications that will be published to the specified Amazon SNS
+     * <p>The type of notifications that are published to the specified Amazon SNS
      * topic.</p>
      */
     inline SetIdentityNotificationTopicRequest& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
 
     /**
-     * <p>The type of notifications that will be published to the specified Amazon SNS
+     * <p>The type of notifications that are published to the specified Amazon SNS
      * topic.</p>
      */
     inline SetIdentityNotificationTopicRequest& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}

@@ -248,8 +248,10 @@ namespace Model
      * <code>X-Forwarded-For</code> request header as traffic travels to applications
      * on the endpoint fronted by the accelerator.</p> <p>Client IP address
      * preservation is supported, in specific Amazon Web Services Regions, for
-     * endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
-     * <p>For more information, see <a
+     * endpoints that are Application Load Balancers, Amazon EC2 instances, and Network
+     * Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address
+     * preservation with Network Load Balancers with TLS listeners.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
      * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
@@ -263,8 +265,10 @@ namespace Model
      * <code>X-Forwarded-For</code> request header as traffic travels to applications
      * on the endpoint fronted by the accelerator.</p> <p>Client IP address
      * preservation is supported, in specific Amazon Web Services Regions, for
-     * endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
-     * <p>For more information, see <a
+     * endpoints that are Application Load Balancers, Amazon EC2 instances, and Network
+     * Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address
+     * preservation with Network Load Balancers with TLS listeners.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
      * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
@@ -278,8 +282,10 @@ namespace Model
      * <code>X-Forwarded-For</code> request header as traffic travels to applications
      * on the endpoint fronted by the accelerator.</p> <p>Client IP address
      * preservation is supported, in specific Amazon Web Services Regions, for
-     * endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
-     * <p>For more information, see <a
+     * endpoints that are Application Load Balancers, Amazon EC2 instances, and Network
+     * Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address
+     * preservation with Network Load Balancers with TLS listeners.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
      * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
@@ -293,8 +299,10 @@ namespace Model
      * <code>X-Forwarded-For</code> request header as traffic travels to applications
      * on the endpoint fronted by the accelerator.</p> <p>Client IP address
      * preservation is supported, in specific Amazon Web Services Regions, for
-     * endpoints that are Application Load Balancers and Amazon EC2 instances.</p>
-     * <p>For more information, see <a
+     * endpoints that are Application Load Balancers, Amazon EC2 instances, and Network
+     * Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address
+     * preservation with Network Load Balancers with TLS listeners.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
      * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>

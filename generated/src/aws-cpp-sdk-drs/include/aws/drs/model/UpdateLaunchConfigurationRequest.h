@@ -189,6 +189,27 @@ namespace Model
 
 
     /**
+     * <p>Whether we want to enable post-launch actions for the Source Server.</p>
+     */
+    inline bool GetPostLaunchEnabled() const{ return m_postLaunchEnabled; }
+
+    /**
+     * <p>Whether we want to enable post-launch actions for the Source Server.</p>
+     */
+    inline bool PostLaunchEnabledHasBeenSet() const { return m_postLaunchEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether we want to enable post-launch actions for the Source Server.</p>
+     */
+    inline void SetPostLaunchEnabled(bool value) { m_postLaunchEnabledHasBeenSet = true; m_postLaunchEnabled = value; }
+
+    /**
+     * <p>Whether we want to enable post-launch actions for the Source Server.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithPostLaunchEnabled(bool value) { SetPostLaunchEnabled(value); return *this;}
+
+
+    /**
      * <p>The ID of the Source Server that we want to retrieve a Launch Configuration
      * for.</p>
      */
@@ -289,6 +310,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    bool m_postLaunchEnabled;
+    bool m_postLaunchEnabledHasBeenSet = false;
 
     Aws::String m_sourceServerID;
     bool m_sourceServerIDHasBeenSet = false;

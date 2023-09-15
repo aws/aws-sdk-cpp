@@ -19,7 +19,7 @@ namespace Model
   /**
    * <p>Represents a request to create an email template. For more information, see
    * the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
+   * href="https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplateRequest">AWS
    * API Reference</a></p>
@@ -43,38 +43,38 @@ namespace Model
   public:
 
     /**
-     * <p>The content of the email, composed of a subject line, an HTML part, and a
-     * text-only part.</p>
+     * <p>The content of the email, composed of a subject line and either an HTML part
+     * or a text-only part.</p>
      */
     inline const Template& GetTemplate() const{ return m_template; }
 
     /**
-     * <p>The content of the email, composed of a subject line, an HTML part, and a
-     * text-only part.</p>
+     * <p>The content of the email, composed of a subject line and either an HTML part
+     * or a text-only part.</p>
      */
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
 
     /**
-     * <p>The content of the email, composed of a subject line, an HTML part, and a
-     * text-only part.</p>
+     * <p>The content of the email, composed of a subject line and either an HTML part
+     * or a text-only part.</p>
      */
     inline void SetTemplate(const Template& value) { m_templateHasBeenSet = true; m_template = value; }
 
     /**
-     * <p>The content of the email, composed of a subject line, an HTML part, and a
-     * text-only part.</p>
+     * <p>The content of the email, composed of a subject line and either an HTML part
+     * or a text-only part.</p>
      */
     inline void SetTemplate(Template&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
 
     /**
-     * <p>The content of the email, composed of a subject line, an HTML part, and a
-     * text-only part.</p>
+     * <p>The content of the email, composed of a subject line and either an HTML part
+     * or a text-only part.</p>
      */
     inline CreateTemplateRequest& WithTemplate(const Template& value) { SetTemplate(value); return *this;}
 
     /**
-     * <p>The content of the email, composed of a subject line, an HTML part, and a
-     * text-only part.</p>
+     * <p>The content of the email, composed of a subject line and either an HTML part
+     * or a text-only part.</p>
      */
     inline CreateTemplateRequest& WithTemplate(Template&& value) { SetTemplate(std::move(value)); return *this;}
 

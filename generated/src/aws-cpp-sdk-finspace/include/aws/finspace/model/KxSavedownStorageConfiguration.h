@@ -83,22 +83,22 @@ namespace Model
 
 
     /**
-     * <p>The size of temporary storage in bytes.</p>
+     * <p>The size of temporary storage in gibibytes.</p>
      */
     inline int GetSize() const{ return m_size; }
 
     /**
-     * <p>The size of temporary storage in bytes.</p>
+     * <p>The size of temporary storage in gibibytes.</p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
-     * <p>The size of temporary storage in bytes.</p>
+     * <p>The size of temporary storage in gibibytes.</p>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>The size of temporary storage in bytes.</p>
+     * <p>The size of temporary storage in gibibytes.</p>
      */
     inline KxSavedownStorageConfiguration& WithSize(int value) { SetSize(value); return *this;}
 

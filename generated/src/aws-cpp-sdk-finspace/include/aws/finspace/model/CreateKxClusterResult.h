@@ -448,36 +448,31 @@ namespace Model
 
     /**
      * <p>A structure for the metadata of a cluster. It includes information like the
-     * CPUs needed, memory of instances, number of instances, and the port used while
-     * establishing a connection.</p>
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline const CapacityConfiguration& GetCapacityConfiguration() const{ return m_capacityConfiguration; }
 
     /**
      * <p>A structure for the metadata of a cluster. It includes information like the
-     * CPUs needed, memory of instances, number of instances, and the port used while
-     * establishing a connection.</p>
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline void SetCapacityConfiguration(const CapacityConfiguration& value) { m_capacityConfiguration = value; }
 
     /**
      * <p>A structure for the metadata of a cluster. It includes information like the
-     * CPUs needed, memory of instances, number of instances, and the port used while
-     * establishing a connection.</p>
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline void SetCapacityConfiguration(CapacityConfiguration&& value) { m_capacityConfiguration = std::move(value); }
 
     /**
      * <p>A structure for the metadata of a cluster. It includes information like the
-     * CPUs needed, memory of instances, number of instances, and the port used while
-     * establishing a connection.</p>
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline CreateKxClusterResult& WithCapacityConfiguration(const CapacityConfiguration& value) { SetCapacityConfiguration(value); return *this;}
 
     /**
      * <p>A structure for the metadata of a cluster. It includes information like the
-     * CPUs needed, memory of instances, number of instances, and the port used while
-     * establishing a connection.</p>
+     * CPUs needed, memory of instances, and number of instances.</p>
      */
     inline CreateKxClusterResult& WithCapacityConfiguration(CapacityConfiguration&& value) { SetCapacityConfiguration(std::move(value)); return *this;}
 

@@ -13,12 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListAccountAssignmentsRequest::ListAccountAssignmentsRequest() : 
-    m_instanceArnHasBeenSet(false),
     m_accountIdHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
+    m_instanceArnHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_permissionSetArnHasBeenSet(false)
 {
 }
 
@@ -26,21 +26,15 @@ Aws::String ListAccountAssignmentsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_instanceArnHasBeenSet)
-  {
-   payload.WithString("InstanceArn", m_instanceArn);
-
-  }
-
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("AccountId", m_accountId);
 
   }
 
-  if(m_permissionSetArnHasBeenSet)
+  if(m_instanceArnHasBeenSet)
   {
-   payload.WithString("PermissionSetArn", m_permissionSetArn);
+   payload.WithString("InstanceArn", m_instanceArn);
 
   }
 
@@ -53,6 +47,12 @@ Aws::String ListAccountAssignmentsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_permissionSetArnHasBeenSet)
+  {
+   payload.WithString("PermissionSetArn", m_permissionSetArn);
 
   }
 

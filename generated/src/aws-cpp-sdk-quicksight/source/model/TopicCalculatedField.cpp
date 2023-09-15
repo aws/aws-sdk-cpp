@@ -40,7 +40,9 @@ TopicCalculatedField::TopicCalculatedField() :
     m_notAllowedAggregationsHasBeenSet(false),
     m_neverAggregateInFilter(false),
     m_neverAggregateInFilterHasBeenSet(false),
-    m_cellValueSynonymsHasBeenSet(false)
+    m_cellValueSynonymsHasBeenSet(false),
+    m_nonAdditive(false),
+    m_nonAdditiveHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ TopicCalculatedField::TopicCalculatedField(JsonView jsonValue) :
     m_notAllowedAggregationsHasBeenSet(false),
     m_neverAggregateInFilter(false),
     m_neverAggregateInFilterHasBeenSet(false),
-    m_cellValueSynonymsHasBeenSet(false)
+    m_cellValueSynonymsHasBeenSet(false),
+    m_nonAdditive(false),
+    m_nonAdditiveHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -197,6 +201,13 @@ TopicCalculatedField& TopicCalculatedField::operator =(JsonView jsonValue)
     m_cellValueSynonymsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NonAdditive"))
+  {
+    m_nonAdditive = jsonValue.GetBool("NonAdditive");
+
+    m_nonAdditiveHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -314,6 +325,12 @@ JsonValue TopicCalculatedField::Jsonize() const
      cellValueSynonymsJsonList[cellValueSynonymsIndex].AsObject(m_cellValueSynonyms[cellValueSynonymsIndex].Jsonize());
    }
    payload.WithArray("CellValueSynonyms", std::move(cellValueSynonymsJsonList));
+
+  }
+
+  if(m_nonAdditiveHasBeenSet)
+  {
+   payload.WithBool("NonAdditive", m_nonAdditive);
 
   }
 

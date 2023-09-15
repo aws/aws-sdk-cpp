@@ -26,7 +26,8 @@ namespace Model
     EAC3_ATMOS,
     VORBIS,
     OPUS,
-    PASSTHROUGH
+    PASSTHROUGH,
+    FLAC
   };
 
 namespace AudioCodecMapper

@@ -31,7 +31,11 @@ namespace Model
     DiskIOPSOverprovisioned,
     DiskIOPSUnderprovisioned,
     DiskThroughputOverprovisioned,
-    DiskThroughputUnderprovisioned
+    DiskThroughputUnderprovisioned,
+    GPUUnderprovisioned,
+    GPUOverprovisioned,
+    GPUMemoryUnderprovisioned,
+    GPUMemoryOverprovisioned
   };
 
 namespace InstanceRecommendationFindingReasonCodeMapper

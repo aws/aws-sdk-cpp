@@ -19,7 +19,8 @@ namespace Model
     CLOUD_FORMATION_TEMPLATE,
     MARKETPLACE_AMI,
     MARKETPLACE_CAR,
-    TERRAFORM_OPEN_SOURCE
+    TERRAFORM_OPEN_SOURCE,
+    TERRAFORM_CLOUD
   };
 
 namespace ProvisioningArtifactTypeMapper

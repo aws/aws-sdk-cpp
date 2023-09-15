@@ -21,6 +21,7 @@ namespace Model
 AnnotationImportJobItem::AnnotationImportJobItem() : 
     m_idHasBeenSet(false),
     m_destinationNameHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -36,6 +37,7 @@ AnnotationImportJobItem::AnnotationImportJobItem() :
 AnnotationImportJobItem::AnnotationImportJobItem(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_destinationNameHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -63,6 +65,13 @@ AnnotationImportJobItem& AnnotationImportJobItem::operator =(JsonView jsonValue)
     m_destinationName = jsonValue.GetString("destinationName");
 
     m_destinationNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("versionName"))
+  {
+    m_versionName = jsonValue.GetString("versionName");
+
+    m_versionNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -133,6 +142,12 @@ JsonValue AnnotationImportJobItem::Jsonize() const
   if(m_destinationNameHasBeenSet)
   {
    payload.WithString("destinationName", m_destinationName);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("versionName", m_versionName);
 
   }
 

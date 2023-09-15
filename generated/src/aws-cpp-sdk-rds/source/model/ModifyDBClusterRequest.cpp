@@ -72,7 +72,8 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_allowEngineModeChange(false),
     m_allowEngineModeChangeHasBeenSet(false),
     m_enableLocalWriteForwarding(false),
-    m_enableLocalWriteForwardingHasBeenSet(false)
+    m_enableLocalWriteForwardingHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false)
 {
 }
 
@@ -294,6 +295,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_enableLocalWriteForwardingHasBeenSet)
   {
     ss << "EnableLocalWriteForwarding=" << std::boolalpha << m_enableLocalWriteForwarding << "&";
+  }
+
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+    ss << "AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

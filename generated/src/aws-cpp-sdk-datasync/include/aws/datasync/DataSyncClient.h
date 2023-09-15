@@ -501,9 +501,9 @@ namespace DataSync
         }
 
         /**
-         * <p>Configures a task, which defines where and how DataSync transfers your
-         * data.</p> <p>A task includes a source location, a destination location, and the
-         * preferences for how and when you want to transfer your data (such as bandwidth
+         * <p>Configures a transfer task, which defines where and how DataSync moves your
+         * data.</p> <p>A task includes a source location, destination location, and the
+         * options for how and when you want to transfer your data (such as bandwidth
          * limits, scheduling, among other options).</p>  <p>If you're planning
          * to transfer data to or from an Amazon S3 location, review <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how
@@ -589,7 +589,7 @@ namespace DataSync
         }
 
         /**
-         * <p>Deletes an DataSync task.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an DataSync transfer task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DeleteTask">AWS
          * API Reference</a></p>
          */
@@ -1062,8 +1062,9 @@ namespace DataSync
         }
 
         /**
-         * <p>Provides information about an DataSync transfer task that's
-         * running.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides information about an execution of your DataSync task. You can use
+         * this operation to help monitor the progress of an ongoing transfer or check the
+         * results of the transfer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">AWS
          * API Reference</a></p>
          */
@@ -1378,9 +1379,9 @@ namespace DataSync
         }
 
         /**
-         * <p>Starts an DataSync task. For each task, you can only run one task execution
-         * at a time.</p> <p>There are several phases to a task execution. For more
-         * information, see <a
+         * <p>Starts an DataSync transfer task. For each task, you can only run one task
+         * execution at a time.</p> <p>There are several phases to a task execution. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
          * execution statuses</a>.</p>  <p>If you're planning to transfer data
          * to or from an Amazon S3 location, review <a
@@ -1710,7 +1711,8 @@ namespace DataSync
         }
 
         /**
-         * <p>Updates the metadata associated with a task.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the configuration of a DataSync transfer task.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">AWS
          * API Reference</a></p>
          */
@@ -1735,11 +1737,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Modifies a running DataSync task.</p>  <p>Currently, the only
-         * <code>Option</code> that you can modify with <code>UpdateTaskExecution</code> is
-         * <code> <a
+         * <p>Updates the configuration of a running DataSync task execution.</p> 
+         * <p>Currently, the only <code>Option</code> that you can modify with
+         * <code>UpdateTaskExecution</code> is <code> <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
-         * </code>, which throttles bandwidth for a running or queued task.</p>
+         * </code>, which throttles bandwidth for a running or queued task execution.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">AWS
          * API Reference</a></p>

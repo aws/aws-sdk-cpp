@@ -20,6 +20,7 @@
 /* Service model headers required in SageMakerRuntimeClient header */
 #include <aws/sagemaker-runtime/model/InvokeEndpointResult.h>
 #include <aws/sagemaker-runtime/model/InvokeEndpointAsyncResult.h>
+#include <aws/core/NoResult.h>
 /* End of service model headers required in SageMakerRuntimeClient header */
 
 namespace Aws
@@ -62,16 +63,19 @@ namespace Aws
       /* Service model forward declarations required in SageMakerRuntimeClient header */
       class InvokeEndpointRequest;
       class InvokeEndpointAsyncRequest;
+      class InvokeEndpointWithResponseStreamRequest;
       /* End of service model forward declarations required in SageMakerRuntimeClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<InvokeEndpointResult, SageMakerRuntimeError> InvokeEndpointOutcome;
       typedef Aws::Utils::Outcome<InvokeEndpointAsyncResult, SageMakerRuntimeError> InvokeEndpointAsyncOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerRuntimeError> InvokeEndpointWithResponseStreamOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<InvokeEndpointOutcome> InvokeEndpointOutcomeCallable;
       typedef std::future<InvokeEndpointAsyncOutcome> InvokeEndpointAsyncOutcomeCallable;
+      typedef std::future<InvokeEndpointWithResponseStreamOutcome> InvokeEndpointWithResponseStreamOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -80,6 +84,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const SageMakerRuntimeClient*, const Model::InvokeEndpointRequest&, Model::InvokeEndpointOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerRuntimeClient*, const Model::InvokeEndpointAsyncRequest&, const Model::InvokeEndpointAsyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeEndpointAsyncResponseReceivedHandler;
+    typedef std::function<void(const SageMakerRuntimeClient*, const Model::InvokeEndpointWithResponseStreamRequest&, const Model::InvokeEndpointWithResponseStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeEndpointWithResponseStreamResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace SageMakerRuntime
 } // namespace Aws

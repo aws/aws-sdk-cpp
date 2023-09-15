@@ -41,50 +41,42 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the custom verification email template that you want to
-     * update.</p>
+     * <p>The name of the custom verification email template to update.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The name of the custom verification email template that you want to
-     * update.</p>
+     * <p>The name of the custom verification email template to update.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
-     * <p>The name of the custom verification email template that you want to
-     * update.</p>
+     * <p>The name of the custom verification email template to update.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p>The name of the custom verification email template that you want to
-     * update.</p>
+     * <p>The name of the custom verification email template to update.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
-     * <p>The name of the custom verification email template that you want to
-     * update.</p>
+     * <p>The name of the custom verification email template to update.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p>The name of the custom verification email template that you want to
-     * update.</p>
+     * <p>The name of the custom verification email template to update.</p>
      */
     inline UpdateCustomVerificationEmailTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the custom verification email template that you want to
-     * update.</p>
+     * <p>The name of the custom verification email template to update.</p>
      */
     inline UpdateCustomVerificationEmailTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the custom verification email template that you want to
-     * update.</p>
+     * <p>The name of the custom verification email template to update.</p>
      */
     inline UpdateCustomVerificationEmailTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
@@ -175,7 +167,7 @@ namespace Model
      * <p>The content of the custom verification email. The total size of the email
      * must be less than 10 MB. The message body may contain HTML, with some
      * limitations. For more information, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
      * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer
      * Guide</i>.</p>
      */
@@ -185,7 +177,7 @@ namespace Model
      * <p>The content of the custom verification email. The total size of the email
      * must be less than 10 MB. The message body may contain HTML, with some
      * limitations. For more information, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
      * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer
      * Guide</i>.</p>
      */
@@ -195,7 +187,7 @@ namespace Model
      * <p>The content of the custom verification email. The total size of the email
      * must be less than 10 MB. The message body may contain HTML, with some
      * limitations. For more information, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
      * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer
      * Guide</i>.</p>
      */
@@ -205,7 +197,7 @@ namespace Model
      * <p>The content of the custom verification email. The total size of the email
      * must be less than 10 MB. The message body may contain HTML, with some
      * limitations. For more information, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
      * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer
      * Guide</i>.</p>
      */
@@ -215,7 +207,7 @@ namespace Model
      * <p>The content of the custom verification email. The total size of the email
      * must be less than 10 MB. The message body may contain HTML, with some
      * limitations. For more information, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
      * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer
      * Guide</i>.</p>
      */
@@ -225,7 +217,7 @@ namespace Model
      * <p>The content of the custom verification email. The total size of the email
      * must be less than 10 MB. The message body may contain HTML, with some
      * limitations. For more information, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
      * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer
      * Guide</i>.</p>
      */
@@ -235,7 +227,7 @@ namespace Model
      * <p>The content of the custom verification email. The total size of the email
      * must be less than 10 MB. The message body may contain HTML, with some
      * limitations. For more information, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
      * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer
      * Guide</i>.</p>
      */
@@ -245,7 +237,7 @@ namespace Model
      * <p>The content of the custom verification email. The total size of the email
      * must be less than 10 MB. The message body may contain HTML, with some
      * limitations. For more information, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq">Custom
+     * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Custom
      * Verification Email Frequently Asked Questions</a> in the <i>Amazon SES Developer
      * Guide</i>.</p>
      */

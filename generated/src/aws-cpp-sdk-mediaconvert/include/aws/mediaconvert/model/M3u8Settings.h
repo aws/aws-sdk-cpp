@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/M3u8DataPtsControl.h>
 #include <aws/mediaconvert/model/M3u8NielsenId3.h>
 #include <aws/mediaconvert/model/M3u8PcrControl.h>
+#include <aws/mediaconvert/model/TsPtsOffset.h>
 #include <aws/mediaconvert/model/M3u8Scte35Source.h>
 #include <aws/mediaconvert/model/TimedMetadata.h>
 #include <utility>
@@ -509,6 +510,102 @@ namespace Model
 
 
     /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to
+     * Seconds. Enter an integer from 0 to 3600. Leave blank to keep the default value
+     * 2.
+     */
+    inline int GetPtsOffset() const{ return m_ptsOffset; }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to
+     * Seconds. Enter an integer from 0 to 3600. Leave blank to keep the default value
+     * 2.
+     */
+    inline bool PtsOffsetHasBeenSet() const { return m_ptsOffsetHasBeenSet; }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to
+     * Seconds. Enter an integer from 0 to 3600. Leave blank to keep the default value
+     * 2.
+     */
+    inline void SetPtsOffset(int value) { m_ptsOffsetHasBeenSet = true; m_ptsOffset = value; }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to
+     * Seconds. Enter an integer from 0 to 3600. Leave blank to keep the default value
+     * 2.
+     */
+    inline M3u8Settings& WithPtsOffset(int value) { SetPtsOffset(value); return *this;}
+
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline const TsPtsOffset& GetPtsOffsetMode() const{ return m_ptsOffsetMode; }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline bool PtsOffsetModeHasBeenSet() const { return m_ptsOffsetModeHasBeenSet; }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline void SetPtsOffsetMode(const TsPtsOffset& value) { m_ptsOffsetModeHasBeenSet = true; m_ptsOffsetMode = value; }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline void SetPtsOffsetMode(TsPtsOffset&& value) { m_ptsOffsetModeHasBeenSet = true; m_ptsOffsetMode = std::move(value); }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline M3u8Settings& WithPtsOffsetMode(const TsPtsOffset& value) { SetPtsOffsetMode(value); return *this;}
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport
+     * stream output. To let MediaConvert automatically determine the initial PTS
+     * offset: Keep the default value, Auto. We recommend that you choose Auto for the
+     * widest player compatibility. The initial PTS will be at least two seconds and
+     * vary depending on your output's bitrate, HRD buffer size and HRD buffer initial
+     * fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then
+     * specify the number of seconds with PTS offset.
+     */
+    inline M3u8Settings& WithPtsOffsetMode(TsPtsOffset&& value) { SetPtsOffsetMode(std::move(value)); return *this;}
+
+
+    /**
      * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
      */
     inline int GetScte35Pid() const{ return m_scte35Pid; }
@@ -747,6 +844,12 @@ namespace Model
 
     int m_programNumber;
     bool m_programNumberHasBeenSet = false;
+
+    int m_ptsOffset;
+    bool m_ptsOffsetHasBeenSet = false;
+
+    TsPtsOffset m_ptsOffsetMode;
+    bool m_ptsOffsetModeHasBeenSet = false;
 
     int m_scte35Pid;
     bool m_scte35PidHasBeenSet = false;

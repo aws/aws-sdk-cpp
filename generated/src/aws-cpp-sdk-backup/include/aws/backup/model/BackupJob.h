@@ -442,32 +442,32 @@ namespace Model
 
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline const BackupJobState& GetState() const{ return m_state; }
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline void SetState(const BackupJobState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline void SetState(BackupJobState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline BackupJob& WithState(const BackupJobState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The current state of a resource recovery point.</p>
+     * <p>The current state of a backup job.</p>
      */
     inline BackupJob& WithState(BackupJobState&& value) { SetState(std::move(value)); return *this;}
 

@@ -21,7 +21,9 @@ DescribeModelVersionResult::DescribeModelVersionResult() :
     m_modelVersion(0),
     m_status(ModelVersionStatus::NOT_SET),
     m_sourceType(ModelVersionSourceType::NOT_SET),
-    m_importedDataSizeInBytes(0)
+    m_importedDataSizeInBytes(0),
+    m_retrainingAvailableDataInDays(0),
+    m_autoPromotionResult(AutoPromotionResult::NOT_SET)
 {
 }
 
@@ -29,7 +31,9 @@ DescribeModelVersionResult::DescribeModelVersionResult(const Aws::AmazonWebServi
     m_modelVersion(0),
     m_status(ModelVersionStatus::NOT_SET),
     m_sourceType(ModelVersionSourceType::NOT_SET),
-    m_importedDataSizeInBytes(0)
+    m_importedDataSizeInBytes(0),
+    m_retrainingAvailableDataInDays(0),
+    m_autoPromotionResult(AutoPromotionResult::NOT_SET)
 {
   *this = result;
 }
@@ -202,6 +206,30 @@ DescribeModelVersionResult& DescribeModelVersionResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ImportedDataSizeInBytes"))
   {
     m_importedDataSizeInBytes = jsonValue.GetInt64("ImportedDataSizeInBytes");
+
+  }
+
+  if(jsonValue.ValueExists("PriorModelMetrics"))
+  {
+    m_priorModelMetrics = jsonValue.GetString("PriorModelMetrics");
+
+  }
+
+  if(jsonValue.ValueExists("RetrainingAvailableDataInDays"))
+  {
+    m_retrainingAvailableDataInDays = jsonValue.GetInteger("RetrainingAvailableDataInDays");
+
+  }
+
+  if(jsonValue.ValueExists("AutoPromotionResult"))
+  {
+    m_autoPromotionResult = AutoPromotionResultMapper::GetAutoPromotionResultForName(jsonValue.GetString("AutoPromotionResult"));
+
+  }
+
+  if(jsonValue.ValueExists("AutoPromotionResultReason"))
+  {
+    m_autoPromotionResultReason = jsonValue.GetString("AutoPromotionResultReason");
 
   }
 

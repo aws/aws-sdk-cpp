@@ -24,6 +24,7 @@
 #include <aws/backup/model/CreateBackupVaultResult.h>
 #include <aws/backup/model/CreateFrameworkResult.h>
 #include <aws/backup/model/CreateLegalHoldResult.h>
+#include <aws/backup/model/CreateLogicallyAirGappedBackupVaultResult.h>
 #include <aws/backup/model/CreateReportPlanResult.h>
 #include <aws/backup/model/DeleteBackupPlanResult.h>
 #include <aws/backup/model/DescribeBackupJobResult.h>
@@ -57,6 +58,7 @@
 #include <aws/backup/model/ListFrameworksResult.h>
 #include <aws/backup/model/ListLegalHoldsResult.h>
 #include <aws/backup/model/ListProtectedResourcesResult.h>
+#include <aws/backup/model/ListProtectedResourcesByBackupVaultResult.h>
 #include <aws/backup/model/ListRecoveryPointsByBackupVaultResult.h>
 #include <aws/backup/model/ListRecoveryPointsByLegalHoldResult.h>
 #include <aws/backup/model/ListRecoveryPointsByResourceResult.h>
@@ -119,6 +121,7 @@ namespace Aws
       class CreateBackupVaultRequest;
       class CreateFrameworkRequest;
       class CreateLegalHoldRequest;
+      class CreateLogicallyAirGappedBackupVaultRequest;
       class CreateReportPlanRequest;
       class DeleteBackupPlanRequest;
       class DeleteBackupSelectionRequest;
@@ -161,6 +164,7 @@ namespace Aws
       class ListFrameworksRequest;
       class ListLegalHoldsRequest;
       class ListProtectedResourcesRequest;
+      class ListProtectedResourcesByBackupVaultRequest;
       class ListRecoveryPointsByBackupVaultRequest;
       class ListRecoveryPointsByLegalHoldRequest;
       class ListRecoveryPointsByResourceRequest;
@@ -193,6 +197,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateBackupVaultResult, BackupError> CreateBackupVaultOutcome;
       typedef Aws::Utils::Outcome<CreateFrameworkResult, BackupError> CreateFrameworkOutcome;
       typedef Aws::Utils::Outcome<CreateLegalHoldResult, BackupError> CreateLegalHoldOutcome;
+      typedef Aws::Utils::Outcome<CreateLogicallyAirGappedBackupVaultResult, BackupError> CreateLogicallyAirGappedBackupVaultOutcome;
       typedef Aws::Utils::Outcome<CreateReportPlanResult, BackupError> CreateReportPlanOutcome;
       typedef Aws::Utils::Outcome<DeleteBackupPlanResult, BackupError> DeleteBackupPlanOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupSelectionOutcome;
@@ -236,6 +241,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListFrameworksResult, BackupError> ListFrameworksOutcome;
       typedef Aws::Utils::Outcome<ListLegalHoldsResult, BackupError> ListLegalHoldsOutcome;
       typedef Aws::Utils::Outcome<ListProtectedResourcesResult, BackupError> ListProtectedResourcesOutcome;
+      typedef Aws::Utils::Outcome<ListProtectedResourcesByBackupVaultResult, BackupError> ListProtectedResourcesByBackupVaultOutcome;
       typedef Aws::Utils::Outcome<ListRecoveryPointsByBackupVaultResult, BackupError> ListRecoveryPointsByBackupVaultOutcome;
       typedef Aws::Utils::Outcome<ListRecoveryPointsByLegalHoldResult, BackupError> ListRecoveryPointsByLegalHoldOutcome;
       typedef Aws::Utils::Outcome<ListRecoveryPointsByResourceResult, BackupError> ListRecoveryPointsByResourceOutcome;
@@ -268,6 +274,7 @@ namespace Aws
       typedef std::future<CreateBackupVaultOutcome> CreateBackupVaultOutcomeCallable;
       typedef std::future<CreateFrameworkOutcome> CreateFrameworkOutcomeCallable;
       typedef std::future<CreateLegalHoldOutcome> CreateLegalHoldOutcomeCallable;
+      typedef std::future<CreateLogicallyAirGappedBackupVaultOutcome> CreateLogicallyAirGappedBackupVaultOutcomeCallable;
       typedef std::future<CreateReportPlanOutcome> CreateReportPlanOutcomeCallable;
       typedef std::future<DeleteBackupPlanOutcome> DeleteBackupPlanOutcomeCallable;
       typedef std::future<DeleteBackupSelectionOutcome> DeleteBackupSelectionOutcomeCallable;
@@ -311,6 +318,7 @@ namespace Aws
       typedef std::future<ListFrameworksOutcome> ListFrameworksOutcomeCallable;
       typedef std::future<ListLegalHoldsOutcome> ListLegalHoldsOutcomeCallable;
       typedef std::future<ListProtectedResourcesOutcome> ListProtectedResourcesOutcomeCallable;
+      typedef std::future<ListProtectedResourcesByBackupVaultOutcome> ListProtectedResourcesByBackupVaultOutcomeCallable;
       typedef std::future<ListRecoveryPointsByBackupVaultOutcome> ListRecoveryPointsByBackupVaultOutcomeCallable;
       typedef std::future<ListRecoveryPointsByLegalHoldOutcome> ListRecoveryPointsByLegalHoldOutcomeCallable;
       typedef std::future<ListRecoveryPointsByResourceOutcome> ListRecoveryPointsByResourceOutcomeCallable;
@@ -346,6 +354,7 @@ namespace Aws
     typedef std::function<void(const BackupClient*, const Model::CreateBackupVaultRequest&, const Model::CreateBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupVaultResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::CreateFrameworkRequest&, const Model::CreateFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFrameworkResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::CreateLegalHoldRequest&, const Model::CreateLegalHoldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLegalHoldResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::CreateLogicallyAirGappedBackupVaultRequest&, const Model::CreateLogicallyAirGappedBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogicallyAirGappedBackupVaultResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::CreateReportPlanRequest&, const Model::CreateReportPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReportPlanResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DeleteBackupPlanRequest&, const Model::DeleteBackupPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupPlanResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DeleteBackupSelectionRequest&, const Model::DeleteBackupSelectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupSelectionResponseReceivedHandler;
@@ -389,6 +398,7 @@ namespace Aws
     typedef std::function<void(const BackupClient*, const Model::ListFrameworksRequest&, const Model::ListFrameworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFrameworksResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListLegalHoldsRequest&, const Model::ListLegalHoldsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLegalHoldsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListProtectedResourcesRequest&, const Model::ListProtectedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectedResourcesResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::ListProtectedResourcesByBackupVaultRequest&, const Model::ListProtectedResourcesByBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectedResourcesByBackupVaultResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListRecoveryPointsByBackupVaultRequest&, const Model::ListRecoveryPointsByBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecoveryPointsByBackupVaultResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListRecoveryPointsByLegalHoldRequest&, const Model::ListRecoveryPointsByLegalHoldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecoveryPointsByLegalHoldResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ListRecoveryPointsByResourceRequest&, const Model::ListRecoveryPointsByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecoveryPointsByResourceResponseReceivedHandler;

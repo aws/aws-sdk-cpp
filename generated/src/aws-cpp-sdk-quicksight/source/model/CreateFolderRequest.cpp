@@ -20,7 +20,9 @@ CreateFolderRequest::CreateFolderRequest() :
     m_folderTypeHasBeenSet(false),
     m_parentFolderArnHasBeenSet(false),
     m_permissionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sharingModel(SharingModel::NOT_SET),
+    m_sharingModelHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,11 @@ Aws::String CreateFolderRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_sharingModelHasBeenSet)
+  {
+   payload.WithString("SharingModel", SharingModelMapper::GetNameForSharingModel(m_sharingModel));
   }
 
   return payload.View().WriteReadable();

@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     IMPAIRED,
     UNIMPAIRED,
-    UNKNOWN
+    UNKNOWN,
+    PENDING,
+    RESOLVED
   };
 
 namespace EntityStatusCodeMapper

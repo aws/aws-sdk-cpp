@@ -393,8 +393,7 @@ namespace MediaConvert
         }
 
         /**
-         * Retrieve the JSON for a specific completed transcoding job.<p><h3>See Also:</h3>
-         * <a
+         * Retrieve the JSON for a specific transcoding job.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/GetJob">AWS
          * API Reference</a></p>
          */

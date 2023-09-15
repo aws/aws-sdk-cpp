@@ -28,6 +28,9 @@ namespace Aws
         static const int SNAPSHOT_UPDATE_HASH = HashingUtils::HashString("SNAPSHOT_UPDATE");
         static const int RELEASE_NFS_V3_LOCKS_HASH = HashingUtils::HashString("RELEASE_NFS_V3_LOCKS");
         static const int VOLUME_RESTORE_HASH = HashingUtils::HashString("VOLUME_RESTORE");
+        static const int THROUGHPUT_OPTIMIZATION_HASH = HashingUtils::HashString("THROUGHPUT_OPTIMIZATION");
+        static const int IOPS_OPTIMIZATION_HASH = HashingUtils::HashString("IOPS_OPTIMIZATION");
+        static const int STORAGE_TYPE_OPTIMIZATION_HASH = HashingUtils::HashString("STORAGE_TYPE_OPTIMIZATION");
 
 
         AdministrativeActionType GetAdministrativeActionTypeForName(const Aws::String& name)
@@ -65,6 +68,18 @@ namespace Aws
           {
             return AdministrativeActionType::VOLUME_RESTORE;
           }
+          else if (hashCode == THROUGHPUT_OPTIMIZATION_HASH)
+          {
+            return AdministrativeActionType::THROUGHPUT_OPTIMIZATION;
+          }
+          else if (hashCode == IOPS_OPTIMIZATION_HASH)
+          {
+            return AdministrativeActionType::IOPS_OPTIMIZATION;
+          }
+          else if (hashCode == STORAGE_TYPE_OPTIMIZATION_HASH)
+          {
+            return AdministrativeActionType::STORAGE_TYPE_OPTIMIZATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +110,12 @@ namespace Aws
             return "RELEASE_NFS_V3_LOCKS";
           case AdministrativeActionType::VOLUME_RESTORE:
             return "VOLUME_RESTORE";
+          case AdministrativeActionType::THROUGHPUT_OPTIMIZATION:
+            return "THROUGHPUT_OPTIMIZATION";
+          case AdministrativeActionType::IOPS_OPTIMIZATION:
+            return "IOPS_OPTIMIZATION";
+          case AdministrativeActionType::STORAGE_TYPE_OPTIMIZATION:
+            return "STORAGE_TYPE_OPTIMIZATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -36,7 +36,8 @@ PhoneNumber::PhoneNumber() :
     m_createdTimestampHasBeenSet(false),
     m_updatedTimestampHasBeenSet(false),
     m_deletionTimestampHasBeenSet(false),
-    m_orderIdHasBeenSet(false)
+    m_orderIdHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ PhoneNumber::PhoneNumber(JsonView jsonValue) :
     m_createdTimestampHasBeenSet(false),
     m_updatedTimestampHasBeenSet(false),
     m_deletionTimestampHasBeenSet(false),
-    m_orderIdHasBeenSet(false)
+    m_orderIdHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -166,6 +168,13 @@ PhoneNumber& PhoneNumber::operator =(JsonView jsonValue)
     m_orderIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -252,6 +261,12 @@ JsonValue PhoneNumber::Jsonize() const
   if(m_orderIdHasBeenSet)
   {
    payload.WithString("OrderId", m_orderId);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
 
   }
 

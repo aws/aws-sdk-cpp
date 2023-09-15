@@ -201,10 +201,37 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
             hashIterator.second->Update(reinterpret_cast<unsigned char*>(ptr), sizeToWrite);
         }
 
+        if (response->GetResponseBody().fail()) {
+            const auto& ref = response->GetResponseBody();
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Response output stream in bad state (eof: "
+                    << ref.eof() << ", bad: " << ref.bad() << ")");
+            return 0;
+        }
+
+        size_t cur = response->GetResponseBody().tellp();
+        if (response->GetResponseBody().fail()) {
+            const auto& ref = response->GetResponseBody();
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Unable to query response output position (eof: "
+                    << ref.eof() << ", bad: " << ref.bad() << ")");
+            return 0;
+        }
+
         response->GetResponseBody().write(ptr, static_cast<std::streamsize>(sizeToWrite));
+        if (response->GetResponseBody().fail()) {
+            const auto& ref = response->GetResponseBody();
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to write " << size << " / " << sizeToWrite << " B response"
+                << " at " << cur << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
+            return 0;
+        }
         if (context->m_request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
             response->GetResponseBody().flush();
+            if (response->GetResponseBody().fail()) {
+                const auto& ref = response->GetResponseBody();
+                AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to flush event response (eof: "
+                    << ref.eof() << ", bad: " << ref.bad() << ")");
+                return 0;
+            }
         }
         auto& receivedHandler = context->m_request->GetDataReceivedEventHandler();
         if (receivedHandler)
@@ -544,7 +571,7 @@ int CurlDebugCallback(CURL *handle, curl_infotype type, char *data, size_t size,
 CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     Base(),
     m_curlHandleContainer(clientConfig.maxConnections, clientConfig.httpRequestTimeoutMs, clientConfig.connectTimeoutMs, clientConfig.enableTcpKeepAlive,
-                          clientConfig.tcpKeepAliveIntervalMs, clientConfig.requestTimeoutMs, clientConfig.lowSpeedLimit),
+                          clientConfig.tcpKeepAliveIntervalMs, clientConfig.requestTimeoutMs, clientConfig.lowSpeedLimit, clientConfig.version),
     m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
     m_proxyPassword(clientConfig.proxyPassword), m_proxyScheme(SchemeMapper::ToString(clientConfig.proxyScheme)), m_proxyHost(clientConfig.proxyHost),
     m_proxySSLCertPath(clientConfig.proxySSLCertPath), m_proxySSLCertType(clientConfig.proxySSLCertType),
@@ -672,17 +699,13 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYPEER, 1L);
             curl_easy_setopt(connectionHandle, CURLOPT_SSL_VERIFYHOST, 2L);
 
-#if LIBCURL_VERSION_MAJOR >= 7
-#if LIBCURL_VERSION_MINOR >= 34
-#if defined(ENFORCE_TLS_V1_3)
+#if defined(ENFORCE_TLS_V1_3) && LIBCURL_VERSION_NUM >= 0x073400 // 7.52.0
             curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_3);
-#elif defined(ENFORCE_TLS_V1_2)
+#elif defined(ENFORCE_TLS_V1_2) && LIBCURL_VERSION_NUM >= 0x072200 // 7.34.0
             curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
 #else
             curl_easy_setopt(connectionHandle, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1);
 #endif
-#endif //LIBCURL_VERSION_MINOR
-#endif //LIBCURL_VERSION_MAJOR
         }
         else
         {
@@ -838,7 +861,11 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         }
 
         curl_off_t speed;
+#if LIBCURL_VERSION_NUM >= 0x073700 // 7.55.0
         ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_DOWNLOAD_T, &speed); // throughput
+#else
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_DOWNLOAD, &speed); // throughput
+#endif
         if (ret == CURLE_OK)
         {
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::Throughput), static_cast<int64_t>(speed));
@@ -860,6 +887,14 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         }
         //go ahead and flush the response body stream
         response->GetResponseBody().flush();
+        if (response->GetResponseBody().fail()) {
+            const auto& ref = response->GetResponseBody();
+            Aws::StringStream ss;
+            ss << "Failed to flush response stream (eof: " << ref.eof() << ", bad: " << ref.bad() << ")";
+            response->SetClientErrorType(CoreErrors::INTERNAL_FAILURE);
+            response->SetClientErrorMessage(ss.str());
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, ss.str());
+        }
         request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::RequestLatency), (DateTime::Now() - startTransmissionTime).count());
     }
 

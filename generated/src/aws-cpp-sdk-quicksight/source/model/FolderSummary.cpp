@@ -25,7 +25,9 @@ FolderSummary::FolderSummary() :
     m_folderType(FolderType::NOT_SET),
     m_folderTypeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_sharingModel(SharingModel::NOT_SET),
+    m_sharingModelHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ FolderSummary::FolderSummary(JsonView jsonValue) :
     m_folderType(FolderType::NOT_SET),
     m_folderTypeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_sharingModel(SharingModel::NOT_SET),
+    m_sharingModelHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +89,13 @@ FolderSummary& FolderSummary::operator =(JsonView jsonValue)
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SharingModel"))
+  {
+    m_sharingModel = SharingModelMapper::GetSharingModelForName(jsonValue.GetString("SharingModel"));
+
+    m_sharingModelHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +134,11 @@ JsonValue FolderSummary::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_sharingModelHasBeenSet)
+  {
+   payload.WithString("SharingModel", SharingModelMapper::GetNameForSharingModel(m_sharingModel));
   }
 
   return payload;

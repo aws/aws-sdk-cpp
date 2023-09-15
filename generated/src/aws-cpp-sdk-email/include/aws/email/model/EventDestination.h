@@ -29,16 +29,15 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the event destination that the specified email
-   * sending events will be published to.</p>  <p>When you create or update an
-   * event destination, you must provide one, and only one, destination. The
-   * destination can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple
-   * Notification Service (Amazon SNS).</p>  <p>Event destinations are
-   * associated with configuration sets, which enable you to publish email sending
-   * events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
-   * Notification Service (Amazon SNS). For information about using configuration
-   * sets, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+   * <p>Contains information about an event destination.</p>  <p>When you
+   * create or update an event destination, you must provide one, and only one,
+   * destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose
+   * or Amazon Simple Notification Service (Amazon SNS).</p>  <p>Event
+   * destinations are associated with configuration sets, which enable you to publish
+   * email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon
+   * Simple Notification Service (Amazon SNS). For information about using
+   * configuration sets, see the <a
+   * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/EventDestination">AWS
    * API Reference</a></p>
@@ -55,58 +54,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
-     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
-     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
+     * or fewer.</p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
-     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
-     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
+     * or fewer.</p> </li> </ul>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
-     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
-     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
+     * or fewer.</p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
-     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
-     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
+     * or fewer.</p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
-     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
-     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
+     * or fewer.</p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
-     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
-     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
+     * or fewer.</p> </li> </ul>
      */
     inline EventDestination& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
-     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
-     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
+     * or fewer.</p> </li> </ul>
      */
     inline EventDestination& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the event destination. The name must:</p> <ul> <li> <p>This value
-     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
-     * dashes (-).</p> </li> <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     * <p>The name of the event destination. The name must meet the following
+     * requirements:</p> <ul> <li> <p>Contain only ASCII letters (a-z, A-Z), numbers
+     * (0-9), underscores (_), or dashes (-).</p> </li> <li> <p>Contain 64 characters
+     * or fewer.</p> </li> </ul>
      */
     inline EventDestination& WithName(const char* value) { SetName(value); return *this;}
 
@@ -146,41 +153,137 @@ namespace Model
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
+     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
+     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
+     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
+     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
+     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
+     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
+     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
+     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
+     * received the email and opened it in their email client.</p> </li> <li> <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
+     * because of a template rendering issue.</p> </li> </ul>
      */
     inline const Aws::Vector<EventType>& GetMatchingEventTypes() const{ return m_matchingEventTypes; }
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
+     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
+     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
+     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
+     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
+     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
+     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
+     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
+     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
+     * received the email and opened it in their email client.</p> </li> <li> <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
+     * because of a template rendering issue.</p> </li> </ul>
      */
     inline bool MatchingEventTypesHasBeenSet() const { return m_matchingEventTypesHasBeenSet; }
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
+     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
+     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
+     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
+     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
+     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
+     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
+     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
+     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
+     * received the email and opened it in their email client.</p> </li> <li> <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
+     * because of a template rendering issue.</p> </li> </ul>
      */
     inline void SetMatchingEventTypes(const Aws::Vector<EventType>& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = value; }
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
+     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
+     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
+     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
+     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
+     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
+     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
+     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
+     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
+     * received the email and opened it in their email client.</p> </li> <li> <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
+     * because of a template rendering issue.</p> </li> </ul>
      */
     inline void SetMatchingEventTypes(Aws::Vector<EventType>&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = std::move(value); }
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
+     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
+     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
+     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
+     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
+     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
+     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
+     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
+     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
+     * received the email and opened it in their email client.</p> </li> <li> <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
+     * because of a template rendering issue.</p> </li> </ul>
      */
     inline EventDestination& WithMatchingEventTypes(const Aws::Vector<EventType>& value) { SetMatchingEventTypes(value); return *this;}
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
+     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
+     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
+     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
+     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
+     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
+     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
+     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
+     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
+     * received the email and opened it in their email client.</p> </li> <li> <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
+     * because of a template rendering issue.</p> </li> </ul>
      */
     inline EventDestination& WithMatchingEventTypes(Aws::Vector<EventType>&& value) { SetMatchingEventTypes(std::move(value)); return *this;}
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
+     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
+     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
+     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
+     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
+     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
+     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
+     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
+     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
+     * received the email and opened it in their email client.</p> </li> <li> <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
+     * because of a template rendering issue.</p> </li> </ul>
      */
     inline EventDestination& AddMatchingEventTypes(const EventType& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(value); return *this; }
 
     /**
      * <p>The type of email sending events to publish to the event destination.</p>
+     * <ul> <li> <p> <code>send</code> - The call was successful and Amazon SES is
+     * attempting to deliver the email.</p> </li> <li> <p> <code>reject</code> - Amazon
+     * SES determined that the email contained a virus and rejected it.</p> </li> <li>
+     * <p> <code>bounce</code> - The recipient's mail server permanently rejected the
+     * email. This corresponds to a hard bounce.</p> </li> <li> <p>
+     * <code>complaint</code> - The recipient marked the email as spam.</p> </li> <li>
+     * <p> <code>delivery</code> - Amazon SES successfully delivered the email to the
+     * recipient's mail server.</p> </li> <li> <p> <code>open</code> - The recipient
+     * received the email and opened it in their email client.</p> </li> <li> <p>
+     * <code>click</code> - The recipient clicked one or more links in the email.</p>
+     * </li> <li> <p> <code>renderingFailure</code> - Amazon SES did not send the email
+     * because of a template rendering issue.</p> </li> </ul>
      */
     inline EventDestination& AddMatchingEventTypes(EventType&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(std::move(value)); return *this; }
 

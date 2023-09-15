@@ -39,28 +39,6 @@ namespace Model
 
 
     
-    inline const Aws::String& GetArn() const{ return m_arn; }
-
-    
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    
-    inline CreateCampaignResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    
-    inline CreateCampaignResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    
-    inline CreateCampaignResult& WithArn(const char* value) { SetArn(value); return *this;}
-
-
-    
     inline const Aws::String& GetId() const{ return m_id; }
 
     
@@ -80,6 +58,28 @@ namespace Model
 
     
     inline CreateCampaignResult& WithId(const char* value) { SetId(value); return *this;}
+
+
+    
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    
+    inline CreateCampaignResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    
+    inline CreateCampaignResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    
+    inline CreateCampaignResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     
@@ -142,9 +142,9 @@ namespace Model
 
   private:
 
-    Aws::String m_arn;
-
     Aws::String m_id;
+
+    Aws::String m_arn;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 

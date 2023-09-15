@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/health/model/EntityStatusCode.h>
 #include <utility>
 
 namespace Aws
@@ -141,6 +143,47 @@ namespace Model
      */
     inline EntityAggregate& WithCount(int value) { SetCount(value); return *this;}
 
+
+    /**
+     * <p>The number of affected entities aggregated by the entity status codes.</p>
+     */
+    inline const Aws::Map<EntityStatusCode, int>& GetStatuses() const{ return m_statuses; }
+
+    /**
+     * <p>The number of affected entities aggregated by the entity status codes.</p>
+     */
+    inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
+
+    /**
+     * <p>The number of affected entities aggregated by the entity status codes.</p>
+     */
+    inline void SetStatuses(const Aws::Map<EntityStatusCode, int>& value) { m_statusesHasBeenSet = true; m_statuses = value; }
+
+    /**
+     * <p>The number of affected entities aggregated by the entity status codes.</p>
+     */
+    inline void SetStatuses(Aws::Map<EntityStatusCode, int>&& value) { m_statusesHasBeenSet = true; m_statuses = std::move(value); }
+
+    /**
+     * <p>The number of affected entities aggregated by the entity status codes.</p>
+     */
+    inline EntityAggregate& WithStatuses(const Aws::Map<EntityStatusCode, int>& value) { SetStatuses(value); return *this;}
+
+    /**
+     * <p>The number of affected entities aggregated by the entity status codes.</p>
+     */
+    inline EntityAggregate& WithStatuses(Aws::Map<EntityStatusCode, int>&& value) { SetStatuses(std::move(value)); return *this;}
+
+    /**
+     * <p>The number of affected entities aggregated by the entity status codes.</p>
+     */
+    inline EntityAggregate& AddStatuses(const EntityStatusCode& key, int value) { m_statusesHasBeenSet = true; m_statuses.emplace(key, value); return *this; }
+
+    /**
+     * <p>The number of affected entities aggregated by the entity status codes.</p>
+     */
+    inline EntityAggregate& AddStatuses(EntityStatusCode&& key, int value) { m_statusesHasBeenSet = true; m_statuses.emplace(std::move(key), value); return *this; }
+
   private:
 
     Aws::String m_eventArn;
@@ -148,6 +191,9 @@ namespace Model
 
     int m_count;
     bool m_countHasBeenSet = false;
+
+    Aws::Map<EntityStatusCode, int> m_statuses;
+    bool m_statusesHasBeenSet = false;
   };
 
 } // namespace Model

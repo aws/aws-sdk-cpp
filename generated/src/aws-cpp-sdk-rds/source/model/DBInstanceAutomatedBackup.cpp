@@ -55,7 +55,8 @@ DBInstanceAutomatedBackup::DBInstanceAutomatedBackup() :
     m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
     m_backupTargetHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false)
 {
 }
 
@@ -94,7 +95,8 @@ DBInstanceAutomatedBackup::DBInstanceAutomatedBackup(const XmlNode& xmlNode) :
     m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
     m_backupTargetHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -279,6 +281,12 @@ DBInstanceAutomatedBackup& DBInstanceAutomatedBackup::operator =(const XmlNode& 
       m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
       m_storageThroughputHasBeenSet = true;
     }
+    XmlNode awsBackupRecoveryPointArnNode = resultNode.FirstChild("AwsBackupRecoveryPointArn");
+    if(!awsBackupRecoveryPointArnNode.IsNull())
+    {
+      m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
+      m_awsBackupRecoveryPointArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -434,6 +442,11 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+
 }
 
 void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -557,6 +570,10 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
   if(m_storageThroughputHasBeenSet)
   {
       oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+      oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 }
 

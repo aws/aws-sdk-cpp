@@ -17,11 +17,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SetSecurityGroupsResult::SetSecurityGroupsResult()
+SetSecurityGroupsResult::SetSecurityGroupsResult() : 
+    m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::NOT_SET)
 {
 }
 
-SetSecurityGroupsResult::SetSecurityGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+SetSecurityGroupsResult::SetSecurityGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
+    m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::NOT_SET)
 {
   *this = result;
 }
@@ -48,6 +50,11 @@ SetSecurityGroupsResult& SetSecurityGroupsResult::operator =(const Aws::AmazonWe
         securityGroupIdsMember = securityGroupIdsMember.NextNode("member");
       }
 
+    }
+    XmlNode enforceSecurityGroupInboundRulesOnPrivateLinkTrafficNode = resultNode.FirstChild("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic");
+    if(!enforceSecurityGroupInboundRulesOnPrivateLinkTrafficNode.IsNull())
+    {
+      m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnumMapper::GetEnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enforceSecurityGroupInboundRulesOnPrivateLinkTrafficNode.GetText()).c_str()).c_str());
     }
   }
 

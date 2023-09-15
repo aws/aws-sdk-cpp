@@ -99,6 +99,57 @@ namespace PI
         virtual ~PIClient();
 
         /**
+         * <p>Creates a new performance analysis report for a specific time period for the
+         * DB instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/CreatePerformanceAnalysisReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePerformanceAnalysisReportOutcome CreatePerformanceAnalysisReport(const Model::CreatePerformanceAnalysisReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePerformanceAnalysisReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePerformanceAnalysisReportRequestT = Model::CreatePerformanceAnalysisReportRequest>
+        Model::CreatePerformanceAnalysisReportOutcomeCallable CreatePerformanceAnalysisReportCallable(const CreatePerformanceAnalysisReportRequestT& request) const
+        {
+            return SubmitCallable(&PIClient::CreatePerformanceAnalysisReport, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePerformanceAnalysisReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePerformanceAnalysisReportRequestT = Model::CreatePerformanceAnalysisReportRequest>
+        void CreatePerformanceAnalysisReportAsync(const CreatePerformanceAnalysisReportRequestT& request, const CreatePerformanceAnalysisReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PIClient::CreatePerformanceAnalysisReport, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a performance analysis report.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DeletePerformanceAnalysisReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePerformanceAnalysisReportOutcome DeletePerformanceAnalysisReport(const Model::DeletePerformanceAnalysisReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePerformanceAnalysisReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePerformanceAnalysisReportRequestT = Model::DeletePerformanceAnalysisReportRequest>
+        Model::DeletePerformanceAnalysisReportOutcomeCallable DeletePerformanceAnalysisReportCallable(const DeletePerformanceAnalysisReportRequestT& request) const
+        {
+            return SubmitCallable(&PIClient::DeletePerformanceAnalysisReport, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePerformanceAnalysisReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePerformanceAnalysisReportRequestT = Model::DeletePerformanceAnalysisReportRequest>
+        void DeletePerformanceAnalysisReportAsync(const DeletePerformanceAnalysisReportRequestT& request, const DeletePerformanceAnalysisReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PIClient::DeletePerformanceAnalysisReport, request, handler, context);
+        }
+
+        /**
          * <p>For a specific time period, retrieve the top <code>N</code> dimension keys
          * for a metric. </p>  <p>Each response element returns a maximum of 500
          * bytes. For larger elements, such as SQL statements, only the first 500 bytes are
@@ -155,6 +206,35 @@ namespace PI
         void GetDimensionKeyDetailsAsync(const GetDimensionKeyDetailsRequestT& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PIClient::GetDimensionKeyDetails, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the report including the report ID, status, time details, and the
+         * insights with recommendations. The report status can be <code>RUNNING</code>,
+         * <code>SUCCEEDED</code>, or <code>FAILED</code>. The insights include the
+         * <code>description</code> and <code>recommendation</code> fields. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetPerformanceAnalysisReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPerformanceAnalysisReportOutcome GetPerformanceAnalysisReport(const Model::GetPerformanceAnalysisReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPerformanceAnalysisReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPerformanceAnalysisReportRequestT = Model::GetPerformanceAnalysisReportRequest>
+        Model::GetPerformanceAnalysisReportOutcomeCallable GetPerformanceAnalysisReportCallable(const GetPerformanceAnalysisReportRequestT& request) const
+        {
+            return SubmitCallable(&PIClient::GetPerformanceAnalysisReport, request);
+        }
+
+        /**
+         * An Async wrapper for GetPerformanceAnalysisReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPerformanceAnalysisReportRequestT = Model::GetPerformanceAnalysisReportRequest>
+        void GetPerformanceAnalysisReportAsync(const GetPerformanceAnalysisReportRequestT& request, const GetPerformanceAnalysisReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PIClient::GetPerformanceAnalysisReport, request, handler, context);
         }
 
         /**
@@ -264,6 +344,110 @@ namespace PI
         void ListAvailableResourceMetricsAsync(const ListAvailableResourceMetricsRequestT& request, const ListAvailableResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PIClient::ListAvailableResourceMetrics, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all the analysis reports created for the DB instance. The reports are
+         * sorted based on the start time of each report.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPerformanceAnalysisReportsOutcome ListPerformanceAnalysisReports(const Model::ListPerformanceAnalysisReportsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPerformanceAnalysisReports that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPerformanceAnalysisReportsRequestT = Model::ListPerformanceAnalysisReportsRequest>
+        Model::ListPerformanceAnalysisReportsOutcomeCallable ListPerformanceAnalysisReportsCallable(const ListPerformanceAnalysisReportsRequestT& request) const
+        {
+            return SubmitCallable(&PIClient::ListPerformanceAnalysisReports, request);
+        }
+
+        /**
+         * An Async wrapper for ListPerformanceAnalysisReports that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPerformanceAnalysisReportsRequestT = Model::ListPerformanceAnalysisReportsRequest>
+        void ListPerformanceAnalysisReportsAsync(const ListPerformanceAnalysisReportsRequestT& request, const ListPerformanceAnalysisReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PIClient::ListPerformanceAnalysisReports, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves all the metadata tags associated with Amazon RDS Performance
+         * Insights resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&PIClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PIClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Adds metadata tags to the Amazon RDS Performance Insights
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/TagResource">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&PIClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PIClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the metadata tags from the Amazon RDS Performance Insights
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&PIClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PIClient::UntagResource, request, handler, context);
         }
 
 

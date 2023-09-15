@@ -39,6 +39,31 @@ namespace Model
 
 
     
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    
+    inline CreateCampaignRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    
+    inline CreateCampaignRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    
+    inline CreateCampaignRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    
     inline const Aws::String& GetConnectInstanceId() const{ return m_connectInstanceId; }
 
     
@@ -80,31 +105,6 @@ namespace Model
 
     
     inline CreateCampaignRequest& WithDialerConfig(DialerConfig&& value) { SetDialerConfig(std::move(value)); return *this;}
-
-
-    
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    
-    inline CreateCampaignRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    
-    inline CreateCampaignRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    
-    inline CreateCampaignRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     
@@ -167,14 +167,14 @@ namespace Model
 
   private:
 
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
     Aws::String m_connectInstanceId;
     bool m_connectInstanceIdHasBeenSet = false;
 
     DialerConfig m_dialerConfig;
     bool m_dialerConfigHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
 
     OutboundCallConfig m_outboundCallConfig;
     bool m_outboundCallConfigHasBeenSet = false;

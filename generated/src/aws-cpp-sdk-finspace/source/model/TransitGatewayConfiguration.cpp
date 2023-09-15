@@ -20,13 +20,15 @@ namespace Model
 
 TransitGatewayConfiguration::TransitGatewayConfiguration() : 
     m_transitGatewayIDHasBeenSet(false),
-    m_routableCIDRSpaceHasBeenSet(false)
+    m_routableCIDRSpaceHasBeenSet(false),
+    m_attachmentNetworkAclConfigurationHasBeenSet(false)
 {
 }
 
 TransitGatewayConfiguration::TransitGatewayConfiguration(JsonView jsonValue) : 
     m_transitGatewayIDHasBeenSet(false),
-    m_routableCIDRSpaceHasBeenSet(false)
+    m_routableCIDRSpaceHasBeenSet(false),
+    m_attachmentNetworkAclConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,16 @@ TransitGatewayConfiguration& TransitGatewayConfiguration::operator =(JsonView js
     m_routableCIDRSpaceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("attachmentNetworkAclConfiguration"))
+  {
+    Aws::Utils::Array<JsonView> attachmentNetworkAclConfigurationJsonList = jsonValue.GetArray("attachmentNetworkAclConfiguration");
+    for(unsigned attachmentNetworkAclConfigurationIndex = 0; attachmentNetworkAclConfigurationIndex < attachmentNetworkAclConfigurationJsonList.GetLength(); ++attachmentNetworkAclConfigurationIndex)
+    {
+      m_attachmentNetworkAclConfiguration.push_back(attachmentNetworkAclConfigurationJsonList[attachmentNetworkAclConfigurationIndex].AsObject());
+    }
+    m_attachmentNetworkAclConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +75,17 @@ JsonValue TransitGatewayConfiguration::Jsonize() const
   if(m_routableCIDRSpaceHasBeenSet)
   {
    payload.WithString("routableCIDRSpace", m_routableCIDRSpace);
+
+  }
+
+  if(m_attachmentNetworkAclConfigurationHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> attachmentNetworkAclConfigurationJsonList(m_attachmentNetworkAclConfiguration.size());
+   for(unsigned attachmentNetworkAclConfigurationIndex = 0; attachmentNetworkAclConfigurationIndex < attachmentNetworkAclConfigurationJsonList.GetLength(); ++attachmentNetworkAclConfigurationIndex)
+   {
+     attachmentNetworkAclConfigurationJsonList[attachmentNetworkAclConfigurationIndex].AsObject(m_attachmentNetworkAclConfiguration[attachmentNetworkAclConfigurationIndex].Jsonize());
+   }
+   payload.WithArray("attachmentNetworkAclConfiguration", std::move(attachmentNetworkAclConfigurationJsonList));
 
   }
 

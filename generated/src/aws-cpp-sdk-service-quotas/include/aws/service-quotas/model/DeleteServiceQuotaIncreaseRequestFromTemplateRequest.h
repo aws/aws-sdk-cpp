@@ -35,124 +35,148 @@ namespace Model
 
 
     /**
-     * <p>The service identifier.</p>
+     * <p>Specifies the service identifier. To find the service code value for an
+     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>The service identifier.</p>
+     * <p>Specifies the service identifier. To find the service code value for an
+     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>The service identifier.</p>
+     * <p>Specifies the service identifier. To find the service code value for an
+     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>The service identifier.</p>
+     * <p>Specifies the service identifier. To find the service code value for an
+     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>The service identifier.</p>
+     * <p>Specifies the service identifier. To find the service code value for an
+     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>The service identifier.</p>
+     * <p>Specifies the service identifier. To find the service code value for an
+     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>The service identifier.</p>
+     * <p>Specifies the service identifier. To find the service code value for an
+     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>The service identifier.</p>
+     * <p>Specifies the service identifier. To find the service code value for an
+     * Amazon Web Services service, use the <a>ListServices</a> operation.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 
 
     /**
-     * <p>The quota identifier.</p>
+     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
+     * use the <a>ListServiceQuotas</a> operation, and look for the
+     * <code>QuotaCode</code> response in the output for the quota you want.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
 
     /**
-     * <p>The quota identifier.</p>
+     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
+     * use the <a>ListServiceQuotas</a> operation, and look for the
+     * <code>QuotaCode</code> response in the output for the quota you want.</p>
      */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
 
     /**
-     * <p>The quota identifier.</p>
+     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
+     * use the <a>ListServiceQuotas</a> operation, and look for the
+     * <code>QuotaCode</code> response in the output for the quota you want.</p>
      */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
 
     /**
-     * <p>The quota identifier.</p>
+     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
+     * use the <a>ListServiceQuotas</a> operation, and look for the
+     * <code>QuotaCode</code> response in the output for the quota you want.</p>
      */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
 
     /**
-     * <p>The quota identifier.</p>
+     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
+     * use the <a>ListServiceQuotas</a> operation, and look for the
+     * <code>QuotaCode</code> response in the output for the quota you want.</p>
      */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
 
     /**
-     * <p>The quota identifier.</p>
+     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
+     * use the <a>ListServiceQuotas</a> operation, and look for the
+     * <code>QuotaCode</code> response in the output for the quota you want.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
 
     /**
-     * <p>The quota identifier.</p>
+     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
+     * use the <a>ListServiceQuotas</a> operation, and look for the
+     * <code>QuotaCode</code> response in the output for the quota you want.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
 
     /**
-     * <p>The quota identifier.</p>
+     * <p>Specifies the quota identifier. To find the quota code for a specific quota,
+     * use the <a>ListServiceQuotas</a> operation, and look for the
+     * <code>QuotaCode</code> response in the output for the quota you want.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
 
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>Specifies the Amazon Web Services Region for which the request was made.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>Specifies the Amazon Web Services Region for which the request was made.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>Specifies the Amazon Web Services Region for which the request was made.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>Specifies the Amazon Web Services Region for which the request was made.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>Specifies the Amazon Web Services Region for which the request was made.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>Specifies the Amazon Web Services Region for which the request was made.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>Specifies the Amazon Web Services Region for which the request was made.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>Specifies the Amazon Web Services Region for which the request was made.</p>
      */
     inline DeleteServiceQuotaIncreaseRequestFromTemplateRequest& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 

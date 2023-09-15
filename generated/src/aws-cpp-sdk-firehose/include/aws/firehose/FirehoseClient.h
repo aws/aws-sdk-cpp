@@ -104,9 +104,12 @@ namespace Firehose
          * <a>DeliveryStreamEncryptionConfigurationInput</a> in your request. This is
          * optional. You can also invoke <a>StartDeliveryStreamEncryption</a> to turn on
          * SSE for an existing delivery stream that doesn't have SSE enabled.</p> <p>A
-         * delivery stream is configured with a single destination: Amazon S3, Amazon ES,
-         * Amazon Redshift, or Splunk. You must specify only one of the following
-         * destination configuration parameters:
+         * delivery stream is configured with a single destination, such as Amazon Simple
+         * Storage Service (Amazon S3), Amazon Redshift, Amazon OpenSearch Service, Amazon
+         * OpenSearch Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints
+         * owned by or supported by third-party service providers, including Datadog,
+         * Dynatrace, LogicMonitor, MongoDB, New Relic, and Sumo Logic. You must specify
+         * only one of the following destination configuration parameters:
          * <code>ExtendedS3DestinationConfiguration</code>,
          * <code>S3DestinationConfiguration</code>,
          * <code>ElasticsearchDestinationConfiguration</code>,
@@ -606,24 +609,25 @@ namespace Firehose
          * delivery stream remains active while the configurations are updated, so data
          * writes to the delivery stream can continue during this process. The updated
          * configurations are usually effective within a few minutes.</p> <p>Switching
-         * between Amazon ES and other services is not supported. For an Amazon ES
-         * destination, you can only update to another Amazon ES destination.</p> <p>If the
-         * destination type is the same, Kinesis Data Firehose merges the configuration
-         * parameters specified with the destination configuration that already exists on
-         * the delivery stream. If any of the parameters are not specified in the call, the
-         * existing values are retained. For example, in the Amazon S3 destination, if
-         * <a>EncryptionConfiguration</a> is not specified, then the existing
-         * <code>EncryptionConfiguration</code> is maintained on the destination.</p> <p>If
-         * the destination type is not the same, for example, changing the destination from
-         * Amazon S3 to Amazon Redshift, Kinesis Data Firehose does not merge any
-         * parameters. In this case, all parameters must be specified.</p> <p>Kinesis Data
-         * Firehose uses <code>CurrentDeliveryStreamVersionId</code> to avoid race
-         * conditions and conflicting merges. This is a required field, and the service
-         * updates the configuration only if the existing configuration has a version ID
-         * that matches. After the update is applied successfully, the version ID is
-         * updated, and can be retrieved using <a>DescribeDeliveryStream</a>. Use the new
-         * version ID to set <code>CurrentDeliveryStreamVersionId</code> in the next
-         * call.</p><p><h3>See Also:</h3>   <a
+         * between Amazon OpenSearch Service and other services is not supported. For an
+         * Amazon OpenSearch Service destination, you can only update to another Amazon
+         * OpenSearch Service destination.</p> <p>If the destination type is the same,
+         * Kinesis Data Firehose merges the configuration parameters specified with the
+         * destination configuration that already exists on the delivery stream. If any of
+         * the parameters are not specified in the call, the existing values are retained.
+         * For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is
+         * not specified, then the existing <code>EncryptionConfiguration</code> is
+         * maintained on the destination.</p> <p>If the destination type is not the same,
+         * for example, changing the destination from Amazon S3 to Amazon Redshift, Kinesis
+         * Data Firehose does not merge any parameters. In this case, all parameters must
+         * be specified.</p> <p>Kinesis Data Firehose uses
+         * <code>CurrentDeliveryStreamVersionId</code> to avoid race conditions and
+         * conflicting merges. This is a required field, and the service updates the
+         * configuration only if the existing configuration has a version ID that matches.
+         * After the update is applied successfully, the version ID is updated, and can be
+         * retrieved using <a>DescribeDeliveryStream</a>. Use the new version ID to set
+         * <code>CurrentDeliveryStreamVersionId</code> in the next call.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">AWS
          * API Reference</a></p>
          */

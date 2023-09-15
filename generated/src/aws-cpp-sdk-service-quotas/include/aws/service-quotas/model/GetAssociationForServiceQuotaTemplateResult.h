@@ -35,36 +35,36 @@ namespace Model
 
     /**
      * <p>The association status. If the status is <code>ASSOCIATED</code>, the quota
-     * increase requests in the template are automatically applied to new accounts in
-     * your organization.</p>
+     * increase requests in the template are automatically applied to new Amazon Web
+     * Services accounts in your organization.</p>
      */
     inline const ServiceQuotaTemplateAssociationStatus& GetServiceQuotaTemplateAssociationStatus() const{ return m_serviceQuotaTemplateAssociationStatus; }
 
     /**
      * <p>The association status. If the status is <code>ASSOCIATED</code>, the quota
-     * increase requests in the template are automatically applied to new accounts in
-     * your organization.</p>
+     * increase requests in the template are automatically applied to new Amazon Web
+     * Services accounts in your organization.</p>
      */
     inline void SetServiceQuotaTemplateAssociationStatus(const ServiceQuotaTemplateAssociationStatus& value) { m_serviceQuotaTemplateAssociationStatus = value; }
 
     /**
      * <p>The association status. If the status is <code>ASSOCIATED</code>, the quota
-     * increase requests in the template are automatically applied to new accounts in
-     * your organization.</p>
+     * increase requests in the template are automatically applied to new Amazon Web
+     * Services accounts in your organization.</p>
      */
     inline void SetServiceQuotaTemplateAssociationStatus(ServiceQuotaTemplateAssociationStatus&& value) { m_serviceQuotaTemplateAssociationStatus = std::move(value); }
 
     /**
      * <p>The association status. If the status is <code>ASSOCIATED</code>, the quota
-     * increase requests in the template are automatically applied to new accounts in
-     * your organization.</p>
+     * increase requests in the template are automatically applied to new Amazon Web
+     * Services accounts in your organization.</p>
      */
     inline GetAssociationForServiceQuotaTemplateResult& WithServiceQuotaTemplateAssociationStatus(const ServiceQuotaTemplateAssociationStatus& value) { SetServiceQuotaTemplateAssociationStatus(value); return *this;}
 
     /**
      * <p>The association status. If the status is <code>ASSOCIATED</code>, the quota
-     * increase requests in the template are automatically applied to new accounts in
-     * your organization.</p>
+     * increase requests in the template are automatically applied to new Amazon Web
+     * Services accounts in your organization.</p>
      */
     inline GetAssociationForServiceQuotaTemplateResult& WithServiceQuotaTemplateAssociationStatus(ServiceQuotaTemplateAssociationStatus&& value) { SetServiceQuotaTemplateAssociationStatus(std::move(value)); return *this;}
 

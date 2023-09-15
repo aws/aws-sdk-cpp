@@ -13,28 +13,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeAffectedEntitiesForOrganizationRequest::DescribeAffectedEntitiesForOrganizationRequest() : 
-    m_organizationEntityFiltersHasBeenSet(false),
     m_localeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_organizationEntityAccountFiltersHasBeenSet(false)
 {
 }
 
 Aws::String DescribeAffectedEntitiesForOrganizationRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_organizationEntityFiltersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> organizationEntityFiltersJsonList(m_organizationEntityFilters.size());
-   for(unsigned organizationEntityFiltersIndex = 0; organizationEntityFiltersIndex < organizationEntityFiltersJsonList.GetLength(); ++organizationEntityFiltersIndex)
-   {
-     organizationEntityFiltersJsonList[organizationEntityFiltersIndex].AsObject(m_organizationEntityFilters[organizationEntityFiltersIndex].Jsonize());
-   }
-   payload.WithArray("organizationEntityFilters", std::move(organizationEntityFiltersJsonList));
-
-  }
 
   if(m_localeHasBeenSet)
   {
@@ -51,6 +40,17 @@ Aws::String DescribeAffectedEntitiesForOrganizationRequest::SerializePayload() c
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_organizationEntityAccountFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> organizationEntityAccountFiltersJsonList(m_organizationEntityAccountFilters.size());
+   for(unsigned organizationEntityAccountFiltersIndex = 0; organizationEntityAccountFiltersIndex < organizationEntityAccountFiltersJsonList.GetLength(); ++organizationEntityAccountFiltersIndex)
+   {
+     organizationEntityAccountFiltersJsonList[organizationEntityAccountFiltersIndex].AsObject(m_organizationEntityAccountFilters[organizationEntityAccountFiltersIndex].Jsonize());
+   }
+   payload.WithArray("organizationEntityAccountFilters", std::move(organizationEntityAccountFiltersJsonList));
 
   }
 

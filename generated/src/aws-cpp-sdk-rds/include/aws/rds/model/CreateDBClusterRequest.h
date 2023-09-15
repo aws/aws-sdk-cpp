@@ -2949,7 +2949,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -2967,7 +2970,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -2985,7 +2991,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -3003,7 +3012,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -3021,7 +3033,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -3039,7 +3054,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -3057,7 +3075,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -3075,7 +3096,10 @@ namespace Model
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
      * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
      * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>
+     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
+     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
+     * type is returned in the response. The storage type isn't returned when you set
+     * it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

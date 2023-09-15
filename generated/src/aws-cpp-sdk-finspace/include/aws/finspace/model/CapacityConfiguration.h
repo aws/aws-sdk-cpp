@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>A structure for the metadata of a cluster. It includes information like the
-   * CPUs needed, memory of instances, number of instances, and the port used while
-   * establishing a connection.</p><p><h3>See Also:</h3>   <a
+   * CPUs needed, memory of instances, and number of instances.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/CapacityConfiguration">AWS
    * API Reference</a></p>
    */

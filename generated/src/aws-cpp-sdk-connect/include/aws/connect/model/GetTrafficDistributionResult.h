@@ -7,6 +7,8 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/TelephonyConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connect/model/SignInConfig.h>
+#include <aws/connect/model/AgentConfig.h>
 #include <utility>
 
 namespace Aws
@@ -152,6 +154,63 @@ namespace Model
     inline GetTrafficDistributionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
+    /**
+     * <p>The distribution of allowing signing in to the instance and its
+     * replica(s).</p>
+     */
+    inline const SignInConfig& GetSignInConfig() const{ return m_signInConfig; }
+
+    /**
+     * <p>The distribution of allowing signing in to the instance and its
+     * replica(s).</p>
+     */
+    inline void SetSignInConfig(const SignInConfig& value) { m_signInConfig = value; }
+
+    /**
+     * <p>The distribution of allowing signing in to the instance and its
+     * replica(s).</p>
+     */
+    inline void SetSignInConfig(SignInConfig&& value) { m_signInConfig = std::move(value); }
+
+    /**
+     * <p>The distribution of allowing signing in to the instance and its
+     * replica(s).</p>
+     */
+    inline GetTrafficDistributionResult& WithSignInConfig(const SignInConfig& value) { SetSignInConfig(value); return *this;}
+
+    /**
+     * <p>The distribution of allowing signing in to the instance and its
+     * replica(s).</p>
+     */
+    inline GetTrafficDistributionResult& WithSignInConfig(SignInConfig&& value) { SetSignInConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline const AgentConfig& GetAgentConfig() const{ return m_agentConfig; }
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline void SetAgentConfig(const AgentConfig& value) { m_agentConfig = value; }
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline void SetAgentConfig(AgentConfig&& value) { m_agentConfig = std::move(value); }
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline GetTrafficDistributionResult& WithAgentConfig(const AgentConfig& value) { SetAgentConfig(value); return *this;}
+
+    /**
+     * <p>The distribution of agents between the instance and its replica(s).</p>
+     */
+    inline GetTrafficDistributionResult& WithAgentConfig(AgentConfig&& value) { SetAgentConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -180,6 +239,10 @@ namespace Model
     Aws::String m_id;
 
     Aws::String m_arn;
+
+    SignInConfig m_signInConfig;
+
+    AgentConfig m_agentConfig;
 
     Aws::String m_requestId;
   };

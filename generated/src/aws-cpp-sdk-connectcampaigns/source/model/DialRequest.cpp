@@ -19,24 +19,45 @@ namespace Model
 {
 
 DialRequest::DialRequest() : 
-    m_attributesHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
+    m_phoneNumberHasBeenSet(false),
     m_expirationTimeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+    m_attributesHasBeenSet(false)
 {
 }
 
 DialRequest::DialRequest(JsonView jsonValue) : 
-    m_attributesHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
+    m_phoneNumberHasBeenSet(false),
     m_expirationTimeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
+    m_attributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DialRequest& DialRequest::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("clientToken"))
+  {
+    m_clientToken = jsonValue.GetString("clientToken");
+
+    m_clientTokenHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("phoneNumber"))
+  {
+    m_phoneNumber = jsonValue.GetString("phoneNumber");
+
+    m_phoneNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("expirationTime"))
+  {
+    m_expirationTime = jsonValue.GetString("expirationTime");
+
+    m_expirationTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -47,33 +68,29 @@ DialRequest& DialRequest::operator =(JsonView jsonValue)
     m_attributesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("clientToken"))
-  {
-    m_clientToken = jsonValue.GetString("clientToken");
-
-    m_clientTokenHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("expirationTime"))
-  {
-    m_expirationTime = jsonValue.GetString("expirationTime");
-
-    m_expirationTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("phoneNumber"))
-  {
-    m_phoneNumber = jsonValue.GetString("phoneNumber");
-
-    m_phoneNumberHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue DialRequest::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_phoneNumberHasBeenSet)
+  {
+   payload.WithString("phoneNumber", m_phoneNumber);
+
+  }
+
+  if(m_expirationTimeHasBeenSet)
+  {
+   payload.WithString("expirationTime", m_expirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
   if(m_attributesHasBeenSet)
   {
@@ -83,23 +100,6 @@ JsonValue DialRequest::Jsonize() const
      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
    }
    payload.WithObject("attributes", std::move(attributesJsonMap));
-
-  }
-
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
-  if(m_expirationTimeHasBeenSet)
-  {
-   payload.WithString("expirationTime", m_expirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_phoneNumberHasBeenSet)
-  {
-   payload.WithString("phoneNumber", m_phoneNumber);
 
   }
 

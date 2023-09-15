@@ -84,246 +84,238 @@ namespace Model
 
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource.</p>
      */
     inline const Aws::String& GetComputeName() const{ return m_computeName; }
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource.</p>
      */
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource.</p>
      */
     inline void SetComputeName(const Aws::String& value) { m_computeNameHasBeenSet = true; m_computeName = value; }
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource.</p>
      */
     inline void SetComputeName(Aws::String&& value) { m_computeNameHasBeenSet = true; m_computeName = std::move(value); }
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource.</p>
      */
     inline void SetComputeName(const char* value) { m_computeNameHasBeenSet = true; m_computeName.assign(value); }
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource.</p>
      */
     inline RegisterComputeRequest& WithComputeName(const Aws::String& value) { SetComputeName(value); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource.</p>
      */
     inline RegisterComputeRequest& WithComputeName(Aws::String&& value) { SetComputeName(std::move(value)); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with the compute resource registered
-     * to your fleet.</p>
+     * <p>A descriptive label for the compute resource.</p>
      */
     inline RegisterComputeRequest& WithComputeName(const char* value) { SetComputeName(value); return *this;}
 
 
     /**
-     * <p>The path to the TLS certificate on your compute resource. The path and
-     * certificate are not validated by Amazon GameLift.</p>
+     * <p>The path to a TLS certificate on your compute resource. Amazon GameLift
+     * doesn't validate the path and certificate.</p>
      */
     inline const Aws::String& GetCertificatePath() const{ return m_certificatePath; }
 
     /**
-     * <p>The path to the TLS certificate on your compute resource. The path and
-     * certificate are not validated by Amazon GameLift.</p>
+     * <p>The path to a TLS certificate on your compute resource. Amazon GameLift
+     * doesn't validate the path and certificate.</p>
      */
     inline bool CertificatePathHasBeenSet() const { return m_certificatePathHasBeenSet; }
 
     /**
-     * <p>The path to the TLS certificate on your compute resource. The path and
-     * certificate are not validated by Amazon GameLift.</p>
+     * <p>The path to a TLS certificate on your compute resource. Amazon GameLift
+     * doesn't validate the path and certificate.</p>
      */
     inline void SetCertificatePath(const Aws::String& value) { m_certificatePathHasBeenSet = true; m_certificatePath = value; }
 
     /**
-     * <p>The path to the TLS certificate on your compute resource. The path and
-     * certificate are not validated by Amazon GameLift.</p>
+     * <p>The path to a TLS certificate on your compute resource. Amazon GameLift
+     * doesn't validate the path and certificate.</p>
      */
     inline void SetCertificatePath(Aws::String&& value) { m_certificatePathHasBeenSet = true; m_certificatePath = std::move(value); }
 
     /**
-     * <p>The path to the TLS certificate on your compute resource. The path and
-     * certificate are not validated by Amazon GameLift.</p>
+     * <p>The path to a TLS certificate on your compute resource. Amazon GameLift
+     * doesn't validate the path and certificate.</p>
      */
     inline void SetCertificatePath(const char* value) { m_certificatePathHasBeenSet = true; m_certificatePath.assign(value); }
 
     /**
-     * <p>The path to the TLS certificate on your compute resource. The path and
-     * certificate are not validated by Amazon GameLift.</p>
+     * <p>The path to a TLS certificate on your compute resource. Amazon GameLift
+     * doesn't validate the path and certificate.</p>
      */
     inline RegisterComputeRequest& WithCertificatePath(const Aws::String& value) { SetCertificatePath(value); return *this;}
 
     /**
-     * <p>The path to the TLS certificate on your compute resource. The path and
-     * certificate are not validated by Amazon GameLift.</p>
+     * <p>The path to a TLS certificate on your compute resource. Amazon GameLift
+     * doesn't validate the path and certificate.</p>
      */
     inline RegisterComputeRequest& WithCertificatePath(Aws::String&& value) { SetCertificatePath(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the TLS certificate on your compute resource. The path and
-     * certificate are not validated by Amazon GameLift.</p>
+     * <p>The path to a TLS certificate on your compute resource. Amazon GameLift
+     * doesn't validate the path and certificate.</p>
      */
     inline RegisterComputeRequest& WithCertificatePath(const char* value) { SetCertificatePath(value); return *this;}
 
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline RegisterComputeRequest& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline RegisterComputeRequest& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline RegisterComputeRequest& WithDnsName(const char* value) { SetDnsName(value); return *this;}
 
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline RegisterComputeRequest& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline RegisterComputeRequest& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
-     * or IP address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires either a DNS
+     * name or IP address.</p>
      */
     inline RegisterComputeRequest& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
 
     /**
-     * <p>The name of the custom location you added to the fleet you are registering
-     * this compute resource to.</p>
+     * <p>The name of a custom location to associate with the compute resource being
+     * registered. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The name of the custom location you added to the fleet you are registering
-     * this compute resource to.</p>
+     * <p>The name of a custom location to associate with the compute resource being
+     * registered. </p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The name of the custom location you added to the fleet you are registering
-     * this compute resource to.</p>
+     * <p>The name of a custom location to associate with the compute resource being
+     * registered. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The name of the custom location you added to the fleet you are registering
-     * this compute resource to.</p>
+     * <p>The name of a custom location to associate with the compute resource being
+     * registered. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The name of the custom location you added to the fleet you are registering
-     * this compute resource to.</p>
+     * <p>The name of a custom location to associate with the compute resource being
+     * registered. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>The name of the custom location you added to the fleet you are registering
-     * this compute resource to.</p>
+     * <p>The name of a custom location to associate with the compute resource being
+     * registered. </p>
      */
     inline RegisterComputeRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The name of the custom location you added to the fleet you are registering
-     * this compute resource to.</p>
+     * <p>The name of a custom location to associate with the compute resource being
+     * registered. </p>
      */
     inline RegisterComputeRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the custom location you added to the fleet you are registering
-     * this compute resource to.</p>
+     * <p>The name of a custom location to associate with the compute resource being
+     * registered. </p>
      */
     inline RegisterComputeRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 

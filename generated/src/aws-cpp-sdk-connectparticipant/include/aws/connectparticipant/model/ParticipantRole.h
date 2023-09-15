@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     AGENT,
     CUSTOMER,
-    SYSTEM
+    SYSTEM,
+    CUSTOM_BOT
   };
 
 namespace ParticipantRoleMapper

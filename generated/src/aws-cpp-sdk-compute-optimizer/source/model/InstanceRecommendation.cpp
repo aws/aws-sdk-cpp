@@ -39,7 +39,10 @@ InstanceRecommendation::InstanceRecommendation() :
     m_instanceState(InstanceState::NOT_SET),
     m_instanceStateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_externalMetricStatusHasBeenSet(false)
+    m_externalMetricStatusHasBeenSet(false),
+    m_currentInstanceGpuInfoHasBeenSet(false),
+    m_idle(InstanceIdle::NOT_SET),
+    m_idleHasBeenSet(false)
 {
 }
 
@@ -64,7 +67,10 @@ InstanceRecommendation::InstanceRecommendation(JsonView jsonValue) :
     m_instanceState(InstanceState::NOT_SET),
     m_instanceStateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_externalMetricStatusHasBeenSet(false)
+    m_externalMetricStatusHasBeenSet(false),
+    m_currentInstanceGpuInfoHasBeenSet(false),
+    m_idle(InstanceIdle::NOT_SET),
+    m_idleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -208,6 +214,20 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     m_externalMetricStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("currentInstanceGpuInfo"))
+  {
+    m_currentInstanceGpuInfo = jsonValue.GetObject("currentInstanceGpuInfo");
+
+    m_currentInstanceGpuInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("idle"))
+  {
+    m_idle = InstanceIdleMapper::GetInstanceIdleForName(jsonValue.GetString("idle"));
+
+    m_idleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -341,6 +361,17 @@ JsonValue InstanceRecommendation::Jsonize() const
   {
    payload.WithObject("externalMetricStatus", m_externalMetricStatus.Jsonize());
 
+  }
+
+  if(m_currentInstanceGpuInfoHasBeenSet)
+  {
+   payload.WithObject("currentInstanceGpuInfo", m_currentInstanceGpuInfo.Jsonize());
+
+  }
+
+  if(m_idleHasBeenSet)
+  {
+   payload.WithString("idle", InstanceIdleMapper::GetNameForInstanceIdle(m_idle));
   }
 
   return payload;

@@ -179,7 +179,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>Organizations User
+     * all features in your organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline const OrganizationFeatureSet& GetFeatureSet() const{ return m_featureSet; }
@@ -190,7 +190,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>Organizations User
+     * all features in your organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline bool FeatureSetHasBeenSet() const { return m_featureSetHasBeenSet; }
@@ -201,7 +201,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>Organizations User
+     * all features in your organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline void SetFeatureSet(const OrganizationFeatureSet& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
@@ -212,7 +212,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>Organizations User
+     * all features in your organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline void SetFeatureSet(OrganizationFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = std::move(value); }
@@ -223,7 +223,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>Organizations User
+     * all features in your organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline Organization& WithFeatureSet(const OrganizationFeatureSet& value) { SetFeatureSet(value); return *this;}
@@ -234,7 +234,7 @@ namespace Model
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-     * All Features in Your Organization</a> in the <i>Organizations User
+     * all features in your organization</a> in the <i>Organizations User
      * Guide</i>.</p>
      */
     inline Organization& WithFeatureSet(OrganizationFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}

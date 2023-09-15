@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connectcampaigns/model/CampaignSummary.h>
 #include <utility>
 
@@ -40,28 +40,6 @@ namespace Model
 
 
     
-    inline const Aws::Vector<CampaignSummary>& GetCampaignSummaryList() const{ return m_campaignSummaryList; }
-
-    
-    inline void SetCampaignSummaryList(const Aws::Vector<CampaignSummary>& value) { m_campaignSummaryList = value; }
-
-    
-    inline void SetCampaignSummaryList(Aws::Vector<CampaignSummary>&& value) { m_campaignSummaryList = std::move(value); }
-
-    
-    inline ListCampaignsResult& WithCampaignSummaryList(const Aws::Vector<CampaignSummary>& value) { SetCampaignSummaryList(value); return *this;}
-
-    
-    inline ListCampaignsResult& WithCampaignSummaryList(Aws::Vector<CampaignSummary>&& value) { SetCampaignSummaryList(std::move(value)); return *this;}
-
-    
-    inline ListCampaignsResult& AddCampaignSummaryList(const CampaignSummary& value) { m_campaignSummaryList.push_back(value); return *this; }
-
-    
-    inline ListCampaignsResult& AddCampaignSummaryList(CampaignSummary&& value) { m_campaignSummaryList.push_back(std::move(value)); return *this; }
-
-
-    
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     
@@ -81,6 +59,28 @@ namespace Model
 
     
     inline ListCampaignsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    
+    inline const Aws::Vector<CampaignSummary>& GetCampaignSummaryList() const{ return m_campaignSummaryList; }
+
+    
+    inline void SetCampaignSummaryList(const Aws::Vector<CampaignSummary>& value) { m_campaignSummaryList = value; }
+
+    
+    inline void SetCampaignSummaryList(Aws::Vector<CampaignSummary>&& value) { m_campaignSummaryList = std::move(value); }
+
+    
+    inline ListCampaignsResult& WithCampaignSummaryList(const Aws::Vector<CampaignSummary>& value) { SetCampaignSummaryList(value); return *this;}
+
+    
+    inline ListCampaignsResult& WithCampaignSummaryList(Aws::Vector<CampaignSummary>&& value) { SetCampaignSummaryList(std::move(value)); return *this;}
+
+    
+    inline ListCampaignsResult& AddCampaignSummaryList(const CampaignSummary& value) { m_campaignSummaryList.push_back(value); return *this; }
+
+    
+    inline ListCampaignsResult& AddCampaignSummaryList(CampaignSummary&& value) { m_campaignSummaryList.push_back(std::move(value)); return *this; }
 
 
     
@@ -106,9 +106,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<CampaignSummary> m_campaignSummaryList;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<CampaignSummary> m_campaignSummaryList;
 
     Aws::String m_requestId;
   };

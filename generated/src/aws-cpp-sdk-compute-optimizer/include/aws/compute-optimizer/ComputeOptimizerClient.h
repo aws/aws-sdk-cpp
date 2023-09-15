@@ -313,6 +313,39 @@ namespace ComputeOptimizer
         }
 
         /**
+         * <p> Export optimization recommendations for your licenses. </p>
+         * <p>Recommendations are exported in a comma-separated values (CSV) file, and its
+         * metadata in a JavaScript Object Notation (JSON) file, to an existing Amazon
+         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+         * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
+         * have only one license export job in progress per Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLicenseRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportLicenseRecommendationsOutcome ExportLicenseRecommendations(const Model::ExportLicenseRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportLicenseRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExportLicenseRecommendationsRequestT = Model::ExportLicenseRecommendationsRequest>
+        Model::ExportLicenseRecommendationsOutcomeCallable ExportLicenseRecommendationsCallable(const ExportLicenseRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&ComputeOptimizerClient::ExportLicenseRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for ExportLicenseRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExportLicenseRecommendationsRequestT = Model::ExportLicenseRecommendationsRequest>
+        void ExportLicenseRecommendationsAsync(const ExportLicenseRecommendationsRequestT& request, const ExportLicenseRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComputeOptimizerClient::ExportLicenseRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Returns Auto Scaling group recommendations.</p> <p>Compute Optimizer
          * generates recommendations for Amazon EC2 Auto Scaling groups that meet a
          * specific set of requirements. For more information, see the <a
@@ -609,6 +642,37 @@ namespace ComputeOptimizer
         void GetLambdaFunctionRecommendationsAsync(const GetLambdaFunctionRecommendationsRequestT& request, const GetLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetLambdaFunctionRecommendations, request, handler, context);
+        }
+
+        /**
+         * <p>Returns license recommendations for Amazon EC2 instances that run on a
+         * specific license.</p> <p>Compute Optimizer generates recommendations for
+         * licenses that meet a specific set of requirements. For more information, see the
+         * <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+         * resources and requirements</a> in the <i>Compute Optimizer User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLicenseRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLicenseRecommendationsOutcome GetLicenseRecommendations(const Model::GetLicenseRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLicenseRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetLicenseRecommendationsRequestT = Model::GetLicenseRecommendationsRequest>
+        Model::GetLicenseRecommendationsOutcomeCallable GetLicenseRecommendationsCallable(const GetLicenseRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&ComputeOptimizerClient::GetLicenseRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for GetLicenseRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetLicenseRecommendationsRequestT = Model::GetLicenseRecommendationsRequest>
+        void GetLicenseRecommendationsAsync(const GetLicenseRecommendationsRequestT& request, const GetLicenseRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComputeOptimizerClient::GetLicenseRecommendations, request, handler, context);
         }
 
         /**

@@ -11,6 +11,7 @@
 #include <aws/fsx/model/UpdateFileSystemLustreConfiguration.h>
 #include <aws/fsx/model/UpdateFileSystemOntapConfiguration.h>
 #include <aws/fsx/model/UpdateFileSystemOpenZFSConfiguration.h>
+#include <aws/fsx/model/StorageType.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -403,6 +404,25 @@ namespace Model
      */
     inline UpdateFileSystemRequest& WithOpenZFSConfiguration(UpdateFileSystemOpenZFSConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const StorageType& GetStorageType() const{ return m_storageType; }
+
+    
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    
+    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    
+    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    
+    inline UpdateFileSystemRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
+
+    
+    inline UpdateFileSystemRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fileSystemId;
@@ -425,6 +445,9 @@ namespace Model
 
     UpdateFileSystemOpenZFSConfiguration m_openZFSConfiguration;
     bool m_openZFSConfigurationHasBeenSet = false;
+
+    StorageType m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

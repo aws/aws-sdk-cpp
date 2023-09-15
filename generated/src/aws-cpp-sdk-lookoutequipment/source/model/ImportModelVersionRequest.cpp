@@ -21,7 +21,9 @@ ImportModelVersionRequest::ImportModelVersionRequest() :
     m_clientTokenHasBeenSet(true),
     m_roleArnHasBeenSet(false),
     m_serverSideKmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_inferenceDataImportStrategy(InferenceDataImportStrategy::NOT_SET),
+    m_inferenceDataImportStrategyHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,11 @@ Aws::String ImportModelVersionRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_inferenceDataImportStrategyHasBeenSet)
+  {
+   payload.WithString("InferenceDataImportStrategy", InferenceDataImportStrategyMapper::GetNameForInferenceDataImportStrategy(m_inferenceDataImportStrategy));
   }
 
   return payload.View().WriteReadable();

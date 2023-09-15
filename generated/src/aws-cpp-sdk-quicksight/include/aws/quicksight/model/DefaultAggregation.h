@@ -21,7 +21,12 @@ namespace Model
     MIN,
     COUNT,
     DISTINCT_COUNT,
-    AVERAGE
+    AVERAGE,
+    MEDIAN,
+    STDEV,
+    STDEVP,
+    VAR,
+    VARP
   };
 
 namespace DefaultAggregationMapper

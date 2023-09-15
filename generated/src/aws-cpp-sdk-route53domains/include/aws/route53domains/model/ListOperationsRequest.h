@@ -303,32 +303,32 @@ namespace Model
 
 
     /**
-     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     * <p> The sort order for returned values, either ascending or descending. </p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     * <p> The sort order for returned values, either ascending or descending. </p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
-     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     * <p> The sort order for returned values, either ascending or descending. </p>
      */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     * <p> The sort order for returned values, either ascending or descending. </p>
      */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     * <p> The sort order for returned values, either ascending or descending. </p>
      */
     inline ListOperationsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     * <p> The sort order for returned values, either ascending or descending. </p>
      */
     inline ListOperationsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 

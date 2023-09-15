@@ -80,22 +80,22 @@ namespace Model
 
 
     /**
-     * <p>The total number of records that did not get processed,</p>
+     * <p>The total number of records that did not get processed.</p>
      */
     inline int GetRecordsNotProcessed() const{ return m_recordsNotProcessed; }
 
     /**
-     * <p>The total number of records that did not get processed,</p>
+     * <p>The total number of records that did not get processed.</p>
      */
     inline bool RecordsNotProcessedHasBeenSet() const { return m_recordsNotProcessedHasBeenSet; }
 
     /**
-     * <p>The total number of records that did not get processed,</p>
+     * <p>The total number of records that did not get processed.</p>
      */
     inline void SetRecordsNotProcessed(int value) { m_recordsNotProcessedHasBeenSet = true; m_recordsNotProcessed = value; }
 
     /**
-     * <p>The total number of records that did not get processed,</p>
+     * <p>The total number of records that did not get processed.</p>
      */
     inline JobMetrics& WithRecordsNotProcessed(int value) { SetRecordsNotProcessed(value); return *this;}
 

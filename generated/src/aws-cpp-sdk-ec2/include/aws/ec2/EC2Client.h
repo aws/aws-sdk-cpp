@@ -3556,10 +3556,12 @@ namespace EC2
         }
 
         /**
-         * <p>Creates a subnet CIDR reservation. For information about subnet CIDR
-         * reservations, see <a
+         * <p>Creates a subnet CIDR reservation. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
-         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User
+         * CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i> and
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign
+         * prefixes to network interfaces</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">AWS
          * API Reference</a></p>
@@ -5053,11 +5055,17 @@ namespace EC2
         }
 
         /**
-         * <p>Deletes one or more versions of a launch template. You cannot delete the
-         * default version of a launch template; you must first assign a different version
-         * as the default. If the default version is the only version for the launch
-         * template, you must delete the entire launch template using
-         * <a>DeleteLaunchTemplate</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes one or more versions of a launch template.</p> <p>You can't delete
+         * the default version of a launch template; you must first assign a different
+         * version as the default. If the default version is the only version for the
+         * launch template, you must delete the entire launch template using
+         * <a>DeleteLaunchTemplate</a>.</p> <p>You can delete up to 200 launch template
+         * versions in a single request. To delete more than 200 versions in a single
+         * request, use <a>DeleteLaunchTemplate</a>, which deletes the launch template and
+         * all of its versions.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-launch-template-versions.html#delete-launch-template-version">Delete
+         * a launch template version</a> in the <i>EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions">AWS
          * API Reference</a></p>
          */
@@ -11251,6 +11259,43 @@ namespace EC2
         }
 
         /**
+         * <p>Disables <i>block public access for AMIs</i> at the account level in the
+         * specified Amazon Web Services Region. This removes the <i>block public
+         * access</i> restriction from your account. With the restriction removed, you can
+         * publicly share your AMIs in the specified Amazon Web Services Region.</p> <p>The
+         * API can take up to 10 minutes to configure this setting. During this time, if
+         * you run <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+         * the response will be <code>block-new-sharing</code>. When the API has completed
+         * the configuration, the response will be <code>unblocked</code>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * public access to your AMIs</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableImageBlockPublicAccessOutcome DisableImageBlockPublicAccess(const Model::DisableImageBlockPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableImageBlockPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableImageBlockPublicAccessRequestT = Model::DisableImageBlockPublicAccessRequest>
+        Model::DisableImageBlockPublicAccessOutcomeCallable DisableImageBlockPublicAccessCallable(const DisableImageBlockPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisableImageBlockPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for DisableImageBlockPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableImageBlockPublicAccessRequestT = Model::DisableImageBlockPublicAccessRequest>
+        void DisableImageBlockPublicAccessAsync(const DisableImageBlockPublicAccessRequestT& request, const DisableImageBlockPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisableImageBlockPublicAccess, request, handler, context);
+        }
+
+        /**
          * <p>Cancels the deprecation of the specified AMI.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
@@ -12004,6 +12049,42 @@ namespace EC2
         }
 
         /**
+         * <p>Enables <i>block public access for AMIs</i> at the account level in the
+         * specified Amazon Web Services Region. This prevents the public sharing of your
+         * AMIs. However, if you already have public AMIs, they will remain publicly
+         * available.</p> <p>The API can take up to 10 minutes to configure this setting.
+         * During this time, if you run <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
+         * the response will be <code>unblocked</code>. When the API has completed the
+         * configuration, the response will be <code>block-new-sharing</code>.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * public access to your AMIs</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableImageBlockPublicAccessOutcome EnableImageBlockPublicAccess(const Model::EnableImageBlockPublicAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableImageBlockPublicAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableImageBlockPublicAccessRequestT = Model::EnableImageBlockPublicAccessRequest>
+        Model::EnableImageBlockPublicAccessOutcomeCallable EnableImageBlockPublicAccessCallable(const EnableImageBlockPublicAccessRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::EnableImageBlockPublicAccess, request);
+        }
+
+        /**
+         * An Async wrapper for EnableImageBlockPublicAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableImageBlockPublicAccessRequestT = Model::EnableImageBlockPublicAccessRequest>
+        void EnableImageBlockPublicAccessAsync(const EnableImageBlockPublicAccessRequestT& request, const EnableImageBlockPublicAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::EnableImageBlockPublicAccess, request, handler, context);
+        }
+
+        /**
          * <p>Enables deprecation of the specified AMI at the specified date and time.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
@@ -12754,6 +12835,36 @@ namespace EC2
         void GetHostReservationPurchasePreviewAsync(const GetHostReservationPurchasePreviewRequestT& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::GetHostReservationPurchasePreview, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the current state of <i>block public access for AMIs</i> at the account
+         * level in the specified Amazon Web Services Region.</p> <p>For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis">Block
+         * public access to your AMIs</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImageBlockPublicAccessStateOutcome GetImageBlockPublicAccessState(const Model::GetImageBlockPublicAccessStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetImageBlockPublicAccessState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetImageBlockPublicAccessStateRequestT = Model::GetImageBlockPublicAccessStateRequest>
+        Model::GetImageBlockPublicAccessStateOutcomeCallable GetImageBlockPublicAccessStateCallable(const GetImageBlockPublicAccessStateRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetImageBlockPublicAccessState, request);
+        }
+
+        /**
+         * An Async wrapper for GetImageBlockPublicAccessState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetImageBlockPublicAccessStateRequestT = Model::GetImageBlockPublicAccessStateRequest>
+        void GetImageBlockPublicAccessStateAsync(const GetImageBlockPublicAccessStateRequestT& request, const GetImageBlockPublicAccessStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetImageBlockPublicAccessState, request, handler, context);
         }
 
         /**

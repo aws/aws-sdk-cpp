@@ -188,7 +188,7 @@ CreateBatchLoadTaskOutcome TimestreamWriteClient::CreateBatchLoadTask(const Crea
   return TracingUtils::MakeCallWithTiming<CreateBatchLoadTaskOutcome>(
     [&]()-> CreateBatchLoadTaskOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -257,7 +257,7 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
   return TracingUtils::MakeCallWithTiming<CreateDatabaseOutcome>(
     [&]()-> CreateDatabaseOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -326,7 +326,7 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
   return TracingUtils::MakeCallWithTiming<CreateTableOutcome>(
     [&]()-> CreateTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -395,7 +395,7 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
   return TracingUtils::MakeCallWithTiming<DeleteDatabaseOutcome>(
     [&]()-> DeleteDatabaseOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -464,7 +464,7 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
   return TracingUtils::MakeCallWithTiming<DeleteTableOutcome>(
     [&]()-> DeleteTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -533,7 +533,7 @@ DescribeBatchLoadTaskOutcome TimestreamWriteClient::DescribeBatchLoadTask(const 
   return TracingUtils::MakeCallWithTiming<DescribeBatchLoadTaskOutcome>(
     [&]()-> DescribeBatchLoadTaskOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -602,7 +602,7 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
   return TracingUtils::MakeCallWithTiming<DescribeDatabaseOutcome>(
     [&]()-> DescribeDatabaseOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -697,7 +697,7 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
   return TracingUtils::MakeCallWithTiming<DescribeTableOutcome>(
     [&]()-> DescribeTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -766,7 +766,7 @@ ListBatchLoadTasksOutcome TimestreamWriteClient::ListBatchLoadTasks(const ListBa
   return TracingUtils::MakeCallWithTiming<ListBatchLoadTasksOutcome>(
     [&]()-> ListBatchLoadTasksOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -835,7 +835,7 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
   return TracingUtils::MakeCallWithTiming<ListDatabasesOutcome>(
     [&]()-> ListDatabasesOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -904,7 +904,7 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
   return TracingUtils::MakeCallWithTiming<ListTablesOutcome>(
     [&]()-> ListTablesOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -973,7 +973,7 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1042,7 +1042,7 @@ ResumeBatchLoadTaskOutcome TimestreamWriteClient::ResumeBatchLoadTask(const Resu
   return TracingUtils::MakeCallWithTiming<ResumeBatchLoadTaskOutcome>(
     [&]()-> ResumeBatchLoadTaskOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1111,7 +1111,7 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1180,7 +1180,7 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1249,7 +1249,7 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
   return TracingUtils::MakeCallWithTiming<UpdateDatabaseOutcome>(
     [&]()-> UpdateDatabaseOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1318,7 +1318,7 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
   return TracingUtils::MakeCallWithTiming<UpdateTableOutcome>(
     [&]()-> UpdateTableOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";
@@ -1387,7 +1387,7 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
   return TracingUtils::MakeCallWithTiming<WriteRecordsOutcome>(
     [&]()-> WriteRecordsOutcome {
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
-      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
       if (enableEndpointDiscovery)
       {
           Aws::String endpointKey = "Shared";

@@ -39,9 +39,9 @@ namespace Model
      * list tags. You can get this information by using the Service Quotas console, or
      * by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * AWS CLI command or the <a
+     * CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * AWS API operation.</p>
+     * Amazon Web Services API operation.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
@@ -50,9 +50,9 @@ namespace Model
      * list tags. You can get this information by using the Service Quotas console, or
      * by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * AWS CLI command or the <a
+     * CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * AWS API operation.</p>
+     * Amazon Web Services API operation.</p>
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
@@ -61,9 +61,9 @@ namespace Model
      * list tags. You can get this information by using the Service Quotas console, or
      * by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * AWS CLI command or the <a
+     * CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * AWS API operation.</p>
+     * Amazon Web Services API operation.</p>
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
@@ -72,9 +72,9 @@ namespace Model
      * list tags. You can get this information by using the Service Quotas console, or
      * by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * AWS CLI command or the <a
+     * CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * AWS API operation.</p>
+     * Amazon Web Services API operation.</p>
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
@@ -83,9 +83,9 @@ namespace Model
      * list tags. You can get this information by using the Service Quotas console, or
      * by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * AWS CLI command or the <a
+     * CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * AWS API operation.</p>
+     * Amazon Web Services API operation.</p>
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
@@ -94,9 +94,9 @@ namespace Model
      * list tags. You can get this information by using the Service Quotas console, or
      * by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * AWS CLI command or the <a
+     * CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * AWS API operation.</p>
+     * Amazon Web Services API operation.</p>
      */
     inline ListTagsForResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
@@ -105,9 +105,9 @@ namespace Model
      * list tags. You can get this information by using the Service Quotas console, or
      * by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * AWS CLI command or the <a
+     * CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * AWS API operation.</p>
+     * Amazon Web Services API operation.</p>
      */
     inline ListTagsForResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
@@ -116,9 +116,9 @@ namespace Model
      * list tags. You can get this information by using the Service Quotas console, or
      * by listing the quotas using the <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a>
-     * AWS CLI command or the <a
+     * CLI command or the <a
      * href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a>
-     * AWS API operation.</p>
+     * Amazon Web Services API operation.</p>
      */
     inline ListTagsForResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 

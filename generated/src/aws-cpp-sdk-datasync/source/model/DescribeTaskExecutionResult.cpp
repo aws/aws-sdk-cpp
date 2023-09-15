@@ -24,7 +24,11 @@ DescribeTaskExecutionResult::DescribeTaskExecutionResult() :
     m_filesTransferred(0),
     m_bytesWritten(0),
     m_bytesTransferred(0),
-    m_bytesCompressed(0)
+    m_bytesCompressed(0),
+    m_filesDeleted(0),
+    m_filesSkipped(0),
+    m_filesVerified(0),
+    m_estimatedFilesToDelete(0)
 {
 }
 
@@ -35,7 +39,11 @@ DescribeTaskExecutionResult::DescribeTaskExecutionResult(const Aws::AmazonWebSer
     m_filesTransferred(0),
     m_bytesWritten(0),
     m_bytesTransferred(0),
-    m_bytesCompressed(0)
+    m_bytesCompressed(0),
+    m_filesDeleted(0),
+    m_filesSkipped(0),
+    m_filesVerified(0),
+    m_estimatedFilesToDelete(0)
 {
   *this = result;
 }
@@ -124,6 +132,42 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
   if(jsonValue.ValueExists("BytesCompressed"))
   {
     m_bytesCompressed = jsonValue.GetInt64("BytesCompressed");
+
+  }
+
+  if(jsonValue.ValueExists("TaskReportConfig"))
+  {
+    m_taskReportConfig = jsonValue.GetObject("TaskReportConfig");
+
+  }
+
+  if(jsonValue.ValueExists("FilesDeleted"))
+  {
+    m_filesDeleted = jsonValue.GetInt64("FilesDeleted");
+
+  }
+
+  if(jsonValue.ValueExists("FilesSkipped"))
+  {
+    m_filesSkipped = jsonValue.GetInt64("FilesSkipped");
+
+  }
+
+  if(jsonValue.ValueExists("FilesVerified"))
+  {
+    m_filesVerified = jsonValue.GetInt64("FilesVerified");
+
+  }
+
+  if(jsonValue.ValueExists("ReportResult"))
+  {
+    m_reportResult = jsonValue.GetObject("ReportResult");
+
+  }
+
+  if(jsonValue.ValueExists("EstimatedFilesToDelete"))
+  {
+    m_estimatedFilesToDelete = jsonValue.GetInt64("EstimatedFilesToDelete");
 
   }
 

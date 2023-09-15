@@ -667,8 +667,9 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Disables an Amazon Web Services account within the Organization as the
-         * GuardDuty delegated administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the existing GuardDuty delegated administrator of the organization.
+         * Only the organization's management account can run this API
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -745,8 +746,8 @@ namespace GuardDuty
          * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
          * API. </p> <p>With <code>autoEnableOrganizationMembers</code> configuration for
          * your organization set to <code>ALL</code>, you'll receive an error if you
-         * attempt to disassociate a member account before removing them from your Amazon
-         * Web Services organization.</p><p><h3>See Also:</h3>   <a
+         * attempt to disassociate a member account before removing them from your
+         * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateMembers">AWS
          * API Reference</a></p>
          */
@@ -771,8 +772,9 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Enables an Amazon Web Services account within the organization as the
-         * GuardDuty delegated administrator.</p><p><h3>See Also:</h3>   <a
+         * <p>Designates an Amazon Web Services account within the organization as your
+         * GuardDuty delegated administrator. Only the organization's management account
+         * can run this API operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -797,8 +799,11 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Provides the details for the GuardDuty administrator account associated with
-         * the current GuardDuty member account.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides the details of the GuardDuty administrator account associated with
+         * the current GuardDuty member account.</p>  <p>If the organization's
+         * management account or a delegated administrator runs this API, it will return
+         * success (<code>HTTP 200</code>) but no content.</p> <p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetAdministratorAccount">AWS
          * API Reference</a></p>
          */
@@ -1184,16 +1189,16 @@ namespace GuardDuty
         /**
          * <p>Invites Amazon Web Services accounts to become members of an organization
          * administered by the Amazon Web Services account that invokes this API. If you
-         * are using Amazon Web Services Organizations to manager your GuardDuty
-         * environment, this step is not needed. For more information, see <a
+         * are using organizations to manager your GuardDuty environment, this step is not
+         * needed. For more information, see <a
          * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing
-         * accounts with Amazon Web Services Organizations</a>.</p> <p>To invite Amazon Web
-         * Services accounts, the first step is to ensure that GuardDuty has been enabled
-         * in the potential member accounts. You can now invoke this API to add accounts by
-         * invitation. The invited accounts can either accept or decline the invitation
-         * from their GuardDuty accounts. Each invited Amazon Web Services account can
-         * choose to accept the invitation from only one Amazon Web Services account. For
-         * more information, see <a
+         * accounts with organizations</a>.</p> <p>To invite Amazon Web Services accounts,
+         * the first step is to ensure that GuardDuty has been enabled in the potential
+         * member accounts. You can now invoke this API to add accounts by invitation. The
+         * invited accounts can either accept or decline the invitation from their
+         * GuardDuty accounts. Each invited Amazon Web Services account can choose to
+         * accept the invitation from only one Amazon Web Services account. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Managing
          * GuardDuty accounts by invitation</a>.</p> <p>After the invite has been accepted
          * and you choose to disassociate a member account (by using <a
@@ -1417,8 +1422,9 @@ namespace GuardDuty
         }
 
         /**
-         * <p>Lists the accounts configured as GuardDuty delegated
-         * administrators.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the accounts configured as GuardDuty delegated administrators. Only the
+         * organization's management account can run this API operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
          */
@@ -1470,7 +1476,7 @@ namespace GuardDuty
 
         /**
          * <p>Lists tags for a resource. Tagging is currently supported for detectors,
-         * finding filters, IP sets, threat intel sets, publishing destination, with a
+         * finding filters, IP sets, threat intel sets, and publishing destination, with a
          * limit of 50 tags per resource. When invoked, this operation returns all assigned
          * tags for a given resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListTagsForResource">AWS
@@ -1855,10 +1861,11 @@ namespace GuardDuty
 
         /**
          * <p>Configures the delegated administrator account with the provided values. You
-         * must provide the value for either <code>autoEnableOrganizationMembers</code> or
-         * <code>autoEnable</code>. </p> <p>There might be regional differences because
-         * some data sources might not be available in all the Amazon Web Services Regions
-         * where GuardDuty is presently supported. For more information, see <a
+         * must provide a value for either <code>autoEnableOrganizationMembers</code> or
+         * <code>autoEnable</code>, but not both. </p> <p>There might be regional
+         * differences because some data sources might not be available in all the Amazon
+         * Web Services Regions where GuardDuty is presently supported. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
          * and endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateOrganizationConfiguration">AWS

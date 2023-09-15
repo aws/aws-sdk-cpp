@@ -9,6 +9,9 @@
 #include <aws/quicksight/model/Visibility.h>
 #include <aws/quicksight/model/TableCellStyle.h>
 #include <aws/quicksight/model/RowAlternateColorOptions.h>
+#include <aws/quicksight/model/PivotTableRowsLayout.h>
+#include <aws/quicksight/model/PivotTableRowsLabelOptions.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -367,6 +370,151 @@ namespace Model
      */
     inline PivotTableOptions& WithCollapsedRowDimensionsVisibility(Visibility&& value) { SetCollapsedRowDimensionsVisibility(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The layout for the row dimension headers of a pivot table. Choose one of the
+     * following options.</p> <ul> <li> <p> <code>TABULAR</code>: (Default) Each row
+     * field is displayed in a separate column.</p> </li> <li> <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column.
+     * Indentation is used to differentiate row headers of different fields.</p> </li>
+     * </ul>
+     */
+    inline const PivotTableRowsLayout& GetRowsLayout() const{ return m_rowsLayout; }
+
+    /**
+     * <p>The layout for the row dimension headers of a pivot table. Choose one of the
+     * following options.</p> <ul> <li> <p> <code>TABULAR</code>: (Default) Each row
+     * field is displayed in a separate column.</p> </li> <li> <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column.
+     * Indentation is used to differentiate row headers of different fields.</p> </li>
+     * </ul>
+     */
+    inline bool RowsLayoutHasBeenSet() const { return m_rowsLayoutHasBeenSet; }
+
+    /**
+     * <p>The layout for the row dimension headers of a pivot table. Choose one of the
+     * following options.</p> <ul> <li> <p> <code>TABULAR</code>: (Default) Each row
+     * field is displayed in a separate column.</p> </li> <li> <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column.
+     * Indentation is used to differentiate row headers of different fields.</p> </li>
+     * </ul>
+     */
+    inline void SetRowsLayout(const PivotTableRowsLayout& value) { m_rowsLayoutHasBeenSet = true; m_rowsLayout = value; }
+
+    /**
+     * <p>The layout for the row dimension headers of a pivot table. Choose one of the
+     * following options.</p> <ul> <li> <p> <code>TABULAR</code>: (Default) Each row
+     * field is displayed in a separate column.</p> </li> <li> <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column.
+     * Indentation is used to differentiate row headers of different fields.</p> </li>
+     * </ul>
+     */
+    inline void SetRowsLayout(PivotTableRowsLayout&& value) { m_rowsLayoutHasBeenSet = true; m_rowsLayout = std::move(value); }
+
+    /**
+     * <p>The layout for the row dimension headers of a pivot table. Choose one of the
+     * following options.</p> <ul> <li> <p> <code>TABULAR</code>: (Default) Each row
+     * field is displayed in a separate column.</p> </li> <li> <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column.
+     * Indentation is used to differentiate row headers of different fields.</p> </li>
+     * </ul>
+     */
+    inline PivotTableOptions& WithRowsLayout(const PivotTableRowsLayout& value) { SetRowsLayout(value); return *this;}
+
+    /**
+     * <p>The layout for the row dimension headers of a pivot table. Choose one of the
+     * following options.</p> <ul> <li> <p> <code>TABULAR</code>: (Default) Each row
+     * field is displayed in a separate column.</p> </li> <li> <p>
+     * <code>HIERARCHY</code>: All row fields are displayed in a single column.
+     * Indentation is used to differentiate row headers of different fields.</p> </li>
+     * </ul>
+     */
+    inline PivotTableOptions& WithRowsLayout(PivotTableRowsLayout&& value) { SetRowsLayout(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The options for the label that is located above the row headers. This option
+     * is only applicable when <code>RowsLayout</code> is set to
+     * <code>HIERARCHY</code>.</p>
+     */
+    inline const PivotTableRowsLabelOptions& GetRowsLabelOptions() const{ return m_rowsLabelOptions; }
+
+    /**
+     * <p>The options for the label that is located above the row headers. This option
+     * is only applicable when <code>RowsLayout</code> is set to
+     * <code>HIERARCHY</code>.</p>
+     */
+    inline bool RowsLabelOptionsHasBeenSet() const { return m_rowsLabelOptionsHasBeenSet; }
+
+    /**
+     * <p>The options for the label that is located above the row headers. This option
+     * is only applicable when <code>RowsLayout</code> is set to
+     * <code>HIERARCHY</code>.</p>
+     */
+    inline void SetRowsLabelOptions(const PivotTableRowsLabelOptions& value) { m_rowsLabelOptionsHasBeenSet = true; m_rowsLabelOptions = value; }
+
+    /**
+     * <p>The options for the label that is located above the row headers. This option
+     * is only applicable when <code>RowsLayout</code> is set to
+     * <code>HIERARCHY</code>.</p>
+     */
+    inline void SetRowsLabelOptions(PivotTableRowsLabelOptions&& value) { m_rowsLabelOptionsHasBeenSet = true; m_rowsLabelOptions = std::move(value); }
+
+    /**
+     * <p>The options for the label that is located above the row headers. This option
+     * is only applicable when <code>RowsLayout</code> is set to
+     * <code>HIERARCHY</code>.</p>
+     */
+    inline PivotTableOptions& WithRowsLabelOptions(const PivotTableRowsLabelOptions& value) { SetRowsLabelOptions(value); return *this;}
+
+    /**
+     * <p>The options for the label that is located above the row headers. This option
+     * is only applicable when <code>RowsLayout</code> is set to
+     * <code>HIERARCHY</code>.</p>
+     */
+    inline PivotTableOptions& WithRowsLabelOptions(PivotTableRowsLabelOptions&& value) { SetRowsLabelOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The default cell width of the pivot table.</p>
+     */
+    inline const Aws::String& GetDefaultCellWidth() const{ return m_defaultCellWidth; }
+
+    /**
+     * <p>The default cell width of the pivot table.</p>
+     */
+    inline bool DefaultCellWidthHasBeenSet() const { return m_defaultCellWidthHasBeenSet; }
+
+    /**
+     * <p>The default cell width of the pivot table.</p>
+     */
+    inline void SetDefaultCellWidth(const Aws::String& value) { m_defaultCellWidthHasBeenSet = true; m_defaultCellWidth = value; }
+
+    /**
+     * <p>The default cell width of the pivot table.</p>
+     */
+    inline void SetDefaultCellWidth(Aws::String&& value) { m_defaultCellWidthHasBeenSet = true; m_defaultCellWidth = std::move(value); }
+
+    /**
+     * <p>The default cell width of the pivot table.</p>
+     */
+    inline void SetDefaultCellWidth(const char* value) { m_defaultCellWidthHasBeenSet = true; m_defaultCellWidth.assign(value); }
+
+    /**
+     * <p>The default cell width of the pivot table.</p>
+     */
+    inline PivotTableOptions& WithDefaultCellWidth(const Aws::String& value) { SetDefaultCellWidth(value); return *this;}
+
+    /**
+     * <p>The default cell width of the pivot table.</p>
+     */
+    inline PivotTableOptions& WithDefaultCellWidth(Aws::String&& value) { SetDefaultCellWidth(std::move(value)); return *this;}
+
+    /**
+     * <p>The default cell width of the pivot table.</p>
+     */
+    inline PivotTableOptions& WithDefaultCellWidth(const char* value) { SetDefaultCellWidth(value); return *this;}
+
   private:
 
     PivotTableMetricPlacement m_metricPlacement;
@@ -398,6 +546,15 @@ namespace Model
 
     Visibility m_collapsedRowDimensionsVisibility;
     bool m_collapsedRowDimensionsVisibilityHasBeenSet = false;
+
+    PivotTableRowsLayout m_rowsLayout;
+    bool m_rowsLayoutHasBeenSet = false;
+
+    PivotTableRowsLabelOptions m_rowsLabelOptions;
+    bool m_rowsLabelOptionsHasBeenSet = false;
+
+    Aws::String m_defaultCellWidth;
+    bool m_defaultCellWidthHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/SelectedSheetsFilterScopeConfiguration.h>
+#include <aws/quicksight/model/AllSheetsFilterScopeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -69,10 +70,44 @@ namespace Model
      */
     inline FilterScopeConfiguration& WithSelectedSheets(SelectedSheetsFilterScopeConfiguration&& value) { SetSelectedSheets(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for applying a filter to all sheets.</p>
+     */
+    inline const AllSheetsFilterScopeConfiguration& GetAllSheets() const{ return m_allSheets; }
+
+    /**
+     * <p>The configuration for applying a filter to all sheets.</p>
+     */
+    inline bool AllSheetsHasBeenSet() const { return m_allSheetsHasBeenSet; }
+
+    /**
+     * <p>The configuration for applying a filter to all sheets.</p>
+     */
+    inline void SetAllSheets(const AllSheetsFilterScopeConfiguration& value) { m_allSheetsHasBeenSet = true; m_allSheets = value; }
+
+    /**
+     * <p>The configuration for applying a filter to all sheets.</p>
+     */
+    inline void SetAllSheets(AllSheetsFilterScopeConfiguration&& value) { m_allSheetsHasBeenSet = true; m_allSheets = std::move(value); }
+
+    /**
+     * <p>The configuration for applying a filter to all sheets.</p>
+     */
+    inline FilterScopeConfiguration& WithAllSheets(const AllSheetsFilterScopeConfiguration& value) { SetAllSheets(value); return *this;}
+
+    /**
+     * <p>The configuration for applying a filter to all sheets.</p>
+     */
+    inline FilterScopeConfiguration& WithAllSheets(AllSheetsFilterScopeConfiguration&& value) { SetAllSheets(std::move(value)); return *this;}
+
   private:
 
     SelectedSheetsFilterScopeConfiguration m_selectedSheets;
     bool m_selectedSheetsHasBeenSet = false;
+
+    AllSheetsFilterScopeConfiguration m_allSheets;
+    bool m_allSheetsHasBeenSet = false;
   };
 
 } // namespace Model

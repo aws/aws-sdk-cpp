@@ -162,6 +162,29 @@ ClientConfiguration::ClientConfiguration()
     region = Aws::String(Aws::Region::US_EAST_1);
 }
 
+ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &configuration)
+{
+    this->disableIMDS = configuration.shouldDisableIMDS;
+    setLegacyClientConfigurationParameters(*this);
+    retryStrategy = InitRetryStrategy();
+
+    if (!this->disableIMDS &&
+        region.empty() &&
+        Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_EC2_METADATA_DISABLED").c_str()) != "true")
+    {
+        auto client = Aws::Internal::GetEC2MetadataClient();
+        if (client)
+        {
+            region = client->GetCurrentRegion();
+        }
+    }
+    if (!region.empty())
+    {
+        return;
+    }
+    region = Aws::String(Aws::Region::US_EAST_1);
+}
+
 ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisableIMDS)
 {
     this->disableIMDS = shouldDisableIMDS;

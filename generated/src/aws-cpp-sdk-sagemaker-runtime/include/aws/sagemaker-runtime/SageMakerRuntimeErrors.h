@@ -48,8 +48,10 @@ enum class SageMakerRuntimeErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INTERNAL_DEPENDENCY= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_STREAM_FAILURE,
   MODEL,
-  MODEL_NOT_READY
+  MODEL_NOT_READY,
+  MODEL_STREAM
 };
 
 class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeError : public Aws::Client::AWSError<SageMakerRuntimeErrors>

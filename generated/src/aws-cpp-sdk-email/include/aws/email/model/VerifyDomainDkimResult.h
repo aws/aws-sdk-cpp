@@ -50,7 +50,7 @@ namespace Model
      * DKIM-sign email originating from that domain. (This only applies to domain
      * identities, not email address identities.)</p> <p>For more information about
      * creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDkimTokens() const{ return m_dkimTokens; }
@@ -65,7 +65,7 @@ namespace Model
      * DKIM-sign email originating from that domain. (This only applies to domain
      * identities, not email address identities.)</p> <p>For more information about
      * creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetDkimTokens(const Aws::Vector<Aws::String>& value) { m_dkimTokens = value; }
@@ -80,7 +80,7 @@ namespace Model
      * DKIM-sign email originating from that domain. (This only applies to domain
      * identities, not email address identities.)</p> <p>For more information about
      * creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline void SetDkimTokens(Aws::Vector<Aws::String>&& value) { m_dkimTokens = std::move(value); }
@@ -95,7 +95,7 @@ namespace Model
      * DKIM-sign email originating from that domain. (This only applies to domain
      * identities, not email address identities.)</p> <p>For more information about
      * creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline VerifyDomainDkimResult& WithDkimTokens(const Aws::Vector<Aws::String>& value) { SetDkimTokens(value); return *this;}
@@ -110,7 +110,7 @@ namespace Model
      * DKIM-sign email originating from that domain. (This only applies to domain
      * identities, not email address identities.)</p> <p>For more information about
      * creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline VerifyDomainDkimResult& WithDkimTokens(Aws::Vector<Aws::String>&& value) { SetDkimTokens(std::move(value)); return *this;}
@@ -125,7 +125,7 @@ namespace Model
      * DKIM-sign email originating from that domain. (This only applies to domain
      * identities, not email address identities.)</p> <p>For more information about
      * creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline VerifyDomainDkimResult& AddDkimTokens(const Aws::String& value) { m_dkimTokens.push_back(value); return *this; }
@@ -140,7 +140,7 @@ namespace Model
      * DKIM-sign email originating from that domain. (This only applies to domain
      * identities, not email address identities.)</p> <p>For more information about
      * creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline VerifyDomainDkimResult& AddDkimTokens(Aws::String&& value) { m_dkimTokens.push_back(std::move(value)); return *this; }
@@ -155,7 +155,7 @@ namespace Model
      * DKIM-sign email originating from that domain. (This only applies to domain
      * identities, not email address identities.)</p> <p>For more information about
      * creating DNS records using DKIM tokens, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
+     * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">Amazon
      * SES Developer Guide</a>.</p>
      */
     inline VerifyDomainDkimResult& AddDkimTokens(const char* value) { m_dkimTokens.push_back(value); return *this; }

@@ -12,13 +12,6 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 
-// TODO: temporary fix for naming conflicts on Windows.
-#ifdef _WIN32
-#ifdef GetMessage
-#undef GetMessage
-#endif
-#endif
-
 namespace Aws
 {
     namespace Client
@@ -114,7 +107,17 @@ namespace Aws
             /**
              * Gets the error message.
              */
+#ifdef _WIN32
+            #pragma push_macro("GetMessage")
+#undef GetMessage
             inline const Aws::String& GetMessage() const { return m_message; }
+            inline const Aws::String& GetMessageW() const { return GetMessage(); }
+            inline const Aws::String& GetMessageA() const { return GetMessage(); }
+
+#pragma pop_macro("GetMessage")
+#else
+            inline const Aws::String& GetMessage() const { return m_message; }
+#endif //#ifdef _WIN32
             /**
              * Sets the error message
              */

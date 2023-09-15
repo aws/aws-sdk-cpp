@@ -5,7 +5,10 @@
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -16,6 +19,9 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Shape {
     private String name;
     private String type;

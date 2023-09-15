@@ -52,6 +52,12 @@ DescribeFolderResolvedPermissionsResult& DescribeFolderResolvedPermissionsResult
     }
   }
 
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

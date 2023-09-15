@@ -130,6 +130,56 @@ namespace Model
      */
     inline ExecutionResult& WithRecordsProcessed(long long value) { SetRecordsProcessed(value); return *this;}
 
+
+    /**
+     * <p>The number of processes that Amazon AppFlow ran at the same time when it
+     * retrieved your data.</p>
+     */
+    inline long long GetNumParallelProcesses() const{ return m_numParallelProcesses; }
+
+    /**
+     * <p>The number of processes that Amazon AppFlow ran at the same time when it
+     * retrieved your data.</p>
+     */
+    inline bool NumParallelProcessesHasBeenSet() const { return m_numParallelProcessesHasBeenSet; }
+
+    /**
+     * <p>The number of processes that Amazon AppFlow ran at the same time when it
+     * retrieved your data.</p>
+     */
+    inline void SetNumParallelProcesses(long long value) { m_numParallelProcessesHasBeenSet = true; m_numParallelProcesses = value; }
+
+    /**
+     * <p>The number of processes that Amazon AppFlow ran at the same time when it
+     * retrieved your data.</p>
+     */
+    inline ExecutionResult& WithNumParallelProcesses(long long value) { SetNumParallelProcesses(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of records that Amazon AppFlow receives in each page of
+     * the response from your SAP application.</p>
+     */
+    inline long long GetMaxPageSize() const{ return m_maxPageSize; }
+
+    /**
+     * <p>The maximum number of records that Amazon AppFlow receives in each page of
+     * the response from your SAP application.</p>
+     */
+    inline bool MaxPageSizeHasBeenSet() const { return m_maxPageSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum number of records that Amazon AppFlow receives in each page of
+     * the response from your SAP application.</p>
+     */
+    inline void SetMaxPageSize(long long value) { m_maxPageSizeHasBeenSet = true; m_maxPageSize = value; }
+
+    /**
+     * <p>The maximum number of records that Amazon AppFlow receives in each page of
+     * the response from your SAP application.</p>
+     */
+    inline ExecutionResult& WithMaxPageSize(long long value) { SetMaxPageSize(value); return *this;}
+
   private:
 
     ErrorInfo m_errorInfo;
@@ -143,6 +193,12 @@ namespace Model
 
     long long m_recordsProcessed;
     bool m_recordsProcessedHasBeenSet = false;
+
+    long long m_numParallelProcesses;
+    bool m_numParallelProcessesHasBeenSet = false;
+
+    long long m_maxPageSize;
+    bool m_maxPageSizeHasBeenSet = false;
   };
 
 } // namespace Model

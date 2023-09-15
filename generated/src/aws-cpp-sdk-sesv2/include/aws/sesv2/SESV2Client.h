@@ -112,6 +112,31 @@ namespace SESV2
         }
 
         /**
+         * <p>Cancels an export job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CancelExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelExportJobOutcome CancelExportJob(const Model::CancelExportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelExportJobRequestT = Model::CancelExportJobRequest>
+        Model::CancelExportJobOutcomeCallable CancelExportJobCallable(const CancelExportJobRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::CancelExportJob, request);
+        }
+
+        /**
+         * An Async wrapper for CancelExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelExportJobRequestT = Model::CancelExportJobRequest>
+        void CancelExportJobAsync(const CancelExportJobRequestT& request, const CancelExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::CancelExportJob, request, handler, context);
+        }
+
+        /**
          * <p>Create a configuration set. <i>Configuration sets</i> are groups of rules
          * that you can apply to the emails that you send. You apply a configuration set to
          * an email by specifying the name of the configuration set when you call the
@@ -427,6 +452,33 @@ namespace SESV2
         void CreateEmailTemplateAsync(const CreateEmailTemplateRequestT& request, const CreateEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SESV2Client::CreateEmailTemplate, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an export job for a data source and destination.</p> <p>You can
+         * execute this operation no more than once per second.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateExportJobOutcome CreateExportJob(const Model::CreateExportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateExportJobRequestT = Model::CreateExportJobRequest>
+        Model::CreateExportJobOutcomeCallable CreateExportJobCallable(const CreateExportJobRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::CreateExportJob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateExportJobRequestT = Model::CreateExportJobRequest>
+        void CreateExportJobAsync(const CreateExportJobRequestT& request, const CreateExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::CreateExportJob, request, handler, context);
         }
 
         /**
@@ -1210,6 +1262,31 @@ namespace SESV2
         }
 
         /**
+         * <p>Provides information about an export job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetExportJobOutcome GetExportJob(const Model::GetExportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetExportJobRequestT = Model::GetExportJobRequest>
+        Model::GetExportJobOutcomeCallable GetExportJobCallable(const GetExportJobRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::GetExportJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetExportJobRequestT = Model::GetExportJobRequest>
+        void GetExportJobAsync(const GetExportJobRequestT& request, const GetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::GetExportJob, request, handler, context);
+        }
+
+        /**
          * <p>Provides information about an import job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetImportJob">AWS
          * API Reference</a></p>
@@ -1232,6 +1309,34 @@ namespace SESV2
         void GetImportJobAsync(const GetImportJobRequestT& request, const GetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SESV2Client::GetImportJob, request, handler, context);
+        }
+
+        /**
+         * <p>Provides information about a specific message, including the from address,
+         * the subject, the recipient address, email tags, as well as events associated
+         * with the message.</p> <p>You can execute this operation no more than once per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMessageInsights">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMessageInsightsOutcome GetMessageInsights(const Model::GetMessageInsightsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMessageInsights that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMessageInsightsRequestT = Model::GetMessageInsightsRequest>
+        Model::GetMessageInsightsOutcomeCallable GetMessageInsightsCallable(const GetMessageInsightsRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::GetMessageInsights, request);
+        }
+
+        /**
+         * An Async wrapper for GetMessageInsights that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMessageInsightsRequestT = Model::GetMessageInsightsRequest>
+        void GetMessageInsightsAsync(const GetMessageInsightsRequestT& request, const GetMessageInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::GetMessageInsights, request, handler, context);
         }
 
         /**
@@ -1508,6 +1613,31 @@ namespace SESV2
         void ListEmailTemplatesAsync(const ListEmailTemplatesRequestT& request, const ListEmailTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SESV2Client::ListEmailTemplates, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all of the export jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListExportJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExportJobsOutcome ListExportJobs(const Model::ListExportJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListExportJobsRequestT = Model::ListExportJobsRequest>
+        Model::ListExportJobsOutcomeCallable ListExportJobsCallable(const ListExportJobsRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::ListExportJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListExportJobsRequestT = Model::ListExportJobsRequest>
+        void ListExportJobsAsync(const ListExportJobsRequestT& request, const ListExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::ListExportJobs, request, handler, context);
         }
 
         /**

@@ -217,6 +217,55 @@ namespace Model
 
 
     /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline CreateAnnotationStoreRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline CreateAnnotationStoreRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name given to an annotation store version to distinguish it from other
+     * versions. </p>
+     */
+    inline CreateAnnotationStoreRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
+
+    /**
      * <p>Server-side encryption (SSE) settings for the store.</p>
      */
     inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
@@ -321,6 +370,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet = false;
 
     SseConfig m_sseConfig;
     bool m_sseConfigHasBeenSet = false;

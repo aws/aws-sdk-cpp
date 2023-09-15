@@ -8,6 +8,7 @@
 #include <aws/swf/SWFRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/swf/model/TaskList.h>
 #include <aws/swf/model/Decision.h>
 #include <utility>
 
@@ -210,6 +211,154 @@ namespace Model
      */
     inline RespondDecisionTaskCompletedRequest& WithExecutionContext(const char* value) { SetExecutionContext(value); return *this;}
 
+
+    /**
+     * <p>The task list to use for the future decision tasks of this workflow
+     * execution. This list overrides the original task list you specified while
+     * starting the workflow execution. </p>
+     */
+    inline const TaskList& GetTaskList() const{ return m_taskList; }
+
+    /**
+     * <p>The task list to use for the future decision tasks of this workflow
+     * execution. This list overrides the original task list you specified while
+     * starting the workflow execution. </p>
+     */
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
+
+    /**
+     * <p>The task list to use for the future decision tasks of this workflow
+     * execution. This list overrides the original task list you specified while
+     * starting the workflow execution. </p>
+     */
+    inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
+
+    /**
+     * <p>The task list to use for the future decision tasks of this workflow
+     * execution. This list overrides the original task list you specified while
+     * starting the workflow execution. </p>
+     */
+    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
+
+    /**
+     * <p>The task list to use for the future decision tasks of this workflow
+     * execution. This list overrides the original task list you specified while
+     * starting the workflow execution. </p>
+     */
+    inline RespondDecisionTaskCompletedRequest& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
+
+    /**
+     * <p>The task list to use for the future decision tasks of this workflow
+     * execution. This list overrides the original task list you specified while
+     * starting the workflow execution. </p>
+     */
+    inline RespondDecisionTaskCompletedRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a timeout (in seconds) for the task list override. When this
+     * parameter is missing, the task list override is permanent. This parameter makes
+     * it possible to temporarily override the task list. If a decision task scheduled
+     * on the override task list is not started within the timeout, the decision task
+     * will time out. Amazon SWF will revert the override and schedule a new decision
+     * task to the original task list.</p> <p>If a decision task scheduled on the
+     * override task list is started within the timeout, but not completed within the
+     * start-to-close timeout, Amazon SWF will also revert the override and schedule a
+     * new decision task to the original task list.</p>
+     */
+    inline const Aws::String& GetTaskListScheduleToStartTimeout() const{ return m_taskListScheduleToStartTimeout; }
+
+    /**
+     * <p>Specifies a timeout (in seconds) for the task list override. When this
+     * parameter is missing, the task list override is permanent. This parameter makes
+     * it possible to temporarily override the task list. If a decision task scheduled
+     * on the override task list is not started within the timeout, the decision task
+     * will time out. Amazon SWF will revert the override and schedule a new decision
+     * task to the original task list.</p> <p>If a decision task scheduled on the
+     * override task list is started within the timeout, but not completed within the
+     * start-to-close timeout, Amazon SWF will also revert the override and schedule a
+     * new decision task to the original task list.</p>
+     */
+    inline bool TaskListScheduleToStartTimeoutHasBeenSet() const { return m_taskListScheduleToStartTimeoutHasBeenSet; }
+
+    /**
+     * <p>Specifies a timeout (in seconds) for the task list override. When this
+     * parameter is missing, the task list override is permanent. This parameter makes
+     * it possible to temporarily override the task list. If a decision task scheduled
+     * on the override task list is not started within the timeout, the decision task
+     * will time out. Amazon SWF will revert the override and schedule a new decision
+     * task to the original task list.</p> <p>If a decision task scheduled on the
+     * override task list is started within the timeout, but not completed within the
+     * start-to-close timeout, Amazon SWF will also revert the override and schedule a
+     * new decision task to the original task list.</p>
+     */
+    inline void SetTaskListScheduleToStartTimeout(const Aws::String& value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout = value; }
+
+    /**
+     * <p>Specifies a timeout (in seconds) for the task list override. When this
+     * parameter is missing, the task list override is permanent. This parameter makes
+     * it possible to temporarily override the task list. If a decision task scheduled
+     * on the override task list is not started within the timeout, the decision task
+     * will time out. Amazon SWF will revert the override and schedule a new decision
+     * task to the original task list.</p> <p>If a decision task scheduled on the
+     * override task list is started within the timeout, but not completed within the
+     * start-to-close timeout, Amazon SWF will also revert the override and schedule a
+     * new decision task to the original task list.</p>
+     */
+    inline void SetTaskListScheduleToStartTimeout(Aws::String&& value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout = std::move(value); }
+
+    /**
+     * <p>Specifies a timeout (in seconds) for the task list override. When this
+     * parameter is missing, the task list override is permanent. This parameter makes
+     * it possible to temporarily override the task list. If a decision task scheduled
+     * on the override task list is not started within the timeout, the decision task
+     * will time out. Amazon SWF will revert the override and schedule a new decision
+     * task to the original task list.</p> <p>If a decision task scheduled on the
+     * override task list is started within the timeout, but not completed within the
+     * start-to-close timeout, Amazon SWF will also revert the override and schedule a
+     * new decision task to the original task list.</p>
+     */
+    inline void SetTaskListScheduleToStartTimeout(const char* value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout.assign(value); }
+
+    /**
+     * <p>Specifies a timeout (in seconds) for the task list override. When this
+     * parameter is missing, the task list override is permanent. This parameter makes
+     * it possible to temporarily override the task list. If a decision task scheduled
+     * on the override task list is not started within the timeout, the decision task
+     * will time out. Amazon SWF will revert the override and schedule a new decision
+     * task to the original task list.</p> <p>If a decision task scheduled on the
+     * override task list is started within the timeout, but not completed within the
+     * start-to-close timeout, Amazon SWF will also revert the override and schedule a
+     * new decision task to the original task list.</p>
+     */
+    inline RespondDecisionTaskCompletedRequest& WithTaskListScheduleToStartTimeout(const Aws::String& value) { SetTaskListScheduleToStartTimeout(value); return *this;}
+
+    /**
+     * <p>Specifies a timeout (in seconds) for the task list override. When this
+     * parameter is missing, the task list override is permanent. This parameter makes
+     * it possible to temporarily override the task list. If a decision task scheduled
+     * on the override task list is not started within the timeout, the decision task
+     * will time out. Amazon SWF will revert the override and schedule a new decision
+     * task to the original task list.</p> <p>If a decision task scheduled on the
+     * override task list is started within the timeout, but not completed within the
+     * start-to-close timeout, Amazon SWF will also revert the override and schedule a
+     * new decision task to the original task list.</p>
+     */
+    inline RespondDecisionTaskCompletedRequest& WithTaskListScheduleToStartTimeout(Aws::String&& value) { SetTaskListScheduleToStartTimeout(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies a timeout (in seconds) for the task list override. When this
+     * parameter is missing, the task list override is permanent. This parameter makes
+     * it possible to temporarily override the task list. If a decision task scheduled
+     * on the override task list is not started within the timeout, the decision task
+     * will time out. Amazon SWF will revert the override and schedule a new decision
+     * task to the original task list.</p> <p>If a decision task scheduled on the
+     * override task list is started within the timeout, but not completed within the
+     * start-to-close timeout, Amazon SWF will also revert the override and schedule a
+     * new decision task to the original task list.</p>
+     */
+    inline RespondDecisionTaskCompletedRequest& WithTaskListScheduleToStartTimeout(const char* value) { SetTaskListScheduleToStartTimeout(value); return *this;}
+
   private:
 
     Aws::String m_taskToken;
@@ -220,6 +369,12 @@ namespace Model
 
     Aws::String m_executionContext;
     bool m_executionContextHasBeenSet = false;
+
+    TaskList m_taskList;
+    bool m_taskListHasBeenSet = false;
+
+    Aws::String m_taskListScheduleToStartTimeout;
+    bool m_taskListScheduleToStartTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

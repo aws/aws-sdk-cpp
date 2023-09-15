@@ -35,80 +35,101 @@ namespace Model
 
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline ListServicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline ListServicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is null
-     * when there are no more results to return.</p>
+     * <p>If present, indicates that more output is available than is included in the
+     * current response. Use this value in the <code>NextToken</code> request parameter
+     * in a subsequent call to the operation to get the next part of the output. You
+     * should repeat this until the <code>NextToken</code> response element comes back
+     * as <code>null</code>.</p>
      */
     inline ListServicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>Information about the services.</p>
+     * <p>The list of the Amazon Web Service names and service codes.</p>
      */
     inline const Aws::Vector<ServiceInfo>& GetServices() const{ return m_services; }
 
     /**
-     * <p>Information about the services.</p>
+     * <p>The list of the Amazon Web Service names and service codes.</p>
      */
     inline void SetServices(const Aws::Vector<ServiceInfo>& value) { m_services = value; }
 
     /**
-     * <p>Information about the services.</p>
+     * <p>The list of the Amazon Web Service names and service codes.</p>
      */
     inline void SetServices(Aws::Vector<ServiceInfo>&& value) { m_services = std::move(value); }
 
     /**
-     * <p>Information about the services.</p>
+     * <p>The list of the Amazon Web Service names and service codes.</p>
      */
     inline ListServicesResult& WithServices(const Aws::Vector<ServiceInfo>& value) { SetServices(value); return *this;}
 
     /**
-     * <p>Information about the services.</p>
+     * <p>The list of the Amazon Web Service names and service codes.</p>
      */
     inline ListServicesResult& WithServices(Aws::Vector<ServiceInfo>&& value) { SetServices(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the services.</p>
+     * <p>The list of the Amazon Web Service names and service codes.</p>
      */
     inline ListServicesResult& AddServices(const ServiceInfo& value) { m_services.push_back(value); return *this; }
 
     /**
-     * <p>Information about the services.</p>
+     * <p>The list of the Amazon Web Service names and service codes.</p>
      */
     inline ListServicesResult& AddServices(ServiceInfo&& value) { m_services.push_back(std::move(value)); return *this; }
 

@@ -23,6 +23,7 @@
 #include <aws/connectparticipant/ConnectParticipantEndpointProvider.h>
 #include <aws/connectparticipant/model/CompleteAttachmentUploadRequest.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionRequest.h>
+#include <aws/connectparticipant/model/DescribeViewRequest.h>
 #include <aws/connectparticipant/model/DisconnectParticipantRequest.h>
 #include <aws/connectparticipant/model/GetAttachmentRequest.h>
 #include <aws/connectparticipant/model/GetTranscriptRequest.h>
@@ -220,6 +221,44 @@ CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantCo
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateParticipantConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/participant/connection");
       return CreateParticipantConnectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeViewOutcome ConnectParticipantClient::DescribeView(const DescribeViewRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeView);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ViewTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeView", "Required field: ViewToken, is not set");
+    return DescribeViewOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ViewToken]", false));
+  }
+  if (!request.ConnectionTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeView", "Required field: ConnectionToken, is not set");
+    return DescribeViewOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeView, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeView, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeView",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeViewOutcome>(
+    [&]()-> DescribeViewOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/participant/views/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetViewToken());
+      return DescribeViewOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

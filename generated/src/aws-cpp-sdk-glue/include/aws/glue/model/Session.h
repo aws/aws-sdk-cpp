@@ -11,6 +11,7 @@
 #include <aws/glue/model/SessionCommand.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/ConnectionsList.h>
+#include <aws/glue/model/WorkerType.h>
 #include <utility>
 
 namespace Aws
@@ -552,6 +553,174 @@ namespace Model
      */
     inline Session& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
 
+
+    /**
+     * <p>The number of workers of a defined <code>WorkerType</code> to use for the
+     * session.</p>
+     */
+    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
+
+    /**
+     * <p>The number of workers of a defined <code>WorkerType</code> to use for the
+     * session.</p>
+     */
+    inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
+
+    /**
+     * <p>The number of workers of a defined <code>WorkerType</code> to use for the
+     * session.</p>
+     */
+    inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
+
+    /**
+     * <p>The number of workers of a defined <code>WorkerType</code> to use for the
+     * session.</p>
+     */
+    inline Session& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
+
+
+    /**
+     * <p>The type of predefined worker that is allocated when a session runs. Accepts
+     * a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or
+     * <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for
+     * Ray sessions.</p>
+     */
+    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
+
+    /**
+     * <p>The type of predefined worker that is allocated when a session runs. Accepts
+     * a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or
+     * <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for
+     * Ray sessions.</p>
+     */
+    inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
+
+    /**
+     * <p>The type of predefined worker that is allocated when a session runs. Accepts
+     * a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or
+     * <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for
+     * Ray sessions.</p>
+     */
+    inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
+
+    /**
+     * <p>The type of predefined worker that is allocated when a session runs. Accepts
+     * a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or
+     * <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for
+     * Ray sessions.</p>
+     */
+    inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
+
+    /**
+     * <p>The type of predefined worker that is allocated when a session runs. Accepts
+     * a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or
+     * <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for
+     * Ray sessions.</p>
+     */
+    inline Session& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
+
+    /**
+     * <p>The type of predefined worker that is allocated when a session runs. Accepts
+     * a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or
+     * <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for
+     * Ray sessions.</p>
+     */
+    inline Session& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time that this session is completed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCompletedOn() const{ return m_completedOn; }
+
+    /**
+     * <p>The date and time that this session is completed.</p>
+     */
+    inline bool CompletedOnHasBeenSet() const { return m_completedOnHasBeenSet; }
+
+    /**
+     * <p>The date and time that this session is completed.</p>
+     */
+    inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOnHasBeenSet = true; m_completedOn = value; }
+
+    /**
+     * <p>The date and time that this session is completed.</p>
+     */
+    inline void SetCompletedOn(Aws::Utils::DateTime&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::move(value); }
+
+    /**
+     * <p>The date and time that this session is completed.</p>
+     */
+    inline Session& WithCompletedOn(const Aws::Utils::DateTime& value) { SetCompletedOn(value); return *this;}
+
+    /**
+     * <p>The date and time that this session is completed.</p>
+     */
+    inline Session& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The total time the session ran for.</p>
+     */
+    inline double GetExecutionTime() const{ return m_executionTime; }
+
+    /**
+     * <p>The total time the session ran for.</p>
+     */
+    inline bool ExecutionTimeHasBeenSet() const { return m_executionTimeHasBeenSet; }
+
+    /**
+     * <p>The total time the session ran for.</p>
+     */
+    inline void SetExecutionTime(double value) { m_executionTimeHasBeenSet = true; m_executionTime = value; }
+
+    /**
+     * <p>The total time the session ran for.</p>
+     */
+    inline Session& WithExecutionTime(double value) { SetExecutionTime(value); return *this;}
+
+
+    /**
+     * <p>The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).</p>
+     */
+    inline double GetDPUSeconds() const{ return m_dPUSeconds; }
+
+    /**
+     * <p>The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).</p>
+     */
+    inline bool DPUSecondsHasBeenSet() const { return m_dPUSecondsHasBeenSet; }
+
+    /**
+     * <p>The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).</p>
+     */
+    inline void SetDPUSeconds(double value) { m_dPUSecondsHasBeenSet = true; m_dPUSeconds = value; }
+
+    /**
+     * <p>The DPUs consumed by the session (formula: ExecutionTime * MaxCapacity).</p>
+     */
+    inline Session& WithDPUSeconds(double value) { SetDPUSeconds(value); return *this;}
+
+
+    /**
+     * <p>The number of minutes when idle before the session times out.</p>
+     */
+    inline int GetIdleTimeout() const{ return m_idleTimeout; }
+
+    /**
+     * <p>The number of minutes when idle before the session times out.</p>
+     */
+    inline bool IdleTimeoutHasBeenSet() const { return m_idleTimeoutHasBeenSet; }
+
+    /**
+     * <p>The number of minutes when idle before the session times out.</p>
+     */
+    inline void SetIdleTimeout(int value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
+
+    /**
+     * <p>The number of minutes when idle before the session times out.</p>
+     */
+    inline Session& WithIdleTimeout(int value) { SetIdleTimeout(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -592,6 +761,24 @@ namespace Model
 
     Aws::String m_glueVersion;
     bool m_glueVersionHasBeenSet = false;
+
+    int m_numberOfWorkers;
+    bool m_numberOfWorkersHasBeenSet = false;
+
+    WorkerType m_workerType;
+    bool m_workerTypeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_completedOn;
+    bool m_completedOnHasBeenSet = false;
+
+    double m_executionTime;
+    bool m_executionTimeHasBeenSet = false;
+
+    double m_dPUSeconds;
+    bool m_dPUSecondsHasBeenSet = false;
+
+    int m_idleTimeout;
+    bool m_idleTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

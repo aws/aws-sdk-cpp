@@ -11,6 +11,7 @@
 #include <aws/lookoutequipment/model/LabelsInputConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lookoutequipment/model/DataPreProcessingConfiguration.h>
+#include <aws/lookoutequipment/model/AutoPromotionResult.h>
 #include <utility>
 
 namespace Aws
@@ -971,6 +972,189 @@ namespace Model
     inline DescribeModelVersionResult& WithImportedDataSizeInBytes(long long value) { SetImportedDataSizeInBytes(value); return *this;}
 
 
+    /**
+     * <p>If the model version was retrained, this field shows a summary of the
+     * performance of the prior model on the new training range. You can use the
+     * information in this JSON-formatted object to compare the new model version and
+     * the prior model version.</p>
+     */
+    inline const Aws::String& GetPriorModelMetrics() const{ return m_priorModelMetrics; }
+
+    /**
+     * <p>If the model version was retrained, this field shows a summary of the
+     * performance of the prior model on the new training range. You can use the
+     * information in this JSON-formatted object to compare the new model version and
+     * the prior model version.</p>
+     */
+    inline void SetPriorModelMetrics(const Aws::String& value) { m_priorModelMetrics = value; }
+
+    /**
+     * <p>If the model version was retrained, this field shows a summary of the
+     * performance of the prior model on the new training range. You can use the
+     * information in this JSON-formatted object to compare the new model version and
+     * the prior model version.</p>
+     */
+    inline void SetPriorModelMetrics(Aws::String&& value) { m_priorModelMetrics = std::move(value); }
+
+    /**
+     * <p>If the model version was retrained, this field shows a summary of the
+     * performance of the prior model on the new training range. You can use the
+     * information in this JSON-formatted object to compare the new model version and
+     * the prior model version.</p>
+     */
+    inline void SetPriorModelMetrics(const char* value) { m_priorModelMetrics.assign(value); }
+
+    /**
+     * <p>If the model version was retrained, this field shows a summary of the
+     * performance of the prior model on the new training range. You can use the
+     * information in this JSON-formatted object to compare the new model version and
+     * the prior model version.</p>
+     */
+    inline DescribeModelVersionResult& WithPriorModelMetrics(const Aws::String& value) { SetPriorModelMetrics(value); return *this;}
+
+    /**
+     * <p>If the model version was retrained, this field shows a summary of the
+     * performance of the prior model on the new training range. You can use the
+     * information in this JSON-formatted object to compare the new model version and
+     * the prior model version.</p>
+     */
+    inline DescribeModelVersionResult& WithPriorModelMetrics(Aws::String&& value) { SetPriorModelMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>If the model version was retrained, this field shows a summary of the
+     * performance of the prior model on the new training range. You can use the
+     * information in this JSON-formatted object to compare the new model version and
+     * the prior model version.</p>
+     */
+    inline DescribeModelVersionResult& WithPriorModelMetrics(const char* value) { SetPriorModelMetrics(value); return *this;}
+
+
+    /**
+     * <p>Indicates the number of days of data used in the most recent scheduled
+     * retraining run. </p>
+     */
+    inline int GetRetrainingAvailableDataInDays() const{ return m_retrainingAvailableDataInDays; }
+
+    /**
+     * <p>Indicates the number of days of data used in the most recent scheduled
+     * retraining run. </p>
+     */
+    inline void SetRetrainingAvailableDataInDays(int value) { m_retrainingAvailableDataInDays = value; }
+
+    /**
+     * <p>Indicates the number of days of data used in the most recent scheduled
+     * retraining run. </p>
+     */
+    inline DescribeModelVersionResult& WithRetrainingAvailableDataInDays(int value) { SetRetrainingAvailableDataInDays(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the model version was promoted to be the active version
+     * after retraining or if there was an error with or cancellation of the
+     * retraining. </p>
+     */
+    inline const AutoPromotionResult& GetAutoPromotionResult() const{ return m_autoPromotionResult; }
+
+    /**
+     * <p>Indicates whether the model version was promoted to be the active version
+     * after retraining or if there was an error with or cancellation of the
+     * retraining. </p>
+     */
+    inline void SetAutoPromotionResult(const AutoPromotionResult& value) { m_autoPromotionResult = value; }
+
+    /**
+     * <p>Indicates whether the model version was promoted to be the active version
+     * after retraining or if there was an error with or cancellation of the
+     * retraining. </p>
+     */
+    inline void SetAutoPromotionResult(AutoPromotionResult&& value) { m_autoPromotionResult = std::move(value); }
+
+    /**
+     * <p>Indicates whether the model version was promoted to be the active version
+     * after retraining or if there was an error with or cancellation of the
+     * retraining. </p>
+     */
+    inline DescribeModelVersionResult& WithAutoPromotionResult(const AutoPromotionResult& value) { SetAutoPromotionResult(value); return *this;}
+
+    /**
+     * <p>Indicates whether the model version was promoted to be the active version
+     * after retraining or if there was an error with or cancellation of the
+     * retraining. </p>
+     */
+    inline DescribeModelVersionResult& WithAutoPromotionResult(AutoPromotionResult&& value) { SetAutoPromotionResult(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a
+     * model might not be promoted if its performance was worse than the active
+     * version, if there was an error during training, or if the retraining scheduler
+     * was using <code>MANUAL</code> promote mode. The model will be promoted in
+     * <code>MANAGED</code> promote mode if the performance is better than the previous
+     * model. </p>
+     */
+    inline const Aws::String& GetAutoPromotionResultReason() const{ return m_autoPromotionResultReason; }
+
+    /**
+     * <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a
+     * model might not be promoted if its performance was worse than the active
+     * version, if there was an error during training, or if the retraining scheduler
+     * was using <code>MANUAL</code> promote mode. The model will be promoted in
+     * <code>MANAGED</code> promote mode if the performance is better than the previous
+     * model. </p>
+     */
+    inline void SetAutoPromotionResultReason(const Aws::String& value) { m_autoPromotionResultReason = value; }
+
+    /**
+     * <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a
+     * model might not be promoted if its performance was worse than the active
+     * version, if there was an error during training, or if the retraining scheduler
+     * was using <code>MANUAL</code> promote mode. The model will be promoted in
+     * <code>MANAGED</code> promote mode if the performance is better than the previous
+     * model. </p>
+     */
+    inline void SetAutoPromotionResultReason(Aws::String&& value) { m_autoPromotionResultReason = std::move(value); }
+
+    /**
+     * <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a
+     * model might not be promoted if its performance was worse than the active
+     * version, if there was an error during training, or if the retraining scheduler
+     * was using <code>MANUAL</code> promote mode. The model will be promoted in
+     * <code>MANAGED</code> promote mode if the performance is better than the previous
+     * model. </p>
+     */
+    inline void SetAutoPromotionResultReason(const char* value) { m_autoPromotionResultReason.assign(value); }
+
+    /**
+     * <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a
+     * model might not be promoted if its performance was worse than the active
+     * version, if there was an error during training, or if the retraining scheduler
+     * was using <code>MANUAL</code> promote mode. The model will be promoted in
+     * <code>MANAGED</code> promote mode if the performance is better than the previous
+     * model. </p>
+     */
+    inline DescribeModelVersionResult& WithAutoPromotionResultReason(const Aws::String& value) { SetAutoPromotionResultReason(value); return *this;}
+
+    /**
+     * <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a
+     * model might not be promoted if its performance was worse than the active
+     * version, if there was an error during training, or if the retraining scheduler
+     * was using <code>MANUAL</code> promote mode. The model will be promoted in
+     * <code>MANAGED</code> promote mode if the performance is better than the previous
+     * model. </p>
+     */
+    inline DescribeModelVersionResult& WithAutoPromotionResultReason(Aws::String&& value) { SetAutoPromotionResultReason(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a
+     * model might not be promoted if its performance was worse than the active
+     * version, if there was an error during training, or if the retraining scheduler
+     * was using <code>MANUAL</code> promote mode. The model will be promoted in
+     * <code>MANAGED</code> promote mode if the performance is better than the previous
+     * model. </p>
+     */
+    inline DescribeModelVersionResult& WithAutoPromotionResultReason(const char* value) { SetAutoPromotionResultReason(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1049,6 +1233,14 @@ namespace Model
     Aws::Utils::DateTime m_importJobEndTime;
 
     long long m_importedDataSizeInBytes;
+
+    Aws::String m_priorModelMetrics;
+
+    int m_retrainingAvailableDataInDays;
+
+    AutoPromotionResult m_autoPromotionResult;
+
+    Aws::String m_autoPromotionResultReason;
 
     Aws::String m_requestId;
   };

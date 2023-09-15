@@ -400,6 +400,32 @@ namespace Connect
         }
 
         /**
+         * <p>Associates an agent with a traffic distribution group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateTrafficDistributionGroupUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateTrafficDistributionGroupUserOutcome AssociateTrafficDistributionGroupUser(const Model::AssociateTrafficDistributionGroupUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateTrafficDistributionGroupUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateTrafficDistributionGroupUserRequestT = Model::AssociateTrafficDistributionGroupUserRequest>
+        Model::AssociateTrafficDistributionGroupUserOutcomeCallable AssociateTrafficDistributionGroupUserCallable(const AssociateTrafficDistributionGroupUserRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::AssociateTrafficDistributionGroupUser, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateTrafficDistributionGroupUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateTrafficDistributionGroupUserRequestT = Model::AssociateTrafficDistributionGroupUserRequest>
+        void AssociateTrafficDistributionGroupUserAsync(const AssociateTrafficDistributionGroupUserRequestT& request, const AssociateTrafficDistributionGroupUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::AssociateTrafficDistributionGroupUser, request, handler, context);
+        }
+
+        /**
          * <p>Claims an available phone number to your Amazon Connect instance or traffic
          * distribution group. You can call this API only in the same Amazon Web Services
          * Region where the Amazon Connect instance or traffic distribution group was
@@ -707,23 +733,26 @@ namespace Connect
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Creates a new queue for the specified Amazon Connect
-         * instance.</p>  <p>If the number being used in the input is claimed to
-         * a traffic distribution group, and you are calling this API using an instance in
-         * the Amazon Web Services Region where the traffic distribution group was created,
-         * you can use either a full phone number ARN or UUID value for the
-         * <code>OutboundCallerIdNumberId</code> value of the <a
-         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
-         * request body parameter. However, if the number is claimed to a traffic
-         * distribution group and you are calling this API using an instance in the
-         * alternate Amazon Web Services Region associated with the traffic distribution
-         * group, you must provide a full phone number ARN. If a UUID is provided in this
-         * scenario, you will receive a <code>ResourceNotFoundException</code>.</p> <p>Only
-         * use the phone number ARN format that doesn't contain <code>instance</code> in
-         * the path, for example,
+         * instance.</p>  <ul> <li> <p>If the phone number is claimed to a
+         * traffic distribution group that was created in the same Region as the Amazon
+         * Connect instance where you are calling this API, then you can use a full phone
+         * number ARN or a UUID for <code>OutboundCallerIdNumberId</code>. However, if the
+         * phone number is claimed to a traffic distribution group that is in one Region,
+         * and you are calling this API from an instance in another Amazon Web Services
+         * Region that is associated with the traffic distribution group, you must provide
+         * a full phone number ARN. If a UUID is provided in this scenario, you will
+         * receive a <code>ResourceNotFoundException</code>.</p> </li> <li> <p>Only use the
+         * phone number ARN format that doesn't contain <code>instance</code> in the path,
+         * for example,
          * <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>. This is the
          * same ARN format that is returned when you call the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
-         * API.</p> <p><h3>See Also:</h3>   <a
+         * API.</p> </li> <li> <p>If you plan to use IAM policies to allow/deny access to
+         * this API for phone number resources claimed to a traffic distribution group, see
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_resource-level-policy-examples.html#allow-deny-queue-actions-replica-region">Allow
+         * or Deny queue API actions for phone numbers in a replica Region</a>.</p> </li>
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">AWS
          * API Reference</a></p>
          */
@@ -880,7 +909,14 @@ namespace Connect
 
         /**
          * <p>Creates a traffic distribution group given an Amazon Connect instance that
-         * has been replicated. </p> <p>For more information about creating traffic
+         * has been replicated. </p>  <p>You can change the <code>SignInConfig</code>
+         * distribution only for a default <code>TrafficDistributionGroup</code> (see the
+         * <code>IsDefault</code> parameter in the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+         * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+         * <code>SignInConfig</code> and a non-default
+         * <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+         * is returned.</p>  <p>For more information about creating traffic
          * distribution groups, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
          * up traffic distribution groups</a> in the <i>Amazon Connect Administrator
@@ -987,6 +1023,68 @@ namespace Connect
         void CreateUserHierarchyGroupAsync(const CreateUserHierarchyGroupRequestT& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::CreateUserHierarchyGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new view with the possible status of <code>SAVED</code> or
+         * <code>PUBLISHED</code>.</p> <p>The views will have a unique name for each
+         * connect instance.</p> <p>It performs basic content validation if the status is
+         * <code>SAVED</code> or full content validation if the status is set to
+         * <code>PUBLISHED</code>. An error is returned if validation fails. It associates
+         * either the <code>$SAVED</code> qualifier or both of the <code>$SAVED</code> and
+         * <code>$LATEST</code> qualifiers with the provided view content based on the
+         * status. The view is idempotent if ClientToken is provided.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateView">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateViewOutcome CreateView(const Model::CreateViewRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateView that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateViewRequestT = Model::CreateViewRequest>
+        Model::CreateViewOutcomeCallable CreateViewCallable(const CreateViewRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreateView, request);
+        }
+
+        /**
+         * An Async wrapper for CreateView that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateViewRequestT = Model::CreateViewRequest>
+        void CreateViewAsync(const CreateViewRequestT& request, const CreateViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreateView, request, handler, context);
+        }
+
+        /**
+         * <p>Publishes a new version of the view identifier.</p> <p>Versions are immutable
+         * and monotonically increasing.</p> <p>It returns the highest version if there is
+         * no change in content compared to that version. An error is displayed if the
+         * supplied ViewContentSha256 is different from the ViewContentSha256 of the
+         * <code>$LATEST</code> alias.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateViewVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateViewVersionOutcome CreateViewVersion(const Model::CreateViewVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateViewVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateViewVersionRequestT = Model::CreateViewVersionRequest>
+        Model::CreateViewVersionOutcomeCallable CreateViewVersionCallable(const CreateViewVersionRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreateViewVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateViewVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateViewVersionRequestT = Model::CreateViewVersionRequest>
+        void CreateViewVersionAsync(const CreateViewVersionRequestT& request, const CreateViewVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreateViewVersion, request, handler, context);
         }
 
         /**
@@ -1522,6 +1620,58 @@ namespace Connect
         void DeleteUserHierarchyGroupAsync(const DeleteUserHierarchyGroupRequestT& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DeleteUserHierarchyGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the view entirely. It deletes the view and all associated qualifiers
+         * (versions and aliases).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteView">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteViewOutcome DeleteView(const Model::DeleteViewRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteView that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteViewRequestT = Model::DeleteViewRequest>
+        Model::DeleteViewOutcomeCallable DeleteViewCallable(const DeleteViewRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeleteView, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteView that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteViewRequestT = Model::DeleteViewRequest>
+        void DeleteViewAsync(const DeleteViewRequestT& request, const DeleteViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeleteView, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the particular version specified in <code>ViewVersion</code>
+         * identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteViewVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteViewVersionOutcome DeleteViewVersion(const Model::DeleteViewVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteViewVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteViewVersionRequestT = Model::DeleteViewVersionRequest>
+        Model::DeleteViewVersionOutcomeCallable DeleteViewVersionCallable(const DeleteViewVersionRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeleteViewVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteViewVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteViewVersionRequestT = Model::DeleteViewVersionRequest>
+        void DeleteViewVersionAsync(const DeleteViewVersionRequestT& request, const DeleteViewVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeleteViewVersion, request, handler, context);
         }
 
         /**
@@ -2118,6 +2268,39 @@ namespace Connect
         }
 
         /**
+         * <p>Retrieves the view for the specified Amazon Connect instance and view
+         * identifier.</p> <p>The view identifier can be supplied as a ViewId or ARN.</p>
+         * <p> <code>$SAVED</code> needs to be supplied if a view is unpublished.</p>
+         * <p>The view identifier can contain an optional qualifier, for example,
+         * <code>&lt;view-id&gt;:$SAVED</code>, which is either an actual version number or
+         * an Amazon Connect managed qualifier <code>$SAVED | $LATEST</code>. If it is not
+         * supplied, then <code>$LATEST</code> is assumed for customer managed views and an
+         * error is returned if there is no published content available. Version 1 is
+         * assumed for Amazon Web Services managed views.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeView">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeViewOutcome DescribeView(const Model::DescribeViewRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeView that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeViewRequestT = Model::DescribeViewRequest>
+        Model::DescribeViewOutcomeCallable DescribeViewCallable(const DescribeViewRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DescribeView, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeView that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeViewRequestT = Model::DescribeViewRequest>
+        void DescribeViewAsync(const DescribeViewRequestT& request, const DescribeViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DescribeView, request, handler, context);
+        }
+
+        /**
          * <p>Describes the specified vocabulary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeVocabulary">AWS
          * API Reference</a></p>
@@ -2390,6 +2573,32 @@ namespace Connect
         void DisassociateSecurityKeyAsync(const DisassociateSecurityKeyRequestT& request, const DisassociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DisassociateSecurityKey, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates an agent from a traffic distribution group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateTrafficDistributionGroupUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateTrafficDistributionGroupUserOutcome DisassociateTrafficDistributionGroupUser(const Model::DisassociateTrafficDistributionGroupUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateTrafficDistributionGroupUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateTrafficDistributionGroupUserRequestT = Model::DisassociateTrafficDistributionGroupUserRequest>
+        Model::DisassociateTrafficDistributionGroupUserOutcomeCallable DisassociateTrafficDistributionGroupUserCallable(const DisassociateTrafficDistributionGroupUserRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DisassociateTrafficDistributionGroupUser, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateTrafficDistributionGroupUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateTrafficDistributionGroupUserRequestT = Model::DisassociateTrafficDistributionGroupUserRequest>
+        void DisassociateTrafficDistributionGroupUserAsync(const DisassociateTrafficDistributionGroupUserRequestT& request, const DisassociateTrafficDistributionGroupUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DisassociateTrafficDistributionGroupUser, request, handler, context);
         }
 
         /**
@@ -3143,14 +3352,20 @@ namespace Connect
          * instance. </p> <p>For more information about phone numbers, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
          * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p>  <p>The phone number <code>Arn</code>
-         * value that is returned from each of the items in the <a
+         * Administrator Guide</i>.</p>  <ul> <li> <p>We recommend using <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+         * to return phone number types. ListPhoneNumbers doesn't support number types
+         * <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and
+         * <code>THIRD_PARTY_DID</code>. While it returns numbers of those types, it
+         * incorrectly lists them as <code>TOLL_FREE</code> or <code>DID</code>. </p> </li>
+         * <li> <p>The phone number <code>Arn</code> value that is returned from each of
+         * the items in the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
          * cannot be used to tag phone number resources. It will fail with a
          * <code>ResourceNotFoundException</code>. Instead, use the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
          * API. It returns the new phone number ARN that can be used to tag phone number
-         * resources.</p> <p><h3>See Also:</h3>   <a
+         * resources.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbers">AWS
          * API Reference</a></p>
          */
@@ -3182,7 +3397,11 @@ namespace Connect
          * phone numbers, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
          * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Administrator Guide</i>.</p>  <ul> <li> <p>When given an instance ARN,
+         * <code>ListPhoneNumbersV2</code> returns only the phone numbers claimed to the
+         * instance.</p> </li> <li> <p>When given a traffic distribution group ARN
+         * <code>ListPhoneNumbersV2</code> returns only the phone numbers claimed to the
+         * traffic distribution group.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbersV2">AWS
          * API Reference</a></p>
          */
@@ -3542,6 +3761,31 @@ namespace Connect
         }
 
         /**
+         * <p>Lists traffic distribution group users.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroupUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrafficDistributionGroupUsersOutcome ListTrafficDistributionGroupUsers(const Model::ListTrafficDistributionGroupUsersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTrafficDistributionGroupUsers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTrafficDistributionGroupUsersRequestT = Model::ListTrafficDistributionGroupUsersRequest>
+        Model::ListTrafficDistributionGroupUsersOutcomeCallable ListTrafficDistributionGroupUsersCallable(const ListTrafficDistributionGroupUsersRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListTrafficDistributionGroupUsers, request);
+        }
+
+        /**
+         * An Async wrapper for ListTrafficDistributionGroupUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTrafficDistributionGroupUsersRequestT = Model::ListTrafficDistributionGroupUsersRequest>
+        void ListTrafficDistributionGroupUsersAsync(const ListTrafficDistributionGroupUsersRequestT& request, const ListTrafficDistributionGroupUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListTrafficDistributionGroupUsers, request, handler, context);
+        }
+
+        /**
          * <p>Lists traffic distribution groups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">AWS
          * API Reference</a></p>
@@ -3646,6 +3890,59 @@ namespace Connect
         void ListUsersAsync(const ListUsersRequestT& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListUsers, request, handler, context);
+        }
+
+        /**
+         * <p>Returns all the available versions for the specified Amazon Connect instance
+         * and view identifier.</p> <p>Results will be sorted from highest to
+         * lowest.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViewVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListViewVersionsOutcome ListViewVersions(const Model::ListViewVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListViewVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListViewVersionsRequestT = Model::ListViewVersionsRequest>
+        Model::ListViewVersionsOutcomeCallable ListViewVersionsCallable(const ListViewVersionsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListViewVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListViewVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListViewVersionsRequestT = Model::ListViewVersionsRequest>
+        void ListViewVersionsAsync(const ListViewVersionsRequestT& request, const ListViewVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListViewVersions, request, handler, context);
+        }
+
+        /**
+         * <p>Returns views in the given instance.</p> <p>Results are sorted primarily by
+         * type, and secondarily by name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListViews">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListViewsOutcome ListViews(const Model::ListViewsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListViews that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListViewsRequestT = Model::ListViewsRequest>
+        Model::ListViewsOutcomeCallable ListViewsCallable(const ListViewsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListViews, request);
+        }
+
+        /**
+         * An Async wrapper for ListViews that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListViewsRequestT = Model::ListViewsRequest>
+        void ListViewsAsync(const ListViewsRequestT& request, const ListViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListViews, request, handler, context);
         }
 
         /**
@@ -4284,9 +4581,11 @@ namespace Connect
         }
 
         /**
-         * <p>Ends the specified contact. This call does not work for the following
-         * initiation methods:</p> <ul> <li> <p>DISCONNECT</p> </li> <li> <p>TRANSFER</p>
-         * </li> <li> <p>QUEUE_TRANSFER</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Ends the specified contact. This call does not work for voice contacts that
+         * use the following initiation methods:</p> <ul> <li> <p>DISCONNECT</p> </li> <li>
+         * <p>TRANSFER</p> </li> <li> <p>QUEUE_TRANSFER</p> </li> </ul> <p>Chat and task
+         * contacts, however, can be terminated in any state, regardless of initiation
+         * method.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContact">AWS
          * API Reference</a></p>
          */
@@ -5095,23 +5394,26 @@ namespace Connect
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Updates the outbound caller ID name, number, and outbound whisper
-         * flow for a specified queue.</p>  <p>If the number being used in the
-         * input is claimed to a traffic distribution group, and you are calling this API
-         * using an instance in the Amazon Web Services Region where the traffic
-         * distribution group was created, you can use either a full phone number ARN or
-         * UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
-         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
-         * request body parameter. However, if the number is claimed to a traffic
-         * distribution group and you are calling this API using an instance in the
-         * alternate Amazon Web Services Region associated with the traffic distribution
-         * group, you must provide a full phone number ARN. If a UUID is provided in this
-         * scenario, you will receive a <code>ResourceNotFoundException</code>.</p> <p>Only
-         * use the phone number ARN format that doesn't contain <code>instance</code> in
-         * the path, for example,
+         * flow for a specified queue.</p>  <ul> <li> <p>If the phone number is
+         * claimed to a traffic distribution group that was created in the same Region as
+         * the Amazon Connect instance where you are calling this API, then you can use a
+         * full phone number ARN or a UUID for <code>OutboundCallerIdNumberId</code>.
+         * However, if the phone number is claimed to a traffic distribution group that is
+         * in one Region, and you are calling this API from an instance in another Amazon
+         * Web Services Region that is associated with the traffic distribution group, you
+         * must provide a full phone number ARN. If a UUID is provided in this scenario,
+         * you will receive a <code>ResourceNotFoundException</code>.</p> </li> <li>
+         * <p>Only use the phone number ARN format that doesn't contain
+         * <code>instance</code> in the path, for example,
          * <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>. This is the
          * same ARN format that is returned when you call the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
-         * API.</p> <p><h3>See Also:</h3>   <a
+         * API.</p> </li> <li> <p>If you plan to use IAM policies to allow/deny access to
+         * this API for phone number resources claimed to a traffic distribution group, see
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_resource-level-policy-examples.html#allow-deny-queue-actions-replica-region">Allow
+         * or Deny queue API actions for phone numbers in a replica Region</a>.</p> </li>
+         * </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">AWS
          * API Reference</a></p>
          */
@@ -5429,7 +5731,15 @@ namespace Connect
 
         /**
          * <p>Updates the traffic distribution for a given traffic distribution group. </p>
-         * <p>For more information about updating a traffic distribution group, see <a
+         *  <p>You can change the <code>SignInConfig</code> distribution only for a
+         * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
+         * parameter in the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+         * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
+         * <code>SignInConfig</code> and a non-default
+         * <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+         * is returned.</p>  <p>For more information about updating a traffic
+         * distribution group, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
          * telephony traffic distribution across Amazon Web Services Regions </a> in the
          * <i>Amazon Connect Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -5643,6 +5953,63 @@ namespace Connect
         void UpdateUserSecurityProfilesAsync(const UpdateUserSecurityProfilesRequestT& request, const UpdateUserSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::UpdateUserSecurityProfiles, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the view content of the given view identifier in the specified Amazon
+         * Connect instance.</p> <p>It performs content validation if <code>Status</code>
+         * is set to <code>SAVED</code> and performs full content validation if
+         * <code>Status</code> is <code>PUBLISHED</code>. Note that the <code>$SAVED</code>
+         * alias' content will always be updated, but the <code>$LATEST</code> alias'
+         * content will only be updated if <code>Status</code> is
+         * <code>PUBLISHED</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewContent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateViewContentOutcome UpdateViewContent(const Model::UpdateViewContentRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateViewContent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateViewContentRequestT = Model::UpdateViewContentRequest>
+        Model::UpdateViewContentOutcomeCallable UpdateViewContentCallable(const UpdateViewContentRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdateViewContent, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateViewContent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateViewContentRequestT = Model::UpdateViewContentRequest>
+        void UpdateViewContentAsync(const UpdateViewContentRequestT& request, const UpdateViewContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdateViewContent, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the view metadata. Note that either <code>Name</code> or
+         * <code>Description</code> must be provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateViewMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateViewMetadataOutcome UpdateViewMetadata(const Model::UpdateViewMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateViewMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateViewMetadataRequestT = Model::UpdateViewMetadataRequest>
+        Model::UpdateViewMetadataOutcomeCallable UpdateViewMetadataCallable(const UpdateViewMetadataRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdateViewMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateViewMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateViewMetadataRequestT = Model::UpdateViewMetadataRequest>
+        void UpdateViewMetadataAsync(const UpdateViewMetadataRequestT& request, const UpdateViewMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdateViewMetadata, request, handler, context);
         }
 
 

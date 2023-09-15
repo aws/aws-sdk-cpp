@@ -330,6 +330,42 @@ namespace Model
     inline GetRunTaskResult& WithGpus(int value) { SetGpus(value); return *this;}
 
 
+    /**
+     * <p> The instance type for a task. </p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p> The instance type for a task. </p>
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceType = value; }
+
+    /**
+     * <p> The instance type for a task. </p>
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceType = std::move(value); }
+
+    /**
+     * <p> The instance type for a task. </p>
+     */
+    inline void SetInstanceType(const char* value) { m_instanceType.assign(value); }
+
+    /**
+     * <p> The instance type for a task. </p>
+     */
+    inline GetRunTaskResult& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p> The instance type for a task. </p>
+     */
+    inline GetRunTaskResult& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p> The instance type for a task. </p>
+     */
+    inline GetRunTaskResult& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -374,6 +410,8 @@ namespace Model
     Aws::String m_logStream;
 
     int m_gpus;
+
+    Aws::String m_instanceType;
 
     Aws::String m_requestId;
   };
