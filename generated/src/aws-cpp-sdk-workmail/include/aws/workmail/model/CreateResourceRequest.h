@@ -161,6 +161,72 @@ namespace Model
      */
     inline CreateResourceRequest& WithType(ResourceType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline CreateResourceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline CreateResourceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline CreateResourceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>If this parameter is enabled, the resource will be hidden from the address
+     * book.</p>
+     */
+    inline bool GetHiddenFromGlobalAddressList() const{ return m_hiddenFromGlobalAddressList; }
+
+    /**
+     * <p>If this parameter is enabled, the resource will be hidden from the address
+     * book.</p>
+     */
+    inline bool HiddenFromGlobalAddressListHasBeenSet() const { return m_hiddenFromGlobalAddressListHasBeenSet; }
+
+    /**
+     * <p>If this parameter is enabled, the resource will be hidden from the address
+     * book.</p>
+     */
+    inline void SetHiddenFromGlobalAddressList(bool value) { m_hiddenFromGlobalAddressListHasBeenSet = true; m_hiddenFromGlobalAddressList = value; }
+
+    /**
+     * <p>If this parameter is enabled, the resource will be hidden from the address
+     * book.</p>
+     */
+    inline CreateResourceRequest& WithHiddenFromGlobalAddressList(bool value) { SetHiddenFromGlobalAddressList(value); return *this;}
+
   private:
 
     Aws::String m_organizationId;
@@ -171,6 +237,12 @@ namespace Model
 
     ResourceType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    bool m_hiddenFromGlobalAddressList;
+    bool m_hiddenFromGlobalAddressListHasBeenSet = false;
   };
 
 } // namespace Model

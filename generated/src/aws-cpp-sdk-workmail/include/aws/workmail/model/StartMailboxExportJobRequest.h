@@ -119,41 +119,89 @@ namespace Model
 
     /**
      * <p>The identifier of the user or resource associated with the mailbox.</p>
+     * <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or
+     * Resourcename</i>, or <i>email</i>. The following identity formats are
+     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
+     * r-0123456789a0123456789b0123456789 , or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
 
     /**
      * <p>The identifier of the user or resource associated with the mailbox.</p>
+     * <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or
+     * Resourcename</i>, or <i>email</i>. The following identity formats are
+     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
+     * r-0123456789a0123456789b0123456789 , or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
      */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
      * <p>The identifier of the user or resource associated with the mailbox.</p>
+     * <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or
+     * Resourcename</i>, or <i>email</i>. The following identity formats are
+     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
+     * r-0123456789a0123456789b0123456789 , or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
      */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
      * <p>The identifier of the user or resource associated with the mailbox.</p>
+     * <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or
+     * Resourcename</i>, or <i>email</i>. The following identity formats are
+     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
+     * r-0123456789a0123456789b0123456789 , or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
      */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
 
     /**
      * <p>The identifier of the user or resource associated with the mailbox.</p>
+     * <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or
+     * Resourcename</i>, or <i>email</i>. The following identity formats are
+     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
+     * r-0123456789a0123456789b0123456789 , or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
      */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
 
     /**
      * <p>The identifier of the user or resource associated with the mailbox.</p>
+     * <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or
+     * Resourcename</i>, or <i>email</i>. The following identity formats are
+     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
+     * r-0123456789a0123456789b0123456789 , or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
      */
     inline StartMailboxExportJobRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
 
     /**
      * <p>The identifier of the user or resource associated with the mailbox.</p>
+     * <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or
+     * Resourcename</i>, or <i>email</i>. The following identity formats are
+     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
+     * r-0123456789a0123456789b0123456789 , or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
      */
     inline StartMailboxExportJobRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the user or resource associated with the mailbox.</p>
+     * <p>The identifier can accept <i>UserId or ResourceId</i>, <i>Username or
+     * Resourcename</i>, or <i>email</i>. The following identity formats are
+     * available:</p> <ul> <li> <p>Entity ID: 12345678-1234-1234-1234-123456789012,
+     * r-0123456789a0123456789b0123456789 , or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity name: entity</p> </li> </ul>
      */
     inline StartMailboxExportJobRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
 

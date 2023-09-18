@@ -7,6 +7,7 @@
 #include <aws/workmail/WorkMail_EXPORTS.h>
 #include <aws/workmail/WorkMailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workmail/model/UserRole.h>
 #include <utility>
 
 namespace Aws
@@ -205,6 +206,156 @@ namespace Model
      */
     inline CreateUserRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
+
+    /**
+     * <p>The role of the new user.</p> <p>You cannot pass <i>SYSTEM_USER</i> or
+     * <i>RESOURCE</i> role in a single request. When a user role is not selected, the
+     * default role of <i>USER</i> is selected.</p>
+     */
+    inline const UserRole& GetRole() const{ return m_role; }
+
+    /**
+     * <p>The role of the new user.</p> <p>You cannot pass <i>SYSTEM_USER</i> or
+     * <i>RESOURCE</i> role in a single request. When a user role is not selected, the
+     * default role of <i>USER</i> is selected.</p>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * <p>The role of the new user.</p> <p>You cannot pass <i>SYSTEM_USER</i> or
+     * <i>RESOURCE</i> role in a single request. When a user role is not selected, the
+     * default role of <i>USER</i> is selected.</p>
+     */
+    inline void SetRole(const UserRole& value) { m_roleHasBeenSet = true; m_role = value; }
+
+    /**
+     * <p>The role of the new user.</p> <p>You cannot pass <i>SYSTEM_USER</i> or
+     * <i>RESOURCE</i> role in a single request. When a user role is not selected, the
+     * default role of <i>USER</i> is selected.</p>
+     */
+    inline void SetRole(UserRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
+
+    /**
+     * <p>The role of the new user.</p> <p>You cannot pass <i>SYSTEM_USER</i> or
+     * <i>RESOURCE</i> role in a single request. When a user role is not selected, the
+     * default role of <i>USER</i> is selected.</p>
+     */
+    inline CreateUserRequest& WithRole(const UserRole& value) { SetRole(value); return *this;}
+
+    /**
+     * <p>The role of the new user.</p> <p>You cannot pass <i>SYSTEM_USER</i> or
+     * <i>RESOURCE</i> role in a single request. When a user role is not selected, the
+     * default role of <i>USER</i> is selected.</p>
+     */
+    inline CreateUserRequest& WithRole(UserRole&& value) { SetRole(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The first name of the new user.</p>
+     */
+    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+
+    /**
+     * <p>The first name of the new user.</p>
+     */
+    inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
+
+    /**
+     * <p>The first name of the new user.</p>
+     */
+    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
+
+    /**
+     * <p>The first name of the new user.</p>
+     */
+    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = std::move(value); }
+
+    /**
+     * <p>The first name of the new user.</p>
+     */
+    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
+
+    /**
+     * <p>The first name of the new user.</p>
+     */
+    inline CreateUserRequest& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
+
+    /**
+     * <p>The first name of the new user.</p>
+     */
+    inline CreateUserRequest& WithFirstName(Aws::String&& value) { SetFirstName(std::move(value)); return *this;}
+
+    /**
+     * <p>The first name of the new user.</p>
+     */
+    inline CreateUserRequest& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+
+
+    /**
+     * <p>The last name of the new user. </p>
+     */
+    inline const Aws::String& GetLastName() const{ return m_lastName; }
+
+    /**
+     * <p>The last name of the new user. </p>
+     */
+    inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
+
+    /**
+     * <p>The last name of the new user. </p>
+     */
+    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
+
+    /**
+     * <p>The last name of the new user. </p>
+     */
+    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = std::move(value); }
+
+    /**
+     * <p>The last name of the new user. </p>
+     */
+    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
+
+    /**
+     * <p>The last name of the new user. </p>
+     */
+    inline CreateUserRequest& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
+
+    /**
+     * <p>The last name of the new user. </p>
+     */
+    inline CreateUserRequest& WithLastName(Aws::String&& value) { SetLastName(std::move(value)); return *this;}
+
+    /**
+     * <p>The last name of the new user. </p>
+     */
+    inline CreateUserRequest& WithLastName(const char* value) { SetLastName(value); return *this;}
+
+
+    /**
+     * <p>If this parameter is enabled, the user will be hidden from the address
+     * book.</p>
+     */
+    inline bool GetHiddenFromGlobalAddressList() const{ return m_hiddenFromGlobalAddressList; }
+
+    /**
+     * <p>If this parameter is enabled, the user will be hidden from the address
+     * book.</p>
+     */
+    inline bool HiddenFromGlobalAddressListHasBeenSet() const { return m_hiddenFromGlobalAddressListHasBeenSet; }
+
+    /**
+     * <p>If this parameter is enabled, the user will be hidden from the address
+     * book.</p>
+     */
+    inline void SetHiddenFromGlobalAddressList(bool value) { m_hiddenFromGlobalAddressListHasBeenSet = true; m_hiddenFromGlobalAddressList = value; }
+
+    /**
+     * <p>If this parameter is enabled, the user will be hidden from the address
+     * book.</p>
+     */
+    inline CreateUserRequest& WithHiddenFromGlobalAddressList(bool value) { SetHiddenFromGlobalAddressList(value); return *this;}
+
   private:
 
     Aws::String m_organizationId;
@@ -218,6 +369,18 @@ namespace Model
 
     Aws::String m_password;
     bool m_passwordHasBeenSet = false;
+
+    UserRole m_role;
+    bool m_roleHasBeenSet = false;
+
+    Aws::String m_firstName;
+    bool m_firstNameHasBeenSet = false;
+
+    Aws::String m_lastName;
+    bool m_lastNameHasBeenSet = false;
+
+    bool m_hiddenFromGlobalAddressList;
+    bool m_hiddenFromGlobalAddressListHasBeenSet = false;
   };
 
 } // namespace Model

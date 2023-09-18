@@ -76,83 +76,155 @@ namespace Model
 
 
     /**
-     * <p>The group to which the member (user or group) is associated.</p>
+     * <p>The group to which the member (user or group) is associated.</p> <p>The
+     * identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>The group to which the member (user or group) is associated.</p>
+     * <p>The group to which the member (user or group) is associated.</p> <p>The
+     * identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
-     * <p>The group to which the member (user or group) is associated.</p>
+     * <p>The group to which the member (user or group) is associated.</p> <p>The
+     * identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>The group to which the member (user or group) is associated.</p>
+     * <p>The group to which the member (user or group) is associated.</p> <p>The
+     * identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>The group to which the member (user or group) is associated.</p>
+     * <p>The group to which the member (user or group) is associated.</p> <p>The
+     * identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * <p>The group to which the member (user or group) is associated.</p>
+     * <p>The group to which the member (user or group) is associated.</p> <p>The
+     * identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline AssociateMemberToGroupRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>The group to which the member (user or group) is associated.</p>
+     * <p>The group to which the member (user or group) is associated.</p> <p>The
+     * identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline AssociateMemberToGroupRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The group to which the member (user or group) is associated.</p>
+     * <p>The group to which the member (user or group) is associated.</p> <p>The
+     * identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The
+     * following identity formats are available:</p> <ul> <li> <p>Group ID:
+     * 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * group@domain.tld</p> </li> <li> <p>Group name: group</p> </li> </ul>
      */
     inline AssociateMemberToGroupRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
 
     /**
-     * <p>The member (user or group) to associate to the group.</p>
+     * <p>The member (user or group) to associate to the group.</p> <p>The member ID
+     * can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Member: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * member@domain.tld</p> </li> <li> <p>Member name: member</p> </li> </ul>
      */
     inline const Aws::String& GetMemberId() const{ return m_memberId; }
 
     /**
-     * <p>The member (user or group) to associate to the group.</p>
+     * <p>The member (user or group) to associate to the group.</p> <p>The member ID
+     * can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Member: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * member@domain.tld</p> </li> <li> <p>Member name: member</p> </li> </ul>
      */
     inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
 
     /**
-     * <p>The member (user or group) to associate to the group.</p>
+     * <p>The member (user or group) to associate to the group.</p> <p>The member ID
+     * can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Member: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * member@domain.tld</p> </li> <li> <p>Member name: member</p> </li> </ul>
      */
     inline void SetMemberId(const Aws::String& value) { m_memberIdHasBeenSet = true; m_memberId = value; }
 
     /**
-     * <p>The member (user or group) to associate to the group.</p>
+     * <p>The member (user or group) to associate to the group.</p> <p>The member ID
+     * can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Member: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * member@domain.tld</p> </li> <li> <p>Member name: member</p> </li> </ul>
      */
     inline void SetMemberId(Aws::String&& value) { m_memberIdHasBeenSet = true; m_memberId = std::move(value); }
 
     /**
-     * <p>The member (user or group) to associate to the group.</p>
+     * <p>The member (user or group) to associate to the group.</p> <p>The member ID
+     * can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Member: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * member@domain.tld</p> </li> <li> <p>Member name: member</p> </li> </ul>
      */
     inline void SetMemberId(const char* value) { m_memberIdHasBeenSet = true; m_memberId.assign(value); }
 
     /**
-     * <p>The member (user or group) to associate to the group.</p>
+     * <p>The member (user or group) to associate to the group.</p> <p>The member ID
+     * can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Member: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * member@domain.tld</p> </li> <li> <p>Member name: member</p> </li> </ul>
      */
     inline AssociateMemberToGroupRequest& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
 
     /**
-     * <p>The member (user or group) to associate to the group.</p>
+     * <p>The member (user or group) to associate to the group.</p> <p>The member ID
+     * can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Member: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * member@domain.tld</p> </li> <li> <p>Member name: member</p> </li> </ul>
      */
     inline AssociateMemberToGroupRequest& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
 
     /**
-     * <p>The member (user or group) to associate to the group.</p>
+     * <p>The member (user or group) to associate to the group.</p> <p>The member ID
+     * can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Member: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * member@domain.tld</p> </li> <li> <p>Member name: member</p> </li> </ul>
      */
     inline AssociateMemberToGroupRequest& WithMemberId(const char* value) { SetMemberId(value); return *this;}
 
