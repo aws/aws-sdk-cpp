@@ -17,7 +17,9 @@ DeleteOrganizationRequest::DeleteOrganizationRequest() :
     m_clientTokenHasBeenSet(true),
     m_organizationIdHasBeenSet(false),
     m_deleteDirectory(false),
-    m_deleteDirectoryHasBeenSet(false)
+    m_deleteDirectoryHasBeenSet(false),
+    m_forceDelete(false),
+    m_forceDeleteHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,12 @@ Aws::String DeleteOrganizationRequest::SerializePayload() const
   if(m_deleteDirectoryHasBeenSet)
   {
    payload.WithBool("DeleteDirectory", m_deleteDirectory);
+
+  }
+
+  if(m_forceDeleteHasBeenSet)
+  {
+   payload.WithBool("ForceDelete", m_forceDelete);
 
   }
 

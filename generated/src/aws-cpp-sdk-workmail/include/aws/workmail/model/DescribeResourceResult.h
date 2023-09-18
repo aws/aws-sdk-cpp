@@ -289,6 +289,58 @@ namespace Model
     inline DescribeResourceResult& WithDisabledDate(Aws::Utils::DateTime&& value) { SetDisabledDate(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Description of the resource.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Description of the resource.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>Description of the resource.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>Description of the resource.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>Description of the resource.</p>
+     */
+    inline DescribeResourceResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Description of the resource.</p>
+     */
+    inline DescribeResourceResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Description of the resource.</p>
+     */
+    inline DescribeResourceResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>If enabled, the resource is hidden from the global address list.</p>
+     */
+    inline bool GetHiddenFromGlobalAddressList() const{ return m_hiddenFromGlobalAddressList; }
+
+    /**
+     * <p>If enabled, the resource is hidden from the global address list.</p>
+     */
+    inline void SetHiddenFromGlobalAddressList(bool value) { m_hiddenFromGlobalAddressList = value; }
+
+    /**
+     * <p>If enabled, the resource is hidden from the global address list.</p>
+     */
+    inline DescribeResourceResult& WithHiddenFromGlobalAddressList(bool value) { SetHiddenFromGlobalAddressList(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -327,6 +379,10 @@ namespace Model
     Aws::Utils::DateTime m_enabledDate;
 
     Aws::Utils::DateTime m_disabledDate;
+
+    Aws::String m_description;
+
+    bool m_hiddenFromGlobalAddressList;
 
     Aws::String m_requestId;
   };

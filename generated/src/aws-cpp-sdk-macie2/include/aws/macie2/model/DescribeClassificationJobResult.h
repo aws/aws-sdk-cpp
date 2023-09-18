@@ -657,20 +657,19 @@ namespace Model
 
     /**
      * <p>The selection type that determines which managed data identifiers the job
-     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL (default) -
-     * Use all managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
+     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL - Use all
+     * managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
      * identifiers except the ones specified by the managedDataIdentifierIds
      * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
      * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
      * use any managed data identifiers. Use only custom data identifiers
-     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED - Use only the set of
-     * managed data identifiers that Amazon Web Services recommends for
-     * jobs.</p></li></ul> <p>If this value is null, the job uses all managed data
-     * identifiers.</p> <p>If the job is a recurring job and this value is null, ALL,
-     * or EXCLUDE, each job run automatically uses new managed data identifiers that
-     * are released after the job was created or the preceding run ended. If this value
-     * is RECOMMENDED for a recurring job, each job run uses all the managed data
-     * identifiers that are in the recommended set when the run starts.</p> <p>For
+     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED (default) - Use the
+     * recommended set of managed data identifiers.</p></li></ul> <p>If this value is
+     * null, the job uses the recommended set of managed data identifiers.</p> <p>If
+     * the job is a recurring job and this value is ALL or EXCLUDE, each job run
+     * automatically uses new managed data identifiers that are released. If this value
+     * is null or RECOMMENDED for a recurring job, each job run uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
      * information about individual managed data identifiers or to determine which ones
      * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
@@ -682,20 +681,19 @@ namespace Model
 
     /**
      * <p>The selection type that determines which managed data identifiers the job
-     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL (default) -
-     * Use all managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
+     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL - Use all
+     * managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
      * identifiers except the ones specified by the managedDataIdentifierIds
      * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
      * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
      * use any managed data identifiers. Use only custom data identifiers
-     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED - Use only the set of
-     * managed data identifiers that Amazon Web Services recommends for
-     * jobs.</p></li></ul> <p>If this value is null, the job uses all managed data
-     * identifiers.</p> <p>If the job is a recurring job and this value is null, ALL,
-     * or EXCLUDE, each job run automatically uses new managed data identifiers that
-     * are released after the job was created or the preceding run ended. If this value
-     * is RECOMMENDED for a recurring job, each job run uses all the managed data
-     * identifiers that are in the recommended set when the run starts.</p> <p>For
+     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED (default) - Use the
+     * recommended set of managed data identifiers.</p></li></ul> <p>If this value is
+     * null, the job uses the recommended set of managed data identifiers.</p> <p>If
+     * the job is a recurring job and this value is ALL or EXCLUDE, each job run
+     * automatically uses new managed data identifiers that are released. If this value
+     * is null or RECOMMENDED for a recurring job, each job run uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
      * information about individual managed data identifiers or to determine which ones
      * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
@@ -707,20 +705,19 @@ namespace Model
 
     /**
      * <p>The selection type that determines which managed data identifiers the job
-     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL (default) -
-     * Use all managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
+     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL - Use all
+     * managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
      * identifiers except the ones specified by the managedDataIdentifierIds
      * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
      * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
      * use any managed data identifiers. Use only custom data identifiers
-     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED - Use only the set of
-     * managed data identifiers that Amazon Web Services recommends for
-     * jobs.</p></li></ul> <p>If this value is null, the job uses all managed data
-     * identifiers.</p> <p>If the job is a recurring job and this value is null, ALL,
-     * or EXCLUDE, each job run automatically uses new managed data identifiers that
-     * are released after the job was created or the preceding run ended. If this value
-     * is RECOMMENDED for a recurring job, each job run uses all the managed data
-     * identifiers that are in the recommended set when the run starts.</p> <p>For
+     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED (default) - Use the
+     * recommended set of managed data identifiers.</p></li></ul> <p>If this value is
+     * null, the job uses the recommended set of managed data identifiers.</p> <p>If
+     * the job is a recurring job and this value is ALL or EXCLUDE, each job run
+     * automatically uses new managed data identifiers that are released. If this value
+     * is null or RECOMMENDED for a recurring job, each job run uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
      * information about individual managed data identifiers or to determine which ones
      * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
@@ -732,20 +729,19 @@ namespace Model
 
     /**
      * <p>The selection type that determines which managed data identifiers the job
-     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL (default) -
-     * Use all managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
+     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL - Use all
+     * managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
      * identifiers except the ones specified by the managedDataIdentifierIds
      * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
      * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
      * use any managed data identifiers. Use only custom data identifiers
-     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED - Use only the set of
-     * managed data identifiers that Amazon Web Services recommends for
-     * jobs.</p></li></ul> <p>If this value is null, the job uses all managed data
-     * identifiers.</p> <p>If the job is a recurring job and this value is null, ALL,
-     * or EXCLUDE, each job run automatically uses new managed data identifiers that
-     * are released after the job was created or the preceding run ended. If this value
-     * is RECOMMENDED for a recurring job, each job run uses all the managed data
-     * identifiers that are in the recommended set when the run starts.</p> <p>For
+     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED (default) - Use the
+     * recommended set of managed data identifiers.</p></li></ul> <p>If this value is
+     * null, the job uses the recommended set of managed data identifiers.</p> <p>If
+     * the job is a recurring job and this value is ALL or EXCLUDE, each job run
+     * automatically uses new managed data identifiers that are released. If this value
+     * is null or RECOMMENDED for a recurring job, each job run uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
      * information about individual managed data identifiers or to determine which ones
      * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
@@ -757,20 +753,19 @@ namespace Model
 
     /**
      * <p>The selection type that determines which managed data identifiers the job
-     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL (default) -
-     * Use all managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
+     * uses when it analyzes data. Possible values are:</p> <ul><li><p>ALL - Use all
+     * managed data identifiers.</p></li> <li><p>EXCLUDE - Use all managed data
      * identifiers except the ones specified by the managedDataIdentifierIds
      * property.</p></li> <li><p>INCLUDE - Use only the managed data identifiers
      * specified by the managedDataIdentifierIds property.</p></li> <li><p>NONE - Don't
      * use any managed data identifiers. Use only custom data identifiers
-     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED - Use only the set of
-     * managed data identifiers that Amazon Web Services recommends for
-     * jobs.</p></li></ul> <p>If this value is null, the job uses all managed data
-     * identifiers.</p> <p>If the job is a recurring job and this value is null, ALL,
-     * or EXCLUDE, each job run automatically uses new managed data identifiers that
-     * are released after the job was created or the preceding run ended. If this value
-     * is RECOMMENDED for a recurring job, each job run uses all the managed data
-     * identifiers that are in the recommended set when the run starts.</p> <p>For
+     * (customDataIdentifierIds).</p></li> <li><p>RECOMMENDED (default) - Use the
+     * recommended set of managed data identifiers.</p></li></ul> <p>If this value is
+     * null, the job uses the recommended set of managed data identifiers.</p> <p>If
+     * the job is a recurring job and this value is ALL or EXCLUDE, each job run
+     * automatically uses new managed data identifiers that are released. If this value
+     * is null or RECOMMENDED for a recurring job, each job run uses all the managed
+     * data identifiers that are in the recommended set when the run starts.</p> <p>For
      * information about individual managed data identifiers or to determine which ones
      * are in the recommended set, see <a
      * href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using
