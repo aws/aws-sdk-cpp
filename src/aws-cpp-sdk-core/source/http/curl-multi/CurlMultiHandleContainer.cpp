@@ -4,51 +4,67 @@
  */
 
 #include <aws/core/http/curl-multi/CurlMultiHandleContainer.h>
+#include <aws/core/http/curl-multi/CurlEasyHandleContext.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
 #include <algorithm>
 
-using namespace Aws::Utils::Logging;
-using namespace Aws::Http;
+namespace Aws
+{
+namespace Http
+{
+namespace Curl
+{
 
 static const char* CURL_HANDLE_CONTAINER_TAG = "CurlMultiHandleContainer";
 
 
-CurlMultiHandleContainer::CurlMultiHandleContainer(unsigned maxSize, long httpRequestTimeout, long connectTimeout, bool enableTcpKeepAlive,
-                                        unsigned long tcpKeepAliveIntervalMs, long lowSpeedTime, unsigned long lowSpeedLimit,
-                                        Version version) :
+CurlMultiHandleContainer::CurlMultiHandleContainer(unsigned maxSize,
+                                                   long httpRequestTimeout,
+                                                   long connectTimeout,
+                                                   bool enableTcpKeepAlive,
+                                                   unsigned long tcpKeepAliveIntervalMs,
+                                                   long lowSpeedTime,
+                                                   unsigned long lowSpeedLimit,
+                                                   Version version) :
                 m_maxPoolSize(maxSize), m_httpRequestTimeout(httpRequestTimeout), m_connectTimeout(connectTimeout), m_enableTcpKeepAlive(enableTcpKeepAlive),
                 m_tcpKeepAliveIntervalMs(tcpKeepAliveIntervalMs), m_lowSpeedTime(lowSpeedTime), m_lowSpeedLimit(lowSpeedLimit), m_poolSize(0),
                 m_version(version)
 {
     AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Initializing CurlMultiHandleContainer with size " << maxSize);
 
-    this->m_curlMultiHandle = curl_multi_init();
-    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "CURLMOPT_MAXCONNECTS = " << m_maxPoolSize);
-    curl_multi_setopt(this->m_curlMultiHandle, CURLMOPT_MAXCONNECTS, m_maxPoolSize);
-//    this->m_curlShare = curl_share_init();
-//    CURLSHcode curlShareCode = curl_share_setopt(this->m_curlShare, CURLSHOPT_SHARE, CURL_LOCK_DATA_COOKIE);
-//    curlShareCode = curl_share_setopt(this->m_curlShare, CURLSHOPT_SHARE, CURL_LOCK_DATA_SSL_SESSION);
-//    assert(curlShareCode == CURLSHE_OK);
-//    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Enabled CURLSHOPT_SHARE CURL_LOCK_DATA_SSL_SESSION");
+    m_curlMultiHandle = curl_multi_init();
+    assert(m_curlMultiHandle);
+    if(!m_curlMultiHandle)
+    {
+        AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_multi_init failed.");
+        return;
+    }
+    curl_multi_setopt(m_curlMultiHandle, CURLMOPT_MAXCONNECTS, m_maxPoolSize);
+    AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Initialized curl multi handle " << m_curlMultiHandle);
 }
 
 CurlMultiHandleContainer::~CurlMultiHandleContainer()
 {
     AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Cleaning up CurlMultiHandleContainer.");
-    for (CURL* handle : m_handleContainer.ShutdownAndWait(m_poolSize))
+    for (CurlEasyHandleContext* easyHandleContext : m_handleContainer.ShutdownAndWait(m_poolSize))
     {
-        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Cleaning up " << handle);
-        curl_easy_cleanup(handle);
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Cleaning up " << easyHandleContext->m_curlEasyHandle);
+        assert(easyHandleContext->m_curlEasyHandle);
+        curl_easy_cleanup(easyHandleContext->m_curlEasyHandle);
+
+        Aws::Delete(easyHandleContext);
     }
 
-    curl_multi_cleanup(m_curlMultiHandle);
-    m_curlMultiHandle = nullptr;
-//    curl_share_cleanup(m_curlShare);
-//    m_curlShare = nullptr;
+    if(m_curlMultiHandle)
+    {
+        AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Cleaning up curl multi handdle" << m_curlMultiHandle);
+        curl_multi_cleanup(m_curlMultiHandle);
+        m_curlMultiHandle = nullptr;
+    }
 }
 
-CURL* CurlMultiHandleContainer::AcquireCurlHandle()
+CurlEasyHandleContext* CurlMultiHandleContainer::AcquireCurlHandle()
 {
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Attempting to acquire curl easy handle.");
 
@@ -58,64 +74,77 @@ CURL* CurlMultiHandleContainer::AcquireCurlHandle()
         CheckAndGrowPool();
     }
 
-    CURL* handle = m_handleContainer.Acquire();
+    CurlEasyHandleContext* handle = m_handleContainer.Acquire();
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle);
     return handle;
 }
 
-void CurlMultiHandleContainer::ReleaseCurlHandle(CURL* handle)
+void CurlMultiHandleContainer::ReleaseCurlHandle(CurlEasyHandleContext* handleCtx)
 {
+    CURL* handle = handleCtx ? handleCtx->m_curlEasyHandle : nullptr;
     if (handle)
     {
 #if LIBCURL_VERSION_NUM >= 0x074D00 // 7.77.0
         curl_easy_setopt(handle, CURLOPT_COOKIEFILE, NULL); // workaround a mem leak on curl
 #endif
         curl_easy_reset(handle);
-        SetDefaultOptionsOnHandle(handle);
+        SetDefaultOptionsOnHandle(*handleCtx);
+        curl_easy_setopt(handle, CURLOPT_PRIVATE, handleCtx);
         AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Releasing curl handle " << handle);
-        m_handleContainer.Release(handle);
+        m_handleContainer.Release(handleCtx);
         AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Notified waiting threads.");
     }
 }
 
-void CurlMultiHandleContainer::DestroyCurlHandle(CURL* handle)
+void CurlMultiHandleContainer::DestroyCurlHandle(CurlEasyHandleContext* handleCtx)
 {
-    if (!handle)
+    if(handleCtx && handleCtx->m_curlEasyHandle)
     {
-        return;
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Destroy curl handle: " << handleCtx->m_curlEasyHandle);
+        curl_easy_cleanup(handleCtx->m_curlEasyHandle);
+        handleCtx->m_curlEasyHandle = nullptr;
+        Aws::Delete(handleCtx);
+        handleCtx = nullptr;
     }
 
-    curl_easy_cleanup(handle);
-    AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Destroy curl handle: " << handle);
     {
         std::lock_guard<std::mutex> locker(m_containerLock);
         // Other threads could be blocked and waiting on m_handleContainer.Acquire()
         // If the handle is not released back to the pool, it could create a deadlock
         // Create a new handle and release that into the pool
-        handle = CreateCurlHandleInPool();
+        handleCtx = CreateCurlHandleInPool();
     }
-    if (handle)
+    if (handleCtx)
     {
-        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Created replacement handle and released to pool: " << handle);
+        AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Created replacement handle and released to pool: " << handleCtx->m_curlEasyHandle);
     }
 }
 
 
-CURL* CurlMultiHandleContainer::CreateCurlHandleInPool()
+CurlEasyHandleContext* CurlMultiHandleContainer::CreateCurlHandleInPool()
 {
-    CURL* curlHandle = curl_easy_init();
-
-    if (curlHandle)
+    CurlEasyHandleContext* handleCtx = Aws::New<CurlEasyHandleContext>(CURL_HANDLE_CONTAINER_TAG);
+    if(!handleCtx)
     {
-        SetDefaultOptionsOnHandle(curlHandle);
-        m_handleContainer.Release(curlHandle);
+      assert(handleCtx);
+      AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_easy_init failed to allocate.");
+      return nullptr;
+    }
+
+    handleCtx->m_curlEasyHandle = curl_easy_init();
+
+    if (handleCtx->m_curlEasyHandle)
+    {
+        SetDefaultOptionsOnHandle(*handleCtx);
+        curl_easy_setopt(handleCtx->m_curlEasyHandle, CURLOPT_PRIVATE, handleCtx);
+        m_handleContainer.Release(handleCtx);
     }
     else
     {
         AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG, "curl_easy_init failed to allocate.");
     }
-    return curlHandle;
+    return handleCtx;
 }
 
 bool CurlMultiHandleContainer::CheckAndGrowPool()
@@ -153,20 +182,56 @@ bool CurlMultiHandleContainer::CheckAndGrowPool()
     return false;
 }
 
-void CurlMultiHandleContainer::SetDefaultOptionsOnHandle(CURL* handle)
+void CurlMultiHandleContainer::SetDefaultOptionsOnHandle(CurlEasyHandleContext& handleCtx)
 {
-    //for timeouts to work in a multi-threaded context,
-    //always turn signals off. This also forces dns queries to
-    //not be included in the timeout calculations.
-    curl_easy_setopt(handle, CURLOPT_NOSIGNAL, 1L);
-    curl_easy_setopt(handle, CURLOPT_TIMEOUT_MS, m_httpRequestTimeout);
-    curl_easy_setopt(handle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
-    curl_easy_setopt(handle, CURLOPT_LOW_SPEED_LIMIT, m_lowSpeedLimit);
-    curl_easy_setopt(handle, CURLOPT_LOW_SPEED_TIME, m_lowSpeedTime < 1000 ? (m_lowSpeedTime == 0 ? 0 : 1) : m_lowSpeedTime / 1000);
-    curl_easy_setopt(handle, CURLOPT_TCP_KEEPALIVE, m_enableTcpKeepAlive ? 1L : 0L);
-    curl_easy_setopt(handle, CURLOPT_TCP_KEEPINTVL, m_tcpKeepAliveIntervalMs / 1000);
-    curl_easy_setopt(handle, CURLOPT_TCP_KEEPIDLE, m_tcpKeepAliveIntervalMs / 1000);
-    curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, ConvertHttpVersion(m_version));
+    CURL* handle = handleCtx.m_curlEasyHandle;
+    assert(handle);
+    if(handle) {
+      handleCtx.writeContext.m_HasBody = false;
+      handleCtx.writeContext.m_request = nullptr;
+      handleCtx.writeContext.m_rateLimiter = nullptr;
+      handleCtx.writeContext.m_numBytesResponseReceived = 0;
+
+      handleCtx.readContext.m_rateLimiter = 0;
+      handleCtx.readContext.m_request = 0;
+      handleCtx.readContext.m_chunkEnd = false;
+      if (handleCtx.m_curlHandleHeaders)
+      {
+        curl_slist_free_all(handleCtx.m_curlHandleHeaders);
+        handleCtx.m_curlHandleHeaders = nullptr;
+      }
+      handleCtx.curlResult = CURLE_FAILED_INIT;
+      handleCtx.curlResultMsg = nullptr;
+
+      //for timeouts to work in a multi-threaded context,
+      //always turn signals off. This also forces dns queries to
+      //not be included in the timeout calculations.
+      curl_easy_setopt(handle, CURLOPT_NOSIGNAL, 1L);
+      curl_easy_setopt(handle, CURLOPT_TIMEOUT_MS, m_httpRequestTimeout);
+      curl_easy_setopt(handle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
+      curl_easy_setopt(handle, CURLOPT_LOW_SPEED_LIMIT, m_lowSpeedLimit);
+      curl_easy_setopt(handle, CURLOPT_LOW_SPEED_TIME,
+                       m_lowSpeedTime < 1000 ? (m_lowSpeedTime == 0 ? 0 : 1) : m_lowSpeedTime / 1000);
+      curl_easy_setopt(handle, CURLOPT_TCP_KEEPALIVE, m_enableTcpKeepAlive ? 1L : 0L);
+      curl_easy_setopt(handle, CURLOPT_TCP_KEEPINTVL, m_tcpKeepAliveIntervalMs / 1000);
+      curl_easy_setopt(handle, CURLOPT_TCP_KEEPIDLE, m_tcpKeepAliveIntervalMs / 1000);
+      curl_easy_setopt(handle, CURLOPT_HTTP_VERSION, ConvertHttpVersion(m_version));
+
+      // Set callbacks and their context
+      // Curl to SDK write
+      curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, CurlEasyHandleContext::WriteData);
+      curl_easy_setopt(handle, CURLOPT_WRITEDATA, &handleCtx);
+      curl_easy_setopt(handle, CURLOPT_HEADERFUNCTION, CurlEasyHandleContext::WriteHeader);
+      curl_easy_setopt(handle, CURLOPT_HEADERDATA, &handleCtx);
+      // SDK to Curl default (non streaming) read
+      curl_easy_setopt(handle, CURLOPT_READFUNCTION, CurlEasyHandleContext::ReadBodyFunc);
+      curl_easy_setopt(handle, CURLOPT_READDATA, &handleCtx);
+      curl_easy_setopt(handle, CURLOPT_SEEKFUNCTION, CurlEasyHandleContext::SeekBody);
+      curl_easy_setopt(handle, CURLOPT_SEEKDATA, &handleCtx);
+
+      // enable the cookie engine without reading any initial cookies.
+      curl_easy_setopt(handle, CURLOPT_COOKIEFILE, "");
+    }
 }
 
 long CurlMultiHandleContainer::ConvertHttpVersion(Version version) {
@@ -218,3 +283,7 @@ long CurlMultiHandleContainer::ConvertHttpVersion(Version version) {
     return CURL_HTTP_VERSION_1_1;
 #endif
 }
+
+} // namespace Curl
+} // namespace Http
+} // namespace Aws

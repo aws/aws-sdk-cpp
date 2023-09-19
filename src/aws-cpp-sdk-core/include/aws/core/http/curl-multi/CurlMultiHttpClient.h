@@ -20,6 +20,10 @@ namespace Aws
 {
 namespace Http
 {
+namespace Curl
+{
+    struct CurlEasyHandleContext;
+}
 namespace Standard
 {
     class StandardHttpResponse;
@@ -60,8 +64,6 @@ public:
         bool disableExpectHeader = false;
         bool allowRedirects = false;
     };
-    struct CurlEasyHandleContext;
-
     using Base = HttpClient;
 
     //Creates client, initializes curl handle if it hasn't been created already.
@@ -84,9 +86,9 @@ protected:
     virtual void OverrideOptionsOnConnectionHandle(CURL*) const {}
 
 private:
-    void SubmitTask(std::shared_ptr<CurlEasyHandleContext> pEasyHandleCtx) const;
+    void SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx) const;
 
-    static std::shared_ptr<HttpResponse> HandleCurlResponse(std::shared_ptr<CurlEasyHandleContext> pEasyHandleCtx);
+    static std::shared_ptr<HttpResponse> HandleCurlResponse(Curl::CurlEasyHandleContext* pEasyHandleCtx);
     static void CurlMultiPerformThread(CurlMultiHttpClient* pClient);
 
     std::thread m_multiHandleThread;
@@ -97,11 +99,11 @@ private:
     // mutable std::mutex m_tasksMutex;
     mutable std::atomic<size_t> m_tasksQueued;
     mutable std::mutex m_tasksMutex;
-    mutable Aws::UnorderedMap<CURL*, std::shared_ptr<CurlEasyHandleContext>> m_tasks;
+    mutable Aws::UnorderedMap<CURL*, std::shared_ptr<Curl::CurlEasyHandleContext>> m_tasks;
 
     CurlMultiHttpClientConfig m_config;
 
-    mutable CurlMultiHandleContainer m_curlMultiHandleContainer;
+    mutable Curl::CurlMultiHandleContainer m_curlMultiHandleContainer;
 
     static std::atomic<bool> isGlobalStateInit;
     std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;
