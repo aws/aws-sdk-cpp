@@ -78,44 +78,44 @@ namespace Model
 
 
     /**
-     * <p>The token returned if the response is truncated. To retrieve the next set of
-     * job executions, use it in the next request.</p>
+     * <p>If the response is truncated, Amazon SageMaker returns this token. To
+     * retrieve the next set of jobs, use it in the subsequent reques</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token returned if the response is truncated. To retrieve the next set of
-     * job executions, use it in the next request.</p>
+     * <p>If the response is truncated, Amazon SageMaker returns this token. To
+     * retrieve the next set of jobs, use it in the subsequent reques</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token returned if the response is truncated. To retrieve the next set of
-     * job executions, use it in the next request.</p>
+     * <p>If the response is truncated, Amazon SageMaker returns this token. To
+     * retrieve the next set of jobs, use it in the subsequent reques</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token returned if the response is truncated. To retrieve the next set of
-     * job executions, use it in the next request.</p>
+     * <p>If the response is truncated, Amazon SageMaker returns this token. To
+     * retrieve the next set of jobs, use it in the subsequent reques</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token returned if the response is truncated. To retrieve the next set of
-     * job executions, use it in the next request.</p>
+     * <p>If the response is truncated, Amazon SageMaker returns this token. To
+     * retrieve the next set of jobs, use it in the subsequent reques</p>
      */
     inline ListMonitoringExecutionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token returned if the response is truncated. To retrieve the next set of
-     * job executions, use it in the next request.</p>
+     * <p>If the response is truncated, Amazon SageMaker returns this token. To
+     * retrieve the next set of jobs, use it in the subsequent reques</p>
      */
     inline ListMonitoringExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token returned if the response is truncated. To retrieve the next set of
-     * job executions, use it in the next request.</p>
+     * <p>If the response is truncated, Amazon SageMaker returns this token. To
+     * retrieve the next set of jobs, use it in the subsequent reques</p>
      */
     inline ListMonitoringExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

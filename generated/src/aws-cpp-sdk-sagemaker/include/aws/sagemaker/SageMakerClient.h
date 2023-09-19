@@ -366,10 +366,9 @@ namespace SageMaker
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>,
          * which offer backward compatibility.</p> <p> <code>CreateAutoMLJobV2</code> can
          * manage tabular problem types identical to those of its previous version
-         * <code>CreateAutoMLJob</code>, as well as time-series forecasting, and
-         * non-tabular problem types such as image or text classification.</p> <p>Find
-         * guidelines about how to migrate a <code>CreateAutoMLJob</code> to
-         * <code>CreateAutoMLJobV2</code> in <a
+         * <code>CreateAutoMLJob</code>, as well as non-tabular problem types such as image
+         * or text classification.</p> <p>Find guidelines about how to migrate a
+         * <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
          * a CreateAutoMLJob to CreateAutoMLJobV2</a>.</p>  <p>You can find the
          * best-performing model after you run an AutoML job by calling <a
@@ -412,10 +411,9 @@ namespace SageMaker
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>
          * which offer backward compatibility.</p> <p> <code>CreateAutoMLJobV2</code> can
          * manage tabular problem types identical to those of its previous version
-         * <code>CreateAutoMLJob</code>, as well as time-series forecasting, and
-         * non-tabular problem types such as image or text classification.</p> <p>Find
-         * guidelines about how to migrate a <code>CreateAutoMLJob</code> to
-         * <code>CreateAutoMLJobV2</code> in <a
+         * <code>CreateAutoMLJob</code>, as well as non-tabular problem types such as image
+         * or text classification.</p> <p>Find guidelines about how to migrate a
+         * <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
          * a CreateAutoMLJob to CreateAutoMLJobV2</a>.</p>  <p>For the list of
          * available problem types supported by <code>CreateAutoMLJobV2</code>, see <a

@@ -371,32 +371,32 @@ namespace Model
 
 
     /**
-     * <p>Type of order.</p>
+     * <p>The type of order.</p>
      */
     inline const OrderType& GetOrderType() const{ return m_orderType; }
 
     /**
-     * <p>Type of order.</p>
+     * <p>The type of order.</p>
      */
     inline bool OrderTypeHasBeenSet() const { return m_orderTypeHasBeenSet; }
 
     /**
-     * <p>Type of order.</p>
+     * <p>The type of order.</p>
      */
     inline void SetOrderType(const OrderType& value) { m_orderTypeHasBeenSet = true; m_orderType = value; }
 
     /**
-     * <p>Type of order.</p>
+     * <p>The type of order.</p>
      */
     inline void SetOrderType(OrderType&& value) { m_orderTypeHasBeenSet = true; m_orderType = std::move(value); }
 
     /**
-     * <p>Type of order.</p>
+     * <p>The type of order.</p>
      */
     inline Order& WithOrderType(const OrderType& value) { SetOrderType(value); return *this;}
 
     /**
-     * <p>Type of order.</p>
+     * <p>The type of order.</p>
      */
     inline Order& WithOrderType(OrderType&& value) { SetOrderType(std::move(value)); return *this;}
 

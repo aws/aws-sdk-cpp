@@ -735,7 +735,27 @@ namespace Model
     r7gd_4xlarge,
     r7gd_8xlarge,
     r7gd_12xlarge,
-    r7gd_16xlarge
+    r7gd_16xlarge,
+    r7a_medium,
+    r7a_large,
+    r7a_xlarge,
+    r7a_2xlarge,
+    r7a_4xlarge,
+    r7a_8xlarge,
+    r7a_12xlarge,
+    r7a_16xlarge,
+    r7a_24xlarge,
+    r7a_32xlarge,
+    r7a_48xlarge,
+    c7i_large,
+    c7i_xlarge,
+    c7i_2xlarge,
+    c7i_4xlarge,
+    c7i_8xlarge,
+    c7i_12xlarge,
+    c7i_16xlarge,
+    c7i_24xlarge,
+    c7i_48xlarge
   };
 
 namespace InstanceTypeMapper
