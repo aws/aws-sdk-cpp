@@ -69,7 +69,7 @@ namespace Http
             /* SDK side */
             const CurlMultiHttpClient* m_client = nullptr;
             ExecutionPolicy m_execPolicy;
-            std::function<void()> m_onCurlDoneFn;
+            std::function<void()> m_onCurlDoneFn; // called in a main multi loop => must be lightweight.
             Aws::Utils::DateTime startTransmissionTime;
 
             /* Curl calls the SDK back */
