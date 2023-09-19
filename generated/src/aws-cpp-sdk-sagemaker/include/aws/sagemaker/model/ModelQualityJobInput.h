@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The input for the model quality monitoring job. Currently endpoints are
+   * <p>The input for the model quality monitoring job. Currently endponts are
    * supported for input for model quality monitoring jobs.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelQualityJobInput">AWS

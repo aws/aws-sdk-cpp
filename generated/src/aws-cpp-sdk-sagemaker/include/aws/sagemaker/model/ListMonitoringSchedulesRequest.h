@@ -81,44 +81,38 @@ namespace Model
 
 
     /**
-     * <p>Whether to sort the results by the <code>Status</code>,
-     * <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is
-     * <code>CreationTime</code>.</p>
+     * <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
+     * <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
      */
     inline const MonitoringScheduleSortKey& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>Whether to sort the results by the <code>Status</code>,
-     * <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is
-     * <code>CreationTime</code>.</p>
+     * <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
+     * <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>Whether to sort the results by the <code>Status</code>,
-     * <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is
-     * <code>CreationTime</code>.</p>
+     * <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
+     * <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
      */
     inline void SetSortBy(const MonitoringScheduleSortKey& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>Whether to sort the results by the <code>Status</code>,
-     * <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is
-     * <code>CreationTime</code>.</p>
+     * <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
+     * <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
      */
     inline void SetSortBy(MonitoringScheduleSortKey&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>Whether to sort the results by the <code>Status</code>,
-     * <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is
-     * <code>CreationTime</code>.</p>
+     * <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
+     * <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
      */
     inline ListMonitoringSchedulesRequest& WithSortBy(const MonitoringScheduleSortKey& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>Whether to sort the results by the <code>Status</code>,
-     * <code>CreationTime</code>, or <code>ScheduledTime</code> field. The default is
-     * <code>CreationTime</code>.</p>
+     * <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
+     * <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
      */
     inline ListMonitoringSchedulesRequest& WithSortBy(MonitoringScheduleSortKey&& value) { SetSortBy(std::move(value)); return *this;}
 
