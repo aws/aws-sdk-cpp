@@ -13,12 +13,9 @@
 namespace Aws {
     namespace Utils {
         namespace Crypto {
-            /**
-             * CRC32 hash implementation.
-             */
             class AWS_CORE_API PrecalculatedHash : public Hash {
             public:
-                PrecalculatedHash(const Aws::String &mHash);
+                PrecalculatedHash(const Aws::String &hash);
                 virtual ~PrecalculatedHash();
                 virtual HashResult Calculate(const Aws::String &str) override;
                 HashResult Calculate(Aws::IStream &stream) override;
@@ -27,7 +24,7 @@ namespace Aws {
                 HashResult GetHash() override;
 
             private:
-                Aws::String m_hash_string;
+                Aws::String m_hashString;
 
             };
         }

@@ -8,27 +8,25 @@
 
 using namespace Aws::Utils::Crypto;
 
-PrecalculatedHash::PrecalculatedHash(const Aws::String &mHash){
-m_hash_string = mHash;
-}
+PrecalculatedHash::PrecalculatedHash(const Aws::String &hash) : m_hashString(hash){}
 
 PrecalculatedHash::~PrecalculatedHash() = default;
 
 HashResult PrecalculatedHash::Calculate(const Aws::String& str)
 {
     AWS_UNREFERENCED_PARAM(str);
-    return HashingUtils::Base64Decode(m_hash_string);
+    return HashingUtils::Base64Decode(m_hashString);
 }
 
 HashResult PrecalculatedHash::Calculate(Aws::IStream& stream)
 {
     AWS_UNREFERENCED_PARAM(stream);
-    return HashingUtils::Base64Decode(m_hash_string);
+    return HashingUtils::Base64Decode(m_hashString);
 }
 
 Aws::String PrecalculatedHash::GetHashBase64(ByteBuffer m_checksum){
     AWS_UNREFERENCED_PARAM(m_checksum);
-    return m_hash_string;
+    return m_hashString;
 }
 
 void PrecalculatedHash::Update(unsigned char* string, size_t bufferSize)
@@ -39,5 +37,5 @@ void PrecalculatedHash::Update(unsigned char* string, size_t bufferSize)
 
 HashResult PrecalculatedHash::GetHash()
 {
-    return HashingUtils::Base64Decode(m_hash_string);
+    return HashingUtils::Base64Decode(m_hashString);
 }
