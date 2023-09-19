@@ -274,6 +274,24 @@ int CurlMultiDebugCallback(CURL *handle, curl_infotype type, char *data, size_t 
     return 0;
 }
 
+void CurlMultiHttpClient::CurlMultiPerformReset()
+{
+    // TODO: refactor
+    std::unique_lock<std::mutex> lockGuard(m_signalMutex);
+    std::unique_lock<std::mutex> lock(m_tasksMutex);
+    AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Removing all easy handles from a multi handle and triggering callbacks.");
+
+    for(Curl::CurlEasyHandleContext* handleCtx : m_multiTasks)
+    {
+        curl_multi_remove_handle(m_curlMultiHandleContainer.AccessCurlMultiHandle(), handleCtx->m_curlEasyHandle);
+        handleCtx->curlResultMsg = nullptr;
+        handleCtx->curlResult = static_cast<CURLcode>(-1);
+        handleCtx->m_onCurlDoneFn();
+        m_multiTasks.erase(handleCtx);
+    }
+    m_multiTasks.clear();
+}
+
 void CurlMultiHttpClient::CurlMultiPerformThread(CurlMultiHttpClient* pClient)
 {
     assert(pClient && pClient->m_curlMultiHandleContainer.AccessCurlMultiHandle());
@@ -297,12 +315,18 @@ void CurlMultiHttpClient::CurlMultiPerformThread(CurlMultiHttpClient* pClient)
         }
         if(!pClient->m_isRunning.load())
         {
-          break;
+            break;
         }
 
         pClient->m_tasksQueued = 0;
 
         CURLMcode mc = curl_multi_perform(multi_handle, &stillRunning);
+        if(mc != CURLM_OK)
+        {
+          AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl curl_multi_perform returned error code " << mc
+                                                << " resetting multi handle.");
+          pClient->CurlMultiPerformReset();
+        }
         int msgQueue = 0;
         do {
 
@@ -326,12 +350,14 @@ void CurlMultiHttpClient::CurlMultiPerformThread(CurlMultiHttpClient* pClient)
         } while(msgQueue > 0);
 
         if(!mc && stillRunning)
-          /* wait for activity, timeout or "nothing" */
-          mc = curl_multi_poll(multi_handle, NULL, 0, 1000, NULL);
-
-        if(mc) {
-            fprintf(stderr, "curl_multi_poll() failed, code %d.\n", (int)mc);
-            break;
+        {
+            /* wait for activity, timeout or "nothing" */
+            mc = curl_multi_poll(multi_handle, NULL, 0, 1000, NULL);
+            if(mc)
+            {
+              AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl curl_multi_poll returned error code " << mc);
+              break;
+            }
         }
     };
 }
@@ -705,6 +731,10 @@ std::shared_ptr<HttpResponse> CurlMultiHttpClient::HandleCurlResponse(Curl::Curl
     }
 
     curl_multi_remove_handle(client->m_curlMultiHandleContainer.AccessCurlMultiHandle(), connectionHandle);
+    {
+        std::unique_lock<std::mutex> lock(client->m_tasksMutex);
+        client->m_multiTasks.erase(pEasyHandleCtx);
+    }
 
     std::shared_ptr<HttpResponse> res = std::move(pEasyHandleCtx->writeContext.m_response);
     pEasyHandleCtx->writeContext.m_response.reset();
@@ -721,12 +751,19 @@ std::shared_ptr<HttpResponse> CurlMultiHttpClient::HandleCurlResponse(Curl::Curl
     return res;
 }
 
-void CurlMultiHttpClient::SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx) const
+bool CurlMultiHttpClient::SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx) const
 {
     assert(pEasyHandleCtx);
-    AWS_UNREFERENCED_PARAM(pEasyHandleCtx);
+    CURLMcode curlMultiResponseCode = curl_multi_add_handle(m_curlMultiHandleContainer.AccessCurlMultiHandle(),
+                                                            pEasyHandleCtx->m_curlEasyHandle);
+    if (CURLM_OK != curlMultiResponseCode)
+    {
+      return false;
+    }
+
     {
       std::unique_lock<std::mutex> lock(m_tasksMutex);
+      m_multiTasks.insert(pEasyHandleCtx);
       m_tasksQueued++;
     }
     {
@@ -734,6 +771,7 @@ void CurlMultiHttpClient::SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx
       m_signalRunning.notify_one();
       curl_multi_wakeup(m_curlMultiHandleContainer.AccessCurlMultiHandle());
     }
+    return true;
 }
 
 // Blocking
@@ -774,17 +812,13 @@ std::shared_ptr<HttpResponse> CurlMultiHttpClient::MakeRequest(const std::shared
 
     easyHandleContext->startTransmissionTime = Aws::Utils::DateTime::Now();
 
-    CURLMcode curlMultiResponseCode = curl_multi_add_handle(m_curlMultiHandleContainer.AccessCurlMultiHandle(),
-                                                            easyHandleContext->m_curlEasyHandle);
-    if (CURLM_OK != curlMultiResponseCode)
+    if(!SubmitTask(easyHandleContext))
     {
-        response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
-        response->SetClientErrorMessage("Failed to add curl_easy_handle to curl_multi_handle.");
-        AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to add curl_easy_handle to curl_multi_handle.");
-        return response;
+      response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
+      response->SetClientErrorMessage("Failed to add curl_easy_handle to curl_multi_handle.");
+      AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to add curl_easy_handle to curl_multi_handle.");
+      return response;
     }
-
-    SubmitTask(easyHandleContext);
 
     // Task submitted, wait for it's completion
     std::unique_lock<std::mutex> lockGuard(taskMutex);
