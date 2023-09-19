@@ -12,6 +12,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSQueue.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
 #include <atomic>
 #include <thread>
 #include <queue>
@@ -86,10 +87,11 @@ protected:
     virtual void OverrideOptionsOnConnectionHandle(CURL*) const {}
 
 private:
-    void SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx) const;
+    bool SubmitTask(Curl::CurlEasyHandleContext* pEasyHandleCtx) const;
 
     static std::shared_ptr<HttpResponse> HandleCurlResponse(Curl::CurlEasyHandleContext* pEasyHandleCtx);
     static void CurlMultiPerformThread(CurlMultiHttpClient* pClient);
+    void CurlMultiPerformReset();
 
     std::thread m_multiHandleThread;
     std::atomic<bool> m_isRunning;
@@ -99,7 +101,8 @@ private:
     // mutable std::mutex m_tasksMutex;
     mutable std::atomic<size_t> m_tasksQueued;
     mutable std::mutex m_tasksMutex;
-    mutable Aws::UnorderedMap<CURL*, std::shared_ptr<Curl::CurlEasyHandleContext>> m_tasks;
+    // used to track tasks sent to multi handle, for handling multi perform errors
+    mutable Aws::UnorderedSet<Curl::CurlEasyHandleContext*> m_multiTasks;
 
     CurlMultiHttpClientConfig m_config;
 
