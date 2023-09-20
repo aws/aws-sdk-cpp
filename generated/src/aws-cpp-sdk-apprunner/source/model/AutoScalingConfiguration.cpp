@@ -34,7 +34,11 @@ AutoScalingConfiguration::AutoScalingConfiguration() :
     m_maxSize(0),
     m_maxSizeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false)
+    m_deletedAtHasBeenSet(false),
+    m_hasAssociatedService(false),
+    m_hasAssociatedServiceHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false)
 {
 }
 
@@ -54,7 +58,11 @@ AutoScalingConfiguration::AutoScalingConfiguration(JsonView jsonValue) :
     m_maxSize(0),
     m_maxSizeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false)
+    m_deletedAtHasBeenSet(false),
+    m_hasAssociatedService(false),
+    m_hasAssociatedServiceHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +139,20 @@ AutoScalingConfiguration& AutoScalingConfiguration::operator =(JsonView jsonValu
     m_deletedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HasAssociatedService"))
+  {
+    m_hasAssociatedService = jsonValue.GetBool("HasAssociatedService");
+
+    m_hasAssociatedServiceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsDefault"))
+  {
+    m_isDefault = jsonValue.GetBool("IsDefault");
+
+    m_isDefaultHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +215,18 @@ JsonValue AutoScalingConfiguration::Jsonize() const
   if(m_deletedAtHasBeenSet)
   {
    payload.WithDouble("DeletedAt", m_deletedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_hasAssociatedServiceHasBeenSet)
+  {
+   payload.WithBool("HasAssociatedService", m_hasAssociatedService);
+
+  }
+
+  if(m_isDefaultHasBeenSet)
+  {
+   payload.WithBool("IsDefault", m_isDefault);
+
   }
 
   return payload;

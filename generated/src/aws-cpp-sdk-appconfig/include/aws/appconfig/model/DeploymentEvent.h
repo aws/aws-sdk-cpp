@@ -124,65 +124,81 @@ namespace Model
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
-     * rollback, the percentage of hosts that received the deployment, or in the case
-     * of an internal error, a recommendation to attempt a new deployment.</p>
+     * limited to, the following:</p> <ul> <li> <p>The Amazon Web Services account or
+     * the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li> <li> <p>The
+     * percentage of hosts that received the deployment.</p> </li> <li> <p>A
+     * recommendation to attempt a new deployment (in the case of an internal
+     * error).</p> </li> </ul>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
-     * rollback, the percentage of hosts that received the deployment, or in the case
-     * of an internal error, a recommendation to attempt a new deployment.</p>
+     * limited to, the following:</p> <ul> <li> <p>The Amazon Web Services account or
+     * the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li> <li> <p>The
+     * percentage of hosts that received the deployment.</p> </li> <li> <p>A
+     * recommendation to attempt a new deployment (in the case of an internal
+     * error).</p> </li> </ul>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
-     * rollback, the percentage of hosts that received the deployment, or in the case
-     * of an internal error, a recommendation to attempt a new deployment.</p>
+     * limited to, the following:</p> <ul> <li> <p>The Amazon Web Services account or
+     * the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li> <li> <p>The
+     * percentage of hosts that received the deployment.</p> </li> <li> <p>A
+     * recommendation to attempt a new deployment (in the case of an internal
+     * error).</p> </li> </ul>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
-     * rollback, the percentage of hosts that received the deployment, or in the case
-     * of an internal error, a recommendation to attempt a new deployment.</p>
+     * limited to, the following:</p> <ul> <li> <p>The Amazon Web Services account or
+     * the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li> <li> <p>The
+     * percentage of hosts that received the deployment.</p> </li> <li> <p>A
+     * recommendation to attempt a new deployment (in the case of an internal
+     * error).</p> </li> </ul>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
-     * rollback, the percentage of hosts that received the deployment, or in the case
-     * of an internal error, a recommendation to attempt a new deployment.</p>
+     * limited to, the following:</p> <ul> <li> <p>The Amazon Web Services account or
+     * the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li> <li> <p>The
+     * percentage of hosts that received the deployment.</p> </li> <li> <p>A
+     * recommendation to attempt a new deployment (in the case of an internal
+     * error).</p> </li> </ul>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
-     * rollback, the percentage of hosts that received the deployment, or in the case
-     * of an internal error, a recommendation to attempt a new deployment.</p>
+     * limited to, the following:</p> <ul> <li> <p>The Amazon Web Services account or
+     * the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li> <li> <p>The
+     * percentage of hosts that received the deployment.</p> </li> <li> <p>A
+     * recommendation to attempt a new deployment (in the case of an internal
+     * error).</p> </li> </ul>
      */
     inline DeploymentEvent& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
-     * rollback, the percentage of hosts that received the deployment, or in the case
-     * of an internal error, a recommendation to attempt a new deployment.</p>
+     * limited to, the following:</p> <ul> <li> <p>The Amazon Web Services account or
+     * the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li> <li> <p>The
+     * percentage of hosts that received the deployment.</p> </li> <li> <p>A
+     * recommendation to attempt a new deployment (in the case of an internal
+     * error).</p> </li> </ul>
      */
     inline DeploymentEvent& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the deployment event. Descriptions include, but are not
-     * limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a
-     * rollback, the percentage of hosts that received the deployment, or in the case
-     * of an internal error, a recommendation to attempt a new deployment.</p>
+     * limited to, the following:</p> <ul> <li> <p>The Amazon Web Services account or
+     * the Amazon CloudWatch alarm ARN that initiated a rollback.</p> </li> <li> <p>The
+     * percentage of hosts that received the deployment.</p> </li> <li> <p>A
+     * recommendation to attempt a new deployment (in the case of an internal
+     * error).</p> </li> </ul>
      */
     inline DeploymentEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
 

@@ -723,6 +723,42 @@ namespace Model
     inline GetDeploymentResult& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
 
 
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(const Aws::String& value) { m_versionLabel = value; }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(Aws::String&& value) { m_versionLabel = std::move(value); }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline void SetVersionLabel(const char* value) { m_versionLabel.assign(value); }
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline GetDeploymentResult& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline GetDeploymentResult& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-defined label for an AppConfig hosted configuration version.</p>
+     */
+    inline GetDeploymentResult& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -787,6 +823,8 @@ namespace Model
     Aws::String m_kmsKeyArn;
 
     Aws::String m_kmsKeyIdentifier;
+
+    Aws::String m_versionLabel;
 
     Aws::String m_requestId;
   };

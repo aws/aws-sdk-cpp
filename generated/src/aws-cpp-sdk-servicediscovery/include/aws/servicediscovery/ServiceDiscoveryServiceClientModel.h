@@ -26,6 +26,7 @@
 #include <aws/servicediscovery/model/DeleteServiceResult.h>
 #include <aws/servicediscovery/model/DeregisterInstanceResult.h>
 #include <aws/servicediscovery/model/DiscoverInstancesResult.h>
+#include <aws/servicediscovery/model/DiscoverInstancesRevisionResult.h>
 #include <aws/servicediscovery/model/GetInstanceResult.h>
 #include <aws/servicediscovery/model/GetInstancesHealthStatusResult.h>
 #include <aws/servicediscovery/model/GetNamespaceResult.h>
@@ -92,6 +93,7 @@ namespace Aws
       class DeleteServiceRequest;
       class DeregisterInstanceRequest;
       class DiscoverInstancesRequest;
+      class DiscoverInstancesRevisionRequest;
       class GetInstanceRequest;
       class GetInstancesHealthStatusRequest;
       class GetNamespaceRequest;
@@ -121,6 +123,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteServiceResult, ServiceDiscoveryError> DeleteServiceOutcome;
       typedef Aws::Utils::Outcome<DeregisterInstanceResult, ServiceDiscoveryError> DeregisterInstanceOutcome;
       typedef Aws::Utils::Outcome<DiscoverInstancesResult, ServiceDiscoveryError> DiscoverInstancesOutcome;
+      typedef Aws::Utils::Outcome<DiscoverInstancesRevisionResult, ServiceDiscoveryError> DiscoverInstancesRevisionOutcome;
       typedef Aws::Utils::Outcome<GetInstanceResult, ServiceDiscoveryError> GetInstanceOutcome;
       typedef Aws::Utils::Outcome<GetInstancesHealthStatusResult, ServiceDiscoveryError> GetInstancesHealthStatusOutcome;
       typedef Aws::Utils::Outcome<GetNamespaceResult, ServiceDiscoveryError> GetNamespaceOutcome;
@@ -150,6 +153,7 @@ namespace Aws
       typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
       typedef std::future<DeregisterInstanceOutcome> DeregisterInstanceOutcomeCallable;
       typedef std::future<DiscoverInstancesOutcome> DiscoverInstancesOutcomeCallable;
+      typedef std::future<DiscoverInstancesRevisionOutcome> DiscoverInstancesRevisionOutcomeCallable;
       typedef std::future<GetInstanceOutcome> GetInstanceOutcomeCallable;
       typedef std::future<GetInstancesHealthStatusOutcome> GetInstancesHealthStatusOutcomeCallable;
       typedef std::future<GetNamespaceOutcome> GetNamespaceOutcomeCallable;
@@ -182,6 +186,7 @@ namespace Aws
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::DeregisterInstanceRequest&, const Model::DeregisterInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterInstanceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::DiscoverInstancesRequest&, const Model::DiscoverInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverInstancesResponseReceivedHandler;
+    typedef std::function<void(const ServiceDiscoveryClient*, const Model::DiscoverInstancesRevisionRequest&, const Model::DiscoverInstancesRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverInstancesRevisionResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::GetInstanceRequest&, const Model::GetInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::GetInstancesHealthStatusRequest&, const Model::GetInstancesHealthStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstancesHealthStatusResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::GetNamespaceRequest&, const Model::GetNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNamespaceResponseReceivedHandler;
