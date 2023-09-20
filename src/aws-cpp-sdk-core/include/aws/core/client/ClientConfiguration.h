@@ -167,6 +167,11 @@ namespace Aws
              * Override the http endpoint used to talk to a service.
              */
             Aws::String endpointOverride;
+
+            /**
+             * Allow HTTP client to discover system proxy setting. Off by default for legacy reasons.
+             */
+            bool allowSystemProxy = false;
             /**
              * If you have users going through a proxy, set the proxy scheme here. Default HTTP
              */
