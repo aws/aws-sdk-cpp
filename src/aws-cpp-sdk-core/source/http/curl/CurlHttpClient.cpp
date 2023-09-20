@@ -572,7 +572,7 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     Base(),
     m_curlHandleContainer(clientConfig.maxConnections, clientConfig.httpRequestTimeoutMs, clientConfig.connectTimeoutMs, clientConfig.enableTcpKeepAlive,
                           clientConfig.tcpKeepAliveIntervalMs, clientConfig.requestTimeoutMs, clientConfig.lowSpeedLimit, clientConfig.version),
-    m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
+    m_isAllowSystemProxy(clientConfig.allowSystemProxy), m_isUsingProxy(!clientConfig.proxyHost.empty()), m_proxyUserName(clientConfig.proxyUserName),
     m_proxyPassword(clientConfig.proxyPassword), m_proxyScheme(SchemeMapper::ToString(clientConfig.proxyScheme)), m_proxyHost(clientConfig.proxyHost),
     m_proxySSLCertPath(clientConfig.proxySSLCertPath), m_proxySSLCertType(clientConfig.proxySSLCertType),
     m_proxySSLKeyPath(clientConfig.proxySSLKeyPath), m_proxySSLKeyType(clientConfig.proxySSLKeyType),
@@ -763,7 +763,10 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         }
         else
         {
-            curl_easy_setopt(connectionHandle, CURLOPT_PROXY, "");
+            if(!m_isAllowSystemProxy)
+            {
+                curl_easy_setopt(connectionHandle, CURLOPT_PROXY, "");
+            }
         }
 
         if (request->GetContentBody())
