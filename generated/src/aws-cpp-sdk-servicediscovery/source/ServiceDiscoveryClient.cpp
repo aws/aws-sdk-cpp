@@ -29,6 +29,7 @@
 #include <aws/servicediscovery/model/DeleteServiceRequest.h>
 #include <aws/servicediscovery/model/DeregisterInstanceRequest.h>
 #include <aws/servicediscovery/model/DiscoverInstancesRequest.h>
+#include <aws/servicediscovery/model/DiscoverInstancesRevisionRequest.h>
 #include <aws/servicediscovery/model/GetInstanceRequest.h>
 #include <aws/servicediscovery/model/GetInstancesHealthStatusRequest.h>
 #include <aws/servicediscovery/model/GetNamespaceRequest.h>
@@ -384,6 +385,34 @@ DiscoverInstancesOutcome ServiceDiscoveryClient::DiscoverInstances(const Discove
       auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("data-");
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DiscoverInstancesOutcome(addPrefixErr.value()));
       return DiscoverInstancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DiscoverInstancesRevisionOutcome ServiceDiscoveryClient::DiscoverInstancesRevision(const DiscoverInstancesRevisionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DiscoverInstancesRevision);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DiscoverInstancesRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DiscoverInstancesRevision, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DiscoverInstancesRevision, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DiscoverInstancesRevision",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DiscoverInstancesRevisionOutcome>(
+    [&]()-> DiscoverInstancesRevisionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DiscoverInstancesRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("data-");
+      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DiscoverInstancesRevisionOutcome(addPrefixErr.value()));
+      return DiscoverInstancesRevisionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

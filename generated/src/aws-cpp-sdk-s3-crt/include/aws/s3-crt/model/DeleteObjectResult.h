@@ -34,20 +34,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the versioned object that was permanently deleted was
-     * (true) or was not (false) a delete marker.</p>
+     * <p>Indicates whether the specified object version that was permanently deleted
+     * was (true) or was not (false) a delete marker before deletion. In a simple
+     * DELETE, this header indicates whether (true) or not (false) the current version
+     * of the object is a delete marker.</p>
      */
     inline bool GetDeleteMarker() const{ return m_deleteMarker; }
 
     /**
-     * <p>Specifies whether the versioned object that was permanently deleted was
-     * (true) or was not (false) a delete marker.</p>
+     * <p>Indicates whether the specified object version that was permanently deleted
+     * was (true) or was not (false) a delete marker before deletion. In a simple
+     * DELETE, this header indicates whether (true) or not (false) the current version
+     * of the object is a delete marker.</p>
      */
     inline void SetDeleteMarker(bool value) { m_deleteMarker = value; }
 
     /**
-     * <p>Specifies whether the versioned object that was permanently deleted was
-     * (true) or was not (false) a delete marker.</p>
+     * <p>Indicates whether the specified object version that was permanently deleted
+     * was (true) or was not (false) a delete marker before deletion. In a simple
+     * DELETE, this header indicates whether (true) or not (false) the current version
+     * of the object is a delete marker.</p>
      */
     inline DeleteObjectResult& WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
 

@@ -175,6 +175,12 @@ StopDeploymentResult& StopDeploymentResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("VersionLabel"))
+  {
+    m_versionLabel = jsonValue.GetString("VersionLabel");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

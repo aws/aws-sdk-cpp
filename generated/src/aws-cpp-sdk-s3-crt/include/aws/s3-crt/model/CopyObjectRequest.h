@@ -1433,66 +1433,66 @@ namespace Model
 
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
-     * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the STANDARD Storage Class by default. The STANDARD storage
+     * class provides high durability and high availability. Depending on performance
+     * needs, you can specify a different Storage Class. Amazon S3 on Outposts only
+     * uses the OUTPOSTS Storage Class. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
-     * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the STANDARD Storage Class by default. The STANDARD storage
+     * class provides high durability and high availability. Depending on performance
+     * needs, you can specify a different Storage Class. Amazon S3 on Outposts only
+     * uses the OUTPOSTS Storage Class. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
-     * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the STANDARD Storage Class by default. The STANDARD storage
+     * class provides high durability and high availability. Depending on performance
+     * needs, you can specify a different Storage Class. Amazon S3 on Outposts only
+     * uses the OUTPOSTS Storage Class. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
-     * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the STANDARD Storage Class by default. The STANDARD storage
+     * class provides high durability and high availability. Depending on performance
+     * needs, you can specify a different Storage Class. Amazon S3 on Outposts only
+     * uses the OUTPOSTS Storage Class. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
-     * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the STANDARD Storage Class by default. The STANDARD storage
+     * class provides high durability and high availability. Depending on performance
+     * needs, you can specify a different Storage Class. Amazon S3 on Outposts only
+     * uses the OUTPOSTS Storage Class. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CopyObjectRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-     * objects. The STANDARD storage class provides high durability and high
-     * availability. Depending on performance needs, you can specify a different
-     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-     * more information, see <a
+     * <p>If the <code>x-amz-storage-class</code> header is not used, the copied object
+     * will be stored in the STANDARD Storage Class by default. The STANDARD storage
+     * class provides high durability and high availability. Depending on performance
+     * needs, you can specify a different Storage Class. Amazon S3 on Outposts only
+     * uses the OUTPOSTS Storage Class. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
@@ -1760,10 +1760,11 @@ namespace Model
 
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1771,10 +1772,11 @@ namespace Model
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1782,10 +1784,11 @@ namespace Model
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1793,10 +1796,11 @@ namespace Model
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1804,10 +1808,11 @@ namespace Model
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1815,10 +1820,11 @@ namespace Model
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1826,10 +1832,11 @@ namespace Model
     inline CopyObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1837,10 +1844,11 @@ namespace Model
     inline CopyObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by KMS will fail if they're not made via SSL or
-     * using SigV4. For information about configuring any of the officially supported
-     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
+     * <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object
+     * encryption. All GET and PUT requests for an object protected by KMS will fail if
+     * they're not made via SSL or using SigV4. For information about configuring any
+     * of the officially supported Amazon Web Services SDKs and Amazon Web Services
+     * CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>

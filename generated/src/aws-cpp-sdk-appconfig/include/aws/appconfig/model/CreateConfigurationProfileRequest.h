@@ -164,9 +164,11 @@ namespace Model
      * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
      * Systems Manager Parameter Store parameter, specify either the parameter name in
      * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI
+     * in the following format: <code>codepipeline</code>://&lt;pipeline name&gt;.</p>
      * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
-     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
-     * <p>For an Amazon S3 object, specify the URI in the following format:
+     * format: <code>secretsmanager</code>://&lt;secret name&gt;.</p> </li> <li> <p>For
+     * an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
      * <p>For an SSM document, specify either the document name in the format
@@ -181,9 +183,11 @@ namespace Model
      * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
      * Systems Manager Parameter Store parameter, specify either the parameter name in
      * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI
+     * in the following format: <code>codepipeline</code>://&lt;pipeline name&gt;.</p>
      * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
-     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
-     * <p>For an Amazon S3 object, specify the URI in the following format:
+     * format: <code>secretsmanager</code>://&lt;secret name&gt;.</p> </li> <li> <p>For
+     * an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
      * <p>For an SSM document, specify either the document name in the format
@@ -198,9 +202,11 @@ namespace Model
      * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
      * Systems Manager Parameter Store parameter, specify either the parameter name in
      * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI
+     * in the following format: <code>codepipeline</code>://&lt;pipeline name&gt;.</p>
      * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
-     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
-     * <p>For an Amazon S3 object, specify the URI in the following format:
+     * format: <code>secretsmanager</code>://&lt;secret name&gt;.</p> </li> <li> <p>For
+     * an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
      * <p>For an SSM document, specify either the document name in the format
@@ -215,9 +221,11 @@ namespace Model
      * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
      * Systems Manager Parameter Store parameter, specify either the parameter name in
      * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI
+     * in the following format: <code>codepipeline</code>://&lt;pipeline name&gt;.</p>
      * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
-     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
-     * <p>For an Amazon S3 object, specify the URI in the following format:
+     * format: <code>secretsmanager</code>://&lt;secret name&gt;.</p> </li> <li> <p>For
+     * an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
      * <p>For an SSM document, specify either the document name in the format
@@ -232,9 +240,11 @@ namespace Model
      * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
      * Systems Manager Parameter Store parameter, specify either the parameter name in
      * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI
+     * in the following format: <code>codepipeline</code>://&lt;pipeline name&gt;.</p>
      * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
-     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
-     * <p>For an Amazon S3 object, specify the URI in the following format:
+     * format: <code>secretsmanager</code>://&lt;secret name&gt;.</p> </li> <li> <p>For
+     * an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
      * <p>For an SSM document, specify either the document name in the format
@@ -249,9 +259,11 @@ namespace Model
      * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
      * Systems Manager Parameter Store parameter, specify either the parameter name in
      * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI
+     * in the following format: <code>codepipeline</code>://&lt;pipeline name&gt;.</p>
      * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
-     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
-     * <p>For an Amazon S3 object, specify the URI in the following format:
+     * format: <code>secretsmanager</code>://&lt;secret name&gt;.</p> </li> <li> <p>For
+     * an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
      * <p>For an SSM document, specify either the document name in the format
@@ -266,9 +278,11 @@ namespace Model
      * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
      * Systems Manager Parameter Store parameter, specify either the parameter name in
      * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI
+     * in the following format: <code>codepipeline</code>://&lt;pipeline name&gt;.</p>
      * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
-     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
-     * <p>For an Amazon S3 object, specify the URI in the following format:
+     * format: <code>secretsmanager</code>://&lt;secret name&gt;.</p> </li> <li> <p>For
+     * an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
      * <p>For an SSM document, specify either the document name in the format
@@ -283,9 +297,11 @@ namespace Model
      * specify <code>hosted</code>.</p> </li> <li> <p>For an Amazon Web Services
      * Systems Manager Parameter Store parameter, specify either the parameter name in
      * the format <code>ssm-parameter://&lt;parameter name&gt;</code> or the ARN.</p>
+     * </li> <li> <p>For an Amazon Web Services CodePipeline pipeline, specify the URI
+     * in the following format: <code>codepipeline</code>://&lt;pipeline name&gt;.</p>
      * </li> <li> <p>For an Secrets Manager secret, specify the URI in the following
-     * format: <code>secrets-manager</code>://&lt;secret name&gt;.</p> </li> <li>
-     * <p>For an Amazon S3 object, specify the URI in the following format:
+     * format: <code>secretsmanager</code>://&lt;secret name&gt;.</p> </li> <li> <p>For
+     * an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
      * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
      * <p>For an SSM document, specify either the document name in the format

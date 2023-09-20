@@ -16,7 +16,9 @@ PutQueryDefinitionRequest::PutQueryDefinitionRequest() :
     m_nameHasBeenSet(false),
     m_queryDefinitionIdHasBeenSet(false),
     m_logGroupNamesHasBeenSet(false),
-    m_queryStringHasBeenSet(false)
+    m_queryStringHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -50,6 +52,12 @@ Aws::String PutQueryDefinitionRequest::SerializePayload() const
   if(m_queryStringHasBeenSet)
   {
    payload.WithString("queryString", m_queryString);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

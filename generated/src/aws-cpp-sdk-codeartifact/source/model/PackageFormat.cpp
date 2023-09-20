@@ -25,6 +25,7 @@ namespace Aws
         static const int maven_HASH = HashingUtils::HashString("maven");
         static const int nuget_HASH = HashingUtils::HashString("nuget");
         static const int generic_HASH = HashingUtils::HashString("generic");
+        static const int swift_HASH = HashingUtils::HashString("swift");
 
 
         PackageFormat GetPackageFormatForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return PackageFormat::generic;
           }
+          else if (hashCode == swift_HASH)
+          {
+            return PackageFormat::swift;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "nuget";
           case PackageFormat::generic:
             return "generic";
+          case PackageFormat::swift:
+            return "swift";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
