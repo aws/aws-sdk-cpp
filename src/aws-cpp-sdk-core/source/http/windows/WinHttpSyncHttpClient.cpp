@@ -173,7 +173,7 @@ static void GetDataErrorForTlsError(DWORD dwFlags,
 }
 
 
-static void WinHttpSyncLogCallback(HINTERNET hInternet,
+static void CALLBACK WinHttpSyncLogCallback(HINTERNET hInternet,
                                    DWORD_PTR context,
                                    DWORD dwInternetStatus,
                                    LPVOID statusInformation,
