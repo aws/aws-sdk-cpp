@@ -156,7 +156,7 @@ static void GetDataErrorForTlsError(DWORD dwFlags,
 {
     char flagsBuffer[128] = "";
     char detailedBuffer[512] = "";
-    snprintf(flagsBuffer, sizeof(flagsBuffer), "TLS error occured. dwFlags is %d.", dwFlags);
+    snprintf(flagsBuffer, sizeof(flagsBuffer), "TLS error occurred. dwFlags is %d.", dwFlags);
     if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_REV_FAILED)
         snprintf(detailedBuffer, sizeof(detailedBuffer), "Certification revocation checking has been enabled, but the revocation check failed to verify whether a certificate has been revoked. The server used to check for revocation might be unreachable.");
     if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_INVALID_CERT)
@@ -213,7 +213,7 @@ static void CALLBACK WinHttpSyncLogCallback(HINTERNET hInternet,
             { WINHTTP_CALLBACK_STATUS_READ_COMPLETE, "Data was successfully read from the server.", MORE_DATA_BUFFER, "Buffer size read is %d" },
             { WINHTTP_CALLBACK_STATUS_RECEIVING_RESPONSE, "Waiting for the server to respond to a request.", MORE_DATA_NULL, "" },
             { WINHTTP_CALLBACK_STATUS_REDIRECT, "An HTTP request is about to automatically redirect the request.", MORE_DATA_STRING, "Redirect target is %S" },
-            { WINHTTP_CALLBACK_STATUS_REQUEST_ERROR, "An error occurred while sending an HTTP request.", MORE_DATA_ERROR, "An error occured ... to be formatted ..." },
+            { WINHTTP_CALLBACK_STATUS_REQUEST_ERROR, "An error occurred while sending an HTTP request.", MORE_DATA_ERROR, "An error occurred ... to be formatted ..." },
             { WINHTTP_CALLBACK_STATUS_REQUEST_SENT, "Successfully sent the information request to the server.", MORE_DATA_DWORD, "Sent %d bytes" },
             { WINHTTP_CALLBACK_STATUS_RESOLVING_NAME, "Looking up the IP address of a server name.", MORE_DATA_STRING, "Trying to resolve '%S'" },
             { WINHTTP_CALLBACK_STATUS_RESPONSE_RECEIVED, "Successfully received a response from the server.", MORE_DATA_DWORD, "Received %d bytes" },
