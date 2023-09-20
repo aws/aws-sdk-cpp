@@ -323,7 +323,7 @@ namespace Aws
             bool enableHttpClientTrace;
 
             /**
-             * profileName in config file that will be used by this object to reslove more configurations.
+             * profileName in config file that will be used by this object to resolve more configurations.
              */
             Aws::String profileName;
 
