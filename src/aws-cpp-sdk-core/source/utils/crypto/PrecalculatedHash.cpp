@@ -24,8 +24,8 @@ HashResult PrecalculatedHash::Calculate(Aws::IStream& stream)
     return HashingUtils::Base64Decode(m_hashString);
 }
 
-Aws::String PrecalculatedHash::GetHashBase64(ByteBuffer m_checksum){
-    AWS_UNREFERENCED_PARAM(m_checksum);
+Aws::String PrecalculatedHash::GetHashBase64(ByteBuffer checksum){
+    AWS_UNREFERENCED_PARAM(checksum);
     return m_hashString;
 }
 
