@@ -242,6 +242,13 @@ namespace Aws
          * Basic usage can be found in aws-cpp-sdk-core-tests/monitoring/MonitoringTest.cpp
          */
         MonitoringOptions monitoringOptions;
+
+        struct SDKVersion
+        {
+            unsigned char major = AWS_SDK_VERSION_MAJOR;
+            unsigned char minor = AWS_SDK_VERSION_MINOR;
+            unsigned short patch = AWS_SDK_VERSION_PATCH;
+        } sdkVersion;
     };
 
     /*
