@@ -153,6 +153,21 @@ namespace Aws
         Aws::Internal::InitEC2MetadataClient();
         Aws::Monitoring::InitMonitoring(options.monitoringOptions.customizedMonitoringFactory_create_fn);
         Aws::Utils::ComponentRegistry::InitComponentRegistry();
+
+        if(options.sdkVersion.major != AWS_SDK_VERSION_MAJOR ||
+            options.sdkVersion.minor != AWS_SDK_VERSION_MINOR ||
+            options.sdkVersion.patch != AWS_SDK_VERSION_PATCH)
+        {
+            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "AWS-SDK-CPP version mismatch detected.");
+            AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Initialized AWS-SDK-CPP with version "
+              << AWS_SDK_VERSION_MAJOR << "." << AWS_SDK_VERSION_MINOR << "." << AWS_SDK_VERSION_PATCH << "; "
+              << "However, the caller application had been built for AWS-SDK-CPP version "
+              << (int) options.sdkVersion.major << "."
+              << (int) options.sdkVersion.minor << "."
+              << (int) options.sdkVersion.patch << "; "
+              << "ABI is not guaranteed, please don't mix different versions of built libraries "
+              << "and different versions of headers and corresponding built libraries.");
+        }
     }
 
     void ShutdownAPI(const SDKOptions& options)
