@@ -107,7 +107,11 @@ static void GetDataErrorBuffer(char* moreDataBuffer,
     char errorBuffer[128] = "";
     char descriptionBuffer[256] = "";
 
-    snprintf(resultBuffer, sizeof(resultBuffer), "dwResult is %I64d.", dwResult);
+#if _WIN64
+    snprintf(resultBuffer, sizeof(resultBuffer), "dwResult is %lld.", dwResult);
+#elif _WIN32
+    snprintf(resultBuffer, sizeof(resultBuffer), "dwResult is %ld.", dwResult);
+#endif
 
     switch (dwResult)
     {
