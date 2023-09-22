@@ -760,6 +760,7 @@ namespace Aws
         static const int c7i_16xlarge_HASH = HashingUtils::HashString("c7i.16xlarge");
         static const int c7i_24xlarge_HASH = HashingUtils::HashString("c7i.24xlarge");
         static const int c7i_48xlarge_HASH = HashingUtils::HashString("c7i.48xlarge");
+        static const int mac2_m2pro_metal_HASH = HashingUtils::HashString("mac2-m2pro.metal");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -4492,6 +4493,11 @@ namespace Aws
             enumValue = InstanceType::c7i_48xlarge;
             return true;
           }
+          else if (hashCode == mac2_m2pro_metal_HASH)
+          {
+            enumValue = InstanceType::mac2_m2pro_metal;
+            return true;
+          }
           return false;
         }
 
@@ -6766,6 +6772,9 @@ namespace Aws
             return true;
           case InstanceType::c7i_48xlarge:
             value = "c7i.48xlarge";
+            return true;
+          case InstanceType::mac2_m2pro_metal:
+            value = "mac2-m2pro.metal";
             return true;
           default:
             return false;

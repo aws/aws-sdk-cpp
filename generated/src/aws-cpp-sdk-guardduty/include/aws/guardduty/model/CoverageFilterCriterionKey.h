@@ -21,7 +21,8 @@ namespace Model
     RESOURCE_TYPE,
     COVERAGE_STATUS,
     ADDON_VERSION,
-    MANAGEMENT_TYPE
+    MANAGEMENT_TYPE,
+    EKS_CLUSTER_NAME
   };
 
 namespace CoverageFilterCriterionKeyMapper

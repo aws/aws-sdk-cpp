@@ -120,32 +120,50 @@ namespace Model
 
 
     /**
-     * Specify the S3 storage class to use for this destination.
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
      */
     inline const S3StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * Specify the S3 storage class to use for this destination.
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * Specify the S3 storage class to use for this destination.
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
      */
     inline void SetStorageClass(const S3StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * Specify the S3 storage class to use for this destination.
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
      */
     inline void SetStorageClass(S3StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * Specify the S3 storage class to use for this destination.
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
      */
     inline S3DestinationSettings& WithStorageClass(const S3StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * Specify the S3 storage class to use for this destination.
+     * Specify the S3 storage class to use for this output. To use your destination's
+     * default storage class: Keep the default value, Not set. For more information
+     * about S3 storage classes, see
+     * https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html
      */
     inline S3DestinationSettings& WithStorageClass(S3StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
