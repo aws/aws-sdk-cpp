@@ -26,6 +26,7 @@ namespace Aws
         static const int ISSUE_HASH = HashingUtils::HashString("ISSUE");
         static const int ADDON_VERSION_HASH = HashingUtils::HashString("ADDON_VERSION");
         static const int UPDATED_AT_HASH = HashingUtils::HashString("UPDATED_AT");
+        static const int EKS_CLUSTER_NAME_HASH = HashingUtils::HashString("EKS_CLUSTER_NAME");
 
 
         CoverageSortKey GetCoverageSortKeyForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return CoverageSortKey::UPDATED_AT;
           }
+          else if (hashCode == EKS_CLUSTER_NAME_HASH)
+          {
+            return CoverageSortKey::EKS_CLUSTER_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "ADDON_VERSION";
           case CoverageSortKey::UPDATED_AT:
             return "UPDATED_AT";
+          case CoverageSortKey::EKS_CLUSTER_NAME:
+            return "EKS_CLUSTER_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

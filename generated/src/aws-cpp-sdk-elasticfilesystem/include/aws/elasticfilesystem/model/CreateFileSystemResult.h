@@ -531,21 +531,21 @@ namespace Model
 
 
     /**
-     * <p>The amount of provisioned throughput, measured in MiB/s, for the file system.
+     * <p>The amount of provisioned throughput, measured in MiBps, for the file system.
      * Valid for file systems using <code>ThroughputMode</code> set to
      * <code>provisioned</code>.</p>
      */
     inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
 
     /**
-     * <p>The amount of provisioned throughput, measured in MiB/s, for the file system.
+     * <p>The amount of provisioned throughput, measured in MiBps, for the file system.
      * Valid for file systems using <code>ThroughputMode</code> set to
      * <code>provisioned</code>.</p>
      */
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibps = value; }
 
     /**
-     * <p>The amount of provisioned throughput, measured in MiB/s, for the file system.
+     * <p>The amount of provisioned throughput, measured in MiBps, for the file system.
      * Valid for file systems using <code>ThroughputMode</code> set to
      * <code>provisioned</code>.</p>
      */

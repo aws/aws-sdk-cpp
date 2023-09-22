@@ -126,6 +126,12 @@ GetJobResult& GetJobResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   }
 
+  if(jsonValue.ValueExists("queueInfo"))
+  {
+    m_queueInfo = jsonValue.GetObject("queueInfo");
+
+  }
+
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");

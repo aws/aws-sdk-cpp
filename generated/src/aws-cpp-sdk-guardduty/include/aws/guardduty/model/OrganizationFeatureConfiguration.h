@@ -73,10 +73,10 @@ namespace Model
 
 
     /**
-     * <p>The status of the feature that will be configured for the organization. Use
-     * one of the following values to configure the feature status for the entire
-     * organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when a new
-     * account joins the organization, they will have the feature enabled
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization. One of the following values is the status for
+     * the entire organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when
+     * a new account joins the organization, they will have the feature enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
      * in the organization have the feature enabled automatically. This includes
      * <code>NEW</code> accounts that join the organization and accounts that may have
@@ -89,10 +89,10 @@ namespace Model
     inline const OrgFeatureStatus& GetAutoEnable() const{ return m_autoEnable; }
 
     /**
-     * <p>The status of the feature that will be configured for the organization. Use
-     * one of the following values to configure the feature status for the entire
-     * organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when a new
-     * account joins the organization, they will have the feature enabled
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization. One of the following values is the status for
+     * the entire organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when
+     * a new account joins the organization, they will have the feature enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
      * in the organization have the feature enabled automatically. This includes
      * <code>NEW</code> accounts that join the organization and accounts that may have
@@ -105,10 +105,10 @@ namespace Model
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
 
     /**
-     * <p>The status of the feature that will be configured for the organization. Use
-     * one of the following values to configure the feature status for the entire
-     * organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when a new
-     * account joins the organization, they will have the feature enabled
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization. One of the following values is the status for
+     * the entire organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when
+     * a new account joins the organization, they will have the feature enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
      * in the organization have the feature enabled automatically. This includes
      * <code>NEW</code> accounts that join the organization and accounts that may have
@@ -121,10 +121,10 @@ namespace Model
     inline void SetAutoEnable(const OrgFeatureStatus& value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
 
     /**
-     * <p>The status of the feature that will be configured for the organization. Use
-     * one of the following values to configure the feature status for the entire
-     * organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when a new
-     * account joins the organization, they will have the feature enabled
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization. One of the following values is the status for
+     * the entire organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when
+     * a new account joins the organization, they will have the feature enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
      * in the organization have the feature enabled automatically. This includes
      * <code>NEW</code> accounts that join the organization and accounts that may have
@@ -137,10 +137,10 @@ namespace Model
     inline void SetAutoEnable(OrgFeatureStatus&& value) { m_autoEnableHasBeenSet = true; m_autoEnable = std::move(value); }
 
     /**
-     * <p>The status of the feature that will be configured for the organization. Use
-     * one of the following values to configure the feature status for the entire
-     * organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when a new
-     * account joins the organization, they will have the feature enabled
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization. One of the following values is the status for
+     * the entire organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when
+     * a new account joins the organization, they will have the feature enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
      * in the organization have the feature enabled automatically. This includes
      * <code>NEW</code> accounts that join the organization and accounts that may have
@@ -153,10 +153,10 @@ namespace Model
     inline OrganizationFeatureConfiguration& WithAutoEnable(const OrgFeatureStatus& value) { SetAutoEnable(value); return *this;}
 
     /**
-     * <p>The status of the feature that will be configured for the organization. Use
-     * one of the following values to configure the feature status for the entire
-     * organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when a new
-     * account joins the organization, they will have the feature enabled
+     * <p>Describes the status of the feature that is configured for the member
+     * accounts within the organization. One of the following values is the status for
+     * the entire organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that when
+     * a new account joins the organization, they will have the feature enabled
      * automatically. </p> </li> <li> <p> <code>ALL</code>: Indicates that all accounts
      * in the organization have the feature enabled automatically. This includes
      * <code>NEW</code> accounts that join the organization and accounts that may have
