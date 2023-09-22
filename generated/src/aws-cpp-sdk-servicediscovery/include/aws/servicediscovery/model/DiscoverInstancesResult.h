@@ -77,6 +77,31 @@ namespace Model
     inline DiscoverInstancesResult& AddInstances(HttpInstanceSummary&& value) { m_instances.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The increasing revision associated to the response Instances list. If a new
+     * instance is registered or deregistered, the <code>InstancesRevision</code>
+     * updates. The health status updates don't update
+     * <code>InstancesRevision</code>.</p>
+     */
+    inline long long GetInstancesRevision() const{ return m_instancesRevision; }
+
+    /**
+     * <p>The increasing revision associated to the response Instances list. If a new
+     * instance is registered or deregistered, the <code>InstancesRevision</code>
+     * updates. The health status updates don't update
+     * <code>InstancesRevision</code>.</p>
+     */
+    inline void SetInstancesRevision(long long value) { m_instancesRevision = value; }
+
+    /**
+     * <p>The increasing revision associated to the response Instances list. If a new
+     * instance is registered or deregistered, the <code>InstancesRevision</code>
+     * updates. The health status updates don't update
+     * <code>InstancesRevision</code>.</p>
+     */
+    inline DiscoverInstancesResult& WithInstancesRevision(long long value) { SetInstancesRevision(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -101,6 +126,8 @@ namespace Model
   private:
 
     Aws::Vector<HttpInstanceSummary> m_instances;
+
+    long long m_instancesRevision;
 
     Aws::String m_requestId;
   };

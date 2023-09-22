@@ -27,6 +27,7 @@ namespace Aws
         static const int OnZendeskTicketStatusUpdate_HASH = HashingUtils::HashString("OnZendeskTicketStatusUpdate");
         static const int OnSalesforceCaseCreate_HASH = HashingUtils::HashString("OnSalesforceCaseCreate");
         static const int OnContactEvaluationSubmit_HASH = HashingUtils::HashString("OnContactEvaluationSubmit");
+        static const int OnMetricDataUpdate_HASH = HashingUtils::HashString("OnMetricDataUpdate");
 
 
         EventSourceName GetEventSourceNameForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return EventSourceName::OnContactEvaluationSubmit;
           }
+          else if (hashCode == OnMetricDataUpdate_HASH)
+          {
+            return EventSourceName::OnMetricDataUpdate;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "OnSalesforceCaseCreate";
           case EventSourceName::OnContactEvaluationSubmit:
             return "OnContactEvaluationSubmit";
+          case EventSourceName::OnMetricDataUpdate:
+            return "OnMetricDataUpdate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

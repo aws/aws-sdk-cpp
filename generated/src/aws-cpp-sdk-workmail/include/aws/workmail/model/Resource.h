@@ -286,6 +286,47 @@ namespace Model
      */
     inline Resource& WithDisabledDate(Aws::Utils::DateTime&& value) { SetDisabledDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline Resource& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline Resource& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Resource description.</p>
+     */
+    inline Resource& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -308,6 +349,9 @@ namespace Model
 
     Aws::Utils::DateTime m_disabledDate;
     bool m_disabledDateHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

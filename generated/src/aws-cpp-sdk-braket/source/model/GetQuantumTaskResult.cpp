@@ -87,6 +87,12 @@ GetQuantumTaskResult& GetQuantumTaskResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("queueInfo"))
+  {
+    m_queueInfo = jsonValue.GetObject("queueInfo");
+
+  }
+
   if(jsonValue.ValueExists("shots"))
   {
     m_shots = jsonValue.GetInt64("shots");

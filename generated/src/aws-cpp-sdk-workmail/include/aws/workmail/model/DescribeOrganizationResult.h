@@ -366,6 +366,65 @@ namespace Model
     inline DescribeOrganizationResult& WithARN(const char* value) { SetARN(value); return *this;}
 
 
+    /**
+     * <p>The user ID of the migration admin if migration is enabled for the
+     * organization.</p>
+     */
+    inline const Aws::String& GetMigrationAdmin() const{ return m_migrationAdmin; }
+
+    /**
+     * <p>The user ID of the migration admin if migration is enabled for the
+     * organization.</p>
+     */
+    inline void SetMigrationAdmin(const Aws::String& value) { m_migrationAdmin = value; }
+
+    /**
+     * <p>The user ID of the migration admin if migration is enabled for the
+     * organization.</p>
+     */
+    inline void SetMigrationAdmin(Aws::String&& value) { m_migrationAdmin = std::move(value); }
+
+    /**
+     * <p>The user ID of the migration admin if migration is enabled for the
+     * organization.</p>
+     */
+    inline void SetMigrationAdmin(const char* value) { m_migrationAdmin.assign(value); }
+
+    /**
+     * <p>The user ID of the migration admin if migration is enabled for the
+     * organization.</p>
+     */
+    inline DescribeOrganizationResult& WithMigrationAdmin(const Aws::String& value) { SetMigrationAdmin(value); return *this;}
+
+    /**
+     * <p>The user ID of the migration admin if migration is enabled for the
+     * organization.</p>
+     */
+    inline DescribeOrganizationResult& WithMigrationAdmin(Aws::String&& value) { SetMigrationAdmin(std::move(value)); return *this;}
+
+    /**
+     * <p>The user ID of the migration admin if migration is enabled for the
+     * organization.</p>
+     */
+    inline DescribeOrganizationResult& WithMigrationAdmin(const char* value) { SetMigrationAdmin(value); return *this;}
+
+
+    /**
+     * <p>Indicates if interoperability is enabled for this organization.</p>
+     */
+    inline bool GetInteroperabilityEnabled() const{ return m_interoperabilityEnabled; }
+
+    /**
+     * <p>Indicates if interoperability is enabled for this organization.</p>
+     */
+    inline void SetInteroperabilityEnabled(bool value) { m_interoperabilityEnabled = value; }
+
+    /**
+     * <p>Indicates if interoperability is enabled for this organization.</p>
+     */
+    inline DescribeOrganizationResult& WithInteroperabilityEnabled(bool value) { SetInteroperabilityEnabled(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -406,6 +465,10 @@ namespace Model
     Aws::String m_errorMessage;
 
     Aws::String m_aRN;
+
+    Aws::String m_migrationAdmin;
+
+    bool m_interoperabilityEnabled;
 
     Aws::String m_requestId;
   };

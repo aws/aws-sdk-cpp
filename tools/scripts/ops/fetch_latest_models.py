@@ -13,7 +13,7 @@ import tempfile
 
 MODELS_SRC_GIT_REPO = "https://github.com/aws/aws-models"
 
-CODE_GENERATION_LOCATION = "./code-generation/"
+CODE_GENERATION_LOCATION = "./tools/code-generation/"
 CLIENTS_MODELS_LOCATION = CODE_GENERATION_LOCATION + "api-descriptions/"
 ENDPOINT_RULES_LOCATION = CODE_GENERATION_LOCATION + "endpoints/"
 

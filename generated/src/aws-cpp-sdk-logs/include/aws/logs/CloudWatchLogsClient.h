@@ -238,16 +238,16 @@ namespace CloudWatchLogs
         }
 
         /**
-         * <p>Creates a log group with the specified name. You can create up to 20,000 log
-         * groups per account.</p> <p>You must use the following guidelines when naming a
-         * log group:</p> <ul> <li> <p>Log group names must be unique within a Region for
-         * an Amazon Web Services account.</p> </li> <li> <p>Log group names can be between
-         * 1 and 512 characters long.</p> </li> <li> <p>Log group names consist of the
-         * following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/'
-         * (forward slash), '.' (period), and '#' (number sign)</p> </li> </ul> <p>When you
-         * create a log group, by default the log events in the log group do not expire. To
-         * set a retention policy so that events expire and are deleted after a specified
-         * time, use <a
+         * <p>Creates a log group with the specified name. You can create up to 1,000,000
+         * log groups per Region per account.</p> <p>You must use the following guidelines
+         * when naming a log group:</p> <ul> <li> <p>Log group names must be unique within
+         * a Region for an Amazon Web Services account.</p> </li> <li> <p>Log group names
+         * can be between 1 and 512 characters long.</p> </li> <li> <p>Log group names
+         * consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-'
+         * (hyphen), '/' (forward slash), '.' (period), and '#' (number sign)</p> </li>
+         * </ul> <p>When you create a log group, by default the log events in the log group
+         * do not expire. To set a retention policy so that events expire and are deleted
+         * after a specified time, use <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html">PutRetentionPolicy</a>.</p>
          * <p>If you associate an KMS key with the log group, ingested data is encrypted
          * using the KMS key. This association is stored as long as the data encrypted with
@@ -1404,11 +1404,10 @@ namespace CloudWatchLogs
          * high charges, do not specify high-cardinality fields such as
          * <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different
          * value found for a dimension is treated as a separate metric and accrues charges
-         * as a separate custom metric. </p> <p>CloudWatch Logs disables a metric filter if
-         * it generates 1,000 different name/value pairs for your specified dimensions
-         * within a certain amount of time. This helps to prevent accidental high
-         * charges.</p> <p>You can also set up a billing alarm to alert you if your charges
-         * are higher than expected. For more information, see <a
+         * as a separate custom metric. </p> <p>CloudWatch Logs might disable a metric
+         * filter if it generates 1,000 different name/value pairs for your specified
+         * dimensions within one hour.</p> <p>You can also set up a billing alarm to alert
+         * you if your charges are higher than expected. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
          * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
          * Charges</a>. </p> <p><h3>See Also:</h3>   <a
@@ -1513,7 +1512,12 @@ namespace CloudWatchLogs
          * log data is deleted permanently, keep a log group at its lower retention setting
          * until 72 hours after the previous retention period ends. Alternatively, wait to
          * change the retention setting until you confirm that the earlier log events are
-         * deleted. </p> <p><h3>See Also:</h3>   <a
+         * deleted. </p> <p>When log events reach their retention setting they are marked
+         * for deletion. After they are marked for deletion, they do not add to your
+         * archival storage costs anymore, even if they are not actually deleted until
+         * later. These log events marked for deletion are also not included when you use
+         * an API to retrieve the <code>storedBytes</code> value to see how many bytes a
+         * log group is storing.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">AWS
          * API Reference</a></p>
          */

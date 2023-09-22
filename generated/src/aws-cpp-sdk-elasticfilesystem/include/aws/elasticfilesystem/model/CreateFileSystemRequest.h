@@ -94,7 +94,7 @@ namespace Model
      * higher latencies for most file operations. The performance mode can't be changed
      * after the file system has been created.</p>  <p>The <code>maxIO</code>
      * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     *  <p>Default is <code>generalPurpose</code>.</p>
      */
     inline const PerformanceMode& GetPerformanceMode() const{ return m_performanceMode; }
 
@@ -106,7 +106,7 @@ namespace Model
      * higher latencies for most file operations. The performance mode can't be changed
      * after the file system has been created.</p>  <p>The <code>maxIO</code>
      * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     *  <p>Default is <code>generalPurpose</code>.</p>
      */
     inline bool PerformanceModeHasBeenSet() const { return m_performanceModeHasBeenSet; }
 
@@ -118,7 +118,7 @@ namespace Model
      * higher latencies for most file operations. The performance mode can't be changed
      * after the file system has been created.</p>  <p>The <code>maxIO</code>
      * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     *  <p>Default is <code>generalPurpose</code>.</p>
      */
     inline void SetPerformanceMode(const PerformanceMode& value) { m_performanceModeHasBeenSet = true; m_performanceMode = value; }
 
@@ -130,7 +130,7 @@ namespace Model
      * higher latencies for most file operations. The performance mode can't be changed
      * after the file system has been created.</p>  <p>The <code>maxIO</code>
      * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     *  <p>Default is <code>generalPurpose</code>.</p>
      */
     inline void SetPerformanceMode(PerformanceMode&& value) { m_performanceModeHasBeenSet = true; m_performanceMode = std::move(value); }
 
@@ -142,7 +142,7 @@ namespace Model
      * higher latencies for most file operations. The performance mode can't be changed
      * after the file system has been created.</p>  <p>The <code>maxIO</code>
      * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     *  <p>Default is <code>generalPurpose</code>.</p>
      */
     inline CreateFileSystemRequest& WithPerformanceMode(const PerformanceMode& value) { SetPerformanceMode(value); return *this;}
 
@@ -154,7 +154,7 @@ namespace Model
      * higher latencies for most file operations. The performance mode can't be changed
      * after the file system has been created.</p>  <p>The <code>maxIO</code>
      * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     *  <p>Default is <code>generalPurpose</code>.</p>
      */
     inline CreateFileSystemRequest& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(std::move(value)); return *this;}
 
@@ -443,44 +443,44 @@ namespace Model
 
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system that you're creating. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
-     * Services Support. For more information, see <a
+     * <p>The throughput, measured in mebibytes per second (MiBps), that you want to
+     * provision for a file system that you're creating. Required if
+     * <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are
+     * 1-3414 MiBps, with the upper limit depending on Region. To increase this limit,
+     * contact Amazon Web Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system that you're creating. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
-     * Services Support. For more information, see <a
+     * <p>The throughput, measured in mebibytes per second (MiBps), that you want to
+     * provision for a file system that you're creating. Required if
+     * <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are
+     * 1-3414 MiBps, with the upper limit depending on Region. To increase this limit,
+     * contact Amazon Web Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline bool ProvisionedThroughputInMibpsHasBeenSet() const { return m_provisionedThroughputInMibpsHasBeenSet; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system that you're creating. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
-     * Services Support. For more information, see <a
+     * <p>The throughput, measured in mebibytes per second (MiBps), that you want to
+     * provision for a file system that you're creating. Required if
+     * <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are
+     * 1-3414 MiBps, with the upper limit depending on Region. To increase this limit,
+     * contact Amazon Web Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system that you're creating. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
-     * Services Support. For more information, see <a
+     * <p>The throughput, measured in mebibytes per second (MiBps), that you want to
+     * provision for a file system that you're creating. Required if
+     * <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are
+     * 1-3414 MiBps, with the upper limit depending on Region. To increase this limit,
+     * contact Amazon Web Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */

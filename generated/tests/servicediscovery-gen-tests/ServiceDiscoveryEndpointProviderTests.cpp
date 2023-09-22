@@ -266,7 +266,7 @@ static const Aws::Vector<ServiceDiscoveryEndpointProviderEndpointTestCase> TEST_
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://servicediscovery.us-east-1.api.aws",
+    {{/*epUrl*/"https://servicediscovery.us-east-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -306,7 +306,7 @@ static const Aws::Vector<ServiceDiscoveryEndpointProviderEndpointTestCase> TEST_
   {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://servicediscovery.cn-north-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://servicediscovery.cn-north-1.amazonaws.com.cn",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -354,7 +354,7 @@ static const Aws::Vector<ServiceDiscoveryEndpointProviderEndpointTestCase> TEST_
   {"For region us-gov-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
-    {{/*epUrl*/"https://servicediscovery.us-gov-east-1.api.aws",
+    {{/*epUrl*/"https://servicediscovery.us-gov-east-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },

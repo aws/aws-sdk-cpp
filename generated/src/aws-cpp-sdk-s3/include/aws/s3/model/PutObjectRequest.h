@@ -1804,8 +1804,8 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code> or <code>aws:kms:dsse</code>, this header specifies the ID
-     * of the Key Management Service (KMS) symmetric encryption customer managed key
-     * that was used for the object. If you specify
+     * (Key ID, Key ARN, or Key Alias) of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code> or
      * <code>x-amz-server-side-encryption:aws:kms:dsse</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
@@ -1818,8 +1818,8 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code> or <code>aws:kms:dsse</code>, this header specifies the ID
-     * of the Key Management Service (KMS) symmetric encryption customer managed key
-     * that was used for the object. If you specify
+     * (Key ID, Key ARN, or Key Alias) of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code> or
      * <code>x-amz-server-side-encryption:aws:kms:dsse</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
@@ -1832,8 +1832,8 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code> or <code>aws:kms:dsse</code>, this header specifies the ID
-     * of the Key Management Service (KMS) symmetric encryption customer managed key
-     * that was used for the object. If you specify
+     * (Key ID, Key ARN, or Key Alias) of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code> or
      * <code>x-amz-server-side-encryption:aws:kms:dsse</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
@@ -1846,8 +1846,8 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code> or <code>aws:kms:dsse</code>, this header specifies the ID
-     * of the Key Management Service (KMS) symmetric encryption customer managed key
-     * that was used for the object. If you specify
+     * (Key ID, Key ARN, or Key Alias) of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code> or
      * <code>x-amz-server-side-encryption:aws:kms:dsse</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
@@ -1860,8 +1860,8 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code> or <code>aws:kms:dsse</code>, this header specifies the ID
-     * of the Key Management Service (KMS) symmetric encryption customer managed key
-     * that was used for the object. If you specify
+     * (Key ID, Key ARN, or Key Alias) of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code> or
      * <code>x-amz-server-side-encryption:aws:kms:dsse</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
@@ -1874,8 +1874,8 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code> or <code>aws:kms:dsse</code>, this header specifies the ID
-     * of the Key Management Service (KMS) symmetric encryption customer managed key
-     * that was used for the object. If you specify
+     * (Key ID, Key ARN, or Key Alias) of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code> or
      * <code>x-amz-server-side-encryption:aws:kms:dsse</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
@@ -1888,8 +1888,8 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code> or <code>aws:kms:dsse</code>, this header specifies the ID
-     * of the Key Management Service (KMS) symmetric encryption customer managed key
-     * that was used for the object. If you specify
+     * (Key ID, Key ARN, or Key Alias) of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code> or
      * <code>x-amz-server-side-encryption:aws:kms:dsse</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
@@ -1902,8 +1902,8 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code> or <code>aws:kms:dsse</code>, this header specifies the ID
-     * of the Key Management Service (KMS) symmetric encryption customer managed key
-     * that was used for the object. If you specify
+     * (Key ID, Key ARN, or Key Alias) of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code> or
      * <code>x-amz-server-side-encryption:aws:kms:dsse</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon

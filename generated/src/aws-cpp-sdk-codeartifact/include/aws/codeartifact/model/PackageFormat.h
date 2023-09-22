@@ -20,7 +20,8 @@ namespace Model
     pypi,
     maven,
     nuget,
-    generic
+    generic,
+    swift
   };
 
 namespace PackageFormatMapper

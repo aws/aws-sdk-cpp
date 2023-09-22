@@ -115,6 +115,31 @@ namespace Model
      */
     inline CreateGroupRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>If this parameter is enabled, the group will be hidden from the address
+     * book.</p>
+     */
+    inline bool GetHiddenFromGlobalAddressList() const{ return m_hiddenFromGlobalAddressList; }
+
+    /**
+     * <p>If this parameter is enabled, the group will be hidden from the address
+     * book.</p>
+     */
+    inline bool HiddenFromGlobalAddressListHasBeenSet() const { return m_hiddenFromGlobalAddressListHasBeenSet; }
+
+    /**
+     * <p>If this parameter is enabled, the group will be hidden from the address
+     * book.</p>
+     */
+    inline void SetHiddenFromGlobalAddressList(bool value) { m_hiddenFromGlobalAddressListHasBeenSet = true; m_hiddenFromGlobalAddressList = value; }
+
+    /**
+     * <p>If this parameter is enabled, the group will be hidden from the address
+     * book.</p>
+     */
+    inline CreateGroupRequest& WithHiddenFromGlobalAddressList(bool value) { SetHiddenFromGlobalAddressList(value); return *this;}
+
   private:
 
     Aws::String m_organizationId;
@@ -122,6 +147,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    bool m_hiddenFromGlobalAddressList;
+    bool m_hiddenFromGlobalAddressListHasBeenSet = false;
   };
 
 } // namespace Model

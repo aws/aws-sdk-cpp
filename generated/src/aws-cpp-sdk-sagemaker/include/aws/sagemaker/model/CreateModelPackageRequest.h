@@ -16,6 +16,7 @@
 #include <aws/sagemaker/model/ModelMetrics.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/DriftCheckBaselines.h>
+#include <aws/sagemaker/model/SkipModelValidation.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <utility>
@@ -1022,6 +1023,37 @@ namespace Model
      */
     inline CreateModelPackageRequest& AddAdditionalInferenceSpecifications(AdditionalInferenceSpecificationDefinition&& value) { m_additionalInferenceSpecificationsHasBeenSet = true; m_additionalInferenceSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline const SkipModelValidation& GetSkipModelValidation() const{ return m_skipModelValidation; }
+
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline bool SkipModelValidationHasBeenSet() const { return m_skipModelValidationHasBeenSet; }
+
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline void SetSkipModelValidation(const SkipModelValidation& value) { m_skipModelValidationHasBeenSet = true; m_skipModelValidation = value; }
+
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline void SetSkipModelValidation(SkipModelValidation&& value) { m_skipModelValidationHasBeenSet = true; m_skipModelValidation = std::move(value); }
+
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline CreateModelPackageRequest& WithSkipModelValidation(const SkipModelValidation& value) { SetSkipModelValidation(value); return *this;}
+
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline CreateModelPackageRequest& WithSkipModelValidation(SkipModelValidation&& value) { SetSkipModelValidation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelPackageName;
@@ -1077,6 +1109,9 @@ namespace Model
 
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
     bool m_additionalInferenceSpecificationsHasBeenSet = false;
+
+    SkipModelValidation m_skipModelValidation;
+    bool m_skipModelValidationHasBeenSet = false;
   };
 
 } // namespace Model

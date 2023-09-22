@@ -33,7 +33,9 @@ CreateModelPackageRequest::CreateModelPackageRequest() :
     m_domainHasBeenSet(false),
     m_taskHasBeenSet(false),
     m_samplePayloadUrlHasBeenSet(false),
-    m_additionalInferenceSpecificationsHasBeenSet(false)
+    m_additionalInferenceSpecificationsHasBeenSet(false),
+    m_skipModelValidation(SkipModelValidation::NOT_SET),
+    m_skipModelValidationHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,11 @@ Aws::String CreateModelPackageRequest::SerializePayload() const
    }
    payload.WithArray("AdditionalInferenceSpecifications", std::move(additionalInferenceSpecificationsJsonList));
 
+  }
+
+  if(m_skipModelValidationHasBeenSet)
+  {
+   payload.WithString("SkipModelValidation", SkipModelValidationMapper::GetNameForSkipModelValidation(m_skipModelValidation));
   }
 
   return payload.View().WriteReadable();

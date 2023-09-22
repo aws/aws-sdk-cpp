@@ -311,9 +311,12 @@ namespace KinesisVideo
         }
 
         /**
-         * <p>Returns the most current information about the channel. Specify the
-         * <code>ChannelName</code> or <code>ChannelARN</code> in the input.</p><p><h3>See
-         * Also:</h3>   <a
+         *  <p>This API is related to <a
+         * href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
+         * Ingestion</a> and is only available in the <code>us-west-2</code> region.</p>
+         *  <p>Returns the most current information about the channel. Specify
+         * the <code>ChannelName</code> or <code>ChannelARN</code> in the
+         * input.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration">AWS
          * API Reference</a></p>
          */
@@ -635,7 +638,10 @@ namespace KinesisVideo
          * during the syncing process, a <code>ResourceInUseException</code> will be
          * thrown. The connectivity of the stream’s edge configuration and the Edge Agent
          * will be retried for 15 minutes. After 15 minutes, the status will transition
-         * into the <code>SYNC_FAILED</code> state.</p><p><h3>See Also:</h3>   <a
+         * into the <code>SYNC_FAILED</code> state.</p> <p>To move an edge configuration
+         * from one device to another, use <a>DeleteEdgeConfiguration</a> to delete the
+         * current edge configuration. You can then invoke StartEdgeConfigurationUpdate
+         * with an updated Hub Device ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">AWS
          * API Reference</a></p>
          */
@@ -847,11 +853,14 @@ namespace KinesisVideo
         }
 
         /**
-         * <p>Associates a <code>SignalingChannel</code> to a stream to store the media.
-         * There are two signaling modes that can specified :</p> <ul> <li> <p>If the
-         * <code>StorageStatus</code> is disabled, no data will be stored, and the
-         * <code>StreamARN</code> parameter will not be needed. </p> </li> <li> <p>If the
-         * <code>StorageStatus</code> is enabled, the data will be stored in the
+         *  <p>This API is related to <a
+         * href="https://docs.aws.amazon.com/kinesisvideostreams-webrtc-dg/latest/devguide/webrtc-ingestion.html">WebRTC
+         * Ingestion</a> and is only available in the <code>us-west-2</code> region.</p>
+         *  <p>Associates a <code>SignalingChannel</code> to a stream to store
+         * the media. There are two signaling modes that can specified :</p> <ul> <li>
+         * <p>If the <code>StorageStatus</code> is disabled, no data will be stored, and
+         * the <code>StreamARN</code> parameter will not be needed. </p> </li> <li> <p>If
+         * the <code>StorageStatus</code> is enabled, the data will be stored in the
          * <code>StreamARN</code> provided. </p> </li> </ul>  <p>If
          * <code>StorageStatus</code> is enabled, direct peer-to-peer (master-viewer)
          * connections no longer occur. Peers connect directly to the storage session. You

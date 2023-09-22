@@ -27,6 +27,12 @@ namespace EFS
 {
 namespace Model
 {
+  /**
+   * <p>Describes the replication configuration for a specific file
+   * system.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ReplicationConfigurationDescription">AWS
+   * API Reference</a></p>
+   */
   class CreateReplicationConfigurationResult
   {
   public:

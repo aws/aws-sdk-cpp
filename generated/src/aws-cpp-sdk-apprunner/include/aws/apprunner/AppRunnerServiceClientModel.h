@@ -43,6 +43,7 @@
 #include <aws/apprunner/model/ListObservabilityConfigurationsResult.h>
 #include <aws/apprunner/model/ListOperationsResult.h>
 #include <aws/apprunner/model/ListServicesResult.h>
+#include <aws/apprunner/model/ListServicesForAutoScalingConfigurationResult.h>
 #include <aws/apprunner/model/ListTagsForResourceResult.h>
 #include <aws/apprunner/model/ListVpcConnectorsResult.h>
 #include <aws/apprunner/model/ListVpcIngressConnectionsResult.h>
@@ -51,6 +52,7 @@
 #include <aws/apprunner/model/StartDeploymentResult.h>
 #include <aws/apprunner/model/TagResourceResult.h>
 #include <aws/apprunner/model/UntagResourceResult.h>
+#include <aws/apprunner/model/UpdateDefaultAutoScalingConfigurationResult.h>
 #include <aws/apprunner/model/UpdateServiceResult.h>
 #include <aws/apprunner/model/UpdateVpcIngressConnectionResult.h>
 /* End of service model headers required in AppRunnerClient header */
@@ -118,6 +120,7 @@ namespace Aws
       class ListObservabilityConfigurationsRequest;
       class ListOperationsRequest;
       class ListServicesRequest;
+      class ListServicesForAutoScalingConfigurationRequest;
       class ListTagsForResourceRequest;
       class ListVpcConnectorsRequest;
       class ListVpcIngressConnectionsRequest;
@@ -126,6 +129,7 @@ namespace Aws
       class StartDeploymentRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateDefaultAutoScalingConfigurationRequest;
       class UpdateServiceRequest;
       class UpdateVpcIngressConnectionRequest;
       /* End of service model forward declarations required in AppRunnerClient header */
@@ -156,6 +160,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListObservabilityConfigurationsResult, AppRunnerError> ListObservabilityConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListOperationsResult, AppRunnerError> ListOperationsOutcome;
       typedef Aws::Utils::Outcome<ListServicesResult, AppRunnerError> ListServicesOutcome;
+      typedef Aws::Utils::Outcome<ListServicesForAutoScalingConfigurationResult, AppRunnerError> ListServicesForAutoScalingConfigurationOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppRunnerError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListVpcConnectorsResult, AppRunnerError> ListVpcConnectorsOutcome;
       typedef Aws::Utils::Outcome<ListVpcIngressConnectionsResult, AppRunnerError> ListVpcIngressConnectionsOutcome;
@@ -164,6 +169,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartDeploymentResult, AppRunnerError> StartDeploymentOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, AppRunnerError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, AppRunnerError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateDefaultAutoScalingConfigurationResult, AppRunnerError> UpdateDefaultAutoScalingConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateServiceResult, AppRunnerError> UpdateServiceOutcome;
       typedef Aws::Utils::Outcome<UpdateVpcIngressConnectionResult, AppRunnerError> UpdateVpcIngressConnectionOutcome;
       /* End of service model Outcome class definitions */
@@ -194,6 +200,7 @@ namespace Aws
       typedef std::future<ListObservabilityConfigurationsOutcome> ListObservabilityConfigurationsOutcomeCallable;
       typedef std::future<ListOperationsOutcome> ListOperationsOutcomeCallable;
       typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
+      typedef std::future<ListServicesForAutoScalingConfigurationOutcome> ListServicesForAutoScalingConfigurationOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListVpcConnectorsOutcome> ListVpcConnectorsOutcomeCallable;
       typedef std::future<ListVpcIngressConnectionsOutcome> ListVpcIngressConnectionsOutcomeCallable;
@@ -202,6 +209,7 @@ namespace Aws
       typedef std::future<StartDeploymentOutcome> StartDeploymentOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateDefaultAutoScalingConfigurationOutcome> UpdateDefaultAutoScalingConfigurationOutcomeCallable;
       typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
       typedef std::future<UpdateVpcIngressConnectionOutcome> UpdateVpcIngressConnectionOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -235,6 +243,7 @@ namespace Aws
     typedef std::function<void(const AppRunnerClient*, const Model::ListObservabilityConfigurationsRequest&, const Model::ListObservabilityConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObservabilityConfigurationsResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ListOperationsRequest&, const Model::ListOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOperationsResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesResponseReceivedHandler;
+    typedef std::function<void(const AppRunnerClient*, const Model::ListServicesForAutoScalingConfigurationRequest&, const Model::ListServicesForAutoScalingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesForAutoScalingConfigurationResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ListVpcConnectorsRequest&, const Model::ListVpcConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVpcConnectorsResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::ListVpcIngressConnectionsRequest&, const Model::ListVpcIngressConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVpcIngressConnectionsResponseReceivedHandler;
@@ -243,6 +252,7 @@ namespace Aws
     typedef std::function<void(const AppRunnerClient*, const Model::StartDeploymentRequest&, const Model::StartDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDeploymentResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const AppRunnerClient*, const Model::UpdateDefaultAutoScalingConfigurationRequest&, const Model::UpdateDefaultAutoScalingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDefaultAutoScalingConfigurationResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
     typedef std::function<void(const AppRunnerClient*, const Model::UpdateVpcIngressConnectionRequest&, const Model::UpdateVpcIngressConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVpcIngressConnectionResponseReceivedHandler;
     /* End of service model async handlers definitions */

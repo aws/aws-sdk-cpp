@@ -84,42 +84,74 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the resource whose delegates are listed.</p>
+     * <p>The identifier for the resource whose delegates are listed.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The identifier for the resource whose delegates are listed.</p>
+     * <p>The identifier for the resource whose delegates are listed.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the resource whose delegates are listed.</p>
+     * <p>The identifier for the resource whose delegates are listed.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The identifier for the resource whose delegates are listed.</p>
+     * <p>The identifier for the resource whose delegates are listed.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The identifier for the resource whose delegates are listed.</p>
+     * <p>The identifier for the resource whose delegates are listed.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The identifier for the resource whose delegates are listed.</p>
+     * <p>The identifier for the resource whose delegates are listed.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline ListResourceDelegatesRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The identifier for the resource whose delegates are listed.</p>
+     * <p>The identifier for the resource whose delegates are listed.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline ListResourceDelegatesRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the resource whose delegates are listed.</p>
+     * <p>The identifier for the resource whose delegates are listed.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline ListResourceDelegatesRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
