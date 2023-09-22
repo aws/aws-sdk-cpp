@@ -67,7 +67,7 @@ __Jump To:__
 
     ```sh
    cd <BUILD_DIR>
-   cmake <path-to-root-of-this-source-code> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install>
+   cmake <path-to-root-of-this-source-code> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install> -DBUILD_ONLY="s3"
    cmake --build . --config=Debug
    cmake --install . --config=Debug
    ```
