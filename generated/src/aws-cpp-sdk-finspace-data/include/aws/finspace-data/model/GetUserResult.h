@@ -36,83 +36,78 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the user account that is retrieved.</p>
+     * <p>The unique identifier for the user that is retrieved.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The unique identifier for the user account that is retrieved.</p>
+     * <p>The unique identifier for the user that is retrieved.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userId = value; }
 
     /**
-     * <p>The unique identifier for the user account that is retrieved.</p>
+     * <p>The unique identifier for the user that is retrieved.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the user account that is retrieved.</p>
+     * <p>The unique identifier for the user that is retrieved.</p>
      */
     inline void SetUserId(const char* value) { m_userId.assign(value); }
 
     /**
-     * <p>The unique identifier for the user account that is retrieved.</p>
+     * <p>The unique identifier for the user that is retrieved.</p>
      */
     inline GetUserResult& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the user account that is retrieved.</p>
+     * <p>The unique identifier for the user that is retrieved.</p>
      */
     inline GetUserResult& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the user account that is retrieved.</p>
+     * <p>The unique identifier for the user that is retrieved.</p>
      */
     inline GetUserResult& WithUserId(const char* value) { SetUserId(value); return *this;}
 
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user
+     * is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> –
+     * The user is currently inactive.</p> </li> </ul>
      */
     inline const UserStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user
+     * is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> –
+     * The user is currently inactive.</p> </li> </ul>
      */
     inline void SetStatus(const UserStatus& value) { m_status = value; }
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user
+     * is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> –
+     * The user is currently inactive.</p> </li> </ul>
      */
     inline void SetStatus(UserStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user
+     * is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> –
+     * The user is currently inactive.</p> </li> </ul>
      */
     inline GetUserResult& WithStatus(const UserStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user
+     * is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> –
+     * The user is currently inactive.</p> </li> </ul>
      */
     inline GetUserResult& WithStatus(UserStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -380,77 +375,77 @@ namespace Model
 
 
     /**
-     * <p>The timestamp at which the user account was created in FinSpace. The value is
+     * <p>The timestamp at which the user was created in FinSpace. The value is
      * determined as epoch time in milliseconds. </p>
      */
     inline long long GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The timestamp at which the user account was created in FinSpace. The value is
+     * <p>The timestamp at which the user was created in FinSpace. The value is
      * determined as epoch time in milliseconds. </p>
      */
     inline void SetCreateTime(long long value) { m_createTime = value; }
 
     /**
-     * <p>The timestamp at which the user account was created in FinSpace. The value is
+     * <p>The timestamp at which the user was created in FinSpace. The value is
      * determined as epoch time in milliseconds. </p>
      */
     inline GetUserResult& WithCreateTime(long long value) { SetCreateTime(value); return *this;}
 
 
     /**
-     * <p>Describes the last time the user account was enabled. The value is determined
-     * as epoch time in milliseconds.</p>
+     * <p>Describes the last time the user was activated. The value is determined as
+     * epoch time in milliseconds.</p>
      */
     inline long long GetLastEnabledTime() const{ return m_lastEnabledTime; }
 
     /**
-     * <p>Describes the last time the user account was enabled. The value is determined
-     * as epoch time in milliseconds.</p>
+     * <p>Describes the last time the user was activated. The value is determined as
+     * epoch time in milliseconds.</p>
      */
     inline void SetLastEnabledTime(long long value) { m_lastEnabledTime = value; }
 
     /**
-     * <p>Describes the last time the user account was enabled. The value is determined
-     * as epoch time in milliseconds.</p>
+     * <p>Describes the last time the user was activated. The value is determined as
+     * epoch time in milliseconds.</p>
      */
     inline GetUserResult& WithLastEnabledTime(long long value) { SetLastEnabledTime(value); return *this;}
 
 
     /**
-     * <p>Describes the last time the user account was disabled. The value is
-     * determined as epoch time in milliseconds.</p>
+     * <p>Describes the last time the user was deactivated. The value is determined as
+     * epoch time in milliseconds.</p>
      */
     inline long long GetLastDisabledTime() const{ return m_lastDisabledTime; }
 
     /**
-     * <p>Describes the last time the user account was disabled. The value is
-     * determined as epoch time in milliseconds.</p>
+     * <p>Describes the last time the user was deactivated. The value is determined as
+     * epoch time in milliseconds.</p>
      */
     inline void SetLastDisabledTime(long long value) { m_lastDisabledTime = value; }
 
     /**
-     * <p>Describes the last time the user account was disabled. The value is
-     * determined as epoch time in milliseconds.</p>
+     * <p>Describes the last time the user was deactivated. The value is determined as
+     * epoch time in milliseconds.</p>
      */
     inline GetUserResult& WithLastDisabledTime(long long value) { SetLastDisabledTime(value); return *this;}
 
 
     /**
-     * <p>Describes the last time the user account was updated. The value is determined
-     * as epoch time in milliseconds.</p>
+     * <p>Describes the last time the user details were updated. The value is
+     * determined as epoch time in milliseconds.</p>
      */
     inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>Describes the last time the user account was updated. The value is determined
-     * as epoch time in milliseconds.</p>
+     * <p>Describes the last time the user details were updated. The value is
+     * determined as epoch time in milliseconds.</p>
      */
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>Describes the last time the user account was updated. The value is determined
-     * as epoch time in milliseconds.</p>
+     * <p>Describes the last time the user details were updated. The value is
+     * determined as epoch time in milliseconds.</p>
      */
     inline GetUserResult& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 

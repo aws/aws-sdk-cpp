@@ -26,16 +26,21 @@
 #include <aws/chime-sdk-media-pipelines/model/CreateMediaInsightsPipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/CreateMediaInsightsPipelineConfigurationRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/CreateMediaLiveConnectorPipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/CreateMediaPipelineKinesisVideoStreamPoolRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/CreateMediaStreamPipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/DeleteMediaCapturePipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/DeleteMediaInsightsPipelineConfigurationRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/DeleteMediaPipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/DeleteMediaPipelineKinesisVideoStreamPoolRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/GetMediaCapturePipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/GetMediaInsightsPipelineConfigurationRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/GetMediaPipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/GetMediaPipelineKinesisVideoStreamPoolRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/GetSpeakerSearchTaskRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/GetVoiceToneAnalysisTaskRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaCapturePipelinesRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaInsightsPipelineConfigurationsRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaPipelineKinesisVideoStreamPoolsRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaPipelinesRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListTagsForResourceRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/StartSpeakerSearchTaskRequest.h>
@@ -46,6 +51,7 @@
 #include <aws/chime-sdk-media-pipelines/model/UntagResourceRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/UpdateMediaInsightsPipelineConfigurationRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/UpdateMediaInsightsPipelineStatusRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/UpdateMediaPipelineKinesisVideoStreamPoolRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
 
@@ -314,6 +320,60 @@ CreateMediaLiveConnectorPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMedi
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::CreateMediaPipelineKinesisVideoStreamPool(const CreateMediaPipelineKinesisVideoStreamPoolRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateMediaPipelineKinesisVideoStreamPool);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateMediaPipelineKinesisVideoStreamPool",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateMediaPipelineKinesisVideoStreamPoolOutcome>(
+    [&]()-> CreateMediaPipelineKinesisVideoStreamPoolOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/media-pipeline-kinesis-video-stream-pools");
+      return CreateMediaPipelineKinesisVideoStreamPoolOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateMediaStreamPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaStreamPipeline(const CreateMediaStreamPipelineRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateMediaStreamPipeline);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaStreamPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateMediaStreamPipeline, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateMediaStreamPipeline, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateMediaStreamPipeline",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateMediaStreamPipelineOutcome>(
+    [&]()-> CreateMediaStreamPipelineOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMediaStreamPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/sdk-media-stream-pipelines");
+      return CreateMediaStreamPipelineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipeline(const DeleteMediaCapturePipelineRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteMediaCapturePipeline);
@@ -413,6 +473,39 @@ DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(con
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipelineKinesisVideoStreamPool(const DeleteMediaPipelineKinesisVideoStreamPoolRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteMediaPipelineKinesisVideoStreamPool);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMediaPipelineKinesisVideoStreamPool", "Required field: Identifier, is not set");
+    return DeleteMediaPipelineKinesisVideoStreamPoolOutcome(Aws::Client::AWSError<ChimeSDKMediaPipelinesErrors>(ChimeSDKMediaPipelinesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteMediaPipelineKinesisVideoStreamPool",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteMediaPipelineKinesisVideoStreamPoolOutcome>(
+    [&]()-> DeleteMediaPipelineKinesisVideoStreamPoolOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/media-pipeline-kinesis-video-stream-pools/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+      return DeleteMediaPipelineKinesisVideoStreamPoolOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaCapturePipeline(const GetMediaCapturePipelineRequest& request) const
 {
   AWS_OPERATION_GUARD(GetMediaCapturePipeline);
@@ -506,6 +599,39 @@ GetMediaPipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaPipeline(const Get
       endpointResolutionOutcome.GetResult().AddPathSegments("/sdk-media-pipelines/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMediaPipelineId());
       return GetMediaPipelineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::GetMediaPipelineKinesisVideoStreamPool(const GetMediaPipelineKinesisVideoStreamPoolRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetMediaPipelineKinesisVideoStreamPool);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMediaPipelineKinesisVideoStreamPool", "Required field: Identifier, is not set");
+    return GetMediaPipelineKinesisVideoStreamPoolOutcome(Aws::Client::AWSError<ChimeSDKMediaPipelinesErrors>(ChimeSDKMediaPipelinesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMediaPipelineKinesisVideoStreamPool",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetMediaPipelineKinesisVideoStreamPoolOutcome>(
+    [&]()-> GetMediaPipelineKinesisVideoStreamPoolOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/media-pipeline-kinesis-video-stream-pools/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+      return GetMediaPipelineKinesisVideoStreamPoolOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -640,6 +766,33 @@ ListMediaInsightsPipelineConfigurationsOutcome ChimeSDKMediaPipelinesClient::Lis
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMediaInsightsPipelineConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-configurations");
       return ListMediaInsightsPipelineConfigurationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListMediaPipelineKinesisVideoStreamPoolsOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelineKinesisVideoStreamPools(const ListMediaPipelineKinesisVideoStreamPoolsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListMediaPipelineKinesisVideoStreamPools);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMediaPipelineKinesisVideoStreamPools, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMediaPipelineKinesisVideoStreamPools, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListMediaPipelineKinesisVideoStreamPools, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMediaPipelineKinesisVideoStreamPools",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListMediaPipelineKinesisVideoStreamPoolsOutcome>(
+    [&]()-> ListMediaPipelineKinesisVideoStreamPoolsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMediaPipelineKinesisVideoStreamPools, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/media-pipeline-kinesis-video-stream-pools");
+      return ListMediaPipelineKinesisVideoStreamPoolsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -985,6 +1138,39 @@ UpdateMediaInsightsPipelineStatusOutcome ChimeSDKMediaPipelinesClient::UpdateMed
       endpointResolutionOutcome.GetResult().AddPathSegments("/media-insights-pipeline-status/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
       return UpdateMediaInsightsPipelineStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateMediaPipelineKinesisVideoStreamPoolOutcome ChimeSDKMediaPipelinesClient::UpdateMediaPipelineKinesisVideoStreamPool(const UpdateMediaPipelineKinesisVideoStreamPoolRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateMediaPipelineKinesisVideoStreamPool);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMediaPipelineKinesisVideoStreamPool", "Required field: Identifier, is not set");
+    return UpdateMediaPipelineKinesisVideoStreamPoolOutcome(Aws::Client::AWSError<ChimeSDKMediaPipelinesErrors>(ChimeSDKMediaPipelinesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateMediaPipelineKinesisVideoStreamPool",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateMediaPipelineKinesisVideoStreamPoolOutcome>(
+    [&]()-> UpdateMediaPipelineKinesisVideoStreamPoolOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMediaPipelineKinesisVideoStreamPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/media-pipeline-kinesis-video-stream-pools/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+      return UpdateMediaPipelineKinesisVideoStreamPoolOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

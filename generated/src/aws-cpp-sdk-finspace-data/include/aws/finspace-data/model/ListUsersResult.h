@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of all the user accounts.</p>
+     * <p>A list of all the users.</p>
      */
     inline const Aws::Vector<User>& GetUsers() const{ return m_users; }
 
     /**
-     * <p>A list of all the user accounts.</p>
+     * <p>A list of all the users.</p>
      */
     inline void SetUsers(const Aws::Vector<User>& value) { m_users = value; }
 
     /**
-     * <p>A list of all the user accounts.</p>
+     * <p>A list of all the users.</p>
      */
     inline void SetUsers(Aws::Vector<User>&& value) { m_users = std::move(value); }
 
     /**
-     * <p>A list of all the user accounts.</p>
+     * <p>A list of all the users.</p>
      */
     inline ListUsersResult& WithUsers(const Aws::Vector<User>& value) { SetUsers(value); return *this;}
 
     /**
-     * <p>A list of all the user accounts.</p>
+     * <p>A list of all the users.</p>
      */
     inline ListUsersResult& WithUsers(Aws::Vector<User>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of all the user accounts.</p>
+     * <p>A list of all the users.</p>
      */
     inline ListUsersResult& AddUsers(const User& value) { m_users.push_back(value); return *this; }
 
     /**
-     * <p>A list of all the user accounts.</p>
+     * <p>A list of all the users.</p>
      */
     inline ListUsersResult& AddUsers(User&& value) { m_users.push_back(std::move(value)); return *this; }
 

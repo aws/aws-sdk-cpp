@@ -17,7 +17,6 @@ namespace Model
   {
     NOT_SET,
     ManagedInstance,
-    Document,
     EC2Instance
   };
 

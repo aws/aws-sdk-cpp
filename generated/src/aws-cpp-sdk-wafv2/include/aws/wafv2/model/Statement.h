@@ -484,8 +484,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline const RuleGroupReferenceStatement& GetRuleGroupReferenceStatement() const{ return m_ruleGroupReferenceStatement; }
 
@@ -494,8 +496,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline bool RuleGroupReferenceStatementHasBeenSet() const { return m_ruleGroupReferenceStatementHasBeenSet; }
 
@@ -504,8 +508,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline void SetRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = value; }
 
@@ -514,8 +520,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline void SetRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { m_ruleGroupReferenceStatementHasBeenSet = true; m_ruleGroupReferenceStatement = std::move(value); }
 
@@ -524,8 +532,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline Statement& WithRuleGroupReferenceStatement(const RuleGroupReferenceStatement& value) { SetRuleGroupReferenceStatement(value); return *this;}
 
@@ -534,8 +544,10 @@ namespace Model
      * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
      * the ARN of the rule group in this statement.</p> <p>You cannot nest a
      * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-     * group reference statement at the top level inside a web ACL. </p>
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+     * group reference statement inside another rule group. You can only reference a
+     * rule group as a top-level statement within a rule that you define in a web
+     * ACL.</p>
      */
     inline Statement& WithRuleGroupReferenceStatement(RuleGroupReferenceStatement&& value) { SetRuleGroupReferenceStatement(std::move(value)); return *this;}
 
@@ -1206,11 +1218,12 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
      * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
      * creation fraud prevention (ACFP) managed rule group
      * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
@@ -1224,11 +1237,12 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
      * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
      * creation fraud prevention (ACFP) managed rule group
      * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
@@ -1242,11 +1256,12 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
      * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
      * creation fraud prevention (ACFP) managed rule group
      * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
@@ -1260,11 +1275,12 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
      * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
      * creation fraud prevention (ACFP) managed rule group
      * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
@@ -1278,11 +1294,12 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
      * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
      * creation fraud prevention (ACFP) managed rule group
      * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
@@ -1296,11 +1313,12 @@ namespace Model
      * this statement. You can retrieve the required names by calling
      * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
      * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-     * as a top-level statement within a rule.</p>  <p>You are charged additional
-     * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
-     * takeover prevention (ATP) managed rule group
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+     * rule group inside another rule group. You can only reference a managed rule
+     * group as a top-level statement within a rule that you define in a web ACL.</p>
+     *  <p>You are charged additional fees when you use the WAF Bot Control
+     * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+     * Control account takeover prevention (ATP) managed rule group
      * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
      * creation fraud prevention (ACFP) managed rule group
      * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a

@@ -23,6 +23,7 @@ namespace Aws
         static const int DASHBOARD_HASH = HashingUtils::HashString("DASHBOARD");
         static const int ANALYSIS_HASH = HashingUtils::HashString("ANALYSIS");
         static const int DATASET_HASH = HashingUtils::HashString("DATASET");
+        static const int TOPIC_HASH = HashingUtils::HashString("TOPIC");
 
 
         MemberType GetMemberTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == DATASET_HASH)
           {
             return MemberType::DATASET;
+          }
+          else if (hashCode == TOPIC_HASH)
+          {
+            return MemberType::TOPIC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "ANALYSIS";
           case MemberType::DATASET:
             return "DATASET";
+          case MemberType::TOPIC:
+            return "TOPIC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
