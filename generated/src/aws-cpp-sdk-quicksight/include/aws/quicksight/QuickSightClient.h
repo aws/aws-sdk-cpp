@@ -3725,14 +3725,14 @@ namespace QuickSight
          * associated with the resource, the new tag value that you specify replaces the
          * previous value for that tag.</p> <p>You can associate as many as 50 tags with a
          * resource. Amazon QuickSight supports tagging on data set, data source,
-         * dashboard, template, and topic. </p> <p>Tagging for Amazon QuickSight works in a
-         * similar way to tagging for other Amazon Web Services services, except for the
-         * following:</p> <ul> <li> <p>You can't use tags to track costs for Amazon
-         * QuickSight. This isn't possible because you can't tag the resources that Amazon
-         * QuickSight costs are based on, for example Amazon QuickSight storage capacity
-         * (SPICE), number of users, type of users, and usage metrics.</p> </li> <li>
-         * <p>Amazon QuickSight doesn't currently support the tag editor for Resource
-         * Groups.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * dashboard, template, topic, and user. </p> <p>Tagging for Amazon QuickSight
+         * works in a similar way to tagging for other Amazon Web Services services, except
+         * for the following:</p> <ul> <li> <p>Tags are used to track costs for users in
+         * Amazon QuickSight. You can't tag other resources that Amazon QuickSight costs
+         * are based on, such as storage capacoty (SPICE), session usage, alert
+         * consumption, or reporting units.</p> </li> <li> <p>Amazon QuickSight doesn't
+         * currently support the tag editor for Resource Groups.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TagResource">AWS
          * API Reference</a></p>
          */

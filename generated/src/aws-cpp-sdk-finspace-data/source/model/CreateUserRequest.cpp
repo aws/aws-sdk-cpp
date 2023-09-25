@@ -55,7 +55,7 @@ Aws::String CreateUserRequest::SerializePayload() const
 
   if(m_apiAccessHasBeenSet)
   {
-   payload.WithString("ApiAccess", ApiAccessMapper::GetNameForApiAccess(m_apiAccess));
+   payload.WithString("apiAccess", ApiAccessMapper::GetNameForApiAccess(m_apiAccess));
   }
 
   if(m_apiAccessPrincipalArnHasBeenSet)

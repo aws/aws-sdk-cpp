@@ -16,6 +16,7 @@
 #include <aws/wafv2/model/Headers.h>
 #include <aws/wafv2/model/Cookies.h>
 #include <aws/wafv2/model/HeaderOrder.h>
+#include <aws/wafv2/model/JA3Fingerprint.h>
 #include <utility>
 
 namespace Aws
@@ -678,6 +679,61 @@ namespace Model
      */
     inline FieldToMatch& WithHeaderOrder(HeaderOrder&& value) { SetHeaderOrder(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Match against the request's JA3 fingerprint header. The header contains a
+     * hash fingerprint of the TLS Client Hello packet for the request. </p> 
+     * <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> 
+     */
+    inline const JA3Fingerprint& GetJA3Fingerprint() const{ return m_jA3Fingerprint; }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint header. The header contains a
+     * hash fingerprint of the TLS Client Hello packet for the request. </p> 
+     * <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> 
+     */
+    inline bool JA3FingerprintHasBeenSet() const { return m_jA3FingerprintHasBeenSet; }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint header. The header contains a
+     * hash fingerprint of the TLS Client Hello packet for the request. </p> 
+     * <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> 
+     */
+    inline void SetJA3Fingerprint(const JA3Fingerprint& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = value; }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint header. The header contains a
+     * hash fingerprint of the TLS Client Hello packet for the request. </p> 
+     * <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> 
+     */
+    inline void SetJA3Fingerprint(JA3Fingerprint&& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = std::move(value); }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint header. The header contains a
+     * hash fingerprint of the TLS Client Hello packet for the request. </p> 
+     * <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> 
+     */
+    inline FieldToMatch& WithJA3Fingerprint(const JA3Fingerprint& value) { SetJA3Fingerprint(value); return *this;}
+
+    /**
+     * <p>Match against the request's JA3 fingerprint header. The header contains a
+     * hash fingerprint of the TLS Client Hello packet for the request. </p> 
+     * <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p> 
+     */
+    inline FieldToMatch& WithJA3Fingerprint(JA3Fingerprint&& value) { SetJA3Fingerprint(std::move(value)); return *this;}
+
   private:
 
     SingleHeader m_singleHeader;
@@ -712,6 +768,9 @@ namespace Model
 
     HeaderOrder m_headerOrder;
     bool m_headerOrderHasBeenSet = false;
+
+    JA3Fingerprint m_jA3Fingerprint;
+    bool m_jA3FingerprintHasBeenSet = false;
   };
 
 } // namespace Model

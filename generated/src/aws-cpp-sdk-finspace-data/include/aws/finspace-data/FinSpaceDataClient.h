@@ -77,8 +77,8 @@ namespace FinSpaceData
         virtual ~FinSpaceDataClient();
 
         /**
-         * <p>Adds a user account to a permission group to grant permissions for actions a
-         * user can perform in FinSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a user to a permission group to grant permissions for actions a user can
+         * perform in FinSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">AWS
          * API Reference</a></p>
          */
@@ -306,7 +306,7 @@ namespace FinSpaceData
         }
 
         /**
-         * <p>Removes a user account from a permission group.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a user from a permission group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">AWS
          * API Reference</a></p>
          */
@@ -487,8 +487,11 @@ namespace FinSpaceData
         }
 
         /**
-         * <p>Request programmatic credentials to use with FinSpace SDK.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Request programmatic credentials to use with FinSpace SDK. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#accessing-credentials">Step
+         * 2. Access credentials programmatically using IAM access key id and secret access
+         * key</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials">AWS
          * API Reference</a></p>
          */
@@ -667,8 +670,8 @@ namespace FinSpaceData
         }
 
         /**
-         * <p>Lists all the permission groups that are associated with a specific user
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the permission groups that are associated with a specific
+         * user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">AWS
          * API Reference</a></p>
          */
@@ -693,7 +696,7 @@ namespace FinSpaceData
         }
 
         /**
-         * <p>Lists all available user accounts in FinSpace.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all available users in FinSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsers">AWS
          * API Reference</a></p>
          */
@@ -848,7 +851,7 @@ namespace FinSpaceData
         }
 
         /**
-         * <p>Modifies the details of the specified user account. You cannot update the
+         * <p>Modifies the details of the specified user. You cannot update the
          * <code>userId</code> for a user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateUser">AWS
          * API Reference</a></p>

@@ -42,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>Update the information about the OpsItem. Provide enough information so that
-     * users reading this OpsItem for the first time understand the issue. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Update the information about the OpsItem. Provide enough information so that
-     * users reading this OpsItem for the first time understand the issue. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Update the information about the OpsItem. Provide enough information so that
-     * users reading this OpsItem for the first time understand the issue. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Update the information about the OpsItem. Provide enough information so that
-     * users reading this OpsItem for the first time understand the issue. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Update the information about the OpsItem. Provide enough information so that
-     * users reading this OpsItem for the first time understand the issue. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Update the information about the OpsItem. Provide enough information so that
-     * users reading this OpsItem for the first time understand the issue. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>
      */
     inline UpdateOpsItemRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Update the information about the OpsItem. Provide enough information so that
-     * users reading this OpsItem for the first time understand the issue. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>
      */
     inline UpdateOpsItemRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Update the information about the OpsItem. Provide enough information so that
-     * users reading this OpsItem for the first time understand the issue. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>
      */
     inline UpdateOpsItemRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

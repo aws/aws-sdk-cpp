@@ -309,65 +309,57 @@ namespace Model
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline UpdateWebACLRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline UpdateWebACLRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline UpdateWebACLRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline UpdateWebACLRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 

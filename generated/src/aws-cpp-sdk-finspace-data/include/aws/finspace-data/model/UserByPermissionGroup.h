@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The structure of a user account associated with a permission
-   * group.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure of a user associated with a permission group.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UserByPermissionGroup">AWS
    * API Reference</a></p>
    */
@@ -84,56 +84,50 @@ namespace Model
 
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The user creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The
+     * user is created and is currently active.</p> </li> <li> <p>
+     * <code>DISABLED</code> – The user is currently inactive.</p> </li> </ul>
      */
     inline const UserStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The user creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The
+     * user is created and is currently active.</p> </li> <li> <p>
+     * <code>DISABLED</code> – The user is currently inactive.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The user creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The
+     * user is created and is currently active.</p> </li> <li> <p>
+     * <code>DISABLED</code> – The user is currently inactive.</p> </li> </ul>
      */
     inline void SetStatus(const UserStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The user creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The
+     * user is created and is currently active.</p> </li> <li> <p>
+     * <code>DISABLED</code> – The user is currently inactive.</p> </li> </ul>
      */
     inline void SetStatus(UserStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The user creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The
+     * user is created and is currently active.</p> </li> <li> <p>
+     * <code>DISABLED</code> – The user is currently inactive.</p> </li> </ul>
      */
     inline UserByPermissionGroup& WithStatus(const UserStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the user account. </p> <ul> <li> <p>
-     * <code>CREATING</code> – The user account creation is in progress.</p> </li> <li>
-     * <p> <code>ENABLED</code> – The user account is created and is currently
-     * active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently
-     * inactive.</p> </li> </ul>
+     * <p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> –
+     * The user creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The
+     * user is created and is currently active.</p> </li> <li> <p>
+     * <code>DISABLED</code> – The user is currently inactive.</p> </li> </ul>
      */
     inline UserByPermissionGroup& WithStatus(UserStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -415,62 +409,62 @@ namespace Model
 
 
     /**
-     * <p>Indicates the status of the user account within a permission group.</p> <ul>
-     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
-     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
-     * – The user account is successfully added to the permission group.</p> </li> <li>
-     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
-     * the permission group.</p> </li> </ul>
+     * <p>Indicates the status of the user within a permission group.</p> <ul> <li> <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the
+     * permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user is
+     * successfully added to the permission group.</p> </li> <li> <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the
+     * permission group.</p> </li> </ul>
      */
     inline const PermissionGroupMembershipStatus& GetMembershipStatus() const{ return m_membershipStatus; }
 
     /**
-     * <p>Indicates the status of the user account within a permission group.</p> <ul>
-     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
-     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
-     * – The user account is successfully added to the permission group.</p> </li> <li>
-     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
-     * the permission group.</p> </li> </ul>
+     * <p>Indicates the status of the user within a permission group.</p> <ul> <li> <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the
+     * permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user is
+     * successfully added to the permission group.</p> </li> <li> <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the
+     * permission group.</p> </li> </ul>
      */
     inline bool MembershipStatusHasBeenSet() const { return m_membershipStatusHasBeenSet; }
 
     /**
-     * <p>Indicates the status of the user account within a permission group.</p> <ul>
-     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
-     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
-     * – The user account is successfully added to the permission group.</p> </li> <li>
-     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
-     * the permission group.</p> </li> </ul>
+     * <p>Indicates the status of the user within a permission group.</p> <ul> <li> <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the
+     * permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user is
+     * successfully added to the permission group.</p> </li> <li> <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the
+     * permission group.</p> </li> </ul>
      */
     inline void SetMembershipStatus(const PermissionGroupMembershipStatus& value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = value; }
 
     /**
-     * <p>Indicates the status of the user account within a permission group.</p> <ul>
-     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
-     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
-     * – The user account is successfully added to the permission group.</p> </li> <li>
-     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
-     * the permission group.</p> </li> </ul>
+     * <p>Indicates the status of the user within a permission group.</p> <ul> <li> <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the
+     * permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user is
+     * successfully added to the permission group.</p> </li> <li> <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the
+     * permission group.</p> </li> </ul>
      */
     inline void SetMembershipStatus(PermissionGroupMembershipStatus&& value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = std::move(value); }
 
     /**
-     * <p>Indicates the status of the user account within a permission group.</p> <ul>
-     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
-     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
-     * – The user account is successfully added to the permission group.</p> </li> <li>
-     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
-     * the permission group.</p> </li> </ul>
+     * <p>Indicates the status of the user within a permission group.</p> <ul> <li> <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the
+     * permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user is
+     * successfully added to the permission group.</p> </li> <li> <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the
+     * permission group.</p> </li> </ul>
      */
     inline UserByPermissionGroup& WithMembershipStatus(const PermissionGroupMembershipStatus& value) { SetMembershipStatus(value); return *this;}
 
     /**
-     * <p>Indicates the status of the user account within a permission group.</p> <ul>
-     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
-     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
-     * – The user account is successfully added to the permission group.</p> </li> <li>
-     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
-     * the permission group.</p> </li> </ul>
+     * <p>Indicates the status of the user within a permission group.</p> <ul> <li> <p>
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the
+     * permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user is
+     * successfully added to the permission group.</p> </li> <li> <p>
+     * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the
+     * permission group.</p> </li> </ul>
      */
     inline UserByPermissionGroup& WithMembershipStatus(PermissionGroupMembershipStatus&& value) { SetMembershipStatus(std::move(value)); return *this;}
 

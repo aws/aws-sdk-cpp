@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the disabled user account.</p>
+     * <p>The unique identifier for the deactivated user.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The unique identifier for the disabled user account.</p>
+     * <p>The unique identifier for the deactivated user.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userId = value; }
 
     /**
-     * <p>The unique identifier for the disabled user account.</p>
+     * <p>The unique identifier for the deactivated user.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the disabled user account.</p>
+     * <p>The unique identifier for the deactivated user.</p>
      */
     inline void SetUserId(const char* value) { m_userId.assign(value); }
 
     /**
-     * <p>The unique identifier for the disabled user account.</p>
+     * <p>The unique identifier for the deactivated user.</p>
      */
     inline DisableUserResult& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the disabled user account.</p>
+     * <p>The unique identifier for the deactivated user.</p>
      */
     inline DisableUserResult& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the disabled user account.</p>
+     * <p>The unique identifier for the deactivated user.</p>
      */
     inline DisableUserResult& WithUserId(const char* value) { SetUserId(value); return *this;}
 

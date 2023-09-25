@@ -35,11 +35,12 @@ namespace Model
    * this statement. You can retrieve the required names by calling
    * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
    * <code>ManagedRuleGroupStatement</code>, for example for use inside a
-   * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-   * as a top-level statement within a rule.</p>  <p>You are charged additional
-   * fees when you use the WAF Bot Control managed rule group
-   * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
-   * takeover prevention (ATP) managed rule group
+   * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
+   * rule group inside another rule group. You can only reference a managed rule
+   * group as a top-level statement within a rule that you define in a web ACL.</p>
+   *  <p>You are charged additional fees when you use the WAF Bot Control
+   * managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud
+   * Control account takeover prevention (ATP) managed rule group
    * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
    * creation fraud prevention (ACFP) managed rule group
    * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
