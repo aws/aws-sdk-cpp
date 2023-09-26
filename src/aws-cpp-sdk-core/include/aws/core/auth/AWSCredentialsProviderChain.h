@@ -46,8 +46,10 @@ namespace Aws
             void AddProvider(const std::shared_ptr<AWSCredentialsProvider>& provider) { m_providerChain.push_back(provider); }
 
 
-        private:            
+        private:
             Aws::Vector<std::shared_ptr<AWSCredentialsProvider> > m_providerChain;
+            std::shared_ptr<AWSCredentialsProvider> m_cachedProvider;
+            mutable Aws::Utils::Threading::ReaderWriterLock m_cachedProviderLock;
         };
 
         /**
