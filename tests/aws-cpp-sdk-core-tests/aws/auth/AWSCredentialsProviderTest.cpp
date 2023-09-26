@@ -4,16 +4,13 @@
  */
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
-
 #include <aws/testing/mocks/aws/auth/MockAWSHttpResourceClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
-#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/AWSError.h>
@@ -21,7 +18,6 @@
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/auth/STSCredentialsProvider.h>
 #include <aws/core/client/SpecifiedRetryableErrorsRetryStrategy.h>
-#include <stdlib.h>
 #include <thread>
 #include <fstream>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -1223,4 +1219,130 @@ TEST_F(AWSCredentialsTest, TestExpiredState)
     ASSERT_FALSE(credentials.IsEmpty());
     ASSERT_TRUE(credentials.IsExpired());
     ASSERT_TRUE(credentials.IsExpiredOrEmpty());
+}
+
+class AWSCachedCredentialsTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+public:
+    class MockCredentialsProvider : public AWSCredentialsProvider {
+    public:
+        AWSCredentials GetAWSCredentials() override {
+          if (!responseQueue.empty()) {
+            auto creds = responseQueue.front();
+            responseQueue.pop();
+            return creds;
+          }
+          return {};
+        }
+
+        void PushResponse(AWSCredentials &&creds) {
+          responseQueue.emplace(std::forward<AWSCredentials>(creds));
+        }
+
+    private:
+        std::queue<AWSCredentials> responseQueue;
+    };
+
+    class MockCredentialsProviderChain : public AWSCredentialsProviderChain {
+    public:
+        void AddMockProvider(std::shared_ptr<MockCredentialsProvider> provider) {
+          AddProvider(provider);
+        }
+    };
+
+    void SetUp() override {
+      cachedProviderChain = Aws::MakeShared<MockCredentialsProviderChain>(AllocationTag);
+    }
+
+    std::shared_ptr<MockCredentialsProviderChain> cachedProviderChain;
+};
+
+TEST_F(AWSCachedCredentialsTest, ShouldSkipCredentialsChainForCachedValue)
+{
+  auto failFirstProvider = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  failFirstProvider->PushResponse({});
+  failFirstProvider->PushResponse({"never", "see", "this"});
+
+  auto cachedProvider = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  cachedProvider->PushResponse({"sbiscigl", "was", "here"});
+  cachedProvider->PushResponse({"sbiscigl", "was", "here"});
+  cachedProvider->PushResponse({"sbiscigl", "was", "here"});
+  cachedProvider->PushResponse({"sbiscigl", "was", "here"});
+
+  cachedProviderChain->AddMockProvider(failFirstProvider);
+  cachedProviderChain->AddMockProvider(cachedProvider);
+
+  for (int i = 0; i < 4; ++i) {
+    auto creds = cachedProviderChain->GetAWSCredentials();
+    ASSERT_EQ("sbiscigl", creds.GetAWSAccessKeyId());
+    ASSERT_EQ("was", creds.GetAWSSecretKey());
+    ASSERT_EQ("here", creds.GetSessionToken());
+  }
+}
+
+TEST_F(AWSCachedCredentialsTest, ShouldReplaceCachedWhenProviderFails)
+{
+  auto failFirstProvider = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  failFirstProvider->PushResponse({});
+  failFirstProvider->PushResponse({"and", "no", "alarms"});
+  failFirstProvider->PushResponse({"and", "no", "surprises"});
+
+  auto cachedFailingProvider = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  cachedFailingProvider->PushResponse({"sbiscigl", "was", "here"});
+  cachedFailingProvider->PushResponse({});
+
+  cachedProviderChain->AddMockProvider(failFirstProvider);
+  cachedProviderChain->AddMockProvider(cachedFailingProvider);
+
+  auto creds = cachedProviderChain->GetAWSCredentials();
+  ASSERT_EQ("sbiscigl", creds.GetAWSAccessKeyId());
+  ASSERT_EQ("was", creds.GetAWSSecretKey());
+  ASSERT_EQ("here", creds.GetSessionToken());
+
+  creds = cachedProviderChain->GetAWSCredentials();
+  ASSERT_EQ("and", creds.GetAWSAccessKeyId());
+  ASSERT_EQ("no", creds.GetAWSSecretKey());
+  ASSERT_EQ("alarms", creds.GetSessionToken());
+
+  creds = cachedProviderChain->GetAWSCredentials();
+  ASSERT_EQ("and", creds.GetAWSAccessKeyId());
+  ASSERT_EQ("no", creds.GetAWSSecretKey());
+  ASSERT_EQ("surprises", creds.GetSessionToken());
+}
+
+TEST_F(AWSCachedCredentialsTest, ShouldCacheCredenitalAsync)
+{
+  auto cachedProvider = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  cachedProvider->PushResponse({"and", "no", "alarms"});
+  cachedProvider->PushResponse({"and", "no", "surprises"});
+
+  auto fallback = Aws::MakeShared<MockCredentialsProvider>(AllocationTag);
+  fallback->PushResponse({"a", "quiet", "life"});
+
+  cachedProviderChain->AddMockProvider(cachedProvider);
+  cachedProviderChain->AddMockProvider(fallback);
+
+  auto getCredentials = [](std::shared_ptr<MockCredentialsProviderChain> provider) -> AWSCredentials {
+      return provider->GetAWSCredentials();
+  };
+
+  std::vector<std::future<AWSCredentials>> futures;
+  futures.push_back(std::async(std::launch::async, getCredentials, cachedProviderChain));
+  futures.push_back(std::async(std::launch::async, getCredentials, cachedProviderChain));
+
+  std::vector<AWSCredentials> creds;
+  for (auto &future: futures) {
+    creds.push_back(future.get());
+  }
+
+  auto containCredentials = [](std::vector<AWSCredentials> &found,
+      const AWSCredentials &credentials) -> bool {
+      return std::any_of(found.begin(), found.end(), [&credentials](const AWSCredentials& cred) -> bool {
+          return cred == credentials;
+      });
+  };
+
+  ASSERT_TRUE(containCredentials(creds, {"and", "no", "alarms"}));
+  ASSERT_TRUE(containCredentials(creds, {"and", "no", "surprises"}));
+  ASSERT_FALSE(containCredentials(creds, {"a", "quiet", "life"}));
 }
