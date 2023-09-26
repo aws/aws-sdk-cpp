@@ -10,7 +10,7 @@ import platform
 # openssl doesn't have any cmake files; this script copies in cmake files to appropriate directories
 # The CMakeFiles.txt and *.cmake files are variants of what can be found at https://github.com/janbar/openssl-cmake
 def CopyCMakeFiles(baseDir, destDir):
-    sourceDir = os.path.join(baseDir, "android-build", "cmakefiles", "openssl-cmake")
+    sourceDir = os.path.join(baseDir, "tools", "android-build", "cmakefiles", "openssl-cmake")
     dirLength = len(sourceDir)
 
     for rootDir, dirNames, fileNames in os.walk(sourceDir):
