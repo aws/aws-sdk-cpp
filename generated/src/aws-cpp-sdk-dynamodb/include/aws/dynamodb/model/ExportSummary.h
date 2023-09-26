@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ExportStatus.h>
+#include <aws/dynamodb/model/ExportType.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +116,55 @@ namespace Model
      */
     inline ExportSummary& WithExportStatus(ExportStatus&& value) { SetExportStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
+     * <code>INCREMENTAL_EXPORT</code> is provided, the
+     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     */
+    inline const ExportType& GetExportType() const{ return m_exportType; }
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
+     * <code>INCREMENTAL_EXPORT</code> is provided, the
+     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     */
+    inline bool ExportTypeHasBeenSet() const { return m_exportTypeHasBeenSet; }
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
+     * <code>INCREMENTAL_EXPORT</code> is provided, the
+     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     */
+    inline void SetExportType(const ExportType& value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
+     * <code>INCREMENTAL_EXPORT</code> is provided, the
+     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     */
+    inline void SetExportType(ExportType&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::move(value); }
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
+     * <code>INCREMENTAL_EXPORT</code> is provided, the
+     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     */
+    inline ExportSummary& WithExportType(const ExportType& value) { SetExportType(value); return *this;}
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>. If
+     * <code>INCREMENTAL_EXPORT</code> is provided, the
+     * <code>IncrementalExportSpecification</code> must also be used.</p>
+     */
+    inline ExportSummary& WithExportType(ExportType&& value) { SetExportType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_exportArn;
@@ -122,6 +172,9 @@ namespace Model
 
     ExportStatus m_exportStatus;
     bool m_exportStatusHasBeenSet = false;
+
+    ExportType m_exportType;
+    bool m_exportTypeHasBeenSet = false;
   };
 
 } // namespace Model
