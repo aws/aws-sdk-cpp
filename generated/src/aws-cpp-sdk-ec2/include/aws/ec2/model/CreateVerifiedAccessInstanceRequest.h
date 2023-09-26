@@ -218,6 +218,31 @@ namespace Model
      */
     inline CreateVerifiedAccessInstanceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p> Choose to enable or disable support for Federal Information Processing
+     * Standards (FIPS) on the instance. </p>
+     */
+    inline bool GetFIPSEnabled() const{ return m_fIPSEnabled; }
+
+    /**
+     * <p> Choose to enable or disable support for Federal Information Processing
+     * Standards (FIPS) on the instance. </p>
+     */
+    inline bool FIPSEnabledHasBeenSet() const { return m_fIPSEnabledHasBeenSet; }
+
+    /**
+     * <p> Choose to enable or disable support for Federal Information Processing
+     * Standards (FIPS) on the instance. </p>
+     */
+    inline void SetFIPSEnabled(bool value) { m_fIPSEnabledHasBeenSet = true; m_fIPSEnabled = value; }
+
+    /**
+     * <p> Choose to enable or disable support for Federal Information Processing
+     * Standards (FIPS) on the instance. </p>
+     */
+    inline CreateVerifiedAccessInstanceRequest& WithFIPSEnabled(bool value) { SetFIPSEnabled(value); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -231,6 +256,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    bool m_fIPSEnabled;
+    bool m_fIPSEnabledHasBeenSet = false;
   };
 
 } // namespace Model
