@@ -4,32 +4,8 @@ The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface fo
 AWS SDK for C++ is in now in General Availability and recommended for production use. We invite our customers to join
 the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
-## Version 1.11 is now Available!
-
-This release introduces a refactored Asynchronous API and restructures the File Hierarchy of the project source code. Additionally, the minimum required version of cmake was raised to 3.13.
-* Asynchronous API refactoring is a partially breaking, backward incompatible change: all client methods such as OperationAsync and OperationCallable are no longer virtual methods but instead are conditionally compiled template methods. Having these methods as templates reduces the total binary size of the SDK by 40%. Individual client binary size may vary. In addition, it reduces build time of the SDK by up to 50% (release, unity build, SDK clients only).
-  A code change may be required if your code inherits SDK’s Client classes and overrides the virtual async methods. Regular synchronous/blocking call methods are still available for override.
-  Code changes are not required and SDK API are backward compatible if virtual async methods were not overwritten before.
-* Scripts and IDE project files not using the provided cmake build infrastructure must be reviewed and updated to reflect source tree changes.
-
-All CRT libraries are git submodules of SDK for C++. It requires changes in git syntax to get all source code.
-* New users: If you haven't downloaded the source code for SDK for C++, you can get all git submodules recursively by:
-   ```
-   git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp
-   ```
-* Existing users: If you’ve already downloaded source code for SDK for C++, e.g. in directory `aws-sdk-cpp`, you can update the git submodule by:
-   ```
-   cd aws-sdk-cpp
-   git checkout main
-   git pull origin main
-   git submodule update --init --recursive
-   ```
-* Alternatively, if you downloaded the code bundle from GitHub website and have no installation of git, you can download all the dependencies running the `prefetch_crt_dependency.sh` script from the root of the repository. It will download bundles of all dependencies from github website using curl and expand them in the right locations.
-
-
-See Wiki page [Improving S3 Throughput with AWS SDK for CPP v1.9](https://github.com/aws/aws-sdk-cpp/wiki/Improving-S3-Throughput-with-AWS-SDK-for-CPP-v1.9) for more details, and create a new [issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) or [pull request](https://github.com/aws/aws-sdk-cpp/compare) if you have any feedback on this new version.
-
 ## __Jump To:__
+* [Change log](https://github.com/aws/aws-sdk-cpp/tags)
 * [API Docs](https://sdk.amazonaws.com/cpp/api/LATEST/index.html)
 * [Getting Started](#getting-started)
 * [Getting Help](#getting-help)
@@ -43,24 +19,30 @@ See Wiki page [Improving S3 Throughput with AWS SDK for CPP v1.9](https://github
 * Visual Studio 2015 or later
 * OR GNU Compiler Collection (GCC) 4.9 or later
 * OR Clang 3.3 or later
-* 4GB of RAM
-  * 4GB of RAM is required to build some of the larger clients. The SDK build may fail on EC2 instance types t2.micro, t2.small and other small instance types due to insufficient memory.
-
+* 4GB of RAM (This is required to build some of the larger clients. The SDK build may fail on EC2 instance types t2.micro, t2.small and other small instance types due to insufficient memory)
+* Supported platforms
+  * Amazon Linux
+  * Windows
+  * Mac
+* [Platforms with known issues]()
+  
 ### Building From Source:
 
 #### To create an **out-of-source build**:
 1. Install CMake and the relevant build tools for your platform. Ensure these are available in your executable path.
 2. Create your build directory. Replace <BUILD_DIR> with your build directory name:
-
 3. Build the project:
 
     ```sh
    cd <BUILD_DIR>
-   cmake <path-to-root-of-this-source-code> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install> -DBUILD_ONLY="s3"
+   cmake <path-to-root-of-this-source-code> \
+    -DCMAKE_BUILD_TYPE=Debug \
+    -DCMAKE_PREFIX_PATH=<path-to-install> \
+    -DBUILD_ONLY="s3"
    cmake --build . --config=Debug
    cmake --install . --config=Debug
    ```
-  \* use BUILD_ONLY flag to list only the services you are using. Building the whole sdk can take a long time. Also check out the list of [CMake parameters](./docs/CMake_Parameters.md)
+   **_NOTE:_** BUILD_ONLY is an optional flag used to list only the services you are using. Building the whole sdk can take a long time. Also check out the list of [CMake parameters](./docs/CMake_Parameters.md)
 
 #### Other Dependencies:
 To compile in Linux, you must have the header files for libcurl, libopenssl. The packages are typically available in your package manager.
