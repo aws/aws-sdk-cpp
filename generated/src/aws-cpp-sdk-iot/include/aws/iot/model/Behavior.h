@@ -172,37 +172,49 @@ namespace Model
 
     /**
      * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>
+     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
+     * an alert through Amazon SNS when IoT Device Defender detects that a device is
+     * behaving anomalously.</p> 
      */
     inline const BehaviorCriteria& GetCriteria() const{ return m_criteria; }
 
     /**
      * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>
+     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
+     * an alert through Amazon SNS when IoT Device Defender detects that a device is
+     * behaving anomalously.</p> 
      */
     inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
 
     /**
      * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>
+     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
+     * an alert through Amazon SNS when IoT Device Defender detects that a device is
+     * behaving anomalously.</p> 
      */
     inline void SetCriteria(const BehaviorCriteria& value) { m_criteriaHasBeenSet = true; m_criteria = value; }
 
     /**
      * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>
+     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
+     * an alert through Amazon SNS when IoT Device Defender detects that a device is
+     * behaving anomalously.</p> 
      */
     inline void SetCriteria(BehaviorCriteria&& value) { m_criteriaHasBeenSet = true; m_criteria = std::move(value); }
 
     /**
      * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>
+     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
+     * an alert through Amazon SNS when IoT Device Defender detects that a device is
+     * behaving anomalously.</p> 
      */
     inline Behavior& WithCriteria(const BehaviorCriteria& value) { SetCriteria(value); return *this;}
 
     /**
      * <p>The criteria that determine if a device is behaving normally in regard to the
-     * <code>metric</code>.</p>
+     * <code>metric</code>.</p>  <p>In the IoT console, you can choose to be sent
+     * an alert through Amazon SNS when IoT Device Defender detects that a device is
+     * behaving anomalously.</p> 
      */
     inline Behavior& WithCriteria(BehaviorCriteria&& value) { SetCriteria(std::move(value)); return *this;}
 

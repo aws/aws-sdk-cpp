@@ -90,7 +90,7 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
@@ -133,7 +133,7 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
@@ -176,7 +176,7 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
@@ -219,7 +219,7 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
@@ -262,7 +262,7 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
@@ -305,7 +305,7 @@ namespace Model
      * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio
      * button) or a check box that's detected on a document page. Use the value of
      * <code>SelectionStatus</code> to determine the status of the selection
-     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidene score
+     * element.</p> </li> <li> <p> <i>SIGNATURE</i> - The location and confidence score
      * of a signature detected on a document page. Can be returned as part of a
      * Key-Value pair or a detected cell.</p> </li> <li> <p> <i>QUERY</i> - A question
      * asked during the call of AnalyzeDocument. Contains an alias and an ID that
@@ -925,9 +925,7 @@ namespace Model
      * returned for multipage documents that are in PDF or TIFF format. A scanned image
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
-     * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations will also return a <code>Page</code> value of 1 because every input
-     * document is considered to be a single-page document.</p>
+     * scanned images the value of <code>Page</code> is always 1. </p>
      */
     inline int GetPage() const{ return m_page; }
 
@@ -937,9 +935,7 @@ namespace Model
      * returned for multipage documents that are in PDF or TIFF format. A scanned image
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
-     * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations will also return a <code>Page</code> value of 1 because every input
-     * document is considered to be a single-page document.</p>
+     * scanned images the value of <code>Page</code> is always 1. </p>
      */
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
 
@@ -949,9 +945,7 @@ namespace Model
      * returned for multipage documents that are in PDF or TIFF format. A scanned image
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
-     * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations will also return a <code>Page</code> value of 1 because every input
-     * document is considered to be a single-page document.</p>
+     * scanned images the value of <code>Page</code> is always 1. </p>
      */
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
 
@@ -961,9 +955,7 @@ namespace Model
      * returned for multipage documents that are in PDF or TIFF format. A scanned image
      * (JPEG/PNG) provided to an asynchronous operation, even if it contains multiple
      * document pages, is considered a single-page document. This means that for
-     * scanned images the value of <code>Page</code> is always 1. Synchronous
-     * operations will also return a <code>Page</code> value of 1 because every input
-     * document is considered to be a single-page document.</p>
+     * scanned images the value of <code>Page</code> is always 1. </p>
      */
     inline Block& WithPage(int value) { SetPage(value); return *this;}
 

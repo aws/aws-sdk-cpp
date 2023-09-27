@@ -25,7 +25,8 @@ CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() :
     m_splunkDestinationConfigurationHasBeenSet(false),
     m_httpEndpointDestinationConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet(false)
+    m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet(false),
+    m_mSKSourceConfigurationHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,12 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
   if(m_amazonOpenSearchServerlessDestinationConfigurationHasBeenSet)
   {
    payload.WithObject("AmazonOpenSearchServerlessDestinationConfiguration", m_amazonOpenSearchServerlessDestinationConfiguration.Jsonize());
+
+  }
+
+  if(m_mSKSourceConfigurationHasBeenSet)
+  {
+   payload.WithObject("MSKSourceConfiguration", m_mSKSourceConfiguration.Jsonize());
 
   }
 

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cognito-idp/model/StatusType.h>
+#include <aws/firehose/model/Connectivity.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,46 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace CognitoIdentityProvider
+  namespace Firehose
   {
     namespace Model
     {
-      namespace StatusTypeMapper
+      namespace ConnectivityMapper
       {
 
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
+        static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
+        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
 
 
-        StatusType GetStatusTypeForName(const Aws::String& name)
+        Connectivity GetConnectivityForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Enabled_HASH)
+          if (hashCode == PUBLIC__HASH)
           {
-            return StatusType::Enabled;
+            return Connectivity::PUBLIC_;
           }
-          else if (hashCode == Disabled_HASH)
+          else if (hashCode == PRIVATE__HASH)
           {
-            return StatusType::Disabled;
+            return Connectivity::PRIVATE_;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<StatusType>(hashCode);
+            return static_cast<Connectivity>(hashCode);
           }
 
-          return StatusType::NOT_SET;
+          return Connectivity::NOT_SET;
         }
 
-        Aws::String GetNameForStatusType(StatusType enumValue)
+        Aws::String GetNameForConnectivity(Connectivity enumValue)
         {
           switch(enumValue)
           {
-          case StatusType::Enabled:
-            return "Enabled";
-          case StatusType::Disabled:
-            return "Disabled";
+          case Connectivity::PUBLIC_:
+            return "PUBLIC";
+          case Connectivity::PRIVATE_:
+            return "PRIVATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace StatusTypeMapper
+      } // namespace ConnectivityMapper
     } // namespace Model
-  } // namespace CognitoIdentityProvider
+  } // namespace Firehose
 } // namespace Aws
