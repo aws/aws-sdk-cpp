@@ -13,22 +13,19 @@ namespace Firehose
 {
 namespace Model
 {
-  enum class ProcessorType
+  enum class Connectivity
   {
     NOT_SET,
-    RecordDeAggregation,
-    Decompression,
-    Lambda,
-    MetadataExtraction,
-    AppendDelimiterToRecord
+    PUBLIC_,
+    PRIVATE_
   };
 
-namespace ProcessorTypeMapper
+namespace ConnectivityMapper
 {
-AWS_FIREHOSE_API ProcessorType GetProcessorTypeForName(const Aws::String& name);
+AWS_FIREHOSE_API Connectivity GetConnectivityForName(const Aws::String& name);
 
-AWS_FIREHOSE_API Aws::String GetNameForProcessorType(ProcessorType value);
-} // namespace ProcessorTypeMapper
+AWS_FIREHOSE_API Aws::String GetNameForConnectivity(Connectivity value);
+} // namespace ConnectivityMapper
 } // namespace Model
 } // namespace Firehose
 } // namespace Aws

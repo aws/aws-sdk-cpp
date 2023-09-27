@@ -309,27 +309,35 @@ namespace Firehose
          * across these two operations for each delivery stream. For more information about
          * limits and how to request an increase, see <a
          * href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-         * Kinesis Data Firehose Limits</a>. </p> <p>You must specify the name of the
-         * delivery stream and the data record when using <a>PutRecord</a>. The data record
-         * consists of a data blob that can be up to 1,000 KiB in size, and any kind of
-         * data. For example, it can be a segment from a log file, geographic location
-         * data, website clickstream data, and so on.</p> <p>Kinesis Data Firehose buffers
-         * records before delivering them to the destination. To disambiguate the data
-         * blobs at the destination, a common solution is to use delimiters in the data,
-         * such as a newline (<code>\n</code>) or some other character unique within the
-         * data. This allows the consumer application to parse individual data items when
-         * reading the data from the destination.</p> <p>The <code>PutRecord</code>
-         * operation returns a <code>RecordId</code>, which is a unique string assigned to
-         * each record. Producer applications can use this ID for purposes such as
-         * auditability and investigation.</p> <p>If the <code>PutRecord</code> operation
-         * throws a <code>ServiceUnavailableException</code>, back off and retry. If the
-         * exception persists, it is possible that the throughput limits have been exceeded
-         * for the delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are
-         * stored for 24 hours from the time they are added to a delivery stream as it
-         * tries to send the records to the destination. If the destination is unreachable
-         * for more than 24 hours, the data is no longer available.</p> 
-         * <p>Don't concatenate two or more base64 strings to form the data fields of your
-         * records. Instead, concatenate the raw data, then perform base64 encoding.</p>
+         * Kinesis Data Firehose Limits</a>. </p> <p>Kinesis Data Firehose accumulates and
+         * publishes a particular metric for a customer account in one minute intervals. It
+         * is possible that the bursts of incoming bytes/records ingested to a delivery
+         * stream last only for a few seconds. Due to this, the actual spikes in the
+         * traffic might not be fully visible in the customer's 1 minute CloudWatch
+         * metrics.</p> <p>You must specify the name of the delivery stream and the data
+         * record when using <a>PutRecord</a>. The data record consists of a data blob that
+         * can be up to 1,000 KiB in size, and any kind of data. For example, it can be a
+         * segment from a log file, geographic location data, website clickstream data, and
+         * so on.</p> <p>Kinesis Data Firehose buffers records before delivering them to
+         * the destination. To disambiguate the data blobs at the destination, a common
+         * solution is to use delimiters in the data, such as a newline (<code>\n</code>)
+         * or some other character unique within the data. This allows the consumer
+         * application to parse individual data items when reading the data from the
+         * destination.</p> <p>The <code>PutRecord</code> operation returns a
+         * <code>RecordId</code>, which is a unique string assigned to each record.
+         * Producer applications can use this ID for purposes such as auditability and
+         * investigation.</p> <p>If the <code>PutRecord</code> operation throws a
+         * <code>ServiceUnavailableException</code>, the API is automatically reinvoked
+         * (retried) 3 times. If the exception persists, it is possible that the throughput
+         * limits have been exceeded for the delivery stream. </p> <p>Re-invoking the Put
+         * API operations (for example, PutRecord and PutRecordBatch) can result in data
+         * duplicates. For larger data assets, allow for a longer time out before retrying
+         * Put API operations.</p> <p>Data records sent to Kinesis Data Firehose are stored
+         * for 24 hours from the time they are added to a delivery stream as it tries to
+         * send the records to the destination. If the destination is unreachable for more
+         * than 24 hours, the data is no longer available.</p>  <p>Don't
+         * concatenate two or more base64 strings to form the data fields of your records.
+         * Instead, concatenate the raw data, then perform base64 encoding.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
@@ -358,8 +366,13 @@ namespace Firehose
          * <p>Writes multiple data records into a delivery stream in a single call, which
          * can achieve higher throughput per producer than when writing single records. To
          * write single data records into a delivery stream, use <a>PutRecord</a>.
-         * Applications using these operations are referred to as producers.</p> <p>For
-         * information about service quota, see <a
+         * Applications using these operations are referred to as producers.</p> <p>Kinesis
+         * Data Firehose accumulates and publishes a particular metric for a customer
+         * account in one minute intervals. It is possible that the bursts of incoming
+         * bytes/records ingested to a delivery stream last only for a few seconds. Due to
+         * this, the actual spikes in the traffic might not be fully visible in the
+         * customer's 1 minute CloudWatch metrics.</p> <p>For information about service
+         * quota, see <a
          * href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
          * Kinesis Data Firehose Quota</a>.</p> <p>Each <a>PutRecordBatch</a> request
          * supports up to 500 records. Each record in the request can be as large as 1,000
@@ -398,9 +411,12 @@ namespace Firehose
          * failed processing. This minimizes the possible duplicate records and also
          * reduces the total bytes sent (and corresponding charges). We recommend that you
          * handle any duplicates at the destination.</p> <p>If <a>PutRecordBatch</a> throws
-         * <code>ServiceUnavailableException</code>, back off and retry. If the exception
-         * persists, it is possible that the throughput limits have been exceeded for the
-         * delivery stream.</p> <p>Data records sent to Kinesis Data Firehose are stored
+         * <code>ServiceUnavailableException</code>, the API is automatically reinvoked
+         * (retried) 3 times. If the exception persists, it is possible that the throughput
+         * limits have been exceeded for the delivery stream.</p> <p>Re-invoking the Put
+         * API operations (for example, PutRecord and PutRecordBatch) can result in data
+         * duplicates. For larger data assets, allow for a longer time out before retrying
+         * Put API operations.</p> <p>Data records sent to Kinesis Data Firehose are stored
          * for 24 hours from the time they are added to a delivery stream as it attempts to
          * send the records to the destination. If the destination is unreachable for more
          * than 24 hours, the data is no longer available.</p>  <p>Don't
@@ -452,17 +468,20 @@ namespace Firehose
          * Firehose schedules the grant it had on the old CMK for retirement. If the new
          * CMK is of type <code>CUSTOMER_MANAGED_CMK</code>, Kinesis Data Firehose creates
          * a grant that enables it to use the new CMK to encrypt and decrypt data and to
-         * manage the grant.</p> <p>If a delivery stream already has encryption enabled and
-         * then you invoke this operation to change the ARN of the CMK or both its type and
-         * ARN and you get <code>ENABLING_FAILED</code>, this only means that the attempt
-         * to change the CMK failed. In this case, encryption remains enabled with the old
-         * CMK.</p> <p>If the encryption status of your delivery stream is
-         * <code>ENABLING_FAILED</code>, you can invoke this operation again with a valid
-         * CMK. The CMK must be enabled and the key policy mustn't explicitly deny the
-         * permission for Kinesis Data Firehose to invoke KMS encrypt and decrypt
-         * operations.</p> <p>You can enable SSE for a delivery stream only if it's a
-         * delivery stream that uses <code>DirectPut</code> as its source. </p> <p>The
-         * <code>StartDeliveryStreamEncryption</code> and
+         * manage the grant.</p> <p>For the KMS grant creation to be successful, Kinesis
+         * Data Firehose APIs <code>StartDeliveryStreamEncryption</code> and
+         * <code>CreateDeliveryStream</code> should not be called with session credentials
+         * that are more than 6 hours old.</p> <p>If a delivery stream already has
+         * encryption enabled and then you invoke this operation to change the ARN of the
+         * CMK or both its type and ARN and you get <code>ENABLING_FAILED</code>, this only
+         * means that the attempt to change the CMK failed. In this case, encryption
+         * remains enabled with the old CMK.</p> <p>If the encryption status of your
+         * delivery stream is <code>ENABLING_FAILED</code>, you can invoke this operation
+         * again with a valid CMK. The CMK must be enabled and the key policy mustn't
+         * explicitly deny the permission for Kinesis Data Firehose to invoke KMS encrypt
+         * and decrypt operations.</p> <p>You can enable SSE for a delivery stream only if
+         * it's a delivery stream that uses <code>DirectPut</code> as its source. </p>
+         * <p>The <code>StartDeliveryStreamEncryption</code> and
          * <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25
          * calls per delivery stream per 24 hours. For example, you reach the limit if you
          * call <code>StartDeliveryStreamEncryption</code> 13 times and

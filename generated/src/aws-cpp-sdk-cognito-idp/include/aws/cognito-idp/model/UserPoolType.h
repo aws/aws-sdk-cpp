@@ -9,7 +9,6 @@
 #include <aws/cognito-idp/model/UserPoolPolicyType.h>
 #include <aws/cognito-idp/model/DeletionProtectionType.h>
 #include <aws/cognito-idp/model/LambdaConfigType.h>
-#include <aws/cognito-idp/model/StatusType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/VerificationMessageTemplateType.h>
@@ -274,37 +273,6 @@ namespace Model
      * <p>The Lambda triggers associated with the user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline const StatusType& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline UserPoolType& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of a user pool.</p>
-     */
-    inline UserPoolType& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -1844,9 +1812,6 @@ namespace Model
 
     LambdaConfigType m_lambdaConfig;
     bool m_lambdaConfigHasBeenSet = false;
-
-    StatusType m_status;
-    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet = false;

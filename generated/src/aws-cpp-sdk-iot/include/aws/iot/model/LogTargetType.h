@@ -20,7 +20,9 @@ namespace Model
     THING_GROUP,
     CLIENT_ID,
     SOURCE_IP,
-    PRINCIPAL_ID
+    PRINCIPAL_ID,
+    EVENT_TYPE,
+    DEVICE_DEFENDER
   };
 
 namespace LogTargetTypeMapper
