@@ -574,7 +574,7 @@ int CurlDebugCallback(CURL *handle, curl_infotype type, char *data, size_t size,
 
     if(type == CURLINFO_SSL_DATA_IN || type == CURLINFO_SSL_DATA_OUT)
     {
-        AWS_LOGSTREAM_TRACE("CURL", "(" << CurlInfoTypeToString(type) << ") " << size << " bytes");
+        AWS_LOGSTREAM_DEBUG("CURL", "(" << CurlInfoTypeToString(type) << ") " << size << " bytes");
     }
     else if (type == CURLINFO_DATA_IN || type == CURLINFO_DATA_OUT)
     {
@@ -584,7 +584,8 @@ int CurlDebugCallback(CURL *handle, curl_infotype type, char *data, size_t size,
     else
     {
         Aws::String debugString(data, size);
-        AWS_LOGSTREAM_TRACE("CURL", "(" << CurlInfoTypeToString(type) << ") " << debugString);
+        AWS_LOGSTREAM_TRACE(m_enableHttpClientTrace ? Aws::Utils::Logging::LogLevel::Trace : Aws::Utils::Logging::LogLevel::Debug,
+                            "CURL", "(" << CurlInfoTypeToString(type) << ") " << debugString);
     }
 
     return 0;
@@ -750,12 +751,14 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_FOLLOWLOCATION, 0L);
         }
 
+#if defined(ENABLE_CURL_LOGGING) || m_enableHttpClientTrace
         if (m_enableHttpClientTrace)
         {
             AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Activating CURL traces");
-            curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
-            curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
         }
+        curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
+        curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
+#endif
 
         if (m_isUsingProxy)
         {
