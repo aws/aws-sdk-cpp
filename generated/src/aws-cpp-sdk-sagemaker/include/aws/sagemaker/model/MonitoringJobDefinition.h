@@ -133,38 +133,32 @@ namespace Model
 
 
     /**
-     * <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple
-     * Storage Service (Amazon S3).</p>
+     * <p>The array of outputs from the monitoring job to be uploaded to Amazon S3.</p>
      */
     inline const MonitoringOutputConfig& GetMonitoringOutputConfig() const{ return m_monitoringOutputConfig; }
 
     /**
-     * <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple
-     * Storage Service (Amazon S3).</p>
+     * <p>The array of outputs from the monitoring job to be uploaded to Amazon S3.</p>
      */
     inline bool MonitoringOutputConfigHasBeenSet() const { return m_monitoringOutputConfigHasBeenSet; }
 
     /**
-     * <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple
-     * Storage Service (Amazon S3).</p>
+     * <p>The array of outputs from the monitoring job to be uploaded to Amazon S3.</p>
      */
     inline void SetMonitoringOutputConfig(const MonitoringOutputConfig& value) { m_monitoringOutputConfigHasBeenSet = true; m_monitoringOutputConfig = value; }
 
     /**
-     * <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple
-     * Storage Service (Amazon S3).</p>
+     * <p>The array of outputs from the monitoring job to be uploaded to Amazon S3.</p>
      */
     inline void SetMonitoringOutputConfig(MonitoringOutputConfig&& value) { m_monitoringOutputConfigHasBeenSet = true; m_monitoringOutputConfig = std::move(value); }
 
     /**
-     * <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple
-     * Storage Service (Amazon S3).</p>
+     * <p>The array of outputs from the monitoring job to be uploaded to Amazon S3.</p>
      */
     inline MonitoringJobDefinition& WithMonitoringOutputConfig(const MonitoringOutputConfig& value) { SetMonitoringOutputConfig(value); return *this;}
 
     /**
-     * <p>The array of outputs from the monitoring job to be uploaded to Amazon Simple
-     * Storage Service (Amazon S3).</p>
+     * <p>The array of outputs from the monitoring job to be uploaded to Amazon S3.</p>
      */
     inline MonitoringJobDefinition& WithMonitoringOutputConfig(MonitoringOutputConfig&& value) { SetMonitoringOutputConfig(std::move(value)); return *this;}
 

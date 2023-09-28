@@ -60,26 +60,26 @@ namespace Model
 
 
     /**
-     * <p> An integer that shows how many budget name entries a paginated response
-     * contains. </p>
+     * <p> An integer that represents how many budgets a paginated response contains.
+     * The default is 50. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p> An integer that shows how many budget name entries a paginated response
-     * contains. </p>
+     * <p> An integer that represents how many budgets a paginated response contains.
+     * The default is 50. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p> An integer that shows how many budget name entries a paginated response
-     * contains. </p>
+     * <p> An integer that represents how many budgets a paginated response contains.
+     * The default is 50. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p> An integer that shows how many budget name entries a paginated response
-     * contains. </p>
+     * <p> An integer that represents how many budgets a paginated response contains.
+     * The default is 50. </p>
      */
     inline DescribeBudgetNotificationsForAccountRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
