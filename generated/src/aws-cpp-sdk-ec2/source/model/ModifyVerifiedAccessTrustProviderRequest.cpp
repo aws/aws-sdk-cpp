@@ -17,7 +17,8 @@ ModifyVerifiedAccessTrustProviderRequest::ModifyVerifiedAccessTrustProviderReque
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_sseSpecificationHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,11 @@ Aws::String ModifyVerifiedAccessTrustProviderRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
+  if(m_sseSpecificationHasBeenSet)
+  {
+    m_sseSpecification.OutputToStream(ss, "SseSpecification");
   }
 
   ss << "Version=2016-11-15";

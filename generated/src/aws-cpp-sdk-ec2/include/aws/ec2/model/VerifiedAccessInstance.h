@@ -289,26 +289,26 @@ namespace Model
 
 
     /**
-     * <p> Describes if support for Federal Information Processing Standards (FIPS) is
-     * enabled on the instance. </p>
+     * <p>Describes whether support for Federal Information Processing Standards (FIPS)
+     * is enabled on the instance.</p>
      */
     inline bool GetFipsEnabled() const{ return m_fipsEnabled; }
 
     /**
-     * <p> Describes if support for Federal Information Processing Standards (FIPS) is
-     * enabled on the instance. </p>
+     * <p>Describes whether support for Federal Information Processing Standards (FIPS)
+     * is enabled on the instance.</p>
      */
     inline bool FipsEnabledHasBeenSet() const { return m_fipsEnabledHasBeenSet; }
 
     /**
-     * <p> Describes if support for Federal Information Processing Standards (FIPS) is
-     * enabled on the instance. </p>
+     * <p>Describes whether support for Federal Information Processing Standards (FIPS)
+     * is enabled on the instance.</p>
      */
     inline void SetFipsEnabled(bool value) { m_fipsEnabledHasBeenSet = true; m_fipsEnabled = value; }
 
     /**
-     * <p> Describes if support for Federal Information Processing Standards (FIPS) is
-     * enabled on the instance. </p>
+     * <p>Describes whether support for Federal Information Processing Standards (FIPS)
+     * is enabled on the instance.</p>
      */
     inline VerifiedAccessInstance& WithFipsEnabled(bool value) { SetFipsEnabled(value); return *this;}
 
