@@ -24,7 +24,6 @@ the development efforts by submitting pull requests and sending us feedback and 
   * Amazon Linux
   * Windows
   * Mac
-* [Platforms with known issues]()
   
 ### Building From Source:
 
