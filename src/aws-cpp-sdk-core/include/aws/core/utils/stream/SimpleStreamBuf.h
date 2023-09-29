@@ -42,6 +42,12 @@ namespace Stream
 
             void swap(SimpleStreamBuf& rhs);
 
+            /// returns pointer to the underlying data buffer.
+            char* get_buffer_data();
+
+            /// returns size of the underlying data buffer.
+            int get_buffer_size();
+
         protected:
             virtual std::streampos seekoff(std::streamoff off, std::ios_base::seekdir dir, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;
             virtual std::streampos seekpos(std::streampos pos, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out) override;

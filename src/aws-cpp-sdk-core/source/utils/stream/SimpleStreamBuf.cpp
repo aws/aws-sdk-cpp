@@ -242,6 +242,16 @@ void SimpleStreamBuf::str(const Aws::String& value)
     xsputn(value.c_str(), value.size());
 }
 
+char* SimpleStreamBuf::get_buffer_data()
+{
+    return m_buffer;
+}
+
+int SimpleStreamBuf::get_buffer_size()
+{
+    return m_bufferSize;
+}
+
 }
 }
 }
