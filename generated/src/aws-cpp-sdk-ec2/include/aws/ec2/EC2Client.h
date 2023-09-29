@@ -17467,10 +17467,13 @@ namespace EC2
          * specify the description to revoke the rule.</p> <p>For a default VPC, if the
          * values you specify do not match the existing rule's values, no error is
          * returned, and the output describes the security group rules that were not
-         * revoked.</p> <p>Amazon Web Services recommends that you describe the security
-         * group to verify that the rules were removed.</p> <p>Rule changes are propagated
-         * to instances within the security group as quickly as possible. However, a small
-         * delay might occur.</p><p><h3>See Also:</h3>   <a
+         * revoked.</p> <p>For a non-default VPC, if the values you specify do not match
+         * the existing rule's values, an <code>InvalidPermission.NotFound</code> client
+         * error is returned, and no rules are revoked.</p> <p>Amazon Web Services
+         * recommends that you describe the security group to verify that the rules were
+         * removed.</p> <p>Rule changes are propagated to instances within the security
+         * group as quickly as possible. However, a small delay might occur.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */

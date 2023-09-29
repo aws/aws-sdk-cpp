@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/VerifiedAccessSseSpecificationResponse.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -85,6 +86,32 @@ namespace Model
     inline ModifyVerifiedAccessEndpointPolicyResponse& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
 
+    /**
+     * <p> Describes the options in use for server side encryption. </p>
+     */
+    inline const VerifiedAccessSseSpecificationResponse& GetSseSpecification() const{ return m_sseSpecification; }
+
+    /**
+     * <p> Describes the options in use for server side encryption. </p>
+     */
+    inline void SetSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { m_sseSpecification = value; }
+
+    /**
+     * <p> Describes the options in use for server side encryption. </p>
+     */
+    inline void SetSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { m_sseSpecification = std::move(value); }
+
+    /**
+     * <p> Describes the options in use for server side encryption. </p>
+     */
+    inline ModifyVerifiedAccessEndpointPolicyResponse& WithSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { SetSseSpecification(value); return *this;}
+
+    /**
+     * <p> Describes the options in use for server side encryption. </p>
+     */
+    inline ModifyVerifiedAccessEndpointPolicyResponse& WithSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { SetSseSpecification(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -105,6 +132,8 @@ namespace Model
     bool m_policyEnabled;
 
     Aws::String m_policyDocument;
+
+    VerifiedAccessSseSpecificationResponse m_sseSpecification;
 
     ResponseMetadata m_responseMetadata;
   };

@@ -29,8 +29,10 @@
 #include <aws/lakeformation/model/CommitTransactionRequest.h>
 #include <aws/lakeformation/model/CreateDataCellsFilterRequest.h>
 #include <aws/lakeformation/model/CreateLFTagRequest.h>
+#include <aws/lakeformation/model/CreateLakeFormationOptInRequest.h>
 #include <aws/lakeformation/model/DeleteDataCellsFilterRequest.h>
 #include <aws/lakeformation/model/DeleteLFTagRequest.h>
+#include <aws/lakeformation/model/DeleteLakeFormationOptInRequest.h>
 #include <aws/lakeformation/model/DeleteObjectsOnCancelRequest.h>
 #include <aws/lakeformation/model/DeregisterResourceRequest.h>
 #include <aws/lakeformation/model/DescribeResourceRequest.h>
@@ -51,6 +53,7 @@
 #include <aws/lakeformation/model/GrantPermissionsRequest.h>
 #include <aws/lakeformation/model/ListDataCellsFilterRequest.h>
 #include <aws/lakeformation/model/ListLFTagsRequest.h>
+#include <aws/lakeformation/model/ListLakeFormationOptInsRequest.h>
 #include <aws/lakeformation/model/ListPermissionsRequest.h>
 #include <aws/lakeformation/model/ListResourcesRequest.h>
 #include <aws/lakeformation/model/ListTableStorageOptimizersRequest.h>
@@ -417,6 +420,33 @@ CreateLFTagOutcome LakeFormationClient::CreateLFTag(const CreateLFTagRequest& re
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateLakeFormationOptInOutcome LakeFormationClient::CreateLakeFormationOptIn(const CreateLakeFormationOptInRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateLakeFormationOptIn);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLakeFormationOptIn, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateLakeFormationOptIn, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateLakeFormationOptIn, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateLakeFormationOptIn",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateLakeFormationOptInOutcome>(
+    [&]()-> CreateLakeFormationOptInOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLakeFormationOptIn, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/CreateLakeFormationOptIn");
+      return CreateLakeFormationOptInOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteDataCellsFilterOutcome LakeFormationClient::DeleteDataCellsFilter(const DeleteDataCellsFilterRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteDataCellsFilter);
@@ -465,6 +495,33 @@ DeleteLFTagOutcome LakeFormationClient::DeleteLFTag(const DeleteLFTagRequest& re
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLFTag, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLFTag");
       return DeleteLFTagOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteLakeFormationOptInOutcome LakeFormationClient::DeleteLakeFormationOptIn(const DeleteLakeFormationOptInRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteLakeFormationOptIn);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLakeFormationOptIn, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteLakeFormationOptIn, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteLakeFormationOptIn, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteLakeFormationOptIn",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteLakeFormationOptInOutcome>(
+    [&]()-> DeleteLakeFormationOptInOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLakeFormationOptIn, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteLakeFormationOptIn");
+      return DeleteLakeFormationOptInOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1013,6 +1070,33 @@ ListLFTagsOutcome LakeFormationClient::ListLFTags(const ListLFTagsRequest& reque
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLFTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/ListLFTags");
       return ListLFTagsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListLakeFormationOptInsOutcome LakeFormationClient::ListLakeFormationOptIns(const ListLakeFormationOptInsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListLakeFormationOptIns);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLakeFormationOptIns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListLakeFormationOptIns, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListLakeFormationOptIns, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListLakeFormationOptIns",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListLakeFormationOptInsOutcome>(
+    [&]()-> ListLakeFormationOptInsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLakeFormationOptIns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/ListLakeFormationOptIns");
+      return ListLakeFormationOptInsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

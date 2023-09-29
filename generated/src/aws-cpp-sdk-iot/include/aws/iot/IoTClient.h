@@ -617,8 +617,8 @@ namespace IoT
          * </p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
          * action. </p>  <p>The CSR must include a public key that is either an RSA
-         * key with a length of at least 2048 bits or an ECC key from NIST P-256 or NIST
-         * P-384 curves. For supported certificates, consult <a
+         * key with a length of at least 2048 bits or an ECC key from NIST P-256, NIST
+         * P-384, or NIST P-521 curves. For supported certificates, consult <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
          * Certificate signing algorithms supported by IoT</a>. </p>  
          * <p>Reusing the same certificate signing request (CSR) results in a distinct
@@ -1908,7 +1908,8 @@ namespace IoT
         /**
          * <p>Deletes a specific version from a software package.</p> <p> <b>Note:</b> If a
          * package version is designated as default, you must remove the designation from
-         * the package using the <a>UpdatePackage</a> action.</p><p><h3>See Also:</h3>   <a
+         * the software package using the <a>UpdatePackage</a> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackageVersion">AWS
          * API Reference</a></p>
          */
@@ -6746,7 +6747,7 @@ namespace IoT
         }
 
         /**
-         * <p>Updates the supported fields for a specific package.</p> <p>Requires
+         * <p>Updates the supported fields for a specific software package.</p> <p>Requires
          * permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackage</a>
          * and <a
@@ -6776,8 +6777,8 @@ namespace IoT
         }
 
         /**
-         * <p>Updates the package configuration.</p> <p>Requires permission to access the
-         * <a
+         * <p>Updates the software package configuration.</p> <p>Requires permission to
+         * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageConfiguration</a>
          * and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>

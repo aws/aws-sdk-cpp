@@ -737,9 +737,11 @@ namespace Model
      * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
      * of data storage and provides additional mechanisms to use vehicle data, such as
      * data lakes, centralized data storage, data processing pipelines, and analytics.
-     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
-     * and Timestream to query vehicle data so that you can identify trends and
-     * patterns.</p>
+     * Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3.
+     * Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise
+     * servers for redundancy and high availability.</p> <p>You can use Amazon
+     * Timestream to access and analyze time series data, and Timestream to query
+     * vehicle data so that you can identify trends and patterns.</p>
      */
     inline const Aws::Vector<DataDestinationConfig>& GetDataDestinationConfigs() const{ return m_dataDestinationConfigs; }
 
@@ -748,9 +750,11 @@ namespace Model
      * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
      * of data storage and provides additional mechanisms to use vehicle data, such as
      * data lakes, centralized data storage, data processing pipelines, and analytics.
-     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
-     * and Timestream to query vehicle data so that you can identify trends and
-     * patterns.</p>
+     * Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3.
+     * Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise
+     * servers for redundancy and high availability.</p> <p>You can use Amazon
+     * Timestream to access and analyze time series data, and Timestream to query
+     * vehicle data so that you can identify trends and patterns.</p>
      */
     inline bool DataDestinationConfigsHasBeenSet() const { return m_dataDestinationConfigsHasBeenSet; }
 
@@ -759,9 +763,11 @@ namespace Model
      * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
      * of data storage and provides additional mechanisms to use vehicle data, such as
      * data lakes, centralized data storage, data processing pipelines, and analytics.
-     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
-     * and Timestream to query vehicle data so that you can identify trends and
-     * patterns.</p>
+     * Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3.
+     * Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise
+     * servers for redundancy and high availability.</p> <p>You can use Amazon
+     * Timestream to access and analyze time series data, and Timestream to query
+     * vehicle data so that you can identify trends and patterns.</p>
      */
     inline void SetDataDestinationConfigs(const Aws::Vector<DataDestinationConfig>& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs = value; }
 
@@ -770,9 +776,11 @@ namespace Model
      * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
      * of data storage and provides additional mechanisms to use vehicle data, such as
      * data lakes, centralized data storage, data processing pipelines, and analytics.
-     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
-     * and Timestream to query vehicle data so that you can identify trends and
-     * patterns.</p>
+     * Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3.
+     * Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise
+     * servers for redundancy and high availability.</p> <p>You can use Amazon
+     * Timestream to access and analyze time series data, and Timestream to query
+     * vehicle data so that you can identify trends and patterns.</p>
      */
     inline void SetDataDestinationConfigs(Aws::Vector<DataDestinationConfig>&& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs = std::move(value); }
 
@@ -781,9 +789,11 @@ namespace Model
      * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
      * of data storage and provides additional mechanisms to use vehicle data, such as
      * data lakes, centralized data storage, data processing pipelines, and analytics.
-     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
-     * and Timestream to query vehicle data so that you can identify trends and
-     * patterns.</p>
+     * Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3.
+     * Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise
+     * servers for redundancy and high availability.</p> <p>You can use Amazon
+     * Timestream to access and analyze time series data, and Timestream to query
+     * vehicle data so that you can identify trends and patterns.</p>
      */
     inline CreateCampaignRequest& WithDataDestinationConfigs(const Aws::Vector<DataDestinationConfig>& value) { SetDataDestinationConfigs(value); return *this;}
 
@@ -792,9 +802,11 @@ namespace Model
      * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
      * of data storage and provides additional mechanisms to use vehicle data, such as
      * data lakes, centralized data storage, data processing pipelines, and analytics.
-     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
-     * and Timestream to query vehicle data so that you can identify trends and
-     * patterns.</p>
+     * Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3.
+     * Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise
+     * servers for redundancy and high availability.</p> <p>You can use Amazon
+     * Timestream to access and analyze time series data, and Timestream to query
+     * vehicle data so that you can identify trends and patterns.</p>
      */
     inline CreateCampaignRequest& WithDataDestinationConfigs(Aws::Vector<DataDestinationConfig>&& value) { SetDataDestinationConfigs(std::move(value)); return *this;}
 
@@ -803,9 +815,11 @@ namespace Model
      * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
      * of data storage and provides additional mechanisms to use vehicle data, such as
      * data lakes, centralized data storage, data processing pipelines, and analytics.
-     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
-     * and Timestream to query vehicle data so that you can identify trends and
-     * patterns.</p>
+     * Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3.
+     * Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise
+     * servers for redundancy and high availability.</p> <p>You can use Amazon
+     * Timestream to access and analyze time series data, and Timestream to query
+     * vehicle data so that you can identify trends and patterns.</p>
      */
     inline CreateCampaignRequest& AddDataDestinationConfigs(const DataDestinationConfig& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs.push_back(value); return *this; }
 
@@ -814,9 +828,11 @@ namespace Model
      * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
      * of data storage and provides additional mechanisms to use vehicle data, such as
      * data lakes, centralized data storage, data processing pipelines, and analytics.
-     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
-     * and Timestream to query vehicle data so that you can identify trends and
-     * patterns.</p>
+     * Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3.
+     * Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise
+     * servers for redundancy and high availability.</p> <p>You can use Amazon
+     * Timestream to access and analyze time series data, and Timestream to query
+     * vehicle data so that you can identify trends and patterns.</p>
      */
     inline CreateCampaignRequest& AddDataDestinationConfigs(DataDestinationConfig&& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs.push_back(std::move(value)); return *this; }
 

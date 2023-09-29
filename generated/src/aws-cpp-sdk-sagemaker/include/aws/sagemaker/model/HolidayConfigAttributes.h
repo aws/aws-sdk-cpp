@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The country code for the holiday calendar.</p> <p>For the list of public
      * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
      * Codes</a>. Use the country code corresponding to the country of your choice.</p>
      */
     inline const Aws::String& GetCountryCode() const{ return m_countryCode; }
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The country code for the holiday calendar.</p> <p>For the list of public
      * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
      * Codes</a>. Use the country code corresponding to the country of your choice.</p>
      */
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>The country code for the holiday calendar.</p> <p>For the list of public
      * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
      * Codes</a>. Use the country code corresponding to the country of your choice.</p>
      */
     inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>The country code for the holiday calendar.</p> <p>For the list of public
      * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
      * Codes</a>. Use the country code corresponding to the country of your choice.</p>
      */
     inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>The country code for the holiday calendar.</p> <p>For the list of public
      * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
      * Codes</a>. Use the country code corresponding to the country of your choice.</p>
      */
     inline void SetCountryCode(const char* value) { m_countryCodeHasBeenSet = true; m_countryCode.assign(value); }
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>The country code for the holiday calendar.</p> <p>For the list of public
      * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
      * Codes</a>. Use the country code corresponding to the country of your choice.</p>
      */
     inline HolidayConfigAttributes& WithCountryCode(const Aws::String& value) { SetCountryCode(value); return *this;}
@@ -91,7 +91,7 @@ namespace Model
     /**
      * <p>The country code for the holiday calendar.</p> <p>For the list of public
      * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
      * Codes</a>. Use the country code corresponding to the country of your choice.</p>
      */
     inline HolidayConfigAttributes& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>The country code for the holiday calendar.</p> <p>For the list of public
      * holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes">Country
      * Codes</a>. Use the country code corresponding to the country of your choice.</p>
      */
     inline HolidayConfigAttributes& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}

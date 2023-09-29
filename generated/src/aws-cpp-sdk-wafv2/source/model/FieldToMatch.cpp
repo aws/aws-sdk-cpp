@@ -29,7 +29,8 @@ FieldToMatch::FieldToMatch() :
     m_jsonBodyHasBeenSet(false),
     m_headersHasBeenSet(false),
     m_cookiesHasBeenSet(false),
-    m_headerOrderHasBeenSet(false)
+    m_headerOrderHasBeenSet(false),
+    m_jA3FingerprintHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ FieldToMatch::FieldToMatch(JsonView jsonValue) :
     m_jsonBodyHasBeenSet(false),
     m_headersHasBeenSet(false),
     m_cookiesHasBeenSet(false),
-    m_headerOrderHasBeenSet(false)
+    m_headerOrderHasBeenSet(false),
+    m_jA3FingerprintHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +130,13 @@ FieldToMatch& FieldToMatch::operator =(JsonView jsonValue)
     m_headerOrderHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JA3Fingerprint"))
+  {
+    m_jA3Fingerprint = jsonValue.GetObject("JA3Fingerprint");
+
+    m_jA3FingerprintHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +207,12 @@ JsonValue FieldToMatch::Jsonize() const
   if(m_headerOrderHasBeenSet)
   {
    payload.WithObject("HeaderOrder", m_headerOrder.Jsonize());
+
+  }
+
+  if(m_jA3FingerprintHasBeenSet)
+  {
+   payload.WithObject("JA3Fingerprint", m_jA3Fingerprint.Jsonize());
 
   }
 

@@ -42,74 +42,66 @@ namespace Model
 
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>  <p>If <code>applicationName</code> is
-     * specified, then <code>deploymentGroupName</code> must be specified. If it is not
-     * specified, then <code>deploymentGroupName</code> must not be specified. </p>
-     * 
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>  <p>If <code>applicationName</code> is specified,
+     * then <code>deploymentGroupName</code> must be specified. If it is not specified,
+     * then <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>  <p>If <code>applicationName</code> is
-     * specified, then <code>deploymentGroupName</code> must be specified. If it is not
-     * specified, then <code>deploymentGroupName</code> must not be specified. </p>
-     * 
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>  <p>If <code>applicationName</code> is specified,
+     * then <code>deploymentGroupName</code> must be specified. If it is not specified,
+     * then <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>  <p>If <code>applicationName</code> is
-     * specified, then <code>deploymentGroupName</code> must be specified. If it is not
-     * specified, then <code>deploymentGroupName</code> must not be specified. </p>
-     * 
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>  <p>If <code>applicationName</code> is specified,
+     * then <code>deploymentGroupName</code> must be specified. If it is not specified,
+     * then <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>  <p>If <code>applicationName</code> is
-     * specified, then <code>deploymentGroupName</code> must be specified. If it is not
-     * specified, then <code>deploymentGroupName</code> must not be specified. </p>
-     * 
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>  <p>If <code>applicationName</code> is specified,
+     * then <code>deploymentGroupName</code> must be specified. If it is not specified,
+     * then <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>  <p>If <code>applicationName</code> is
-     * specified, then <code>deploymentGroupName</code> must be specified. If it is not
-     * specified, then <code>deploymentGroupName</code> must not be specified. </p>
-     * 
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>  <p>If <code>applicationName</code> is specified,
+     * then <code>deploymentGroupName</code> must be specified. If it is not specified,
+     * then <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>  <p>If <code>applicationName</code> is
-     * specified, then <code>deploymentGroupName</code> must be specified. If it is not
-     * specified, then <code>deploymentGroupName</code> must not be specified. </p>
-     * 
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>  <p>If <code>applicationName</code> is specified,
+     * then <code>deploymentGroupName</code> must be specified. If it is not specified,
+     * then <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline ListDeploymentsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>  <p>If <code>applicationName</code> is
-     * specified, then <code>deploymentGroupName</code> must be specified. If it is not
-     * specified, then <code>deploymentGroupName</code> must not be specified. </p>
-     * 
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>  <p>If <code>applicationName</code> is specified,
+     * then <code>deploymentGroupName</code> must be specified. If it is not specified,
+     * then <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline ListDeploymentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>  <p>If <code>applicationName</code> is
-     * specified, then <code>deploymentGroupName</code> must be specified. If it is not
-     * specified, then <code>deploymentGroupName</code> must not be specified. </p>
-     * 
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>  <p>If <code>applicationName</code> is specified,
+     * then <code>deploymentGroupName</code> must be specified. If it is not specified,
+     * then <code>deploymentGroupName</code> must not be specified. </p> 
      */
     inline ListDeploymentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 

@@ -13,6 +13,8 @@
 #include <aws/amplifyuibuilder/model/CodegenJobAsset.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/amplifyuibuilder/model/CodegenDependency.h>
 #include <utility>
 
 namespace Aws
@@ -484,6 +486,55 @@ namespace Model
      */
     inline CodegenJob& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline const Aws::Vector<CodegenDependency>& GetDependencies() const{ return m_dependencies; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline bool DependenciesHasBeenSet() const { return m_dependenciesHasBeenSet; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline void SetDependencies(const Aws::Vector<CodegenDependency>& value) { m_dependenciesHasBeenSet = true; m_dependencies = value; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline void SetDependencies(Aws::Vector<CodegenDependency>&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::move(value); }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline CodegenJob& WithDependencies(const Aws::Vector<CodegenDependency>& value) { SetDependencies(value); return *this;}
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline CodegenJob& WithDependencies(Aws::Vector<CodegenDependency>&& value) { SetDependencies(std::move(value)); return *this;}
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline CodegenJob& AddDependencies(const CodegenDependency& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline CodegenJob& AddDependencies(CodegenDependency&& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -524,6 +575,9 @@ namespace Model
 
     Aws::Utils::DateTime m_modifiedAt;
     bool m_modifiedAtHasBeenSet = false;
+
+    Aws::Vector<CodegenDependency> m_dependencies;
+    bool m_dependenciesHasBeenSet = false;
   };
 
 } // namespace Model

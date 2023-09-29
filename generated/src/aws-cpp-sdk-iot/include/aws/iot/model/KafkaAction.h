@@ -7,6 +7,8 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/model/KafkaActionHeader.h>
 #include <utility>
 
 namespace Aws
@@ -268,6 +270,47 @@ namespace Model
      */
     inline KafkaAction& AddClientProperties(const char* key, const char* value) { m_clientPropertiesHasBeenSet = true; m_clientProperties.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The list of Kafka headers that you specify.</p>
+     */
+    inline const Aws::Vector<KafkaActionHeader>& GetHeaders() const{ return m_headers; }
+
+    /**
+     * <p>The list of Kafka headers that you specify.</p>
+     */
+    inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
+
+    /**
+     * <p>The list of Kafka headers that you specify.</p>
+     */
+    inline void SetHeaders(const Aws::Vector<KafkaActionHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
+
+    /**
+     * <p>The list of Kafka headers that you specify.</p>
+     */
+    inline void SetHeaders(Aws::Vector<KafkaActionHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
+
+    /**
+     * <p>The list of Kafka headers that you specify.</p>
+     */
+    inline KafkaAction& WithHeaders(const Aws::Vector<KafkaActionHeader>& value) { SetHeaders(value); return *this;}
+
+    /**
+     * <p>The list of Kafka headers that you specify.</p>
+     */
+    inline KafkaAction& WithHeaders(Aws::Vector<KafkaActionHeader>&& value) { SetHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of Kafka headers that you specify.</p>
+     */
+    inline KafkaAction& AddHeaders(const KafkaActionHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of Kafka headers that you specify.</p>
+     */
+    inline KafkaAction& AddHeaders(KafkaActionHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_destinationArn;
@@ -284,6 +327,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_clientProperties;
     bool m_clientPropertiesHasBeenSet = false;
+
+    Aws::Vector<KafkaActionHeader> m_headers;
+    bool m_headersHasBeenSet = false;
   };
 
 } // namespace Model

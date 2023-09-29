@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cognito-idp/model/StatusType.h>
+#include <aws/bedrock/model/SortModelsBy.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,46 +13,39 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace CognitoIdentityProvider
+  namespace Bedrock
   {
     namespace Model
     {
-      namespace StatusTypeMapper
+      namespace SortModelsByMapper
       {
 
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
-        static const int Disabled_HASH = HashingUtils::HashString("Disabled");
+        static const int CreationTime_HASH = HashingUtils::HashString("CreationTime");
 
 
-        StatusType GetStatusTypeForName(const Aws::String& name)
+        SortModelsBy GetSortModelsByForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Enabled_HASH)
+          if (hashCode == CreationTime_HASH)
           {
-            return StatusType::Enabled;
-          }
-          else if (hashCode == Disabled_HASH)
-          {
-            return StatusType::Disabled;
+            return SortModelsBy::CreationTime;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<StatusType>(hashCode);
+            return static_cast<SortModelsBy>(hashCode);
           }
 
-          return StatusType::NOT_SET;
+          return SortModelsBy::NOT_SET;
         }
 
-        Aws::String GetNameForStatusType(StatusType enumValue)
+        Aws::String GetNameForSortModelsBy(SortModelsBy enumValue)
         {
           switch(enumValue)
           {
-          case StatusType::Enabled:
-            return "Enabled";
-          case StatusType::Disabled:
-            return "Disabled";
+          case SortModelsBy::CreationTime:
+            return "CreationTime";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +57,7 @@ namespace Aws
           }
         }
 
-      } // namespace StatusTypeMapper
+      } // namespace SortModelsByMapper
     } // namespace Model
-  } // namespace CognitoIdentityProvider
+  } // namespace Bedrock
 } // namespace Aws

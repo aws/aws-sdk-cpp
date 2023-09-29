@@ -29,7 +29,8 @@ VerifiedAccessGroup::VerifiedAccessGroup() :
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_deletionTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sseSpecificationHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ VerifiedAccessGroup::VerifiedAccessGroup(const XmlNode& xmlNode) :
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_deletionTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sseSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -113,6 +115,12 @@ VerifiedAccessGroup& VerifiedAccessGroup::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode sseSpecificationNode = resultNode.FirstChild("sseSpecification");
+    if(!sseSpecificationNode.IsNull())
+    {
+      m_sseSpecification = sseSpecificationNode;
+      m_sseSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -171,6 +179,13 @@ void VerifiedAccessGroup::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 
+  if(m_sseSpecificationHasBeenSet)
+  {
+      Aws::StringStream sseSpecificationLocationAndMemberSs;
+      sseSpecificationLocationAndMemberSs << location << index << locationValue << ".SseSpecification";
+      m_sseSpecification.OutputToStream(oStream, sseSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void VerifiedAccessGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -216,6 +231,12 @@ void VerifiedAccessGroup::OutputToStream(Aws::OStream& oStream, const char* loca
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_sseSpecificationHasBeenSet)
+  {
+      Aws::String sseSpecificationLocationAndMember(location);
+      sseSpecificationLocationAndMember += ".SseSpecification";
+      m_sseSpecification.OutputToStream(oStream, sseSpecificationLocationAndMember.c_str());
   }
 }
 

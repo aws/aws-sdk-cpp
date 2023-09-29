@@ -26,6 +26,7 @@ namespace Aws
         static const int WISDOM_ASSISTANT_HASH = HashingUtils::HashString("WISDOM_ASSISTANT");
         static const int WISDOM_KNOWLEDGE_BASE_HASH = HashingUtils::HashString("WISDOM_KNOWLEDGE_BASE");
         static const int CASES_DOMAIN_HASH = HashingUtils::HashString("CASES_DOMAIN");
+        static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return IntegrationType::CASES_DOMAIN;
           }
+          else if (hashCode == APPLICATION_HASH)
+          {
+            return IntegrationType::APPLICATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "WISDOM_KNOWLEDGE_BASE";
           case IntegrationType::CASES_DOMAIN:
             return "CASES_DOMAIN";
+          case IntegrationType::APPLICATION:
+            return "APPLICATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

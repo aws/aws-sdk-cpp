@@ -12,6 +12,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws::Auth;
+using namespace Aws::Utils::Threading;
 
 static const char AWS_ECS_CONTAINER_CREDENTIALS_RELATIVE_URI[] = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";
 static const char AWS_ECS_CONTAINER_CREDENTIALS_FULL_URI[] = "AWS_CONTAINER_CREDENTIALS_FULL_URI";
@@ -21,15 +22,24 @@ static const char DefaultCredentialsProviderChainTag[] = "DefaultAWSCredentialsP
 
 AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
 {
+    ReaderLockGuard lock(m_cachedProviderLock);
+    if (m_cachedProvider) {
+      AWSCredentials credentials = m_cachedProvider->GetAWSCredentials();
+      if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
+      {
+        return credentials;
+      }
+    }
+    lock.UpgradeToWriterLock();
     for (auto&& credentialsProvider : m_providerChain)
     {
         AWSCredentials credentials = credentialsProvider->GetAWSCredentials();
         if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())
         {
+            m_cachedProvider = credentialsProvider;
             return credentials;
         }
     }
-
     return AWSCredentials();
 }
 

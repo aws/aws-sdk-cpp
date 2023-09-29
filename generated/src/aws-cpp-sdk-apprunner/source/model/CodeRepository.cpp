@@ -21,14 +21,16 @@ namespace Model
 CodeRepository::CodeRepository() : 
     m_repositoryUrlHasBeenSet(false),
     m_sourceCodeVersionHasBeenSet(false),
-    m_codeConfigurationHasBeenSet(false)
+    m_codeConfigurationHasBeenSet(false),
+    m_sourceDirectoryHasBeenSet(false)
 {
 }
 
 CodeRepository::CodeRepository(JsonView jsonValue) : 
     m_repositoryUrlHasBeenSet(false),
     m_sourceCodeVersionHasBeenSet(false),
-    m_codeConfigurationHasBeenSet(false)
+    m_codeConfigurationHasBeenSet(false),
+    m_sourceDirectoryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ CodeRepository& CodeRepository::operator =(JsonView jsonValue)
     m_codeConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceDirectory"))
+  {
+    m_sourceDirectory = jsonValue.GetString("SourceDirectory");
+
+    m_sourceDirectoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue CodeRepository::Jsonize() const
   if(m_codeConfigurationHasBeenSet)
   {
    payload.WithObject("CodeConfiguration", m_codeConfiguration.Jsonize());
+
+  }
+
+  if(m_sourceDirectoryHasBeenSet)
+  {
+   payload.WithString("SourceDirectory", m_sourceDirectory);
 
   }
 
