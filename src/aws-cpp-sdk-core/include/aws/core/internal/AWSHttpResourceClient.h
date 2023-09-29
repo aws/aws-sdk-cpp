@@ -84,6 +84,7 @@ namespace Aws
 
         protected:
             Aws::String m_logtag;
+            Aws::String m_userAgent;
 
         private:
             std::shared_ptr<Client::RetryStrategy> m_retryStrategy;

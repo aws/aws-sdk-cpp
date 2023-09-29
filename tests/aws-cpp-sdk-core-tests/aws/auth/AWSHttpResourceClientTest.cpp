@@ -25,7 +25,7 @@ namespace Aws
 {
     namespace Client
     {
-        AWS_CORE_API Aws::String ComputeUserAgentString();
+        AWS_CORE_API Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig);
     }
 }
 
@@ -182,7 +182,7 @@ namespace
         ASSERT_EQ("www.uri.com", mockRequest.GetUri().GetAuthority());
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
-        ASSERT_STREQ(ComputeUserAgentString().c_str(), mockRequest.GetUserAgent().c_str());
+        ASSERT_STREQ(ComputeUserAgentString(&clientConfig).c_str(), mockRequest.GetUserAgent().c_str());
         ASSERT_EQ("", result);
         // 1 initial request + 2 retries should be done when request can't be made at all
         ASSERT_EQ(3u, mockHttpClient->GetAllRequestsMade().size());

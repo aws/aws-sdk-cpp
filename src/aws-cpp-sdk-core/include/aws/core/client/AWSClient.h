@@ -183,6 +183,7 @@ namespace Aws
              */
             virtual void SetServiceClientName(const Aws::String& name);
 
+            void AppendToUserAgent(const Aws::String& valueToAppend);
         protected:
             /**
              * Calls AttemptOneRequest until it either, succeeds, runs out of retries from the retry strategy,
@@ -338,11 +339,10 @@ namespace Aws
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_writeRateLimiter;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_readRateLimiter;
             Aws::String m_userAgent;
-            bool m_customizedUserAgent;
             std::shared_ptr<Aws::Utils::Crypto::Hash> m_hash;
             long m_requestTimeoutMs;
             bool m_enableClockSkewAdjustment;
-            Aws::String m_serviceName;
+            Aws::String m_serviceName = "AWSBaseClient";
             Aws::Client::RequestCompressionConfig m_requestCompressionConfig;
             void AppendHeaderValueToRequest(
                 const std::shared_ptr<Http::HttpRequest> &request, String header,
