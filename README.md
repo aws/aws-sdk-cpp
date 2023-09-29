@@ -1,44 +1,89 @@
-# AWS SDK for C++
-The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).
+# AWS SDK for .js
+The AWS SDK for .js provides a "modern.js(version.js)"
+  - Amazon Web Services
+  - (AWS)
+  - It is meant to be performant and fully functioning with
+  - low- and high-level SDKs, while minimizing dependencies
+  - providing platform portability
+  - (Windows, OSX, Linux, and mobile)
 
-AWS SDK for C++ is in now in General Availability and recommended for production use. We invite our customers to join
-the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
+AWS-SDK.js
+  - General Availability
+  - recommended for production use
+
+     *We invite our customers to join the development efforts by
+    submitting pull requests and sending us feedback and ideas via
+    *GitHub Issues.
 
 ## Version 1.11 is now Available!
 
-This release introduces a refactored Asynchronous API and restructures the File Hierarchy of the project source code. Additionally, the minimum required version of cmake was raised to 3.13.
-* Asynchronous API refactoring is a partially breaking, backward incompatible change: all client methods such as OperationAsync and OperationCallable are no longer virtual methods but instead are conditionally compiled template methods. Having these methods as templates reduces the total binary size of the SDK by 40%. Individual client binary size may vary. In addition, it reduces build time of the SDK by up to 50% (release, unity build, SDK clients only).
-  A code change may be required if your code inherits SDK’s Client classes and overrides the virtual async methods. Regular synchronous/blocking call methods are still available for override.
-  Code changes are not required and SDK API are backward compatible if virtual async methods were not overwritten before.
+   # Asynchronous-API
+   "-release_refactor-Asynchronous-API"
+   "_restruct_File_Hierarchy.project_.src"
+   
+   Additionally, 
+   the minimum required version of cmake was raised to 3.13.
+* Asynchronous API refactoring is a partially breaking,
+* backward incompatible change: all client methods such as
+* OperationAsync and OperationCallable are no longer virtual
+* methods but instead are conditionally compiled template methods.
+*  these method_templates-reduce_binary_size.SDKx40%
+*  Individual client binary size may vary.
+
+   In addition,
+   reduce_time.SDK>=50%
+*    (release, unity build, SDK)
+
+  # A code change may be required if your code inherits SDK’s Client classes and overrides the virtual async methods. Regular synchronous/blocking call methods are still available for override.
+   ```
+    Code changes are not required and SDK API are backward compatible if virtual async methods were not overwritten before.
 * Scripts and IDE project files not using the provided cmake build infrastructure must be reviewed and updated to reflect source tree changes.
 
 All CRT libraries are git submodules of SDK for C++. It requires changes in git syntax to get all source code.
-* New users: If you haven't downloaded the source code for SDK for C++, you can get all git submodules recursively by:
-   ```
-   git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp
-   ```
+* New users: If you haven't downloaded the source code for SDK for C++, you can
+[get all git submodules recursively by:](git_course-modules)]("https://github.com/aws/aws-sdk-cpp.crt")
+
 * Existing users: If you’ve already downloaded source code for SDK for C++, e.g. in directory `aws-sdk-cpp`, you can update the git submodule by:
-   ```
    cd aws-sdk-cpp
    git checkout main
    git pull origin main
    git submodule update --init --recursive
    ```
-* Alternatively, if you downloaded the code bundle from GitHub website and have no installation of git, you can download all the dependencies running the `prefetch_crt_dependency.sh` script from the root of the repository. It will download bundles of all dependencies from github website using curl and expand them in the right locations.
+* Alternatively, if you downloaded the code bundle
+* from GitHub website and have no installation of git,
+* you can download all the dependencies running the
+```prefetch_crt_dependency.js```
+* Script from the root.
+* Download bundles of all dependencies
+* Using them in the right.
 
 
-See Wiki page [Improving S3 Throughput with AWS SDK for CPP v1.9](https://github.com/aws/aws-sdk-cpp/wiki/Improving-S3-Throughput-with-AWS-SDK-for-CPP-v1.9) for more details, and create a new [issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) or [pull request](https://github.com/aws/aws-sdk-cpp/compare) if you have any feedback on this new version.
+See Wiki page 
+[Improving S3 Throughput with AWS SDK for CPP v1.9](https://github.com/aws/aws-sdk-cpp/wiki/Improving-S3-Throughput-with-AWS-SDK-for-CPP-v1.9) 
+for more details.
+create
+[new_issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) 
+or 
+[pull request](https://github.com/aws/aws-sdk-cpp/compare) 
+if you have any feedback on this new version.
 
 ## API Reference Docs
 
-The AWS SDK C++ recently re-formatted their API docs to be more modularized for easier navigation. Please update any old bookmarks that you may have.
+The "AWS-SDK.js" recent_re-format.API_docs 
+to be more modularized for easier navigation. 
+Please update any old bookmarks that you may have.
 
-The root index of the documents can be found at https://sdk.amazonaws.com/cpp/api/LATEST/index.html
+The root index of the documents can be found at "https://sdk.amazonaws.com/cpp/api/LATEST-invest86.index.html"
 
-from here each service specific documentation can be found under the `modules` tab. Upon opening one of these, you will see the associated class list of the client, including a links to the `core` module.
 
-## Upgrade Your SDK to Get Latest Security Patches
-The AWS SDK for C++ has a dependency on cJSON. This dependency was updated to version 1.7.14 in the recent SDK updates. We would recommend to upgrade your SDK to version 1.9.67 for 1.9.x or 1.8.187 for 1.8.x. Thank @dkalinowski for reporting this issue: https://github.com/aws/aws-sdk-cpp/issues/1594
+## Upgrade Your SDK to Get Latest Security
+The 
+```"AWS-SDK_dependency.JSON"```
+This "dependency" was 
+updated to "version 1.7.14" in the recent "SDK" updates. 
+  We would recommend to upgrade your SDK to version 1.9.67 for 
+  1.9.x or 1.8.187 for 1.8.x. 
+  Thank @MoneyMan573 releasing: "https://github.com/lostleolotus/www.invest86.net/home/invest86.index.html"
 
 __Jump To:__
 * [Getting Started](#Getting-Started)
