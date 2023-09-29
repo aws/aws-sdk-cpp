@@ -5621,7 +5621,6 @@ namespace Aws
         struct aws_signing_config_aws m_s3CrtSigningConfig = {};
         struct CrtClientShutdownCallbackDataWrapper m_wrappedData = {};
         std::shared_ptr<Aws::Utils::Threading::Semaphore> m_clientShutdownSem;
-        Aws::String m_userAgent;
         std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_credProvider;
         std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_crtCredProvider;
         std::shared_ptr<S3CrtEndpointProviderBase> m_endpointProvider;

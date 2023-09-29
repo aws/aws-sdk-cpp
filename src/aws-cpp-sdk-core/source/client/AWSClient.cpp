@@ -125,14 +125,12 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_retryStrategy(configuration.retryStrategy),
     m_writeRateLimiter(configuration.writeRateLimiter),
     m_readRateLimiter(configuration.readRateLimiter),
-    m_userAgent(configuration.userAgent),
-    m_customizedUserAgent(!m_userAgent.empty()),
+    m_userAgent(Aws::Client::ComputeUserAgentString(&configuration)),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig)
 {
-    AWSClient::SetServiceClientName("AWSBaseClient");
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
@@ -146,23 +144,12 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_retryStrategy(configuration.retryStrategy),
     m_writeRateLimiter(configuration.writeRateLimiter),
     m_readRateLimiter(configuration.readRateLimiter),
-    m_userAgent(configuration.userAgent),
-    m_customizedUserAgent(!m_userAgent.empty()),
+    m_userAgent(Aws::Client::ComputeUserAgentString(&configuration)),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig)
 {
-    AWSClient::SetServiceClientName("AWSBaseClient");
-}
-
-void AWSClient::SetServiceClientName(const Aws::String& name)
-{
-    m_serviceName = name;
-    if (!m_customizedUserAgent)
-    {
-        m_userAgent = Aws::Client::ComputeUserAgentString();
-    }
 }
 
 void AWSClient::DisableRequestProcessing()
@@ -173,6 +160,22 @@ void AWSClient::DisableRequestProcessing()
 void AWSClient::EnableRequestProcessing()
 {
     m_httpClient->EnableRequestProcessing();
+}
+
+void AWSClient::SetServiceClientName(const Aws::String& name)
+{
+    m_serviceName = std::move(name);
+    AppendToUserAgent("api/" + m_serviceName);
+}
+
+void AWSClient::AppendToUserAgent(const Aws::String& valueToAppend)
+{
+    Aws::String value = Aws::Client::FilterUserAgentToken(valueToAppend.c_str());
+    if (value.empty())
+        return;
+    if (m_userAgent.find(value) != Aws::String::npos)
+        return;
+    m_userAgent += " " + std::move(value);
 }
 
 Aws::Client::AWSAuthSigner* AWSClient::GetSignerByName(const char* name) const
