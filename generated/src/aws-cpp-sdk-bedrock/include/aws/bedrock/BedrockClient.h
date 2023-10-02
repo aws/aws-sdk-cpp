@@ -114,6 +114,34 @@ namespace Bedrock
         }
 
         /**
+         * <p>Creates a provisioned throughput with dedicated capacity for a foundation
+         * model or a fine-tuned model.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
+         * throughput</a> in the Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateProvisionedModelThroughput">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateProvisionedModelThroughputOutcome CreateProvisionedModelThroughput(const Model::CreateProvisionedModelThroughputRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateProvisionedModelThroughput that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateProvisionedModelThroughputRequestT = Model::CreateProvisionedModelThroughputRequest>
+        Model::CreateProvisionedModelThroughputOutcomeCallable CreateProvisionedModelThroughputCallable(const CreateProvisionedModelThroughputRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateProvisionedModelThroughput, request);
+        }
+
+        /**
+         * An Async wrapper for CreateProvisionedModelThroughput that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateProvisionedModelThroughputRequestT = Model::CreateProvisionedModelThroughputRequest>
+        void CreateProvisionedModelThroughputAsync(const CreateProvisionedModelThroughputRequestT& request, const CreateProvisionedModelThroughputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateProvisionedModelThroughput, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a custom model that you created earlier. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
          * models</a> in the Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
@@ -163,6 +191,33 @@ namespace Bedrock
         void DeleteModelInvocationLoggingConfigurationAsync(const DeleteModelInvocationLoggingConfigurationRequestT& request, const DeleteModelInvocationLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::DeleteModelInvocationLoggingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a provisioned throughput. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
+         * throughput</a> in the Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteProvisionedModelThroughput">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteProvisionedModelThroughputOutcome DeleteProvisionedModelThroughput(const Model::DeleteProvisionedModelThroughputRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteProvisionedModelThroughput that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteProvisionedModelThroughputRequestT = Model::DeleteProvisionedModelThroughputRequest>
+        Model::DeleteProvisionedModelThroughputOutcomeCallable DeleteProvisionedModelThroughputCallable(const DeleteProvisionedModelThroughputRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeleteProvisionedModelThroughput, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteProvisionedModelThroughput that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteProvisionedModelThroughputRequestT = Model::DeleteProvisionedModelThroughputRequest>
+        void DeleteProvisionedModelThroughputAsync(const DeleteProvisionedModelThroughputRequestT& request, const DeleteProvisionedModelThroughputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeleteProvisionedModelThroughput, request, handler, context);
         }
 
         /**
@@ -273,6 +328,33 @@ namespace Bedrock
         }
 
         /**
+         * <p>Get details for a provisioned throughput. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
+         * throughput</a> in the Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProvisionedModelThroughput">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetProvisionedModelThroughputOutcome GetProvisionedModelThroughput(const Model::GetProvisionedModelThroughputRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetProvisionedModelThroughput that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetProvisionedModelThroughputRequestT = Model::GetProvisionedModelThroughputRequest>
+        Model::GetProvisionedModelThroughputOutcomeCallable GetProvisionedModelThroughputCallable(const GetProvisionedModelThroughputRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::GetProvisionedModelThroughput, request);
+        }
+
+        /**
+         * An Async wrapper for GetProvisionedModelThroughput that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetProvisionedModelThroughputRequestT = Model::GetProvisionedModelThroughputRequest>
+        void GetProvisionedModelThroughputAsync(const GetProvisionedModelThroughputRequestT& request, const GetProvisionedModelThroughputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::GetProvisionedModelThroughput, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of the custom models that you have created with the
          * <code>CreateModelCustomizationJob</code> operation.</p> <p>For more information,
          * see <a
@@ -356,6 +438,33 @@ namespace Bedrock
         void ListModelCustomizationJobsAsync(const ListModelCustomizationJobsRequestT& request, const ListModelCustomizationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::ListModelCustomizationJobs, request, handler, context);
+        }
+
+        /**
+         * <p>List the provisioned capacities. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
+         * throughput</a> in the Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListProvisionedModelThroughputs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProvisionedModelThroughputsOutcome ListProvisionedModelThroughputs(const Model::ListProvisionedModelThroughputsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListProvisionedModelThroughputs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListProvisionedModelThroughputsRequestT = Model::ListProvisionedModelThroughputsRequest>
+        Model::ListProvisionedModelThroughputsOutcomeCallable ListProvisionedModelThroughputsCallable(const ListProvisionedModelThroughputsRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::ListProvisionedModelThroughputs, request);
+        }
+
+        /**
+         * An Async wrapper for ListProvisionedModelThroughputs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListProvisionedModelThroughputsRequestT = Model::ListProvisionedModelThroughputsRequest>
+        void ListProvisionedModelThroughputsAsync(const ListProvisionedModelThroughputsRequestT& request, const ListProvisionedModelThroughputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::ListProvisionedModelThroughputs, request, handler, context);
         }
 
         /**
@@ -491,6 +600,33 @@ namespace Bedrock
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Update a provisioned throughput. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
+         * throughput</a> in the Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateProvisionedModelThroughput">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateProvisionedModelThroughputOutcome UpdateProvisionedModelThroughput(const Model::UpdateProvisionedModelThroughputRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateProvisionedModelThroughput that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateProvisionedModelThroughputRequestT = Model::UpdateProvisionedModelThroughputRequest>
+        Model::UpdateProvisionedModelThroughputOutcomeCallable UpdateProvisionedModelThroughputCallable(const UpdateProvisionedModelThroughputRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::UpdateProvisionedModelThroughput, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateProvisionedModelThroughput that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateProvisionedModelThroughputRequestT = Model::UpdateProvisionedModelThroughputRequest>
+        void UpdateProvisionedModelThroughputAsync(const UpdateProvisionedModelThroughputRequestT& request, const UpdateProvisionedModelThroughputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::UpdateProvisionedModelThroughput, request, handler, context);
         }
 
 

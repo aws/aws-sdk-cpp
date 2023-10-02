@@ -70,48 +70,6 @@ namespace Model
 
 
     /**
-     * <p>Set to include embeddings data in the log delivery.</p>
-     */
-    inline bool GetEmbeddingDataDeliveryEnabled() const{ return m_embeddingDataDeliveryEnabled; }
-
-    /**
-     * <p>Set to include embeddings data in the log delivery.</p>
-     */
-    inline bool EmbeddingDataDeliveryEnabledHasBeenSet() const { return m_embeddingDataDeliveryEnabledHasBeenSet; }
-
-    /**
-     * <p>Set to include embeddings data in the log delivery.</p>
-     */
-    inline void SetEmbeddingDataDeliveryEnabled(bool value) { m_embeddingDataDeliveryEnabledHasBeenSet = true; m_embeddingDataDeliveryEnabled = value; }
-
-    /**
-     * <p>Set to include embeddings data in the log delivery.</p>
-     */
-    inline LoggingConfig& WithEmbeddingDataDeliveryEnabled(bool value) { SetEmbeddingDataDeliveryEnabled(value); return *this;}
-
-
-    /**
-     * <p>Set to include image data in the log delivery.</p>
-     */
-    inline bool GetImageDataDeliveryEnabled() const{ return m_imageDataDeliveryEnabled; }
-
-    /**
-     * <p>Set to include image data in the log delivery.</p>
-     */
-    inline bool ImageDataDeliveryEnabledHasBeenSet() const { return m_imageDataDeliveryEnabledHasBeenSet; }
-
-    /**
-     * <p>Set to include image data in the log delivery.</p>
-     */
-    inline void SetImageDataDeliveryEnabled(bool value) { m_imageDataDeliveryEnabledHasBeenSet = true; m_imageDataDeliveryEnabled = value; }
-
-    /**
-     * <p>Set to include image data in the log delivery.</p>
-     */
-    inline LoggingConfig& WithImageDataDeliveryEnabled(bool value) { SetImageDataDeliveryEnabled(value); return *this;}
-
-
-    /**
      * <p>S3 configuration for storing log data.</p>
      */
     inline const S3Config& GetS3Config() const{ return m_s3Config; }
@@ -162,22 +120,64 @@ namespace Model
      */
     inline LoggingConfig& WithTextDataDeliveryEnabled(bool value) { SetTextDataDeliveryEnabled(value); return *this;}
 
+
+    /**
+     * <p>Set to include image data in the log delivery.</p>
+     */
+    inline bool GetImageDataDeliveryEnabled() const{ return m_imageDataDeliveryEnabled; }
+
+    /**
+     * <p>Set to include image data in the log delivery.</p>
+     */
+    inline bool ImageDataDeliveryEnabledHasBeenSet() const { return m_imageDataDeliveryEnabledHasBeenSet; }
+
+    /**
+     * <p>Set to include image data in the log delivery.</p>
+     */
+    inline void SetImageDataDeliveryEnabled(bool value) { m_imageDataDeliveryEnabledHasBeenSet = true; m_imageDataDeliveryEnabled = value; }
+
+    /**
+     * <p>Set to include image data in the log delivery.</p>
+     */
+    inline LoggingConfig& WithImageDataDeliveryEnabled(bool value) { SetImageDataDeliveryEnabled(value); return *this;}
+
+
+    /**
+     * <p>Set to include embeddings data in the log delivery.</p>
+     */
+    inline bool GetEmbeddingDataDeliveryEnabled() const{ return m_embeddingDataDeliveryEnabled; }
+
+    /**
+     * <p>Set to include embeddings data in the log delivery.</p>
+     */
+    inline bool EmbeddingDataDeliveryEnabledHasBeenSet() const { return m_embeddingDataDeliveryEnabledHasBeenSet; }
+
+    /**
+     * <p>Set to include embeddings data in the log delivery.</p>
+     */
+    inline void SetEmbeddingDataDeliveryEnabled(bool value) { m_embeddingDataDeliveryEnabledHasBeenSet = true; m_embeddingDataDeliveryEnabled = value; }
+
+    /**
+     * <p>Set to include embeddings data in the log delivery.</p>
+     */
+    inline LoggingConfig& WithEmbeddingDataDeliveryEnabled(bool value) { SetEmbeddingDataDeliveryEnabled(value); return *this;}
+
   private:
 
     CloudWatchConfig m_cloudWatchConfig;
     bool m_cloudWatchConfigHasBeenSet = false;
-
-    bool m_embeddingDataDeliveryEnabled;
-    bool m_embeddingDataDeliveryEnabledHasBeenSet = false;
-
-    bool m_imageDataDeliveryEnabled;
-    bool m_imageDataDeliveryEnabledHasBeenSet = false;
 
     S3Config m_s3Config;
     bool m_s3ConfigHasBeenSet = false;
 
     bool m_textDataDeliveryEnabled;
     bool m_textDataDeliveryEnabledHasBeenSet = false;
+
+    bool m_imageDataDeliveryEnabled;
+    bool m_imageDataDeliveryEnabledHasBeenSet = false;
+
+    bool m_embeddingDataDeliveryEnabled;
+    bool m_embeddingDataDeliveryEnabledHasBeenSet = false;
   };
 
 } // namespace Model

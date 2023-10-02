@@ -16,13 +16,13 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListFoundationModelsRequest::ListFoundationModelsRequest() : 
+    m_byProviderHasBeenSet(false),
     m_byCustomizationType(ModelCustomization::NOT_SET),
     m_byCustomizationTypeHasBeenSet(false),
-    m_byInferenceType(InferenceType::NOT_SET),
-    m_byInferenceTypeHasBeenSet(false),
     m_byOutputModality(ModelModality::NOT_SET),
     m_byOutputModalityHasBeenSet(false),
-    m_byProviderHasBeenSet(false)
+    m_byInferenceType(InferenceType::NOT_SET),
+    m_byInferenceTypeHasBeenSet(false)
 {
 }
 
@@ -34,17 +34,17 @@ Aws::String ListFoundationModelsRequest::SerializePayload() const
 void ListFoundationModelsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_byProviderHasBeenSet)
+    {
+      ss << m_byProvider;
+      uri.AddQueryStringParameter("byProvider", ss.str());
+      ss.str("");
+    }
+
     if(m_byCustomizationTypeHasBeenSet)
     {
       ss << ModelCustomizationMapper::GetNameForModelCustomization(m_byCustomizationType);
       uri.AddQueryStringParameter("byCustomizationType", ss.str());
-      ss.str("");
-    }
-
-    if(m_byInferenceTypeHasBeenSet)
-    {
-      ss << InferenceTypeMapper::GetNameForInferenceType(m_byInferenceType);
-      uri.AddQueryStringParameter("byInferenceType", ss.str());
       ss.str("");
     }
 
@@ -55,10 +55,10 @@ void ListFoundationModelsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_byProviderHasBeenSet)
+    if(m_byInferenceTypeHasBeenSet)
     {
-      ss << m_byProvider;
-      uri.AddQueryStringParameter("byProvider", ss.str());
+      ss << InferenceTypeMapper::GetNameForInferenceType(m_byInferenceType);
+      uri.AddQueryStringParameter("byInferenceType", ss.str());
       ss.str("");
     }
 

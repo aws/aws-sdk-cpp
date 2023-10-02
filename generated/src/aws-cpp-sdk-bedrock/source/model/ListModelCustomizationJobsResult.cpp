@@ -29,6 +29,12 @@ ListModelCustomizationJobsResult::ListModelCustomizationJobsResult(const Aws::Am
 ListModelCustomizationJobsResult& ListModelCustomizationJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("modelCustomizationJobSummaries"))
   {
     Aws::Utils::Array<JsonView> modelCustomizationJobSummariesJsonList = jsonValue.GetArray("modelCustomizationJobSummaries");
@@ -36,12 +42,6 @@ ListModelCustomizationJobsResult& ListModelCustomizationJobsResult::operator =(c
     {
       m_modelCustomizationJobSummaries.push_back(modelCustomizationJobSummariesJsonList[modelCustomizationJobSummariesIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

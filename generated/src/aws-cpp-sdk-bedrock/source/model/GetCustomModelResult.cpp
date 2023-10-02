@@ -29,15 +29,39 @@ GetCustomModelResult::GetCustomModelResult(const Aws::AmazonWebServiceResult<Jso
 GetCustomModelResult& GetCustomModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("modelArn"))
+  {
+    m_modelArn = jsonValue.GetString("modelArn");
+
+  }
+
+  if(jsonValue.ValueExists("modelName"))
+  {
+    m_modelName = jsonValue.GetString("modelName");
+
+  }
+
+  if(jsonValue.ValueExists("jobName"))
+  {
+    m_jobName = jsonValue.GetString("jobName");
+
+  }
+
+  if(jsonValue.ValueExists("jobArn"))
+  {
+    m_jobArn = jsonValue.GetString("jobArn");
+
+  }
+
   if(jsonValue.ValueExists("baseModelArn"))
   {
     m_baseModelArn = jsonValue.GetString("baseModelArn");
 
   }
 
-  if(jsonValue.ValueExists("creationTime"))
+  if(jsonValue.ValueExists("modelKmsKeyArn"))
   {
-    m_creationTime = jsonValue.GetString("creationTime");
+    m_modelKmsKeyArn = jsonValue.GetString("modelKmsKeyArn");
 
   }
 
@@ -50,33 +74,15 @@ GetCustomModelResult& GetCustomModelResult::operator =(const Aws::AmazonWebServi
     }
   }
 
-  if(jsonValue.ValueExists("jobArn"))
+  if(jsonValue.ValueExists("trainingDataConfig"))
   {
-    m_jobArn = jsonValue.GetString("jobArn");
+    m_trainingDataConfig = jsonValue.GetObject("trainingDataConfig");
 
   }
 
-  if(jsonValue.ValueExists("jobName"))
+  if(jsonValue.ValueExists("validationDataConfig"))
   {
-    m_jobName = jsonValue.GetString("jobName");
-
-  }
-
-  if(jsonValue.ValueExists("modelArn"))
-  {
-    m_modelArn = jsonValue.GetString("modelArn");
-
-  }
-
-  if(jsonValue.ValueExists("modelKmsKeyArn"))
-  {
-    m_modelKmsKeyArn = jsonValue.GetString("modelKmsKeyArn");
-
-  }
-
-  if(jsonValue.ValueExists("modelName"))
-  {
-    m_modelName = jsonValue.GetString("modelName");
+    m_validationDataConfig = jsonValue.GetObject("validationDataConfig");
 
   }
 
@@ -86,21 +92,9 @@ GetCustomModelResult& GetCustomModelResult::operator =(const Aws::AmazonWebServi
 
   }
 
-  if(jsonValue.ValueExists("trainingDataConfig"))
-  {
-    m_trainingDataConfig = jsonValue.GetObject("trainingDataConfig");
-
-  }
-
   if(jsonValue.ValueExists("trainingMetrics"))
   {
     m_trainingMetrics = jsonValue.GetObject("trainingMetrics");
-
-  }
-
-  if(jsonValue.ValueExists("validationDataConfig"))
-  {
-    m_validationDataConfig = jsonValue.GetObject("validationDataConfig");
 
   }
 
@@ -111,6 +105,12 @@ GetCustomModelResult& GetCustomModelResult::operator =(const Aws::AmazonWebServi
     {
       m_validationMetrics.push_back(validationMetricsJsonList[validationMetricsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
   }
 
 

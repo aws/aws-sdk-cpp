@@ -114,112 +114,98 @@ namespace Model
     /**
      * <p>Returns <code>Connection succeeded</code> if the test is successful. Or,
      * returns a descriptive error message if the test fails. The following list
-     * provides the details for some error messages and troubleshooting steps for
-     * each.</p> <ul> <li> <p> <b>Unable to access secrets manager</b>: Verify that
-     * your secret name aligns with the one in Transfer Role permissions.</p> </li>
-     * <li> <p> <b>Unknown Host/Connection failed</b>: Verify the server URL in the
+     * provides troubleshooting details, depending on the error message that you
+     * receive.</p> <ul> <li> <p>Verify that your secret name aligns with the one in
+     * Transfer Role permissions.</p> </li> <li> <p>Verify the server URL in the
      * connector configuration , and verify that the login credentials work
-     * successfully outside of the connector.</p> </li> <li> <p> <b>Private key not
-     * found</b>: Verify that the secret exists and is formatted correctly.</p> </li>
-     * <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in
-     * the connector configuration matches the <code>ssh-keyscan</code> output.</p>
-     * </li> </ul>
+     * successfully outside of the connector.</p> </li> <li> <p>Verify that the secret
+     * exists and is formatted correctly.</p> </li> <li> <p>Verify that the trusted
+     * host key in the connector configuration matches the <code>ssh-keyscan</code>
+     * output.</p> </li> </ul>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
      * <p>Returns <code>Connection succeeded</code> if the test is successful. Or,
      * returns a descriptive error message if the test fails. The following list
-     * provides the details for some error messages and troubleshooting steps for
-     * each.</p> <ul> <li> <p> <b>Unable to access secrets manager</b>: Verify that
-     * your secret name aligns with the one in Transfer Role permissions.</p> </li>
-     * <li> <p> <b>Unknown Host/Connection failed</b>: Verify the server URL in the
+     * provides troubleshooting details, depending on the error message that you
+     * receive.</p> <ul> <li> <p>Verify that your secret name aligns with the one in
+     * Transfer Role permissions.</p> </li> <li> <p>Verify the server URL in the
      * connector configuration , and verify that the login credentials work
-     * successfully outside of the connector.</p> </li> <li> <p> <b>Private key not
-     * found</b>: Verify that the secret exists and is formatted correctly.</p> </li>
-     * <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in
-     * the connector configuration matches the <code>ssh-keyscan</code> output.</p>
-     * </li> </ul>
+     * successfully outside of the connector.</p> </li> <li> <p>Verify that the secret
+     * exists and is formatted correctly.</p> </li> <li> <p>Verify that the trusted
+     * host key in the connector configuration matches the <code>ssh-keyscan</code>
+     * output.</p> </li> </ul>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
 
     /**
      * <p>Returns <code>Connection succeeded</code> if the test is successful. Or,
      * returns a descriptive error message if the test fails. The following list
-     * provides the details for some error messages and troubleshooting steps for
-     * each.</p> <ul> <li> <p> <b>Unable to access secrets manager</b>: Verify that
-     * your secret name aligns with the one in Transfer Role permissions.</p> </li>
-     * <li> <p> <b>Unknown Host/Connection failed</b>: Verify the server URL in the
+     * provides troubleshooting details, depending on the error message that you
+     * receive.</p> <ul> <li> <p>Verify that your secret name aligns with the one in
+     * Transfer Role permissions.</p> </li> <li> <p>Verify the server URL in the
      * connector configuration , and verify that the login credentials work
-     * successfully outside of the connector.</p> </li> <li> <p> <b>Private key not
-     * found</b>: Verify that the secret exists and is formatted correctly.</p> </li>
-     * <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in
-     * the connector configuration matches the <code>ssh-keyscan</code> output.</p>
-     * </li> </ul>
+     * successfully outside of the connector.</p> </li> <li> <p>Verify that the secret
+     * exists and is formatted correctly.</p> </li> <li> <p>Verify that the trusted
+     * host key in the connector configuration matches the <code>ssh-keyscan</code>
+     * output.</p> </li> </ul>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
      * <p>Returns <code>Connection succeeded</code> if the test is successful. Or,
      * returns a descriptive error message if the test fails. The following list
-     * provides the details for some error messages and troubleshooting steps for
-     * each.</p> <ul> <li> <p> <b>Unable to access secrets manager</b>: Verify that
-     * your secret name aligns with the one in Transfer Role permissions.</p> </li>
-     * <li> <p> <b>Unknown Host/Connection failed</b>: Verify the server URL in the
+     * provides troubleshooting details, depending on the error message that you
+     * receive.</p> <ul> <li> <p>Verify that your secret name aligns with the one in
+     * Transfer Role permissions.</p> </li> <li> <p>Verify the server URL in the
      * connector configuration , and verify that the login credentials work
-     * successfully outside of the connector.</p> </li> <li> <p> <b>Private key not
-     * found</b>: Verify that the secret exists and is formatted correctly.</p> </li>
-     * <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in
-     * the connector configuration matches the <code>ssh-keyscan</code> output.</p>
-     * </li> </ul>
+     * successfully outside of the connector.</p> </li> <li> <p>Verify that the secret
+     * exists and is formatted correctly.</p> </li> <li> <p>Verify that the trusted
+     * host key in the connector configuration matches the <code>ssh-keyscan</code>
+     * output.</p> </li> </ul>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
 
     /**
      * <p>Returns <code>Connection succeeded</code> if the test is successful. Or,
      * returns a descriptive error message if the test fails. The following list
-     * provides the details for some error messages and troubleshooting steps for
-     * each.</p> <ul> <li> <p> <b>Unable to access secrets manager</b>: Verify that
-     * your secret name aligns with the one in Transfer Role permissions.</p> </li>
-     * <li> <p> <b>Unknown Host/Connection failed</b>: Verify the server URL in the
+     * provides troubleshooting details, depending on the error message that you
+     * receive.</p> <ul> <li> <p>Verify that your secret name aligns with the one in
+     * Transfer Role permissions.</p> </li> <li> <p>Verify the server URL in the
      * connector configuration , and verify that the login credentials work
-     * successfully outside of the connector.</p> </li> <li> <p> <b>Private key not
-     * found</b>: Verify that the secret exists and is formatted correctly.</p> </li>
-     * <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in
-     * the connector configuration matches the <code>ssh-keyscan</code> output.</p>
-     * </li> </ul>
+     * successfully outside of the connector.</p> </li> <li> <p>Verify that the secret
+     * exists and is formatted correctly.</p> </li> <li> <p>Verify that the trusted
+     * host key in the connector configuration matches the <code>ssh-keyscan</code>
+     * output.</p> </li> </ul>
      */
     inline TestConnectionResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
      * <p>Returns <code>Connection succeeded</code> if the test is successful. Or,
      * returns a descriptive error message if the test fails. The following list
-     * provides the details for some error messages and troubleshooting steps for
-     * each.</p> <ul> <li> <p> <b>Unable to access secrets manager</b>: Verify that
-     * your secret name aligns with the one in Transfer Role permissions.</p> </li>
-     * <li> <p> <b>Unknown Host/Connection failed</b>: Verify the server URL in the
+     * provides troubleshooting details, depending on the error message that you
+     * receive.</p> <ul> <li> <p>Verify that your secret name aligns with the one in
+     * Transfer Role permissions.</p> </li> <li> <p>Verify the server URL in the
      * connector configuration , and verify that the login credentials work
-     * successfully outside of the connector.</p> </li> <li> <p> <b>Private key not
-     * found</b>: Verify that the secret exists and is formatted correctly.</p> </li>
-     * <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in
-     * the connector configuration matches the <code>ssh-keyscan</code> output.</p>
-     * </li> </ul>
+     * successfully outside of the connector.</p> </li> <li> <p>Verify that the secret
+     * exists and is formatted correctly.</p> </li> <li> <p>Verify that the trusted
+     * host key in the connector configuration matches the <code>ssh-keyscan</code>
+     * output.</p> </li> </ul>
      */
     inline TestConnectionResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
      * <p>Returns <code>Connection succeeded</code> if the test is successful. Or,
      * returns a descriptive error message if the test fails. The following list
-     * provides the details for some error messages and troubleshooting steps for
-     * each.</p> <ul> <li> <p> <b>Unable to access secrets manager</b>: Verify that
-     * your secret name aligns with the one in Transfer Role permissions.</p> </li>
-     * <li> <p> <b>Unknown Host/Connection failed</b>: Verify the server URL in the
+     * provides troubleshooting details, depending on the error message that you
+     * receive.</p> <ul> <li> <p>Verify that your secret name aligns with the one in
+     * Transfer Role permissions.</p> </li> <li> <p>Verify the server URL in the
      * connector configuration , and verify that the login credentials work
-     * successfully outside of the connector.</p> </li> <li> <p> <b>Private key not
-     * found</b>: Verify that the secret exists and is formatted correctly.</p> </li>
-     * <li> <p> <b>Invalid trusted host keys</b>: Verify that the trusted host key in
-     * the connector configuration matches the <code>ssh-keyscan</code> output.</p>
-     * </li> </ul>
+     * successfully outside of the connector.</p> </li> <li> <p>Verify that the secret
+     * exists and is formatted correctly.</p> </li> <li> <p>Verify that the trusted
+     * host key in the connector configuration matches the <code>ssh-keyscan</code>
+     * output.</p> </li> </ul>
      */
     inline TestConnectionResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 

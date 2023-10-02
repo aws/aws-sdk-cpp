@@ -8,10 +8,10 @@
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/bedrock/model/OutputDataConfig.h>
 #include <aws/bedrock/model/TrainingDataConfig.h>
 #include <aws/bedrock/model/ValidationDataConfig.h>
+#include <aws/bedrock/model/OutputDataConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock/model/VpcConfig.h>
 #include <aws/bedrock/model/Tag.h>
 #include <utility>
@@ -38,285 +38,6 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateModelCustomizationJob"; }
 
     AWS_BEDROCK_API Aws::String SerializePayload() const override;
-
-
-    /**
-     * <p>Name of the base model.</p>
-     */
-    inline const Aws::String& GetBaseModelIdentifier() const{ return m_baseModelIdentifier; }
-
-    /**
-     * <p>Name of the base model.</p>
-     */
-    inline bool BaseModelIdentifierHasBeenSet() const { return m_baseModelIdentifierHasBeenSet; }
-
-    /**
-     * <p>Name of the base model.</p>
-     */
-    inline void SetBaseModelIdentifier(const Aws::String& value) { m_baseModelIdentifierHasBeenSet = true; m_baseModelIdentifier = value; }
-
-    /**
-     * <p>Name of the base model.</p>
-     */
-    inline void SetBaseModelIdentifier(Aws::String&& value) { m_baseModelIdentifierHasBeenSet = true; m_baseModelIdentifier = std::move(value); }
-
-    /**
-     * <p>Name of the base model.</p>
-     */
-    inline void SetBaseModelIdentifier(const char* value) { m_baseModelIdentifierHasBeenSet = true; m_baseModelIdentifier.assign(value); }
-
-    /**
-     * <p>Name of the base model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithBaseModelIdentifier(const Aws::String& value) { SetBaseModelIdentifier(value); return *this;}
-
-    /**
-     * <p>Name of the base model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithBaseModelIdentifier(Aws::String&& value) { SetBaseModelIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the base model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithBaseModelIdentifier(const char* value) { SetBaseModelIdentifier(value); return *this;}
-
-
-    /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
-     */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
-     */
-    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
-     */
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
-     */
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
-     */
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique token value that you can provide. The GetModelCustomizationJob
-     * response includes the same token value.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
-
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline const Aws::String& GetCustomModelKmsKeyId() const{ return m_customModelKmsKeyId; }
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline bool CustomModelKmsKeyIdHasBeenSet() const { return m_customModelKmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline void SetCustomModelKmsKeyId(const Aws::String& value) { m_customModelKmsKeyIdHasBeenSet = true; m_customModelKmsKeyId = value; }
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline void SetCustomModelKmsKeyId(Aws::String&& value) { m_customModelKmsKeyIdHasBeenSet = true; m_customModelKmsKeyId = std::move(value); }
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline void SetCustomModelKmsKeyId(const char* value) { m_customModelKmsKeyIdHasBeenSet = true; m_customModelKmsKeyId.assign(value); }
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithCustomModelKmsKeyId(const Aws::String& value) { SetCustomModelKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithCustomModelKmsKeyId(Aws::String&& value) { SetCustomModelKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithCustomModelKmsKeyId(const char* value) { SetCustomModelKmsKeyId(value); return *this;}
-
-
-    /**
-     * <p>Enter a name for the custom model.</p>
-     */
-    inline const Aws::String& GetCustomModelName() const{ return m_customModelName; }
-
-    /**
-     * <p>Enter a name for the custom model.</p>
-     */
-    inline bool CustomModelNameHasBeenSet() const { return m_customModelNameHasBeenSet; }
-
-    /**
-     * <p>Enter a name for the custom model.</p>
-     */
-    inline void SetCustomModelName(const Aws::String& value) { m_customModelNameHasBeenSet = true; m_customModelName = value; }
-
-    /**
-     * <p>Enter a name for the custom model.</p>
-     */
-    inline void SetCustomModelName(Aws::String&& value) { m_customModelNameHasBeenSet = true; m_customModelName = std::move(value); }
-
-    /**
-     * <p>Enter a name for the custom model.</p>
-     */
-    inline void SetCustomModelName(const char* value) { m_customModelNameHasBeenSet = true; m_customModelName.assign(value); }
-
-    /**
-     * <p>Enter a name for the custom model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithCustomModelName(const Aws::String& value) { SetCustomModelName(value); return *this;}
-
-    /**
-     * <p>Enter a name for the custom model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithCustomModelName(Aws::String&& value) { SetCustomModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>Enter a name for the custom model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithCustomModelName(const char* value) { SetCustomModelName(value); return *this;}
-
-
-    /**
-     * <p>Assign tags to the custom model.</p>
-     */
-    inline const Aws::Vector<Tag>& GetCustomModelTags() const{ return m_customModelTags; }
-
-    /**
-     * <p>Assign tags to the custom model.</p>
-     */
-    inline bool CustomModelTagsHasBeenSet() const { return m_customModelTagsHasBeenSet; }
-
-    /**
-     * <p>Assign tags to the custom model.</p>
-     */
-    inline void SetCustomModelTags(const Aws::Vector<Tag>& value) { m_customModelTagsHasBeenSet = true; m_customModelTags = value; }
-
-    /**
-     * <p>Assign tags to the custom model.</p>
-     */
-    inline void SetCustomModelTags(Aws::Vector<Tag>&& value) { m_customModelTagsHasBeenSet = true; m_customModelTags = std::move(value); }
-
-    /**
-     * <p>Assign tags to the custom model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithCustomModelTags(const Aws::Vector<Tag>& value) { SetCustomModelTags(value); return *this;}
-
-    /**
-     * <p>Assign tags to the custom model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithCustomModelTags(Aws::Vector<Tag>&& value) { SetCustomModelTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Assign tags to the custom model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& AddCustomModelTags(const Tag& value) { m_customModelTagsHasBeenSet = true; m_customModelTags.push_back(value); return *this; }
-
-    /**
-     * <p>Assign tags to the custom model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& AddCustomModelTags(Tag&& value) { m_customModelTagsHasBeenSet = true; m_customModelTags.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline bool HyperParametersHasBeenSet() const { return m_hyperParametersHasBeenSet; }
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = value; }
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = std::move(value); }
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, value); return *this; }
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Parameters related to tuning the model.</p>
-     */
-    inline CreateModelCustomizationJobRequest& AddHyperParameters(const char* key, const char* value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, value); return *this; }
 
 
     /**
@@ -361,75 +82,44 @@ namespace Model
 
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Enter a name for the custom model.</p>
      */
-    inline const Aws::Vector<Tag>& GetJobTags() const{ return m_jobTags; }
+    inline const Aws::String& GetCustomModelName() const{ return m_customModelName; }
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Enter a name for the custom model.</p>
      */
-    inline bool JobTagsHasBeenSet() const { return m_jobTagsHasBeenSet; }
+    inline bool CustomModelNameHasBeenSet() const { return m_customModelNameHasBeenSet; }
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Enter a name for the custom model.</p>
      */
-    inline void SetJobTags(const Aws::Vector<Tag>& value) { m_jobTagsHasBeenSet = true; m_jobTags = value; }
+    inline void SetCustomModelName(const Aws::String& value) { m_customModelNameHasBeenSet = true; m_customModelName = value; }
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Enter a name for the custom model.</p>
      */
-    inline void SetJobTags(Aws::Vector<Tag>&& value) { m_jobTagsHasBeenSet = true; m_jobTags = std::move(value); }
+    inline void SetCustomModelName(Aws::String&& value) { m_customModelNameHasBeenSet = true; m_customModelName = std::move(value); }
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Enter a name for the custom model.</p>
      */
-    inline CreateModelCustomizationJobRequest& WithJobTags(const Aws::Vector<Tag>& value) { SetJobTags(value); return *this;}
+    inline void SetCustomModelName(const char* value) { m_customModelNameHasBeenSet = true; m_customModelName.assign(value); }
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Enter a name for the custom model.</p>
      */
-    inline CreateModelCustomizationJobRequest& WithJobTags(Aws::Vector<Tag>&& value) { SetJobTags(std::move(value)); return *this;}
+    inline CreateModelCustomizationJobRequest& WithCustomModelName(const Aws::String& value) { SetCustomModelName(value); return *this;}
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Enter a name for the custom model.</p>
      */
-    inline CreateModelCustomizationJobRequest& AddJobTags(const Tag& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(value); return *this; }
+    inline CreateModelCustomizationJobRequest& WithCustomModelName(Aws::String&& value) { SetCustomModelName(std::move(value)); return *this;}
 
     /**
-     * <p>Assign tags to the job.</p>
+     * <p>Enter a name for the custom model.</p>
      */
-    inline CreateModelCustomizationJobRequest& AddJobTags(Tag&& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>S3 location for the output data.</p>
-     */
-    inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
-
-    /**
-     * <p>S3 location for the output data.</p>
-     */
-    inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
-
-    /**
-     * <p>S3 location for the output data.</p>
-     */
-    inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
-
-    /**
-     * <p>S3 location for the output data.</p>
-     */
-    inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
-
-    /**
-     * <p>S3 location for the output data.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
-
-    /**
-     * <p>S3 location for the output data.</p>
-     */
-    inline CreateModelCustomizationJobRequest& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+    inline CreateModelCustomizationJobRequest& WithCustomModelName(const char* value) { SetCustomModelName(value); return *this;}
 
 
     /**
@@ -506,6 +196,219 @@ namespace Model
 
 
     /**
+     * <p>Unique token value that you can provide. The GetModelCustomizationJob
+     * response includes the same token value.</p>
+     */
+    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>Unique token value that you can provide. The GetModelCustomizationJob
+     * response includes the same token value.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
+
+    /**
+     * <p>Unique token value that you can provide. The GetModelCustomizationJob
+     * response includes the same token value.</p>
+     */
+    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
+
+    /**
+     * <p>Unique token value that you can provide. The GetModelCustomizationJob
+     * response includes the same token value.</p>
+     */
+    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
+
+    /**
+     * <p>Unique token value that you can provide. The GetModelCustomizationJob
+     * response includes the same token value.</p>
+     */
+    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
+
+    /**
+     * <p>Unique token value that you can provide. The GetModelCustomizationJob
+     * response includes the same token value.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
+
+    /**
+     * <p>Unique token value that you can provide. The GetModelCustomizationJob
+     * response includes the same token value.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique token value that you can provide. The GetModelCustomizationJob
+     * response includes the same token value.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
+
+    /**
+     * <p>Name of the base model.</p>
+     */
+    inline const Aws::String& GetBaseModelIdentifier() const{ return m_baseModelIdentifier; }
+
+    /**
+     * <p>Name of the base model.</p>
+     */
+    inline bool BaseModelIdentifierHasBeenSet() const { return m_baseModelIdentifierHasBeenSet; }
+
+    /**
+     * <p>Name of the base model.</p>
+     */
+    inline void SetBaseModelIdentifier(const Aws::String& value) { m_baseModelIdentifierHasBeenSet = true; m_baseModelIdentifier = value; }
+
+    /**
+     * <p>Name of the base model.</p>
+     */
+    inline void SetBaseModelIdentifier(Aws::String&& value) { m_baseModelIdentifierHasBeenSet = true; m_baseModelIdentifier = std::move(value); }
+
+    /**
+     * <p>Name of the base model.</p>
+     */
+    inline void SetBaseModelIdentifier(const char* value) { m_baseModelIdentifierHasBeenSet = true; m_baseModelIdentifier.assign(value); }
+
+    /**
+     * <p>Name of the base model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithBaseModelIdentifier(const Aws::String& value) { SetBaseModelIdentifier(value); return *this;}
+
+    /**
+     * <p>Name of the base model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithBaseModelIdentifier(Aws::String&& value) { SetBaseModelIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>Name of the base model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithBaseModelIdentifier(const char* value) { SetBaseModelIdentifier(value); return *this;}
+
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline const Aws::String& GetCustomModelKmsKeyId() const{ return m_customModelKmsKeyId; }
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline bool CustomModelKmsKeyIdHasBeenSet() const { return m_customModelKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline void SetCustomModelKmsKeyId(const Aws::String& value) { m_customModelKmsKeyIdHasBeenSet = true; m_customModelKmsKeyId = value; }
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline void SetCustomModelKmsKeyId(Aws::String&& value) { m_customModelKmsKeyIdHasBeenSet = true; m_customModelKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline void SetCustomModelKmsKeyId(const char* value) { m_customModelKmsKeyIdHasBeenSet = true; m_customModelKmsKeyId.assign(value); }
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithCustomModelKmsKeyId(const Aws::String& value) { SetCustomModelKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithCustomModelKmsKeyId(Aws::String&& value) { SetCustomModelKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithCustomModelKmsKeyId(const char* value) { SetCustomModelKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>Assign tags to the job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetJobTags() const{ return m_jobTags; }
+
+    /**
+     * <p>Assign tags to the job.</p>
+     */
+    inline bool JobTagsHasBeenSet() const { return m_jobTagsHasBeenSet; }
+
+    /**
+     * <p>Assign tags to the job.</p>
+     */
+    inline void SetJobTags(const Aws::Vector<Tag>& value) { m_jobTagsHasBeenSet = true; m_jobTags = value; }
+
+    /**
+     * <p>Assign tags to the job.</p>
+     */
+    inline void SetJobTags(Aws::Vector<Tag>&& value) { m_jobTagsHasBeenSet = true; m_jobTags = std::move(value); }
+
+    /**
+     * <p>Assign tags to the job.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithJobTags(const Aws::Vector<Tag>& value) { SetJobTags(value); return *this;}
+
+    /**
+     * <p>Assign tags to the job.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithJobTags(Aws::Vector<Tag>&& value) { SetJobTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Assign tags to the job.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddJobTags(const Tag& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(value); return *this; }
+
+    /**
+     * <p>Assign tags to the job.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddJobTags(Tag&& value) { m_jobTagsHasBeenSet = true; m_jobTags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Assign tags to the custom model.</p>
+     */
+    inline const Aws::Vector<Tag>& GetCustomModelTags() const{ return m_customModelTags; }
+
+    /**
+     * <p>Assign tags to the custom model.</p>
+     */
+    inline bool CustomModelTagsHasBeenSet() const { return m_customModelTagsHasBeenSet; }
+
+    /**
+     * <p>Assign tags to the custom model.</p>
+     */
+    inline void SetCustomModelTags(const Aws::Vector<Tag>& value) { m_customModelTagsHasBeenSet = true; m_customModelTags = value; }
+
+    /**
+     * <p>Assign tags to the custom model.</p>
+     */
+    inline void SetCustomModelTags(Aws::Vector<Tag>&& value) { m_customModelTagsHasBeenSet = true; m_customModelTags = std::move(value); }
+
+    /**
+     * <p>Assign tags to the custom model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithCustomModelTags(const Aws::Vector<Tag>& value) { SetCustomModelTags(value); return *this;}
+
+    /**
+     * <p>Assign tags to the custom model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithCustomModelTags(Aws::Vector<Tag>&& value) { SetCustomModelTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Assign tags to the custom model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddCustomModelTags(const Tag& value) { m_customModelTagsHasBeenSet = true; m_customModelTags.push_back(value); return *this; }
+
+    /**
+     * <p>Assign tags to the custom model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddCustomModelTags(Tag&& value) { m_customModelTagsHasBeenSet = true; m_customModelTags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Information about the training dataset.</p>
      */
     inline const TrainingDataConfig& GetTrainingDataConfig() const{ return m_trainingDataConfig; }
@@ -568,6 +471,103 @@ namespace Model
 
 
     /**
+     * <p>S3 location for the output data.</p>
+     */
+    inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+
+    /**
+     * <p>S3 location for the output data.</p>
+     */
+    inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
+
+    /**
+     * <p>S3 location for the output data.</p>
+     */
+    inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
+
+    /**
+     * <p>S3 location for the output data.</p>
+     */
+    inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
+
+    /**
+     * <p>S3 location for the output data.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
+
+    /**
+     * <p>S3 location for the output data.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline bool HyperParametersHasBeenSet() const { return m_hyperParametersHasBeenSet; }
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = value; }
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = std::move(value); }
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Parameters related to tuning the model.</p>
+     */
+    inline CreateModelCustomizationJobRequest& AddHyperParameters(const char* key, const char* value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, value); return *this; }
+
+
+    /**
      * <p>VPC configuration (optional). Configuration parameters for the private
      * Virtual Private Cloud (VPC) that contains the resources you are using for this
      * job.</p>
@@ -611,41 +611,41 @@ namespace Model
 
   private:
 
-    Aws::String m_baseModelIdentifier;
-    bool m_baseModelIdentifierHasBeenSet = false;
-
-    Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet = false;
-
-    Aws::String m_customModelKmsKeyId;
-    bool m_customModelKmsKeyIdHasBeenSet = false;
+    Aws::String m_jobName;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_customModelName;
     bool m_customModelNameHasBeenSet = false;
 
-    Aws::Vector<Tag> m_customModelTags;
-    bool m_customModelTagsHasBeenSet = false;
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-    bool m_hyperParametersHasBeenSet = false;
+    Aws::String m_clientRequestToken;
+    bool m_clientRequestTokenHasBeenSet = false;
 
-    Aws::String m_jobName;
-    bool m_jobNameHasBeenSet = false;
+    Aws::String m_baseModelIdentifier;
+    bool m_baseModelIdentifierHasBeenSet = false;
+
+    Aws::String m_customModelKmsKeyId;
+    bool m_customModelKmsKeyIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_jobTags;
     bool m_jobTagsHasBeenSet = false;
 
-    OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet = false;
-
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
+    Aws::Vector<Tag> m_customModelTags;
+    bool m_customModelTagsHasBeenSet = false;
 
     TrainingDataConfig m_trainingDataConfig;
     bool m_trainingDataConfigHasBeenSet = false;
 
     ValidationDataConfig m_validationDataConfig;
     bool m_validationDataConfigHasBeenSet = false;
+
+    OutputDataConfig m_outputDataConfig;
+    bool m_outputDataConfigHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_hyperParameters;
+    bool m_hyperParametersHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;

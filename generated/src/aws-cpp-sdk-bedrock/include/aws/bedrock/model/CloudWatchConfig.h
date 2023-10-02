@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
-#include <aws/bedrock/model/S3Config.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock/model/S3Config.h>
 #include <utility>
 
 namespace Aws
@@ -36,37 +36,6 @@ namespace Model
     AWS_BEDROCK_API CloudWatchConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API CloudWatchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>S3 configuration for delivering a large amount of data.</p>
-     */
-    inline const S3Config& GetLargeDataDeliveryS3Config() const{ return m_largeDataDeliveryS3Config; }
-
-    /**
-     * <p>S3 configuration for delivering a large amount of data.</p>
-     */
-    inline bool LargeDataDeliveryS3ConfigHasBeenSet() const { return m_largeDataDeliveryS3ConfigHasBeenSet; }
-
-    /**
-     * <p>S3 configuration for delivering a large amount of data.</p>
-     */
-    inline void SetLargeDataDeliveryS3Config(const S3Config& value) { m_largeDataDeliveryS3ConfigHasBeenSet = true; m_largeDataDeliveryS3Config = value; }
-
-    /**
-     * <p>S3 configuration for delivering a large amount of data.</p>
-     */
-    inline void SetLargeDataDeliveryS3Config(S3Config&& value) { m_largeDataDeliveryS3ConfigHasBeenSet = true; m_largeDataDeliveryS3Config = std::move(value); }
-
-    /**
-     * <p>S3 configuration for delivering a large amount of data.</p>
-     */
-    inline CloudWatchConfig& WithLargeDataDeliveryS3Config(const S3Config& value) { SetLargeDataDeliveryS3Config(value); return *this;}
-
-    /**
-     * <p>S3 configuration for delivering a large amount of data.</p>
-     */
-    inline CloudWatchConfig& WithLargeDataDeliveryS3Config(S3Config&& value) { SetLargeDataDeliveryS3Config(std::move(value)); return *this;}
 
 
     /**
@@ -150,16 +119,47 @@ namespace Model
      */
     inline CloudWatchConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
-  private:
 
-    S3Config m_largeDataDeliveryS3Config;
-    bool m_largeDataDeliveryS3ConfigHasBeenSet = false;
+    /**
+     * <p>S3 configuration for delivering a large amount of data.</p>
+     */
+    inline const S3Config& GetLargeDataDeliveryS3Config() const{ return m_largeDataDeliveryS3Config; }
+
+    /**
+     * <p>S3 configuration for delivering a large amount of data.</p>
+     */
+    inline bool LargeDataDeliveryS3ConfigHasBeenSet() const { return m_largeDataDeliveryS3ConfigHasBeenSet; }
+
+    /**
+     * <p>S3 configuration for delivering a large amount of data.</p>
+     */
+    inline void SetLargeDataDeliveryS3Config(const S3Config& value) { m_largeDataDeliveryS3ConfigHasBeenSet = true; m_largeDataDeliveryS3Config = value; }
+
+    /**
+     * <p>S3 configuration for delivering a large amount of data.</p>
+     */
+    inline void SetLargeDataDeliveryS3Config(S3Config&& value) { m_largeDataDeliveryS3ConfigHasBeenSet = true; m_largeDataDeliveryS3Config = std::move(value); }
+
+    /**
+     * <p>S3 configuration for delivering a large amount of data.</p>
+     */
+    inline CloudWatchConfig& WithLargeDataDeliveryS3Config(const S3Config& value) { SetLargeDataDeliveryS3Config(value); return *this;}
+
+    /**
+     * <p>S3 configuration for delivering a large amount of data.</p>
+     */
+    inline CloudWatchConfig& WithLargeDataDeliveryS3Config(S3Config&& value) { SetLargeDataDeliveryS3Config(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    S3Config m_largeDataDeliveryS3Config;
+    bool m_largeDataDeliveryS3ConfigHasBeenSet = false;
   };
 
 } // namespace Model

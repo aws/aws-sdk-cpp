@@ -756,7 +756,15 @@ namespace Model
     c7i_16xlarge,
     c7i_24xlarge,
     c7i_48xlarge,
-    mac2_m2pro_metal
+    mac2_m2pro_metal,
+    r7iz_large,
+    r7iz_xlarge,
+    r7iz_2xlarge,
+    r7iz_4xlarge,
+    r7iz_8xlarge,
+    r7iz_12xlarge,
+    r7iz_16xlarge,
+    r7iz_32xlarge
   };
 
 namespace InstanceTypeMapper

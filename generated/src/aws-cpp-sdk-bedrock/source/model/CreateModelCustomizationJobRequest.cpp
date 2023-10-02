@@ -13,19 +13,19 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateModelCustomizationJobRequest::CreateModelCustomizationJobRequest() : 
-    m_baseModelIdentifierHasBeenSet(false),
+    m_jobNameHasBeenSet(false),
+    m_customModelNameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
+    m_baseModelIdentifierHasBeenSet(false),
     m_customModelKmsKeyIdHasBeenSet(false),
-    m_customModelNameHasBeenSet(false),
-    m_customModelTagsHasBeenSet(false),
-    m_hyperParametersHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
     m_jobTagsHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
+    m_customModelTagsHasBeenSet(false),
     m_trainingDataConfigHasBeenSet(false),
     m_validationDataConfigHasBeenSet(false),
+    m_outputDataConfigHasBeenSet(false),
+    m_hyperParametersHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
 {
 }
@@ -34,21 +34,9 @@ Aws::String CreateModelCustomizationJobRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_baseModelIdentifierHasBeenSet)
+  if(m_jobNameHasBeenSet)
   {
-   payload.WithString("baseModelIdentifier", m_baseModelIdentifier);
-
-  }
-
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("clientRequestToken", m_clientRequestToken);
-
-  }
-
-  if(m_customModelKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("customModelKmsKeyId", m_customModelKmsKeyId);
+   payload.WithString("jobName", m_jobName);
 
   }
 
@@ -58,31 +46,27 @@ Aws::String CreateModelCustomizationJobRequest::SerializePayload() const
 
   }
 
-  if(m_customModelTagsHasBeenSet)
+  if(m_roleArnHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> customModelTagsJsonList(m_customModelTags.size());
-   for(unsigned customModelTagsIndex = 0; customModelTagsIndex < customModelTagsJsonList.GetLength(); ++customModelTagsIndex)
-   {
-     customModelTagsJsonList[customModelTagsIndex].AsObject(m_customModelTags[customModelTagsIndex].Jsonize());
-   }
-   payload.WithArray("customModelTags", std::move(customModelTagsJsonList));
+   payload.WithString("roleArn", m_roleArn);
 
   }
 
-  if(m_hyperParametersHasBeenSet)
+  if(m_clientRequestTokenHasBeenSet)
   {
-   JsonValue hyperParametersJsonMap;
-   for(auto& hyperParametersItem : m_hyperParameters)
-   {
-     hyperParametersJsonMap.WithString(hyperParametersItem.first, hyperParametersItem.second);
-   }
-   payload.WithObject("hyperParameters", std::move(hyperParametersJsonMap));
+   payload.WithString("clientRequestToken", m_clientRequestToken);
 
   }
 
-  if(m_jobNameHasBeenSet)
+  if(m_baseModelIdentifierHasBeenSet)
   {
-   payload.WithString("jobName", m_jobName);
+   payload.WithString("baseModelIdentifier", m_baseModelIdentifier);
+
+  }
+
+  if(m_customModelKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("customModelKmsKeyId", m_customModelKmsKeyId);
 
   }
 
@@ -97,15 +81,14 @@ Aws::String CreateModelCustomizationJobRequest::SerializePayload() const
 
   }
 
-  if(m_outputDataConfigHasBeenSet)
+  if(m_customModelTagsHasBeenSet)
   {
-   payload.WithObject("outputDataConfig", m_outputDataConfig.Jsonize());
-
-  }
-
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
+   Aws::Utils::Array<JsonValue> customModelTagsJsonList(m_customModelTags.size());
+   for(unsigned customModelTagsIndex = 0; customModelTagsIndex < customModelTagsJsonList.GetLength(); ++customModelTagsIndex)
+   {
+     customModelTagsJsonList[customModelTagsIndex].AsObject(m_customModelTags[customModelTagsIndex].Jsonize());
+   }
+   payload.WithArray("customModelTags", std::move(customModelTagsJsonList));
 
   }
 
@@ -118,6 +101,23 @@ Aws::String CreateModelCustomizationJobRequest::SerializePayload() const
   if(m_validationDataConfigHasBeenSet)
   {
    payload.WithObject("validationDataConfig", m_validationDataConfig.Jsonize());
+
+  }
+
+  if(m_outputDataConfigHasBeenSet)
+  {
+   payload.WithObject("outputDataConfig", m_outputDataConfig.Jsonize());
+
+  }
+
+  if(m_hyperParametersHasBeenSet)
+  {
+   JsonValue hyperParametersJsonMap;
+   for(auto& hyperParametersItem : m_hyperParameters)
+   {
+     hyperParametersJsonMap.WithString(hyperParametersItem.first, hyperParametersItem.second);
+   }
+   payload.WithObject("hyperParameters", std::move(hyperParametersJsonMap));
 
   }
 
