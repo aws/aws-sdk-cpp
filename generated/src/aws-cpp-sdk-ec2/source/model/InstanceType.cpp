@@ -761,6 +761,14 @@ namespace Aws
         static const int c7i_24xlarge_HASH = HashingUtils::HashString("c7i.24xlarge");
         static const int c7i_48xlarge_HASH = HashingUtils::HashString("c7i.48xlarge");
         static const int mac2_m2pro_metal_HASH = HashingUtils::HashString("mac2-m2pro.metal");
+        static const int r7iz_large_HASH = HashingUtils::HashString("r7iz.large");
+        static const int r7iz_xlarge_HASH = HashingUtils::HashString("r7iz.xlarge");
+        static const int r7iz_2xlarge_HASH = HashingUtils::HashString("r7iz.2xlarge");
+        static const int r7iz_4xlarge_HASH = HashingUtils::HashString("r7iz.4xlarge");
+        static const int r7iz_8xlarge_HASH = HashingUtils::HashString("r7iz.8xlarge");
+        static const int r7iz_12xlarge_HASH = HashingUtils::HashString("r7iz.12xlarge");
+        static const int r7iz_16xlarge_HASH = HashingUtils::HashString("r7iz.16xlarge");
+        static const int r7iz_32xlarge_HASH = HashingUtils::HashString("r7iz.32xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -4498,6 +4506,46 @@ namespace Aws
             enumValue = InstanceType::mac2_m2pro_metal;
             return true;
           }
+          else if (hashCode == r7iz_large_HASH)
+          {
+            enumValue = InstanceType::r7iz_large;
+            return true;
+          }
+          else if (hashCode == r7iz_xlarge_HASH)
+          {
+            enumValue = InstanceType::r7iz_xlarge;
+            return true;
+          }
+          else if (hashCode == r7iz_2xlarge_HASH)
+          {
+            enumValue = InstanceType::r7iz_2xlarge;
+            return true;
+          }
+          else if (hashCode == r7iz_4xlarge_HASH)
+          {
+            enumValue = InstanceType::r7iz_4xlarge;
+            return true;
+          }
+          else if (hashCode == r7iz_8xlarge_HASH)
+          {
+            enumValue = InstanceType::r7iz_8xlarge;
+            return true;
+          }
+          else if (hashCode == r7iz_12xlarge_HASH)
+          {
+            enumValue = InstanceType::r7iz_12xlarge;
+            return true;
+          }
+          else if (hashCode == r7iz_16xlarge_HASH)
+          {
+            enumValue = InstanceType::r7iz_16xlarge;
+            return true;
+          }
+          else if (hashCode == r7iz_32xlarge_HASH)
+          {
+            enumValue = InstanceType::r7iz_32xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -6775,6 +6823,30 @@ namespace Aws
             return true;
           case InstanceType::mac2_m2pro_metal:
             value = "mac2-m2pro.metal";
+            return true;
+          case InstanceType::r7iz_large:
+            value = "r7iz.large";
+            return true;
+          case InstanceType::r7iz_xlarge:
+            value = "r7iz.xlarge";
+            return true;
+          case InstanceType::r7iz_2xlarge:
+            value = "r7iz.2xlarge";
+            return true;
+          case InstanceType::r7iz_4xlarge:
+            value = "r7iz.4xlarge";
+            return true;
+          case InstanceType::r7iz_8xlarge:
+            value = "r7iz.8xlarge";
+            return true;
+          case InstanceType::r7iz_12xlarge:
+            value = "r7iz.12xlarge";
+            return true;
+          case InstanceType::r7iz_16xlarge:
+            value = "r7iz.16xlarge";
+            return true;
+          case InstanceType::r7iz_32xlarge:
+            value = "r7iz.32xlarge";
             return true;
           default:
             return false;

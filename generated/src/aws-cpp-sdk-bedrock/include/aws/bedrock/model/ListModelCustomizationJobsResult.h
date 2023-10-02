@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/ModelCustomizationJobSummary.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     AWS_BEDROCK_API ListModelCustomizationJobsResult();
     AWS_BEDROCK_API ListModelCustomizationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API ListModelCustomizationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>Job summaries.</p>
-     */
-    inline const Aws::Vector<ModelCustomizationJobSummary>& GetModelCustomizationJobSummaries() const{ return m_modelCustomizationJobSummaries; }
-
-    /**
-     * <p>Job summaries.</p>
-     */
-    inline void SetModelCustomizationJobSummaries(const Aws::Vector<ModelCustomizationJobSummary>& value) { m_modelCustomizationJobSummaries = value; }
-
-    /**
-     * <p>Job summaries.</p>
-     */
-    inline void SetModelCustomizationJobSummaries(Aws::Vector<ModelCustomizationJobSummary>&& value) { m_modelCustomizationJobSummaries = std::move(value); }
-
-    /**
-     * <p>Job summaries.</p>
-     */
-    inline ListModelCustomizationJobsResult& WithModelCustomizationJobSummaries(const Aws::Vector<ModelCustomizationJobSummary>& value) { SetModelCustomizationJobSummaries(value); return *this;}
-
-    /**
-     * <p>Job summaries.</p>
-     */
-    inline ListModelCustomizationJobsResult& WithModelCustomizationJobSummaries(Aws::Vector<ModelCustomizationJobSummary>&& value) { SetModelCustomizationJobSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>Job summaries.</p>
-     */
-    inline ListModelCustomizationJobsResult& AddModelCustomizationJobSummaries(const ModelCustomizationJobSummary& value) { m_modelCustomizationJobSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>Job summaries.</p>
-     */
-    inline ListModelCustomizationJobsResult& AddModelCustomizationJobSummaries(ModelCustomizationJobSummary&& value) { m_modelCustomizationJobSummaries.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -106,6 +70,42 @@ namespace Model
     inline ListModelCustomizationJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>Job summaries.</p>
+     */
+    inline const Aws::Vector<ModelCustomizationJobSummary>& GetModelCustomizationJobSummaries() const{ return m_modelCustomizationJobSummaries; }
+
+    /**
+     * <p>Job summaries.</p>
+     */
+    inline void SetModelCustomizationJobSummaries(const Aws::Vector<ModelCustomizationJobSummary>& value) { m_modelCustomizationJobSummaries = value; }
+
+    /**
+     * <p>Job summaries.</p>
+     */
+    inline void SetModelCustomizationJobSummaries(Aws::Vector<ModelCustomizationJobSummary>&& value) { m_modelCustomizationJobSummaries = std::move(value); }
+
+    /**
+     * <p>Job summaries.</p>
+     */
+    inline ListModelCustomizationJobsResult& WithModelCustomizationJobSummaries(const Aws::Vector<ModelCustomizationJobSummary>& value) { SetModelCustomizationJobSummaries(value); return *this;}
+
+    /**
+     * <p>Job summaries.</p>
+     */
+    inline ListModelCustomizationJobsResult& WithModelCustomizationJobSummaries(Aws::Vector<ModelCustomizationJobSummary>&& value) { SetModelCustomizationJobSummaries(std::move(value)); return *this;}
+
+    /**
+     * <p>Job summaries.</p>
+     */
+    inline ListModelCustomizationJobsResult& AddModelCustomizationJobSummaries(const ModelCustomizationJobSummary& value) { m_modelCustomizationJobSummaries.push_back(value); return *this; }
+
+    /**
+     * <p>Job summaries.</p>
+     */
+    inline ListModelCustomizationJobsResult& AddModelCustomizationJobSummaries(ModelCustomizationJobSummary&& value) { m_modelCustomizationJobSummaries.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -129,9 +129,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<ModelCustomizationJobSummary> m_modelCustomizationJobSummaries;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<ModelCustomizationJobSummary> m_modelCustomizationJobSummaries;
 
     Aws::String m_requestId;
   };

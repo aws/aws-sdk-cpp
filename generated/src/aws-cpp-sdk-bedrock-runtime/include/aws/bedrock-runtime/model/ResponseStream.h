@@ -8,6 +8,7 @@
 #include <aws/bedrock-runtime/model/PayloadPart.h>
 #include <aws/bedrock-runtime/model/InternalServerException.h>
 #include <aws/bedrock-runtime/model/ModelStreamErrorException.h>
+#include <aws/bedrock-runtime/model/ModelTimeoutException.h>
 #include <aws/bedrock-runtime/model/ThrottlingException.h>
 #include <aws/bedrock-runtime/model/ValidationException.h>
 #include <utility>
@@ -111,6 +112,25 @@ namespace Model
 
 
     
+    inline const ModelTimeoutException& GetModelTimeoutException() const{ return m_modelTimeoutException; }
+
+    
+    inline bool ModelTimeoutExceptionHasBeenSet() const { return m_modelTimeoutExceptionHasBeenSet; }
+
+    
+    inline void SetModelTimeoutException(const ModelTimeoutException& value) { m_modelTimeoutExceptionHasBeenSet = true; m_modelTimeoutException = value; }
+
+    
+    inline void SetModelTimeoutException(ModelTimeoutException&& value) { m_modelTimeoutExceptionHasBeenSet = true; m_modelTimeoutException = std::move(value); }
+
+    
+    inline ResponseStream& WithModelTimeoutException(const ModelTimeoutException& value) { SetModelTimeoutException(value); return *this;}
+
+    
+    inline ResponseStream& WithModelTimeoutException(ModelTimeoutException&& value) { SetModelTimeoutException(std::move(value)); return *this;}
+
+
+    
     inline const ThrottlingException& GetThrottlingException() const{ return m_throttlingException; }
 
     
@@ -157,6 +177,9 @@ namespace Model
 
     ModelStreamErrorException m_modelStreamErrorException;
     bool m_modelStreamErrorExceptionHasBeenSet = false;
+
+    ModelTimeoutException m_modelTimeoutException;
+    bool m_modelTimeoutExceptionHasBeenSet = false;
 
     ThrottlingException m_throttlingException;
     bool m_throttlingExceptionHasBeenSet = false;

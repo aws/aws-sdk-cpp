@@ -18,16 +18,16 @@ using namespace Aws::Http;
 ListModelCustomizationJobsRequest::ListModelCustomizationJobsRequest() : 
     m_creationTimeAfterHasBeenSet(false),
     m_creationTimeBeforeHasBeenSet(false),
+    m_statusEquals(FineTuningJobStatus::NOT_SET),
+    m_statusEqualsHasBeenSet(false),
+    m_nameContainsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_sortBy(SortJobsBy::NOT_SET),
     m_sortByHasBeenSet(false),
     m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_statusEquals(FineTuningJobStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false)
+    m_sortOrderHasBeenSet(false)
 {
 }
 
@@ -53,10 +53,10 @@ void ListModelCustomizationJobsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_maxResultsHasBeenSet)
+    if(m_statusEqualsHasBeenSet)
     {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss << FineTuningJobStatusMapper::GetNameForFineTuningJobStatus(m_statusEquals);
+      uri.AddQueryStringParameter("statusEquals", ss.str());
       ss.str("");
     }
 
@@ -64,6 +64,13 @@ void ListModelCustomizationJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nameContains;
       uri.AddQueryStringParameter("nameContains", ss.str());
+      ss.str("");
+    }
+
+    if(m_maxResultsHasBeenSet)
+    {
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 
@@ -85,13 +92,6 @@ void ListModelCustomizationJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << SortOrderMapper::GetNameForSortOrder(m_sortOrder);
       uri.AddQueryStringParameter("sortOrder", ss.str());
-      ss.str("");
-    }
-
-    if(m_statusEqualsHasBeenSet)
-    {
-      ss << FineTuningJobStatusMapper::GetNameForFineTuningJobStatus(m_statusEquals);
-      uri.AddQueryStringParameter("statusEquals", ss.str());
       ss.str("");
     }
 

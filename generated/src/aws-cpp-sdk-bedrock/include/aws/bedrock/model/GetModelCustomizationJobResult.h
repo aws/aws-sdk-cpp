@@ -6,13 +6,13 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock/model/ModelCustomizationJobStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/bedrock/model/OutputDataConfig.h>
-#include <aws/bedrock/model/ModelCustomizationJobStatus.h>
 #include <aws/bedrock/model/TrainingDataConfig.h>
-#include <aws/bedrock/model/TrainingMetrics.h>
 #include <aws/bedrock/model/ValidationDataConfig.h>
+#include <aws/bedrock/model/OutputDataConfig.h>
+#include <aws/bedrock/model/TrainingMetrics.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/VpcConfig.h>
 #include <aws/bedrock/model/ValidatorMetric.h>
@@ -40,227 +40,6 @@ namespace Model
     AWS_BEDROCK_API GetModelCustomizationJobResult();
     AWS_BEDROCK_API GetModelCustomizationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API GetModelCustomizationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>ARN of the base model.</p>
-     */
-    inline const Aws::String& GetBaseModelArn() const{ return m_baseModelArn; }
-
-    /**
-     * <p>ARN of the base model.</p>
-     */
-    inline void SetBaseModelArn(const Aws::String& value) { m_baseModelArn = value; }
-
-    /**
-     * <p>ARN of the base model.</p>
-     */
-    inline void SetBaseModelArn(Aws::String&& value) { m_baseModelArn = std::move(value); }
-
-    /**
-     * <p>ARN of the base model.</p>
-     */
-    inline void SetBaseModelArn(const char* value) { m_baseModelArn.assign(value); }
-
-    /**
-     * <p>ARN of the base model.</p>
-     */
-    inline GetModelCustomizationJobResult& WithBaseModelArn(const Aws::String& value) { SetBaseModelArn(value); return *this;}
-
-    /**
-     * <p>ARN of the base model.</p>
-     */
-    inline GetModelCustomizationJobResult& WithBaseModelArn(Aws::String&& value) { SetBaseModelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of the base model.</p>
-     */
-    inline GetModelCustomizationJobResult& WithBaseModelArn(const char* value) { SetBaseModelArn(value); return *this;}
-
-
-    /**
-     * <p>The token that you specified in the CreateCustomizationJob request.</p>
-     */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    /**
-     * <p>The token that you specified in the CreateCustomizationJob request.</p>
-     */
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestToken = value; }
-
-    /**
-     * <p>The token that you specified in the CreateCustomizationJob request.</p>
-     */
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestToken = std::move(value); }
-
-    /**
-     * <p>The token that you specified in the CreateCustomizationJob request.</p>
-     */
-    inline void SetClientRequestToken(const char* value) { m_clientRequestToken.assign(value); }
-
-    /**
-     * <p>The token that you specified in the CreateCustomizationJob request.</p>
-     */
-    inline GetModelCustomizationJobResult& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    /**
-     * <p>The token that you specified in the CreateCustomizationJob request.</p>
-     */
-    inline GetModelCustomizationJobResult& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token that you specified in the CreateCustomizationJob request.</p>
-     */
-    inline GetModelCustomizationJobResult& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
-
-
-    /**
-     * <p>Time that the resource was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>Time that the resource was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>Time that the resource was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>Time that the resource was created.</p>
-     */
-    inline GetModelCustomizationJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>Time that the resource was created.</p>
-     */
-    inline GetModelCustomizationJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Time that the resource transitioned to terminal state.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>Time that the resource transitioned to terminal state.</p>
-     */
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-
-    /**
-     * <p>Time that the resource transitioned to terminal state.</p>
-     */
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-
-    /**
-     * <p>Time that the resource transitioned to terminal state.</p>
-     */
-    inline GetModelCustomizationJobResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>Time that the resource transitioned to terminal state.</p>
-     */
-    inline GetModelCustomizationJobResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Information about why the job failed.</p>
-     */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
-
-    /**
-     * <p>Information about why the job failed.</p>
-     */
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
-
-    /**
-     * <p>Information about why the job failed.</p>
-     */
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
-
-    /**
-     * <p>Information about why the job failed.</p>
-     */
-    inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
-
-    /**
-     * <p>Information about why the job failed.</p>
-     */
-    inline GetModelCustomizationJobResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-
-    /**
-     * <p>Information about why the job failed.</p>
-     */
-    inline GetModelCustomizationJobResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about why the job failed.</p>
-     */
-    inline GetModelCustomizationJobResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
-
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParameters = value; }
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParameters = std::move(value); }
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline GetModelCustomizationJobResult& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline GetModelCustomizationJobResult& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline GetModelCustomizationJobResult& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParameters.emplace(key, value); return *this; }
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline GetModelCustomizationJobResult& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline GetModelCustomizationJobResult& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The hyperparameter values for the job.</p>
-     */
-    inline GetModelCustomizationJobResult& AddHyperParameters(const char* key, const char* value) { m_hyperParameters.emplace(key, value); return *this; }
 
 
     /**
@@ -336,55 +115,39 @@ namespace Model
 
 
     /**
-     * <p>Time that the resource was last modified.</p>
+     * <p>The name of the output model.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::String& GetOutputModelName() const{ return m_outputModelName; }
 
     /**
-     * <p>Time that the resource was last modified.</p>
+     * <p>The name of the output model.</p>
      */
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+    inline void SetOutputModelName(const Aws::String& value) { m_outputModelName = value; }
 
     /**
-     * <p>Time that the resource was last modified.</p>
+     * <p>The name of the output model.</p>
      */
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+    inline void SetOutputModelName(Aws::String&& value) { m_outputModelName = std::move(value); }
 
     /**
-     * <p>Time that the resource was last modified.</p>
+     * <p>The name of the output model.</p>
      */
-    inline GetModelCustomizationJobResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+    inline void SetOutputModelName(const char* value) { m_outputModelName.assign(value); }
 
     /**
-     * <p>Time that the resource was last modified.</p>
+     * <p>The name of the output model.</p>
      */
-    inline GetModelCustomizationJobResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Output data configuration </p>
-     */
-    inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+    inline GetModelCustomizationJobResult& WithOutputModelName(const Aws::String& value) { SetOutputModelName(value); return *this;}
 
     /**
-     * <p>Output data configuration </p>
+     * <p>The name of the output model.</p>
      */
-    inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfig = value; }
+    inline GetModelCustomizationJobResult& WithOutputModelName(Aws::String&& value) { SetOutputModelName(std::move(value)); return *this;}
 
     /**
-     * <p>Output data configuration </p>
+     * <p>The name of the output model.</p>
      */
-    inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfig = std::move(value); }
-
-    /**
-     * <p>Output data configuration </p>
-     */
-    inline GetModelCustomizationJobResult& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
-
-    /**
-     * <p>Output data configuration </p>
-     */
-    inline GetModelCustomizationJobResult& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+    inline GetModelCustomizationJobResult& WithOutputModelName(const char* value) { SetOutputModelName(value); return *this;}
 
 
     /**
@@ -424,75 +187,39 @@ namespace Model
 
 
     /**
-     * <p>The custom model is encrypted at rest using this key.</p>
+     * <p>The token that you specified in the CreateCustomizationJob request.</p>
      */
-    inline const Aws::String& GetOutputModelKmsKeyArn() const{ return m_outputModelKmsKeyArn; }
+    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>The custom model is encrypted at rest using this key.</p>
+     * <p>The token that you specified in the CreateCustomizationJob request.</p>
      */
-    inline void SetOutputModelKmsKeyArn(const Aws::String& value) { m_outputModelKmsKeyArn = value; }
+    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestToken = value; }
 
     /**
-     * <p>The custom model is encrypted at rest using this key.</p>
+     * <p>The token that you specified in the CreateCustomizationJob request.</p>
      */
-    inline void SetOutputModelKmsKeyArn(Aws::String&& value) { m_outputModelKmsKeyArn = std::move(value); }
+    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>The custom model is encrypted at rest using this key.</p>
+     * <p>The token that you specified in the CreateCustomizationJob request.</p>
      */
-    inline void SetOutputModelKmsKeyArn(const char* value) { m_outputModelKmsKeyArn.assign(value); }
+    inline void SetClientRequestToken(const char* value) { m_clientRequestToken.assign(value); }
 
     /**
-     * <p>The custom model is encrypted at rest using this key.</p>
+     * <p>The token that you specified in the CreateCustomizationJob request.</p>
      */
-    inline GetModelCustomizationJobResult& WithOutputModelKmsKeyArn(const Aws::String& value) { SetOutputModelKmsKeyArn(value); return *this;}
+    inline GetModelCustomizationJobResult& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>The custom model is encrypted at rest using this key.</p>
+     * <p>The token that you specified in the CreateCustomizationJob request.</p>
      */
-    inline GetModelCustomizationJobResult& WithOutputModelKmsKeyArn(Aws::String&& value) { SetOutputModelKmsKeyArn(std::move(value)); return *this;}
+    inline GetModelCustomizationJobResult& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>The custom model is encrypted at rest using this key.</p>
+     * <p>The token that you specified in the CreateCustomizationJob request.</p>
      */
-    inline GetModelCustomizationJobResult& WithOutputModelKmsKeyArn(const char* value) { SetOutputModelKmsKeyArn(value); return *this;}
-
-
-    /**
-     * <p>The name of the output model.</p>
-     */
-    inline const Aws::String& GetOutputModelName() const{ return m_outputModelName; }
-
-    /**
-     * <p>The name of the output model.</p>
-     */
-    inline void SetOutputModelName(const Aws::String& value) { m_outputModelName = value; }
-
-    /**
-     * <p>The name of the output model.</p>
-     */
-    inline void SetOutputModelName(Aws::String&& value) { m_outputModelName = std::move(value); }
-
-    /**
-     * <p>The name of the output model.</p>
-     */
-    inline void SetOutputModelName(const char* value) { m_outputModelName.assign(value); }
-
-    /**
-     * <p>The name of the output model.</p>
-     */
-    inline GetModelCustomizationJobResult& WithOutputModelName(const Aws::String& value) { SetOutputModelName(value); return *this;}
-
-    /**
-     * <p>The name of the output model.</p>
-     */
-    inline GetModelCustomizationJobResult& WithOutputModelName(Aws::String&& value) { SetOutputModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the output model.</p>
-     */
-    inline GetModelCustomizationJobResult& WithOutputModelName(const char* value) { SetOutputModelName(value); return *this;}
+    inline GetModelCustomizationJobResult& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
@@ -567,6 +294,217 @@ namespace Model
     inline GetModelCustomizationJobResult& WithStatus(ModelCustomizationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Information about why the job failed.</p>
+     */
+    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+
+    /**
+     * <p>Information about why the job failed.</p>
+     */
+    inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
+
+    /**
+     * <p>Information about why the job failed.</p>
+     */
+    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
+
+    /**
+     * <p>Information about why the job failed.</p>
+     */
+    inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
+
+    /**
+     * <p>Information about why the job failed.</p>
+     */
+    inline GetModelCustomizationJobResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
+
+    /**
+     * <p>Information about why the job failed.</p>
+     */
+    inline GetModelCustomizationJobResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about why the job failed.</p>
+     */
+    inline GetModelCustomizationJobResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+
+
+    /**
+     * <p>Time that the resource was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>Time that the resource was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>Time that the resource was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>Time that the resource was created.</p>
+     */
+    inline GetModelCustomizationJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>Time that the resource was created.</p>
+     */
+    inline GetModelCustomizationJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Time that the resource was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>Time that the resource was last modified.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+
+    /**
+     * <p>Time that the resource was last modified.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>Time that the resource was last modified.</p>
+     */
+    inline GetModelCustomizationJobResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>Time that the resource was last modified.</p>
+     */
+    inline GetModelCustomizationJobResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Time that the resource transitioned to terminal state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>Time that the resource transitioned to terminal state.</p>
+     */
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
+
+    /**
+     * <p>Time that the resource transitioned to terminal state.</p>
+     */
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
+
+    /**
+     * <p>Time that the resource transitioned to terminal state.</p>
+     */
+    inline GetModelCustomizationJobResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+
+    /**
+     * <p>Time that the resource transitioned to terminal state.</p>
+     */
+    inline GetModelCustomizationJobResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>ARN of the base model.</p>
+     */
+    inline const Aws::String& GetBaseModelArn() const{ return m_baseModelArn; }
+
+    /**
+     * <p>ARN of the base model.</p>
+     */
+    inline void SetBaseModelArn(const Aws::String& value) { m_baseModelArn = value; }
+
+    /**
+     * <p>ARN of the base model.</p>
+     */
+    inline void SetBaseModelArn(Aws::String&& value) { m_baseModelArn = std::move(value); }
+
+    /**
+     * <p>ARN of the base model.</p>
+     */
+    inline void SetBaseModelArn(const char* value) { m_baseModelArn.assign(value); }
+
+    /**
+     * <p>ARN of the base model.</p>
+     */
+    inline GetModelCustomizationJobResult& WithBaseModelArn(const Aws::String& value) { SetBaseModelArn(value); return *this;}
+
+    /**
+     * <p>ARN of the base model.</p>
+     */
+    inline GetModelCustomizationJobResult& WithBaseModelArn(Aws::String&& value) { SetBaseModelArn(std::move(value)); return *this;}
+
+    /**
+     * <p>ARN of the base model.</p>
+     */
+    inline GetModelCustomizationJobResult& WithBaseModelArn(const char* value) { SetBaseModelArn(value); return *this;}
+
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParameters = value; }
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParameters = std::move(value); }
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline GetModelCustomizationJobResult& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline GetModelCustomizationJobResult& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline GetModelCustomizationJobResult& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline GetModelCustomizationJobResult& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline GetModelCustomizationJobResult& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The hyperparameter values for the job.</p>
+     */
+    inline GetModelCustomizationJobResult& AddHyperParameters(const char* key, const char* value) { m_hyperParameters.emplace(key, value); return *this; }
+
+
     
     inline const TrainingDataConfig& GetTrainingDataConfig() const{ return m_trainingDataConfig; }
 
@@ -584,22 +522,6 @@ namespace Model
 
 
     
-    inline const TrainingMetrics& GetTrainingMetrics() const{ return m_trainingMetrics; }
-
-    
-    inline void SetTrainingMetrics(const TrainingMetrics& value) { m_trainingMetrics = value; }
-
-    
-    inline void SetTrainingMetrics(TrainingMetrics&& value) { m_trainingMetrics = std::move(value); }
-
-    
-    inline GetModelCustomizationJobResult& WithTrainingMetrics(const TrainingMetrics& value) { SetTrainingMetrics(value); return *this;}
-
-    
-    inline GetModelCustomizationJobResult& WithTrainingMetrics(TrainingMetrics&& value) { SetTrainingMetrics(std::move(value)); return *this;}
-
-
-    
     inline const ValidationDataConfig& GetValidationDataConfig() const{ return m_validationDataConfig; }
 
     
@@ -613,6 +535,84 @@ namespace Model
 
     
     inline GetModelCustomizationJobResult& WithValidationDataConfig(ValidationDataConfig&& value) { SetValidationDataConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Output data configuration </p>
+     */
+    inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+
+    /**
+     * <p>Output data configuration </p>
+     */
+    inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfig = value; }
+
+    /**
+     * <p>Output data configuration </p>
+     */
+    inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfig = std::move(value); }
+
+    /**
+     * <p>Output data configuration </p>
+     */
+    inline GetModelCustomizationJobResult& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
+
+    /**
+     * <p>Output data configuration </p>
+     */
+    inline GetModelCustomizationJobResult& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline const Aws::String& GetOutputModelKmsKeyArn() const{ return m_outputModelKmsKeyArn; }
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline void SetOutputModelKmsKeyArn(const Aws::String& value) { m_outputModelKmsKeyArn = value; }
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline void SetOutputModelKmsKeyArn(Aws::String&& value) { m_outputModelKmsKeyArn = std::move(value); }
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline void SetOutputModelKmsKeyArn(const char* value) { m_outputModelKmsKeyArn.assign(value); }
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline GetModelCustomizationJobResult& WithOutputModelKmsKeyArn(const Aws::String& value) { SetOutputModelKmsKeyArn(value); return *this;}
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline GetModelCustomizationJobResult& WithOutputModelKmsKeyArn(Aws::String&& value) { SetOutputModelKmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline GetModelCustomizationJobResult& WithOutputModelKmsKeyArn(const char* value) { SetOutputModelKmsKeyArn(value); return *this;}
+
+
+    
+    inline const TrainingMetrics& GetTrainingMetrics() const{ return m_trainingMetrics; }
+
+    
+    inline void SetTrainingMetrics(const TrainingMetrics& value) { m_trainingMetrics = value; }
+
+    
+    inline void SetTrainingMetrics(TrainingMetrics&& value) { m_trainingMetrics = std::move(value); }
+
+    
+    inline GetModelCustomizationJobResult& WithTrainingMetrics(const TrainingMetrics& value) { SetTrainingMetrics(value); return *this;}
+
+    
+    inline GetModelCustomizationJobResult& WithTrainingMetrics(TrainingMetrics&& value) { SetTrainingMetrics(std::move(value)); return *this;}
 
 
     /**
@@ -707,41 +707,41 @@ namespace Model
 
   private:
 
-    Aws::String m_baseModelArn;
-
-    Aws::String m_clientRequestToken;
-
-    Aws::Utils::DateTime m_creationTime;
-
-    Aws::Utils::DateTime m_endTime;
-
-    Aws::String m_failureMessage;
-
-    Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-
     Aws::String m_jobArn;
 
     Aws::String m_jobName;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
-
-    OutputDataConfig m_outputDataConfig;
+    Aws::String m_outputModelName;
 
     Aws::String m_outputModelArn;
 
-    Aws::String m_outputModelKmsKeyArn;
-
-    Aws::String m_outputModelName;
+    Aws::String m_clientRequestToken;
 
     Aws::String m_roleArn;
 
     ModelCustomizationJobStatus m_status;
 
+    Aws::String m_failureMessage;
+
+    Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+
+    Aws::Utils::DateTime m_endTime;
+
+    Aws::String m_baseModelArn;
+
+    Aws::Map<Aws::String, Aws::String> m_hyperParameters;
+
     TrainingDataConfig m_trainingDataConfig;
 
-    TrainingMetrics m_trainingMetrics;
-
     ValidationDataConfig m_validationDataConfig;
+
+    OutputDataConfig m_outputDataConfig;
+
+    Aws::String m_outputModelKmsKeyArn;
+
+    TrainingMetrics m_trainingMetrics;
 
     Aws::Vector<ValidatorMetric> m_validationMetrics;
 

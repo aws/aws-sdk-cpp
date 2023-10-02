@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/CustomModelSummary.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     AWS_BEDROCK_API ListCustomModelsResult();
     AWS_BEDROCK_API ListCustomModelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API ListCustomModelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>Model summaries.</p>
-     */
-    inline const Aws::Vector<CustomModelSummary>& GetModelSummaries() const{ return m_modelSummaries; }
-
-    /**
-     * <p>Model summaries.</p>
-     */
-    inline void SetModelSummaries(const Aws::Vector<CustomModelSummary>& value) { m_modelSummaries = value; }
-
-    /**
-     * <p>Model summaries.</p>
-     */
-    inline void SetModelSummaries(Aws::Vector<CustomModelSummary>&& value) { m_modelSummaries = std::move(value); }
-
-    /**
-     * <p>Model summaries.</p>
-     */
-    inline ListCustomModelsResult& WithModelSummaries(const Aws::Vector<CustomModelSummary>& value) { SetModelSummaries(value); return *this;}
-
-    /**
-     * <p>Model summaries.</p>
-     */
-    inline ListCustomModelsResult& WithModelSummaries(Aws::Vector<CustomModelSummary>&& value) { SetModelSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>Model summaries.</p>
-     */
-    inline ListCustomModelsResult& AddModelSummaries(const CustomModelSummary& value) { m_modelSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>Model summaries.</p>
-     */
-    inline ListCustomModelsResult& AddModelSummaries(CustomModelSummary&& value) { m_modelSummaries.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -106,6 +70,42 @@ namespace Model
     inline ListCustomModelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>Model summaries.</p>
+     */
+    inline const Aws::Vector<CustomModelSummary>& GetModelSummaries() const{ return m_modelSummaries; }
+
+    /**
+     * <p>Model summaries.</p>
+     */
+    inline void SetModelSummaries(const Aws::Vector<CustomModelSummary>& value) { m_modelSummaries = value; }
+
+    /**
+     * <p>Model summaries.</p>
+     */
+    inline void SetModelSummaries(Aws::Vector<CustomModelSummary>&& value) { m_modelSummaries = std::move(value); }
+
+    /**
+     * <p>Model summaries.</p>
+     */
+    inline ListCustomModelsResult& WithModelSummaries(const Aws::Vector<CustomModelSummary>& value) { SetModelSummaries(value); return *this;}
+
+    /**
+     * <p>Model summaries.</p>
+     */
+    inline ListCustomModelsResult& WithModelSummaries(Aws::Vector<CustomModelSummary>&& value) { SetModelSummaries(std::move(value)); return *this;}
+
+    /**
+     * <p>Model summaries.</p>
+     */
+    inline ListCustomModelsResult& AddModelSummaries(const CustomModelSummary& value) { m_modelSummaries.push_back(value); return *this; }
+
+    /**
+     * <p>Model summaries.</p>
+     */
+    inline ListCustomModelsResult& AddModelSummaries(CustomModelSummary&& value) { m_modelSummaries.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -129,9 +129,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<CustomModelSummary> m_modelSummaries;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<CustomModelSummary> m_modelSummaries;
 
     Aws::String m_requestId;
   };

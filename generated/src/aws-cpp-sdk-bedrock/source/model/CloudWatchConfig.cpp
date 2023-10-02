@@ -19,29 +19,22 @@ namespace Model
 {
 
 CloudWatchConfig::CloudWatchConfig() : 
-    m_largeDataDeliveryS3ConfigHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_largeDataDeliveryS3ConfigHasBeenSet(false)
 {
 }
 
 CloudWatchConfig::CloudWatchConfig(JsonView jsonValue) : 
-    m_largeDataDeliveryS3ConfigHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_largeDataDeliveryS3ConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 CloudWatchConfig& CloudWatchConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("largeDataDeliveryS3Config"))
-  {
-    m_largeDataDeliveryS3Config = jsonValue.GetObject("largeDataDeliveryS3Config");
-
-    m_largeDataDeliveryS3ConfigHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
@@ -56,18 +49,19 @@ CloudWatchConfig& CloudWatchConfig::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("largeDataDeliveryS3Config"))
+  {
+    m_largeDataDeliveryS3Config = jsonValue.GetObject("largeDataDeliveryS3Config");
+
+    m_largeDataDeliveryS3ConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue CloudWatchConfig::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_largeDataDeliveryS3ConfigHasBeenSet)
-  {
-   payload.WithObject("largeDataDeliveryS3Config", m_largeDataDeliveryS3Config.Jsonize());
-
-  }
 
   if(m_logGroupNameHasBeenSet)
   {
@@ -78,6 +72,12 @@ JsonValue CloudWatchConfig::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_largeDataDeliveryS3ConfigHasBeenSet)
+  {
+   payload.WithObject("largeDataDeliveryS3Config", m_largeDataDeliveryS3Config.Jsonize());
 
   }
 

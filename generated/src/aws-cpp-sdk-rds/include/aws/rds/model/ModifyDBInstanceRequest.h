@@ -163,7 +163,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to modify the DB instance class, and then run it again to upgrade the engine
+     * version.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -184,7 +189,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to modify the DB instance class, and then run it again to upgrade the engine
+     * version.</p> </li> </ul>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
@@ -205,7 +215,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to modify the DB instance class, and then run it again to upgrade the engine
+     * version.</p> </li> </ul>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -226,7 +241,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to modify the DB instance class, and then run it again to upgrade the engine
+     * version.</p> </li> </ul>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -247,7 +267,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to modify the DB instance class, and then run it again to upgrade the engine
+     * version.</p> </li> </ul>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -268,7 +293,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to modify the DB instance class, and then run it again to upgrade the engine
+     * version.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -289,7 +319,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to modify the DB instance class, and then run it again to upgrade the engine
+     * version.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -310,7 +345,12 @@ namespace Model
      * modify the DB instance class, an outage occurs during the change. The change is
      * applied during the next maintenance window, unless you specify
      * <code>ApplyImmediately</code> in your request. </p> <p>Default: Uses existing
-     * setting</p>
+     * setting</p> <p>Constraints:</p> <ul> <li> <p>If you are modifying the DB
+     * instance class and upgrading the engine version at the same time, the currently
+     * running engine version must be supported on the specified DB instance class.
+     * Otherwise, the operation returns an error. In this case, first run the operation
+     * to modify the DB instance class, and then run it again to upgrade the engine
+     * version.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -1465,6 +1505,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to modify the
+     * DB instance class, and then run it again to upgrade the engine version.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1484,6 +1530,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to modify the
+     * DB instance class, and then run it again to upgrade the engine version.</p>
+     * </li> </ul>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -1503,6 +1555,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to modify the
+     * DB instance class, and then run it again to upgrade the engine version.</p>
+     * </li> </ul>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1522,6 +1580,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to modify the
+     * DB instance class, and then run it again to upgrade the engine version.</p>
+     * </li> </ul>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -1541,6 +1605,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to modify the
+     * DB instance class, and then run it again to upgrade the engine version.</p>
+     * </li> </ul>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -1560,6 +1630,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to modify the
+     * DB instance class, and then run it again to upgrade the engine version.</p>
+     * </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -1579,6 +1655,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to modify the
+     * DB instance class, and then run it again to upgrade the engine version.</p>
+     * </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -1598,6 +1680,12 @@ namespace Model
      * be the same or higher than the version that the source DB instance or cluster is
      * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
      * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you are upgrading the engine version and
+     * modifying the DB instance class at the same time, the currently running engine
+     * version must be supported on the specified DB instance class. Otherwise, the
+     * operation returns an error. In this case, first run the operation to modify the
+     * DB instance class, and then run it again to upgrade the engine version.</p>
+     * </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

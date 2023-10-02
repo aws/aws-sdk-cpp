@@ -20,25 +20,25 @@ namespace Model
 
 LoggingConfig::LoggingConfig() : 
     m_cloudWatchConfigHasBeenSet(false),
-    m_embeddingDataDeliveryEnabled(false),
-    m_embeddingDataDeliveryEnabledHasBeenSet(false),
-    m_imageDataDeliveryEnabled(false),
-    m_imageDataDeliveryEnabledHasBeenSet(false),
     m_s3ConfigHasBeenSet(false),
     m_textDataDeliveryEnabled(false),
-    m_textDataDeliveryEnabledHasBeenSet(false)
+    m_textDataDeliveryEnabledHasBeenSet(false),
+    m_imageDataDeliveryEnabled(false),
+    m_imageDataDeliveryEnabledHasBeenSet(false),
+    m_embeddingDataDeliveryEnabled(false),
+    m_embeddingDataDeliveryEnabledHasBeenSet(false)
 {
 }
 
 LoggingConfig::LoggingConfig(JsonView jsonValue) : 
     m_cloudWatchConfigHasBeenSet(false),
-    m_embeddingDataDeliveryEnabled(false),
-    m_embeddingDataDeliveryEnabledHasBeenSet(false),
-    m_imageDataDeliveryEnabled(false),
-    m_imageDataDeliveryEnabledHasBeenSet(false),
     m_s3ConfigHasBeenSet(false),
     m_textDataDeliveryEnabled(false),
-    m_textDataDeliveryEnabledHasBeenSet(false)
+    m_textDataDeliveryEnabledHasBeenSet(false),
+    m_imageDataDeliveryEnabled(false),
+    m_imageDataDeliveryEnabledHasBeenSet(false),
+    m_embeddingDataDeliveryEnabled(false),
+    m_embeddingDataDeliveryEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,20 +50,6 @@ LoggingConfig& LoggingConfig::operator =(JsonView jsonValue)
     m_cloudWatchConfig = jsonValue.GetObject("cloudWatchConfig");
 
     m_cloudWatchConfigHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("embeddingDataDeliveryEnabled"))
-  {
-    m_embeddingDataDeliveryEnabled = jsonValue.GetBool("embeddingDataDeliveryEnabled");
-
-    m_embeddingDataDeliveryEnabledHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("imageDataDeliveryEnabled"))
-  {
-    m_imageDataDeliveryEnabled = jsonValue.GetBool("imageDataDeliveryEnabled");
-
-    m_imageDataDeliveryEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("s3Config"))
@@ -80,6 +66,20 @@ LoggingConfig& LoggingConfig::operator =(JsonView jsonValue)
     m_textDataDeliveryEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageDataDeliveryEnabled"))
+  {
+    m_imageDataDeliveryEnabled = jsonValue.GetBool("imageDataDeliveryEnabled");
+
+    m_imageDataDeliveryEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("embeddingDataDeliveryEnabled"))
+  {
+    m_embeddingDataDeliveryEnabled = jsonValue.GetBool("embeddingDataDeliveryEnabled");
+
+    m_embeddingDataDeliveryEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,18 +93,6 @@ JsonValue LoggingConfig::Jsonize() const
 
   }
 
-  if(m_embeddingDataDeliveryEnabledHasBeenSet)
-  {
-   payload.WithBool("embeddingDataDeliveryEnabled", m_embeddingDataDeliveryEnabled);
-
-  }
-
-  if(m_imageDataDeliveryEnabledHasBeenSet)
-  {
-   payload.WithBool("imageDataDeliveryEnabled", m_imageDataDeliveryEnabled);
-
-  }
-
   if(m_s3ConfigHasBeenSet)
   {
    payload.WithObject("s3Config", m_s3Config.Jsonize());
@@ -114,6 +102,18 @@ JsonValue LoggingConfig::Jsonize() const
   if(m_textDataDeliveryEnabledHasBeenSet)
   {
    payload.WithBool("textDataDeliveryEnabled", m_textDataDeliveryEnabled);
+
+  }
+
+  if(m_imageDataDeliveryEnabledHasBeenSet)
+  {
+   payload.WithBool("imageDataDeliveryEnabled", m_imageDataDeliveryEnabled);
+
+  }
+
+  if(m_embeddingDataDeliveryEnabledHasBeenSet)
+  {
+   payload.WithBool("embeddingDataDeliveryEnabled", m_embeddingDataDeliveryEnabled);
 
   }
 

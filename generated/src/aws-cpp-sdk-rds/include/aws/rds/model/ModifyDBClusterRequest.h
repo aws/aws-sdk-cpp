@@ -1190,37 +1190,37 @@ namespace Model
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
 

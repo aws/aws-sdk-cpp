@@ -31,45 +31,6 @@ GetModelCustomizationJobResult::GetModelCustomizationJobResult(const Aws::Amazon
 GetModelCustomizationJobResult& GetModelCustomizationJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("baseModelArn"))
-  {
-    m_baseModelArn = jsonValue.GetString("baseModelArn");
-
-  }
-
-  if(jsonValue.ValueExists("clientRequestToken"))
-  {
-    m_clientRequestToken = jsonValue.GetString("clientRequestToken");
-
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
-  if(jsonValue.ValueExists("endTime"))
-  {
-    m_endTime = jsonValue.GetString("endTime");
-
-  }
-
-  if(jsonValue.ValueExists("failureMessage"))
-  {
-    m_failureMessage = jsonValue.GetString("failureMessage");
-
-  }
-
-  if(jsonValue.ValueExists("hyperParameters"))
-  {
-    Aws::Map<Aws::String, JsonView> hyperParametersJsonMap = jsonValue.GetObject("hyperParameters").GetAllObjects();
-    for(auto& hyperParametersItem : hyperParametersJsonMap)
-    {
-      m_hyperParameters[hyperParametersItem.first] = hyperParametersItem.second.AsString();
-    }
-  }
-
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
@@ -82,15 +43,9 @@ GetModelCustomizationJobResult& GetModelCustomizationJobResult::operator =(const
 
   }
 
-  if(jsonValue.ValueExists("lastModifiedTime"))
+  if(jsonValue.ValueExists("outputModelName"))
   {
-    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
-
-  }
-
-  if(jsonValue.ValueExists("outputDataConfig"))
-  {
-    m_outputDataConfig = jsonValue.GetObject("outputDataConfig");
+    m_outputModelName = jsonValue.GetString("outputModelName");
 
   }
 
@@ -100,15 +55,9 @@ GetModelCustomizationJobResult& GetModelCustomizationJobResult::operator =(const
 
   }
 
-  if(jsonValue.ValueExists("outputModelKmsKeyArn"))
+  if(jsonValue.ValueExists("clientRequestToken"))
   {
-    m_outputModelKmsKeyArn = jsonValue.GetString("outputModelKmsKeyArn");
-
-  }
-
-  if(jsonValue.ValueExists("outputModelName"))
-  {
-    m_outputModelName = jsonValue.GetString("outputModelName");
+    m_clientRequestToken = jsonValue.GetString("clientRequestToken");
 
   }
 
@@ -124,21 +73,72 @@ GetModelCustomizationJobResult& GetModelCustomizationJobResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("failureMessage"))
+  {
+    m_failureMessage = jsonValue.GetString("failureMessage");
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+  }
+
+  if(jsonValue.ValueExists("lastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
+
+  }
+
+  if(jsonValue.ValueExists("endTime"))
+  {
+    m_endTime = jsonValue.GetString("endTime");
+
+  }
+
+  if(jsonValue.ValueExists("baseModelArn"))
+  {
+    m_baseModelArn = jsonValue.GetString("baseModelArn");
+
+  }
+
+  if(jsonValue.ValueExists("hyperParameters"))
+  {
+    Aws::Map<Aws::String, JsonView> hyperParametersJsonMap = jsonValue.GetObject("hyperParameters").GetAllObjects();
+    for(auto& hyperParametersItem : hyperParametersJsonMap)
+    {
+      m_hyperParameters[hyperParametersItem.first] = hyperParametersItem.second.AsString();
+    }
+  }
+
   if(jsonValue.ValueExists("trainingDataConfig"))
   {
     m_trainingDataConfig = jsonValue.GetObject("trainingDataConfig");
 
   }
 
-  if(jsonValue.ValueExists("trainingMetrics"))
-  {
-    m_trainingMetrics = jsonValue.GetObject("trainingMetrics");
-
-  }
-
   if(jsonValue.ValueExists("validationDataConfig"))
   {
     m_validationDataConfig = jsonValue.GetObject("validationDataConfig");
+
+  }
+
+  if(jsonValue.ValueExists("outputDataConfig"))
+  {
+    m_outputDataConfig = jsonValue.GetObject("outputDataConfig");
+
+  }
+
+  if(jsonValue.ValueExists("outputModelKmsKeyArn"))
+  {
+    m_outputModelKmsKeyArn = jsonValue.GetString("outputModelKmsKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("trainingMetrics"))
+  {
+    m_trainingMetrics = jsonValue.GetObject("trainingMetrics");
 
   }
 

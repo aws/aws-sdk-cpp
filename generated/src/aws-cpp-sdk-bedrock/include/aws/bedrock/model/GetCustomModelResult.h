@@ -6,13 +6,13 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/bedrock/model/OutputDataConfig.h>
 #include <aws/bedrock/model/TrainingDataConfig.h>
-#include <aws/bedrock/model/TrainingMetrics.h>
 #include <aws/bedrock/model/ValidationDataConfig.h>
+#include <aws/bedrock/model/OutputDataConfig.h>
+#include <aws/bedrock/model/TrainingMetrics.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/bedrock/model/ValidatorMetric.h>
 #include <utility>
 
@@ -38,6 +38,150 @@ namespace Model
     AWS_BEDROCK_API GetCustomModelResult();
     AWS_BEDROCK_API GetCustomModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API GetCustomModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>ARN associated with this model.</p>
+     */
+    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+
+    /**
+     * <p>ARN associated with this model.</p>
+     */
+    inline void SetModelArn(const Aws::String& value) { m_modelArn = value; }
+
+    /**
+     * <p>ARN associated with this model.</p>
+     */
+    inline void SetModelArn(Aws::String&& value) { m_modelArn = std::move(value); }
+
+    /**
+     * <p>ARN associated with this model.</p>
+     */
+    inline void SetModelArn(const char* value) { m_modelArn.assign(value); }
+
+    /**
+     * <p>ARN associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
+
+    /**
+     * <p>ARN associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
+
+    /**
+     * <p>ARN associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+
+
+    /**
+     * <p>Model name associated with this model.</p>
+     */
+    inline const Aws::String& GetModelName() const{ return m_modelName; }
+
+    /**
+     * <p>Model name associated with this model.</p>
+     */
+    inline void SetModelName(const Aws::String& value) { m_modelName = value; }
+
+    /**
+     * <p>Model name associated with this model.</p>
+     */
+    inline void SetModelName(Aws::String&& value) { m_modelName = std::move(value); }
+
+    /**
+     * <p>Model name associated with this model.</p>
+     */
+    inline void SetModelName(const char* value) { m_modelName.assign(value); }
+
+    /**
+     * <p>Model name associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
+
+    /**
+     * <p>Model name associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
+
+    /**
+     * <p>Model name associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithModelName(const char* value) { SetModelName(value); return *this;}
+
+
+    /**
+     * <p>Job name associated with this model.</p>
+     */
+    inline const Aws::String& GetJobName() const{ return m_jobName; }
+
+    /**
+     * <p>Job name associated with this model.</p>
+     */
+    inline void SetJobName(const Aws::String& value) { m_jobName = value; }
+
+    /**
+     * <p>Job name associated with this model.</p>
+     */
+    inline void SetJobName(Aws::String&& value) { m_jobName = std::move(value); }
+
+    /**
+     * <p>Job name associated with this model.</p>
+     */
+    inline void SetJobName(const char* value) { m_jobName.assign(value); }
+
+    /**
+     * <p>Job name associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
+
+    /**
+     * <p>Job name associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
+
+    /**
+     * <p>Job name associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithJobName(const char* value) { SetJobName(value); return *this;}
+
+
+    /**
+     * <p>Job ARN associated with this model.</p>
+     */
+    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+
+    /**
+     * <p>Job ARN associated with this model.</p>
+     */
+    inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
+
+    /**
+     * <p>Job ARN associated with this model.</p>
+     */
+    inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
+
+    /**
+     * <p>Job ARN associated with this model.</p>
+     */
+    inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
+
+    /**
+     * <p>Job ARN associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
+
+    /**
+     * <p>Job ARN associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Job ARN associated with this model.</p>
+     */
+    inline GetCustomModelResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
 
 
     /**
@@ -77,29 +221,39 @@ namespace Model
 
 
     /**
-     * <p>Creation time of the model.</p>
+     * <p>The custom model is encrypted at rest using this key.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetModelKmsKeyArn() const{ return m_modelKmsKeyArn; }
 
     /**
-     * <p>Creation time of the model.</p>
+     * <p>The custom model is encrypted at rest using this key.</p>
      */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+    inline void SetModelKmsKeyArn(const Aws::String& value) { m_modelKmsKeyArn = value; }
 
     /**
-     * <p>Creation time of the model.</p>
+     * <p>The custom model is encrypted at rest using this key.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+    inline void SetModelKmsKeyArn(Aws::String&& value) { m_modelKmsKeyArn = std::move(value); }
 
     /**
-     * <p>Creation time of the model.</p>
+     * <p>The custom model is encrypted at rest using this key.</p>
      */
-    inline GetCustomModelResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+    inline void SetModelKmsKeyArn(const char* value) { m_modelKmsKeyArn.assign(value); }
 
     /**
-     * <p>Creation time of the model.</p>
+     * <p>The custom model is encrypted at rest using this key.</p>
      */
-    inline GetCustomModelResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline GetCustomModelResult& WithModelKmsKeyArn(const Aws::String& value) { SetModelKmsKeyArn(value); return *this;}
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline GetCustomModelResult& WithModelKmsKeyArn(Aws::String&& value) { SetModelKmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom model is encrypted at rest using this key.</p>
+     */
+    inline GetCustomModelResult& WithModelKmsKeyArn(const char* value) { SetModelKmsKeyArn(value); return *this;}
 
 
     /**
@@ -164,183 +318,45 @@ namespace Model
 
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Information about the training dataset.</p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+    inline const TrainingDataConfig& GetTrainingDataConfig() const{ return m_trainingDataConfig; }
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Information about the training dataset.</p>
      */
-    inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
+    inline void SetTrainingDataConfig(const TrainingDataConfig& value) { m_trainingDataConfig = value; }
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Information about the training dataset.</p>
      */
-    inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
+    inline void SetTrainingDataConfig(TrainingDataConfig&& value) { m_trainingDataConfig = std::move(value); }
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Information about the training dataset.</p>
      */
-    inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
+    inline GetCustomModelResult& WithTrainingDataConfig(const TrainingDataConfig& value) { SetTrainingDataConfig(value); return *this;}
 
     /**
-     * <p>Job ARN associated with this model.</p>
+     * <p>Information about the training dataset.</p>
      */
-    inline GetCustomModelResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-
-    /**
-     * <p>Job ARN associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Job ARN associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    inline GetCustomModelResult& WithTrainingDataConfig(TrainingDataConfig&& value) { SetTrainingDataConfig(std::move(value)); return *this;}
 
 
-    /**
-     * <p>Job name associated with this model.</p>
-     */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    
+    inline const ValidationDataConfig& GetValidationDataConfig() const{ return m_validationDataConfig; }
 
-    /**
-     * <p>Job name associated with this model.</p>
-     */
-    inline void SetJobName(const Aws::String& value) { m_jobName = value; }
+    
+    inline void SetValidationDataConfig(const ValidationDataConfig& value) { m_validationDataConfig = value; }
 
-    /**
-     * <p>Job name associated with this model.</p>
-     */
-    inline void SetJobName(Aws::String&& value) { m_jobName = std::move(value); }
+    
+    inline void SetValidationDataConfig(ValidationDataConfig&& value) { m_validationDataConfig = std::move(value); }
 
-    /**
-     * <p>Job name associated with this model.</p>
-     */
-    inline void SetJobName(const char* value) { m_jobName.assign(value); }
+    
+    inline GetCustomModelResult& WithValidationDataConfig(const ValidationDataConfig& value) { SetValidationDataConfig(value); return *this;}
 
-    /**
-     * <p>Job name associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-
-    /**
-     * <p>Job name associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>Job name associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithJobName(const char* value) { SetJobName(value); return *this;}
-
-
-    /**
-     * <p>ARN associated with this model.</p>
-     */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
-
-    /**
-     * <p>ARN associated with this model.</p>
-     */
-    inline void SetModelArn(const Aws::String& value) { m_modelArn = value; }
-
-    /**
-     * <p>ARN associated with this model.</p>
-     */
-    inline void SetModelArn(Aws::String&& value) { m_modelArn = std::move(value); }
-
-    /**
-     * <p>ARN associated with this model.</p>
-     */
-    inline void SetModelArn(const char* value) { m_modelArn.assign(value); }
-
-    /**
-     * <p>ARN associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-
-    /**
-     * <p>ARN associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithModelArn(const char* value) { SetModelArn(value); return *this;}
-
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline const Aws::String& GetModelKmsKeyArn() const{ return m_modelKmsKeyArn; }
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline void SetModelKmsKeyArn(const Aws::String& value) { m_modelKmsKeyArn = value; }
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline void SetModelKmsKeyArn(Aws::String&& value) { m_modelKmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline void SetModelKmsKeyArn(const char* value) { m_modelKmsKeyArn.assign(value); }
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline GetCustomModelResult& WithModelKmsKeyArn(const Aws::String& value) { SetModelKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline GetCustomModelResult& WithModelKmsKeyArn(Aws::String&& value) { SetModelKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The custom model is encrypted at rest using this key.</p>
-     */
-    inline GetCustomModelResult& WithModelKmsKeyArn(const char* value) { SetModelKmsKeyArn(value); return *this;}
-
-
-    /**
-     * <p>Model name associated with this model.</p>
-     */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
-
-    /**
-     * <p>Model name associated with this model.</p>
-     */
-    inline void SetModelName(const Aws::String& value) { m_modelName = value; }
-
-    /**
-     * <p>Model name associated with this model.</p>
-     */
-    inline void SetModelName(Aws::String&& value) { m_modelName = std::move(value); }
-
-    /**
-     * <p>Model name associated with this model.</p>
-     */
-    inline void SetModelName(const char* value) { m_modelName.assign(value); }
-
-    /**
-     * <p>Model name associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-
-    /**
-     * <p>Model name associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>Model name associated with this model.</p>
-     */
-    inline GetCustomModelResult& WithModelName(const char* value) { SetModelName(value); return *this;}
+    
+    inline GetCustomModelResult& WithValidationDataConfig(ValidationDataConfig&& value) { SetValidationDataConfig(std::move(value)); return *this;}
 
 
     /**
@@ -370,32 +386,6 @@ namespace Model
 
 
     /**
-     * <p>Information about the training dataset.</p>
-     */
-    inline const TrainingDataConfig& GetTrainingDataConfig() const{ return m_trainingDataConfig; }
-
-    /**
-     * <p>Information about the training dataset.</p>
-     */
-    inline void SetTrainingDataConfig(const TrainingDataConfig& value) { m_trainingDataConfig = value; }
-
-    /**
-     * <p>Information about the training dataset.</p>
-     */
-    inline void SetTrainingDataConfig(TrainingDataConfig&& value) { m_trainingDataConfig = std::move(value); }
-
-    /**
-     * <p>Information about the training dataset.</p>
-     */
-    inline GetCustomModelResult& WithTrainingDataConfig(const TrainingDataConfig& value) { SetTrainingDataConfig(value); return *this;}
-
-    /**
-     * <p>Information about the training dataset.</p>
-     */
-    inline GetCustomModelResult& WithTrainingDataConfig(TrainingDataConfig&& value) { SetTrainingDataConfig(std::move(value)); return *this;}
-
-
-    /**
      * <p>The training metrics from the job creation.</p>
      */
     inline const TrainingMetrics& GetTrainingMetrics() const{ return m_trainingMetrics; }
@@ -419,22 +409,6 @@ namespace Model
      * <p>The training metrics from the job creation.</p>
      */
     inline GetCustomModelResult& WithTrainingMetrics(TrainingMetrics&& value) { SetTrainingMetrics(std::move(value)); return *this;}
-
-
-    
-    inline const ValidationDataConfig& GetValidationDataConfig() const{ return m_validationDataConfig; }
-
-    
-    inline void SetValidationDataConfig(const ValidationDataConfig& value) { m_validationDataConfig = value; }
-
-    
-    inline void SetValidationDataConfig(ValidationDataConfig&& value) { m_validationDataConfig = std::move(value); }
-
-    
-    inline GetCustomModelResult& WithValidationDataConfig(const ValidationDataConfig& value) { SetValidationDataConfig(value); return *this;}
-
-    
-    inline GetCustomModelResult& WithValidationDataConfig(ValidationDataConfig&& value) { SetValidationDataConfig(std::move(value)); return *this;}
 
 
     /**
@@ -473,6 +447,32 @@ namespace Model
     inline GetCustomModelResult& AddValidationMetrics(ValidatorMetric&& value) { m_validationMetrics.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Creation time of the model.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>Creation time of the model.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>Creation time of the model.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>Creation time of the model.</p>
+     */
+    inline GetCustomModelResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>Creation time of the model.</p>
+     */
+    inline GetCustomModelResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -496,31 +496,31 @@ namespace Model
 
   private:
 
-    Aws::String m_baseModelArn;
-
-    Aws::Utils::DateTime m_creationTime;
-
-    Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-
-    Aws::String m_jobArn;
-
-    Aws::String m_jobName;
-
     Aws::String m_modelArn;
-
-    Aws::String m_modelKmsKeyArn;
 
     Aws::String m_modelName;
 
-    OutputDataConfig m_outputDataConfig;
+    Aws::String m_jobName;
+
+    Aws::String m_jobArn;
+
+    Aws::String m_baseModelArn;
+
+    Aws::String m_modelKmsKeyArn;
+
+    Aws::Map<Aws::String, Aws::String> m_hyperParameters;
 
     TrainingDataConfig m_trainingDataConfig;
 
-    TrainingMetrics m_trainingMetrics;
-
     ValidationDataConfig m_validationDataConfig;
 
+    OutputDataConfig m_outputDataConfig;
+
+    TrainingMetrics m_trainingMetrics;
+
     Aws::Vector<ValidatorMetric> m_validationMetrics;
+
+    Aws::Utils::DateTime m_creationTime;
 
     Aws::String m_requestId;
   };

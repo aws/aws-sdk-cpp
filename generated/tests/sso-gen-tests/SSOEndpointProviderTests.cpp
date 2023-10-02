@@ -290,7 +290,7 @@ static const Aws::Vector<SSOEndpointProviderEndpointTestCase> TEST_CASES = {
   {"For region us-gov-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"https://portal.sso-fips.us-gov-east-1.amazonaws.com",
+    {{/*epUrl*/"https://portal.sso.us-gov-east-1.amazonaws.com",
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },

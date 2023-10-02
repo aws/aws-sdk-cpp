@@ -16,13 +16,13 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListCustomModelsRequest::ListCustomModelsRequest() : 
-    m_baseModelArnEqualsHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
     m_creationTimeBeforeHasBeenSet(false),
+    m_creationTimeAfterHasBeenSet(false),
+    m_nameContainsHasBeenSet(false),
+    m_baseModelArnEqualsHasBeenSet(false),
     m_foundationModelArnEqualsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_sortBy(SortModelsBy::NOT_SET),
     m_sortByHasBeenSet(false),
@@ -39,10 +39,10 @@ Aws::String ListCustomModelsRequest::SerializePayload() const
 void ListCustomModelsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_baseModelArnEqualsHasBeenSet)
+    if(m_creationTimeBeforeHasBeenSet)
     {
-      ss << m_baseModelArnEquals;
-      uri.AddQueryStringParameter("baseModelArnEquals", ss.str());
+      ss << m_creationTimeBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+      uri.AddQueryStringParameter("creationTimeBefore", ss.str());
       ss.str("");
     }
 
@@ -53,10 +53,17 @@ void ListCustomModelsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_creationTimeBeforeHasBeenSet)
+    if(m_nameContainsHasBeenSet)
     {
-      ss << m_creationTimeBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-      uri.AddQueryStringParameter("creationTimeBefore", ss.str());
+      ss << m_nameContains;
+      uri.AddQueryStringParameter("nameContains", ss.str());
+      ss.str("");
+    }
+
+    if(m_baseModelArnEqualsHasBeenSet)
+    {
+      ss << m_baseModelArnEquals;
+      uri.AddQueryStringParameter("baseModelArnEquals", ss.str());
       ss.str("");
     }
 
@@ -71,13 +78,6 @@ void ListCustomModelsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
-    if(m_nameContainsHasBeenSet)
-    {
-      ss << m_nameContains;
-      uri.AddQueryStringParameter("nameContains", ss.str());
       ss.str("");
     }
 
