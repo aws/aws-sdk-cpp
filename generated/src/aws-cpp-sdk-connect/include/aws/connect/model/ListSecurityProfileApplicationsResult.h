@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p>A list of the third party application's metadata.</p>
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of the third party application's metadata.</p>
      */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
 
     /**
-     * <p>A list of the third party application's metadata.</p>
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of the third party application's metadata.</p>
      */
     inline void SetApplications(const Aws::Vector<Application>& value) { m_applications = value; }
 
     /**
-     * <p>A list of the third party application's metadata.</p>
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of the third party application's metadata.</p>
      */
     inline void SetApplications(Aws::Vector<Application>&& value) { m_applications = std::move(value); }
 
     /**
-     * <p>A list of the third party application's metadata.</p>
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of the third party application's metadata.</p>
      */
     inline ListSecurityProfileApplicationsResult& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
 
     /**
-     * <p>A list of the third party application's metadata.</p>
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of the third party application's metadata.</p>
      */
     inline ListSecurityProfileApplicationsResult& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the third party application's metadata.</p>
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of the third party application's metadata.</p>
      */
     inline ListSecurityProfileApplicationsResult& AddApplications(const Application& value) { m_applications.push_back(value); return *this; }
 
     /**
-     * <p>A list of the third party application's metadata.</p>
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of the third party application's metadata.</p>
      */
     inline ListSecurityProfileApplicationsResult& AddApplications(Application&& value) { m_applications.push_back(std::move(value)); return *this; }
 

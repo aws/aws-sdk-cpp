@@ -204,47 +204,6 @@ namespace Model
 
 
     /**
-     * Specifies which input metadata to use for the default "Follow input" option for
-     * the following settings: resolution, frame rate, and pixel aspect ratio. In the
-     * simplest case, specify which input is used based on its index in the job. For
-     * example if you specify 3, then the fourth input will be used from each input. If
-     * the job does not have a fourth input, then the first input will be used. If no
-     * followInputIndex is specified, then 0 will be chosen automatically.
-     */
-    inline int GetFollowInputIndex() const{ return m_followInputIndex; }
-
-    /**
-     * Specifies which input metadata to use for the default "Follow input" option for
-     * the following settings: resolution, frame rate, and pixel aspect ratio. In the
-     * simplest case, specify which input is used based on its index in the job. For
-     * example if you specify 3, then the fourth input will be used from each input. If
-     * the job does not have a fourth input, then the first input will be used. If no
-     * followInputIndex is specified, then 0 will be chosen automatically.
-     */
-    inline bool FollowInputIndexHasBeenSet() const { return m_followInputIndexHasBeenSet; }
-
-    /**
-     * Specifies which input metadata to use for the default "Follow input" option for
-     * the following settings: resolution, frame rate, and pixel aspect ratio. In the
-     * simplest case, specify which input is used based on its index in the job. For
-     * example if you specify 3, then the fourth input will be used from each input. If
-     * the job does not have a fourth input, then the first input will be used. If no
-     * followInputIndex is specified, then 0 will be chosen automatically.
-     */
-    inline void SetFollowInputIndex(int value) { m_followInputIndexHasBeenSet = true; m_followInputIndex = value; }
-
-    /**
-     * Specifies which input metadata to use for the default "Follow input" option for
-     * the following settings: resolution, frame rate, and pixel aspect ratio. In the
-     * simplest case, specify which input is used based on its index in the job. For
-     * example if you specify 3, then the fourth input will be used from each input. If
-     * the job does not have a fourth input, then the first input will be used. If no
-     * followInputIndex is specified, then 0 will be chosen automatically.
-     */
-    inline JobSettings& WithFollowInputIndex(int value) { SetFollowInputIndex(value); return *this;}
-
-
-    /**
      * Use Inputs to define source file used in the transcode job. There can be
      * multiple inputs add in a job. These inputs will be concantenated together to
      * create the output.
@@ -710,9 +669,6 @@ namespace Model
 
     ExtendedDataServices m_extendedDataServices;
     bool m_extendedDataServicesHasBeenSet = false;
-
-    int m_followInputIndex;
-    bool m_followInputIndexHasBeenSet = false;
 
     Aws::Vector<Input> m_inputs;
     bool m_inputsHasBeenSet = false;
