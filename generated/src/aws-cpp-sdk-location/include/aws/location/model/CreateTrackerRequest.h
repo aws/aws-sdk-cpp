@@ -109,6 +109,71 @@ namespace Model
 
 
     /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>  <p>If you wish to encrypt
+     * your data using your own KMS customer managed key, then the Bounding Polygon
+     * Queries feature will be disabled by default. This is because by using this
+     * feature, a representation of your device positions will not be encrypted using
+     * the your KMS managed key. The exact device position, however; is still encrypted
+     * using your managed key.</p> <p>You can choose to opt-in to the Bounding Polygon
+     * Quseries feature. This is done by setting the
+     * <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or
+     * updating a Tracker.</p> 
+     */
+    inline bool GetKmsKeyEnableGeospatialQueries() const{ return m_kmsKeyEnableGeospatialQueries; }
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>  <p>If you wish to encrypt
+     * your data using your own KMS customer managed key, then the Bounding Polygon
+     * Queries feature will be disabled by default. This is because by using this
+     * feature, a representation of your device positions will not be encrypted using
+     * the your KMS managed key. The exact device position, however; is still encrypted
+     * using your managed key.</p> <p>You can choose to opt-in to the Bounding Polygon
+     * Quseries feature. This is done by setting the
+     * <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or
+     * updating a Tracker.</p> 
+     */
+    inline bool KmsKeyEnableGeospatialQueriesHasBeenSet() const { return m_kmsKeyEnableGeospatialQueriesHasBeenSet; }
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>  <p>If you wish to encrypt
+     * your data using your own KMS customer managed key, then the Bounding Polygon
+     * Queries feature will be disabled by default. This is because by using this
+     * feature, a representation of your device positions will not be encrypted using
+     * the your KMS managed key. The exact device position, however; is still encrypted
+     * using your managed key.</p> <p>You can choose to opt-in to the Bounding Polygon
+     * Quseries feature. This is done by setting the
+     * <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or
+     * updating a Tracker.</p> 
+     */
+    inline void SetKmsKeyEnableGeospatialQueries(bool value) { m_kmsKeyEnableGeospatialQueriesHasBeenSet = true; m_kmsKeyEnableGeospatialQueries = value; }
+
+    /**
+     * <p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if
+     * you are using a KMS customer managed key.</p>  <p>If you wish to encrypt
+     * your data using your own KMS customer managed key, then the Bounding Polygon
+     * Queries feature will be disabled by default. This is because by using this
+     * feature, a representation of your device positions will not be encrypted using
+     * the your KMS managed key. The exact device position, however; is still encrypted
+     * using your managed key.</p> <p>You can choose to opt-in to the Bounding Polygon
+     * Quseries feature. This is done by setting the
+     * <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or
+     * updating a Tracker.</p> 
+     */
+    inline CreateTrackerRequest& WithKmsKeyEnableGeospatialQueries(bool value) { SetKmsKeyEnableGeospatialQueries(value); return *this;}
+
+
+    /**
      * <p>A key identifier for an <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
      * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
@@ -567,6 +632,9 @@ namespace Model
 
     bool m_eventBridgeEnabled;
     bool m_eventBridgeEnabledHasBeenSet = false;
+
+    bool m_kmsKeyEnableGeospatialQueries;
+    bool m_kmsKeyEnableGeospatialQueriesHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;

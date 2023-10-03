@@ -44,6 +44,11 @@ namespace Model
      * <p>The ARN from a reference execution of the current pipeline. Used to copy
      * input collaterals needed for the selected steps to run. The execution status of
      * the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
+     * <p>This field is required if the steps you specify for
+     * <code>SelectedSteps</code> depend on output collaterals from any non-specified
+     * pipeline steps. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective
+     * Execution for Pipeline Steps</a>.</p>
      */
     inline const Aws::String& GetSourcePipelineExecutionArn() const{ return m_sourcePipelineExecutionArn; }
 
@@ -51,6 +56,11 @@ namespace Model
      * <p>The ARN from a reference execution of the current pipeline. Used to copy
      * input collaterals needed for the selected steps to run. The execution status of
      * the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
+     * <p>This field is required if the steps you specify for
+     * <code>SelectedSteps</code> depend on output collaterals from any non-specified
+     * pipeline steps. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective
+     * Execution for Pipeline Steps</a>.</p>
      */
     inline bool SourcePipelineExecutionArnHasBeenSet() const { return m_sourcePipelineExecutionArnHasBeenSet; }
 
@@ -58,6 +68,11 @@ namespace Model
      * <p>The ARN from a reference execution of the current pipeline. Used to copy
      * input collaterals needed for the selected steps to run. The execution status of
      * the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
+     * <p>This field is required if the steps you specify for
+     * <code>SelectedSteps</code> depend on output collaterals from any non-specified
+     * pipeline steps. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective
+     * Execution for Pipeline Steps</a>.</p>
      */
     inline void SetSourcePipelineExecutionArn(const Aws::String& value) { m_sourcePipelineExecutionArnHasBeenSet = true; m_sourcePipelineExecutionArn = value; }
 
@@ -65,6 +80,11 @@ namespace Model
      * <p>The ARN from a reference execution of the current pipeline. Used to copy
      * input collaterals needed for the selected steps to run. The execution status of
      * the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
+     * <p>This field is required if the steps you specify for
+     * <code>SelectedSteps</code> depend on output collaterals from any non-specified
+     * pipeline steps. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective
+     * Execution for Pipeline Steps</a>.</p>
      */
     inline void SetSourcePipelineExecutionArn(Aws::String&& value) { m_sourcePipelineExecutionArnHasBeenSet = true; m_sourcePipelineExecutionArn = std::move(value); }
 
@@ -72,6 +92,11 @@ namespace Model
      * <p>The ARN from a reference execution of the current pipeline. Used to copy
      * input collaterals needed for the selected steps to run. The execution status of
      * the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
+     * <p>This field is required if the steps you specify for
+     * <code>SelectedSteps</code> depend on output collaterals from any non-specified
+     * pipeline steps. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective
+     * Execution for Pipeline Steps</a>.</p>
      */
     inline void SetSourcePipelineExecutionArn(const char* value) { m_sourcePipelineExecutionArnHasBeenSet = true; m_sourcePipelineExecutionArn.assign(value); }
 
@@ -79,6 +104,11 @@ namespace Model
      * <p>The ARN from a reference execution of the current pipeline. Used to copy
      * input collaterals needed for the selected steps to run. The execution status of
      * the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
+     * <p>This field is required if the steps you specify for
+     * <code>SelectedSteps</code> depend on output collaterals from any non-specified
+     * pipeline steps. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective
+     * Execution for Pipeline Steps</a>.</p>
      */
     inline SelectiveExecutionConfig& WithSourcePipelineExecutionArn(const Aws::String& value) { SetSourcePipelineExecutionArn(value); return *this;}
 
@@ -86,6 +116,11 @@ namespace Model
      * <p>The ARN from a reference execution of the current pipeline. Used to copy
      * input collaterals needed for the selected steps to run. The execution status of
      * the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
+     * <p>This field is required if the steps you specify for
+     * <code>SelectedSteps</code> depend on output collaterals from any non-specified
+     * pipeline steps. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective
+     * Execution for Pipeline Steps</a>.</p>
      */
     inline SelectiveExecutionConfig& WithSourcePipelineExecutionArn(Aws::String&& value) { SetSourcePipelineExecutionArn(std::move(value)); return *this;}
 
@@ -93,6 +128,11 @@ namespace Model
      * <p>The ARN from a reference execution of the current pipeline. Used to copy
      * input collaterals needed for the selected steps to run. The execution status of
      * the pipeline can be either <code>Failed</code> or <code>Success</code>.</p>
+     * <p>This field is required if the steps you specify for
+     * <code>SelectedSteps</code> depend on output collaterals from any non-specified
+     * pipeline steps. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective
+     * Execution for Pipeline Steps</a>.</p>
      */
     inline SelectiveExecutionConfig& WithSourcePipelineExecutionArn(const char* value) { SetSourcePipelineExecutionArn(value); return *this;}
 

@@ -11,6 +11,7 @@
 #include <aws/mediaconvert/model/H265CodecLevel.h>
 #include <aws/mediaconvert/model/H265CodecProfile.h>
 #include <aws/mediaconvert/model/H265DynamicSubGop.h>
+#include <aws/mediaconvert/model/H265EndOfStreamMarkers.h>
 #include <aws/mediaconvert/model/H265FlickerAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/H265FramerateControl.h>
 #include <aws/mediaconvert/model/H265FramerateConversionAlgorithm.h>
@@ -408,6 +409,55 @@ namespace Model
      * use the same number B-frames for all types of content: Choose Static.
      */
     inline H265Settings& WithDynamicSubGop(H265DynamicSubGop&& value) { SetDynamicSubGop(std::move(value)); return *this;}
+
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline const H265EndOfStreamMarkers& GetEndOfStreamMarkers() const{ return m_endOfStreamMarkers; }
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline bool EndOfStreamMarkersHasBeenSet() const { return m_endOfStreamMarkersHasBeenSet; }
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline void SetEndOfStreamMarkers(const H265EndOfStreamMarkers& value) { m_endOfStreamMarkersHasBeenSet = true; m_endOfStreamMarkers = value; }
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline void SetEndOfStreamMarkers(H265EndOfStreamMarkers&& value) { m_endOfStreamMarkersHasBeenSet = true; m_endOfStreamMarkers = std::move(value); }
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline H265Settings& WithEndOfStreamMarkers(const H265EndOfStreamMarkers& value) { SetEndOfStreamMarkers(value); return *this;}
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline H265Settings& WithEndOfStreamMarkers(H265EndOfStreamMarkers&& value) { SetEndOfStreamMarkers(std::move(value)); return *this;}
 
 
     /**
@@ -2298,6 +2348,9 @@ namespace Model
 
     H265DynamicSubGop m_dynamicSubGop;
     bool m_dynamicSubGopHasBeenSet = false;
+
+    H265EndOfStreamMarkers m_endOfStreamMarkers;
+    bool m_endOfStreamMarkersHasBeenSet = false;
 
     H265FlickerAdaptiveQuantization m_flickerAdaptiveQuantization;
     bool m_flickerAdaptiveQuantizationHasBeenSet = false;

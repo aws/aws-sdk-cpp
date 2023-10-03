@@ -24,7 +24,9 @@ LensUpgradeSummary::LensUpgradeSummary() :
     m_lensAliasHasBeenSet(false),
     m_lensArnHasBeenSet(false),
     m_currentLensVersionHasBeenSet(false),
-    m_latestLensVersionHasBeenSet(false)
+    m_latestLensVersionHasBeenSet(false),
+    m_resourceArnHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ LensUpgradeSummary::LensUpgradeSummary(JsonView jsonValue) :
     m_lensAliasHasBeenSet(false),
     m_lensArnHasBeenSet(false),
     m_currentLensVersionHasBeenSet(false),
-    m_latestLensVersionHasBeenSet(false)
+    m_latestLensVersionHasBeenSet(false),
+    m_resourceArnHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +87,20 @@ LensUpgradeSummary& LensUpgradeSummary::operator =(JsonView jsonValue)
     m_latestLensVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceArn"))
+  {
+    m_resourceArn = jsonValue.GetString("ResourceArn");
+
+    m_resourceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceName"))
+  {
+    m_resourceName = jsonValue.GetString("ResourceName");
+
+    m_resourceNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +141,18 @@ JsonValue LensUpgradeSummary::Jsonize() const
   if(m_latestLensVersionHasBeenSet)
   {
    payload.WithString("LatestLensVersion", m_latestLensVersion);
+
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
+  if(m_resourceNameHasBeenSet)
+  {
+   payload.WithString("ResourceName", m_resourceName);
 
   }
 
