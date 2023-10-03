@@ -29,8 +29,14 @@ the development efforts by submitting pull requests and sending us feedback and 
 
 #### To create an **out-of-source build**:
 1. Install CMake and the relevant build tools for your platform. Ensure these are available in your executable path.
-2. Create your build directory. Replace <BUILD_DIR> with your build directory name:
-3. Build the project:
+2. Clone this repository with submodules
+
+    ```sh
+    git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp
+    ```
+
+3. Create your build directory. Replace <BUILD_DIR> with your build directory name:
+4. Build the project:
 
     ```sh
    cd <BUILD_DIR>
