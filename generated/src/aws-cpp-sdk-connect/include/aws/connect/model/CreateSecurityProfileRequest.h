@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/Application.h>
 #include <utility>
 
 namespace Aws
@@ -476,6 +477,63 @@ namespace Model
      */
     inline CreateSecurityProfileRequest& AddTagRestrictedResources(const char* value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources.push_back(value); return *this; }
 
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third party applications that the security profile will
+     * give access to.</p>
+     */
+    inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third party applications that the security profile will
+     * give access to.</p>
+     */
+    inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third party applications that the security profile will
+     * give access to.</p>
+     */
+    inline void SetApplications(const Aws::Vector<Application>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third party applications that the security profile will
+     * give access to.</p>
+     */
+    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third party applications that the security profile will
+     * give access to.</p>
+     */
+    inline CreateSecurityProfileRequest& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third party applications that the security profile will
+     * give access to.</p>
+     */
+    inline CreateSecurityProfileRequest& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third party applications that the security profile will
+     * give access to.</p>
+     */
+    inline CreateSecurityProfileRequest& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third party applications that the security profile will
+     * give access to.</p>
+     */
+    inline CreateSecurityProfileRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_securityProfileName;
@@ -498,6 +556,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_tagRestrictedResources;
     bool m_tagRestrictedResourcesHasBeenSet = false;
+
+    Aws::Vector<Application> m_applications;
+    bool m_applicationsHasBeenSet = false;
   };
 
 } // namespace Model

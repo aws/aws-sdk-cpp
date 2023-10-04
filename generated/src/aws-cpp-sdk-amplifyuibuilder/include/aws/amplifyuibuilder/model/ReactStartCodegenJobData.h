@@ -9,6 +9,8 @@
 #include <aws/amplifyuibuilder/model/JSTarget.h>
 #include <aws/amplifyuibuilder/model/JSScript.h>
 #include <aws/amplifyuibuilder/model/ApiConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -214,6 +216,85 @@ namespace Model
      */
     inline ReactStartCodegenJobData& WithApiConfiguration(ApiConfiguration&& value) { SetApiConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDependencies() const{ return m_dependencies; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline bool DependenciesHasBeenSet() const { return m_dependenciesHasBeenSet; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline void SetDependencies(const Aws::Map<Aws::String, Aws::String>& value) { m_dependenciesHasBeenSet = true; m_dependencies = value; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline void SetDependencies(Aws::Map<Aws::String, Aws::String>&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::move(value); }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline ReactStartCodegenJobData& WithDependencies(const Aws::Map<Aws::String, Aws::String>& value) { SetDependencies(value); return *this;}
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline ReactStartCodegenJobData& WithDependencies(Aws::Map<Aws::String, Aws::String>&& value) { SetDependencies(std::move(value)); return *this;}
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline ReactStartCodegenJobData& AddDependencies(const Aws::String& key, const Aws::String& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace(key, value); return *this; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline ReactStartCodegenJobData& AddDependencies(Aws::String&& key, const Aws::String& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline ReactStartCodegenJobData& AddDependencies(const Aws::String& key, Aws::String&& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline ReactStartCodegenJobData& AddDependencies(Aws::String&& key, Aws::String&& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline ReactStartCodegenJobData& AddDependencies(const char* key, Aws::String&& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline ReactStartCodegenJobData& AddDependencies(Aws::String&& key, const char* value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Lists the dependency packages that may be required for the project code to
+     * run.</p>
+     */
+    inline ReactStartCodegenJobData& AddDependencies(const char* key, const char* value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace(key, value); return *this; }
+
   private:
 
     JSModule m_module;
@@ -233,6 +314,9 @@ namespace Model
 
     ApiConfiguration m_apiConfiguration;
     bool m_apiConfigurationHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_dependencies;
+    bool m_dependenciesHasBeenSet = false;
   };
 
 } // namespace Model

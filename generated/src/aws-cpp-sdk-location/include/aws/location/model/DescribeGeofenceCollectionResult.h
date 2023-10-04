@@ -207,6 +207,22 @@ namespace Model
 
 
     /**
+     * <p>The number of geofences in the geofence collection.</p>
+     */
+    inline int GetGeofenceCount() const{ return m_geofenceCount; }
+
+    /**
+     * <p>The number of geofences in the geofence collection.</p>
+     */
+    inline void SetGeofenceCount(int value) { m_geofenceCount = value; }
+
+    /**
+     * <p>The number of geofences in the geofence collection.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithGeofenceCount(int value) { SetGeofenceCount(value); return *this;}
+
+
+    /**
      * <p>A key identifier for an <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
      * Web Services KMS customer managed key</a> assigned to the Amazon Location
@@ -390,6 +406,8 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::String m_description;
+
+    int m_geofenceCount;
 
     Aws::String m_kmsKeyId;
 

@@ -19,7 +19,8 @@ namespace Model
     TABLES,
     FORMS,
     QUERIES,
-    SIGNATURES
+    SIGNATURES,
+    LAYOUT
   };
 
 namespace FeatureTypeMapper

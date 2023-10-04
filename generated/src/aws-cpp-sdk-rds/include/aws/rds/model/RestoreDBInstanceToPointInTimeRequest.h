@@ -101,154 +101,154 @@ namespace Model
 
 
     /**
-     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to create.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetTargetDBInstanceIdentifier() const{ return m_targetDBInstanceIdentifier; }
 
     /**
-     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to create.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline bool TargetDBInstanceIdentifierHasBeenSet() const { return m_targetDBInstanceIdentifierHasBeenSet; }
 
     /**
-     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to create.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
 
     /**
-     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to create.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = std::move(value); }
 
     /**
-     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to create.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(const char* value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier.assign(value); }
 
     /**
-     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to create.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const Aws::String& value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to create.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
-     * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
-     * contain two consecutive hyphens</p> </li> </ul>
+     * <p>The name of the new DB instance to create.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
+     * or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const char* value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
 
     /**
-     * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
-     * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
-     * enabled</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
+     * <p>The date and time to restore from.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be a time in Universal Coordinated Time (UTC) format.</p> </li> <li> <p>Must be
+     * before the latest restorable time for the DB instance.</p> </li> <li> <p>Can't
+     * be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled.</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline const Aws::Utils::DateTime& GetRestoreTime() const{ return m_restoreTime; }
 
     /**
-     * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
-     * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
-     * enabled</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
+     * <p>The date and time to restore from.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be a time in Universal Coordinated Time (UTC) format.</p> </li> <li> <p>Must be
+     * before the latest restorable time for the DB instance.</p> </li> <li> <p>Can't
+     * be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled.</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline bool RestoreTimeHasBeenSet() const { return m_restoreTimeHasBeenSet; }
 
     /**
-     * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
-     * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
-     * enabled</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
+     * <p>The date and time to restore from.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be a time in Universal Coordinated Time (UTC) format.</p> </li> <li> <p>Must be
+     * before the latest restorable time for the DB instance.</p> </li> <li> <p>Can't
+     * be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled.</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline void SetRestoreTime(const Aws::Utils::DateTime& value) { m_restoreTimeHasBeenSet = true; m_restoreTime = value; }
 
     /**
-     * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
-     * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
-     * enabled</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
+     * <p>The date and time to restore from.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be a time in Universal Coordinated Time (UTC) format.</p> </li> <li> <p>Must be
+     * before the latest restorable time for the DB instance.</p> </li> <li> <p>Can't
+     * be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled.</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline void SetRestoreTime(Aws::Utils::DateTime&& value) { m_restoreTimeHasBeenSet = true; m_restoreTime = std::move(value); }
 
     /**
-     * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
-     * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
-     * enabled</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
+     * <p>The date and time to restore from.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be a time in Universal Coordinated Time (UTC) format.</p> </li> <li> <p>Must be
+     * before the latest restorable time for the DB instance.</p> </li> <li> <p>Can't
+     * be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled.</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithRestoreTime(const Aws::Utils::DateTime& value) { SetRestoreTime(value); return *this;}
 
     /**
-     * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
-     * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is
-     * enabled</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
+     * <p>The date and time to restore from.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be a time in Universal Coordinated Time (UTC) format.</p> </li> <li> <p>Must be
+     * before the latest restorable time for the DB instance.</p> </li> <li> <p>Can't
+     * be specified if the <code>UseLatestRestorableTime</code> parameter is
+     * enabled.</p> </li> </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithRestoreTime(Aws::Utils::DateTime&& value) { SetRestoreTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB instance is restored from the latest
-     * backup time. By default, the DB instance isn't restored from the latest backup
-     * time.</p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
-     * parameter is provided.</p>
+     * <p>Specifies whether the DB instance is restored from the latest backup time. By
+     * default, the DB instance isn't restored from the latest backup time.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if the
+     * <code>RestoreTime</code> parameter is provided.</p> </li> </ul>
      */
     inline bool GetUseLatestRestorableTime() const{ return m_useLatestRestorableTime; }
 
     /**
-     * <p>A value that indicates whether the DB instance is restored from the latest
-     * backup time. By default, the DB instance isn't restored from the latest backup
-     * time.</p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
-     * parameter is provided.</p>
+     * <p>Specifies whether the DB instance is restored from the latest backup time. By
+     * default, the DB instance isn't restored from the latest backup time.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if the
+     * <code>RestoreTime</code> parameter is provided.</p> </li> </ul>
      */
     inline bool UseLatestRestorableTimeHasBeenSet() const { return m_useLatestRestorableTimeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is restored from the latest
-     * backup time. By default, the DB instance isn't restored from the latest backup
-     * time.</p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
-     * parameter is provided.</p>
+     * <p>Specifies whether the DB instance is restored from the latest backup time. By
+     * default, the DB instance isn't restored from the latest backup time.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if the
+     * <code>RestoreTime</code> parameter is provided.</p> </li> </ul>
      */
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is restored from the latest
-     * backup time. By default, the DB instance isn't restored from the latest backup
-     * time.</p> <p>Constraints: Can't be specified if the <code>RestoreTime</code>
-     * parameter is provided.</p>
+     * <p>Specifies whether the DB instance is restored from the latest backup time. By
+     * default, the DB instance isn't restored from the latest backup time.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be specified if the
+     * <code>RestoreTime</code> parameter is provided.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
 
@@ -260,7 +260,7 @@ namespace Model
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * DB instance class as the original DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -271,7 +271,7 @@ namespace Model
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * DB instance class as the original DB instance.</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
@@ -282,7 +282,7 @@ namespace Model
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * DB instance class as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -293,7 +293,7 @@ namespace Model
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * DB instance class as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -304,7 +304,7 @@ namespace Model
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * DB instance class as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -315,7 +315,7 @@ namespace Model
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * DB instance class as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -326,7 +326,7 @@ namespace Model
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * DB instance class as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -337,203 +337,211 @@ namespace Model
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * DB instance class as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
 
     /**
-     * <p>The port number on which the database accepts connections.</p>
-     * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
-     * port as the original DB instance.</p>
+     * <p>The port number on which the database accepts connections.</p> <p>Default:
+     * The same port as the original DB instance.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The value must be <code>1150-65535</code>.</p> </li> </ul>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port number on which the database accepts connections.</p>
-     * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
-     * port as the original DB instance.</p>
+     * <p>The port number on which the database accepts connections.</p> <p>Default:
+     * The same port as the original DB instance.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The value must be <code>1150-65535</code>.</p> </li> </ul>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port number on which the database accepts connections.</p>
-     * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
-     * port as the original DB instance.</p>
+     * <p>The port number on which the database accepts connections.</p> <p>Default:
+     * The same port as the original DB instance.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The value must be <code>1150-65535</code>.</p> </li> </ul>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port number on which the database accepts connections.</p>
-     * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
-     * port as the original DB instance.</p>
+     * <p>The port number on which the database accepts connections.</p> <p>Default:
+     * The same port as the original DB instance.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The value must be <code>1150-65535</code>.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
      * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
-     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraints:</p>
+     * <ul> <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p> </li> </ul> <p>Example:
+     * <code>us-east-1a</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
-     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraints:</p>
+     * <ul> <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p> </li> </ul> <p>Example:
+     * <code>us-east-1a</code> </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
-     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraints:</p>
+     * <ul> <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p> </li> </ul> <p>Example:
+     * <code>us-east-1a</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
-     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraints:</p>
+     * <ul> <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p> </li> </ul> <p>Example:
+     * <code>us-east-1a</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
-     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraints:</p>
+     * <ul> <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p> </li> </ul> <p>Example:
+     * <code>us-east-1a</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
-     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraints:</p>
+     * <ul> <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p> </li> </ul> <p>Example:
+     * <code>us-east-1a</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
-     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraints:</p>
+     * <ul> <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p> </li> </ul> <p>Example:
+     * <code>us-east-1a</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone (AZ) where the DB instance will be created.</p>
-     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraint: You
-     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
-     * a Multi-AZ deployment.</p> <p>Example: <code>us-east-1a</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone.</p> <p>Constraints:</p>
+     * <ul> <li> <p>You can't specify the <code>AvailabilityZone</code> parameter if
+     * the DB instance is a Multi-AZ deployment.</p> </li> </ul> <p>Example:
+     * <code>us-east-1a</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB subnet
+     * group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB subnet
+     * group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB subnet
+     * group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB subnet
+     * group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB subnet
+     * group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB subnet
+     * group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB subnet
+     * group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints: If
-     * supplied, must match the name of an existing DBSubnetGroup.</p> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>The DB subnet group name to use for the new instance.</p> <p>Constraints:</p>
+     * <ul> <li> <p>If supplied, must match the name of an existing DB subnet
+     * group.</p> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't
-     * specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * <p>Secifies whether the DB instance is a Multi-AZ deployment.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> </li> </ul>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't
-     * specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * <p>Secifies whether the DB instance is a Multi-AZ deployment.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> </li> </ul>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't
-     * specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * <p>Secifies whether the DB instance is a Multi-AZ deployment.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> </li> </ul>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't
-     * specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * <p>Secifies whether the DB instance is a Multi-AZ deployment.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>You
+     * can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
+     * a Multi-AZ deployment.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access isn't permitted if the security group assigned
-     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
      * accessible, it is an internal DB instance with a DNS name that resolves to a
      * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
@@ -541,13 +549,13 @@ namespace Model
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access isn't permitted if the security group assigned
-     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
      * accessible, it is an internal DB instance with a DNS name that resolves to a
      * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
@@ -555,13 +563,13 @@ namespace Model
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access isn't permitted if the security group assigned
-     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
      * accessible, it is an internal DB instance with a DNS name that resolves to a
      * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
@@ -569,13 +577,13 @@ namespace Model
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access isn't permitted if the security group assigned
-     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
      * accessible, it is an internal DB instance with a DNS name that resolves to a
      * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
@@ -584,95 +592,95 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether minor version upgrades are applied
-     * automatically to the DB instance during the maintenance window.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * <p>Specifies whether minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>A value that indicates whether minor version upgrades are applied
-     * automatically to the DB instance during the maintenance window.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * <p>Specifies whether minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether minor version upgrades are applied
-     * automatically to the DB instance during the maintenance window.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * <p>Specifies whether minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether minor version upgrades are applied
-     * automatically to the DB instance during the maintenance window.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * <p>Specifies whether minor version upgrades are applied automatically to the DB
+     * instance during the maintenance window.</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
 
     /**
-     * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>The license model information for the restored DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p> <p>Default: Same as the source.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
-     * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>The license model information for the restored DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p> <p>Default: Same as the source.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
-     * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>The license model information for the restored DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p> <p>Default: Same as the source.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
-     * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>The license model information for the restored DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p> <p>Default: Same as the source.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
-     * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>The license model information for the restored DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p> <p>Default: Same as the source.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
-     * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>The license model information for the restored DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p> <p>Default: Same as the source.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>The license model information for the restored DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p> <p>Default: Same as the source.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
-     * <p>License model information for the restored DB instance.</p> <p>This setting
-     * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code> </p>
+     * <p>The license model information for the restored DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Valid Values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p> <p>Default: Same as the source.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
@@ -736,152 +744,160 @@ namespace Model
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
-     * be compatible with the engine of the source</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li>
-     * <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul> <p>Default: The same as source</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be compatible with the engine of the
+     * source.</p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
-     * be compatible with the engine of the source</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li>
-     * <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul> <p>Default: The same as source</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be compatible with the engine of the
+     * source.</p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
-     * be compatible with the engine of the source</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li>
-     * <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul> <p>Default: The same as source</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be compatible with the engine of the
+     * source.</p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
-     * be compatible with the engine of the source</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li>
-     * <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul> <p>Default: The same as source</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be compatible with the engine of the
+     * source.</p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
-     * be compatible with the engine of the source</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li>
-     * <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul> <p>Default: The same as source</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be compatible with the engine of the
+     * source.</p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
-     * be compatible with the engine of the source</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li>
-     * <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul> <p>Default: The same as source</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be compatible with the engine of the
+     * source.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
-     * be compatible with the engine of the source</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li>
-     * <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul> <p>Default: The same as source</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be compatible with the engine of the
+     * source.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>This setting doesn't
-     * apply to RDS Custom.</p> <p>Default: The same as source</p> <p>Constraint: Must
-     * be compatible with the engine of the source</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li>
-     * <p> <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se2-cdb</code> </p> </li> <li> <p> <code>postgres</code> </p> </li>
-     * <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code>
-     * </p> </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * apply to RDS Custom.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code>
+     * </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul> <p>Default: The same as source</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be compatible with the engine of the
+     * source.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p> <p>Constraints: Must be an integer
-     * greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for
-     * the SQL Server database engine isn't supported.</p>
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to
+     * initially allocate for the DB instance.</p> <p>This setting doesn't apply to SQL
+     * Server.</p> <p>Constraints:</p> <ul> <li> <p>Must be an integer greater than
+     * 1000.</p> </li> </ul>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p> <p>Constraints: Must be an integer
-     * greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for
-     * the SQL Server database engine isn't supported.</p>
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to
+     * initially allocate for the DB instance.</p> <p>This setting doesn't apply to SQL
+     * Server.</p> <p>Constraints:</p> <ul> <li> <p>Must be an integer greater than
+     * 1000.</p> </li> </ul>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p> <p>Constraints: Must be an integer
-     * greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for
-     * the SQL Server database engine isn't supported.</p>
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to
+     * initially allocate for the DB instance.</p> <p>This setting doesn't apply to SQL
+     * Server.</p> <p>Constraints:</p> <ul> <li> <p>Must be an integer greater than
+     * 1000.</p> </li> </ul>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p> <p>Constraints: Must be an integer
-     * greater than 1000.</p> <p> <b>SQL Server</b> </p> <p>Setting the IOPS value for
-     * the SQL Server database engine isn't supported.</p>
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to
+     * initially allocate for the DB instance.</p> <p>This setting doesn't apply to SQL
+     * Server.</p> <p>Constraints:</p> <ul> <li> <p>Must be an integer greater than
+     * 1000.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithIops(int value) { SetIops(value); return *this;}
 
 
     /**
-     * <p>The name of the option group to be used for the restored DB instance.</p>
+     * <p>The name of the option group to use for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance after it is associated with a DB instance</p> <p>This setting
@@ -890,7 +906,7 @@ namespace Model
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p>The name of the option group to be used for the restored DB instance.</p>
+     * <p>The name of the option group to use for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance after it is associated with a DB instance</p> <p>This setting
@@ -899,7 +915,7 @@ namespace Model
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the option group to be used for the restored DB instance.</p>
+     * <p>The name of the option group to use for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance after it is associated with a DB instance</p> <p>This setting
@@ -908,7 +924,7 @@ namespace Model
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p>The name of the option group to be used for the restored DB instance.</p>
+     * <p>The name of the option group to use for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance after it is associated with a DB instance</p> <p>This setting
@@ -917,7 +933,7 @@ namespace Model
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p>The name of the option group to be used for the restored DB instance.</p>
+     * <p>The name of the option group to use for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance after it is associated with a DB instance</p> <p>This setting
@@ -926,7 +942,7 @@ namespace Model
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p>The name of the option group to be used for the restored DB instance.</p>
+     * <p>The name of the option group to use for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance after it is associated with a DB instance</p> <p>This setting
@@ -935,7 +951,7 @@ namespace Model
     inline RestoreDBInstanceToPointInTimeRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>The name of the option group to be used for the restored DB instance.</p>
+     * <p>The name of the option group to use for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance after it is associated with a DB instance</p> <p>This setting
@@ -944,7 +960,7 @@ namespace Model
     inline RestoreDBInstanceToPointInTimeRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the option group to be used for the restored DB instance.</p>
+     * <p>The name of the option group to use for the restored DB instance.</p>
      * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
      * can't be removed from an option group, and that option group can't be removed
      * from a DB instance after it is associated with a DB instance</p> <p>This setting
@@ -954,26 +970,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the restored DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the restored DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the restored DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the restored DB instance to snapshots
+     * of the DB instance. By default, tags are not copied.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -1004,74 +1020,82 @@ namespace Model
 
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <p>The storage type to associate with the DB instance.</p> <p>Valid Values:
+     * <code>gp2 | gp3 | io1 | standard</code> </p> <p>Default: <code>io1</code>, if
+     * the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you specify <code>io1</code> or
+     * <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.</p> </li> </ul>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <p>The storage type to associate with the DB instance.</p> <p>Valid Values:
+     * <code>gp2 | gp3 | io1 | standard</code> </p> <p>Default: <code>io1</code>, if
+     * the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you specify <code>io1</code> or
+     * <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.</p> </li> </ul>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <p>The storage type to associate with the DB instance.</p> <p>Valid Values:
+     * <code>gp2 | gp3 | io1 | standard</code> </p> <p>Default: <code>io1</code>, if
+     * the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you specify <code>io1</code> or
+     * <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.</p> </li> </ul>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <p>The storage type to associate with the DB instance.</p> <p>Valid Values:
+     * <code>gp2 | gp3 | io1 | standard</code> </p> <p>Default: <code>io1</code>, if
+     * the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you specify <code>io1</code> or
+     * <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.</p> </li> </ul>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <p>The storage type to associate with the DB instance.</p> <p>Valid Values:
+     * <code>gp2 | gp3 | io1 | standard</code> </p> <p>Default: <code>io1</code>, if
+     * the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you specify <code>io1</code> or
+     * <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.</p> </li> </ul>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <p>The storage type to associate with the DB instance.</p> <p>Valid Values:
+     * <code>gp2 | gp3 | io1 | standard</code> </p> <p>Default: <code>io1</code>, if
+     * the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you specify <code>io1</code> or
+     * <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <p>The storage type to associate with the DB instance.</p> <p>Valid Values:
+     * <code>gp2 | gp3 | io1 | standard</code> </p> <p>Default: <code>io1</code>, if
+     * the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you specify <code>io1</code> or
+     * <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
-     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <p>The storage type to associate with the DB instance.</p> <p>Valid Values:
+     * <code>gp2 | gp3 | io1 | standard</code> </p> <p>Default: <code>io1</code>, if
+     * the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If you specify <code>io1</code> or
+     * <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -1239,88 +1263,88 @@ namespace Model
 
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in.
-     * Create the domain before running this command. Currently, you can create only
-     * the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an
-     * Active Directory Domain.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB instance in. Create the
+     * domain before running this command. Currently, you can create only the MySQL,
+     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
+     * Domain.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in.
-     * Create the domain before running this command. Currently, you can create only
-     * the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an
-     * Active Directory Domain.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB instance in. Create the
+     * domain before running this command. Currently, you can create only the MySQL,
+     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
+     * Domain.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in.
-     * Create the domain before running this command. Currently, you can create only
-     * the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an
-     * Active Directory Domain.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB instance in. Create the
+     * domain before running this command. Currently, you can create only the MySQL,
+     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
+     * Domain.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in.
-     * Create the domain before running this command. Currently, you can create only
-     * the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an
-     * Active Directory Domain.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB instance in. Create the
+     * domain before running this command. Currently, you can create only the MySQL,
+     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
+     * Domain.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in.
-     * Create the domain before running this command. Currently, you can create only
-     * the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an
-     * Active Directory Domain.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB instance in. Create the
+     * domain before running this command. Currently, you can create only the MySQL,
+     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
+     * Domain.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in.
-     * Create the domain before running this command. Currently, you can create only
-     * the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an
-     * Active Directory Domain.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB instance in. Create the
+     * domain before running this command. Currently, you can create only the MySQL,
+     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
+     * Domain.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in.
-     * Create the domain before running this command. Currently, you can create only
-     * the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an
-     * Active Directory Domain.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB instance in. Create the
+     * domain before running this command. Currently, you can create only the MySQL,
+     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
+     * Domain.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the Active Directory directory ID to restore the DB instance in.
-     * Create the domain before running this command. Currently, you can create only
-     * the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an
-     * Active Directory Domain.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information, see <a
+     * <p>The Active Directory directory ID to restore the DB instance in. Create the
+     * domain before running this command. Currently, you can create only the MySQL,
+     * Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory
+     * Domain.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
@@ -1662,10 +1686,10 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1673,10 +1697,10 @@ namespace Model
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1684,10 +1708,10 @@ namespace Model
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1695,10 +1719,10 @@ namespace Model
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about IAM database authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1888,7 +1912,7 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
      * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1900,7 +1924,7 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
      * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1912,7 +1936,7 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
      * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1924,7 +1948,7 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
      * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1936,7 +1960,7 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
      * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1948,7 +1972,7 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
      * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1960,7 +1984,7 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
      * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1972,7 +1996,7 @@ namespace Model
      * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the
      * default <code>DBParameterGroup</code> for the specified DB engine is used.</p>
      * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+     * <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
      * <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
      * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
      * two consecutive hyphens.</p> </li> </ul>
@@ -1981,36 +2005,36 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether the DB instance has deletion protection enabled. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether the DB instance has deletion protection enabled. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether the DB instance has deletion protection enabled. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether the DB instance has deletion protection enabled. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
@@ -2106,7 +2130,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
      * to restore, for example,
-     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
      * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline const Aws::String& GetSourceDBInstanceAutomatedBackupsArn() const{ return m_sourceDBInstanceAutomatedBackupsArn; }
@@ -2114,7 +2138,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
      * to restore, for example,
-     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
      * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool SourceDBInstanceAutomatedBackupsArnHasBeenSet() const { return m_sourceDBInstanceAutomatedBackupsArnHasBeenSet; }
@@ -2122,7 +2146,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
      * to restore, for example,
-     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
      * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetSourceDBInstanceAutomatedBackupsArn(const Aws::String& value) { m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = true; m_sourceDBInstanceAutomatedBackupsArn = value; }
@@ -2130,7 +2154,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
      * to restore, for example,
-     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
      * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetSourceDBInstanceAutomatedBackupsArn(Aws::String&& value) { m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = true; m_sourceDBInstanceAutomatedBackupsArn = std::move(value); }
@@ -2138,7 +2162,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
      * to restore, for example,
-     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
      * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetSourceDBInstanceAutomatedBackupsArn(const char* value) { m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = true; m_sourceDBInstanceAutomatedBackupsArn.assign(value); }
@@ -2146,7 +2170,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
      * to restore, for example,
-     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
      * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceAutomatedBackupsArn(const Aws::String& value) { SetSourceDBInstanceAutomatedBackupsArn(value); return *this;}
@@ -2154,7 +2178,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
      * to restore, for example,
-     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
      * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceAutomatedBackupsArn(Aws::String&& value) { SetSourceDBInstanceAutomatedBackupsArn(std::move(value)); return *this;}
@@ -2162,20 +2186,20 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replicated automated backups from which
      * to restore, for example,
-     * <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
+     * <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.</p>
      * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithSourceDBInstanceAutomatedBackupsArn(const char* value) { SetSourceDBInstanceAutomatedBackupsArn(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the DB instance from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -2185,13 +2209,13 @@ namespace Model
     inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the DB instance from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -2201,13 +2225,13 @@ namespace Model
     inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the DB instance from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -2217,13 +2241,13 @@ namespace Model
     inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the DB instance from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -2436,131 +2460,123 @@ namespace Model
 
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
-     * network type is determined by the <code>DBSubnetGroup</code> specified for the
-     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
-     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
-     * information, see <a
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p>
+     * </p> <p>Valid Values:</p> <ul> <li> <p> <code>IPV4</code> </p> </li> <li> <p>
+     * <code>DUAL</code> </p> </li> </ul>
      */
     inline const Aws::String& GetNetworkType() const{ return m_networkType; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
-     * network type is determined by the <code>DBSubnetGroup</code> specified for the
-     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
-     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
-     * information, see <a
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p>
+     * </p> <p>Valid Values:</p> <ul> <li> <p> <code>IPV4</code> </p> </li> <li> <p>
+     * <code>DUAL</code> </p> </li> </ul>
      */
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
-     * network type is determined by the <code>DBSubnetGroup</code> specified for the
-     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
-     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
-     * information, see <a
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p>
+     * </p> <p>Valid Values:</p> <ul> <li> <p> <code>IPV4</code> </p> </li> <li> <p>
+     * <code>DUAL</code> </p> </li> </ul>
      */
     inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
-     * network type is determined by the <code>DBSubnetGroup</code> specified for the
-     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
-     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
-     * information, see <a
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p>
+     * </p> <p>Valid Values:</p> <ul> <li> <p> <code>IPV4</code> </p> </li> <li> <p>
+     * <code>DUAL</code> </p> </li> </ul>
      */
     inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
-     * network type is determined by the <code>DBSubnetGroup</code> specified for the
-     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
-     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
-     * information, see <a
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p>
+     * </p> <p>Valid Values:</p> <ul> <li> <p> <code>IPV4</code> </p> </li> <li> <p>
+     * <code>DUAL</code> </p> </li> </ul>
      */
     inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
-     * network type is determined by the <code>DBSubnetGroup</code> specified for the
-     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
-     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
-     * information, see <a
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p>
+     * </p> <p>Valid Values:</p> <ul> <li> <p> <code>IPV4</code> </p> </li> <li> <p>
+     * <code>DUAL</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
-     * network type is determined by the <code>DBSubnetGroup</code> specified for the
-     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
-     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
-     * information, see <a
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p>
+     * </p> <p>Valid Values:</p> <ul> <li> <p> <code>IPV4</code> </p> </li> <li> <p>
+     * <code>DUAL</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
-     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
-     * network type is determined by the <code>DBSubnetGroup</code> specified for the
-     * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
-     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
-     * information, see <a
+     * <p>The network type of the DB instance.</p> <p>The network type is determined by
+     * the <code>DBSubnetGroup</code> specified for the DB instance. A
+     * <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and
+     * the IPv6 protocols (<code>DUAL</code>).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
      * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
-     * </p>
+     * </p> <p>Valid Values:</p> <ul> <li> <p> <code>IPV4</code> </p> </li> <li> <p>
+     * <code>DUAL</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
 
     /**
-     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * <p>The storage throughput value for the DB instance.</p> <p>This setting doesn't
+     * apply to RDS Custom or Amazon Aurora.</p>
      */
     inline int GetStorageThroughput() const{ return m_storageThroughput; }
 
     /**
-     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * <p>The storage throughput value for the DB instance.</p> <p>This setting doesn't
+     * apply to RDS Custom or Amazon Aurora.</p>
      */
     inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
 
     /**
-     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * <p>The storage throughput value for the DB instance.</p> <p>This setting doesn't
+     * apply to RDS Custom or Amazon Aurora.</p>
      */
     inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
 
     /**
-     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * <p>The storage throughput value for the DB instance.</p> <p>This setting doesn't
+     * apply to RDS Custom or Amazon Aurora.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 

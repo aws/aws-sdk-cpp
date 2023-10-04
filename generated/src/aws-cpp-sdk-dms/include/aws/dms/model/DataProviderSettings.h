@@ -5,10 +5,14 @@
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+#include <aws/dms/model/RedshiftDataProviderSettings.h>
 #include <aws/dms/model/PostgreSqlDataProviderSettings.h>
 #include <aws/dms/model/MySqlDataProviderSettings.h>
 #include <aws/dms/model/OracleDataProviderSettings.h>
 #include <aws/dms/model/MicrosoftSqlServerDataProviderSettings.h>
+#include <aws/dms/model/DocDbDataProviderSettings.h>
+#include <aws/dms/model/MariaDbDataProviderSettings.h>
+#include <aws/dms/model/MongoDbDataProviderSettings.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +43,25 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DataProviderSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API DataProviderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const RedshiftDataProviderSettings& GetRedshiftSettings() const{ return m_redshiftSettings; }
+
+    
+    inline bool RedshiftSettingsHasBeenSet() const { return m_redshiftSettingsHasBeenSet; }
+
+    
+    inline void SetRedshiftSettings(const RedshiftDataProviderSettings& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = value; }
+
+    
+    inline void SetRedshiftSettings(RedshiftDataProviderSettings&& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = std::move(value); }
+
+    
+    inline DataProviderSettings& WithRedshiftSettings(const RedshiftDataProviderSettings& value) { SetRedshiftSettings(value); return *this;}
+
+    
+    inline DataProviderSettings& WithRedshiftSettings(RedshiftDataProviderSettings&& value) { SetRedshiftSettings(std::move(value)); return *this;}
 
 
     
@@ -116,7 +139,91 @@ namespace Model
     
     inline DataProviderSettings& WithMicrosoftSqlServerSettings(MicrosoftSqlServerDataProviderSettings&& value) { SetMicrosoftSqlServerSettings(std::move(value)); return *this;}
 
+
+    
+    inline const DocDbDataProviderSettings& GetDocDbSettings() const{ return m_docDbSettings; }
+
+    
+    inline bool DocDbSettingsHasBeenSet() const { return m_docDbSettingsHasBeenSet; }
+
+    
+    inline void SetDocDbSettings(const DocDbDataProviderSettings& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = value; }
+
+    
+    inline void SetDocDbSettings(DocDbDataProviderSettings&& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = std::move(value); }
+
+    
+    inline DataProviderSettings& WithDocDbSettings(const DocDbDataProviderSettings& value) { SetDocDbSettings(value); return *this;}
+
+    
+    inline DataProviderSettings& WithDocDbSettings(DocDbDataProviderSettings&& value) { SetDocDbSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides information that defines a MariaDB data provider.</p>
+     */
+    inline const MariaDbDataProviderSettings& GetMariaDbSettings() const{ return m_mariaDbSettings; }
+
+    /**
+     * <p>Provides information that defines a MariaDB data provider.</p>
+     */
+    inline bool MariaDbSettingsHasBeenSet() const { return m_mariaDbSettingsHasBeenSet; }
+
+    /**
+     * <p>Provides information that defines a MariaDB data provider.</p>
+     */
+    inline void SetMariaDbSettings(const MariaDbDataProviderSettings& value) { m_mariaDbSettingsHasBeenSet = true; m_mariaDbSettings = value; }
+
+    /**
+     * <p>Provides information that defines a MariaDB data provider.</p>
+     */
+    inline void SetMariaDbSettings(MariaDbDataProviderSettings&& value) { m_mariaDbSettingsHasBeenSet = true; m_mariaDbSettings = std::move(value); }
+
+    /**
+     * <p>Provides information that defines a MariaDB data provider.</p>
+     */
+    inline DataProviderSettings& WithMariaDbSettings(const MariaDbDataProviderSettings& value) { SetMariaDbSettings(value); return *this;}
+
+    /**
+     * <p>Provides information that defines a MariaDB data provider.</p>
+     */
+    inline DataProviderSettings& WithMariaDbSettings(MariaDbDataProviderSettings&& value) { SetMariaDbSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides information that defines a MongoDB data provider.</p>
+     */
+    inline const MongoDbDataProviderSettings& GetMongoDbSettings() const{ return m_mongoDbSettings; }
+
+    /**
+     * <p>Provides information that defines a MongoDB data provider.</p>
+     */
+    inline bool MongoDbSettingsHasBeenSet() const { return m_mongoDbSettingsHasBeenSet; }
+
+    /**
+     * <p>Provides information that defines a MongoDB data provider.</p>
+     */
+    inline void SetMongoDbSettings(const MongoDbDataProviderSettings& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = value; }
+
+    /**
+     * <p>Provides information that defines a MongoDB data provider.</p>
+     */
+    inline void SetMongoDbSettings(MongoDbDataProviderSettings&& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = std::move(value); }
+
+    /**
+     * <p>Provides information that defines a MongoDB data provider.</p>
+     */
+    inline DataProviderSettings& WithMongoDbSettings(const MongoDbDataProviderSettings& value) { SetMongoDbSettings(value); return *this;}
+
+    /**
+     * <p>Provides information that defines a MongoDB data provider.</p>
+     */
+    inline DataProviderSettings& WithMongoDbSettings(MongoDbDataProviderSettings&& value) { SetMongoDbSettings(std::move(value)); return *this;}
+
   private:
+
+    RedshiftDataProviderSettings m_redshiftSettings;
+    bool m_redshiftSettingsHasBeenSet = false;
 
     PostgreSqlDataProviderSettings m_postgreSqlSettings;
     bool m_postgreSqlSettingsHasBeenSet = false;
@@ -129,6 +236,15 @@ namespace Model
 
     MicrosoftSqlServerDataProviderSettings m_microsoftSqlServerSettings;
     bool m_microsoftSqlServerSettingsHasBeenSet = false;
+
+    DocDbDataProviderSettings m_docDbSettings;
+    bool m_docDbSettingsHasBeenSet = false;
+
+    MariaDbDataProviderSettings m_mariaDbSettings;
+    bool m_mariaDbSettingsHasBeenSet = false;
+
+    MongoDbDataProviderSettings m_mongoDbSettings;
+    bool m_mongoDbSettingsHasBeenSet = false;
   };
 
 } // namespace Model

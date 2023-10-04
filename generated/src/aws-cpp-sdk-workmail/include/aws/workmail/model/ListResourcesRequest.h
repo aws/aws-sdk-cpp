@@ -7,6 +7,7 @@
 #include <aws/workmail/WorkMail_EXPORTS.h>
 #include <aws/workmail/WorkMailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workmail/model/ListResourcesFilters.h>
 #include <utility>
 
 namespace Aws
@@ -144,6 +145,43 @@ namespace Model
      */
     inline ListResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>Limit the resource search results based on the filter criteria. You can only
+     * use one filter per request.</p>
+     */
+    inline const ListResourcesFilters& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Limit the resource search results based on the filter criteria. You can only
+     * use one filter per request.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>Limit the resource search results based on the filter criteria. You can only
+     * use one filter per request.</p>
+     */
+    inline void SetFilters(const ListResourcesFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>Limit the resource search results based on the filter criteria. You can only
+     * use one filter per request.</p>
+     */
+    inline void SetFilters(ListResourcesFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>Limit the resource search results based on the filter criteria. You can only
+     * use one filter per request.</p>
+     */
+    inline ListResourcesRequest& WithFilters(const ListResourcesFilters& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>Limit the resource search results based on the filter criteria. You can only
+     * use one filter per request.</p>
+     */
+    inline ListResourcesRequest& WithFilters(ListResourcesFilters&& value) { SetFilters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_organizationId;
@@ -154,6 +192,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    ListResourcesFilters m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

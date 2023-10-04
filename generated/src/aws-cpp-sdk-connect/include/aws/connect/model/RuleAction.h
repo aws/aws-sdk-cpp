@@ -123,94 +123,172 @@ namespace Model
 
 
     /**
-     * <p>Information about the EventBridge action.</p>
+     * <p>Information about the EventBridge action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline const EventBridgeActionDefinition& GetEventBridgeAction() const{ return m_eventBridgeAction; }
 
     /**
-     * <p>Information about the EventBridge action.</p>
+     * <p>Information about the EventBridge action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline bool EventBridgeActionHasBeenSet() const { return m_eventBridgeActionHasBeenSet; }
 
     /**
-     * <p>Information about the EventBridge action.</p>
+     * <p>Information about the EventBridge action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline void SetEventBridgeAction(const EventBridgeActionDefinition& value) { m_eventBridgeActionHasBeenSet = true; m_eventBridgeAction = value; }
 
     /**
-     * <p>Information about the EventBridge action.</p>
+     * <p>Information about the EventBridge action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline void SetEventBridgeAction(EventBridgeActionDefinition&& value) { m_eventBridgeActionHasBeenSet = true; m_eventBridgeAction = std::move(value); }
 
     /**
-     * <p>Information about the EventBridge action.</p>
+     * <p>Information about the EventBridge action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline RuleAction& WithEventBridgeAction(const EventBridgeActionDefinition& value) { SetEventBridgeAction(value); return *this;}
 
     /**
-     * <p>Information about the EventBridge action.</p>
+     * <p>Information about the EventBridge action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline RuleAction& WithEventBridgeAction(EventBridgeActionDefinition&& value) { SetEventBridgeAction(std::move(value)); return *this;}
 
 
     /**
-     * <p>Information about the contact category action.</p>
+     * <p>Information about the contact category action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
+     * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
+     * </p>
      */
     inline const AssignContactCategoryActionDefinition& GetAssignContactCategoryAction() const{ return m_assignContactCategoryAction; }
 
     /**
-     * <p>Information about the contact category action.</p>
+     * <p>Information about the contact category action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
+     * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
+     * </p>
      */
     inline bool AssignContactCategoryActionHasBeenSet() const { return m_assignContactCategoryActionHasBeenSet; }
 
     /**
-     * <p>Information about the contact category action.</p>
+     * <p>Information about the contact category action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
+     * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
+     * </p>
      */
     inline void SetAssignContactCategoryAction(const AssignContactCategoryActionDefinition& value) { m_assignContactCategoryActionHasBeenSet = true; m_assignContactCategoryAction = value; }
 
     /**
-     * <p>Information about the contact category action.</p>
+     * <p>Information about the contact category action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
+     * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
+     * </p>
      */
     inline void SetAssignContactCategoryAction(AssignContactCategoryActionDefinition&& value) { m_assignContactCategoryActionHasBeenSet = true; m_assignContactCategoryAction = std::move(value); }
 
     /**
-     * <p>Information about the contact category action.</p>
+     * <p>Information about the contact category action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
+     * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
+     * </p>
      */
     inline RuleAction& WithAssignContactCategoryAction(const AssignContactCategoryActionDefinition& value) { SetAssignContactCategoryAction(value); return *this;}
 
     /**
-     * <p>Information about the contact category action.</p>
+     * <p>Information about the contact category action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
+     * <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
+     * </p>
      */
     inline RuleAction& WithAssignContactCategoryAction(AssignContactCategoryActionDefinition&& value) { SetAssignContactCategoryAction(std::move(value)); return *this;}
 
 
     /**
-     * <p>Information about the send notification action.</p>
+     * <p>Information about the send notification action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline const SendNotificationActionDefinition& GetSendNotificationAction() const{ return m_sendNotificationAction; }
 
     /**
-     * <p>Information about the send notification action.</p>
+     * <p>Information about the send notification action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline bool SendNotificationActionHasBeenSet() const { return m_sendNotificationActionHasBeenSet; }
 
     /**
-     * <p>Information about the send notification action.</p>
+     * <p>Information about the send notification action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline void SetSendNotificationAction(const SendNotificationActionDefinition& value) { m_sendNotificationActionHasBeenSet = true; m_sendNotificationAction = value; }
 
     /**
-     * <p>Information about the send notification action.</p>
+     * <p>Information about the send notification action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline void SetSendNotificationAction(SendNotificationActionDefinition&& value) { m_sendNotificationActionHasBeenSet = true; m_sendNotificationAction = std::move(value); }
 
     /**
-     * <p>Information about the send notification action.</p>
+     * <p>Information about the send notification action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline RuleAction& WithSendNotificationAction(const SendNotificationActionDefinition& value) { SetSendNotificationAction(value); return *this;}
 
     /**
-     * <p>Information about the send notification action.</p>
+     * <p>Information about the send notification action.</p> <p>Supported only for
+     * <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
+     * | <code>OnRealTimeCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code> |
+     * <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code> </p>
      */
     inline RuleAction& WithSendNotificationAction(SendNotificationActionDefinition&& value) { SetSendNotificationAction(std::move(value)); return *this;}
 

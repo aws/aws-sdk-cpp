@@ -16,7 +16,12 @@ UpdateResourceRequest::UpdateResourceRequest() :
     m_organizationIdHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_bookingOptionsHasBeenSet(false)
+    m_bookingOptionsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_type(ResourceType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_hiddenFromGlobalAddressList(false),
+    m_hiddenFromGlobalAddressListHasBeenSet(false)
 {
 }
 
@@ -45,6 +50,23 @@ Aws::String UpdateResourceRequest::SerializePayload() const
   if(m_bookingOptionsHasBeenSet)
   {
    payload.WithObject("BookingOptions", m_bookingOptions.Jsonize());
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", ResourceTypeMapper::GetNameForResourceType(m_type));
+  }
+
+  if(m_hiddenFromGlobalAddressListHasBeenSet)
+  {
+   payload.WithBool("HiddenFromGlobalAddressList", m_hiddenFromGlobalAddressList);
 
   }
 

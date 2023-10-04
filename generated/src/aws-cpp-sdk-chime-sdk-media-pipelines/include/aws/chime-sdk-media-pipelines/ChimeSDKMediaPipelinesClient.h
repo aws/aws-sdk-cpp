@@ -209,6 +209,57 @@ namespace ChimeSDKMediaPipelines
         }
 
         /**
+         * <p>Creates an Kinesis video stream pool for the media pipeline.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMediaPipelineKinesisVideoStreamPoolOutcome CreateMediaPipelineKinesisVideoStreamPool(const Model::CreateMediaPipelineKinesisVideoStreamPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMediaPipelineKinesisVideoStreamPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMediaPipelineKinesisVideoStreamPoolRequestT = Model::CreateMediaPipelineKinesisVideoStreamPoolRequest>
+        Model::CreateMediaPipelineKinesisVideoStreamPoolOutcomeCallable CreateMediaPipelineKinesisVideoStreamPoolCallable(const CreateMediaPipelineKinesisVideoStreamPoolRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::CreateMediaPipelineKinesisVideoStreamPool, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMediaPipelineKinesisVideoStreamPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMediaPipelineKinesisVideoStreamPoolRequestT = Model::CreateMediaPipelineKinesisVideoStreamPoolRequest>
+        void CreateMediaPipelineKinesisVideoStreamPoolAsync(const CreateMediaPipelineKinesisVideoStreamPoolRequestT& request, const CreateMediaPipelineKinesisVideoStreamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::CreateMediaPipelineKinesisVideoStreamPool, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a streaming media pipeline.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaStreamPipeline">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMediaStreamPipelineOutcome CreateMediaStreamPipeline(const Model::CreateMediaStreamPipelineRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMediaStreamPipeline that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMediaStreamPipelineRequestT = Model::CreateMediaStreamPipelineRequest>
+        Model::CreateMediaStreamPipelineOutcomeCallable CreateMediaStreamPipelineCallable(const CreateMediaStreamPipelineRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::CreateMediaStreamPipeline, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMediaStreamPipeline that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMediaStreamPipelineRequestT = Model::CreateMediaStreamPipelineRequest>
+        void CreateMediaStreamPipelineAsync(const CreateMediaStreamPipelineRequestT& request, const CreateMediaStreamPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::CreateMediaStreamPipeline, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the media pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaCapturePipeline">AWS
          * API Reference</a></p>
@@ -281,6 +332,31 @@ namespace ChimeSDKMediaPipelines
         void DeleteMediaPipelineAsync(const DeleteMediaPipelineRequestT& request, const DeleteMediaPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::DeleteMediaPipeline, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Kinesis video stream pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMediaPipelineKinesisVideoStreamPoolOutcome DeleteMediaPipelineKinesisVideoStreamPool(const Model::DeleteMediaPipelineKinesisVideoStreamPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMediaPipelineKinesisVideoStreamPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMediaPipelineKinesisVideoStreamPoolRequestT = Model::DeleteMediaPipelineKinesisVideoStreamPoolRequest>
+        Model::DeleteMediaPipelineKinesisVideoStreamPoolOutcomeCallable DeleteMediaPipelineKinesisVideoStreamPoolCallable(const DeleteMediaPipelineKinesisVideoStreamPoolRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::DeleteMediaPipelineKinesisVideoStreamPool, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMediaPipelineKinesisVideoStreamPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMediaPipelineKinesisVideoStreamPoolRequestT = Model::DeleteMediaPipelineKinesisVideoStreamPoolRequest>
+        void DeleteMediaPipelineKinesisVideoStreamPoolAsync(const DeleteMediaPipelineKinesisVideoStreamPoolRequestT& request, const DeleteMediaPipelineKinesisVideoStreamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::DeleteMediaPipelineKinesisVideoStreamPool, request, handler, context);
         }
 
         /**
@@ -357,6 +433,31 @@ namespace ChimeSDKMediaPipelines
         void GetMediaPipelineAsync(const GetMediaPipelineRequestT& request, const GetMediaPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::GetMediaPipeline, request, handler, context);
+        }
+
+        /**
+         * <p>Gets an Kinesis video stream pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipelineKinesisVideoStreamPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMediaPipelineKinesisVideoStreamPoolOutcome GetMediaPipelineKinesisVideoStreamPool(const Model::GetMediaPipelineKinesisVideoStreamPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMediaPipelineKinesisVideoStreamPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMediaPipelineKinesisVideoStreamPoolRequestT = Model::GetMediaPipelineKinesisVideoStreamPoolRequest>
+        Model::GetMediaPipelineKinesisVideoStreamPoolOutcomeCallable GetMediaPipelineKinesisVideoStreamPoolCallable(const GetMediaPipelineKinesisVideoStreamPoolRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::GetMediaPipelineKinesisVideoStreamPool, request);
+        }
+
+        /**
+         * An Async wrapper for GetMediaPipelineKinesisVideoStreamPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMediaPipelineKinesisVideoStreamPoolRequestT = Model::GetMediaPipelineKinesisVideoStreamPoolRequest>
+        void GetMediaPipelineKinesisVideoStreamPoolAsync(const GetMediaPipelineKinesisVideoStreamPoolRequestT& request, const GetMediaPipelineKinesisVideoStreamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::GetMediaPipelineKinesisVideoStreamPool, request, handler, context);
         }
 
         /**
@@ -460,6 +561,32 @@ namespace ChimeSDKMediaPipelines
         void ListMediaInsightsPipelineConfigurationsAsync(const ListMediaInsightsPipelineConfigurationsRequestT& request, const ListMediaInsightsPipelineConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::ListMediaInsightsPipelineConfigurations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the video stream pools in the media pipeline.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMediaPipelineKinesisVideoStreamPoolsOutcome ListMediaPipelineKinesisVideoStreamPools(const Model::ListMediaPipelineKinesisVideoStreamPoolsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMediaPipelineKinesisVideoStreamPools that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMediaPipelineKinesisVideoStreamPoolsRequestT = Model::ListMediaPipelineKinesisVideoStreamPoolsRequest>
+        Model::ListMediaPipelineKinesisVideoStreamPoolsOutcomeCallable ListMediaPipelineKinesisVideoStreamPoolsCallable(const ListMediaPipelineKinesisVideoStreamPoolsRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::ListMediaPipelineKinesisVideoStreamPools, request);
+        }
+
+        /**
+         * An Async wrapper for ListMediaPipelineKinesisVideoStreamPools that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMediaPipelineKinesisVideoStreamPoolsRequestT = Model::ListMediaPipelineKinesisVideoStreamPoolsRequest>
+        void ListMediaPipelineKinesisVideoStreamPoolsAsync(const ListMediaPipelineKinesisVideoStreamPoolsRequestT& request, const ListMediaPipelineKinesisVideoStreamPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::ListMediaPipelineKinesisVideoStreamPools, request, handler, context);
         }
 
         /**
@@ -726,6 +853,32 @@ namespace ChimeSDKMediaPipelines
         void UpdateMediaInsightsPipelineStatusAsync(const UpdateMediaInsightsPipelineStatusRequestT& request, const UpdateMediaInsightsPipelineStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an Kinesis video stream pool in a media pipeline.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMediaPipelineKinesisVideoStreamPoolOutcome UpdateMediaPipelineKinesisVideoStreamPool(const Model::UpdateMediaPipelineKinesisVideoStreamPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMediaPipelineKinesisVideoStreamPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateMediaPipelineKinesisVideoStreamPoolRequestT = Model::UpdateMediaPipelineKinesisVideoStreamPoolRequest>
+        Model::UpdateMediaPipelineKinesisVideoStreamPoolOutcomeCallable UpdateMediaPipelineKinesisVideoStreamPoolCallable(const UpdateMediaPipelineKinesisVideoStreamPoolRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKMediaPipelinesClient::UpdateMediaPipelineKinesisVideoStreamPool, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateMediaPipelineKinesisVideoStreamPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateMediaPipelineKinesisVideoStreamPoolRequestT = Model::UpdateMediaPipelineKinesisVideoStreamPoolRequest>
+        void UpdateMediaPipelineKinesisVideoStreamPoolAsync(const UpdateMediaPipelineKinesisVideoStreamPoolRequestT& request, const UpdateMediaPipelineKinesisVideoStreamPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKMediaPipelinesClient::UpdateMediaPipelineKinesisVideoStreamPool, request, handler, context);
         }
 
 

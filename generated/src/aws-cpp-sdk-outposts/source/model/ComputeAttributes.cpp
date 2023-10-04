@@ -21,14 +21,16 @@ namespace Model
 ComputeAttributes::ComputeAttributes() : 
     m_hostIdHasBeenSet(false),
     m_state(ComputeAssetState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_instanceFamiliesHasBeenSet(false)
 {
 }
 
 ComputeAttributes::ComputeAttributes(JsonView jsonValue) : 
     m_hostIdHasBeenSet(false),
     m_state(ComputeAssetState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_instanceFamiliesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,16 @@ ComputeAttributes& ComputeAttributes::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceFamilies"))
+  {
+    Aws::Utils::Array<JsonView> instanceFamiliesJsonList = jsonValue.GetArray("InstanceFamilies");
+    for(unsigned instanceFamiliesIndex = 0; instanceFamiliesIndex < instanceFamiliesJsonList.GetLength(); ++instanceFamiliesIndex)
+    {
+      m_instanceFamilies.push_back(instanceFamiliesJsonList[instanceFamiliesIndex].AsString());
+    }
+    m_instanceFamiliesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +77,17 @@ JsonValue ComputeAttributes::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("State", ComputeAssetStateMapper::GetNameForComputeAssetState(m_state));
+  }
+
+  if(m_instanceFamiliesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> instanceFamiliesJsonList(m_instanceFamilies.size());
+   for(unsigned instanceFamiliesIndex = 0; instanceFamiliesIndex < instanceFamiliesJsonList.GetLength(); ++instanceFamiliesIndex)
+   {
+     instanceFamiliesJsonList[instanceFamiliesIndex].AsString(m_instanceFamilies[instanceFamiliesIndex]);
+   }
+   payload.WithArray("InstanceFamilies", std::move(instanceFamiliesJsonList));
+
   }
 
   return payload;

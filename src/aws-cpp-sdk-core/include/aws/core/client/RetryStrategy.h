@@ -74,6 +74,15 @@ namespace Aws
              */
             virtual void RequestBookkeeping(const HttpResponseOutcome& /* httpResponseOutcome */) {}
             virtual void RequestBookkeeping(const HttpResponseOutcome& /* httpResponseOutcome */, const AWSError<CoreErrors>& /* lastError */) {}
+
+            /**
+             * Get return strategy name.
+             */
+            virtual const char* GetStrategyName() const
+            {
+                // SDK provided strategies will provide actual name
+                return "custom";
+            }
         };
 
         /**
@@ -123,6 +132,8 @@ namespace Aws
             virtual long CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override;
 
             virtual long GetMaxAttempts() const override { return m_maxAttempts; }
+
+            const char* GetStrategyName() const override { return "standard";}
 
         protected:
             std::shared_ptr<RetryQuotaContainer> m_retryQuotaContainer;

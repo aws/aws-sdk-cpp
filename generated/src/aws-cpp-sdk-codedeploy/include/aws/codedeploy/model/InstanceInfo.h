@@ -123,42 +123,42 @@ namespace Model
 
 
     /**
-     * <p>The IAM user ARN associated with the on-premises instance.</p>
+     * <p>The user ARN associated with the on-premises instance.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
 
     /**
-     * <p>The IAM user ARN associated with the on-premises instance.</p>
+     * <p>The user ARN associated with the on-premises instance.</p>
      */
     inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
 
     /**
-     * <p>The IAM user ARN associated with the on-premises instance.</p>
+     * <p>The user ARN associated with the on-premises instance.</p>
      */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**
-     * <p>The IAM user ARN associated with the on-premises instance.</p>
+     * <p>The user ARN associated with the on-premises instance.</p>
      */
     inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
 
     /**
-     * <p>The IAM user ARN associated with the on-premises instance.</p>
+     * <p>The user ARN associated with the on-premises instance.</p>
      */
     inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
 
     /**
-     * <p>The IAM user ARN associated with the on-premises instance.</p>
+     * <p>The user ARN associated with the on-premises instance.</p>
      */
     inline InstanceInfo& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
 
     /**
-     * <p>The IAM user ARN associated with the on-premises instance.</p>
+     * <p>The user ARN associated with the on-premises instance.</p>
      */
     inline InstanceInfo& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM user ARN associated with the on-premises instance.</p>
+     * <p>The user ARN associated with the on-premises instance.</p>
      */
     inline InstanceInfo& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 

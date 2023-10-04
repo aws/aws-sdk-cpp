@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/DriftCheckBaselines.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/SkipModelValidation.h>
 #include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <utility>
 
@@ -874,6 +875,32 @@ namespace Model
     inline DescribeModelPackageResult& AddAdditionalInferenceSpecifications(AdditionalInferenceSpecificationDefinition&& value) { m_additionalInferenceSpecifications.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline const SkipModelValidation& GetSkipModelValidation() const{ return m_skipModelValidation; }
+
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline void SetSkipModelValidation(const SkipModelValidation& value) { m_skipModelValidation = value; }
+
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline void SetSkipModelValidation(SkipModelValidation&& value) { m_skipModelValidation = std::move(value); }
+
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline DescribeModelPackageResult& WithSkipModelValidation(const SkipModelValidation& value) { SetSkipModelValidation(value); return *this;}
+
+    /**
+     * <p>Indicates if you want to skip model validation.</p>
+     */
+    inline DescribeModelPackageResult& WithSkipModelValidation(SkipModelValidation&& value) { SetSkipModelValidation(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -946,6 +973,8 @@ namespace Model
     Aws::String m_samplePayloadUrl;
 
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
+
+    SkipModelValidation m_skipModelValidation;
 
     Aws::String m_requestId;
   };

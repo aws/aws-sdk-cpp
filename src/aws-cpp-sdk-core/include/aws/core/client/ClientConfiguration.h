@@ -167,6 +167,11 @@ namespace Aws
              * Override the http endpoint used to talk to a service.
              */
             Aws::String endpointOverride;
+
+            /**
+             * Allow HTTP client to discover system proxy setting. Off by default for legacy reasons.
+             */
+            bool allowSystemProxy = false;
             /**
              * If you have users going through a proxy, set the proxy scheme here. Default HTTP
              */
@@ -345,7 +350,9 @@ namespace Aws
          * A helper function to compute a user agent
          * @return Aws::String with a user-agent
          */
-        AWS_CORE_API Aws::String ComputeUserAgentString();
+        AWS_CORE_API Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig = nullptr);
+
+        AWS_CORE_API Aws::String FilterUserAgentToken(char const * const token);
 
     } // namespace Client
 } // namespace Aws

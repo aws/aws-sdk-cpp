@@ -9,6 +9,7 @@
 #include <aws/chime-sdk-media-pipelines/model/MediaLiveConnectorPipeline.h>
 #include <aws/chime-sdk-media-pipelines/model/MediaConcatenationPipeline.h>
 #include <aws/chime-sdk-media-pipelines/model/MediaInsightsPipeline.h>
+#include <aws/chime-sdk-media-pipelines/model/MediaStreamPipeline.h>
 #include <utility>
 
 namespace Aws
@@ -164,6 +165,37 @@ namespace Model
      */
     inline MediaPipeline& WithMediaInsightsPipeline(MediaInsightsPipeline&& value) { SetMediaInsightsPipeline(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Designates a media pipeline as a media stream pipeline.</p>
+     */
+    inline const MediaStreamPipeline& GetMediaStreamPipeline() const{ return m_mediaStreamPipeline; }
+
+    /**
+     * <p>Designates a media pipeline as a media stream pipeline.</p>
+     */
+    inline bool MediaStreamPipelineHasBeenSet() const { return m_mediaStreamPipelineHasBeenSet; }
+
+    /**
+     * <p>Designates a media pipeline as a media stream pipeline.</p>
+     */
+    inline void SetMediaStreamPipeline(const MediaStreamPipeline& value) { m_mediaStreamPipelineHasBeenSet = true; m_mediaStreamPipeline = value; }
+
+    /**
+     * <p>Designates a media pipeline as a media stream pipeline.</p>
+     */
+    inline void SetMediaStreamPipeline(MediaStreamPipeline&& value) { m_mediaStreamPipelineHasBeenSet = true; m_mediaStreamPipeline = std::move(value); }
+
+    /**
+     * <p>Designates a media pipeline as a media stream pipeline.</p>
+     */
+    inline MediaPipeline& WithMediaStreamPipeline(const MediaStreamPipeline& value) { SetMediaStreamPipeline(value); return *this;}
+
+    /**
+     * <p>Designates a media pipeline as a media stream pipeline.</p>
+     */
+    inline MediaPipeline& WithMediaStreamPipeline(MediaStreamPipeline&& value) { SetMediaStreamPipeline(std::move(value)); return *this;}
+
   private:
 
     MediaCapturePipeline m_mediaCapturePipeline;
@@ -177,6 +209,9 @@ namespace Model
 
     MediaInsightsPipeline m_mediaInsightsPipeline;
     bool m_mediaInsightsPipelineHasBeenSet = false;
+
+    MediaStreamPipeline m_mediaStreamPipeline;
+    bool m_mediaStreamPipelineHasBeenSet = false;
   };
 
 } // namespace Model

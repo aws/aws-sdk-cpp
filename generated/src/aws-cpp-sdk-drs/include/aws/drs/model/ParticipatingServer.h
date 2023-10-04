@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/drs/Drs_EXPORTS.h>
+#include <aws/drs/model/LaunchActionsStatus.h>
 #include <aws/drs/model/LaunchStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -37,6 +38,37 @@ namespace Model
     AWS_DRS_API ParticipatingServer(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API ParticipatingServer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The post-launch action runs of a participating server.</p>
+     */
+    inline const LaunchActionsStatus& GetLaunchActionsStatus() const{ return m_launchActionsStatus; }
+
+    /**
+     * <p>The post-launch action runs of a participating server.</p>
+     */
+    inline bool LaunchActionsStatusHasBeenSet() const { return m_launchActionsStatusHasBeenSet; }
+
+    /**
+     * <p>The post-launch action runs of a participating server.</p>
+     */
+    inline void SetLaunchActionsStatus(const LaunchActionsStatus& value) { m_launchActionsStatusHasBeenSet = true; m_launchActionsStatus = value; }
+
+    /**
+     * <p>The post-launch action runs of a participating server.</p>
+     */
+    inline void SetLaunchActionsStatus(LaunchActionsStatus&& value) { m_launchActionsStatusHasBeenSet = true; m_launchActionsStatus = std::move(value); }
+
+    /**
+     * <p>The post-launch action runs of a participating server.</p>
+     */
+    inline ParticipatingServer& WithLaunchActionsStatus(const LaunchActionsStatus& value) { SetLaunchActionsStatus(value); return *this;}
+
+    /**
+     * <p>The post-launch action runs of a participating server.</p>
+     */
+    inline ParticipatingServer& WithLaunchActionsStatus(LaunchActionsStatus&& value) { SetLaunchActionsStatus(std::move(value)); return *this;}
 
 
     /**
@@ -152,6 +184,9 @@ namespace Model
     inline ParticipatingServer& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
 
   private:
+
+    LaunchActionsStatus m_launchActionsStatus;
+    bool m_launchActionsStatusHasBeenSet = false;
 
     LaunchStatus m_launchStatus;
     bool m_launchStatusHasBeenSet = false;

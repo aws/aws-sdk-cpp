@@ -50,6 +50,11 @@ ModifyVerifiedAccessGroupPolicyResponse& ModifyVerifiedAccessGroupPolicyResponse
     {
       m_policyDocument = Aws::Utils::Xml::DecodeEscapedXmlText(policyDocumentNode.GetText());
     }
+    XmlNode sseSpecificationNode = resultNode.FirstChild("sseSpecification");
+    if(!sseSpecificationNode.IsNull())
+    {
+      m_sseSpecification = sseSpecificationNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

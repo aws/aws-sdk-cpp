@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the voice tone anlysis task.</p>
+     * <p>The ID of the voice tone analysis task.</p>
      */
     inline const Aws::String& GetVoiceToneAnalysisTaskId() const{ return m_voiceToneAnalysisTaskId; }
 
     /**
-     * <p>The ID of the voice tone anlysis task.</p>
+     * <p>The ID of the voice tone analysis task.</p>
      */
     inline bool VoiceToneAnalysisTaskIdHasBeenSet() const { return m_voiceToneAnalysisTaskIdHasBeenSet; }
 
     /**
-     * <p>The ID of the voice tone anlysis task.</p>
+     * <p>The ID of the voice tone analysis task.</p>
      */
     inline void SetVoiceToneAnalysisTaskId(const Aws::String& value) { m_voiceToneAnalysisTaskIdHasBeenSet = true; m_voiceToneAnalysisTaskId = value; }
 
     /**
-     * <p>The ID of the voice tone anlysis task.</p>
+     * <p>The ID of the voice tone analysis task.</p>
      */
     inline void SetVoiceToneAnalysisTaskId(Aws::String&& value) { m_voiceToneAnalysisTaskIdHasBeenSet = true; m_voiceToneAnalysisTaskId = std::move(value); }
 
     /**
-     * <p>The ID of the voice tone anlysis task.</p>
+     * <p>The ID of the voice tone analysis task.</p>
      */
     inline void SetVoiceToneAnalysisTaskId(const char* value) { m_voiceToneAnalysisTaskIdHasBeenSet = true; m_voiceToneAnalysisTaskId.assign(value); }
 
     /**
-     * <p>The ID of the voice tone anlysis task.</p>
+     * <p>The ID of the voice tone analysis task.</p>
      */
     inline GetVoiceToneAnalysisTaskRequest& WithVoiceToneAnalysisTaskId(const Aws::String& value) { SetVoiceToneAnalysisTaskId(value); return *this;}
 
     /**
-     * <p>The ID of the voice tone anlysis task.</p>
+     * <p>The ID of the voice tone analysis task.</p>
      */
     inline GetVoiceToneAnalysisTaskRequest& WithVoiceToneAnalysisTaskId(Aws::String&& value) { SetVoiceToneAnalysisTaskId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the voice tone anlysis task.</p>
+     * <p>The ID of the voice tone analysis task.</p>
      */
     inline GetVoiceToneAnalysisTaskRequest& WithVoiceToneAnalysisTaskId(const char* value) { SetVoiceToneAnalysisTaskId(value); return *this;}
 

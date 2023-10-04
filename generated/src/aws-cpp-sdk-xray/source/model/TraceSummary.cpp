@@ -20,6 +20,7 @@ namespace Model
 
 TraceSummary::TraceSummary() : 
     m_idHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_duration(0.0),
     m_durationHasBeenSet(false),
     m_responseTime(0.0),
@@ -51,6 +52,7 @@ TraceSummary::TraceSummary() :
 
 TraceSummary::TraceSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_duration(0.0),
     m_durationHasBeenSet(false),
     m_responseTime(0.0),
@@ -88,6 +90,13 @@ TraceSummary& TraceSummary::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("Id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartTime"))
+  {
+    m_startTime = jsonValue.GetDouble("StartTime");
+
+    m_startTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Duration"))
@@ -268,6 +277,11 @@ JsonValue TraceSummary::Jsonize() const
   {
    payload.WithString("Id", m_id);
 
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
   if(m_durationHasBeenSet)

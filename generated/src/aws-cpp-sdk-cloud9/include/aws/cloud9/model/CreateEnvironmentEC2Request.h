@@ -300,10 +300,11 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
      * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
      * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
@@ -328,10 +329,11 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
      * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
      * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
@@ -356,10 +358,11 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
      * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
      * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
@@ -384,10 +387,11 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
      * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
      * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
@@ -412,10 +416,11 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
      * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
      * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
@@ -440,10 +445,11 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
      * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
      * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
@@ -468,10 +474,11 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
      * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
      * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):
@@ -496,10 +503,11 @@ namespace Model
      * term support through 2023.</p> <p>From December 31, 2023, the parameter for
      * Amazon Linux will no longer be available when you specify an AMI for your
      * instance. Amazon Linux 2 will then become the default AMI, which is used to
-     * launch your instance if no parameter is explicitly defined.</p> <p> <b>AMI
-     * aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
-     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
-     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * launch your instance if no parameter is explicitly defined.</p> <p>Since Ubuntu
+     * 18.04 has ended standard support as of May 31, 2023, we recommend you choose
+     * Ubuntu 22.04.</p> <p> <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux
+     * (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon
+     * Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
      * <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Ubuntu 22.04:
      * <code>ubuntu-22.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
      * <li> <p> <b>Amazon Linux (default):

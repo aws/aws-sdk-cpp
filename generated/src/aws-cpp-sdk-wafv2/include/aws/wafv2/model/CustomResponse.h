@@ -167,8 +167,9 @@ namespace Model
 
 
     /**
-     * <p>The HTTP headers to use in the response. Duplicate header names are not
-     * allowed. </p> <p>For information about the limits on count and size for custom
+     * <p>The HTTP headers to use in the response. You can specify any header name
+     * except for <code>content-type</code>. Duplicate header names are not
+     * allowed.</p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
@@ -176,8 +177,9 @@ namespace Model
     inline const Aws::Vector<CustomHTTPHeader>& GetResponseHeaders() const{ return m_responseHeaders; }
 
     /**
-     * <p>The HTTP headers to use in the response. Duplicate header names are not
-     * allowed. </p> <p>For information about the limits on count and size for custom
+     * <p>The HTTP headers to use in the response. You can specify any header name
+     * except for <code>content-type</code>. Duplicate header names are not
+     * allowed.</p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
@@ -185,8 +187,9 @@ namespace Model
     inline bool ResponseHeadersHasBeenSet() const { return m_responseHeadersHasBeenSet; }
 
     /**
-     * <p>The HTTP headers to use in the response. Duplicate header names are not
-     * allowed. </p> <p>For information about the limits on count and size for custom
+     * <p>The HTTP headers to use in the response. You can specify any header name
+     * except for <code>content-type</code>. Duplicate header names are not
+     * allowed.</p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
@@ -194,8 +197,9 @@ namespace Model
     inline void SetResponseHeaders(const Aws::Vector<CustomHTTPHeader>& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders = value; }
 
     /**
-     * <p>The HTTP headers to use in the response. Duplicate header names are not
-     * allowed. </p> <p>For information about the limits on count and size for custom
+     * <p>The HTTP headers to use in the response. You can specify any header name
+     * except for <code>content-type</code>. Duplicate header names are not
+     * allowed.</p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
@@ -203,8 +207,9 @@ namespace Model
     inline void SetResponseHeaders(Aws::Vector<CustomHTTPHeader>&& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders = std::move(value); }
 
     /**
-     * <p>The HTTP headers to use in the response. Duplicate header names are not
-     * allowed. </p> <p>For information about the limits on count and size for custom
+     * <p>The HTTP headers to use in the response. You can specify any header name
+     * except for <code>content-type</code>. Duplicate header names are not
+     * allowed.</p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
@@ -212,8 +217,9 @@ namespace Model
     inline CustomResponse& WithResponseHeaders(const Aws::Vector<CustomHTTPHeader>& value) { SetResponseHeaders(value); return *this;}
 
     /**
-     * <p>The HTTP headers to use in the response. Duplicate header names are not
-     * allowed. </p> <p>For information about the limits on count and size for custom
+     * <p>The HTTP headers to use in the response. You can specify any header name
+     * except for <code>content-type</code>. Duplicate header names are not
+     * allowed.</p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
@@ -221,8 +227,9 @@ namespace Model
     inline CustomResponse& WithResponseHeaders(Aws::Vector<CustomHTTPHeader>&& value) { SetResponseHeaders(std::move(value)); return *this;}
 
     /**
-     * <p>The HTTP headers to use in the response. Duplicate header names are not
-     * allowed. </p> <p>For information about the limits on count and size for custom
+     * <p>The HTTP headers to use in the response. You can specify any header name
+     * except for <code>content-type</code>. Duplicate header names are not
+     * allowed.</p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>
@@ -230,8 +237,9 @@ namespace Model
     inline CustomResponse& AddResponseHeaders(const CustomHTTPHeader& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders.push_back(value); return *this; }
 
     /**
-     * <p>The HTTP headers to use in the response. Duplicate header names are not
-     * allowed. </p> <p>For information about the limits on count and size for custom
+     * <p>The HTTP headers to use in the response. You can specify any header name
+     * except for <code>content-type</code>. Duplicate header names are not
+     * allowed.</p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <i>WAF Developer Guide</i>. </p>

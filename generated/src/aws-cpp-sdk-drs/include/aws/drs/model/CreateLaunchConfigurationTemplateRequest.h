@@ -182,6 +182,27 @@ namespace Model
 
 
     /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline bool GetPostLaunchEnabled() const{ return m_postLaunchEnabled; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline bool PostLaunchEnabledHasBeenSet() const { return m_postLaunchEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline void SetPostLaunchEnabled(bool value) { m_postLaunchEnabledHasBeenSet = true; m_postLaunchEnabled = value; }
+
+    /**
+     * <p>Whether we want to activate post-launch actions.</p>
+     */
+    inline CreateLaunchConfigurationTemplateRequest& WithPostLaunchEnabled(bool value) { SetPostLaunchEnabled(value); return *this;}
+
+
+    /**
      * <p>Request to associate tags during creation of a Launch Configuration
      * Template.</p>
      */
@@ -306,6 +327,9 @@ namespace Model
 
     Licensing m_licensing;
     bool m_licensingHasBeenSet = false;
+
+    bool m_postLaunchEnabled;
+    bool m_postLaunchEnabledHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

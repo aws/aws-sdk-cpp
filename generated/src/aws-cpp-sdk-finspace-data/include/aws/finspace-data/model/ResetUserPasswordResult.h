@@ -69,44 +69,44 @@ namespace Model
 
 
     /**
-     * <p>A randomly generated temporary password for the requested user account. This
-     * password expires in 7 days.</p>
+     * <p>A randomly generated temporary password for the requested user. This password
+     * expires in 7 days.</p>
      */
     inline const Aws::String& GetTemporaryPassword() const{ return m_temporaryPassword; }
 
     /**
-     * <p>A randomly generated temporary password for the requested user account. This
-     * password expires in 7 days.</p>
+     * <p>A randomly generated temporary password for the requested user. This password
+     * expires in 7 days.</p>
      */
     inline void SetTemporaryPassword(const Aws::String& value) { m_temporaryPassword = value; }
 
     /**
-     * <p>A randomly generated temporary password for the requested user account. This
-     * password expires in 7 days.</p>
+     * <p>A randomly generated temporary password for the requested user. This password
+     * expires in 7 days.</p>
      */
     inline void SetTemporaryPassword(Aws::String&& value) { m_temporaryPassword = std::move(value); }
 
     /**
-     * <p>A randomly generated temporary password for the requested user account. This
-     * password expires in 7 days.</p>
+     * <p>A randomly generated temporary password for the requested user. This password
+     * expires in 7 days.</p>
      */
     inline void SetTemporaryPassword(const char* value) { m_temporaryPassword.assign(value); }
 
     /**
-     * <p>A randomly generated temporary password for the requested user account. This
-     * password expires in 7 days.</p>
+     * <p>A randomly generated temporary password for the requested user. This password
+     * expires in 7 days.</p>
      */
     inline ResetUserPasswordResult& WithTemporaryPassword(const Aws::String& value) { SetTemporaryPassword(value); return *this;}
 
     /**
-     * <p>A randomly generated temporary password for the requested user account. This
-     * password expires in 7 days.</p>
+     * <p>A randomly generated temporary password for the requested user. This password
+     * expires in 7 days.</p>
      */
     inline ResetUserPasswordResult& WithTemporaryPassword(Aws::String&& value) { SetTemporaryPassword(std::move(value)); return *this;}
 
     /**
-     * <p>A randomly generated temporary password for the requested user account. This
-     * password expires in 7 days.</p>
+     * <p>A randomly generated temporary password for the requested user. This password
+     * expires in 7 days.</p>
      */
     inline ResetUserPasswordResult& WithTemporaryPassword(const char* value) { SetTemporaryPassword(value); return *this;}
 

@@ -7,6 +7,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/AddonDetails.h>
+#include <aws/guardduty/model/ManagementType.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +157,61 @@ namespace Model
      */
     inline CoverageEksClusterDetails& WithAddonDetails(AddonDetails&& value) { SetAddonDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS
+     * cluster.</p> <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and
+     * manages updates for this resource.</p> <p> <code>MANUAL</code> indicates that
+     * you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.</p>
+     */
+    inline const ManagementType& GetManagementType() const{ return m_managementType; }
+
+    /**
+     * <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS
+     * cluster.</p> <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and
+     * manages updates for this resource.</p> <p> <code>MANUAL</code> indicates that
+     * you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.</p>
+     */
+    inline bool ManagementTypeHasBeenSet() const { return m_managementTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS
+     * cluster.</p> <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and
+     * manages updates for this resource.</p> <p> <code>MANUAL</code> indicates that
+     * you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.</p>
+     */
+    inline void SetManagementType(const ManagementType& value) { m_managementTypeHasBeenSet = true; m_managementType = value; }
+
+    /**
+     * <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS
+     * cluster.</p> <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and
+     * manages updates for this resource.</p> <p> <code>MANUAL</code> indicates that
+     * you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.</p>
+     */
+    inline void SetManagementType(ManagementType&& value) { m_managementTypeHasBeenSet = true; m_managementType = std::move(value); }
+
+    /**
+     * <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS
+     * cluster.</p> <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and
+     * manages updates for this resource.</p> <p> <code>MANUAL</code> indicates that
+     * you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.</p>
+     */
+    inline CoverageEksClusterDetails& WithManagementType(const ManagementType& value) { SetManagementType(value); return *this;}
+
+    /**
+     * <p>Indicates how the Amazon EKS add-on GuardDuty agent is managed for this EKS
+     * cluster.</p> <p> <code>AUTO_MANAGED</code> indicates GuardDuty deploys and
+     * manages updates for this resource.</p> <p> <code>MANUAL</code> indicates that
+     * you are responsible to deploy, update, and manage the Amazon EKS add-on
+     * GuardDuty agent for this resource.</p>
+     */
+    inline CoverageEksClusterDetails& WithManagementType(ManagementType&& value) { SetManagementType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterName;
@@ -169,6 +225,9 @@ namespace Model
 
     AddonDetails m_addonDetails;
     bool m_addonDetailsHasBeenSet = false;
+
+    ManagementType m_managementType;
+    bool m_managementTypeHasBeenSet = false;
   };
 
 } // namespace Model

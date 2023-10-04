@@ -23,7 +23,8 @@ KafkaAction::KafkaAction() :
     m_topicHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_partitionHasBeenSet(false),
-    m_clientPropertiesHasBeenSet(false)
+    m_clientPropertiesHasBeenSet(false),
+    m_headersHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ KafkaAction::KafkaAction(JsonView jsonValue) :
     m_topicHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_partitionHasBeenSet(false),
-    m_clientPropertiesHasBeenSet(false)
+    m_clientPropertiesHasBeenSet(false),
+    m_headersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,16 @@ KafkaAction& KafkaAction::operator =(JsonView jsonValue)
     m_clientPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("headers"))
+  {
+    Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("headers");
+    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+    {
+      m_headers.push_back(headersJsonList[headersIndex].AsObject());
+    }
+    m_headersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +128,17 @@ JsonValue KafkaAction::Jsonize() const
      clientPropertiesJsonMap.WithString(clientPropertiesItem.first, clientPropertiesItem.second);
    }
    payload.WithObject("clientProperties", std::move(clientPropertiesJsonMap));
+
+  }
+
+  if(m_headersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
+   for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
+   {
+     headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());
+   }
+   payload.WithArray("headers", std::move(headersJsonList));
 
   }
 

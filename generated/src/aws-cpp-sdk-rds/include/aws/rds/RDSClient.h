@@ -1763,8 +1763,8 @@ namespace Aws
         }
 
         /**
-         * <p>Lists the set of CA certificates provided by Amazon RDS for this Amazon Web
-         * Services account.</p> <p>For more information, see <a
+         * <p>Lists the set of certificate authority (CA) certificates provided by Amazon
+         * RDS for this Amazon Web Services account.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
          * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
          * Guide</i> and <a
@@ -4261,18 +4261,18 @@ namespace Aws
 
         /**
          * <p>Restores a DB instance to an arbitrary point in time. You can restore to any
-         * point in time before the time identified by the LatestRestorableTime property.
-         * You can restore to a point up to the number of days specified by the
-         * BackupRetentionPeriod property.</p> <p>The target database is created with most
-         * of the original configuration, but in a system-selected Availability Zone, with
-         * the default security group, the default subnet group, and the default DB
-         * parameter group. By default, the new DB instance is created as a single-AZ
-         * deployment except when the instance is a SQL Server instance that has an option
-         * group that is associated with mirroring; in this case, the instance becomes a
-         * mirrored deployment and not a single-AZ deployment.</p>  <p>This command
-         * doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
-         * <code>RestoreDBClusterToPointInTime</code>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * point in time before the time identified by the
+         * <code>LatestRestorableTime</code> property. You can restore to a point up to the
+         * number of days specified by the <code>BackupRetentionPeriod</code> property.</p>
+         * <p>The target database is created with most of the original configuration, but
+         * in a system-selected Availability Zone, with the default security group, the
+         * default subnet group, and the default DB parameter group. By default, the new DB
+         * instance is created as a single-AZ deployment except when the instance is a SQL
+         * Server instance that has an option group that is associated with mirroring; in
+         * this case, the instance becomes a mirrored deployment and not a single-AZ
+         * deployment.</p>  <p>This command doesn't apply to Aurora MySQL and Aurora
+         * PostgreSQL. For Aurora, use <code>RestoreDBClusterToPointInTime</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">AWS
          * API Reference</a></p>
          */

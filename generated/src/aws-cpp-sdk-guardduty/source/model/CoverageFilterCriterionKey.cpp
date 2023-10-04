@@ -25,6 +25,8 @@ namespace Aws
         static const int RESOURCE_TYPE_HASH = HashingUtils::HashString("RESOURCE_TYPE");
         static const int COVERAGE_STATUS_HASH = HashingUtils::HashString("COVERAGE_STATUS");
         static const int ADDON_VERSION_HASH = HashingUtils::HashString("ADDON_VERSION");
+        static const int MANAGEMENT_TYPE_HASH = HashingUtils::HashString("MANAGEMENT_TYPE");
+        static const int EKS_CLUSTER_NAME_HASH = HashingUtils::HashString("EKS_CLUSTER_NAME");
 
 
         CoverageFilterCriterionKey GetCoverageFilterCriterionKeyForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return CoverageFilterCriterionKey::ADDON_VERSION;
           }
+          else if (hashCode == MANAGEMENT_TYPE_HASH)
+          {
+            return CoverageFilterCriterionKey::MANAGEMENT_TYPE;
+          }
+          else if (hashCode == EKS_CLUSTER_NAME_HASH)
+          {
+            return CoverageFilterCriterionKey::EKS_CLUSTER_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +84,10 @@ namespace Aws
             return "COVERAGE_STATUS";
           case CoverageFilterCriterionKey::ADDON_VERSION:
             return "ADDON_VERSION";
+          case CoverageFilterCriterionKey::MANAGEMENT_TYPE:
+            return "MANAGEMENT_TYPE";
+          case CoverageFilterCriterionKey::EKS_CLUSTER_NAME:
+            return "EKS_CLUSTER_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

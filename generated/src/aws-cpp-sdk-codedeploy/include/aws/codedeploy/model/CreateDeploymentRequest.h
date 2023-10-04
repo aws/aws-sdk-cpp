@@ -44,50 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline CreateDeploymentRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline CreateDeploymentRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an CodeDeploy application associated with the IAM user or Amazon
-     * Web Services account.</p>
+     * <p>The name of an CodeDeploy application associated with the user or Amazon Web
+     * Services account.</p>
      */
     inline CreateDeploymentRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -165,8 +165,8 @@ namespace Model
 
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or Amazon
-     * Web Services account.</p> <p>If not specified, the value configured in the
+     * <p>The name of a deployment configuration associated with the user or Amazon Web
+     * Services account.</p> <p>If not specified, the value configured in the
      * deployment group is used as the default. If the deployment group does not have a
      * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
@@ -174,8 +174,8 @@ namespace Model
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or Amazon
-     * Web Services account.</p> <p>If not specified, the value configured in the
+     * <p>The name of a deployment configuration associated with the user or Amazon Web
+     * Services account.</p> <p>If not specified, the value configured in the
      * deployment group is used as the default. If the deployment group does not have a
      * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
@@ -183,8 +183,8 @@ namespace Model
     inline bool DeploymentConfigNameHasBeenSet() const { return m_deploymentConfigNameHasBeenSet; }
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or Amazon
-     * Web Services account.</p> <p>If not specified, the value configured in the
+     * <p>The name of a deployment configuration associated with the user or Amazon Web
+     * Services account.</p> <p>If not specified, the value configured in the
      * deployment group is used as the default. If the deployment group does not have a
      * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
@@ -192,8 +192,8 @@ namespace Model
     inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or Amazon
-     * Web Services account.</p> <p>If not specified, the value configured in the
+     * <p>The name of a deployment configuration associated with the user or Amazon Web
+     * Services account.</p> <p>If not specified, the value configured in the
      * deployment group is used as the default. If the deployment group does not have a
      * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
@@ -201,8 +201,8 @@ namespace Model
     inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::move(value); }
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or Amazon
-     * Web Services account.</p> <p>If not specified, the value configured in the
+     * <p>The name of a deployment configuration associated with the user or Amazon Web
+     * Services account.</p> <p>If not specified, the value configured in the
      * deployment group is used as the default. If the deployment group does not have a
      * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
@@ -210,8 +210,8 @@ namespace Model
     inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or Amazon
-     * Web Services account.</p> <p>If not specified, the value configured in the
+     * <p>The name of a deployment configuration associated with the user or Amazon Web
+     * Services account.</p> <p>If not specified, the value configured in the
      * deployment group is used as the default. If the deployment group does not have a
      * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
@@ -219,8 +219,8 @@ namespace Model
     inline CreateDeploymentRequest& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or Amazon
-     * Web Services account.</p> <p>If not specified, the value configured in the
+     * <p>The name of a deployment configuration associated with the user or Amazon Web
+     * Services account.</p> <p>If not specified, the value configured in the
      * deployment group is used as the default. If the deployment group does not have a
      * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
@@ -228,8 +228,8 @@ namespace Model
     inline CreateDeploymentRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a deployment configuration associated with the IAM user or Amazon
-     * Web Services account.</p> <p>If not specified, the value configured in the
+     * <p>The name of a deployment configuration associated with the user or Amazon Web
+     * Services account.</p> <p>If not specified, the value configured in the
      * deployment group is used as the default. If the deployment group does not have a
      * deployment configuration associated with it,
      * <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>

@@ -597,6 +597,32 @@ namespace IoTFleetWise
         }
 
         /**
+         * <p>Retrieves the encryption configuration for resources and data in Amazon Web
+         * Services IoT FleetWise.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEncryptionConfigurationOutcome GetEncryptionConfiguration(const Model::GetEncryptionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEncryptionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEncryptionConfigurationRequestT = Model::GetEncryptionConfigurationRequest>
+        Model::GetEncryptionConfigurationOutcomeCallable GetEncryptionConfigurationCallable(const GetEncryptionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IoTFleetWiseClient::GetEncryptionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetEncryptionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEncryptionConfigurationRequestT = Model::GetEncryptionConfigurationRequest>
+        void GetEncryptionConfigurationAsync(const GetEncryptionConfigurationRequestT& request, const GetEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTFleetWiseClient::GetEncryptionConfiguration, request, handler, context);
+        }
+
+        /**
          * <p> Retrieves information about a fleet. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetFleet">AWS
          * API Reference</a></p>
@@ -1188,6 +1214,37 @@ namespace IoTFleetWise
         void ListVehiclesInFleetAsync(const ListVehiclesInFleetRequestT& request, const ListVehiclesInFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTFleetWiseClient::ListVehiclesInFleet, request, handler, context);
+        }
+
+        /**
+         * <p>Creates or updates the encryption configuration. Amazon Web Services IoT
+         * FleetWise can encrypt your data and resources using an Amazon Web Services
+         * managed key. Or, you can use a KMS key that you own and manage. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data
+         * encryption</a> in the <i>Amazon Web Services IoT FleetWise Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutEncryptionConfigurationOutcome PutEncryptionConfiguration(const Model::PutEncryptionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutEncryptionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutEncryptionConfigurationRequestT = Model::PutEncryptionConfigurationRequest>
+        Model::PutEncryptionConfigurationOutcomeCallable PutEncryptionConfigurationCallable(const PutEncryptionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IoTFleetWiseClient::PutEncryptionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for PutEncryptionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutEncryptionConfigurationRequestT = Model::PutEncryptionConfigurationRequest>
+        void PutEncryptionConfigurationAsync(const PutEncryptionConfigurationRequestT& request, const PutEncryptionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTFleetWiseClient::PutEncryptionConfiguration, request, handler, context);
         }
 
         /**

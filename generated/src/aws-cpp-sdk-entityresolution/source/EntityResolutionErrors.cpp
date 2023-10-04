@@ -6,15 +6,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/entityresolution/EntityResolutionErrors.h>
+#include <aws/entityresolution/model/ExceedsLimitException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::EntityResolution;
+using namespace Aws::EntityResolution::Model;
 
 namespace Aws
 {
 namespace EntityResolution
 {
+template<> AWS_ENTITYRESOLUTION_API ExceedsLimitException EntityResolutionError::GetModeledError()
+{
+  assert(this->GetErrorType() == EntityResolutionErrors::EXCEEDS_LIMIT);
+  return ExceedsLimitException(this->GetJsonPayload().View());
+}
+
 namespace EntityResolutionErrorMapper
 {
 

@@ -618,7 +618,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+     * example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
      */
     inline const Aws::String& GetCdcStopPosition() const{ return m_cdcStopPosition; }
 
@@ -626,7 +626,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+     * example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
      */
     inline bool CdcStopPositionHasBeenSet() const { return m_cdcStopPositionHasBeenSet; }
 
@@ -634,7 +634,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+     * example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
      */
     inline void SetCdcStopPosition(const Aws::String& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = value; }
 
@@ -642,7 +642,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+     * example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
      */
     inline void SetCdcStopPosition(Aws::String&& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = std::move(value); }
 
@@ -650,7 +650,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+     * example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
      */
     inline void SetCdcStopPosition(const char* value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition.assign(value); }
 
@@ -658,7 +658,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+     * example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
      */
     inline CreateReplicationTaskRequest& WithCdcStopPosition(const Aws::String& value) { SetCdcStopPosition(value); return *this;}
 
@@ -666,7 +666,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+     * example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
      */
     inline CreateReplicationTaskRequest& WithCdcStopPosition(Aws::String&& value) { SetCdcStopPosition(std::move(value)); return *this;}
 
@@ -674,7 +674,7 @@ namespace Model
      * <p>Indicates when you want a change data capture (CDC) operation to stop. The
      * value can be either server time or commit time.</p> <p>Server time example:
      * --cdc-stop-position “server_time:2018-02-09T12:12:12”</p> <p>Commit time
-     * example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
+     * example: --cdc-stop-position “commit_time:2018-02-09T12:12:12“</p>
      */
     inline CreateReplicationTaskRequest& WithCdcStopPosition(const char* value) { SetCdcStopPosition(value); return *this;}
 

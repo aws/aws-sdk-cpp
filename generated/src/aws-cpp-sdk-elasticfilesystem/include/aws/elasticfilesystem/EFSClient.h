@@ -324,13 +324,15 @@ namespace EFS
          * replication configuration. The destination file system configuration consists of
          * the following properties:</p> <ul> <li> <p> <b>Amazon Web Services Region</b> -
          * The Amazon Web Services Region in which the destination file system is created.
-         * Amazon EFS replication is available in all Amazon Web Services Regions that
-         * Amazon EFS is available in, except Africa (Cape Town), Asia Pacific (Hong Kong),
-         * Asia Pacific (Jakarta), Europe (Milan), and Middle East (Bahrain).</p> </li>
-         * <li> <p> <b>Availability Zone</b> - If you want the destination file system to
-         * use EFS One Zone availability and durability, you must specify the Availability
-         * Zone to create the file system in. For more information about EFS storage
-         * classes, see <a
+         * Amazon EFS replication is available in all Amazon Web Services Regions in which
+         * EFS is available. To use EFS replication in a Region that is disabled by
+         * default, you must first opt in to the Region. For more information, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
+         * Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference
+         * Reference Guide</i> </p> </li> <li> <p> <b>Availability Zone</b> - If you want
+         * the destination file system to use EFS One Zone availability and durability, you
+         * must specify the Availability Zone to create the file system in. For more
+         * information about EFS storage classes, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> Amazon
          * EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p> </li> <li> <p>
          * <b>Encryption</b> - All destination file systems are created with encryption at
@@ -350,7 +352,7 @@ namespace EFS
          * Intelligent-Tiering are not enabled on the destination file system. After the
          * destination file system is created, you can enable EFS lifecycle management and
          * EFS Intelligent-Tiering.</p> </li> <li> <p> <b>Automatic backups</b> - Automatic
-         * daily backups not enabled on the destination file system. After the file system
+         * daily backups are enabled on the destination file system. After the file system
          * is created, you can change this setting.</p> </li> </ul> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS
@@ -525,9 +527,7 @@ namespace EFS
         }
 
         /**
-         * <p>Deletes an existing replication configuration. To delete a replication
-         * configuration, you must make the request from the Amazon Web Services Region in
-         * which the destination file system is located. Deleting a replication
+         * <p>Deletes an existing replication configuration. Deleting a replication
          * configuration ends the replication process. After a replication configuration is
          * deleted, the destination file system is no longer read-only. You can write to
          * the destination file system after its status becomes
@@ -589,9 +589,7 @@ namespace EFS
         /**
          * <p>Returns the account preferences settings for the Amazon Web Services account
          * associated with the user making the request, in the current Amazon Web Services
-         * Region. For more information, see <a
-         * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource
-         * IDs</a>.</p><p><h3>See Also:</h3>   <a
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences">AWS
          * API Reference</a></p>
          */

@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeGroupResult::DescribeGroupResult() : 
-    m_state(EntityState::NOT_SET)
+    m_state(EntityState::NOT_SET),
+    m_hiddenFromGlobalAddressList(false)
 {
 }
 
 DescribeGroupResult::DescribeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(EntityState::NOT_SET)
+    m_state(EntityState::NOT_SET),
+    m_hiddenFromGlobalAddressList(false)
 {
   *this = result;
 }
@@ -64,6 +66,12 @@ DescribeGroupResult& DescribeGroupResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("DisabledDate"))
   {
     m_disabledDate = jsonValue.GetDouble("DisabledDate");
+
+  }
+
+  if(jsonValue.ValueExists("HiddenFromGlobalAddressList"))
+  {
+    m_hiddenFromGlobalAddressList = jsonValue.GetBool("HiddenFromGlobalAddressList");
 
   }
 

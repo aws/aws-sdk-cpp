@@ -22,7 +22,8 @@ namespace Model
     OnZendeskTicketCreate,
     OnZendeskTicketStatusUpdate,
     OnSalesforceCaseCreate,
-    OnContactEvaluationSubmit
+    OnContactEvaluationSubmit,
+    OnMetricDataUpdate
   };
 
 namespace EventSourceNameMapper

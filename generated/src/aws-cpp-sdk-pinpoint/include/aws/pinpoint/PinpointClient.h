@@ -2439,8 +2439,10 @@ namespace Pinpoint
         }
 
         /**
-         * <p>Removes one or more attributes, of the same attribute type, from all the
-         * endpoints that are associated with an application.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more custom attributes, of the same attribute type, from the
+         * application. Existing endpoints still have the attributes but Amazon Pinpoint
+         * will stop capturing new or changed values for these attributes.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/RemoveAttributes">AWS
          * API Reference</a></p>
          */

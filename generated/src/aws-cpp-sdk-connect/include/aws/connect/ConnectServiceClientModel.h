@@ -115,6 +115,7 @@
 #include <aws/connect/model/ListRoutingProfilesResult.h>
 #include <aws/connect/model/ListRulesResult.h>
 #include <aws/connect/model/ListSecurityKeysResult.h>
+#include <aws/connect/model/ListSecurityProfileApplicationsResult.h>
 #include <aws/connect/model/ListSecurityProfilePermissionsResult.h>
 #include <aws/connect/model/ListSecurityProfilesResult.h>
 #include <aws/connect/model/ListTagsForResourceResult.h>
@@ -337,6 +338,7 @@ namespace Aws
       class ListRoutingProfilesRequest;
       class ListRulesRequest;
       class ListSecurityKeysRequest;
+      class ListSecurityProfileApplicationsRequest;
       class ListSecurityProfilePermissionsRequest;
       class ListSecurityProfilesRequest;
       class ListTagsForResourceRequest;
@@ -549,6 +551,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListRoutingProfilesResult, ConnectError> ListRoutingProfilesOutcome;
       typedef Aws::Utils::Outcome<ListRulesResult, ConnectError> ListRulesOutcome;
       typedef Aws::Utils::Outcome<ListSecurityKeysResult, ConnectError> ListSecurityKeysOutcome;
+      typedef Aws::Utils::Outcome<ListSecurityProfileApplicationsResult, ConnectError> ListSecurityProfileApplicationsOutcome;
       typedef Aws::Utils::Outcome<ListSecurityProfilePermissionsResult, ConnectError> ListSecurityProfilePermissionsOutcome;
       typedef Aws::Utils::Outcome<ListSecurityProfilesResult, ConnectError> ListSecurityProfilesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectError> ListTagsForResourceOutcome;
@@ -761,6 +764,7 @@ namespace Aws
       typedef std::future<ListRoutingProfilesOutcome> ListRoutingProfilesOutcomeCallable;
       typedef std::future<ListRulesOutcome> ListRulesOutcomeCallable;
       typedef std::future<ListSecurityKeysOutcome> ListSecurityKeysOutcomeCallable;
+      typedef std::future<ListSecurityProfileApplicationsOutcome> ListSecurityProfileApplicationsOutcomeCallable;
       typedef std::future<ListSecurityProfilePermissionsOutcome> ListSecurityProfilePermissionsOutcomeCallable;
       typedef std::future<ListSecurityProfilesOutcome> ListSecurityProfilesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -976,6 +980,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::ListRoutingProfilesRequest&, const Model::ListRoutingProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutingProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListRulesRequest&, const Model::ListRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRulesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListSecurityKeysRequest&, const Model::ListSecurityKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityKeysResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfileApplicationsRequest&, const Model::ListSecurityProfileApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfileApplicationsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfilePermissionsRequest&, const Model::ListSecurityProfilePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfilePermissionsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfilesRequest&, const Model::ListSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;

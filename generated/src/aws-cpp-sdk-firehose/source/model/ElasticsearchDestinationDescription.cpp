@@ -33,7 +33,8 @@ ElasticsearchDestinationDescription::ElasticsearchDestinationDescription() :
     m_s3DestinationDescriptionHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_vpcConfigurationDescriptionHasBeenSet(false)
+    m_vpcConfigurationDescriptionHasBeenSet(false),
+    m_documentIdOptionsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ ElasticsearchDestinationDescription::ElasticsearchDestinationDescription(JsonVie
     m_s3DestinationDescriptionHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_vpcConfigurationDescriptionHasBeenSet(false)
+    m_vpcConfigurationDescriptionHasBeenSet(false),
+    m_documentIdOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +152,13 @@ ElasticsearchDestinationDescription& ElasticsearchDestinationDescription::operat
     m_vpcConfigurationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocumentIdOptions"))
+  {
+    m_documentIdOptions = jsonValue.GetObject("DocumentIdOptions");
+
+    m_documentIdOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -230,6 +239,12 @@ JsonValue ElasticsearchDestinationDescription::Jsonize() const
   if(m_vpcConfigurationDescriptionHasBeenSet)
   {
    payload.WithObject("VpcConfigurationDescription", m_vpcConfigurationDescription.Jsonize());
+
+  }
+
+  if(m_documentIdOptionsHasBeenSet)
+  {
+   payload.WithObject("DocumentIdOptions", m_documentIdOptions.Jsonize());
 
   }
 

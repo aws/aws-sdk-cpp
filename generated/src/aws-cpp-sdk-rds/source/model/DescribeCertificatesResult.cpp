@@ -38,6 +38,11 @@ DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::Am
 
   if(!resultNode.IsNull())
   {
+    XmlNode defaultCertificateForNewLaunchesNode = resultNode.FirstChild("DefaultCertificateForNewLaunches");
+    if(!defaultCertificateForNewLaunchesNode.IsNull())
+    {
+      m_defaultCertificateForNewLaunches = Aws::Utils::Xml::DecodeEscapedXmlText(defaultCertificateForNewLaunchesNode.GetText());
+    }
     XmlNode certificatesNode = resultNode.FirstChild("Certificates");
     if(!certificatesNode.IsNull())
     {

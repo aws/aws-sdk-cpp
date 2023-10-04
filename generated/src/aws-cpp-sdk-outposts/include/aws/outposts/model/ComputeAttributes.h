@@ -7,6 +7,7 @@
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/model/ComputeAssetState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -145,6 +146,61 @@ namespace Model
      */
     inline ComputeAttributes& WithState(ComputeAssetState&& value) { SetState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of the names of instance families that are currently associated with a
+     * given asset.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInstanceFamilies() const{ return m_instanceFamilies; }
+
+    /**
+     * <p>A list of the names of instance families that are currently associated with a
+     * given asset.</p>
+     */
+    inline bool InstanceFamiliesHasBeenSet() const { return m_instanceFamiliesHasBeenSet; }
+
+    /**
+     * <p>A list of the names of instance families that are currently associated with a
+     * given asset.</p>
+     */
+    inline void SetInstanceFamilies(const Aws::Vector<Aws::String>& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies = value; }
+
+    /**
+     * <p>A list of the names of instance families that are currently associated with a
+     * given asset.</p>
+     */
+    inline void SetInstanceFamilies(Aws::Vector<Aws::String>&& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies = std::move(value); }
+
+    /**
+     * <p>A list of the names of instance families that are currently associated with a
+     * given asset.</p>
+     */
+    inline ComputeAttributes& WithInstanceFamilies(const Aws::Vector<Aws::String>& value) { SetInstanceFamilies(value); return *this;}
+
+    /**
+     * <p>A list of the names of instance families that are currently associated with a
+     * given asset.</p>
+     */
+    inline ComputeAttributes& WithInstanceFamilies(Aws::Vector<Aws::String>&& value) { SetInstanceFamilies(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the names of instance families that are currently associated with a
+     * given asset.</p>
+     */
+    inline ComputeAttributes& AddInstanceFamilies(const Aws::String& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the names of instance families that are currently associated with a
+     * given asset.</p>
+     */
+    inline ComputeAttributes& AddInstanceFamilies(Aws::String&& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of the names of instance families that are currently associated with a
+     * given asset.</p>
+     */
+    inline ComputeAttributes& AddInstanceFamilies(const char* value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(value); return *this; }
+
   private:
 
     Aws::String m_hostId;
@@ -152,6 +208,9 @@ namespace Model
 
     ComputeAssetState m_state;
     bool m_stateHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_instanceFamilies;
+    bool m_instanceFamiliesHasBeenSet = false;
   };
 
 } // namespace Model

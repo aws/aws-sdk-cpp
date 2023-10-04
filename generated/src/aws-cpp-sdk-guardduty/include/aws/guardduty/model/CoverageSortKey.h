@@ -21,7 +21,8 @@ namespace Model
     COVERAGE_STATUS,
     ISSUE,
     ADDON_VERSION,
-    UPDATED_AT
+    UPDATED_AT,
+    EKS_CLUSTER_NAME
   };
 
 namespace CoverageSortKeyMapper

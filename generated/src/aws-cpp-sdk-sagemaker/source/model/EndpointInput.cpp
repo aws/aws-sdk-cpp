@@ -31,7 +31,8 @@ EndpointInput::EndpointInput() :
     m_probabilityThresholdAttribute(0.0),
     m_probabilityThresholdAttributeHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
-    m_endTimeOffsetHasBeenSet(false)
+    m_endTimeOffsetHasBeenSet(false),
+    m_excludeFeaturesAttributeHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ EndpointInput::EndpointInput(JsonView jsonValue) :
     m_probabilityThresholdAttribute(0.0),
     m_probabilityThresholdAttributeHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
-    m_endTimeOffsetHasBeenSet(false)
+    m_endTimeOffsetHasBeenSet(false),
+    m_excludeFeaturesAttributeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +127,13 @@ EndpointInput& EndpointInput::operator =(JsonView jsonValue)
     m_endTimeOffsetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExcludeFeaturesAttribute"))
+  {
+    m_excludeFeaturesAttribute = jsonValue.GetString("ExcludeFeaturesAttribute");
+
+    m_excludeFeaturesAttributeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -187,6 +196,12 @@ JsonValue EndpointInput::Jsonize() const
   if(m_endTimeOffsetHasBeenSet)
   {
    payload.WithString("EndTimeOffset", m_endTimeOffset);
+
+  }
+
+  if(m_excludeFeaturesAttributeHasBeenSet)
+  {
+   payload.WithString("ExcludeFeaturesAttribute", m_excludeFeaturesAttribute);
 
   }
 

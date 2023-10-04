@@ -299,6 +299,32 @@ namespace LakeFormation
         }
 
         /**
+         * <p>Enforce Lake Formation permissions for the given databases, tables, and
+         * principals.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLakeFormationOptInOutcome CreateLakeFormationOptIn(const Model::CreateLakeFormationOptInRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLakeFormationOptIn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLakeFormationOptInRequestT = Model::CreateLakeFormationOptInRequest>
+        Model::CreateLakeFormationOptInOutcomeCallable CreateLakeFormationOptInCallable(const CreateLakeFormationOptInRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::CreateLakeFormationOptIn, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLakeFormationOptIn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLakeFormationOptInRequestT = Model::CreateLakeFormationOptInRequest>
+        void CreateLakeFormationOptInAsync(const CreateLakeFormationOptInRequestT& request, const CreateLakeFormationOptInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::CreateLakeFormationOptIn, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a data cell filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteDataCellsFilter">AWS
          * API Reference</a></p>
@@ -351,6 +377,32 @@ namespace LakeFormation
         void DeleteLFTagAsync(const DeleteLFTagRequestT& request, const DeleteLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LakeFormationClient::DeleteLFTag, request, handler, context);
+        }
+
+        /**
+         * <p>Remove the Lake Formation permissions enforcement of the given databases,
+         * tables, and principals.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLakeFormationOptInOutcome DeleteLakeFormationOptIn(const Model::DeleteLakeFormationOptInRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLakeFormationOptIn that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLakeFormationOptInRequestT = Model::DeleteLakeFormationOptInRequest>
+        Model::DeleteLakeFormationOptInOutcomeCallable DeleteLakeFormationOptInCallable(const DeleteLakeFormationOptInRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::DeleteLakeFormationOptIn, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLakeFormationOptIn that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLakeFormationOptInRequestT = Model::DeleteLakeFormationOptInRequest>
+        void DeleteLakeFormationOptInAsync(const DeleteLakeFormationOptInRequestT& request, const DeleteLakeFormationOptInResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::DeleteLakeFormationOptIn, request, handler, context);
         }
 
         /**
@@ -891,6 +943,32 @@ namespace LakeFormation
         void ListLFTagsAsync(const ListLFTagsRequestT& request, const ListLFTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LakeFormationClient::ListLFTags, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieve the current list of resources and principals that are opt in to
+         * enforce Lake Formation permissions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLakeFormationOptInsOutcome ListLakeFormationOptIns(const Model::ListLakeFormationOptInsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListLakeFormationOptIns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLakeFormationOptInsRequestT = Model::ListLakeFormationOptInsRequest>
+        Model::ListLakeFormationOptInsOutcomeCallable ListLakeFormationOptInsCallable(const ListLakeFormationOptInsRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::ListLakeFormationOptIns, request);
+        }
+
+        /**
+         * An Async wrapper for ListLakeFormationOptIns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLakeFormationOptInsRequestT = Model::ListLakeFormationOptInsRequest>
+        void ListLakeFormationOptInsAsync(const ListLakeFormationOptInsRequestT& request, const ListLakeFormationOptInsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::ListLakeFormationOptIns, request, handler, context);
         }
 
         /**

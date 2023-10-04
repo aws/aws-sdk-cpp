@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 CreateGroupRequest::CreateGroupRequest() : 
     m_organizationIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_hiddenFromGlobalAddressList(false),
+    m_hiddenFromGlobalAddressListHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,12 @@ Aws::String CreateGroupRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_hiddenFromGlobalAddressListHasBeenSet)
+  {
+   payload.WithBool("HiddenFromGlobalAddressList", m_hiddenFromGlobalAddressList);
 
   }
 

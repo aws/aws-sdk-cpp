@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The requested resource does not exist.</p><p><h3>See Also:</h3>   <a
+   * <p>The requested resource does not exist, or exists in a region other than the
+   * one specified for the command.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ResourceExistsException">AWS
    * API Reference</a></p>
    */

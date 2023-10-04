@@ -76,83 +76,147 @@ namespace Model
 
 
     /**
-     * <p>The resource for which members (users or groups) are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The resource for which members (users or groups) are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The resource for which members (users or groups) are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The resource for which members (users or groups) are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The resource for which members (users or groups) are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The resource for which members (users or groups) are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline AssociateDelegateToResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The resource for which members (users or groups) are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline AssociateDelegateToResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The resource for which members (users or groups) are associated.</p>
+     * <p>The resource for which members (users or groups) are associated.</p> <p>The
+     * identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>.
+     * The following identity formats are available:</p> <ul> <li> <p>Resource ID:
+     * r-0123456789a0123456789b0123456789</p> </li> <li> <p>Email address:
+     * resource@domain.tld</p> </li> <li> <p>Resource name: resource</p> </li> </ul>
      */
     inline AssociateDelegateToResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>The member (user or group) to associate to the resource.</p>
+     * <p>The member (user or group) to associate to the resource.</p> <p>The entity ID
+     * can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity: entity</p> </li> </ul>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
 
     /**
-     * <p>The member (user or group) to associate to the resource.</p>
+     * <p>The member (user or group) to associate to the resource.</p> <p>The entity ID
+     * can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity: entity</p> </li> </ul>
      */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
-     * <p>The member (user or group) to associate to the resource.</p>
+     * <p>The member (user or group) to associate to the resource.</p> <p>The entity ID
+     * can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity: entity</p> </li> </ul>
      */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
-     * <p>The member (user or group) to associate to the resource.</p>
+     * <p>The member (user or group) to associate to the resource.</p> <p>The entity ID
+     * can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity: entity</p> </li> </ul>
      */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
 
     /**
-     * <p>The member (user or group) to associate to the resource.</p>
+     * <p>The member (user or group) to associate to the resource.</p> <p>The entity ID
+     * can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity: entity</p> </li> </ul>
      */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
 
     /**
-     * <p>The member (user or group) to associate to the resource.</p>
+     * <p>The member (user or group) to associate to the resource.</p> <p>The entity ID
+     * can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity: entity</p> </li> </ul>
      */
     inline AssociateDelegateToResourceRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
 
     /**
-     * <p>The member (user or group) to associate to the resource.</p>
+     * <p>The member (user or group) to associate to the resource.</p> <p>The entity ID
+     * can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity: entity</p> </li> </ul>
      */
     inline AssociateDelegateToResourceRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
 
     /**
-     * <p>The member (user or group) to associate to the resource.</p>
+     * <p>The member (user or group) to associate to the resource.</p> <p>The entity ID
+     * can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or
+     * <i>email</i>.</p> <ul> <li> <p>Entity: 12345678-1234-1234-1234-123456789012 or
+     * S-1-1-12-1234567890-123456789-123456789-1234</p> </li> <li> <p>Email address:
+     * entity@domain.tld</p> </li> <li> <p>Entity: entity</p> </li> </ul>
      */
     inline AssociateDelegateToResourceRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
 

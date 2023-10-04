@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -317,6 +318,55 @@ namespace Model
      */
     inline PutQueryDefinitionRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
 
+
+    /**
+     * <p>Used as an idempotency token, to avoid returning an exception if the service
+     * receives the same request twice because of a network error.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Used as an idempotency token, to avoid returning an exception if the service
+     * receives the same request twice because of a network error.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>Used as an idempotency token, to avoid returning an exception if the service
+     * receives the same request twice because of a network error.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>Used as an idempotency token, to avoid returning an exception if the service
+     * receives the same request twice because of a network error.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>Used as an idempotency token, to avoid returning an exception if the service
+     * receives the same request twice because of a network error.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>Used as an idempotency token, to avoid returning an exception if the service
+     * receives the same request twice because of a network error.</p>
+     */
+    inline PutQueryDefinitionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>Used as an idempotency token, to avoid returning an exception if the service
+     * receives the same request twice because of a network error.</p>
+     */
+    inline PutQueryDefinitionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Used as an idempotency token, to avoid returning an exception if the service
+     * receives the same request twice because of a network error.</p>
+     */
+    inline PutQueryDefinitionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -330,6 +380,9 @@ namespace Model
 
     Aws::String m_queryString;
     bool m_queryStringHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

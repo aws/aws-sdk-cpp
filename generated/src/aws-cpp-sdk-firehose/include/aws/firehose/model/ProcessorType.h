@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     RecordDeAggregation,
+    Decompression,
     Lambda,
     MetadataExtraction,
     AppendDelimiterToRecord

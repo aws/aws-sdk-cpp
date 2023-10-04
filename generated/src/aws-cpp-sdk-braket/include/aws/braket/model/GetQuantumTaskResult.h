@@ -7,6 +7,7 @@
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/braket/model/QuantumTaskQueueInfo.h>
 #include <aws/braket/model/QuantumTaskStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -340,6 +341,47 @@ namespace Model
 
 
     /**
+     * <p>Queue information for the requested quantum task. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+     * API request.</p>
+     */
+    inline const QuantumTaskQueueInfo& GetQueueInfo() const{ return m_queueInfo; }
+
+    /**
+     * <p>Queue information for the requested quantum task. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+     * API request.</p>
+     */
+    inline void SetQueueInfo(const QuantumTaskQueueInfo& value) { m_queueInfo = value; }
+
+    /**
+     * <p>Queue information for the requested quantum task. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+     * API request.</p>
+     */
+    inline void SetQueueInfo(QuantumTaskQueueInfo&& value) { m_queueInfo = std::move(value); }
+
+    /**
+     * <p>Queue information for the requested quantum task. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+     * API request.</p>
+     */
+    inline GetQuantumTaskResult& WithQueueInfo(const QuantumTaskQueueInfo& value) { SetQueueInfo(value); return *this;}
+
+    /**
+     * <p>Queue information for the requested quantum task. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+     * API request.</p>
+     */
+    inline GetQuantumTaskResult& WithQueueInfo(QuantumTaskQueueInfo&& value) { SetQueueInfo(std::move(value)); return *this;}
+
+
+    /**
      * <p>The number of shots used in the task.</p>
      */
     inline long long GetShots() const{ return m_shots; }
@@ -482,6 +524,8 @@ namespace Model
     Aws::String m_outputS3Directory;
 
     Aws::String m_quantumTaskArn;
+
+    QuantumTaskQueueInfo m_queueInfo;
 
     long long m_shots;
 

@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/braket/model/InstanceConfig.h>
 #include <aws/braket/model/JobOutputDataConfig.h>
+#include <aws/braket/model/HybridJobQueueInfo.h>
 #include <aws/braket/model/JobPrimaryStatus.h>
 #include <aws/braket/model/JobStoppingCondition.h>
 #include <aws/braket/model/JobEventDetails.h>
@@ -566,6 +567,47 @@ namespace Model
 
 
     /**
+     * <p>Queue information for the requested job. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API
+     * request.</p>
+     */
+    inline const HybridJobQueueInfo& GetQueueInfo() const{ return m_queueInfo; }
+
+    /**
+     * <p>Queue information for the requested job. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API
+     * request.</p>
+     */
+    inline void SetQueueInfo(const HybridJobQueueInfo& value) { m_queueInfo = value; }
+
+    /**
+     * <p>Queue information for the requested job. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API
+     * request.</p>
+     */
+    inline void SetQueueInfo(HybridJobQueueInfo&& value) { m_queueInfo = std::move(value); }
+
+    /**
+     * <p>Queue information for the requested job. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API
+     * request.</p>
+     */
+    inline GetJobResult& WithQueueInfo(const HybridJobQueueInfo& value) { SetQueueInfo(value); return *this;}
+
+    /**
+     * <p>Queue information for the requested job. Only returned if
+     * <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API
+     * request.</p>
+     */
+    inline GetJobResult& WithQueueInfo(HybridJobQueueInfo&& value) { SetQueueInfo(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume
      * to perform tasks on behalf of a user. It can access user resources, run an
      * Amazon Braket job container on behalf of user, and output resources to the s3
@@ -823,6 +865,8 @@ namespace Model
     Aws::String m_jobName;
 
     JobOutputDataConfig m_outputDataConfig;
+
+    HybridJobQueueInfo m_queueInfo;
 
     Aws::String m_roleArn;
 

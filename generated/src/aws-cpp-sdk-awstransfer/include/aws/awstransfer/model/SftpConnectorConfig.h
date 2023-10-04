@@ -103,10 +103,12 @@ namespace Model
      * <code>ssh-keyscan</code> command against the SFTP server to retrieve the
      * necessary key.</p> <p>The three standard SSH public key format elements are
      * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>For the
-     * trusted host key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li>
-     * <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For
-     * ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>,
+     * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
+     * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
+     * the <code>&lt;comment&gt;</code> portion of the key.</p> <p>For the trusted host
+     * key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li> <p>For RSA keys,
+     * the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ECDSA keys, the key
+     * type is either <code>ecdsa-sha2-nistp256</code>,
      * <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending
      * on the size of the key you generated.</p> </li> </ul>
      */
@@ -118,10 +120,12 @@ namespace Model
      * <code>ssh-keyscan</code> command against the SFTP server to retrieve the
      * necessary key.</p> <p>The three standard SSH public key format elements are
      * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>For the
-     * trusted host key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li>
-     * <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For
-     * ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>,
+     * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
+     * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
+     * the <code>&lt;comment&gt;</code> portion of the key.</p> <p>For the trusted host
+     * key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li> <p>For RSA keys,
+     * the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ECDSA keys, the key
+     * type is either <code>ecdsa-sha2-nistp256</code>,
      * <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending
      * on the size of the key you generated.</p> </li> </ul>
      */
@@ -133,10 +137,12 @@ namespace Model
      * <code>ssh-keyscan</code> command against the SFTP server to retrieve the
      * necessary key.</p> <p>The three standard SSH public key format elements are
      * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>For the
-     * trusted host key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li>
-     * <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For
-     * ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>,
+     * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
+     * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
+     * the <code>&lt;comment&gt;</code> portion of the key.</p> <p>For the trusted host
+     * key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li> <p>For RSA keys,
+     * the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ECDSA keys, the key
+     * type is either <code>ecdsa-sha2-nistp256</code>,
      * <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending
      * on the size of the key you generated.</p> </li> </ul>
      */
@@ -148,10 +154,12 @@ namespace Model
      * <code>ssh-keyscan</code> command against the SFTP server to retrieve the
      * necessary key.</p> <p>The three standard SSH public key format elements are
      * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>For the
-     * trusted host key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li>
-     * <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For
-     * ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>,
+     * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
+     * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
+     * the <code>&lt;comment&gt;</code> portion of the key.</p> <p>For the trusted host
+     * key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li> <p>For RSA keys,
+     * the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ECDSA keys, the key
+     * type is either <code>ecdsa-sha2-nistp256</code>,
      * <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending
      * on the size of the key you generated.</p> </li> </ul>
      */
@@ -163,10 +171,12 @@ namespace Model
      * <code>ssh-keyscan</code> command against the SFTP server to retrieve the
      * necessary key.</p> <p>The three standard SSH public key format elements are
      * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>For the
-     * trusted host key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li>
-     * <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For
-     * ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>,
+     * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
+     * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
+     * the <code>&lt;comment&gt;</code> portion of the key.</p> <p>For the trusted host
+     * key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li> <p>For RSA keys,
+     * the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ECDSA keys, the key
+     * type is either <code>ecdsa-sha2-nistp256</code>,
      * <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending
      * on the size of the key you generated.</p> </li> </ul>
      */
@@ -178,10 +188,12 @@ namespace Model
      * <code>ssh-keyscan</code> command against the SFTP server to retrieve the
      * necessary key.</p> <p>The three standard SSH public key format elements are
      * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>For the
-     * trusted host key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li>
-     * <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For
-     * ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>,
+     * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
+     * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
+     * the <code>&lt;comment&gt;</code> portion of the key.</p> <p>For the trusted host
+     * key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li> <p>For RSA keys,
+     * the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ECDSA keys, the key
+     * type is either <code>ecdsa-sha2-nistp256</code>,
      * <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending
      * on the size of the key you generated.</p> </li> </ul>
      */
@@ -193,10 +205,12 @@ namespace Model
      * <code>ssh-keyscan</code> command against the SFTP server to retrieve the
      * necessary key.</p> <p>The three standard SSH public key format elements are
      * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>For the
-     * trusted host key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li>
-     * <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For
-     * ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>,
+     * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
+     * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
+     * the <code>&lt;comment&gt;</code> portion of the key.</p> <p>For the trusted host
+     * key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li> <p>For RSA keys,
+     * the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ECDSA keys, the key
+     * type is either <code>ecdsa-sha2-nistp256</code>,
      * <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending
      * on the size of the key you generated.</p> </li> </ul>
      */
@@ -208,10 +222,12 @@ namespace Model
      * <code>ssh-keyscan</code> command against the SFTP server to retrieve the
      * necessary key.</p> <p>The three standard SSH public key format elements are
      * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>For the
-     * trusted host key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li>
-     * <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For
-     * ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>,
+     * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
+     * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
+     * the <code>&lt;comment&gt;</code> portion of the key.</p> <p>For the trusted host
+     * key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li> <p>For RSA keys,
+     * the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ECDSA keys, the key
+     * type is either <code>ecdsa-sha2-nistp256</code>,
      * <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending
      * on the size of the key you generated.</p> </li> </ul>
      */
@@ -223,10 +239,12 @@ namespace Model
      * <code>ssh-keyscan</code> command against the SFTP server to retrieve the
      * necessary key.</p> <p>The three standard SSH public key format elements are
      * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>For the
-     * trusted host key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li>
-     * <p>For RSA keys, the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For
-     * ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>,
+     * <code>&lt;comment&gt;</code>, with spaces between each element. Specify only the
+     * <code>&lt;key type&gt;</code> and <code>&lt;body base64&gt;</code>: do not enter
+     * the <code>&lt;comment&gt;</code> portion of the key.</p> <p>For the trusted host
+     * key, Transfer Family accepts RSA and ECDSA keys.</p> <ul> <li> <p>For RSA keys,
+     * the key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ECDSA keys, the key
+     * type is either <code>ecdsa-sha2-nistp256</code>,
      * <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending
      * on the size of the key you generated.</p> </li> </ul>
      */
