@@ -157,6 +157,32 @@ namespace WorkSpaces
         }
 
         /**
+         * <p>Associates the specified application to the specified
+         * WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateWorkspaceApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateWorkspaceApplicationOutcome AssociateWorkspaceApplication(const Model::AssociateWorkspaceApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateWorkspaceApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateWorkspaceApplicationRequestT = Model::AssociateWorkspaceApplicationRequest>
+        Model::AssociateWorkspaceApplicationOutcomeCallable AssociateWorkspaceApplicationCallable(const AssociateWorkspaceApplicationRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::AssociateWorkspaceApplication, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateWorkspaceApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateWorkspaceApplicationRequestT = Model::AssociateWorkspaceApplicationRequest>
+        void AssociateWorkspaceApplicationAsync(const AssociateWorkspaceApplicationRequestT& request, const AssociateWorkspaceApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::AssociateWorkspaceApplication, request, handler, context);
+        }
+
+        /**
          * <p>Adds one or more rules to the specified IP access control group.</p> <p>This
          * action gives users permission to access their WorkSpaces from the CIDR address
          * ranges specified in the rules.</p><p><h3>See Also:</h3>   <a
@@ -689,6 +715,32 @@ namespace WorkSpaces
         }
 
         /**
+         * <p>Deploys associated applications to the specified WorkSpace</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeployWorkspaceApplications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeployWorkspaceApplicationsOutcome DeployWorkspaceApplications(const Model::DeployWorkspaceApplicationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeployWorkspaceApplications that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeployWorkspaceApplicationsRequestT = Model::DeployWorkspaceApplicationsRequest>
+        Model::DeployWorkspaceApplicationsOutcomeCallable DeployWorkspaceApplicationsCallable(const DeployWorkspaceApplicationsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DeployWorkspaceApplications, request);
+        }
+
+        /**
+         * An Async wrapper for DeployWorkspaceApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeployWorkspaceApplicationsRequestT = Model::DeployWorkspaceApplicationsRequest>
+        void DeployWorkspaceApplicationsAsync(const DeployWorkspaceApplicationsRequestT& request, const DeployWorkspaceApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DeployWorkspaceApplications, request, handler, context);
+        }
+
+        /**
          * <p>Deregisters the specified directory. This operation is asynchronous and
          * returns before the WorkSpace directory is deregistered. If any WorkSpaces are
          * registered to this directory, you must remove them before you can deregister the
@@ -776,6 +828,85 @@ namespace WorkSpaces
         void DescribeAccountModificationsAsync(const DescribeAccountModificationsRequestT& request, const DescribeAccountModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::DescribeAccountModifications, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the associations between the application and the specified
+         * associated resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplicationAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeApplicationAssociationsOutcome DescribeApplicationAssociations(const Model::DescribeApplicationAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeApplicationAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeApplicationAssociationsRequestT = Model::DescribeApplicationAssociationsRequest>
+        Model::DescribeApplicationAssociationsOutcomeCallable DescribeApplicationAssociationsCallable(const DescribeApplicationAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DescribeApplicationAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeApplicationAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeApplicationAssociationsRequestT = Model::DescribeApplicationAssociationsRequest>
+        void DescribeApplicationAssociationsAsync(const DescribeApplicationAssociationsRequestT& request, const DescribeApplicationAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DescribeApplicationAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the specified applications by filtering based on their compute
+         * types, license availability, operating systems, and owners.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeApplications that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeApplicationsRequestT = Model::DescribeApplicationsRequest>
+        Model::DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const DescribeApplicationsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DescribeApplications, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeApplicationsRequestT = Model::DescribeApplicationsRequest>
+        void DescribeApplicationsAsync(const DescribeApplicationsRequestT& request, const DescribeApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DescribeApplications, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the associations between the applications and the specified
+         * bundle.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeBundleAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBundleAssociationsOutcome DescribeBundleAssociations(const Model::DescribeBundleAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBundleAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeBundleAssociationsRequestT = Model::DescribeBundleAssociationsRequest>
+        Model::DescribeBundleAssociationsOutcomeCallable DescribeBundleAssociationsCallable(const DescribeBundleAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DescribeBundleAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeBundleAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeBundleAssociationsRequestT = Model::DescribeBundleAssociationsRequest>
+        void DescribeBundleAssociationsAsync(const DescribeBundleAssociationsRequestT& request, const DescribeBundleAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DescribeBundleAssociations, request, handler, context);
         }
 
         /**
@@ -920,6 +1051,32 @@ namespace WorkSpaces
         }
 
         /**
+         * <p>Describes the associations between the applications and the specified
+         * image.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeImageAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeImageAssociationsOutcome DescribeImageAssociations(const Model::DescribeImageAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeImageAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeImageAssociationsRequestT = Model::DescribeImageAssociationsRequest>
+        Model::DescribeImageAssociationsOutcomeCallable DescribeImageAssociationsCallable(const DescribeImageAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DescribeImageAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeImageAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeImageAssociationsRequestT = Model::DescribeImageAssociationsRequest>
+        void DescribeImageAssociationsAsync(const DescribeImageAssociationsRequestT& request, const DescribeImageAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DescribeImageAssociations, request, handler, context);
+        }
+
+        /**
          * <p>Describes one or more of your IP access control groups.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">AWS
@@ -969,6 +1126,32 @@ namespace WorkSpaces
         void DescribeTagsAsync(const DescribeTagsRequestT& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::DescribeTags, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the associations betweens applications and the specified
+         * WorkSpace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWorkspaceAssociationsOutcome DescribeWorkspaceAssociations(const Model::DescribeWorkspaceAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeWorkspaceAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeWorkspaceAssociationsRequestT = Model::DescribeWorkspaceAssociationsRequest>
+        Model::DescribeWorkspaceAssociationsOutcomeCallable DescribeWorkspaceAssociationsCallable(const DescribeWorkspaceAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DescribeWorkspaceAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeWorkspaceAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeWorkspaceAssociationsRequestT = Model::DescribeWorkspaceAssociationsRequest>
+        void DescribeWorkspaceAssociationsAsync(const DescribeWorkspaceAssociationsRequestT& request, const DescribeWorkspaceAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DescribeWorkspaceAssociations, request, handler, context);
         }
 
         /**
@@ -1213,6 +1396,32 @@ namespace WorkSpaces
         void DisassociateIpGroupsAsync(const DisassociateIpGroupsRequestT& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesClient::DisassociateIpGroups, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates the specified application from a WorkSpace.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateWorkspaceApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateWorkspaceApplicationOutcome DisassociateWorkspaceApplication(const Model::DisassociateWorkspaceApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateWorkspaceApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateWorkspaceApplicationRequestT = Model::DisassociateWorkspaceApplicationRequest>
+        Model::DisassociateWorkspaceApplicationOutcomeCallable DisassociateWorkspaceApplicationCallable(const DisassociateWorkspaceApplicationRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesClient::DisassociateWorkspaceApplication, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateWorkspaceApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateWorkspaceApplicationRequestT = Model::DisassociateWorkspaceApplicationRequest>
+        void DisassociateWorkspaceApplicationAsync(const DisassociateWorkspaceApplicationRequestT& request, const DisassociateWorkspaceApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesClient::DisassociateWorkspaceApplication, request, handler, context);
         }
 
         /**

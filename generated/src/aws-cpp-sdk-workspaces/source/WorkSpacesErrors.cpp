@@ -8,6 +8,7 @@
 #include <aws/workspaces/WorkSpacesErrors.h>
 #include <aws/workspaces/model/ResourceNotFoundException.h>
 #include <aws/workspaces/model/OperationNotSupportedException.h>
+#include <aws/workspaces/model/ResourceInUseException.h>
 #include <aws/workspaces/model/ResourceUnavailableException.h>
 
 using namespace Aws::Client;
@@ -31,6 +32,12 @@ template<> AWS_WORKSPACES_API OperationNotSupportedException WorkSpacesError::Ge
   return OperationNotSupportedException(this->GetJsonPayload().View());
 }
 
+template<> AWS_WORKSPACES_API ResourceInUseException WorkSpacesError::GetModeledError()
+{
+  assert(this->GetErrorType() == WorkSpacesErrors::RESOURCE_IN_USE);
+  return ResourceInUseException(this->GetJsonPayload().View());
+}
+
 template<> AWS_WORKSPACES_API ResourceUnavailableException WorkSpacesError::GetModeledError()
 {
   assert(this->GetErrorType() == WorkSpacesErrors::RESOURCE_UNAVAILABLE);
@@ -40,16 +47,21 @@ template<> AWS_WORKSPACES_API ResourceUnavailableException WorkSpacesError::GetM
 namespace WorkSpacesErrorMapper
 {
 
+static const int COMPUTE_NOT_COMPATIBLE_HASH = HashingUtils::HashString("ComputeNotCompatibleException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int OPERATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("OperationNotSupportedException");
-static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
-static const int WORKSPACES_DEFAULT_ROLE_NOT_FOUND_HASH = HashingUtils::HashString("WorkspacesDefaultRoleNotFoundException");
 static const int UNSUPPORTED_WORKSPACE_CONFIGURATION_HASH = HashingUtils::HashString("UnsupportedWorkspaceConfigurationException");
 static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
 static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("InvalidResourceStateException");
+static const int OPERATING_SYSTEM_NOT_COMPATIBLE_HASH = HashingUtils::HashString("OperatingSystemNotCompatibleException");
 static const int RESOURCE_CREATION_FAILED_HASH = HashingUtils::HashString("ResourceCreationFailedException");
 static const int INVALID_PARAMETER_VALUES_HASH = HashingUtils::HashString("InvalidParameterValuesException");
 static const int UNSUPPORTED_NETWORK_CONFIGURATION_HASH = HashingUtils::HashString("UnsupportedNetworkConfigurationException");
+static const int INCOMPATIBLE_APPLICATIONS_HASH = HashingUtils::HashString("IncompatibleApplicationsException");
+static const int APPLICATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("ApplicationNotSupportedException");
+static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
+static const int WORKSPACES_DEFAULT_ROLE_NOT_FOUND_HASH = HashingUtils::HashString("WorkspacesDefaultRoleNotFoundException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
 static const int RESOURCE_ASSOCIATED_HASH = HashingUtils::HashString("ResourceAssociatedException");
 
@@ -58,21 +70,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
+  if (hashCode == COMPUTE_NOT_COMPATIBLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::COMPUTE_NOT_COMPATIBLE), false);
+  }
+  else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_ALREADY_EXISTS), false);
   }
   else if (hashCode == OPERATION_NOT_SUPPORTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::OPERATION_NOT_SUPPORTED), false);
-  }
-  else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == WORKSPACES_DEFAULT_ROLE_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::WORKSPACES_DEFAULT_ROLE_NOT_FOUND), false);
   }
   else if (hashCode == UNSUPPORTED_WORKSPACE_CONFIGURATION_HASH)
   {
@@ -86,6 +94,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INVALID_RESOURCE_STATE), false);
   }
+  else if (hashCode == OPERATING_SYSTEM_NOT_COMPATIBLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::OPERATING_SYSTEM_NOT_COMPATIBLE), false);
+  }
   else if (hashCode == RESOURCE_CREATION_FAILED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_CREATION_FAILED), false);
@@ -97,6 +109,26 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_NETWORK_CONFIGURATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::UNSUPPORTED_NETWORK_CONFIGURATION), false);
+  }
+  else if (hashCode == INCOMPATIBLE_APPLICATIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INCOMPATIBLE_APPLICATIONS), false);
+  }
+  else if (hashCode == APPLICATION_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::APPLICATION_NOT_SUPPORTED), false);
+  }
+  else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == WORKSPACES_DEFAULT_ROLE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::WORKSPACES_DEFAULT_ROLE_NOT_FOUND), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::RESOURCE_IN_USE), false);
   }
   else if (hashCode == RESOURCE_UNAVAILABLE_HASH)
   {

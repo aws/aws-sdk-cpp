@@ -801,9 +801,9 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
          * from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the
          * <i>Amazon RDS User Guide</i>.</p> <p>Amazon Aurora doesn't support this
-         * operation. Call the <code>CreateDBInstance</code> operation to create a DB
-         * instance for an Aurora DB cluster.</p> <p>All read replica DB instances are
-         * created with backups disabled. All other attributes (including DB security
+         * operation. To create a DB instance for an Aurora DB cluster, use the
+         * <code>CreateDBInstance</code> operation.</p> <p>All read replica DB instances
+         * are created with backups disabled. All other attributes (including DB security
          * groups and DB parameter groups) are inherited from the source DB instance or
          * cluster, except as specified.</p>  <p>Your source DB instance or
          * cluster must have backup retention enabled.</p> <p><h3>See
@@ -1359,15 +1359,14 @@ namespace Aws
         }
 
         /**
-         * <p>The DeleteDBInstance action deletes a previously provisioned DB instance.
-         * When you delete a DB instance, all automated backups for that instance are
-         * deleted and can't be recovered. Manual DB snapshots of the DB instance to be
-         * deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p>If you request
-         * a final DB snapshot the status of the Amazon RDS DB instance is
-         * <code>deleting</code> until the DB snapshot is created. The API action
-         * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
-         * The action can't be canceled or reverted once submitted.</p> <p>When a DB
-         * instance is in a failure state and has a status of <code>failed</code>,
+         * <p>Deletes a previously provisioned DB instance. When you delete a DB instance,
+         * all automated backups for that instance are deleted and can't be recovered.
+         * However, manual DB snapshots of the DB instance aren't deleted.</p> <p>If you
+         * request a final DB snapshot, the status of the Amazon RDS DB instance is
+         * <code>deleting</code> until the DB snapshot is created. This operation can't be
+         * canceled or reverted after it begins. To monitor the status of this operation,
+         * use <code>DescribeDBInstance</code>.</p> <p>When a DB instance is in a failure
+         * state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when you skip creation of the final snapshot with the
          * <code>SkipFinalSnapshot</code> parameter.</p> <p>If the specified DB instance is
@@ -1375,10 +1374,15 @@ namespace Aws
          * the following conditions are true:</p> <ul> <li> <p>The DB cluster is a read
          * replica of another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance
          * is the only instance in the DB cluster.</p> </li> </ul> <p>To delete a DB
-         * instance in this case, first call the <code>PromoteReadReplicaDBCluster</code>
-         * API action to promote the DB cluster so it's no longer a read replica. After the
-         * promotion completes, then call the <code>DeleteDBInstance</code> API action to
-         * delete the final instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
+         * instance in this case, first use the <code>PromoteReadReplicaDBCluster</code>
+         * operation to promote the DB cluster so that it's no longer a read replica. After
+         * the promotion completes, use the <code>DeleteDBInstance</code> operation to
+         * delete the final instance in the DB cluster.</p>  <p>For RDS Custom
+         * DB instances, deleting the DB instance permanently deletes the EC2 instance and
+         * the associated EBS volumes. Make sure that you don't terminate or delete these
+         * resources before you delete the DB instance. Otherwise, deleting the DB instance
+         * and creation of the final snapshot might fail.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          */
@@ -2050,7 +2054,8 @@ namespace Aws
         }
 
         /**
-         * <p>Returns a list of the available DB engines.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the properties of specific versions of DB engines.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">AWS
          * API Reference</a></p>
          */

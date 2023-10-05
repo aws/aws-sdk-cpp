@@ -321,7 +321,7 @@ namespace Model
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: Inherits
-     * from the source DB instance.</p>
+     * the value from the source DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -332,7 +332,7 @@ namespace Model
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: Inherits
-     * from the source DB instance.</p>
+     * the value from the source DB instance.</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
@@ -343,7 +343,7 @@ namespace Model
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: Inherits
-     * from the source DB instance.</p>
+     * the value from the source DB instance.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -354,7 +354,7 @@ namespace Model
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: Inherits
-     * from the source DB instance.</p>
+     * the value from the source DB instance.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -365,7 +365,7 @@ namespace Model
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: Inherits
-     * from the source DB instance.</p>
+     * the value from the source DB instance.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -376,7 +376,7 @@ namespace Model
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: Inherits
-     * from the source DB instance.</p>
+     * the value from the source DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -387,7 +387,7 @@ namespace Model
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: Inherits
-     * from the source DB instance.</p>
+     * the value from the source DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -398,7 +398,7 @@ namespace Model
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Default: Inherits
-     * from the source DB instance.</p>
+     * the value from the source DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -461,319 +461,335 @@ namespace Model
 
 
     /**
-     * <p>The port number that the DB instance uses for connections.</p> <p>Default:
-     * Inherits from the source DB instance</p> <p>Valid Values:
-     * <code>1150-65535</code> </p>
+     * <p>The port number that the DB instance uses for connections.</p> <p>Valid
+     * Values: <code>1150-65535</code> </p> <p>Default: Inherits the value from the
+     * source DB instance.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port number that the DB instance uses for connections.</p> <p>Default:
-     * Inherits from the source DB instance</p> <p>Valid Values:
-     * <code>1150-65535</code> </p>
+     * <p>The port number that the DB instance uses for connections.</p> <p>Valid
+     * Values: <code>1150-65535</code> </p> <p>Default: Inherits the value from the
+     * source DB instance.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port number that the DB instance uses for connections.</p> <p>Default:
-     * Inherits from the source DB instance</p> <p>Valid Values:
-     * <code>1150-65535</code> </p>
+     * <p>The port number that the DB instance uses for connections.</p> <p>Valid
+     * Values: <code>1150-65535</code> </p> <p>Default: Inherits the value from the
+     * source DB instance.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port number that the DB instance uses for connections.</p> <p>Default:
-     * Inherits from the source DB instance</p> <p>Valid Values:
-     * <code>1150-65535</code> </p>
+     * <p>The port number that the DB instance uses for connections.</p> <p>Valid
+     * Values: <code>1150-65535</code> </p> <p>Default: Inherits the value from the
+     * source DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the read replica is in a Multi-AZ
-     * deployment.</p> <p>You can create a read replica as a Multi-AZ DB instance. RDS
-     * creates a standby of your replica in another Availability Zone for failover
-     * support for the replica. Creating your read replica as a Multi-AZ DB instance is
-     * independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB
-     * cluster.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Specifies whether the read replica is in a Multi-AZ deployment.</p> <p>You
+     * can create a read replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your read replica as a Multi-AZ DB instance is independent of whether
+     * the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.</p> <p>This
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>A value that indicates whether the read replica is in a Multi-AZ
-     * deployment.</p> <p>You can create a read replica as a Multi-AZ DB instance. RDS
-     * creates a standby of your replica in another Availability Zone for failover
-     * support for the replica. Creating your read replica as a Multi-AZ DB instance is
-     * independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB
-     * cluster.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Specifies whether the read replica is in a Multi-AZ deployment.</p> <p>You
+     * can create a read replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your read replica as a Multi-AZ DB instance is independent of whether
+     * the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.</p> <p>This
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the read replica is in a Multi-AZ
-     * deployment.</p> <p>You can create a read replica as a Multi-AZ DB instance. RDS
-     * creates a standby of your replica in another Availability Zone for failover
-     * support for the replica. Creating your read replica as a Multi-AZ DB instance is
-     * independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB
-     * cluster.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Specifies whether the read replica is in a Multi-AZ deployment.</p> <p>You
+     * can create a read replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your read replica as a Multi-AZ DB instance is independent of whether
+     * the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.</p> <p>This
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>A value that indicates whether the read replica is in a Multi-AZ
-     * deployment.</p> <p>You can create a read replica as a Multi-AZ DB instance. RDS
-     * creates a standby of your replica in another Availability Zone for failover
-     * support for the replica. Creating your read replica as a Multi-AZ DB instance is
-     * independent of whether the source is a Multi-AZ DB instance or a Multi-AZ DB
-     * cluster.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>Specifies whether the read replica is in a Multi-AZ deployment.</p> <p>You
+     * can create a read replica as a Multi-AZ DB instance. RDS creates a standby of
+     * your replica in another Availability Zone for failover support for the replica.
+     * Creating your read replica as a Multi-AZ DB instance is independent of whether
+     * the source is a Multi-AZ DB instance or a Multi-AZ DB cluster.</p> <p>This
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the read replica during the maintenance window.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p> <p>Default: Inherits from the source DB
-     * instance</p>
+     * <p>Specifies whether to automatically apply minor engine upgrades to the read
+     * replica during the maintenance window.</p> <p>This setting doesn't apply to RDS
+     * Custom DB instances.</p> <p>Default: Inherits the value from the source DB
+     * instance.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the read replica during the maintenance window.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p> <p>Default: Inherits from the source DB
-     * instance</p>
+     * <p>Specifies whether to automatically apply minor engine upgrades to the read
+     * replica during the maintenance window.</p> <p>This setting doesn't apply to RDS
+     * Custom DB instances.</p> <p>Default: Inherits the value from the source DB
+     * instance.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the read replica during the maintenance window.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p> <p>Default: Inherits from the source DB
-     * instance</p>
+     * <p>Specifies whether to automatically apply minor engine upgrades to the read
+     * replica during the maintenance window.</p> <p>This setting doesn't apply to RDS
+     * Custom DB instances.</p> <p>Default: Inherits the value from the source DB
+     * instance.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether minor engine upgrades are applied
-     * automatically to the read replica during the maintenance window.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p> <p>Default: Inherits from the source DB
-     * instance</p>
+     * <p>Specifies whether to automatically apply minor engine upgrades to the read
+     * replica during the maintenance window.</p> <p>This setting doesn't apply to RDS
+     * Custom DB instances.</p> <p>Default: Inherits the value from the source DB
+     * instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
 
     /**
-     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p>
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to
+     * initially allocate for the DB instance.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p>
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to
+     * initially allocate for the DB instance.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p>
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to
+     * initially allocate for the DB instance.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance.</p>
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to
+     * initially allocate for the DB instance.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithIops(int value) { SetIops(value); return *this;}
 
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance or cluster is used.</p>  <p>For
-     * SQL Server, you must use the option group associated with the source.</p>
-     *  <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The option group to associate the DB instance with. If not specified, RDS
+     * uses the option group associated with the source DB instance or cluster.</p>
+     *  <p>For SQL Server, you must use the option group associated with the
+     * source.</p>  <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance or cluster is used.</p>  <p>For
-     * SQL Server, you must use the option group associated with the source.</p>
-     *  <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The option group to associate the DB instance with. If not specified, RDS
+     * uses the option group associated with the source DB instance or cluster.</p>
+     *  <p>For SQL Server, you must use the option group associated with the
+     * source.</p>  <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance or cluster is used.</p>  <p>For
-     * SQL Server, you must use the option group associated with the source.</p>
-     *  <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The option group to associate the DB instance with. If not specified, RDS
+     * uses the option group associated with the source DB instance or cluster.</p>
+     *  <p>For SQL Server, you must use the option group associated with the
+     * source.</p>  <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance or cluster is used.</p>  <p>For
-     * SQL Server, you must use the option group associated with the source.</p>
-     *  <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The option group to associate the DB instance with. If not specified, RDS
+     * uses the option group associated with the source DB instance or cluster.</p>
+     *  <p>For SQL Server, you must use the option group associated with the
+     * source.</p>  <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance or cluster is used.</p>  <p>For
-     * SQL Server, you must use the option group associated with the source.</p>
-     *  <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The option group to associate the DB instance with. If not specified, RDS
+     * uses the option group associated with the source DB instance or cluster.</p>
+     *  <p>For SQL Server, you must use the option group associated with the
+     * source.</p>  <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance or cluster is used.</p>  <p>For
-     * SQL Server, you must use the option group associated with the source.</p>
-     *  <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The option group to associate the DB instance with. If not specified, RDS
+     * uses the option group associated with the source DB instance or cluster.</p>
+     *  <p>For SQL Server, you must use the option group associated with the
+     * source.</p>  <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance or cluster is used.</p>  <p>For
-     * SQL Server, you must use the option group associated with the source.</p>
-     *  <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The option group to associate the DB instance with. If not specified, RDS
+     * uses the option group associated with the source DB instance or cluster.</p>
+     *  <p>For SQL Server, you must use the option group associated with the
+     * source.</p>  <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The option group the DB instance is associated with. If omitted, the option
-     * group associated with the source instance or cluster is used.</p>  <p>For
-     * SQL Server, you must use the option group associated with the source.</p>
-     *  <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The option group to associate the DB instance with. If not specified, RDS
+     * uses the option group associated with the source DB instance or cluster.</p>
+     *  <p>For SQL Server, you must use the option group associated with the
+     * source.</p>  <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance.</p>
-     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
-     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
-     * same Region read replica, or the default <code>DBParameterGroup</code> for the
+     * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of the source DB instance for
+     * a same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for MySQL and Oracle DB
-     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL DB instances for
+     * cross-Region read replicas and for Oracle DB instances. It isn't supported for
+     * MySQL DB instances for same Region read replicas or for RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance.</p>
-     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
-     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
-     * same Region read replica, or the default <code>DBParameterGroup</code> for the
+     * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of the source DB instance for
+     * a same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for MySQL and Oracle DB
-     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL DB instances for
+     * cross-Region read replicas and for Oracle DB instances. It isn't supported for
+     * MySQL DB instances for same Region read replicas or for RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance.</p>
-     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
-     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
-     * same Region read replica, or the default <code>DBParameterGroup</code> for the
+     * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of the source DB instance for
+     * a same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for MySQL and Oracle DB
-     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL DB instances for
+     * cross-Region read replicas and for Oracle DB instances. It isn't supported for
+     * MySQL DB instances for same Region read replicas or for RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance.</p>
-     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
-     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
-     * same Region read replica, or the default <code>DBParameterGroup</code> for the
+     * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of the source DB instance for
+     * a same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for MySQL and Oracle DB
-     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL DB instances for
+     * cross-Region read replicas and for Oracle DB instances. It isn't supported for
+     * MySQL DB instances for same Region read replicas or for RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance.</p>
-     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
-     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
-     * same Region read replica, or the default <code>DBParameterGroup</code> for the
+     * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of the source DB instance for
+     * a same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for MySQL and Oracle DB
-     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL DB instances for
+     * cross-Region read replicas and for Oracle DB instances. It isn't supported for
+     * MySQL DB instances for same Region read replicas or for RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance.</p>
-     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
-     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
-     * same Region read replica, or the default <code>DBParameterGroup</code> for the
+     * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of the source DB instance for
+     * a same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for MySQL and Oracle DB
-     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL DB instances for
+     * cross-Region read replicas and for Oracle DB instances. It isn't supported for
+     * MySQL DB instances for same Region read replicas or for RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance.</p>
-     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
-     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
-     * same Region read replica, or the default <code>DBParameterGroup</code> for the
+     * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of the source DB instance for
+     * a same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for MySQL and Oracle DB
-     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL DB instances for
+     * cross-Region read replicas and for Oracle DB instances. It isn't supported for
+     * MySQL DB instances for same Region read replicas or for RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance.</p>
-     * <p>If you do not specify a value for <code>DBParameterGroupName</code>, then
-     * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
-     * same Region read replica, or the default <code>DBParameterGroup</code> for the
+     * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then
+     * Amazon RDS uses the <code>DBParameterGroup</code> of the source DB instance for
+     * a same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for MySQL and Oracle DB
-     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
-     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
-     * two consecutive hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL DB instances for
+     * cross-Region read replicas and for Oracle DB instances. It isn't supported for
+     * MySQL DB instances for same Region read replicas or for RDS Custom.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access isn't permitted if the security group assigned
-     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
      * accessible, it is an internal DB instance with a DNS name that resolves to a
      * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
@@ -781,13 +797,13 @@ namespace Model
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access isn't permitted if the security group assigned
-     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
      * accessible, it is an internal DB instance with a DNS name that resolves to a
      * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
@@ -795,13 +811,13 @@ namespace Model
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access isn't permitted if the security group assigned
-     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
      * accessible, it is an internal DB instance with a DNS name that resolves to a
      * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
@@ -809,13 +825,13 @@ namespace Model
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB cluster is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB cluster's virtual
-     * private cloud (VPC). It resolves to the public IP address from outside of the DB
-     * cluster's VPC. Access to the DB cluster is ultimately controlled by the security
-     * group it uses. That public access isn't permitted if the security group assigned
-     * to the DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB cluster's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB cluster's
+     * VPC. Access to the DB cluster is ultimately controlled by the security group it
+     * uses. That public access isn't permitted if the security group assigned to the
+     * DB cluster doesn't permit it.</p> <p>When the DB instance isn't publicly
      * accessible, it is an internal DB instance with a DNS name that resolves to a
      * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
@@ -849,333 +865,338 @@ namespace Model
 
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
-     * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance isn't created in a VPC.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> </li> <li> <p>The specified DB subnet group must be in the
-     * same Amazon Web Services Region in which the operation is running.</p> </li>
-     * <li> <p>All read replicas in one Amazon Web Services Region that are created
-     * from the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB
-     * subnet groups from the same VPC. All these read replicas are created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these read replicas
-     * are created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>A DB subnet group for the DB instance. The new DB instance is created in the
+     * VPC associated with the DB subnet group. If no DB subnet group is specified,
+     * then the new DB instance isn't created in a VPC.</p> <p>Constraints:</p> <ul>
+     * <li> <p>If supplied, must match the name of an existing DB subnet group.</p>
+     * </li> <li> <p>The specified DB subnet group must be in the same Amazon Web
+     * Services Region in which the operation is running.</p> </li> <li> <p>All read
+     * replicas in one Amazon Web Services Region that are created from the same source
+     * DB instance must either:</p> <ul> <li> <p>Specify DB subnet groups from the same
+     * VPC. All these read replicas are created in the same VPC.</p> </li> <li> <p>Not
+     * specify a DB subnet group. All these read replicas are created outside of any
+     * VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
-     * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance isn't created in a VPC.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> </li> <li> <p>The specified DB subnet group must be in the
-     * same Amazon Web Services Region in which the operation is running.</p> </li>
-     * <li> <p>All read replicas in one Amazon Web Services Region that are created
-     * from the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB
-     * subnet groups from the same VPC. All these read replicas are created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these read replicas
-     * are created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>A DB subnet group for the DB instance. The new DB instance is created in the
+     * VPC associated with the DB subnet group. If no DB subnet group is specified,
+     * then the new DB instance isn't created in a VPC.</p> <p>Constraints:</p> <ul>
+     * <li> <p>If supplied, must match the name of an existing DB subnet group.</p>
+     * </li> <li> <p>The specified DB subnet group must be in the same Amazon Web
+     * Services Region in which the operation is running.</p> </li> <li> <p>All read
+     * replicas in one Amazon Web Services Region that are created from the same source
+     * DB instance must either:</p> <ul> <li> <p>Specify DB subnet groups from the same
+     * VPC. All these read replicas are created in the same VPC.</p> </li> <li> <p>Not
+     * specify a DB subnet group. All these read replicas are created outside of any
+     * VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
-     * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance isn't created in a VPC.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> </li> <li> <p>The specified DB subnet group must be in the
-     * same Amazon Web Services Region in which the operation is running.</p> </li>
-     * <li> <p>All read replicas in one Amazon Web Services Region that are created
-     * from the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB
-     * subnet groups from the same VPC. All these read replicas are created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these read replicas
-     * are created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>A DB subnet group for the DB instance. The new DB instance is created in the
+     * VPC associated with the DB subnet group. If no DB subnet group is specified,
+     * then the new DB instance isn't created in a VPC.</p> <p>Constraints:</p> <ul>
+     * <li> <p>If supplied, must match the name of an existing DB subnet group.</p>
+     * </li> <li> <p>The specified DB subnet group must be in the same Amazon Web
+     * Services Region in which the operation is running.</p> </li> <li> <p>All read
+     * replicas in one Amazon Web Services Region that are created from the same source
+     * DB instance must either:</p> <ul> <li> <p>Specify DB subnet groups from the same
+     * VPC. All these read replicas are created in the same VPC.</p> </li> <li> <p>Not
+     * specify a DB subnet group. All these read replicas are created outside of any
+     * VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
-     * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance isn't created in a VPC.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> </li> <li> <p>The specified DB subnet group must be in the
-     * same Amazon Web Services Region in which the operation is running.</p> </li>
-     * <li> <p>All read replicas in one Amazon Web Services Region that are created
-     * from the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB
-     * subnet groups from the same VPC. All these read replicas are created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these read replicas
-     * are created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>A DB subnet group for the DB instance. The new DB instance is created in the
+     * VPC associated with the DB subnet group. If no DB subnet group is specified,
+     * then the new DB instance isn't created in a VPC.</p> <p>Constraints:</p> <ul>
+     * <li> <p>If supplied, must match the name of an existing DB subnet group.</p>
+     * </li> <li> <p>The specified DB subnet group must be in the same Amazon Web
+     * Services Region in which the operation is running.</p> </li> <li> <p>All read
+     * replicas in one Amazon Web Services Region that are created from the same source
+     * DB instance must either:</p> <ul> <li> <p>Specify DB subnet groups from the same
+     * VPC. All these read replicas are created in the same VPC.</p> </li> <li> <p>Not
+     * specify a DB subnet group. All these read replicas are created outside of any
+     * VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
-     * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance isn't created in a VPC.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> </li> <li> <p>The specified DB subnet group must be in the
-     * same Amazon Web Services Region in which the operation is running.</p> </li>
-     * <li> <p>All read replicas in one Amazon Web Services Region that are created
-     * from the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB
-     * subnet groups from the same VPC. All these read replicas are created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these read replicas
-     * are created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>A DB subnet group for the DB instance. The new DB instance is created in the
+     * VPC associated with the DB subnet group. If no DB subnet group is specified,
+     * then the new DB instance isn't created in a VPC.</p> <p>Constraints:</p> <ul>
+     * <li> <p>If supplied, must match the name of an existing DB subnet group.</p>
+     * </li> <li> <p>The specified DB subnet group must be in the same Amazon Web
+     * Services Region in which the operation is running.</p> </li> <li> <p>All read
+     * replicas in one Amazon Web Services Region that are created from the same source
+     * DB instance must either:</p> <ul> <li> <p>Specify DB subnet groups from the same
+     * VPC. All these read replicas are created in the same VPC.</p> </li> <li> <p>Not
+     * specify a DB subnet group. All these read replicas are created outside of any
+     * VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
-     * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance isn't created in a VPC.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> </li> <li> <p>The specified DB subnet group must be in the
-     * same Amazon Web Services Region in which the operation is running.</p> </li>
-     * <li> <p>All read replicas in one Amazon Web Services Region that are created
-     * from the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB
-     * subnet groups from the same VPC. All these read replicas are created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these read replicas
-     * are created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>A DB subnet group for the DB instance. The new DB instance is created in the
+     * VPC associated with the DB subnet group. If no DB subnet group is specified,
+     * then the new DB instance isn't created in a VPC.</p> <p>Constraints:</p> <ul>
+     * <li> <p>If supplied, must match the name of an existing DB subnet group.</p>
+     * </li> <li> <p>The specified DB subnet group must be in the same Amazon Web
+     * Services Region in which the operation is running.</p> </li> <li> <p>All read
+     * replicas in one Amazon Web Services Region that are created from the same source
+     * DB instance must either:</p> <ul> <li> <p>Specify DB subnet groups from the same
+     * VPC. All these read replicas are created in the same VPC.</p> </li> <li> <p>Not
+     * specify a DB subnet group. All these read replicas are created outside of any
+     * VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
-     * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance isn't created in a VPC.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> </li> <li> <p>The specified DB subnet group must be in the
-     * same Amazon Web Services Region in which the operation is running.</p> </li>
-     * <li> <p>All read replicas in one Amazon Web Services Region that are created
-     * from the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB
-     * subnet groups from the same VPC. All these read replicas are created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these read replicas
-     * are created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>A DB subnet group for the DB instance. The new DB instance is created in the
+     * VPC associated with the DB subnet group. If no DB subnet group is specified,
+     * then the new DB instance isn't created in a VPC.</p> <p>Constraints:</p> <ul>
+     * <li> <p>If supplied, must match the name of an existing DB subnet group.</p>
+     * </li> <li> <p>The specified DB subnet group must be in the same Amazon Web
+     * Services Region in which the operation is running.</p> </li> <li> <p>All read
+     * replicas in one Amazon Web Services Region that are created from the same source
+     * DB instance must either:</p> <ul> <li> <p>Specify DB subnet groups from the same
+     * VPC. All these read replicas are created in the same VPC.</p> </li> <li> <p>Not
+     * specify a DB subnet group. All these read replicas are created outside of any
+     * VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a DB subnet group for the DB instance. The new DB instance is
-     * created in the VPC associated with the DB subnet group. If no DB subnet group is
-     * specified, then the new DB instance isn't created in a VPC.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing
-     * DBSubnetGroup.</p> </li> <li> <p>The specified DB subnet group must be in the
-     * same Amazon Web Services Region in which the operation is running.</p> </li>
-     * <li> <p>All read replicas in one Amazon Web Services Region that are created
-     * from the same source DB instance must either:&gt;</p> <ul> <li> <p>Specify DB
-     * subnet groups from the same VPC. All these read replicas are created in the same
-     * VPC.</p> </li> <li> <p>Not specify a DB subnet group. All these read replicas
-     * are created outside of any VPC.</p> </li> </ul> </li> </ul> <p>Example:
-     * <code>mydbsubnetgroup</code> </p>
+     * <p>A DB subnet group for the DB instance. The new DB instance is created in the
+     * VPC associated with the DB subnet group. If no DB subnet group is specified,
+     * then the new DB instance isn't created in a VPC.</p> <p>Constraints:</p> <ul>
+     * <li> <p>If supplied, must match the name of an existing DB subnet group.</p>
+     * </li> <li> <p>The specified DB subnet group must be in the same Amazon Web
+     * Services Region in which the operation is running.</p> </li> <li> <p>All read
+     * replicas in one Amazon Web Services Region that are created from the same source
+     * DB instance must either:</p> <ul> <li> <p>Specify DB subnet groups from the same
+     * VPC. All these read replicas are created in the same VPC.</p> </li> <li> <p>Not
+     * specify a DB subnet group. All these read replicas are created outside of any
+     * VPC.</p> </li> </ul> </li> </ul> <p>Example: <code>mydbsubnetgroup</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
 
     /**
      * <p>A list of Amazon EC2 VPC security groups to associate with the read
-     * replica.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default: The
-     * default EC2 VPC security group for the DB subnet group's VPC.</p>
+     * replica.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
     /**
      * <p>A list of Amazon EC2 VPC security groups to associate with the read
-     * replica.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default: The
-     * default EC2 VPC security group for the DB subnet group's VPC.</p>
+     * replica.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of Amazon EC2 VPC security groups to associate with the read
-     * replica.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default: The
-     * default EC2 VPC security group for the DB subnet group's VPC.</p>
+     * replica.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
      * <p>A list of Amazon EC2 VPC security groups to associate with the read
-     * replica.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default: The
-     * default EC2 VPC security group for the DB subnet group's VPC.</p>
+     * replica.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
      * <p>A list of Amazon EC2 VPC security groups to associate with the read
-     * replica.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default: The
-     * default EC2 VPC security group for the DB subnet group's VPC.</p>
+     * replica.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /**
      * <p>A list of Amazon EC2 VPC security groups to associate with the read
-     * replica.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default: The
-     * default EC2 VPC security group for the DB subnet group's VPC.</p>
+     * replica.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of Amazon EC2 VPC security groups to associate with the read
-     * replica.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default: The
-     * default EC2 VPC security group for the DB subnet group's VPC.</p>
+     * replica.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>A list of Amazon EC2 VPC security groups to associate with the read
-     * replica.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default: The
-     * default EC2 VPC security group for the DB subnet group's VPC.</p>
+     * replica.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Amazon EC2 VPC security groups to associate with the read
-     * replica.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Default: The
-     * default EC2 VPC security group for the DB subnet group's VPC.</p>
+     * replica.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>Specifies the storage type to be associated with the read replica.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>The storage type to associate with the read replica.</p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
+     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type to be associated with the read replica.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>The storage type to associate with the read replica.</p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
+     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type to be associated with the read replica.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>The storage type to associate with the read replica.</p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
+     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type to be associated with the read replica.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>The storage type to associate with the read replica.</p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
+     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the read replica.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>The storage type to associate with the read replica.</p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
+     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the read replica.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>The storage type to associate with the read replica.</p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
+     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the read replica.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>The storage type to associate with the read replica.</p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
+     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the read replica.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>The storage type to associate with the read replica.</p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
-     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
-     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
+     * <code>Iops</code> parameter.</p> <p>Valid Values: <code>gp2 | gp3 | io1 |
+     * standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * parameter is specified. Otherwise, <code>gp2</code>.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to copy all tags from the read replica to
-     * snapshots of the read replica. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the read replica to snapshots of the
+     * read replica. By default, tags aren't copied.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the read replica to
-     * snapshots of the read replica. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the read replica to snapshots of the
+     * read replica. By default, tags aren't copied.</p>
      */
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the read replica to
-     * snapshots of the read replica. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the read replica to snapshots of the
+     * read replica. By default, tags aren't copied.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the read replica to
-     * snapshots of the read replica. By default, tags are not copied.</p>
+     * <p>Specifies whether to copy all tags from the read replica to snapshots of the
+     * read replica. By default, tags aren't copied.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
-     * collected for the read replica. To disable collecting Enhanced Monitoring
-     * metrics, specify 0. The default is 0.</p> <p>If <code>MonitoringRoleArn</code>
-     * is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Valid
-     * Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+     * collected for the read replica. To disable collection of Enhanced Monitoring
+     * metrics, specify <code>0</code>. The default is <code>0</code>.</p> <p>If
+     * <code>MonitoringRoleArn</code> is specified, then you must set
+     * <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:
+     * <code>0, 1, 5, 10, 15, 30, 60</code> </p> <p>Default: <code>0</code> </p>
      */
     inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
-     * collected for the read replica. To disable collecting Enhanced Monitoring
-     * metrics, specify 0. The default is 0.</p> <p>If <code>MonitoringRoleArn</code>
-     * is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Valid
-     * Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+     * collected for the read replica. To disable collection of Enhanced Monitoring
+     * metrics, specify <code>0</code>. The default is <code>0</code>.</p> <p>If
+     * <code>MonitoringRoleArn</code> is specified, then you must set
+     * <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:
+     * <code>0, 1, 5, 10, 15, 30, 60</code> </p> <p>Default: <code>0</code> </p>
      */
     inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
-     * collected for the read replica. To disable collecting Enhanced Monitoring
-     * metrics, specify 0. The default is 0.</p> <p>If <code>MonitoringRoleArn</code>
-     * is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Valid
-     * Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+     * collected for the read replica. To disable collection of Enhanced Monitoring
+     * metrics, specify <code>0</code>. The default is <code>0</code>.</p> <p>If
+     * <code>MonitoringRoleArn</code> is specified, then you must set
+     * <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:
+     * <code>0, 1, 5, 10, 15, 30, 60</code> </p> <p>Default: <code>0</code> </p>
      */
     inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
-     * collected for the read replica. To disable collecting Enhanced Monitoring
-     * metrics, specify 0. The default is 0.</p> <p>If <code>MonitoringRoleArn</code>
-     * is specified, then you must also set <code>MonitoringInterval</code> to a value
-     * other than 0.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>Valid
-     * Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+     * collected for the read replica. To disable collection of Enhanced Monitoring
+     * metrics, specify <code>0</code>. The default is <code>0</code>.</p> <p>If
+     * <code>MonitoringRoleArn</code> is specified, then you must set
+     * <code>MonitoringInterval</code> to a value other than <code>0</code>.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:
+     * <code>0, 1, 5, 10, 15, 30, 60</code> </p> <p>Default: <code>0</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
 
@@ -1189,7 +1210,7 @@ namespace Model
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
 
@@ -1202,7 +1223,7 @@ namespace Model
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
 
@@ -1215,7 +1236,7 @@ namespace Model
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
 
@@ -1228,7 +1249,7 @@ namespace Model
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
 
@@ -1241,7 +1262,7 @@ namespace Model
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
 
@@ -1254,7 +1275,7 @@ namespace Model
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
 
@@ -1267,7 +1288,7 @@ namespace Model
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
 
@@ -1280,7 +1301,7 @@ namespace Model
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide</i>.</p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
@@ -1486,7 +1507,7 @@ namespace Model
      * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
      * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
      * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
-     * RDS Custom.</p>
+     * RDS Custom DB instances.</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
@@ -1546,7 +1567,7 @@ namespace Model
      * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
      * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
      * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
-     * RDS Custom.</p>
+     * RDS Custom DB instances.</p>
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
@@ -1606,7 +1627,7 @@ namespace Model
      * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
      * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
      * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
-     * RDS Custom.</p>
+     * RDS Custom DB instances.</p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
@@ -1666,7 +1687,7 @@ namespace Model
      * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
      * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
      * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
-     * RDS Custom.</p>
+     * RDS Custom DB instances.</p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
@@ -1726,7 +1747,7 @@ namespace Model
      * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
      * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
      * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
-     * RDS Custom.</p>
+     * RDS Custom DB instances.</p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
@@ -1786,7 +1807,7 @@ namespace Model
      * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
      * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
      * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
-     * RDS Custom.</p>
+     * RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
@@ -1846,7 +1867,7 @@ namespace Model
      * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
      * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
      * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
-     * RDS Custom.</p>
+     * RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
@@ -1906,89 +1927,89 @@ namespace Model
      * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
      * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
      * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
-     * RDS Custom.</p>
+     * RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping isn't
+     * enabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the read
-     * replica.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable Performance Insights for the read replica.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the read
-     * replica.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable Performance Insights for the read replica.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the read
-     * replica.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable Performance Insights for the read replica.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>A value that indicates whether to enable Performance Insights for the read
-     * replica.</p> <p>For more information, see <a
+     * <p>Specifies whether to enable Performance Insights for the read replica.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
@@ -2000,8 +2021,8 @@ namespace Model
      * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
      * default KMS key. There is a default KMS key for your Amazon Web Services
      * account. Your Amazon Web Services account has a different default KMS key for
-     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS Custom
+     * DB instances.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
@@ -2012,8 +2033,8 @@ namespace Model
      * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
      * default KMS key. There is a default KMS key for your Amazon Web Services
      * account. Your Amazon Web Services account has a different default KMS key for
-     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS Custom
+     * DB instances.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
@@ -2024,8 +2045,8 @@ namespace Model
      * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
      * default KMS key. There is a default KMS key for your Amazon Web Services
      * account. Your Amazon Web Services account has a different default KMS key for
-     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS Custom
+     * DB instances.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
@@ -2036,8 +2057,8 @@ namespace Model
      * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
      * default KMS key. There is a default KMS key for your Amazon Web Services
      * account. Your Amazon Web Services account has a different default KMS key for
-     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS Custom
+     * DB instances.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
@@ -2048,8 +2069,8 @@ namespace Model
      * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
      * default KMS key. There is a default KMS key for your Amazon Web Services
      * account. Your Amazon Web Services account has a different default KMS key for
-     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS Custom
+     * DB instances.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
@@ -2060,8 +2081,8 @@ namespace Model
      * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
      * default KMS key. There is a default KMS key for your Amazon Web Services
      * account. Your Amazon Web Services account has a different default KMS key for
-     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS Custom
+     * DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -2072,8 +2093,8 @@ namespace Model
      * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
      * default KMS key. There is a default KMS key for your Amazon Web Services
      * account. Your Amazon Web Services account has a different default KMS key for
-     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS Custom
+     * DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
@@ -2084,57 +2105,57 @@ namespace Model
      * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
      * default KMS key. There is a default KMS key for your Amazon Web Services
      * account. Your Amazon Web Services account has a different default KMS key for
-     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS Custom
+     * DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The number of days to retain Performance Insights data.</p> <p>This setting
+     * doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>7</code> </p> </li> <li> <p> <i>month</i> * 31, where <i>month</i> is a
+     * number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
+     * <li> <p> <code>731</code> </p> </li> </ul> <p>Default: <code>7</code> days</p>
+     * <p>If you specify a retention period that isn't valid, such as <code>94</code>,
+     * Amazon RDS returns an error.</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The number of days to retain Performance Insights data.</p> <p>This setting
+     * doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>7</code> </p> </li> <li> <p> <i>month</i> * 31, where <i>month</i> is a
+     * number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
+     * <li> <p> <code>731</code> </p> </li> </ul> <p>Default: <code>7</code> days</p>
+     * <p>If you specify a retention period that isn't valid, such as <code>94</code>,
+     * Amazon RDS returns an error.</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The number of days to retain Performance Insights data.</p> <p>This setting
+     * doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>7</code> </p> </li> <li> <p> <i>month</i> * 31, where <i>month</i> is a
+     * number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
+     * <li> <p> <code>731</code> </p> </li> </ul> <p>Default: <code>7</code> days</p>
+     * <p>If you specify a retention period that isn't valid, such as <code>94</code>,
+     * Amazon RDS returns an error.</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The number of days to retain Performance Insights data.</p> <p>This setting
+     * doesn't apply to RDS Custom DB instances.</p> <p>Valid Values:</p> <ul> <li> <p>
+     * <code>7</code> </p> </li> <li> <p> <i>month</i> * 31, where <i>month</i> is a
+     * number of months from 1-23. Examples: <code>93</code> (3 months * 31),
+     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
+     * <li> <p> <code>731</code> </p> </li> </ul> <p>Default: <code>7</code> days</p>
+     * <p>If you specify a retention period that isn't valid, such as <code>94</code>,
+     * Amazon RDS returns an error.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
@@ -2145,7 +2166,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
@@ -2155,7 +2176,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
@@ -2165,7 +2186,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
@@ -2175,7 +2196,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
@@ -2185,7 +2206,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
@@ -2195,7 +2216,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
@@ -2205,7 +2226,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -2215,7 +2236,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
@@ -2225,7 +2246,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
@@ -2233,120 +2254,120 @@ namespace Model
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom DB instances.</p>
      */
     inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom DB instances.</p>
      */
     inline bool ProcessorFeaturesHasBeenSet() const { return m_processorFeaturesHasBeenSet; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom DB instances.</p>
      */
     inline void SetProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = value; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom DB instances.</p>
      */
     inline void SetProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = std::move(value); }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { SetProcessorFeatures(value); return *this;}
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { SetProcessorFeatures(std::move(value)); return *this;}
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddProcessorFeatures(const ProcessorFeature& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(value); return *this; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& AddProcessorFeatures(ProcessorFeature&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline bool GetUseDefaultProcessorFeatures() const{ return m_useDefaultProcessorFeatures; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline bool UseDefaultProcessorFeaturesHasBeenSet() const { return m_useDefaultProcessorFeaturesHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom DB
+     * instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithUseDefaultProcessorFeatures(bool value) { SetUseDefaultProcessorFeatures(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
@@ -2359,7 +2380,7 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
@@ -2369,7 +2390,7 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
@@ -2379,7 +2400,7 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
@@ -2389,7 +2410,7 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
@@ -2399,7 +2420,7 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
@@ -2409,7 +2430,7 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
@@ -2419,7 +2440,7 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
@@ -2429,56 +2450,56 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
     /**
-     * <p>The name of the IAM role to be used when making API calls to the Directory
-     * Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
 
     /**
-     * <p>The name of the IAM role to be used when making API calls to the Directory
-     * Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
 
     /**
-     * <p>The name of the IAM role to be used when making API calls to the Directory
-     * Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
-     * <p>The name of the IAM role to be used when making API calls to the Directory
-     * Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
 
     /**
-     * <p>The name of the IAM role to be used when making API calls to the Directory
-     * Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
 
     /**
-     * <p>The name of the IAM role to be used when making API calls to the Directory
-     * Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
-     * <p>The name of the IAM role to be used when making API calls to the Directory
-     * Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the IAM role to be used when making API calls to the Directory
-     * Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
@@ -2920,7 +2941,7 @@ namespace Model
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom.</p>
+     * setting is required for RDS Custom DB instances.</p>
      */
     inline const Aws::String& GetCustomIamInstanceProfile() const{ return m_customIamInstanceProfile; }
 
@@ -2934,7 +2955,7 @@ namespace Model
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom.</p>
+     * setting is required for RDS Custom DB instances.</p>
      */
     inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
 
@@ -2948,7 +2969,7 @@ namespace Model
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom.</p>
+     * setting is required for RDS Custom DB instances.</p>
      */
     inline void SetCustomIamInstanceProfile(const Aws::String& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = value; }
 
@@ -2962,7 +2983,7 @@ namespace Model
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom.</p>
+     * setting is required for RDS Custom DB instances.</p>
      */
     inline void SetCustomIamInstanceProfile(Aws::String&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::move(value); }
 
@@ -2976,7 +2997,7 @@ namespace Model
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom.</p>
+     * setting is required for RDS Custom DB instances.</p>
      */
     inline void SetCustomIamInstanceProfile(const char* value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile.assign(value); }
 
@@ -2990,7 +3011,7 @@ namespace Model
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom.</p>
+     * setting is required for RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithCustomIamInstanceProfile(const Aws::String& value) { SetCustomIamInstanceProfile(value); return *this;}
 
@@ -3004,7 +3025,7 @@ namespace Model
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom.</p>
+     * setting is required for RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithCustomIamInstanceProfile(Aws::String&& value) { SetCustomIamInstanceProfile(std::move(value)); return *this;}
 
@@ -3018,13 +3039,13 @@ namespace Model
      * <p>For the list of permissions required for the IAM role, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting is required for RDS Custom.</p>
+     * setting is required for RDS Custom DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
 
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for read
      * replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
@@ -3037,7 +3058,7 @@ namespace Model
     inline const Aws::String& GetNetworkType() const{ return m_networkType; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for read
      * replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
@@ -3050,7 +3071,7 @@ namespace Model
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for read
      * replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
@@ -3063,7 +3084,7 @@ namespace Model
     inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for read
      * replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
@@ -3076,7 +3097,7 @@ namespace Model
     inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for read
      * replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
@@ -3089,7 +3110,7 @@ namespace Model
     inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for read
      * replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
@@ -3102,7 +3123,7 @@ namespace Model
     inline CreateDBInstanceReadReplicaRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for read
      * replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
@@ -3115,7 +3136,7 @@ namespace Model
     inline CreateDBInstanceReadReplicaRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for read
      * replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
@@ -3130,36 +3151,36 @@ namespace Model
 
     /**
      * <p>Specifies the storage throughput value for the read replica.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
      */
     inline int GetStorageThroughput() const{ return m_storageThroughput; }
 
     /**
      * <p>Specifies the storage throughput value for the read replica.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
      */
     inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
 
     /**
      * <p>Specifies the storage throughput value for the read replica.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
      */
     inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
 
     /**
      * <p>Specifies the storage throughput value for the read replica.</p> <p>This
-     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     * setting doesn't apply to RDS Custom or Amazon Aurora DB instances.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts read replica.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the read replica from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts read replica.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the read replica from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -3169,12 +3190,12 @@ namespace Model
     inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts read replica.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the read replica from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts read replica.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the read replica from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -3184,12 +3205,12 @@ namespace Model
     inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts read replica.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the read replica from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts read replica.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the read replica from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -3199,12 +3220,12 @@ namespace Model
     inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts read replica.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the read replica from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts read replica.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the read replica from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a

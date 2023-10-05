@@ -781,6 +781,47 @@ namespace Model
      */
     inline AwsEcsTaskDefinitionDetails& AddVolumes(AwsEcsTaskDefinitionVolumesDetails&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The status of the task definition. </p>
+     */
+    inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> The status of the task definition. </p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> The status of the task definition. </p>
+     */
+    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p> The status of the task definition. </p>
+     */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p> The status of the task definition. </p>
+     */
+    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
+
+    /**
+     * <p> The status of the task definition. </p>
+     */
+    inline AwsEcsTaskDefinitionDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p> The status of the task definition. </p>
+     */
+    inline AwsEcsTaskDefinitionDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
+
+    /**
+     * <p> The status of the task definition. </p>
+     */
+    inline AwsEcsTaskDefinitionDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+
   private:
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsDetails> m_containerDefinitions;
@@ -824,6 +865,9 @@ namespace Model
 
     Aws::Vector<AwsEcsTaskDefinitionVolumesDetails> m_volumes;
     bool m_volumesHasBeenSet = false;
+
+    Aws::String m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

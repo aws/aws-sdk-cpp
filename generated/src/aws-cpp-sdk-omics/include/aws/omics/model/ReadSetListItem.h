@@ -11,6 +11,7 @@
 #include <aws/omics/model/SequenceInformation.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/CreationType.h>
+#include <aws/omics/model/ETag.h>
 #include <utility>
 
 namespace Aws
@@ -561,6 +562,43 @@ namespace Model
      */
     inline ReadSetListItem& WithCreationType(CreationType&& value) { SetCreationType(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The entity tag (ETag) is a hash of the object representing its semantic
+     * content. </p>
+     */
+    inline const ETag& GetEtag() const{ return m_etag; }
+
+    /**
+     * <p> The entity tag (ETag) is a hash of the object representing its semantic
+     * content. </p>
+     */
+    inline bool EtagHasBeenSet() const { return m_etagHasBeenSet; }
+
+    /**
+     * <p> The entity tag (ETag) is a hash of the object representing its semantic
+     * content. </p>
+     */
+    inline void SetEtag(const ETag& value) { m_etagHasBeenSet = true; m_etag = value; }
+
+    /**
+     * <p> The entity tag (ETag) is a hash of the object representing its semantic
+     * content. </p>
+     */
+    inline void SetEtag(ETag&& value) { m_etagHasBeenSet = true; m_etag = std::move(value); }
+
+    /**
+     * <p> The entity tag (ETag) is a hash of the object representing its semantic
+     * content. </p>
+     */
+    inline ReadSetListItem& WithEtag(const ETag& value) { SetEtag(value); return *this;}
+
+    /**
+     * <p> The entity tag (ETag) is a hash of the object representing its semantic
+     * content. </p>
+     */
+    inline ReadSetListItem& WithEtag(ETag&& value) { SetEtag(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -604,6 +642,9 @@ namespace Model
 
     CreationType m_creationType;
     bool m_creationTypeHasBeenSet = false;
+
+    ETag m_etag;
+    bool m_etagHasBeenSet = false;
   };
 
 } // namespace Model

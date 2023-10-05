@@ -82,82 +82,82 @@ namespace Model
 
 
     /**
-     * <p>Boolean value that is true if the instance is operating normally, or false if
-     * the instance is in an error state.</p>
+     * <p>A Boolean value that is true if the instance is operating normally, or false
+     * if the instance is in an error state.</p>
      */
     inline bool GetNormal() const{ return m_normal; }
 
     /**
-     * <p>Boolean value that is true if the instance is operating normally, or false if
-     * the instance is in an error state.</p>
+     * <p>A Boolean value that is true if the instance is operating normally, or false
+     * if the instance is in an error state.</p>
      */
     inline bool NormalHasBeenSet() const { return m_normalHasBeenSet; }
 
     /**
-     * <p>Boolean value that is true if the instance is operating normally, or false if
-     * the instance is in an error state.</p>
+     * <p>A Boolean value that is true if the instance is operating normally, or false
+     * if the instance is in an error state.</p>
      */
     inline void SetNormal(bool value) { m_normalHasBeenSet = true; m_normal = value; }
 
     /**
-     * <p>Boolean value that is true if the instance is operating normally, or false if
-     * the instance is in an error state.</p>
+     * <p>A Boolean value that is true if the instance is operating normally, or false
+     * if the instance is in an error state.</p>
      */
     inline DBInstanceStatusInfo& WithNormal(bool value) { SetNormal(value); return *this;}
 
 
     /**
-     * <p>Status of the DB instance. For a StatusType of read replica, the values can
-     * be replicating, replication stop point set, replication stop point reached,
+     * <p>The status of the DB instance. For a StatusType of read replica, the values
+     * can be replicating, replication stop point set, replication stop point reached,
      * error, stopped, or terminated.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status of the DB instance. For a StatusType of read replica, the values can
-     * be replicating, replication stop point set, replication stop point reached,
+     * <p>The status of the DB instance. For a StatusType of read replica, the values
+     * can be replicating, replication stop point set, replication stop point reached,
      * error, stopped, or terminated.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Status of the DB instance. For a StatusType of read replica, the values can
-     * be replicating, replication stop point set, replication stop point reached,
+     * <p>The status of the DB instance. For a StatusType of read replica, the values
+     * can be replicating, replication stop point set, replication stop point reached,
      * error, stopped, or terminated.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Status of the DB instance. For a StatusType of read replica, the values can
-     * be replicating, replication stop point set, replication stop point reached,
+     * <p>The status of the DB instance. For a StatusType of read replica, the values
+     * can be replicating, replication stop point set, replication stop point reached,
      * error, stopped, or terminated.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Status of the DB instance. For a StatusType of read replica, the values can
-     * be replicating, replication stop point set, replication stop point reached,
+     * <p>The status of the DB instance. For a StatusType of read replica, the values
+     * can be replicating, replication stop point set, replication stop point reached,
      * error, stopped, or terminated.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>Status of the DB instance. For a StatusType of read replica, the values can
-     * be replicating, replication stop point set, replication stop point reached,
+     * <p>The status of the DB instance. For a StatusType of read replica, the values
+     * can be replicating, replication stop point set, replication stop point reached,
      * error, stopped, or terminated.</p>
      */
     inline DBInstanceStatusInfo& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status of the DB instance. For a StatusType of read replica, the values can
-     * be replicating, replication stop point set, replication stop point reached,
+     * <p>The status of the DB instance. For a StatusType of read replica, the values
+     * can be replicating, replication stop point set, replication stop point reached,
      * error, stopped, or terminated.</p>
      */
     inline DBInstanceStatusInfo& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Status of the DB instance. For a StatusType of read replica, the values can
-     * be replicating, replication stop point set, replication stop point reached,
+     * <p>The status of the DB instance. For a StatusType of read replica, the values
+     * can be replicating, replication stop point set, replication stop point reached,
      * error, stopped, or terminated.</p>
      */
     inline DBInstanceStatusInfo& WithStatus(const char* value) { SetStatus(value); return *this;}

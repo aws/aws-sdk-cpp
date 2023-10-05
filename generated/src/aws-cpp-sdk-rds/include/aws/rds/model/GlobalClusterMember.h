@@ -149,63 +149,63 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the Aurora DB cluster is the primary cluster (that is, has
+     * <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has
      * read-write capability) for the global cluster with which it is associated.</p>
      */
     inline bool GetIsWriter() const{ return m_isWriter; }
 
     /**
-     * <p>Specifies whether the Aurora DB cluster is the primary cluster (that is, has
+     * <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has
      * read-write capability) for the global cluster with which it is associated.</p>
      */
     inline bool IsWriterHasBeenSet() const { return m_isWriterHasBeenSet; }
 
     /**
-     * <p>Specifies whether the Aurora DB cluster is the primary cluster (that is, has
+     * <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has
      * read-write capability) for the global cluster with which it is associated.</p>
      */
     inline void SetIsWriter(bool value) { m_isWriterHasBeenSet = true; m_isWriter = value; }
 
     /**
-     * <p>Specifies whether the Aurora DB cluster is the primary cluster (that is, has
+     * <p>Indicates whether the Aurora DB cluster is the primary cluster (that is, has
      * read-write capability) for the global cluster with which it is associated.</p>
      */
     inline GlobalClusterMember& WithIsWriter(bool value) { SetIsWriter(value); return *this;}
 
 
     /**
-     * <p>Specifies whether a secondary cluster in the global cluster has write
-     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     * <p>The status of write forwarding for a secondary cluster in the global
+     * cluster.</p>
      */
     inline const WriteForwardingStatus& GetGlobalWriteForwardingStatus() const{ return m_globalWriteForwardingStatus; }
 
     /**
-     * <p>Specifies whether a secondary cluster in the global cluster has write
-     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     * <p>The status of write forwarding for a secondary cluster in the global
+     * cluster.</p>
      */
     inline bool GlobalWriteForwardingStatusHasBeenSet() const { return m_globalWriteForwardingStatusHasBeenSet; }
 
     /**
-     * <p>Specifies whether a secondary cluster in the global cluster has write
-     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     * <p>The status of write forwarding for a secondary cluster in the global
+     * cluster.</p>
      */
     inline void SetGlobalWriteForwardingStatus(const WriteForwardingStatus& value) { m_globalWriteForwardingStatusHasBeenSet = true; m_globalWriteForwardingStatus = value; }
 
     /**
-     * <p>Specifies whether a secondary cluster in the global cluster has write
-     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     * <p>The status of write forwarding for a secondary cluster in the global
+     * cluster.</p>
      */
     inline void SetGlobalWriteForwardingStatus(WriteForwardingStatus&& value) { m_globalWriteForwardingStatusHasBeenSet = true; m_globalWriteForwardingStatus = std::move(value); }
 
     /**
-     * <p>Specifies whether a secondary cluster in the global cluster has write
-     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     * <p>The status of write forwarding for a secondary cluster in the global
+     * cluster.</p>
      */
     inline GlobalClusterMember& WithGlobalWriteForwardingStatus(const WriteForwardingStatus& value) { SetGlobalWriteForwardingStatus(value); return *this;}
 
     /**
-     * <p>Specifies whether a secondary cluster in the global cluster has write
-     * forwarding enabled, not enabled, or is in the process of enabling it.</p>
+     * <p>The status of write forwarding for a secondary cluster in the global
+     * cluster.</p>
      */
     inline GlobalClusterMember& WithGlobalWriteForwardingStatus(WriteForwardingStatus&& value) { SetGlobalWriteForwardingStatus(std::move(value)); return *this;}
 

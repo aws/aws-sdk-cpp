@@ -376,42 +376,42 @@ namespace Model
 
 
     /**
-     * <p>Indicates the storage type for a DB instance.</p>
+     * <p>The storage type for a DB instance.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Indicates the storage type for a DB instance.</p>
+     * <p>The storage type for a DB instance.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Indicates the storage type for a DB instance.</p>
+     * <p>The storage type for a DB instance.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Indicates the storage type for a DB instance.</p>
+     * <p>The storage type for a DB instance.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Indicates the storage type for a DB instance.</p>
+     * <p>The storage type for a DB instance.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Indicates the storage type for a DB instance.</p>
+     * <p>The storage type for a DB instance.</p>
      */
     inline OrderableDBInstanceOption& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Indicates the storage type for a DB instance.</p>
+     * <p>The storage type for a DB instance.</p>
      */
     inline OrderableDBInstanceOption& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the storage type for a DB instance.</p>
+     * <p>The storage type for a DB instance.</p>
      */
     inline OrderableDBInstanceOption& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -484,22 +484,22 @@ namespace Model
 
 
     /**
-     * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+     * <p>Indicates whether a DB instance supports Performance Insights.</p>
      */
     inline bool GetSupportsPerformanceInsights() const{ return m_supportsPerformanceInsights; }
 
     /**
-     * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+     * <p>Indicates whether a DB instance supports Performance Insights.</p>
      */
     inline bool SupportsPerformanceInsightsHasBeenSet() const { return m_supportsPerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+     * <p>Indicates whether a DB instance supports Performance Insights.</p>
      */
     inline void SetSupportsPerformanceInsights(bool value) { m_supportsPerformanceInsightsHasBeenSet = true; m_supportsPerformanceInsights = value; }
 
     /**
-     * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+     * <p>Indicates whether a DB instance supports Performance Insights.</p>
      */
     inline OrderableDBInstanceOption& WithSupportsPerformanceInsights(bool value) { SetSupportsPerformanceInsights(value); return *this;}
 
@@ -726,54 +726,54 @@ namespace Model
 
 
     /**
-     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
-     * the specified DB instance class.</p>
+     * <p>Indicates whether Amazon RDS can automatically scale storage for DB instances
+     * that use the specified DB instance class.</p>
      */
     inline bool GetSupportsStorageAutoscaling() const{ return m_supportsStorageAutoscaling; }
 
     /**
-     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
-     * the specified DB instance class.</p>
+     * <p>Indicates whether Amazon RDS can automatically scale storage for DB instances
+     * that use the specified DB instance class.</p>
      */
     inline bool SupportsStorageAutoscalingHasBeenSet() const { return m_supportsStorageAutoscalingHasBeenSet; }
 
     /**
-     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
-     * the specified DB instance class.</p>
+     * <p>Indicates whether Amazon RDS can automatically scale storage for DB instances
+     * that use the specified DB instance class.</p>
      */
     inline void SetSupportsStorageAutoscaling(bool value) { m_supportsStorageAutoscalingHasBeenSet = true; m_supportsStorageAutoscaling = value; }
 
     /**
-     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
-     * the specified DB instance class.</p>
+     * <p>Indicates whether Amazon RDS can automatically scale storage for DB instances
+     * that use the specified DB instance class.</p>
      */
     inline OrderableDBInstanceOption& WithSupportsStorageAutoscaling(bool value) { SetSupportsStorageAutoscaling(value); return *this;}
 
 
     /**
-     * <p>Whether a DB instance supports Kerberos Authentication.</p>
+     * <p>Indicates whether a DB instance supports Kerberos Authentication.</p>
      */
     inline bool GetSupportsKerberosAuthentication() const{ return m_supportsKerberosAuthentication; }
 
     /**
-     * <p>Whether a DB instance supports Kerberos Authentication.</p>
+     * <p>Indicates whether a DB instance supports Kerberos Authentication.</p>
      */
     inline bool SupportsKerberosAuthenticationHasBeenSet() const { return m_supportsKerberosAuthenticationHasBeenSet; }
 
     /**
-     * <p>Whether a DB instance supports Kerberos Authentication.</p>
+     * <p>Indicates whether a DB instance supports Kerberos Authentication.</p>
      */
     inline void SetSupportsKerberosAuthentication(bool value) { m_supportsKerberosAuthenticationHasBeenSet = true; m_supportsKerberosAuthentication = value; }
 
     /**
-     * <p>Whether a DB instance supports Kerberos Authentication.</p>
+     * <p>Indicates whether a DB instance supports Kerberos Authentication.</p>
      */
     inline OrderableDBInstanceOption& WithSupportsKerberosAuthentication(bool value) { SetSupportsKerberosAuthentication(value); return *this;}
 
 
     /**
-     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
-     * about RDS on Outposts, see <a
+     * <p>Indicates whether a DB instance supports RDS on Outposts.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
      * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -781,8 +781,8 @@ namespace Model
     inline bool GetOutpostCapable() const{ return m_outpostCapable; }
 
     /**
-     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
-     * about RDS on Outposts, see <a
+     * <p>Indicates whether a DB instance supports RDS on Outposts.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
      * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -790,8 +790,8 @@ namespace Model
     inline bool OutpostCapableHasBeenSet() const { return m_outpostCapableHasBeenSet; }
 
     /**
-     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
-     * about RDS on Outposts, see <a
+     * <p>Indicates whether a DB instance supports RDS on Outposts.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
      * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -799,8 +799,8 @@ namespace Model
     inline void SetOutpostCapable(bool value) { m_outpostCapableHasBeenSet = true; m_outpostCapable = value; }
 
     /**
-     * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
-     * about RDS on Outposts, see <a
+     * <p>Indicates whether a DB instance supports RDS on Outposts.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
      * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -882,33 +882,33 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with a
-     * specific combination of other DB engine attributes.</p>
+     * <p>Indicates whether you can use Aurora global databases with a specific
+     * combination of other DB engine attributes.</p>
      */
     inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with a
-     * specific combination of other DB engine attributes.</p>
+     * <p>Indicates whether you can use Aurora global databases with a specific
+     * combination of other DB engine attributes.</p>
      */
     inline bool SupportsGlobalDatabasesHasBeenSet() const { return m_supportsGlobalDatabasesHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with a
-     * specific combination of other DB engine attributes.</p>
+     * <p>Indicates whether you can use Aurora global databases with a specific
+     * combination of other DB engine attributes.</p>
      */
     inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with a
-     * specific combination of other DB engine attributes.</p>
+     * <p>Indicates whether you can use Aurora global databases with a specific
+     * combination of other DB engine attributes.</p>
      */
     inline OrderableDBInstanceOption& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
 
 
     /**
-     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
-     * more information on Multi-AZ DB clusters, see <a
+     * <p>Indicates whether DB instances can be configured as a Multi-AZ DB
+     * cluster.</p> <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
      * RDS User Guide.</i> </p>
@@ -916,8 +916,8 @@ namespace Model
     inline bool GetSupportsClusters() const{ return m_supportsClusters; }
 
     /**
-     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
-     * more information on Multi-AZ DB clusters, see <a
+     * <p>Indicates whether DB instances can be configured as a Multi-AZ DB
+     * cluster.</p> <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
      * RDS User Guide.</i> </p>
@@ -925,8 +925,8 @@ namespace Model
     inline bool SupportsClustersHasBeenSet() const { return m_supportsClustersHasBeenSet; }
 
     /**
-     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
-     * more information on Multi-AZ DB clusters, see <a
+     * <p>Indicates whether DB instances can be configured as a Multi-AZ DB
+     * cluster.</p> <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
      * RDS User Guide.</i> </p>
@@ -934,8 +934,8 @@ namespace Model
     inline void SetSupportsClusters(bool value) { m_supportsClustersHasBeenSet = true; m_supportsClusters = value; }
 
     /**
-     * <p>Whether DB instances can be configured as a Multi-AZ DB cluster.</p> <p>For
-     * more information on Multi-AZ DB clusters, see <a
+     * <p>Indicates whether DB instances can be configured as a Multi-AZ DB
+     * cluster.</p> <p>For more information on Multi-AZ DB clusters, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
      * Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon
      * RDS User Guide.</i> </p>

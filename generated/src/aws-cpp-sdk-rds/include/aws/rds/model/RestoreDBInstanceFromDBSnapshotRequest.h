@@ -453,120 +453,120 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't
-     * specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't specify the
+     * <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
+     * deployment.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't
-     * specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't specify the
+     * <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
+     * deployment.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't
-     * specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't specify the
+     * <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
+     * deployment.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
-     * <p>This setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't
-     * specify the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p>
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment.</p> <p>This
+     * setting doesn't apply to RDS Custom.</p> <p>Constraint: You can't specify the
+     * <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ
+     * deployment.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB instance's
-     * virtual private cloud (VPC). It resolves to the public IP address from outside
-     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
-     * the security group it uses. That public access is not permitted if the security
-     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
-     * isn't publicly accessible, it is an internal DB instance with a DNS name that
-     * resolves to a private IP address.</p> <p>For more information, see
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB instance's
-     * virtual private cloud (VPC). It resolves to the public IP address from outside
-     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
-     * the security group it uses. That public access is not permitted if the security
-     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
-     * isn't publicly accessible, it is an internal DB instance with a DNS name that
-     * resolves to a private IP address.</p> <p>For more information, see
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB instance's
-     * virtual private cloud (VPC). It resolves to the public IP address from outside
-     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
-     * the security group it uses. That public access is not permitted if the security
-     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
-     * isn't publicly accessible, it is an internal DB instance with a DNS name that
-     * resolves to a private IP address.</p> <p>For more information, see
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance is publicly accessible.</p>
-     * <p>When the DB instance is publicly accessible, its Domain Name System (DNS)
-     * endpoint resolves to the private IP address from within the DB instance's
-     * virtual private cloud (VPC). It resolves to the public IP address from outside
-     * of the DB instance's VPC. Access to the DB instance is ultimately controlled by
-     * the security group it uses. That public access is not permitted if the security
-     * group assigned to the DB instance doesn't permit it.</p> <p>When the DB instance
-     * isn't publicly accessible, it is an internal DB instance with a DNS name that
-     * resolves to a private IP address.</p> <p>For more information, see
+     * <p>Specifies whether the DB instance is publicly accessible.</p> <p>When the DB
+     * instance is publicly accessible, its Domain Name System (DNS) endpoint resolves
+     * to the private IP address from within the DB instance's virtual private cloud
+     * (VPC). It resolves to the public IP address from outside of the DB instance's
+     * VPC. Access to the DB instance is ultimately controlled by the security group it
+     * uses. That public access is not permitted if the security group assigned to the
+     * DB instance doesn't permit it.</p> <p>When the DB instance isn't publicly
+     * accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.</p> <p>For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether minor version upgrades are applied
-     * automatically to the DB instance during the maintenance window.</p> <p>If you
-     * restore an RDS Custom DB instance, you must disable this parameter.</p>
+     * <p>Specifies whether to automatically apply minor version upgrades to the DB
+     * instance during the maintenance window.</p> <p>If you restore an RDS Custom DB
+     * instance, you must disable this parameter.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>A value that indicates whether minor version upgrades are applied
-     * automatically to the DB instance during the maintenance window.</p> <p>If you
-     * restore an RDS Custom DB instance, you must disable this parameter.</p>
+     * <p>Specifies whether to automatically apply minor version upgrades to the DB
+     * instance during the maintenance window.</p> <p>If you restore an RDS Custom DB
+     * instance, you must disable this parameter.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether minor version upgrades are applied
-     * automatically to the DB instance during the maintenance window.</p> <p>If you
-     * restore an RDS Custom DB instance, you must disable this parameter.</p>
+     * <p>Specifies whether to automatically apply minor version upgrades to the DB
+     * instance during the maintenance window.</p> <p>If you restore an RDS Custom DB
+     * instance, you must disable this parameter.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether minor version upgrades are applied
-     * automatically to the DB instance during the maintenance window.</p> <p>If you
-     * restore an RDS Custom DB instance, you must disable this parameter.</p>
+     * <p>Specifies whether to automatically apply minor version upgrades to the DB
+     * instance during the maintenance window.</p> <p>If you restore an RDS Custom DB
+     * instance, you must disable this parameter.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -574,7 +574,7 @@ namespace Model
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
      * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
@@ -582,7 +582,7 @@ namespace Model
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
      * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
@@ -590,7 +590,7 @@ namespace Model
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
      * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
@@ -598,7 +598,7 @@ namespace Model
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
      * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
@@ -606,7 +606,7 @@ namespace Model
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
      * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
@@ -614,7 +614,7 @@ namespace Model
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
      * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
@@ -622,7 +622,7 @@ namespace Model
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
      * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
@@ -630,7 +630,7 @@ namespace Model
     /**
      * <p>License model information for the restored DB instance.</p> <p>This setting
      * doesn't apply to RDS Custom.</p> <p>Default: Same as source.</p> <p>Valid
-     * values: <code>license-included</code> | <code>bring-your-own-license</code> |
+     * Values: <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
@@ -971,7 +971,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
@@ -980,7 +980,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
@@ -989,7 +989,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
@@ -998,7 +998,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
@@ -1007,7 +1007,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
@@ -1016,7 +1016,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
@@ -1025,7 +1025,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
@@ -1034,7 +1034,7 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
      * <code>io1</code> or <code>gp3</code>, you must also include a value for the
      * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
      * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p>
@@ -1425,7 +1425,8 @@ namespace Model
 
     /**
      * <p>The ARN for the Secrets Manager secret with the credentials for the user
-     * joining the domain.</p> <p>Constraints:</p> <p>Example:
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
@@ -1433,7 +1434,8 @@ namespace Model
 
     /**
      * <p>The ARN for the Secrets Manager secret with the credentials for the user
-     * joining the domain.</p> <p>Constraints:</p> <p>Example:
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
@@ -1441,7 +1443,8 @@ namespace Model
 
     /**
      * <p>The ARN for the Secrets Manager secret with the credentials for the user
-     * joining the domain.</p> <p>Constraints:</p> <p>Example:
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
@@ -1449,7 +1452,8 @@ namespace Model
 
     /**
      * <p>The ARN for the Secrets Manager secret with the credentials for the user
-     * joining the domain.</p> <p>Constraints:</p> <p>Example:
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
@@ -1457,7 +1461,8 @@ namespace Model
 
     /**
      * <p>The ARN for the Secrets Manager secret with the credentials for the user
-     * joining the domain.</p> <p>Constraints:</p> <p>Example:
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
@@ -1465,7 +1470,8 @@ namespace Model
 
     /**
      * <p>The ARN for the Secrets Manager secret with the credentials for the user
-     * joining the domain.</p> <p>Constraints:</p> <p>Example:
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
@@ -1473,7 +1479,8 @@ namespace Model
 
     /**
      * <p>The ARN for the Secrets Manager secret with the credentials for the user
-     * joining the domain.</p> <p>Constraints:</p> <p>Example:
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
@@ -1481,7 +1488,8 @@ namespace Model
 
     /**
      * <p>The ARN for the Secrets Manager secret with the credentials for the user
-     * joining the domain.</p> <p>Constraints:</p> <p>Example:
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
@@ -1571,10 +1579,10 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
-     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
-     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * <p>Specifies whether to copy all tags from the restored DB instance to snapshots
+     * of the DB instance.</p> <p>In most cases, tags aren't copied by default.
+     * However, when you restore a DB instance from a DB snapshot, RDS checks whether
+     * you specify new tags. If yes, the new tags are added to the restored DB
      * instance. If there are no new tags, RDS looks for the tags from the source DB
      * instance for the DB snapshot, and then adds those tags to the restored DB
      * instance.</p> <p>For more information, see <a
@@ -1585,10 +1593,10 @@ namespace Model
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
-     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
-     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * <p>Specifies whether to copy all tags from the restored DB instance to snapshots
+     * of the DB instance.</p> <p>In most cases, tags aren't copied by default.
+     * However, when you restore a DB instance from a DB snapshot, RDS checks whether
+     * you specify new tags. If yes, the new tags are added to the restored DB
      * instance. If there are no new tags, RDS looks for the tags from the source DB
      * instance for the DB snapshot, and then adds those tags to the restored DB
      * instance.</p> <p>For more information, see <a
@@ -1599,10 +1607,10 @@ namespace Model
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
-     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
-     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * <p>Specifies whether to copy all tags from the restored DB instance to snapshots
+     * of the DB instance.</p> <p>In most cases, tags aren't copied by default.
+     * However, when you restore a DB instance from a DB snapshot, RDS checks whether
+     * you specify new tags. If yes, the new tags are added to the restored DB
      * instance. If there are no new tags, RDS looks for the tags from the source DB
      * instance for the DB snapshot, and then adds those tags to the restored DB
      * instance.</p> <p>For more information, see <a
@@ -1613,10 +1621,10 @@ namespace Model
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to copy all tags from the restored DB instance
-     * to snapshots of the DB instance.</p> <p>In most cases, tags aren't copied by
-     * default. However, when you restore a DB instance from a DB snapshot, RDS checks
-     * whether you specify new tags. If yes, the new tags are added to the restored DB
+     * <p>Specifies whether to copy all tags from the restored DB instance to snapshots
+     * of the DB instance.</p> <p>In most cases, tags aren't copied by default.
+     * However, when you restore a DB instance from a DB snapshot, RDS checks whether
+     * you specify new tags. If yes, the new tags are added to the restored DB
      * instance. If there are no new tags, RDS looks for the tags from the source DB
      * instance for the DB snapshot, and then adds those tags to the restored DB
      * instance.</p> <p>For more information, see <a
@@ -1677,10 +1685,9 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1688,10 +1695,9 @@ namespace Model
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1699,10 +1705,9 @@ namespace Model
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1710,10 +1715,9 @@ namespace Model
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of Amazon Web Services
-     * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping is disabled.</p> <p>For more information about IAM database
-     * authentication, see <a
+     * <p>Specifies whether to enable mapping of Amazon Web Services Identity and
+     * Access Management (IAM) accounts to database accounts. By default, mapping is
+     * disabled.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>This setting doesn't apply to RDS Custom.</p>
@@ -1870,30 +1874,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetUseDefaultProcessorFeatures() const{ return m_useDefaultProcessorFeatures; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool UseDefaultProcessorFeaturesHasBeenSet() const { return m_useDefaultProcessorFeaturesHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithUseDefaultProcessorFeatures(bool value) { SetUseDefaultProcessorFeatures(value); return *this;}
 
@@ -1996,36 +1996,36 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance has deletion protection
-     * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection isn't enabled. For more information, see <a
+     * <p>Specifies whether to enable deletion protection for the DB instance. The
+     * database can't be deleted when deletion protection is enabled. By default,
+     * deletion protection isn't enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>.</p>
      */
@@ -2033,13 +2033,13 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the DB instance from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -2049,13 +2049,13 @@ namespace Model
     inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the DB instance from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -2065,13 +2065,13 @@ namespace Model
     inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the DB instance from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -2081,13 +2081,13 @@ namespace Model
     inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
 
     /**
-     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
-     * for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or
-     * external connectivity to resources in your Outpost subnets through your
-     * on-premises network. For some use cases, a CoIP can provide lower latency for
-     * connections to the DB instance from outside of its virtual private cloud (VPC)
-     * on your local network.</p> <p>This setting doesn't apply to RDS Custom.</p>
-     * <p>For more information about RDS on Outposts, see <a
+     * <p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on
+     * Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external
+     * connectivity to resources in your Outpost subnets through your on-premises
+     * network. For some use cases, a CoIP can provide lower latency for connections to
+     * the DB instance from outside of its virtual private cloud (VPC) on your local
+     * network.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>For more
+     * information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p> <p>For more information about CoIPs, see <a
@@ -2300,7 +2300,7 @@ namespace Model
 
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2313,7 +2313,7 @@ namespace Model
     inline const Aws::String& GetNetworkType() const{ return m_networkType; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2326,7 +2326,7 @@ namespace Model
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2339,7 +2339,7 @@ namespace Model
     inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2352,7 +2352,7 @@ namespace Model
     inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2365,7 +2365,7 @@ namespace Model
     inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2378,7 +2378,7 @@ namespace Model
     inline RestoreDBInstanceFromDBSnapshotRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
@@ -2391,7 +2391,7 @@ namespace Model
     inline RestoreDBInstanceFromDBSnapshotRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
 
     /**
-     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <p>The network type of the DB instance.</p> <p>Valid Values:</p> <ul> <li> <p>
      * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
      * network type is determined by the <code>DBSubnetGroup</code> specified for the
      * DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
