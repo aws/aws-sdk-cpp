@@ -259,12 +259,12 @@ ByteBuffer HashingUtils::CalculateCRC32C(Aws::IOStream& stream)
     return hash.Calculate(stream).GetResult();
 }
 
-int HashingUtils::HashString(const char* strToHash)
+uint32_t HashingUtils::HashString(const char* strToHash)
 {
     if (!strToHash)
         return 0;
 
-    unsigned hash = 0;
+    uint32_t hash = 0;
     while (char charValue = *strToHash++)
     {
         hash = charValue + 31 * hash;

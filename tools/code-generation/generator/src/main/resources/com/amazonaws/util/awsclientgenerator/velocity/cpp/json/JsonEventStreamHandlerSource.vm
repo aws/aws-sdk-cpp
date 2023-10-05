@@ -232,13 +232,13 @@ namespace ${operation.name}EventMapper
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())
 #set($memberKey = $eventMemberEntry.key)
-    static const int ${memberKey.toUpperCase()}_HASH = Aws::Utils::HashingUtils::HashString("${memberKey}");
+    static constexpr uint32_t ${memberKey.toUpperCase()}_HASH = Aws::Utils::ConstExprHashingUtils::HashString("${memberKey}");
 #end
 #end
 
     ${operation.name}EventType Get${operation.name}EventTypeForName(const Aws::String& name)
     {
-        int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
+        uint32_t hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
 #set($elseText = "")
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())

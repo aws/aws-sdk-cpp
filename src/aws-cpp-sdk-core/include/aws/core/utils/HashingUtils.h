@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <aws/core/utils/ConstExprHashingUtils.h>
 
 namespace Aws
 {
@@ -107,7 +108,11 @@ namespace Aws
              */
             static ByteBuffer CalculateCRC32C(Aws::IOStream& stream);
 
-            static int HashString(const char* strToHash);
+            /**
+             * Calculates hash code of a string using following formula with unsigned int arithmetics (including overflow)
+             *   s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
+             */
+            static uint32_t HashString(const char* strToHash);
 
         };
 

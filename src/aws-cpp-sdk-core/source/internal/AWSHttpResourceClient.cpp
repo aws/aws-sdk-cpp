@@ -482,8 +482,8 @@ namespace Aws
                 ss << "https://";
             }
 
-            static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTH_1);
-            static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTHWEST_1);
+            static const uint32_t CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTH_1);
+            static const uint32_t CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTHWEST_1);
             auto hash = Aws::Utils::HashingUtils::HashString(clientConfiguration.region.c_str());
 
             ss << "sts." << clientConfiguration.region << ".amazonaws.com";
@@ -601,8 +601,8 @@ namespace Aws
                 ss << "https://";
             }
 
-            static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTH_1);
-            static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTHWEST_1);
+            static const uint32_t CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTH_1);
+            static const uint32_t CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTHWEST_1);
             auto hash = Aws::Utils::HashingUtils::HashString(clientConfiguration.region.c_str());
 
             AWS_LOGSTREAM_DEBUG(SSO_RESOURCE_CLIENT_LOG_TAG, "Preparing SSO client for region: " << clientConfiguration.region);

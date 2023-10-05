@@ -21,7 +21,7 @@ namespace ${rootNamespace}
       {
 
 #foreach($enumMember in $enumModel.members)
-        static const int ${enumMember.memberName}_HASH = HashingUtils::HashString("${enumMember.memberStringValue}");
+        static constexpr uint32_t ${enumMember.memberName}_HASH = ConstExprHashingUtils::HashString("${enumMember.memberStringValue}");
 #end
 
 #if ($enumModel.members.size() > 121)
@@ -35,7 +35,7 @@ namespace ${rootNamespace}
 #if ($enumCounter % 122 == 0)
 #set($elseText = "")
 #set ($helperIndex =  $enumCounter / 122)
-        static bool GetEnumForNameHelper${helperIndex}(int hashCode, ${enumModel.name}& enumValue)
+        static bool GetEnumForNameHelper${helperIndex}(uint32_t hashCode, ${enumModel.name}& enumValue)
         {
 #end
           ${elseText}if (hashCode == ${enum.memberName}_HASH)
@@ -76,7 +76,7 @@ namespace ${rootNamespace}
 
         ${enumModel.name} Get${enumModel.name}ForName(const Aws::String& name)
         {
-          int hashCode = HashingUtils::HashString(name.c_str());
+          uint32_t hashCode = HashingUtils::HashString(name.c_str());
 #if($enumModel.members.size() > 0 && $enumModel.members.size() < 122)
 #set($elseText = "")
 #foreach($enumMember in $enumModel.members)

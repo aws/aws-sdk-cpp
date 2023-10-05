@@ -53,7 +53,7 @@ namespace ${metadata.classNamePrefix}ErrorMapper
 
 #foreach($error in $nonCoreServiceErrors)
 #set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
-static const int ${constName}_HASH = HashingUtils::HashString("${error.text}");
+static constexpr uint32_t ${constName}_HASH = ConstExprHashingUtils::HashString("${error.text}");
 #end
 
 #if ($nonCoreServiceErrors.size() > 121)
@@ -69,7 +69,7 @@ because MSVC has a maximum of 122 chained if-else blocks.
 #set($elseText = "")
 #set ($helperIndex =  $errorCounter / 122)
 
-static bool GetErrorForNameHelper${helperIndex}(int hashCode, AWSError<CoreErrors>& error)
+static bool GetErrorForNameHelper${helperIndex}(uint32_t hashCode, AWSError<CoreErrors>& error)
 {
 #end
 #set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
@@ -91,7 +91,7 @@ static bool GetErrorForNameHelper${helperIndex}(int hashCode, AWSError<CoreError
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
 #if($nonCoreServiceErrors.size() > 0 && $nonCoreServiceErrors.size() < 122)
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
 
 #foreach($error in $nonCoreServiceErrors)
 #set($constName = ${ErrorFormatter.formatErrorConstName($error.name)})
@@ -103,7 +103,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 #end
 #elseif ($nonCoreServiceErrors.size() > 121)
 #set($elseText = "")
-  int hashCode = HashingUtils::HashString(errorName);
+  uint32_t hashCode = HashingUtils::HashString(errorName);
   AWSError<CoreErrors> error;
 #set($maxHelperIndex = ($nonCoreServiceErrors.size() - 1) / 122)
 #foreach($helperIndex in [0..$maxHelperIndex])
