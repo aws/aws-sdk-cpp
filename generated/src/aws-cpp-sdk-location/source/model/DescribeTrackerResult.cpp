@@ -19,12 +19,14 @@ using namespace Aws;
 
 DescribeTrackerResult::DescribeTrackerResult() : 
     m_eventBridgeEnabled(false),
+    m_kmsKeyEnableGeospatialQueries(false),
     m_positionFiltering(PositionFiltering::NOT_SET)
 {
 }
 
 DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_eventBridgeEnabled(false),
+    m_kmsKeyEnableGeospatialQueries(false),
     m_positionFiltering(PositionFiltering::NOT_SET)
 {
   *this = result;
@@ -48,6 +50,12 @@ DescribeTrackerResult& DescribeTrackerResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("EventBridgeEnabled"))
   {
     m_eventBridgeEnabled = jsonValue.GetBool("EventBridgeEnabled");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyEnableGeospatialQueries"))
+  {
+    m_kmsKeyEnableGeospatialQueries = jsonValue.GetBool("KmsKeyEnableGeospatialQueries");
 
   }
 

@@ -58,6 +58,7 @@ namespace Aws
         {
             assert(m_transferConfig.s3Client);
             assert(m_transferConfig.transferExecutor);
+            m_transferConfig.s3Client->AppendToUserAgent("ft/s3-transfer");
             for (uint64_t i = 0; i < m_transferConfig.transferBufferMaxHeapSize; i += m_transferConfig.bufferSize)
             {
                 m_bufferManager.PutResource(Aws::NewArray<unsigned char>(static_cast<size_t>(m_transferConfig.bufferSize), CLASS_TAG));

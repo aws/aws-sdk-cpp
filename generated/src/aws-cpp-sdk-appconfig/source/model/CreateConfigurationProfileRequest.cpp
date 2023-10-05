@@ -20,7 +20,8 @@ CreateConfigurationProfileRequest::CreateConfigurationProfileRequest() :
     m_retrievalRoleArnHasBeenSet(false),
     m_validatorsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_kmsKeyIdentifierHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,12 @@ Aws::String CreateConfigurationProfileRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", m_type);
+
+  }
+
+  if(m_kmsKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
 
   }
 

@@ -23,7 +23,8 @@ ListShareInvitationsRequest::ListShareInvitationsRequest() :
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_profileNamePrefixHasBeenSet(false)
+    m_profileNamePrefixHasBeenSet(false),
+    m_templateNamePrefixHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,13 @@ void ListShareInvitationsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_profileNamePrefix;
       uri.AddQueryStringParameter("ProfileNamePrefix", ss.str());
+      ss.str("");
+    }
+
+    if(m_templateNamePrefixHasBeenSet)
+    {
+      ss << m_templateNamePrefix;
+      uri.AddQueryStringParameter("TemplateNamePrefix", ss.str());
       ss.str("");
     }
 

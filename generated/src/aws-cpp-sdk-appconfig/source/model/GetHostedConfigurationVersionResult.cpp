@@ -29,6 +29,7 @@ GetHostedConfigurationVersionResult::GetHostedConfigurationVersionResult(GetHost
     m_content(std::move(toMove.m_content)),
     m_contentType(std::move(toMove.m_contentType)),
     m_versionLabel(std::move(toMove.m_versionLabel)),
+    m_kmsKeyArn(std::move(toMove.m_kmsKeyArn)),
     m_requestId(std::move(toMove.m_requestId))
 {
 }
@@ -47,6 +48,7 @@ GetHostedConfigurationVersionResult& GetHostedConfigurationVersionResult::operat
    m_content = std::move(toMove.m_content);
    m_contentType = std::move(toMove.m_contentType);
    m_versionLabel = std::move(toMove.m_versionLabel);
+   m_kmsKeyArn = std::move(toMove.m_kmsKeyArn);
    m_requestId = std::move(toMove.m_requestId);
 
    return *this;
@@ -97,6 +99,12 @@ GetHostedConfigurationVersionResult& GetHostedConfigurationVersionResult::operat
   if(versionLabelIter != headers.end())
   {
     m_versionLabel = versionLabelIter->second;
+  }
+
+  const auto& kmsKeyArnIter = headers.find("kmskeyarn");
+  if(kmsKeyArnIter != headers.end())
+  {
+    m_kmsKeyArn = kmsKeyArnIter->second;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");

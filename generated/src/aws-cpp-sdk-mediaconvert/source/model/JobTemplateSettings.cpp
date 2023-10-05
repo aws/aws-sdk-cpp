@@ -24,8 +24,6 @@ JobTemplateSettings::JobTemplateSettings() :
     m_availBlankingHasBeenSet(false),
     m_esamHasBeenSet(false),
     m_extendedDataServicesHasBeenSet(false),
-    m_followInputIndex(0),
-    m_followInputIndexHasBeenSet(false),
     m_inputsHasBeenSet(false),
     m_kantarWatermarkHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
@@ -43,8 +41,6 @@ JobTemplateSettings::JobTemplateSettings(JsonView jsonValue) :
     m_availBlankingHasBeenSet(false),
     m_esamHasBeenSet(false),
     m_extendedDataServicesHasBeenSet(false),
-    m_followInputIndex(0),
-    m_followInputIndexHasBeenSet(false),
     m_inputsHasBeenSet(false),
     m_kantarWatermarkHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
@@ -85,13 +81,6 @@ JobTemplateSettings& JobTemplateSettings::operator =(JsonView jsonValue)
     m_extendedDataServices = jsonValue.GetObject("extendedDataServices");
 
     m_extendedDataServicesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("followInputIndex"))
-  {
-    m_followInputIndex = jsonValue.GetInteger("followInputIndex");
-
-    m_followInputIndexHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputs"))
@@ -184,12 +173,6 @@ JsonValue JobTemplateSettings::Jsonize() const
   if(m_extendedDataServicesHasBeenSet)
   {
    payload.WithObject("extendedDataServices", m_extendedDataServices.Jsonize());
-
-  }
-
-  if(m_followInputIndexHasBeenSet)
-  {
-   payload.WithInteger("followInputIndex", m_followInputIndex);
 
   }
 

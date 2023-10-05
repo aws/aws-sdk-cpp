@@ -21,9 +21,18 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
 #elseif($memberEntry.value.shape.map)
     ${spaces}for(auto& item : ${memberVarName})
     ${spaces}{
+#if(!$memberEntry.value.shape.mapValue.shape.list)
     ${spaces}  ss << item.second;
     ${spaces}  uri.AddQueryStringParameter(item.first.c_str(), ss.str());
     ${spaces}  ss.str("");
+#else##URL query Key has multiple values, multiply key per https://smithy.io/2.0/spec/http-bindings.html#id9
+    ${spaces}  for(auto& innerItem : item.second)
+    ${spaces}  {
+    ${spaces}    ss << innerItem;
+    ${spaces}    uri.AddQueryStringParameter(item.first.c_str(), ss.str());
+    ${spaces}    ss.str("");
+    ${spaces}  }
+#end##if(!$memberEntry.value.shape.map.mapValue.shape.list)
     ${spaces}}
 #elseif($memberEntry.value.shape.list)
     ${spaces}for(const auto& item : $memberVarName)

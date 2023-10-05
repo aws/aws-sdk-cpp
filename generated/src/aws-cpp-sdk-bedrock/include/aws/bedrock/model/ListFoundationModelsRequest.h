@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/BedrockRequest.h>
-#include <aws/bedrock/model/ModelCustomization.h>
-#include <aws/bedrock/model/InferenceType.h>
-#include <aws/bedrock/model/ModelModality.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock/model/ModelCustomization.h>
+#include <aws/bedrock/model/ModelModality.h>
+#include <aws/bedrock/model/InferenceType.h>
 #include <utility>
 
 namespace Aws
@@ -39,99 +39,6 @@ namespace Model
     AWS_BEDROCK_API Aws::String SerializePayload() const override;
 
     AWS_BEDROCK_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    /**
-     * <p>List by customization type.</p>
-     */
-    inline const ModelCustomization& GetByCustomizationType() const{ return m_byCustomizationType; }
-
-    /**
-     * <p>List by customization type.</p>
-     */
-    inline bool ByCustomizationTypeHasBeenSet() const { return m_byCustomizationTypeHasBeenSet; }
-
-    /**
-     * <p>List by customization type.</p>
-     */
-    inline void SetByCustomizationType(const ModelCustomization& value) { m_byCustomizationTypeHasBeenSet = true; m_byCustomizationType = value; }
-
-    /**
-     * <p>List by customization type.</p>
-     */
-    inline void SetByCustomizationType(ModelCustomization&& value) { m_byCustomizationTypeHasBeenSet = true; m_byCustomizationType = std::move(value); }
-
-    /**
-     * <p>List by customization type.</p>
-     */
-    inline ListFoundationModelsRequest& WithByCustomizationType(const ModelCustomization& value) { SetByCustomizationType(value); return *this;}
-
-    /**
-     * <p>List by customization type.</p>
-     */
-    inline ListFoundationModelsRequest& WithByCustomizationType(ModelCustomization&& value) { SetByCustomizationType(std::move(value)); return *this;}
-
-
-    /**
-     * <p>List by inference type.</p>
-     */
-    inline const InferenceType& GetByInferenceType() const{ return m_byInferenceType; }
-
-    /**
-     * <p>List by inference type.</p>
-     */
-    inline bool ByInferenceTypeHasBeenSet() const { return m_byInferenceTypeHasBeenSet; }
-
-    /**
-     * <p>List by inference type.</p>
-     */
-    inline void SetByInferenceType(const InferenceType& value) { m_byInferenceTypeHasBeenSet = true; m_byInferenceType = value; }
-
-    /**
-     * <p>List by inference type.</p>
-     */
-    inline void SetByInferenceType(InferenceType&& value) { m_byInferenceTypeHasBeenSet = true; m_byInferenceType = std::move(value); }
-
-    /**
-     * <p>List by inference type.</p>
-     */
-    inline ListFoundationModelsRequest& WithByInferenceType(const InferenceType& value) { SetByInferenceType(value); return *this;}
-
-    /**
-     * <p>List by inference type.</p>
-     */
-    inline ListFoundationModelsRequest& WithByInferenceType(InferenceType&& value) { SetByInferenceType(std::move(value)); return *this;}
-
-
-    /**
-     * <p>List by output modality type.</p>
-     */
-    inline const ModelModality& GetByOutputModality() const{ return m_byOutputModality; }
-
-    /**
-     * <p>List by output modality type.</p>
-     */
-    inline bool ByOutputModalityHasBeenSet() const { return m_byOutputModalityHasBeenSet; }
-
-    /**
-     * <p>List by output modality type.</p>
-     */
-    inline void SetByOutputModality(const ModelModality& value) { m_byOutputModalityHasBeenSet = true; m_byOutputModality = value; }
-
-    /**
-     * <p>List by output modality type.</p>
-     */
-    inline void SetByOutputModality(ModelModality&& value) { m_byOutputModalityHasBeenSet = true; m_byOutputModality = std::move(value); }
-
-    /**
-     * <p>List by output modality type.</p>
-     */
-    inline ListFoundationModelsRequest& WithByOutputModality(const ModelModality& value) { SetByOutputModality(value); return *this;}
-
-    /**
-     * <p>List by output modality type.</p>
-     */
-    inline ListFoundationModelsRequest& WithByOutputModality(ModelModality&& value) { SetByOutputModality(std::move(value)); return *this;}
 
 
     /**
@@ -174,19 +81,112 @@ namespace Model
      */
     inline ListFoundationModelsRequest& WithByProvider(const char* value) { SetByProvider(value); return *this;}
 
+
+    /**
+     * <p>List by customization type.</p>
+     */
+    inline const ModelCustomization& GetByCustomizationType() const{ return m_byCustomizationType; }
+
+    /**
+     * <p>List by customization type.</p>
+     */
+    inline bool ByCustomizationTypeHasBeenSet() const { return m_byCustomizationTypeHasBeenSet; }
+
+    /**
+     * <p>List by customization type.</p>
+     */
+    inline void SetByCustomizationType(const ModelCustomization& value) { m_byCustomizationTypeHasBeenSet = true; m_byCustomizationType = value; }
+
+    /**
+     * <p>List by customization type.</p>
+     */
+    inline void SetByCustomizationType(ModelCustomization&& value) { m_byCustomizationTypeHasBeenSet = true; m_byCustomizationType = std::move(value); }
+
+    /**
+     * <p>List by customization type.</p>
+     */
+    inline ListFoundationModelsRequest& WithByCustomizationType(const ModelCustomization& value) { SetByCustomizationType(value); return *this;}
+
+    /**
+     * <p>List by customization type.</p>
+     */
+    inline ListFoundationModelsRequest& WithByCustomizationType(ModelCustomization&& value) { SetByCustomizationType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>List by output modality type.</p>
+     */
+    inline const ModelModality& GetByOutputModality() const{ return m_byOutputModality; }
+
+    /**
+     * <p>List by output modality type.</p>
+     */
+    inline bool ByOutputModalityHasBeenSet() const { return m_byOutputModalityHasBeenSet; }
+
+    /**
+     * <p>List by output modality type.</p>
+     */
+    inline void SetByOutputModality(const ModelModality& value) { m_byOutputModalityHasBeenSet = true; m_byOutputModality = value; }
+
+    /**
+     * <p>List by output modality type.</p>
+     */
+    inline void SetByOutputModality(ModelModality&& value) { m_byOutputModalityHasBeenSet = true; m_byOutputModality = std::move(value); }
+
+    /**
+     * <p>List by output modality type.</p>
+     */
+    inline ListFoundationModelsRequest& WithByOutputModality(const ModelModality& value) { SetByOutputModality(value); return *this;}
+
+    /**
+     * <p>List by output modality type.</p>
+     */
+    inline ListFoundationModelsRequest& WithByOutputModality(ModelModality&& value) { SetByOutputModality(std::move(value)); return *this;}
+
+
+    /**
+     * <p>List by inference type.</p>
+     */
+    inline const InferenceType& GetByInferenceType() const{ return m_byInferenceType; }
+
+    /**
+     * <p>List by inference type.</p>
+     */
+    inline bool ByInferenceTypeHasBeenSet() const { return m_byInferenceTypeHasBeenSet; }
+
+    /**
+     * <p>List by inference type.</p>
+     */
+    inline void SetByInferenceType(const InferenceType& value) { m_byInferenceTypeHasBeenSet = true; m_byInferenceType = value; }
+
+    /**
+     * <p>List by inference type.</p>
+     */
+    inline void SetByInferenceType(InferenceType&& value) { m_byInferenceTypeHasBeenSet = true; m_byInferenceType = std::move(value); }
+
+    /**
+     * <p>List by inference type.</p>
+     */
+    inline ListFoundationModelsRequest& WithByInferenceType(const InferenceType& value) { SetByInferenceType(value); return *this;}
+
+    /**
+     * <p>List by inference type.</p>
+     */
+    inline ListFoundationModelsRequest& WithByInferenceType(InferenceType&& value) { SetByInferenceType(std::move(value)); return *this;}
+
   private:
+
+    Aws::String m_byProvider;
+    bool m_byProviderHasBeenSet = false;
 
     ModelCustomization m_byCustomizationType;
     bool m_byCustomizationTypeHasBeenSet = false;
 
-    InferenceType m_byInferenceType;
-    bool m_byInferenceTypeHasBeenSet = false;
-
     ModelModality m_byOutputModality;
     bool m_byOutputModalityHasBeenSet = false;
 
-    Aws::String m_byProvider;
-    bool m_byProviderHasBeenSet = false;
+    InferenceType m_byInferenceType;
+    bool m_byInferenceTypeHasBeenSet = false;
   };
 
 } // namespace Model

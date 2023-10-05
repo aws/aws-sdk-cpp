@@ -1430,9 +1430,9 @@ namespace Transfer
 
         /**
          * <p>Tests whether your SFTP connector is set up successfully. We highly recommend
-         * that you call this operation to test your ability to transfer files between a
-         * Transfer Family server and a trading partner's SFTP server.</p><p><h3>See
-         * Also:</h3>   <a
+         * that you call this operation to test your ability to transfer files between
+         * local Amazon Web Services storage and a trading partner's SFTP
+         * server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestConnection">AWS
          * API Reference</a></p>
          */

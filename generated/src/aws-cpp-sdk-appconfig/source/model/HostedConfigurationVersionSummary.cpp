@@ -25,7 +25,8 @@ HostedConfigurationVersionSummary::HostedConfigurationVersionSummary() :
     m_versionNumberHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
-    m_versionLabelHasBeenSet(false)
+    m_versionLabelHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ HostedConfigurationVersionSummary::HostedConfigurationVersionSummary(JsonView js
     m_versionNumberHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
-    m_versionLabelHasBeenSet(false)
+    m_versionLabelHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,13 @@ HostedConfigurationVersionSummary& HostedConfigurationVersionSummary::operator =
     m_versionLabelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +134,12 @@ JsonValue HostedConfigurationVersionSummary::Jsonize() const
   if(m_versionLabelHasBeenSet)
   {
    payload.WithString("VersionLabel", m_versionLabel);
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("KmsKeyArn", m_kmsKeyArn);
 
   }
 

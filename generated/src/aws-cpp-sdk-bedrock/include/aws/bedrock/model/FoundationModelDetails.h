@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock/model/ModelModality.h>
 #include <aws/bedrock/model/ModelCustomization.h>
 #include <aws/bedrock/model/InferenceType.h>
-#include <aws/bedrock/model/ModelModality.h>
 #include <utility>
 
 namespace Aws
@@ -39,129 +39,6 @@ namespace Model
     AWS_BEDROCK_API FoundationModelDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API FoundationModelDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The customization that the model supports.</p>
-     */
-    inline const Aws::Vector<ModelCustomization>& GetCustomizationsSupported() const{ return m_customizationsSupported; }
-
-    /**
-     * <p>The customization that the model supports.</p>
-     */
-    inline bool CustomizationsSupportedHasBeenSet() const { return m_customizationsSupportedHasBeenSet; }
-
-    /**
-     * <p>The customization that the model supports.</p>
-     */
-    inline void SetCustomizationsSupported(const Aws::Vector<ModelCustomization>& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported = value; }
-
-    /**
-     * <p>The customization that the model supports.</p>
-     */
-    inline void SetCustomizationsSupported(Aws::Vector<ModelCustomization>&& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported = std::move(value); }
-
-    /**
-     * <p>The customization that the model supports.</p>
-     */
-    inline FoundationModelDetails& WithCustomizationsSupported(const Aws::Vector<ModelCustomization>& value) { SetCustomizationsSupported(value); return *this;}
-
-    /**
-     * <p>The customization that the model supports.</p>
-     */
-    inline FoundationModelDetails& WithCustomizationsSupported(Aws::Vector<ModelCustomization>&& value) { SetCustomizationsSupported(std::move(value)); return *this;}
-
-    /**
-     * <p>The customization that the model supports.</p>
-     */
-    inline FoundationModelDetails& AddCustomizationsSupported(const ModelCustomization& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported.push_back(value); return *this; }
-
-    /**
-     * <p>The customization that the model supports.</p>
-     */
-    inline FoundationModelDetails& AddCustomizationsSupported(ModelCustomization&& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The inference types that the model supports.</p>
-     */
-    inline const Aws::Vector<InferenceType>& GetInferenceTypesSupported() const{ return m_inferenceTypesSupported; }
-
-    /**
-     * <p>The inference types that the model supports.</p>
-     */
-    inline bool InferenceTypesSupportedHasBeenSet() const { return m_inferenceTypesSupportedHasBeenSet; }
-
-    /**
-     * <p>The inference types that the model supports.</p>
-     */
-    inline void SetInferenceTypesSupported(const Aws::Vector<InferenceType>& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported = value; }
-
-    /**
-     * <p>The inference types that the model supports.</p>
-     */
-    inline void SetInferenceTypesSupported(Aws::Vector<InferenceType>&& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported = std::move(value); }
-
-    /**
-     * <p>The inference types that the model supports.</p>
-     */
-    inline FoundationModelDetails& WithInferenceTypesSupported(const Aws::Vector<InferenceType>& value) { SetInferenceTypesSupported(value); return *this;}
-
-    /**
-     * <p>The inference types that the model supports.</p>
-     */
-    inline FoundationModelDetails& WithInferenceTypesSupported(Aws::Vector<InferenceType>&& value) { SetInferenceTypesSupported(std::move(value)); return *this;}
-
-    /**
-     * <p>The inference types that the model supports.</p>
-     */
-    inline FoundationModelDetails& AddInferenceTypesSupported(const InferenceType& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported.push_back(value); return *this; }
-
-    /**
-     * <p>The inference types that the model supports.</p>
-     */
-    inline FoundationModelDetails& AddInferenceTypesSupported(InferenceType&& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported.push_back(std::move(value)); return *this; }
-
-
-    /**
-     * <p>The input modalities that the model supports.</p>
-     */
-    inline const Aws::Vector<ModelModality>& GetInputModalities() const{ return m_inputModalities; }
-
-    /**
-     * <p>The input modalities that the model supports.</p>
-     */
-    inline bool InputModalitiesHasBeenSet() const { return m_inputModalitiesHasBeenSet; }
-
-    /**
-     * <p>The input modalities that the model supports.</p>
-     */
-    inline void SetInputModalities(const Aws::Vector<ModelModality>& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = value; }
-
-    /**
-     * <p>The input modalities that the model supports.</p>
-     */
-    inline void SetInputModalities(Aws::Vector<ModelModality>&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = std::move(value); }
-
-    /**
-     * <p>The input modalities that the model supports.</p>
-     */
-    inline FoundationModelDetails& WithInputModalities(const Aws::Vector<ModelModality>& value) { SetInputModalities(value); return *this;}
-
-    /**
-     * <p>The input modalities that the model supports.</p>
-     */
-    inline FoundationModelDetails& WithInputModalities(Aws::Vector<ModelModality>&& value) { SetInputModalities(std::move(value)); return *this;}
-
-    /**
-     * <p>The input modalities that the model supports.</p>
-     */
-    inline FoundationModelDetails& AddInputModalities(const ModelModality& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(value); return *this; }
-
-    /**
-     * <p>The input modalities that the model supports.</p>
-     */
-    inline FoundationModelDetails& AddInputModalities(ModelModality&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -288,47 +165,6 @@ namespace Model
 
 
     /**
-     * <p>The output modalities that the model supports.</p>
-     */
-    inline const Aws::Vector<ModelModality>& GetOutputModalities() const{ return m_outputModalities; }
-
-    /**
-     * <p>The output modalities that the model supports.</p>
-     */
-    inline bool OutputModalitiesHasBeenSet() const { return m_outputModalitiesHasBeenSet; }
-
-    /**
-     * <p>The output modalities that the model supports.</p>
-     */
-    inline void SetOutputModalities(const Aws::Vector<ModelModality>& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = value; }
-
-    /**
-     * <p>The output modalities that the model supports.</p>
-     */
-    inline void SetOutputModalities(Aws::Vector<ModelModality>&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = std::move(value); }
-
-    /**
-     * <p>The output modalities that the model supports.</p>
-     */
-    inline FoundationModelDetails& WithOutputModalities(const Aws::Vector<ModelModality>& value) { SetOutputModalities(value); return *this;}
-
-    /**
-     * <p>The output modalities that the model supports.</p>
-     */
-    inline FoundationModelDetails& WithOutputModalities(Aws::Vector<ModelModality>&& value) { SetOutputModalities(std::move(value)); return *this;}
-
-    /**
-     * <p>The output modalities that the model supports.</p>
-     */
-    inline FoundationModelDetails& AddOutputModalities(const ModelModality& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(value); return *this; }
-
-    /**
-     * <p>The output modalities that the model supports.</p>
-     */
-    inline FoundationModelDetails& AddOutputModalities(ModelModality&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>he model's provider name.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
@@ -370,6 +206,88 @@ namespace Model
 
 
     /**
+     * <p>The input modalities that the model supports.</p>
+     */
+    inline const Aws::Vector<ModelModality>& GetInputModalities() const{ return m_inputModalities; }
+
+    /**
+     * <p>The input modalities that the model supports.</p>
+     */
+    inline bool InputModalitiesHasBeenSet() const { return m_inputModalitiesHasBeenSet; }
+
+    /**
+     * <p>The input modalities that the model supports.</p>
+     */
+    inline void SetInputModalities(const Aws::Vector<ModelModality>& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = value; }
+
+    /**
+     * <p>The input modalities that the model supports.</p>
+     */
+    inline void SetInputModalities(Aws::Vector<ModelModality>&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = std::move(value); }
+
+    /**
+     * <p>The input modalities that the model supports.</p>
+     */
+    inline FoundationModelDetails& WithInputModalities(const Aws::Vector<ModelModality>& value) { SetInputModalities(value); return *this;}
+
+    /**
+     * <p>The input modalities that the model supports.</p>
+     */
+    inline FoundationModelDetails& WithInputModalities(Aws::Vector<ModelModality>&& value) { SetInputModalities(std::move(value)); return *this;}
+
+    /**
+     * <p>The input modalities that the model supports.</p>
+     */
+    inline FoundationModelDetails& AddInputModalities(const ModelModality& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(value); return *this; }
+
+    /**
+     * <p>The input modalities that the model supports.</p>
+     */
+    inline FoundationModelDetails& AddInputModalities(ModelModality&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The output modalities that the model supports.</p>
+     */
+    inline const Aws::Vector<ModelModality>& GetOutputModalities() const{ return m_outputModalities; }
+
+    /**
+     * <p>The output modalities that the model supports.</p>
+     */
+    inline bool OutputModalitiesHasBeenSet() const { return m_outputModalitiesHasBeenSet; }
+
+    /**
+     * <p>The output modalities that the model supports.</p>
+     */
+    inline void SetOutputModalities(const Aws::Vector<ModelModality>& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = value; }
+
+    /**
+     * <p>The output modalities that the model supports.</p>
+     */
+    inline void SetOutputModalities(Aws::Vector<ModelModality>&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = std::move(value); }
+
+    /**
+     * <p>The output modalities that the model supports.</p>
+     */
+    inline FoundationModelDetails& WithOutputModalities(const Aws::Vector<ModelModality>& value) { SetOutputModalities(value); return *this;}
+
+    /**
+     * <p>The output modalities that the model supports.</p>
+     */
+    inline FoundationModelDetails& WithOutputModalities(Aws::Vector<ModelModality>&& value) { SetOutputModalities(std::move(value)); return *this;}
+
+    /**
+     * <p>The output modalities that the model supports.</p>
+     */
+    inline FoundationModelDetails& AddOutputModalities(const ModelModality& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(value); return *this; }
+
+    /**
+     * <p>The output modalities that the model supports.</p>
+     */
+    inline FoundationModelDetails& AddOutputModalities(ModelModality&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Indicates whether the model supports streaming.</p>
      */
     inline bool GetResponseStreamingSupported() const{ return m_responseStreamingSupported; }
@@ -389,16 +307,89 @@ namespace Model
      */
     inline FoundationModelDetails& WithResponseStreamingSupported(bool value) { SetResponseStreamingSupported(value); return *this;}
 
+
+    /**
+     * <p>The customization that the model supports.</p>
+     */
+    inline const Aws::Vector<ModelCustomization>& GetCustomizationsSupported() const{ return m_customizationsSupported; }
+
+    /**
+     * <p>The customization that the model supports.</p>
+     */
+    inline bool CustomizationsSupportedHasBeenSet() const { return m_customizationsSupportedHasBeenSet; }
+
+    /**
+     * <p>The customization that the model supports.</p>
+     */
+    inline void SetCustomizationsSupported(const Aws::Vector<ModelCustomization>& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported = value; }
+
+    /**
+     * <p>The customization that the model supports.</p>
+     */
+    inline void SetCustomizationsSupported(Aws::Vector<ModelCustomization>&& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported = std::move(value); }
+
+    /**
+     * <p>The customization that the model supports.</p>
+     */
+    inline FoundationModelDetails& WithCustomizationsSupported(const Aws::Vector<ModelCustomization>& value) { SetCustomizationsSupported(value); return *this;}
+
+    /**
+     * <p>The customization that the model supports.</p>
+     */
+    inline FoundationModelDetails& WithCustomizationsSupported(Aws::Vector<ModelCustomization>&& value) { SetCustomizationsSupported(std::move(value)); return *this;}
+
+    /**
+     * <p>The customization that the model supports.</p>
+     */
+    inline FoundationModelDetails& AddCustomizationsSupported(const ModelCustomization& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported.push_back(value); return *this; }
+
+    /**
+     * <p>The customization that the model supports.</p>
+     */
+    inline FoundationModelDetails& AddCustomizationsSupported(ModelCustomization&& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The inference types that the model supports.</p>
+     */
+    inline const Aws::Vector<InferenceType>& GetInferenceTypesSupported() const{ return m_inferenceTypesSupported; }
+
+    /**
+     * <p>The inference types that the model supports.</p>
+     */
+    inline bool InferenceTypesSupportedHasBeenSet() const { return m_inferenceTypesSupportedHasBeenSet; }
+
+    /**
+     * <p>The inference types that the model supports.</p>
+     */
+    inline void SetInferenceTypesSupported(const Aws::Vector<InferenceType>& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported = value; }
+
+    /**
+     * <p>The inference types that the model supports.</p>
+     */
+    inline void SetInferenceTypesSupported(Aws::Vector<InferenceType>&& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported = std::move(value); }
+
+    /**
+     * <p>The inference types that the model supports.</p>
+     */
+    inline FoundationModelDetails& WithInferenceTypesSupported(const Aws::Vector<InferenceType>& value) { SetInferenceTypesSupported(value); return *this;}
+
+    /**
+     * <p>The inference types that the model supports.</p>
+     */
+    inline FoundationModelDetails& WithInferenceTypesSupported(Aws::Vector<InferenceType>&& value) { SetInferenceTypesSupported(std::move(value)); return *this;}
+
+    /**
+     * <p>The inference types that the model supports.</p>
+     */
+    inline FoundationModelDetails& AddInferenceTypesSupported(const InferenceType& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported.push_back(value); return *this; }
+
+    /**
+     * <p>The inference types that the model supports.</p>
+     */
+    inline FoundationModelDetails& AddInferenceTypesSupported(InferenceType&& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported.push_back(std::move(value)); return *this; }
+
   private:
-
-    Aws::Vector<ModelCustomization> m_customizationsSupported;
-    bool m_customizationsSupportedHasBeenSet = false;
-
-    Aws::Vector<InferenceType> m_inferenceTypesSupported;
-    bool m_inferenceTypesSupportedHasBeenSet = false;
-
-    Aws::Vector<ModelModality> m_inputModalities;
-    bool m_inputModalitiesHasBeenSet = false;
 
     Aws::String m_modelArn;
     bool m_modelArnHasBeenSet = false;
@@ -409,14 +400,23 @@ namespace Model
     Aws::String m_modelName;
     bool m_modelNameHasBeenSet = false;
 
-    Aws::Vector<ModelModality> m_outputModalities;
-    bool m_outputModalitiesHasBeenSet = false;
-
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet = false;
 
+    Aws::Vector<ModelModality> m_inputModalities;
+    bool m_inputModalitiesHasBeenSet = false;
+
+    Aws::Vector<ModelModality> m_outputModalities;
+    bool m_outputModalitiesHasBeenSet = false;
+
     bool m_responseStreamingSupported;
     bool m_responseStreamingSupportedHasBeenSet = false;
+
+    Aws::Vector<ModelCustomization> m_customizationsSupported;
+    bool m_customizationsSupportedHasBeenSet = false;
+
+    Aws::Vector<InferenceType> m_inferenceTypesSupported;
+    bool m_inferenceTypesSupportedHasBeenSet = false;
   };
 
 } // namespace Model

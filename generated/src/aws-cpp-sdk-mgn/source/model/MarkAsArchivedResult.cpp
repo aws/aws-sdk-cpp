@@ -45,6 +45,12 @@ MarkAsArchivedResult& MarkAsArchivedResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("connectorAction"))
+  {
+    m_connectorAction = jsonValue.GetObject("connectorAction");
+
+  }
+
   if(jsonValue.ValueExists("dataReplicationInfo"))
   {
     m_dataReplicationInfo = jsonValue.GetObject("dataReplicationInfo");

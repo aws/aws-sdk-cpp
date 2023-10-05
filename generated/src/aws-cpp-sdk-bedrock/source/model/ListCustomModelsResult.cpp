@@ -29,6 +29,12 @@ ListCustomModelsResult::ListCustomModelsResult(const Aws::AmazonWebServiceResult
 ListCustomModelsResult& ListCustomModelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("modelSummaries"))
   {
     Aws::Utils::Array<JsonView> modelSummariesJsonList = jsonValue.GetArray("modelSummaries");
@@ -36,12 +42,6 @@ ListCustomModelsResult& ListCustomModelsResult::operator =(const Aws::AmazonWebS
     {
       m_modelSummaries.push_back(modelSummariesJsonList[modelSummariesIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

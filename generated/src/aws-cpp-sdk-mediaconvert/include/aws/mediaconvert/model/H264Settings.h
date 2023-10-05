@@ -10,6 +10,7 @@
 #include <aws/mediaconvert/model/H264CodecLevel.h>
 #include <aws/mediaconvert/model/H264CodecProfile.h>
 #include <aws/mediaconvert/model/H264DynamicSubGop.h>
+#include <aws/mediaconvert/model/H264EndOfStreamMarkers.h>
 #include <aws/mediaconvert/model/H264EntropyEncoding.h>
 #include <aws/mediaconvert/model/H264FieldEncoding.h>
 #include <aws/mediaconvert/model/H264FlickerAdaptiveQuantization.h>
@@ -382,6 +383,55 @@ namespace Model
      * use the same number B-frames for all types of content: Choose Static.
      */
     inline H264Settings& WithDynamicSubGop(H264DynamicSubGop&& value) { SetDynamicSubGop(std::move(value)); return *this;}
+
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline const H264EndOfStreamMarkers& GetEndOfStreamMarkers() const{ return m_endOfStreamMarkers; }
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline bool EndOfStreamMarkersHasBeenSet() const { return m_endOfStreamMarkersHasBeenSet; }
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline void SetEndOfStreamMarkers(const H264EndOfStreamMarkers& value) { m_endOfStreamMarkersHasBeenSet = true; m_endOfStreamMarkers = value; }
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline void SetEndOfStreamMarkers(H264EndOfStreamMarkers&& value) { m_endOfStreamMarkersHasBeenSet = true; m_endOfStreamMarkers = std::move(value); }
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline H264Settings& WithEndOfStreamMarkers(const H264EndOfStreamMarkers& value) { SetEndOfStreamMarkers(value); return *this;}
+
+    /**
+     * Optionally include or suppress markers at the end of your output that signal the
+     * end of the video stream. To include end of stream markers: Leave blank or keep
+     * the default value, Include. To not include end of stream markers: Choose
+     * Suppress. This is useful when your output will be inserted into another stream.
+     */
+    inline H264Settings& WithEndOfStreamMarkers(H264EndOfStreamMarkers&& value) { SetEndOfStreamMarkers(std::move(value)); return *this;}
 
 
     /**
@@ -2410,6 +2460,9 @@ namespace Model
 
     H264DynamicSubGop m_dynamicSubGop;
     bool m_dynamicSubGopHasBeenSet = false;
+
+    H264EndOfStreamMarkers m_endOfStreamMarkers;
+    bool m_endOfStreamMarkersHasBeenSet = false;
 
     H264EntropyEncoding m_entropyEncoding;
     bool m_entropyEncodingHasBeenSet = false;

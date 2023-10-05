@@ -1046,98 +1046,106 @@ namespace Model
 
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
-     * If this argument is omitted, the default DB cluster parameter group for the
-     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
-     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
-     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and
-     * Multi-AZ DB clusters</p>
+     * <p>The name of the custom DB cluster parameter group to associate with this DB
+     * cluster.</p> <p>If the <code>DBClusterParameterGroupName</code> parameter is
+     * omitted, the default DB cluster parameter group for the specified engine is
+     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
+     * an existing DB cluster parameter group.</p> </li> <li> <p>Must be 1 to 255
+     * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Valid for: Aurora DB clusters and Multi-AZ DB
+     * clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -1474,7 +1482,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline const Aws::String& GetDBClusterInstanceClass() const{ return m_dBClusterInstanceClass; }
@@ -1485,7 +1493,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline bool DBClusterInstanceClassHasBeenSet() const { return m_dBClusterInstanceClassHasBeenSet; }
@@ -1496,7 +1504,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline void SetDBClusterInstanceClass(const Aws::String& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = value; }
@@ -1507,7 +1515,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline void SetDBClusterInstanceClass(Aws::String&& value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass = std::move(value); }
@@ -1518,7 +1526,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline void SetDBClusterInstanceClass(const char* value) { m_dBClusterInstanceClassHasBeenSet = true; m_dBClusterInstanceClass.assign(value); }
@@ -1529,7 +1537,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterInstanceClass(const Aws::String& value) { SetDBClusterInstanceClass(value); return *this;}
@@ -1540,7 +1548,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterInstanceClass(Aws::String&& value) { SetDBClusterInstanceClass(std::move(value)); return *this;}
@@ -1551,7 +1559,7 @@ namespace Model
      * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
+     * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
      * Multi-AZ DB clusters only</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterInstanceClass(const char* value) { SetDBClusterInstanceClass(value); return *this;}

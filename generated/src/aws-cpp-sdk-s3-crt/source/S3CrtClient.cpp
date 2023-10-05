@@ -343,8 +343,6 @@ void S3CrtClient::OverrideEndpoint(const Aws::String& endpoint)
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
-static const int SUCCESS_RESPONSE_MIN = 200;
-static const int SUCCESS_RESPONSE_MAX = 299;
 
 static int S3CrtRequestHeadersCallback(struct aws_s3_meta_request *meta_request, const struct aws_http_headers *headers,
     int response_status, void *user_data)

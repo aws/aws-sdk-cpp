@@ -79,11 +79,10 @@ namespace BedrockRuntime
         /**
          * <p>Invokes the specified Bedrock model to run inference using the input provided
          * in the request body. You use InvokeModel to run inference for text models, image
-         * models, and embedding models.</p> <p>For more information about invoking models,
-         * see Using the API in the <a
-         * href="https://d2eo22ngex1n9g.cloudfront.net/Documentation/BedrockUserGuide.pdf">Bedrock
-         * User Guide</a>.</p> <p>For example requests, see Examples (after the Errors
-         * section).</p><p><h3>See Also:</h3>   <a
+         * models, and embedding models.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+         * inference</a> in the Bedrock User Guide.</p> <p>For example requests, see
+         * Examples (after the Errors section).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModel">AWS
          * API Reference</a></p>
          */
@@ -109,11 +108,10 @@ namespace BedrockRuntime
 
         /**
          * <p>Invoke the specified Bedrock model to run inference using the input provided.
-         * Return the response in a stream.</p> <p>For more information about invoking
-         * models, see Using the API in the <a
-         * href="https://d2eo22ngex1n9g.cloudfront.net/Documentation/BedrockUserGuide.pdf">Bedrock
-         * User Guide</a>.</p> <p>For an example request and response, see Examples (after
-         * the Errors section).</p><p><h3>See Also:</h3>   <a
+         * Return the response in a stream.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+         * inference</a> in the Bedrock User Guide.</p> <p>For an example request and
+         * response, see Examples (after the Errors section).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModelWithResponseStream">AWS
          * API Reference</a></p>
          */

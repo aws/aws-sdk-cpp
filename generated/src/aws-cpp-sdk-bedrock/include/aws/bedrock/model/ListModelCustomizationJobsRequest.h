@@ -7,10 +7,10 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/bedrock/model/FineTuningJobStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/SortJobsBy.h>
 #include <aws/bedrock/model/SortOrder.h>
-#include <aws/bedrock/model/FineTuningJobStatus.h>
 #include <utility>
 
 namespace Aws
@@ -105,24 +105,34 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of results to return in the response.</p>
+     * <p>Return customization jobs with the specified status. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const FineTuningJobStatus& GetStatusEquals() const{ return m_statusEquals; }
 
     /**
-     * <p>Maximum number of results to return in the response.</p>
+     * <p>Return customization jobs with the specified status. </p>
      */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return in the response.</p>
+     * <p>Return customization jobs with the specified status. </p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetStatusEquals(const FineTuningJobStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
 
     /**
-     * <p>Maximum number of results to return in the response.</p>
+     * <p>Return customization jobs with the specified status. </p>
      */
-    inline ListModelCustomizationJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline void SetStatusEquals(FineTuningJobStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
+
+    /**
+     * <p>Return customization jobs with the specified status. </p>
+     */
+    inline ListModelCustomizationJobsRequest& WithStatusEquals(const FineTuningJobStatus& value) { SetStatusEquals(value); return *this;}
+
+    /**
+     * <p>Return customization jobs with the specified status. </p>
+     */
+    inline ListModelCustomizationJobsRequest& WithStatusEquals(FineTuningJobStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
 
 
     /**
@@ -164,6 +174,27 @@ namespace Model
      * <p>Return customization jobs only if the job name contains these characters.</p>
      */
     inline ListModelCustomizationJobsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
+
+
+    /**
+     * <p>Maximum number of results to return in the response.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Maximum number of results to return in the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Maximum number of results to return in the response.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>Maximum number of results to return in the response.</p>
+     */
+    inline ListModelCustomizationJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -276,37 +307,6 @@ namespace Model
      */
     inline ListModelCustomizationJobsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
-
-    /**
-     * <p>Return customization jobs with the specified status. </p>
-     */
-    inline const FineTuningJobStatus& GetStatusEquals() const{ return m_statusEquals; }
-
-    /**
-     * <p>Return customization jobs with the specified status. </p>
-     */
-    inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
-
-    /**
-     * <p>Return customization jobs with the specified status. </p>
-     */
-    inline void SetStatusEquals(const FineTuningJobStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
-
-    /**
-     * <p>Return customization jobs with the specified status. </p>
-     */
-    inline void SetStatusEquals(FineTuningJobStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
-
-    /**
-     * <p>Return customization jobs with the specified status. </p>
-     */
-    inline ListModelCustomizationJobsRequest& WithStatusEquals(const FineTuningJobStatus& value) { SetStatusEquals(value); return *this;}
-
-    /**
-     * <p>Return customization jobs with the specified status. </p>
-     */
-    inline ListModelCustomizationJobsRequest& WithStatusEquals(FineTuningJobStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
-
   private:
 
     Aws::Utils::DateTime m_creationTimeAfter;
@@ -315,11 +315,14 @@ namespace Model
     Aws::Utils::DateTime m_creationTimeBefore;
     bool m_creationTimeBeforeHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    FineTuningJobStatus m_statusEquals;
+    bool m_statusEqualsHasBeenSet = false;
 
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
@@ -329,9 +332,6 @@ namespace Model
 
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet = false;
-
-    FineTuningJobStatus m_statusEquals;
-    bool m_statusEqualsHasBeenSet = false;
   };
 
 } // namespace Model

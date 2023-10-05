@@ -234,6 +234,72 @@ namespace Model
      */
     inline LensUpgradeSummary& WithLatestLensVersion(const char* value) { SetLatestLensVersion(value); return *this;}
 
+
+    /**
+     * <p> <code>ResourceArn</code> of the lens being upgraded</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p> <code>ResourceArn</code> of the lens being upgraded</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p> <code>ResourceArn</code> of the lens being upgraded</p>
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p> <code>ResourceArn</code> of the lens being upgraded</p>
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p> <code>ResourceArn</code> of the lens being upgraded</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p> <code>ResourceArn</code> of the lens being upgraded</p>
+     */
+    inline LensUpgradeSummary& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p> <code>ResourceArn</code> of the lens being upgraded</p>
+     */
+    inline LensUpgradeSummary& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p> <code>ResourceArn</code> of the lens being upgraded</p>
+     */
+    inline LensUpgradeSummary& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
+
+    
+    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
+    
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    
+    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
+
+    
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
+
+    
+    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
+
+    
+    inline LensUpgradeSummary& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
+
+    
+    inline LensUpgradeSummary& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
+
+    
+    inline LensUpgradeSummary& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+
   private:
 
     Aws::String m_workloadId;
@@ -253,6 +319,12 @@ namespace Model
 
     Aws::String m_latestLensVersion;
     bool m_latestLensVersionHasBeenSet = false;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
+
+    Aws::String m_resourceName;
+    bool m_resourceNameHasBeenSet = false;
   };
 
 } // namespace Model
