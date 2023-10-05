@@ -41,11 +41,15 @@ public class Endpoint {
         String ret = "";
         List<String> parts = getHostPrefixParts();
         List<String> members = getMemberReferences();
-        //  {var1}-{var2}.123.{var3}, with prefix to be "Reqeust"
-        //-> Request.Getvar1() + "-" + Request.Getvar2() + ".123." + Request.Getvar3()
+        //  {var1}-{var2}.123.{var3}, with prefix to be "Request"
+        //-> Request.GetVar1() + "-" + Request.GetVar2() + ".123." + Request.GetVar3()
         for (int i = 0; i < members.size(); i++)
         {
-            ret += "\"" + parts.get(i) + "\" + " + memberPrefix + ".Get" + members.get(i) + "() + ";
+            String member = members.get(i);
+            // Capitalize first letter, we always do it for getters regardless
+            // of casing on the field.
+            member = member.substring(0, 1).toUpperCase() + member.substring(1);
+            ret += "\"" + parts.get(i) + "\" + " + memberPrefix + ".Get" + member + "() + ";
         }
         ret += "\"" + parts.get(parts.size() - 1) + "\"";
 
