@@ -94,30 +94,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to remove the override for the default
-     * certificate. If the override is removed, the default certificate is the system
-     * default.</p>
+     * <p>Specifies whether to remove the override for the default certificate. If the
+     * override is removed, the default certificate is the system default.</p>
      */
     inline bool GetRemoveCustomerOverride() const{ return m_removeCustomerOverride; }
 
     /**
-     * <p>A value that indicates whether to remove the override for the default
-     * certificate. If the override is removed, the default certificate is the system
-     * default.</p>
+     * <p>Specifies whether to remove the override for the default certificate. If the
+     * override is removed, the default certificate is the system default.</p>
      */
     inline bool RemoveCustomerOverrideHasBeenSet() const { return m_removeCustomerOverrideHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to remove the override for the default
-     * certificate. If the override is removed, the default certificate is the system
-     * default.</p>
+     * <p>Specifies whether to remove the override for the default certificate. If the
+     * override is removed, the default certificate is the system default.</p>
      */
     inline void SetRemoveCustomerOverride(bool value) { m_removeCustomerOverrideHasBeenSet = true; m_removeCustomerOverride = value; }
 
     /**
-     * <p>A value that indicates whether to remove the override for the default
-     * certificate. If the override is removed, the default certificate is the system
-     * default.</p>
+     * <p>Specifies whether to remove the override for the default certificate. If the
+     * override is removed, the default certificate is the system default.</p>
      */
     inline ModifyCertificatesRequest& WithRemoveCustomerOverride(bool value) { SetRemoveCustomerOverride(value); return *this;}
 

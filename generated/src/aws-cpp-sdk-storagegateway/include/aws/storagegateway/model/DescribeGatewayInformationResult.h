@@ -916,6 +916,42 @@ namespace Model
     inline DescribeGatewayInformationResult& WithHostEnvironmentId(const char* value) { SetHostEnvironmentId(value); return *this;}
 
 
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline const Aws::String& GetSoftwareVersion() const{ return m_softwareVersion; }
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline void SetSoftwareVersion(const Aws::String& value) { m_softwareVersion = value; }
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline void SetSoftwareVersion(Aws::String&& value) { m_softwareVersion = std::move(value); }
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline void SetSoftwareVersion(const char* value) { m_softwareVersion.assign(value); }
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSoftwareVersion(const Aws::String& value) { SetSoftwareVersion(value); return *this;}
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSoftwareVersion(Aws::String&& value) { SetSoftwareVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSoftwareVersion(const char* value) { SetSoftwareVersion(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -980,6 +1016,8 @@ namespace Model
     Aws::Vector<GatewayCapacity> m_supportedGatewayCapacities;
 
     Aws::String m_hostEnvironmentId;
+
+    Aws::String m_softwareVersion;
 
     Aws::String m_requestId;
   };

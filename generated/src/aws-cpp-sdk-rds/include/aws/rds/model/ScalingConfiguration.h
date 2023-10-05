@@ -142,42 +142,42 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to allow or disallow automatic pause for an
-     * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
-     * paused only when it's idle (it has no connections).</p>  <p>If a DB
-     * cluster is paused for more than seven days, the DB cluster might be backed up
-     * with a snapshot. In this case, the DB cluster is restored when there is a
-     * request to connect to it.</p> 
+     * <p>Indicates whether to allow or disallow automatic pause for an Aurora DB
+     * cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused
+     * only when it's idle (it has no connections).</p>  <p>If a DB cluster is
+     * paused for more than seven days, the DB cluster might be backed up with a
+     * snapshot. In this case, the DB cluster is restored when there is a request to
+     * connect to it.</p> 
      */
     inline bool GetAutoPause() const{ return m_autoPause; }
 
     /**
-     * <p>A value that indicates whether to allow or disallow automatic pause for an
-     * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
-     * paused only when it's idle (it has no connections).</p>  <p>If a DB
-     * cluster is paused for more than seven days, the DB cluster might be backed up
-     * with a snapshot. In this case, the DB cluster is restored when there is a
-     * request to connect to it.</p> 
+     * <p>Indicates whether to allow or disallow automatic pause for an Aurora DB
+     * cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused
+     * only when it's idle (it has no connections).</p>  <p>If a DB cluster is
+     * paused for more than seven days, the DB cluster might be backed up with a
+     * snapshot. In this case, the DB cluster is restored when there is a request to
+     * connect to it.</p> 
      */
     inline bool AutoPauseHasBeenSet() const { return m_autoPauseHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to allow or disallow automatic pause for an
-     * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
-     * paused only when it's idle (it has no connections).</p>  <p>If a DB
-     * cluster is paused for more than seven days, the DB cluster might be backed up
-     * with a snapshot. In this case, the DB cluster is restored when there is a
-     * request to connect to it.</p> 
+     * <p>Indicates whether to allow or disallow automatic pause for an Aurora DB
+     * cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused
+     * only when it's idle (it has no connections).</p>  <p>If a DB cluster is
+     * paused for more than seven days, the DB cluster might be backed up with a
+     * snapshot. In this case, the DB cluster is restored when there is a request to
+     * connect to it.</p> 
      */
     inline void SetAutoPause(bool value) { m_autoPauseHasBeenSet = true; m_autoPause = value; }
 
     /**
-     * <p>A value that indicates whether to allow or disallow automatic pause for an
-     * Aurora DB cluster in <code>serverless</code> DB engine mode. A DB cluster can be
-     * paused only when it's idle (it has no connections).</p>  <p>If a DB
-     * cluster is paused for more than seven days, the DB cluster might be backed up
-     * with a snapshot. In this case, the DB cluster is restored when there is a
-     * request to connect to it.</p> 
+     * <p>Indicates whether to allow or disallow automatic pause for an Aurora DB
+     * cluster in <code>serverless</code> DB engine mode. A DB cluster can be paused
+     * only when it's idle (it has no connections).</p>  <p>If a DB cluster is
+     * paused for more than seven days, the DB cluster might be backed up with a
+     * snapshot. In this case, the DB cluster is restored when there is a request to
+     * connect to it.</p> 
      */
     inline ScalingConfiguration& WithAutoPause(bool value) { SetAutoPause(value); return *this;}
 

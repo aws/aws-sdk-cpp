@@ -875,22 +875,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the DB snapshot is encrypted.</p>
+     * <p>Indicates whether the DB snapshot is encrypted.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Specifies whether the DB snapshot is encrypted.</p>
+     * <p>Indicates whether the DB snapshot is encrypted.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the DB snapshot is encrypted.</p>
+     * <p>Indicates whether the DB snapshot is encrypted.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Specifies whether the DB snapshot is encrypted.</p>
+     * <p>Indicates whether the DB snapshot is encrypted.</p>
      */
     inline DBSnapshot& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
@@ -1059,26 +1059,26 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline DBSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 

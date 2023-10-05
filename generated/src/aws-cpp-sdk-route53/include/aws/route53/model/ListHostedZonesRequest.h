@@ -7,6 +7,7 @@
 #include <aws/route53/Route53_EXPORTS.h>
 #include <aws/route53/Route53Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53/model/HostedZoneType.h>
 #include <utility>
 
 namespace Aws
@@ -269,6 +270,37 @@ namespace Model
      */
     inline ListHostedZonesRequest& WithDelegationSetId(const char* value) { SetDelegationSetId(value); return *this;}
 
+
+    /**
+     * <p> (Optional) Specifies if the hosted zone is private. </p>
+     */
+    inline const HostedZoneType& GetHostedZoneType() const{ return m_hostedZoneType; }
+
+    /**
+     * <p> (Optional) Specifies if the hosted zone is private. </p>
+     */
+    inline bool HostedZoneTypeHasBeenSet() const { return m_hostedZoneTypeHasBeenSet; }
+
+    /**
+     * <p> (Optional) Specifies if the hosted zone is private. </p>
+     */
+    inline void SetHostedZoneType(const HostedZoneType& value) { m_hostedZoneTypeHasBeenSet = true; m_hostedZoneType = value; }
+
+    /**
+     * <p> (Optional) Specifies if the hosted zone is private. </p>
+     */
+    inline void SetHostedZoneType(HostedZoneType&& value) { m_hostedZoneTypeHasBeenSet = true; m_hostedZoneType = std::move(value); }
+
+    /**
+     * <p> (Optional) Specifies if the hosted zone is private. </p>
+     */
+    inline ListHostedZonesRequest& WithHostedZoneType(const HostedZoneType& value) { SetHostedZoneType(value); return *this;}
+
+    /**
+     * <p> (Optional) Specifies if the hosted zone is private. </p>
+     */
+    inline ListHostedZonesRequest& WithHostedZoneType(HostedZoneType&& value) { SetHostedZoneType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_marker;
@@ -279,6 +311,9 @@ namespace Model
 
     Aws::String m_delegationSetId;
     bool m_delegationSetIdHasBeenSet = false;
+
+    HostedZoneType m_hostedZoneType;
+    bool m_hostedZoneTypeHasBeenSet = false;
   };
 
 } // namespace Model

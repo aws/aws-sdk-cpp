@@ -2395,7 +2395,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether write forwarding is enabled for a secondary cluster in an
+     * <p>Indicates whether write forwarding is enabled for a secondary cluster in an
      * Aurora global database. Because write forwarding takes time to enable, check the
      * value of <code>GlobalWriteForwardingStatus</code> to confirm that the request
      * has completed before using the write forwarding feature for this cluster.</p>
@@ -2403,7 +2403,7 @@ namespace Model
     inline bool GetGlobalWriteForwardingRequested() const{ return m_globalWriteForwardingRequested; }
 
     /**
-     * <p>Specifies whether write forwarding is enabled for a secondary cluster in an
+     * <p>Indicates whether write forwarding is enabled for a secondary cluster in an
      * Aurora global database. Because write forwarding takes time to enable, check the
      * value of <code>GlobalWriteForwardingStatus</code> to confirm that the request
      * has completed before using the write forwarding feature for this cluster.</p>
@@ -2411,7 +2411,7 @@ namespace Model
     inline bool GlobalWriteForwardingRequestedHasBeenSet() const { return m_globalWriteForwardingRequestedHasBeenSet; }
 
     /**
-     * <p>Specifies whether write forwarding is enabled for a secondary cluster in an
+     * <p>Indicates whether write forwarding is enabled for a secondary cluster in an
      * Aurora global database. Because write forwarding takes time to enable, check the
      * value of <code>GlobalWriteForwardingStatus</code> to confirm that the request
      * has completed before using the write forwarding feature for this cluster.</p>
@@ -2419,7 +2419,7 @@ namespace Model
     inline void SetGlobalWriteForwardingRequested(bool value) { m_globalWriteForwardingRequestedHasBeenSet = true; m_globalWriteForwardingRequested = value; }
 
     /**
-     * <p>Specifies whether write forwarding is enabled for a secondary cluster in an
+     * <p>Indicates whether write forwarding is enabled for a secondary cluster in an
      * Aurora global database. Because write forwarding takes time to enable, check the
      * value of <code>GlobalWriteForwardingStatus</code> to confirm that the request
      * has completed before using the write forwarding feature for this cluster.</p>
@@ -3158,37 +3158,37 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline const LocalWriteForwardingStatus& GetLocalWriteForwardingStatus() const{ return m_localWriteForwardingStatus; }
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline bool LocalWriteForwardingStatusHasBeenSet() const { return m_localWriteForwardingStatusHasBeenSet; }
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline void SetLocalWriteForwardingStatus(const LocalWriteForwardingStatus& value) { m_localWriteForwardingStatusHasBeenSet = true; m_localWriteForwardingStatus = value; }
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline void SetLocalWriteForwardingStatus(LocalWriteForwardingStatus&& value) { m_localWriteForwardingStatusHasBeenSet = true; m_localWriteForwardingStatus = std::move(value); }
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline DBCluster& WithLocalWriteForwardingStatus(const LocalWriteForwardingStatus& value) { SetLocalWriteForwardingStatus(value); return *this;}
 
     /**
-     * <p>Specifies whether an Aurora DB cluster has in-cluster write forwarding
+     * <p>Indicates whether an Aurora DB cluster has in-cluster write forwarding
      * enabled, not enabled, requested, or is in the process of enabling it.</p>
      */
     inline DBCluster& WithLocalWriteForwardingStatus(LocalWriteForwardingStatus&& value) { SetLocalWriteForwardingStatus(std::move(value)); return *this;}

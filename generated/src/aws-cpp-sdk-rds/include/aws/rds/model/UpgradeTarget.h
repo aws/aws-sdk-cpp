@@ -165,51 +165,51 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the target version is applied to any source DB
-     * instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+     * <p>Indicates whether the target version is applied to any source DB instances
+     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
      */
     inline bool GetAutoUpgrade() const{ return m_autoUpgrade; }
 
     /**
-     * <p>A value that indicates whether the target version is applied to any source DB
-     * instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+     * <p>Indicates whether the target version is applied to any source DB instances
+     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
      */
     inline bool AutoUpgradeHasBeenSet() const { return m_autoUpgradeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the target version is applied to any source DB
-     * instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+     * <p>Indicates whether the target version is applied to any source DB instances
+     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
      */
     inline void SetAutoUpgrade(bool value) { m_autoUpgradeHasBeenSet = true; m_autoUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether the target version is applied to any source DB
-     * instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
+     * <p>Indicates whether the target version is applied to any source DB instances
+     * that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
      */
     inline UpgradeTarget& WithAutoUpgrade(bool value) { SetAutoUpgrade(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether upgrading to the target version requires
-     * upgrading the major version of the database engine.</p>
+     * <p>Indicates whether upgrading to the target version requires upgrading the
+     * major version of the database engine.</p>
      */
     inline bool GetIsMajorVersionUpgrade() const{ return m_isMajorVersionUpgrade; }
 
     /**
-     * <p>A value that indicates whether upgrading to the target version requires
-     * upgrading the major version of the database engine.</p>
+     * <p>Indicates whether upgrading to the target version requires upgrading the
+     * major version of the database engine.</p>
      */
     inline bool IsMajorVersionUpgradeHasBeenSet() const { return m_isMajorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether upgrading to the target version requires
-     * upgrading the major version of the database engine.</p>
+     * <p>Indicates whether upgrading to the target version requires upgrading the
+     * major version of the database engine.</p>
      */
     inline void SetIsMajorVersionUpgrade(bool value) { m_isMajorVersionUpgradeHasBeenSet = true; m_isMajorVersionUpgrade = value; }
 
     /**
-     * <p>A value that indicates whether upgrading to the target version requires
-     * upgrading the major version of the database engine.</p>
+     * <p>Indicates whether upgrading to the target version requires upgrading the
+     * major version of the database engine.</p>
      */
     inline UpgradeTarget& WithIsMajorVersionUpgrade(bool value) { SetIsMajorVersionUpgrade(value); return *this;}
 
@@ -261,109 +261,109 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether you can use Aurora parallel query with the
-     * target engine version.</p>
+     * <p>Indicates whether you can use Aurora parallel query with the target engine
+     * version.</p>
      */
     inline bool GetSupportsParallelQuery() const{ return m_supportsParallelQuery; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora parallel query with the
-     * target engine version.</p>
+     * <p>Indicates whether you can use Aurora parallel query with the target engine
+     * version.</p>
      */
     inline bool SupportsParallelQueryHasBeenSet() const { return m_supportsParallelQueryHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora parallel query with the
-     * target engine version.</p>
+     * <p>Indicates whether you can use Aurora parallel query with the target engine
+     * version.</p>
      */
     inline void SetSupportsParallelQuery(bool value) { m_supportsParallelQueryHasBeenSet = true; m_supportsParallelQuery = value; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora parallel query with the
-     * target engine version.</p>
+     * <p>Indicates whether you can use Aurora parallel query with the target engine
+     * version.</p>
      */
     inline UpgradeTarget& WithSupportsParallelQuery(bool value) { SetSupportsParallelQuery(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with the
-     * target engine version.</p>
+     * <p>Indicates whether you can use Aurora global databases with the target engine
+     * version.</p>
      */
     inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with the
-     * target engine version.</p>
+     * <p>Indicates whether you can use Aurora global databases with the target engine
+     * version.</p>
      */
     inline bool SupportsGlobalDatabasesHasBeenSet() const { return m_supportsGlobalDatabasesHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with the
-     * target engine version.</p>
+     * <p>Indicates whether you can use Aurora global databases with the target engine
+     * version.</p>
      */
     inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
 
     /**
-     * <p>A value that indicates whether you can use Aurora global databases with the
-     * target engine version.</p>
+     * <p>Indicates whether you can use Aurora global databases with the target engine
+     * version.</p>
      */
     inline UpgradeTarget& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
-     * with the target engine version.</p>
+     * <p>Indicates whether you can use Babelfish for Aurora PostgreSQL with the target
+     * engine version.</p>
      */
     inline bool GetSupportsBabelfish() const{ return m_supportsBabelfish; }
 
     /**
-     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
-     * with the target engine version.</p>
+     * <p>Indicates whether you can use Babelfish for Aurora PostgreSQL with the target
+     * engine version.</p>
      */
     inline bool SupportsBabelfishHasBeenSet() const { return m_supportsBabelfishHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
-     * with the target engine version.</p>
+     * <p>Indicates whether you can use Babelfish for Aurora PostgreSQL with the target
+     * engine version.</p>
      */
     inline void SetSupportsBabelfish(bool value) { m_supportsBabelfishHasBeenSet = true; m_supportsBabelfish = value; }
 
     /**
-     * <p>A value that indicates whether you can use Babelfish for Aurora PostgreSQL
-     * with the target engine version.</p>
+     * <p>Indicates whether you can use Babelfish for Aurora PostgreSQL with the target
+     * engine version.</p>
      */
     inline UpgradeTarget& WithSupportsBabelfish(bool value) { SetSupportsBabelfish(value); return *this;}
 
 
     /**
-     * <p>A value that indicates whether the target engine version supports forwarding
-     * write operations from reader DB instances to the writer DB instance in the DB
-     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
-     * <p>Valid for: Aurora DB clusters only</p>
+     * <p>Indicates whether the target engine version supports forwarding write
+     * operations from reader DB instances to the writer DB instance in the DB cluster.
+     * By default, write operations aren't allowed on reader DB instances.</p> <p>Valid
+     * for: Aurora DB clusters only</p>
      */
     inline bool GetSupportsLocalWriteForwarding() const{ return m_supportsLocalWriteForwarding; }
 
     /**
-     * <p>A value that indicates whether the target engine version supports forwarding
-     * write operations from reader DB instances to the writer DB instance in the DB
-     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
-     * <p>Valid for: Aurora DB clusters only</p>
+     * <p>Indicates whether the target engine version supports forwarding write
+     * operations from reader DB instances to the writer DB instance in the DB cluster.
+     * By default, write operations aren't allowed on reader DB instances.</p> <p>Valid
+     * for: Aurora DB clusters only</p>
      */
     inline bool SupportsLocalWriteForwardingHasBeenSet() const { return m_supportsLocalWriteForwardingHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the target engine version supports forwarding
-     * write operations from reader DB instances to the writer DB instance in the DB
-     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
-     * <p>Valid for: Aurora DB clusters only</p>
+     * <p>Indicates whether the target engine version supports forwarding write
+     * operations from reader DB instances to the writer DB instance in the DB cluster.
+     * By default, write operations aren't allowed on reader DB instances.</p> <p>Valid
+     * for: Aurora DB clusters only</p>
      */
     inline void SetSupportsLocalWriteForwarding(bool value) { m_supportsLocalWriteForwardingHasBeenSet = true; m_supportsLocalWriteForwarding = value; }
 
     /**
-     * <p>A value that indicates whether the target engine version supports forwarding
-     * write operations from reader DB instances to the writer DB instance in the DB
-     * cluster. By default, write operations aren't allowed on reader DB instances.</p>
-     * <p>Valid for: Aurora DB clusters only</p>
+     * <p>Indicates whether the target engine version supports forwarding write
+     * operations from reader DB instances to the writer DB instance in the DB cluster.
+     * By default, write operations aren't allowed on reader DB instances.</p> <p>Valid
+     * for: Aurora DB clusters only</p>
      */
     inline UpgradeTarget& WithSupportsLocalWriteForwarding(bool value) { SetSupportsLocalWriteForwarding(value); return *this;}
 

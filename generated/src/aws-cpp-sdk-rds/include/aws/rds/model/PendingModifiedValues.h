@@ -196,26 +196,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates that the Single-AZ DB instance will change to a
-     * Multi-AZ deployment.</p>
+     * <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ
+     * deployment.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>A value that indicates that the Single-AZ DB instance will change to a
-     * Multi-AZ deployment.</p>
+     * <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ
+     * deployment.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>A value that indicates that the Single-AZ DB instance will change to a
-     * Multi-AZ deployment.</p>
+     * <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ
+     * deployment.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>A value that indicates that the Single-AZ DB instance will change to a
-     * Multi-AZ deployment.</p>
+     * <p>Indicates whether the Single-AZ DB instance will change to a Multi-AZ
+     * deployment.</p>
      */
     inline PendingModifiedValues& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -628,26 +628,26 @@ namespace Model
 
 
     /**
-     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline PendingModifiedValues& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 

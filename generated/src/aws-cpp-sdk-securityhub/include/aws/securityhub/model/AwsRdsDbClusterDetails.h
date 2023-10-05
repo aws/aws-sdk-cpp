@@ -1638,6 +1638,31 @@ namespace Model
      */
     inline AwsRdsDbClusterDetails& WithIamDatabaseAuthenticationEnabled(bool value) { SetIamDatabaseAuthenticationEnabled(value); return *this;}
 
+
+    /**
+     * <p> Indicates if minor version upgrades are automatically applied to the
+     * cluster.</p>
+     */
+    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+
+    /**
+     * <p> Indicates if minor version upgrades are automatically applied to the
+     * cluster.</p>
+     */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p> Indicates if minor version upgrades are automatically applied to the
+     * cluster.</p>
+     */
+    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
+
+    /**
+     * <p> Indicates if minor version upgrades are automatically applied to the
+     * cluster.</p>
+     */
+    inline AwsRdsDbClusterDetails& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -1750,6 +1775,9 @@ namespace Model
 
     bool m_iamDatabaseAuthenticationEnabled;
     bool m_iamDatabaseAuthenticationEnabledHasBeenSet = false;
+
+    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
   };
 
 } // namespace Model

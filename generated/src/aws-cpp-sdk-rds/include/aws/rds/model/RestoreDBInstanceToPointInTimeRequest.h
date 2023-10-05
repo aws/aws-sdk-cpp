@@ -1879,30 +1879,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetUseDefaultProcessorFeatures() const{ return m_useDefaultProcessorFeatures; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool UseDefaultProcessorFeaturesHasBeenSet() const { return m_useDefaultProcessorFeaturesHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
 
     /**
-     * <p>A value that indicates whether the DB instance class of the DB instance uses
-     * its default processor features.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>Specifies whether the DB instance class of the DB instance uses its default
+     * processor features.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithUseDefaultProcessorFeatures(bool value) { SetUseDefaultProcessorFeatures(value); return *this;}
 

@@ -20,6 +20,7 @@
 /* Service model headers required in WorkSpacesClient header */
 #include <aws/workspaces/model/AssociateConnectionAliasResult.h>
 #include <aws/workspaces/model/AssociateIpGroupsResult.h>
+#include <aws/workspaces/model/AssociateWorkspaceApplicationResult.h>
 #include <aws/workspaces/model/AuthorizeIpRulesResult.h>
 #include <aws/workspaces/model/CopyWorkspaceImageResult.h>
 #include <aws/workspaces/model/CreateConnectClientAddInResult.h>
@@ -38,16 +39,22 @@
 #include <aws/workspaces/model/DeleteTagsResult.h>
 #include <aws/workspaces/model/DeleteWorkspaceBundleResult.h>
 #include <aws/workspaces/model/DeleteWorkspaceImageResult.h>
+#include <aws/workspaces/model/DeployWorkspaceApplicationsResult.h>
 #include <aws/workspaces/model/DeregisterWorkspaceDirectoryResult.h>
 #include <aws/workspaces/model/DescribeAccountResult.h>
 #include <aws/workspaces/model/DescribeAccountModificationsResult.h>
+#include <aws/workspaces/model/DescribeApplicationAssociationsResult.h>
+#include <aws/workspaces/model/DescribeApplicationsResult.h>
+#include <aws/workspaces/model/DescribeBundleAssociationsResult.h>
 #include <aws/workspaces/model/DescribeClientBrandingResult.h>
 #include <aws/workspaces/model/DescribeClientPropertiesResult.h>
 #include <aws/workspaces/model/DescribeConnectClientAddInsResult.h>
 #include <aws/workspaces/model/DescribeConnectionAliasPermissionsResult.h>
 #include <aws/workspaces/model/DescribeConnectionAliasesResult.h>
+#include <aws/workspaces/model/DescribeImageAssociationsResult.h>
 #include <aws/workspaces/model/DescribeIpGroupsResult.h>
 #include <aws/workspaces/model/DescribeTagsResult.h>
+#include <aws/workspaces/model/DescribeWorkspaceAssociationsResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceBundlesResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceImagePermissionsResult.h>
@@ -57,6 +64,7 @@
 #include <aws/workspaces/model/DescribeWorkspacesConnectionStatusResult.h>
 #include <aws/workspaces/model/DisassociateConnectionAliasResult.h>
 #include <aws/workspaces/model/DisassociateIpGroupsResult.h>
+#include <aws/workspaces/model/DisassociateWorkspaceApplicationResult.h>
 #include <aws/workspaces/model/ImportClientBrandingResult.h>
 #include <aws/workspaces/model/ImportWorkspaceImageResult.h>
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesResult.h>
@@ -125,6 +133,7 @@ namespace Aws
       /* Service model forward declarations required in WorkSpacesClient header */
       class AssociateConnectionAliasRequest;
       class AssociateIpGroupsRequest;
+      class AssociateWorkspaceApplicationRequest;
       class AuthorizeIpRulesRequest;
       class CopyWorkspaceImageRequest;
       class CreateConnectClientAddInRequest;
@@ -143,16 +152,22 @@ namespace Aws
       class DeleteTagsRequest;
       class DeleteWorkspaceBundleRequest;
       class DeleteWorkspaceImageRequest;
+      class DeployWorkspaceApplicationsRequest;
       class DeregisterWorkspaceDirectoryRequest;
       class DescribeAccountRequest;
       class DescribeAccountModificationsRequest;
+      class DescribeApplicationAssociationsRequest;
+      class DescribeApplicationsRequest;
+      class DescribeBundleAssociationsRequest;
       class DescribeClientBrandingRequest;
       class DescribeClientPropertiesRequest;
       class DescribeConnectClientAddInsRequest;
       class DescribeConnectionAliasPermissionsRequest;
       class DescribeConnectionAliasesRequest;
+      class DescribeImageAssociationsRequest;
       class DescribeIpGroupsRequest;
       class DescribeTagsRequest;
+      class DescribeWorkspaceAssociationsRequest;
       class DescribeWorkspaceBundlesRequest;
       class DescribeWorkspaceDirectoriesRequest;
       class DescribeWorkspaceImagePermissionsRequest;
@@ -162,6 +177,7 @@ namespace Aws
       class DescribeWorkspacesConnectionStatusRequest;
       class DisassociateConnectionAliasRequest;
       class DisassociateIpGroupsRequest;
+      class DisassociateWorkspaceApplicationRequest;
       class ImportClientBrandingRequest;
       class ImportWorkspaceImageRequest;
       class ListAvailableManagementCidrRangesRequest;
@@ -193,6 +209,7 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AssociateConnectionAliasResult, WorkSpacesError> AssociateConnectionAliasOutcome;
       typedef Aws::Utils::Outcome<AssociateIpGroupsResult, WorkSpacesError> AssociateIpGroupsOutcome;
+      typedef Aws::Utils::Outcome<AssociateWorkspaceApplicationResult, WorkSpacesError> AssociateWorkspaceApplicationOutcome;
       typedef Aws::Utils::Outcome<AuthorizeIpRulesResult, WorkSpacesError> AuthorizeIpRulesOutcome;
       typedef Aws::Utils::Outcome<CopyWorkspaceImageResult, WorkSpacesError> CopyWorkspaceImageOutcome;
       typedef Aws::Utils::Outcome<CreateConnectClientAddInResult, WorkSpacesError> CreateConnectClientAddInOutcome;
@@ -211,16 +228,22 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteTagsResult, WorkSpacesError> DeleteTagsOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkspaceBundleResult, WorkSpacesError> DeleteWorkspaceBundleOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkspaceImageResult, WorkSpacesError> DeleteWorkspaceImageOutcome;
+      typedef Aws::Utils::Outcome<DeployWorkspaceApplicationsResult, WorkSpacesError> DeployWorkspaceApplicationsOutcome;
       typedef Aws::Utils::Outcome<DeregisterWorkspaceDirectoryResult, WorkSpacesError> DeregisterWorkspaceDirectoryOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountResult, WorkSpacesError> DescribeAccountOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountModificationsResult, WorkSpacesError> DescribeAccountModificationsOutcome;
+      typedef Aws::Utils::Outcome<DescribeApplicationAssociationsResult, WorkSpacesError> DescribeApplicationAssociationsOutcome;
+      typedef Aws::Utils::Outcome<DescribeApplicationsResult, WorkSpacesError> DescribeApplicationsOutcome;
+      typedef Aws::Utils::Outcome<DescribeBundleAssociationsResult, WorkSpacesError> DescribeBundleAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeClientBrandingResult, WorkSpacesError> DescribeClientBrandingOutcome;
       typedef Aws::Utils::Outcome<DescribeClientPropertiesResult, WorkSpacesError> DescribeClientPropertiesOutcome;
       typedef Aws::Utils::Outcome<DescribeConnectClientAddInsResult, WorkSpacesError> DescribeConnectClientAddInsOutcome;
       typedef Aws::Utils::Outcome<DescribeConnectionAliasPermissionsResult, WorkSpacesError> DescribeConnectionAliasPermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeConnectionAliasesResult, WorkSpacesError> DescribeConnectionAliasesOutcome;
+      typedef Aws::Utils::Outcome<DescribeImageAssociationsResult, WorkSpacesError> DescribeImageAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeIpGroupsResult, WorkSpacesError> DescribeIpGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribeTagsResult, WorkSpacesError> DescribeTagsOutcome;
+      typedef Aws::Utils::Outcome<DescribeWorkspaceAssociationsResult, WorkSpacesError> DescribeWorkspaceAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkspaceBundlesResult, WorkSpacesError> DescribeWorkspaceBundlesOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkspaceDirectoriesResult, WorkSpacesError> DescribeWorkspaceDirectoriesOutcome;
       typedef Aws::Utils::Outcome<DescribeWorkspaceImagePermissionsResult, WorkSpacesError> DescribeWorkspaceImagePermissionsOutcome;
@@ -230,6 +253,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeWorkspacesConnectionStatusResult, WorkSpacesError> DescribeWorkspacesConnectionStatusOutcome;
       typedef Aws::Utils::Outcome<DisassociateConnectionAliasResult, WorkSpacesError> DisassociateConnectionAliasOutcome;
       typedef Aws::Utils::Outcome<DisassociateIpGroupsResult, WorkSpacesError> DisassociateIpGroupsOutcome;
+      typedef Aws::Utils::Outcome<DisassociateWorkspaceApplicationResult, WorkSpacesError> DisassociateWorkspaceApplicationOutcome;
       typedef Aws::Utils::Outcome<ImportClientBrandingResult, WorkSpacesError> ImportClientBrandingOutcome;
       typedef Aws::Utils::Outcome<ImportWorkspaceImageResult, WorkSpacesError> ImportWorkspaceImageOutcome;
       typedef Aws::Utils::Outcome<ListAvailableManagementCidrRangesResult, WorkSpacesError> ListAvailableManagementCidrRangesOutcome;
@@ -261,6 +285,7 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<AssociateConnectionAliasOutcome> AssociateConnectionAliasOutcomeCallable;
       typedef std::future<AssociateIpGroupsOutcome> AssociateIpGroupsOutcomeCallable;
+      typedef std::future<AssociateWorkspaceApplicationOutcome> AssociateWorkspaceApplicationOutcomeCallable;
       typedef std::future<AuthorizeIpRulesOutcome> AuthorizeIpRulesOutcomeCallable;
       typedef std::future<CopyWorkspaceImageOutcome> CopyWorkspaceImageOutcomeCallable;
       typedef std::future<CreateConnectClientAddInOutcome> CreateConnectClientAddInOutcomeCallable;
@@ -279,16 +304,22 @@ namespace Aws
       typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
       typedef std::future<DeleteWorkspaceBundleOutcome> DeleteWorkspaceBundleOutcomeCallable;
       typedef std::future<DeleteWorkspaceImageOutcome> DeleteWorkspaceImageOutcomeCallable;
+      typedef std::future<DeployWorkspaceApplicationsOutcome> DeployWorkspaceApplicationsOutcomeCallable;
       typedef std::future<DeregisterWorkspaceDirectoryOutcome> DeregisterWorkspaceDirectoryOutcomeCallable;
       typedef std::future<DescribeAccountOutcome> DescribeAccountOutcomeCallable;
       typedef std::future<DescribeAccountModificationsOutcome> DescribeAccountModificationsOutcomeCallable;
+      typedef std::future<DescribeApplicationAssociationsOutcome> DescribeApplicationAssociationsOutcomeCallable;
+      typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
+      typedef std::future<DescribeBundleAssociationsOutcome> DescribeBundleAssociationsOutcomeCallable;
       typedef std::future<DescribeClientBrandingOutcome> DescribeClientBrandingOutcomeCallable;
       typedef std::future<DescribeClientPropertiesOutcome> DescribeClientPropertiesOutcomeCallable;
       typedef std::future<DescribeConnectClientAddInsOutcome> DescribeConnectClientAddInsOutcomeCallable;
       typedef std::future<DescribeConnectionAliasPermissionsOutcome> DescribeConnectionAliasPermissionsOutcomeCallable;
       typedef std::future<DescribeConnectionAliasesOutcome> DescribeConnectionAliasesOutcomeCallable;
+      typedef std::future<DescribeImageAssociationsOutcome> DescribeImageAssociationsOutcomeCallable;
       typedef std::future<DescribeIpGroupsOutcome> DescribeIpGroupsOutcomeCallable;
       typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
+      typedef std::future<DescribeWorkspaceAssociationsOutcome> DescribeWorkspaceAssociationsOutcomeCallable;
       typedef std::future<DescribeWorkspaceBundlesOutcome> DescribeWorkspaceBundlesOutcomeCallable;
       typedef std::future<DescribeWorkspaceDirectoriesOutcome> DescribeWorkspaceDirectoriesOutcomeCallable;
       typedef std::future<DescribeWorkspaceImagePermissionsOutcome> DescribeWorkspaceImagePermissionsOutcomeCallable;
@@ -298,6 +329,7 @@ namespace Aws
       typedef std::future<DescribeWorkspacesConnectionStatusOutcome> DescribeWorkspacesConnectionStatusOutcomeCallable;
       typedef std::future<DisassociateConnectionAliasOutcome> DisassociateConnectionAliasOutcomeCallable;
       typedef std::future<DisassociateIpGroupsOutcome> DisassociateIpGroupsOutcomeCallable;
+      typedef std::future<DisassociateWorkspaceApplicationOutcome> DisassociateWorkspaceApplicationOutcomeCallable;
       typedef std::future<ImportClientBrandingOutcome> ImportClientBrandingOutcomeCallable;
       typedef std::future<ImportWorkspaceImageOutcome> ImportWorkspaceImageOutcomeCallable;
       typedef std::future<ListAvailableManagementCidrRangesOutcome> ListAvailableManagementCidrRangesOutcomeCallable;
@@ -332,6 +364,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const WorkSpacesClient*, const Model::AssociateConnectionAliasRequest&, const Model::AssociateConnectionAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateConnectionAliasResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::AssociateIpGroupsRequest&, const Model::AssociateIpGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIpGroupsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::AssociateWorkspaceApplicationRequest&, const Model::AssociateWorkspaceApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateWorkspaceApplicationResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::AuthorizeIpRulesRequest&, const Model::AuthorizeIpRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeIpRulesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CopyWorkspaceImageRequest&, const Model::CopyWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::CreateConnectClientAddInRequest&, const Model::CreateConnectClientAddInOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectClientAddInResponseReceivedHandler;
@@ -350,16 +383,22 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteWorkspaceBundleRequest&, const Model::DeleteWorkspaceBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceBundleResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteWorkspaceImageRequest&, const Model::DeleteWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceImageResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DeployWorkspaceApplicationsRequest&, const Model::DeployWorkspaceApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeployWorkspaceApplicationsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeregisterWorkspaceDirectoryRequest&, const Model::DeregisterWorkspaceDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterWorkspaceDirectoryResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeAccountRequest&, const Model::DescribeAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeAccountModificationsRequest&, const Model::DescribeAccountModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountModificationsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeApplicationAssociationsRequest&, const Model::DescribeApplicationAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationAssociationsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeApplicationsRequest&, const Model::DescribeApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeBundleAssociationsRequest&, const Model::DescribeBundleAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBundleAssociationsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeClientBrandingRequest&, const Model::DescribeClientBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientBrandingResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeClientPropertiesRequest&, const Model::DescribeClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeConnectClientAddInsRequest&, const Model::DescribeConnectClientAddInsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectClientAddInsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeConnectionAliasPermissionsRequest&, const Model::DescribeConnectionAliasPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionAliasPermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeConnectionAliasesRequest&, const Model::DescribeConnectionAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionAliasesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeImageAssociationsRequest&, const Model::DescribeImageAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImageAssociationsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeIpGroupsRequest&, const Model::DescribeIpGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpGroupsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceAssociationsRequest&, const Model::DescribeWorkspaceAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceAssociationsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceBundlesRequest&, const Model::DescribeWorkspaceBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceBundlesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceDirectoriesRequest&, const Model::DescribeWorkspaceDirectoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceDirectoriesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceImagePermissionsRequest&, const Model::DescribeWorkspaceImagePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceImagePermissionsResponseReceivedHandler;
@@ -369,6 +408,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesConnectionStatusRequest&, const Model::DescribeWorkspacesConnectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesConnectionStatusResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateConnectionAliasRequest&, const Model::DisassociateConnectionAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateConnectionAliasResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateIpGroupsRequest&, const Model::DisassociateIpGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIpGroupsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateWorkspaceApplicationRequest&, const Model::DisassociateWorkspaceApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateWorkspaceApplicationResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ImportClientBrandingRequest&, const Model::ImportClientBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportClientBrandingResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ImportWorkspaceImageRequest&, const Model::ImportWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ListAvailableManagementCidrRangesRequest&, const Model::ListAvailableManagementCidrRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableManagementCidrRangesResponseReceivedHandler;

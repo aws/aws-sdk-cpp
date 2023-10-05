@@ -30,7 +30,7 @@ namespace Model
   /**
    * <p>Contains the details of a snapshot or cluster export to Amazon S3.</p>
    * <p>This data type is used as a response element in the
-   * <code>DescribeExportTasks</code> action.</p><p><h3>See Also:</h3>   <a
+   * <code>DescribeExportTasks</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ExportTask">AWS API
    * Reference</a></p>
    */
@@ -144,13 +144,13 @@ namespace Model
 
 
     /**
-     * <p>The data exported from the snapshot or cluster. Valid values are the
-     * following:</p> <ul> <li> <p> <code>database</code> - Export all the data from a
-     * specified database.</p> </li> <li> <p> <code>database.table</code>
-     * <i>table-name</i> - Export a table of the snapshot or cluster. This format is
-     * valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li>
-     * <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema
-     * of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
+     * <p>The data exported from the snapshot or cluster.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot or cluster. This format is valid only for RDS for
+     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
+     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
      * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
      * <i>table-name</i> - Export a table of the database schema. This format is valid
      * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
@@ -158,13 +158,13 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetExportOnly() const{ return m_exportOnly; }
 
     /**
-     * <p>The data exported from the snapshot or cluster. Valid values are the
-     * following:</p> <ul> <li> <p> <code>database</code> - Export all the data from a
-     * specified database.</p> </li> <li> <p> <code>database.table</code>
-     * <i>table-name</i> - Export a table of the snapshot or cluster. This format is
-     * valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li>
-     * <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema
-     * of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
+     * <p>The data exported from the snapshot or cluster.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot or cluster. This format is valid only for RDS for
+     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
+     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
      * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
      * <i>table-name</i> - Export a table of the database schema. This format is valid
      * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
@@ -172,13 +172,13 @@ namespace Model
     inline bool ExportOnlyHasBeenSet() const { return m_exportOnlyHasBeenSet; }
 
     /**
-     * <p>The data exported from the snapshot or cluster. Valid values are the
-     * following:</p> <ul> <li> <p> <code>database</code> - Export all the data from a
-     * specified database.</p> </li> <li> <p> <code>database.table</code>
-     * <i>table-name</i> - Export a table of the snapshot or cluster. This format is
-     * valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li>
-     * <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema
-     * of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
+     * <p>The data exported from the snapshot or cluster.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot or cluster. This format is valid only for RDS for
+     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
+     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
      * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
      * <i>table-name</i> - Export a table of the database schema. This format is valid
      * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
@@ -186,13 +186,13 @@ namespace Model
     inline void SetExportOnly(const Aws::Vector<Aws::String>& value) { m_exportOnlyHasBeenSet = true; m_exportOnly = value; }
 
     /**
-     * <p>The data exported from the snapshot or cluster. Valid values are the
-     * following:</p> <ul> <li> <p> <code>database</code> - Export all the data from a
-     * specified database.</p> </li> <li> <p> <code>database.table</code>
-     * <i>table-name</i> - Export a table of the snapshot or cluster. This format is
-     * valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li>
-     * <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema
-     * of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
+     * <p>The data exported from the snapshot or cluster.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot or cluster. This format is valid only for RDS for
+     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
+     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
      * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
      * <i>table-name</i> - Export a table of the database schema. This format is valid
      * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
@@ -200,13 +200,13 @@ namespace Model
     inline void SetExportOnly(Aws::Vector<Aws::String>&& value) { m_exportOnlyHasBeenSet = true; m_exportOnly = std::move(value); }
 
     /**
-     * <p>The data exported from the snapshot or cluster. Valid values are the
-     * following:</p> <ul> <li> <p> <code>database</code> - Export all the data from a
-     * specified database.</p> </li> <li> <p> <code>database.table</code>
-     * <i>table-name</i> - Export a table of the snapshot or cluster. This format is
-     * valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li>
-     * <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema
-     * of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
+     * <p>The data exported from the snapshot or cluster.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot or cluster. This format is valid only for RDS for
+     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
+     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
      * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
      * <i>table-name</i> - Export a table of the database schema. This format is valid
      * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
@@ -214,13 +214,13 @@ namespace Model
     inline ExportTask& WithExportOnly(const Aws::Vector<Aws::String>& value) { SetExportOnly(value); return *this;}
 
     /**
-     * <p>The data exported from the snapshot or cluster. Valid values are the
-     * following:</p> <ul> <li> <p> <code>database</code> - Export all the data from a
-     * specified database.</p> </li> <li> <p> <code>database.table</code>
-     * <i>table-name</i> - Export a table of the snapshot or cluster. This format is
-     * valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li>
-     * <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema
-     * of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
+     * <p>The data exported from the snapshot or cluster.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot or cluster. This format is valid only for RDS for
+     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
+     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
      * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
      * <i>table-name</i> - Export a table of the database schema. This format is valid
      * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
@@ -228,13 +228,13 @@ namespace Model
     inline ExportTask& WithExportOnly(Aws::Vector<Aws::String>&& value) { SetExportOnly(std::move(value)); return *this;}
 
     /**
-     * <p>The data exported from the snapshot or cluster. Valid values are the
-     * following:</p> <ul> <li> <p> <code>database</code> - Export all the data from a
-     * specified database.</p> </li> <li> <p> <code>database.table</code>
-     * <i>table-name</i> - Export a table of the snapshot or cluster. This format is
-     * valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li>
-     * <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema
-     * of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
+     * <p>The data exported from the snapshot or cluster.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot or cluster. This format is valid only for RDS for
+     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
+     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
      * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
      * <i>table-name</i> - Export a table of the database schema. This format is valid
      * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
@@ -242,13 +242,13 @@ namespace Model
     inline ExportTask& AddExportOnly(const Aws::String& value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(value); return *this; }
 
     /**
-     * <p>The data exported from the snapshot or cluster. Valid values are the
-     * following:</p> <ul> <li> <p> <code>database</code> - Export all the data from a
-     * specified database.</p> </li> <li> <p> <code>database.table</code>
-     * <i>table-name</i> - Export a table of the snapshot or cluster. This format is
-     * valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li>
-     * <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema
-     * of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
+     * <p>The data exported from the snapshot or cluster.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot or cluster. This format is valid only for RDS for
+     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
+     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
      * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
      * <i>table-name</i> - Export a table of the database schema. This format is valid
      * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
@@ -256,13 +256,13 @@ namespace Model
     inline ExportTask& AddExportOnly(Aws::String&& value) { m_exportOnlyHasBeenSet = true; m_exportOnly.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The data exported from the snapshot or cluster. Valid values are the
-     * following:</p> <ul> <li> <p> <code>database</code> - Export all the data from a
-     * specified database.</p> </li> <li> <p> <code>database.table</code>
-     * <i>table-name</i> - Export a table of the snapshot or cluster. This format is
-     * valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li>
-     * <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema
-     * of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
+     * <p>The data exported from the snapshot or cluster.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>database</code> - Export all the data from a specified
+     * database.</p> </li> <li> <p> <code>database.table</code> <i>table-name</i> -
+     * Export a table of the snapshot or cluster. This format is valid only for RDS for
+     * MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> <li> <p>
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of
+     * the snapshot or cluster. This format is valid only for RDS for PostgreSQL and
      * Aurora PostgreSQL.</p> </li> <li> <p> <code>database.schema.table</code>
      * <i>table-name</i> - Export a table of the database schema. This format is valid
      * only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> </ul>
@@ -271,135 +271,135 @@ namespace Model
 
 
     /**
-     * <p>The time that the snapshot was created.</p>
+     * <p>The time when the snapshot was created.</p>
      */
     inline const Aws::Utils::DateTime& GetSnapshotTime() const{ return m_snapshotTime; }
 
     /**
-     * <p>The time that the snapshot was created.</p>
+     * <p>The time when the snapshot was created.</p>
      */
     inline bool SnapshotTimeHasBeenSet() const { return m_snapshotTimeHasBeenSet; }
 
     /**
-     * <p>The time that the snapshot was created.</p>
+     * <p>The time when the snapshot was created.</p>
      */
     inline void SetSnapshotTime(const Aws::Utils::DateTime& value) { m_snapshotTimeHasBeenSet = true; m_snapshotTime = value; }
 
     /**
-     * <p>The time that the snapshot was created.</p>
+     * <p>The time when the snapshot was created.</p>
      */
     inline void SetSnapshotTime(Aws::Utils::DateTime&& value) { m_snapshotTimeHasBeenSet = true; m_snapshotTime = std::move(value); }
 
     /**
-     * <p>The time that the snapshot was created.</p>
+     * <p>The time when the snapshot was created.</p>
      */
     inline ExportTask& WithSnapshotTime(const Aws::Utils::DateTime& value) { SetSnapshotTime(value); return *this;}
 
     /**
-     * <p>The time that the snapshot was created.</p>
+     * <p>The time when the snapshot was created.</p>
      */
     inline ExportTask& WithSnapshotTime(Aws::Utils::DateTime&& value) { SetSnapshotTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time that the snapshot or cluster export task started.</p>
+     * <p>The time when the snapshot or cluster export task started.</p>
      */
     inline const Aws::Utils::DateTime& GetTaskStartTime() const{ return m_taskStartTime; }
 
     /**
-     * <p>The time that the snapshot or cluster export task started.</p>
+     * <p>The time when the snapshot or cluster export task started.</p>
      */
     inline bool TaskStartTimeHasBeenSet() const { return m_taskStartTimeHasBeenSet; }
 
     /**
-     * <p>The time that the snapshot or cluster export task started.</p>
+     * <p>The time when the snapshot or cluster export task started.</p>
      */
     inline void SetTaskStartTime(const Aws::Utils::DateTime& value) { m_taskStartTimeHasBeenSet = true; m_taskStartTime = value; }
 
     /**
-     * <p>The time that the snapshot or cluster export task started.</p>
+     * <p>The time when the snapshot or cluster export task started.</p>
      */
     inline void SetTaskStartTime(Aws::Utils::DateTime&& value) { m_taskStartTimeHasBeenSet = true; m_taskStartTime = std::move(value); }
 
     /**
-     * <p>The time that the snapshot or cluster export task started.</p>
+     * <p>The time when the snapshot or cluster export task started.</p>
      */
     inline ExportTask& WithTaskStartTime(const Aws::Utils::DateTime& value) { SetTaskStartTime(value); return *this;}
 
     /**
-     * <p>The time that the snapshot or cluster export task started.</p>
+     * <p>The time when the snapshot or cluster export task started.</p>
      */
     inline ExportTask& WithTaskStartTime(Aws::Utils::DateTime&& value) { SetTaskStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time that the snapshot or cluster export task ended.</p>
+     * <p>The time when the snapshot or cluster export task ended.</p>
      */
     inline const Aws::Utils::DateTime& GetTaskEndTime() const{ return m_taskEndTime; }
 
     /**
-     * <p>The time that the snapshot or cluster export task ended.</p>
+     * <p>The time when the snapshot or cluster export task ended.</p>
      */
     inline bool TaskEndTimeHasBeenSet() const { return m_taskEndTimeHasBeenSet; }
 
     /**
-     * <p>The time that the snapshot or cluster export task ended.</p>
+     * <p>The time when the snapshot or cluster export task ended.</p>
      */
     inline void SetTaskEndTime(const Aws::Utils::DateTime& value) { m_taskEndTimeHasBeenSet = true; m_taskEndTime = value; }
 
     /**
-     * <p>The time that the snapshot or cluster export task ended.</p>
+     * <p>The time when the snapshot or cluster export task ended.</p>
      */
     inline void SetTaskEndTime(Aws::Utils::DateTime&& value) { m_taskEndTimeHasBeenSet = true; m_taskEndTime = std::move(value); }
 
     /**
-     * <p>The time that the snapshot or cluster export task ended.</p>
+     * <p>The time when the snapshot or cluster export task ended.</p>
      */
     inline ExportTask& WithTaskEndTime(const Aws::Utils::DateTime& value) { SetTaskEndTime(value); return *this;}
 
     /**
-     * <p>The time that the snapshot or cluster export task ended.</p>
+     * <p>The time when the snapshot or cluster export task ended.</p>
      */
     inline ExportTask& WithTaskEndTime(Aws::Utils::DateTime&& value) { SetTaskEndTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
+     * <p>The Amazon S3 bucket where the snapshot or cluster is exported to.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
+     * <p>The Amazon S3 bucket where the snapshot or cluster is exported to.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
+     * <p>The Amazon S3 bucket where the snapshot or cluster is exported to.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
+     * <p>The Amazon S3 bucket where the snapshot or cluster is exported to.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
+     * <p>The Amazon S3 bucket where the snapshot or cluster is exported to.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
+     * <p>The Amazon S3 bucket where the snapshot or cluster is exported to.</p>
      */
     inline ExportTask& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
+     * <p>The Amazon S3 bucket where the snapshot or cluster is exported to.</p>
      */
     inline ExportTask& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket that the snapshot or cluster is exported to.</p>
+     * <p>The Amazon S3 bucket where the snapshot or cluster is exported to.</p>
      */
     inline ExportTask& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 

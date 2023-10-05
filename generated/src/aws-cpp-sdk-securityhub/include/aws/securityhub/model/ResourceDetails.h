@@ -95,6 +95,13 @@
 #include <aws/securityhub/model/AwsGuardDutyDetectorDetails.h>
 #include <aws/securityhub/model/AwsStepFunctionStateMachineDetails.h>
 #include <aws/securityhub/model/AwsAthenaWorkGroupDetails.h>
+#include <aws/securityhub/model/AwsEventsEventbusDetails.h>
+#include <aws/securityhub/model/AwsDmsEndpointDetails.h>
+#include <aws/securityhub/model/AwsEventsEndpointDetails.h>
+#include <aws/securityhub/model/AwsDmsReplicationTaskDetails.h>
+#include <aws/securityhub/model/AwsDmsReplicationInstanceDetails.h>
+#include <aws/securityhub/model/AwsRoute53HostedZoneDetails.h>
+#include <aws/securityhub/model/AwsMskClusterDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -3152,6 +3159,301 @@ namespace Model
      */
     inline ResourceDetails& WithAwsAthenaWorkGroup(AwsAthenaWorkGroupDetails&& value) { SetAwsAthenaWorkGroup(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline const AwsEventsEventbusDetails& GetAwsEventsEventbus() const{ return m_awsEventsEventbus; }
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline bool AwsEventsEventbusHasBeenSet() const { return m_awsEventsEventbusHasBeenSet; }
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline void SetAwsEventsEventbus(const AwsEventsEventbusDetails& value) { m_awsEventsEventbusHasBeenSet = true; m_awsEventsEventbus = value; }
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline void SetAwsEventsEventbus(AwsEventsEventbusDetails&& value) { m_awsEventsEventbusHasBeenSet = true; m_awsEventsEventbus = std::move(value); }
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline ResourceDetails& WithAwsEventsEventbus(const AwsEventsEventbusDetails& value) { SetAwsEventsEventbus(value); return *this;}
+
+    /**
+     * <p> Provides details about Amazon EventBridge event bus for an endpoint. An
+     * event bus is a router that receives events and delivers them to zero or more
+     * destinations, or targets.</p>
+     */
+    inline ResourceDetails& WithAwsEventsEventbus(AwsEventsEventbusDetails&& value) { SetAwsEventsEventbus(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline const AwsDmsEndpointDetails& GetAwsDmsEndpoint() const{ return m_awsDmsEndpoint; }
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline bool AwsDmsEndpointHasBeenSet() const { return m_awsDmsEndpointHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline void SetAwsDmsEndpoint(const AwsDmsEndpointDetails& value) { m_awsDmsEndpointHasBeenSet = true; m_awsDmsEndpoint = value; }
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline void SetAwsDmsEndpoint(AwsDmsEndpointDetails&& value) { m_awsDmsEndpointHasBeenSet = true; m_awsDmsEndpoint = std::move(value); }
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline ResourceDetails& WithAwsDmsEndpoint(const AwsDmsEndpointDetails& value) { SetAwsDmsEndpoint(value); return *this;}
+
+    /**
+     * <p> Provides details about an Database Migration Service (DMS) endpoint. An
+     * endpoint provides connection, data store type, and location information about
+     * your data store.</p>
+     */
+    inline ResourceDetails& WithAwsDmsEndpoint(AwsDmsEndpointDetails&& value) { SetAwsDmsEndpoint(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline const AwsEventsEndpointDetails& GetAwsEventsEndpoint() const{ return m_awsEventsEndpoint; }
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline bool AwsEventsEndpointHasBeenSet() const { return m_awsEventsEndpointHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline void SetAwsEventsEndpoint(const AwsEventsEndpointDetails& value) { m_awsEventsEndpointHasBeenSet = true; m_awsEventsEndpoint = value; }
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline void SetAwsEventsEndpoint(AwsEventsEndpointDetails&& value) { m_awsEventsEndpointHasBeenSet = true; m_awsEventsEndpoint = std::move(value); }
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline ResourceDetails& WithAwsEventsEndpoint(const AwsEventsEndpointDetails& value) { SetAwsEventsEndpoint(value); return *this;}
+
+    /**
+     * <p> Provides details about an Amazon EventBridge global endpoint. The endpoint
+     * can improve your application’s availability by making it Regional-fault
+     * tolerant.</p>
+     */
+    inline ResourceDetails& WithAwsEventsEndpoint(AwsEventsEndpointDetails&& value) { SetAwsEventsEndpoint(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline const AwsDmsReplicationTaskDetails& GetAwsDmsReplicationTask() const{ return m_awsDmsReplicationTask; }
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline bool AwsDmsReplicationTaskHasBeenSet() const { return m_awsDmsReplicationTaskHasBeenSet; }
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline void SetAwsDmsReplicationTask(const AwsDmsReplicationTaskDetails& value) { m_awsDmsReplicationTaskHasBeenSet = true; m_awsDmsReplicationTask = value; }
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline void SetAwsDmsReplicationTask(AwsDmsReplicationTaskDetails&& value) { m_awsDmsReplicationTaskHasBeenSet = true; m_awsDmsReplicationTask = std::move(value); }
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline ResourceDetails& WithAwsDmsReplicationTask(const AwsDmsReplicationTaskDetails& value) { SetAwsDmsReplicationTask(value); return *this;}
+
+    /**
+     * <p> Provides details about an DMS replication task. A replication task moves a
+     * set of data from the source endpoint to the target endpoint.</p>
+     */
+    inline ResourceDetails& WithAwsDmsReplicationTask(AwsDmsReplicationTaskDetails&& value) { SetAwsDmsReplicationTask(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline const AwsDmsReplicationInstanceDetails& GetAwsDmsReplicationInstance() const{ return m_awsDmsReplicationInstance; }
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline bool AwsDmsReplicationInstanceHasBeenSet() const { return m_awsDmsReplicationInstanceHasBeenSet; }
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline void SetAwsDmsReplicationInstance(const AwsDmsReplicationInstanceDetails& value) { m_awsDmsReplicationInstanceHasBeenSet = true; m_awsDmsReplicationInstance = value; }
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline void SetAwsDmsReplicationInstance(AwsDmsReplicationInstanceDetails&& value) { m_awsDmsReplicationInstanceHasBeenSet = true; m_awsDmsReplicationInstance = std::move(value); }
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline ResourceDetails& WithAwsDmsReplicationInstance(const AwsDmsReplicationInstanceDetails& value) { SetAwsDmsReplicationInstance(value); return *this;}
+
+    /**
+     * <p> Provides details about an DMS replication instance. DMS uses a replication
+     * instance to connect to your source data store, read the source data, and format
+     * the data for consumption by the target data store.</p>
+     */
+    inline ResourceDetails& WithAwsDmsReplicationInstance(AwsDmsReplicationInstanceDetails&& value) { SetAwsDmsReplicationInstance(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline const AwsRoute53HostedZoneDetails& GetAwsRoute53HostedZone() const{ return m_awsRoute53HostedZone; }
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline bool AwsRoute53HostedZoneHasBeenSet() const { return m_awsRoute53HostedZoneHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline void SetAwsRoute53HostedZone(const AwsRoute53HostedZoneDetails& value) { m_awsRoute53HostedZoneHasBeenSet = true; m_awsRoute53HostedZone = value; }
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline void SetAwsRoute53HostedZone(AwsRoute53HostedZoneDetails&& value) { m_awsRoute53HostedZoneHasBeenSet = true; m_awsRoute53HostedZone = std::move(value); }
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline ResourceDetails& WithAwsRoute53HostedZone(const AwsRoute53HostedZoneDetails& value) { SetAwsRoute53HostedZone(value); return *this;}
+
+    /**
+     * <p> Provides details about an Amazon Route 53 hosted zone, including the four
+     * name servers assigned to the hosted zone. A hosted zone represents a collection
+     * of records that can be managed together, belonging to a single parent domain
+     * name.</p>
+     */
+    inline ResourceDetails& WithAwsRoute53HostedZone(AwsRoute53HostedZoneDetails&& value) { SetAwsRoute53HostedZone(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline const AwsMskClusterDetails& GetAwsMskCluster() const{ return m_awsMskCluster; }
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline bool AwsMskClusterHasBeenSet() const { return m_awsMskClusterHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline void SetAwsMskCluster(const AwsMskClusterDetails& value) { m_awsMskClusterHasBeenSet = true; m_awsMskCluster = value; }
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline void SetAwsMskCluster(AwsMskClusterDetails&& value) { m_awsMskClusterHasBeenSet = true; m_awsMskCluster = std::move(value); }
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline ResourceDetails& WithAwsMskCluster(const AwsMskClusterDetails& value) { SetAwsMskCluster(value); return *this;}
+
+    /**
+     * <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon
+     * MSK) cluster.</p>
+     */
+    inline ResourceDetails& WithAwsMskCluster(AwsMskClusterDetails&& value) { SetAwsMskCluster(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -3423,6 +3725,27 @@ namespace Model
 
     AwsAthenaWorkGroupDetails m_awsAthenaWorkGroup;
     bool m_awsAthenaWorkGroupHasBeenSet = false;
+
+    AwsEventsEventbusDetails m_awsEventsEventbus;
+    bool m_awsEventsEventbusHasBeenSet = false;
+
+    AwsDmsEndpointDetails m_awsDmsEndpoint;
+    bool m_awsDmsEndpointHasBeenSet = false;
+
+    AwsEventsEndpointDetails m_awsEventsEndpoint;
+    bool m_awsEventsEndpointHasBeenSet = false;
+
+    AwsDmsReplicationTaskDetails m_awsDmsReplicationTask;
+    bool m_awsDmsReplicationTaskHasBeenSet = false;
+
+    AwsDmsReplicationInstanceDetails m_awsDmsReplicationInstance;
+    bool m_awsDmsReplicationInstanceHasBeenSet = false;
+
+    AwsRoute53HostedZoneDetails m_awsRoute53HostedZone;
+    bool m_awsRoute53HostedZoneHasBeenSet = false;
+
+    AwsMskClusterDetails m_awsMskCluster;
+    bool m_awsMskClusterHasBeenSet = false;
   };
 
 } // namespace Model
