@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
+
 @Data
 public class Endpoint {
     private static final Pattern MEMBER_PATTERN = Pattern.compile("\\{[\\w\\d]+\\}");
@@ -45,10 +47,9 @@ public class Endpoint {
         //-> Request.GetVar1() + "-" + Request.GetVar2() + ".123." + Request.GetVar3()
         for (int i = 0; i < members.size(); i++)
         {
-            String member = members.get(i);
             // Capitalize first letter, we always do it for getters regardless
             // of casing on the field.
-            member = member.substring(0, 1).toUpperCase() + member.substring(1);
+            String member = CppViewHelper.capitalizeFirstChar(members.get(i));
             ret += "\"" + parts.get(i) + "\" + " + memberPrefix + ".Get" + member + "() + ";
         }
         ret += "\"" + parts.get(parts.size() - 1) + "\"";
