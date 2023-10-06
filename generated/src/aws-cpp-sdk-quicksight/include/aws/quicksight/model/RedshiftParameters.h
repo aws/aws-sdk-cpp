@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/RedshiftIAMParameters.h>
 #include <utility>
 
 namespace Aws
@@ -191,6 +192,49 @@ namespace Model
      */
     inline RedshiftParameters& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline const RedshiftIAMParameters& GetIAMParameters() const{ return m_iAMParameters; }
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline bool IAMParametersHasBeenSet() const { return m_iAMParametersHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline void SetIAMParameters(const RedshiftIAMParameters& value) { m_iAMParametersHasBeenSet = true; m_iAMParameters = value; }
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline void SetIAMParameters(RedshiftIAMParameters&& value) { m_iAMParametersHasBeenSet = true; m_iAMParameters = std::move(value); }
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline RedshiftParameters& WithIAMParameters(const RedshiftIAMParameters& value) { SetIAMParameters(value); return *this;}
+
+    /**
+     * <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight
+     * access to your cluster. This parameter can be used instead of <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
+     */
+    inline RedshiftParameters& WithIAMParameters(RedshiftIAMParameters&& value) { SetIAMParameters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_host;
@@ -204,6 +248,9 @@ namespace Model
 
     Aws::String m_clusterId;
     bool m_clusterIdHasBeenSet = false;
+
+    RedshiftIAMParameters m_iAMParameters;
+    bool m_iAMParametersHasBeenSet = false;
   };
 
 } // namespace Model

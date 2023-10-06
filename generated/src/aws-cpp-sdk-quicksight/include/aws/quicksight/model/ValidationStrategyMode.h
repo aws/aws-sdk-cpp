@@ -13,22 +13,19 @@ namespace QuickSight
 {
 namespace Model
 {
-  enum class MemberType
+  enum class ValidationStrategyMode
   {
     NOT_SET,
-    DASHBOARD,
-    ANALYSIS,
-    DATASET,
-    DATASOURCE,
-    TOPIC
+    STRICT,
+    LENIENT
   };
 
-namespace MemberTypeMapper
+namespace ValidationStrategyModeMapper
 {
-AWS_QUICKSIGHT_API MemberType GetMemberTypeForName(const Aws::String& name);
+AWS_QUICKSIGHT_API ValidationStrategyMode GetValidationStrategyModeForName(const Aws::String& name);
 
-AWS_QUICKSIGHT_API Aws::String GetNameForMemberType(MemberType value);
-} // namespace MemberTypeMapper
+AWS_QUICKSIGHT_API Aws::String GetNameForValidationStrategyMode(ValidationStrategyMode value);
+} // namespace ValidationStrategyModeMapper
 } // namespace Model
 } // namespace QuickSight
 } // namespace Aws

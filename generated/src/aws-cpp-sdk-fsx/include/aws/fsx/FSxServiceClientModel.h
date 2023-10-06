@@ -51,6 +51,7 @@
 #include <aws/fsx/model/ListTagsForResourceResult.h>
 #include <aws/fsx/model/ReleaseFileSystemNfsV3LocksResult.h>
 #include <aws/fsx/model/RestoreVolumeFromSnapshotResult.h>
+#include <aws/fsx/model/StartMisconfiguredStateRecoveryResult.h>
 #include <aws/fsx/model/TagResourceResult.h>
 #include <aws/fsx/model/UntagResourceResult.h>
 #include <aws/fsx/model/UpdateDataRepositoryAssociationResult.h>
@@ -132,6 +133,7 @@ namespace Aws
       class ListTagsForResourceRequest;
       class ReleaseFileSystemNfsV3LocksRequest;
       class RestoreVolumeFromSnapshotRequest;
+      class StartMisconfiguredStateRecoveryRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateDataRepositoryAssociationRequest;
@@ -176,6 +178,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, FSxError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ReleaseFileSystemNfsV3LocksResult, FSxError> ReleaseFileSystemNfsV3LocksOutcome;
       typedef Aws::Utils::Outcome<RestoreVolumeFromSnapshotResult, FSxError> RestoreVolumeFromSnapshotOutcome;
+      typedef Aws::Utils::Outcome<StartMisconfiguredStateRecoveryResult, FSxError> StartMisconfiguredStateRecoveryOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, FSxError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, FSxError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateDataRepositoryAssociationResult, FSxError> UpdateDataRepositoryAssociationOutcome;
@@ -220,6 +223,7 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ReleaseFileSystemNfsV3LocksOutcome> ReleaseFileSystemNfsV3LocksOutcomeCallable;
       typedef std::future<RestoreVolumeFromSnapshotOutcome> RestoreVolumeFromSnapshotOutcomeCallable;
+      typedef std::future<StartMisconfiguredStateRecoveryOutcome> StartMisconfiguredStateRecoveryOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateDataRepositoryAssociationOutcome> UpdateDataRepositoryAssociationOutcomeCallable;
@@ -267,6 +271,7 @@ namespace Aws
     typedef std::function<void(const FSxClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::ReleaseFileSystemNfsV3LocksRequest&, const Model::ReleaseFileSystemNfsV3LocksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleaseFileSystemNfsV3LocksResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::RestoreVolumeFromSnapshotRequest&, const Model::RestoreVolumeFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreVolumeFromSnapshotResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::StartMisconfiguredStateRecoveryRequest&, const Model::StartMisconfiguredStateRecoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMisconfiguredStateRecoveryResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::UpdateDataRepositoryAssociationRequest&, const Model::UpdateDataRepositoryAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataRepositoryAssociationResponseReceivedHandler;

@@ -286,22 +286,58 @@ namespace Model
     inline ListEntitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
-    
+    /**
+     * <p>Filters the returned set of entities based on their owner. The default is
+     * <code>SELF</code>. To list entities shared with you through AWS Resource Access
+     * Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS
+     * Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     * discovered through the <code>SHARED</code> parameter.</p>
+     */
     inline const OwnershipType& GetOwnershipType() const{ return m_ownershipType; }
 
-    
+    /**
+     * <p>Filters the returned set of entities based on their owner. The default is
+     * <code>SELF</code>. To list entities shared with you through AWS Resource Access
+     * Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS
+     * Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     * discovered through the <code>SHARED</code> parameter.</p>
+     */
     inline bool OwnershipTypeHasBeenSet() const { return m_ownershipTypeHasBeenSet; }
 
-    
+    /**
+     * <p>Filters the returned set of entities based on their owner. The default is
+     * <code>SELF</code>. To list entities shared with you through AWS Resource Access
+     * Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS
+     * Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     * discovered through the <code>SHARED</code> parameter.</p>
+     */
     inline void SetOwnershipType(const OwnershipType& value) { m_ownershipTypeHasBeenSet = true; m_ownershipType = value; }
 
-    
+    /**
+     * <p>Filters the returned set of entities based on their owner. The default is
+     * <code>SELF</code>. To list entities shared with you through AWS Resource Access
+     * Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS
+     * Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     * discovered through the <code>SHARED</code> parameter.</p>
+     */
     inline void SetOwnershipType(OwnershipType&& value) { m_ownershipTypeHasBeenSet = true; m_ownershipType = std::move(value); }
 
-    
+    /**
+     * <p>Filters the returned set of entities based on their owner. The default is
+     * <code>SELF</code>. To list entities shared with you through AWS Resource Access
+     * Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS
+     * Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     * discovered through the <code>SHARED</code> parameter.</p>
+     */
     inline ListEntitiesRequest& WithOwnershipType(const OwnershipType& value) { SetOwnershipType(value); return *this;}
 
-    
+    /**
+     * <p>Filters the returned set of entities based on their owner. The default is
+     * <code>SELF</code>. To list entities shared with you through AWS Resource Access
+     * Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS
+     * Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     * discovered through the <code>SHARED</code> parameter.</p>
+     */
     inline ListEntitiesRequest& WithOwnershipType(OwnershipType&& value) { SetOwnershipType(std::move(value)); return *this;}
 
   private:
