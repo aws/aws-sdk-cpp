@@ -108,35 +108,35 @@ static void GetDataErrorBuffer(char* moreDataBuffer,
     char descriptionBuffer[256] = "";
 
 #if _WIN64
-    snprintf_s(resultBuffer,  _TRUNCATE, "dwResult is %lld.", dwResult);
+    _snprintf_s(resultBuffer,  _TRUNCATE, "dwResult is %lld.", dwResult);
 #elif _WIN32
-    snprintf_s(resultBuffer,  _TRUNCATE, "dwResult is %ld.", dwResult);
+    _snprintf_s(resultBuffer,  _TRUNCATE, "dwResult is %ld.", dwResult);
 #endif
 
     switch (dwResult)
     {
         case API_RECEIVE_RESPONSE:
-            snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to WinHttpReceiveResponse.");
+            _snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to WinHttpReceiveResponse.");
             break;
 
         case API_QUERY_DATA_AVAILABLE:
-            snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to WinHttpQueryDataAvailable.");
+            _snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to WinHttpQueryDataAvailable.");
             break;
 
         case API_READ_DATA:
-            snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to WinHttpReadData.");
+            _snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to WinHttpReadData.");
             break;
 
         case API_WRITE_DATA:
-            snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to WinHttpWriteData");
+            _snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to WinHttpWriteData");
             break;
 
         case API_SEND_REQUEST:
-            snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to WinHttpSendRequest.");
+            _snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to WinHttpSendRequest.");
             break;
 
         case API_GET_PROXY_FOR_URL:
-            snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to ... API_GET_PROXY_FOR_URL.");
+            _snprintf_s(descriptionBuffer,  _TRUNCATE, "The error occurred during a call to ... API_GET_PROXY_FOR_URL.");
             ignoreError = 1;
             break;
         default:
@@ -144,10 +144,10 @@ static void GetDataErrorBuffer(char* moreDataBuffer,
             break;
     }
     if (!ignoreError)
-        snprintf_s(errorBuffer,  _TRUNCATE, "error code is %d", dwError);
+        _snprintf_s(errorBuffer,  _TRUNCATE, "error code is %d", dwError);
     else
-        snprintf_s(errorBuffer,  _TRUNCATE, "error code (shall be ignored?) is %d", dwError);
-    snprintf_s(moreDataBuffer,  _TRUNCATE, "%s%s%s", resultBuffer, descriptionBuffer, errorBuffer);
+        _snprintf_s(errorBuffer,  _TRUNCATE, "error code (shall be ignored?) is %d", dwError);
+    _snprintf_s(moreDataBuffer,  moreDataBufferSize, _TRUNCATE, "%s%s%s", resultBuffer, descriptionBuffer, errorBuffer);
 }
 
 static void GetDataErrorForTlsError(DWORD dwFlags,
@@ -156,24 +156,24 @@ static void GetDataErrorForTlsError(DWORD dwFlags,
 {
     char flagsBuffer[128] = "";
     char detailedBuffer[512] = "";
-    snprintf_s(flagsBuffer,  _TRUNCATE, "TLS error occurred. dwFlags is %d.", dwFlags);
+    _snprintf_s(flagsBuffer,  _TRUNCATE, "TLS error occurred. dwFlags is %d.", dwFlags);
     if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_REV_FAILED)
-        snprintf_s(detailedBuffer,  _TRUNCATE, "Certification revocation checking has been enabled, but the revocation check failed to verify whether a certificate has been revoked. The server used to check for revocation might be unreachable.");
+        _snprintf_s(detailedBuffer,  _TRUNCATE, "Certification revocation checking has been enabled, but the revocation check failed to verify whether a certificate has been revoked. The server used to check for revocation might be unreachable.");
     if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_INVALID_CERT)
-        snprintf_s(detailedBuffer,  _TRUNCATE, "SSL certificate is invalid.");
+        _snprintf_s(detailedBuffer,  _TRUNCATE, "SSL certificate is invalid.");
     if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_REVOKED)
-        snprintf_s(detailedBuffer,  _TRUNCATE, "SSL certificate was revoked.");
+        _snprintf_s(detailedBuffer,  _TRUNCATE, "SSL certificate was revoked.");
     if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_INVALID_CA)
-        snprintf_s(detailedBuffer,  _TRUNCATE, "The function is unfamiliar with the Certificate Authority that generated the server's certificate.");
+        _snprintf_s(detailedBuffer,  _TRUNCATE, "The function is unfamiliar with the Certificate Authority that generated the server's certificate.");
     if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_CN_INVALID)
-        snprintf_s(detailedBuffer,  _TRUNCATE, "SSL certificate common name (host name field) is incorrect, for example, if you entered www.microsoft.com and the common name on the certificate says www.msn.com.");
+        _snprintf_s(detailedBuffer,  _TRUNCATE, "SSL certificate common name (host name field) is incorrect, for example, if you entered www.microsoft.com and the common name on the certificate says www.msn.com.");
     if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_DATE_INVALID)
-        snprintf_s(detailedBuffer,  _TRUNCATE, "SSL certificate date that was received from the server is bad. The certificate is expired.");
+        _snprintf_s(detailedBuffer,  _TRUNCATE, "SSL certificate date that was received from the server is bad. The certificate is expired.");
     if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_CERT_WRONG_USAGE)
-        snprintf_s(detailedBuffer,  _TRUNCATE, "WINHTTP_CALLBACK_STATUS_FLAG_CERT_WRONG_USAGE");
+        _snprintf_s(detailedBuffer,  _TRUNCATE, "WINHTTP_CALLBACK_STATUS_FLAG_CERT_WRONG_USAGE");
     if (dwFlags & WINHTTP_CALLBACK_STATUS_FLAG_SECURITY_CHANNEL_ERROR)
-        snprintf_s(detailedBuffer,  _TRUNCATE, "The application experienced an internal error loading the SSL libraries.");
-    snprintf_s(moreDataBuffer,  _TRUNCATE, "%s%s", flagsBuffer, detailedBuffer);
+        _snprintf_s(detailedBuffer,  _TRUNCATE, "The application experienced an internal error loading the SSL libraries.");
+    _snprintf_s(moreDataBuffer, moreDataBufferSize, _TRUNCATE, "%s%s", flagsBuffer, detailedBuffer);
 }
 
 
@@ -183,6 +183,9 @@ static void CALLBACK WinHttpSyncLogCallback(HINTERNET hInternet,
                                    LPVOID statusInformation,
                                    DWORD dwStatusInformationLength)
 {
+    AWS_UNREFERENCED_PARAM(context);
+    AWS_UNREFERENCED_PARAM(hInternet);
+
     typedef enum
     {
         MORE_DATA_NULL,
@@ -236,36 +239,37 @@ static void CALLBACK WinHttpSyncLogCallback(HINTERNET hInternet,
             DWORD dwError = 0;
             DWORD tlsErrorFlags = 0;
 
-            char moreDataBuffer[1024] = "";
+            static const size_t MORE_DATA_BUFFER_SZ = 1024;
+            char moreDataBuffer[MORE_DATA_BUFFER_SZ] = "";
             switch (data->moreDataFlag)
             {
                 case MORE_DATA_NULL:
                     break;
                 case MORE_DATA_STRING:
-                    snprintf_s(moreDataBuffer,  _TRUNCATE, data->moreDataFormat, (wchar_t*)statusInformation);
+                    _snprintf_s(moreDataBuffer,  _TRUNCATE, data->moreDataFormat, (wchar_t*)statusInformation);
                     break;
                 case MORE_DATA_DWORD:
-                    snprintf_s(moreDataBuffer,  _TRUNCATE, data->moreDataFormat, *((DWORD*)statusInformation));
+                    _snprintf_s(moreDataBuffer,  _TRUNCATE, data->moreDataFormat, *((DWORD*)statusInformation));
                     break;
                 case MORE_DATA_HINTERNET:
                     break;
                 case MORE_DATA_BUFFER:
-                    snprintf_s(moreDataBuffer,  _TRUNCATE, data->moreDataFormat, dwStatusInformationLength);
+                    _snprintf_s(moreDataBuffer,  _TRUNCATE, data->moreDataFormat, dwStatusInformationLength);
                     break;
                 case MORE_DATA_ERROR:
                     dwResult = ((WINHTTP_ASYNC_RESULT*)statusInformation)->dwResult;
                     dwError = ((WINHTTP_ASYNC_RESULT*)statusInformation)->dwError;
                     GetDataErrorBuffer(moreDataBuffer,
-                                       sizeof(moreDataBuffer),
+                                       MORE_DATA_BUFFER_SZ,
                                        dwResult,
                                        dwError);
                     break;
                 case MORE_DATA_ERROR_TLS:
                     tlsErrorFlags = *(DWORD*)statusInformation;
-                    GetDataErrorForTlsError(tlsErrorFlags, moreDataBuffer, sizeof(moreDataBuffer));
+                    GetDataErrorForTlsError(tlsErrorFlags, moreDataBuffer, MORE_DATA_BUFFER_SZ);
                     break;
                 default:
-                    snprintf_s(moreDataBuffer,
+                    _snprintf_s(moreDataBuffer,
                             _TRUNCATE,
                              "unknown more data flag %d",
                              data->moreDataFlag);
