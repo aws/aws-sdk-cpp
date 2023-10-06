@@ -584,8 +584,7 @@ int CurlDebugCallback(CURL *handle, curl_infotype type, char *data, size_t size,
     else
     {
         Aws::String debugString(data, size);
-        AWS_LOGSTREAM_TRACE(m_enableHttpClientTrace ? Aws::Utils::Logging::LogLevel::Trace : Aws::Utils::Logging::LogLevel::Debug,
-                            "CURL", "(" << CurlInfoTypeToString(type) << ") " << debugString);
+        AWS_LOGSTREAM_DEBUG("CURL", "(" << CurlInfoTypeToString(type) << ") " << debugString);
     }
 
     return 0;
