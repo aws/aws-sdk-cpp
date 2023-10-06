@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     START,
-    END
+    END,
+    AUTO
   };
 
 namespace TableTotalsPlacementMapper

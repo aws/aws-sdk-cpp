@@ -823,8 +823,17 @@ namespace EC2
          * increase the limit by requesting a quota adjustment. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
-         * IP address quotas</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * IP address quotas</a> in the <i>Amazon VPC User Guide</i>.</p> 
+         * <p>When you associate an EIP or secondary EIPs with a public NAT gateway, the
+         * network border group of the EIPs must match the network border group of the
+         * Availability Zone (AZ) that the public NAT gateway is in. If it's not the same,
+         * the EIP will fail to associate. You can see the network border group for the
+         * subnet's AZ by viewing the details of the subnet. Similarly, you can view the
+         * network border group of an EIP by viewing the details of the EIP address. For
+         * more information about network border groups and EIPs, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+         * an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">AWS
          * API Reference</a></p>
          */
@@ -2859,7 +2868,17 @@ namespace EC2
          * IPv4 addresses, and communicating between overlapping networks.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-         * gateways</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * gateways</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>When you
+         * create a public NAT gateway and assign it an EIP or secondary EIPs, the network
+         * border group of the EIPs must match the network border group of the Availability
+         * Zone (AZ) that the public NAT gateway is in. If it's not the same, the NAT
+         * gateway will fail to launch. You can see the network border group for the
+         * subnet's AZ by viewing the details of the subnet. Similarly, you can view the
+         * network border group of an EIP by viewing the details of the EIP address. For
+         * more information about network border groups and EIPs, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+         * an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
          * API Reference</a></p>
          */
@@ -6288,8 +6307,9 @@ namespace EC2
          * resources that are associated with the VPC before you can delete it. For
          * example, you must terminate all instances running in the VPC, delete all
          * security groups associated with the VPC (except the default one), delete all
-         * route tables associated with the VPC (except the default one), and so
-         * on.</p><p><h3>See Also:</h3>   <a
+         * route tables associated with the VPC (except the default one), and so on. When
+         * you delete the VPC, it deletes the VPC's default security group, network ACL,
+         * and route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">AWS API
          * Reference</a></p>
          */
@@ -9001,8 +9021,12 @@ namespace EC2
         }
 
         /**
-         * <p>Describes one or more of your network interfaces.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes one or more of your network interfaces.</p> <p>If you have a large
+         * number of network interfaces, the operation fails unless you use pagination or
+         * one of the following filters: <code>group-id</code>, <code>mac-address</code>,
+         * <code>private-dns-name</code>, <code>private-ip-address</code>,
+         * <code>private-dns-name</code>, <code>subnet-id</code>, or
+         * <code>vpc-id</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">AWS
          * API Reference</a></p>
          */

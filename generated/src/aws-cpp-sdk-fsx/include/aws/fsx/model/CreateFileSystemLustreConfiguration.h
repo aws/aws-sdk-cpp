@@ -34,8 +34,8 @@ namespace Model
    * following parameters are not supported for file systems with a data repository
    * association created with .</p> <ul> <li> <p> <code>AutoImportPolicy</code> </p>
    * </li> <li> <p> <code>ExportPath</code> </p> </li> <li> <p>
-   * <code>ImportedChunkSize</code> </p> </li> <li> <p> <code>ImportPath</code> </p>
-   * </li> </ul> <p><h3>See Also:</h3>   <a
+   * <code>ImportedFileChunkSize</code> </p> </li> <li> <p> <code>ImportPath</code>
+   * </p> </li> </ul> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemLustreConfiguration">AWS
    * API Reference</a></p>
    */
