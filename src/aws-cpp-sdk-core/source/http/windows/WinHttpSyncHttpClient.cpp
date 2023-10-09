@@ -21,6 +21,7 @@
 #include <winhttp.h>
 #include <sstream>
 #include <iostream>
+#include <versionhelpers.h>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
@@ -52,10 +53,16 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
         << " request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);
 
 #if defined(WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY)
-    DWORD winhttpFlags = config.allowSystemProxy ? WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY : WINHTTP_ACCESS_TYPE_NO_PROXY;
+    DWORD winhttpFlags;
+    if (config.allowSystemProxy) {
+        winhttpFlags = IsWindows8Point1OrGreater()? WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY : WINHTTP_ACCESS_TYPE_DEFAULT_PROXY;
+    } else {
+        winhttpFlags = WINHTTP_ACCESS_TYPE_NO_PROXY;
+    }
 #else
     DWORD winhttpFlags = config.allowSystemProxy ? WINHTTP_ACCESS_TYPE_DEFAULT_PROXY : WINHTTP_ACCESS_TYPE_NO_PROXY;
 #endif
+
     const char* proxyHosts = nullptr;
     Aws::String strProxyHosts;
 
