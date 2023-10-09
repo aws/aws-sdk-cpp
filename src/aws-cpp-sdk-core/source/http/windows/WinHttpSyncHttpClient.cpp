@@ -52,15 +52,11 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " << config.maxConnections
         << " request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);
 
-#if defined(WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY)
-    DWORD winhttpFlags;
-    if (config.allowSystemProxy) {
-        winhttpFlags = IsWindows8Point1OrGreater()? WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY : WINHTTP_ACCESS_TYPE_DEFAULT_PROXY;
-    } else {
-        winhttpFlags = WINHTTP_ACCESS_TYPE_NO_PROXY;
-    }
-#else
     DWORD winhttpFlags = config.allowSystemProxy ? WINHTTP_ACCESS_TYPE_DEFAULT_PROXY : WINHTTP_ACCESS_TYPE_NO_PROXY;
+#if defined(WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY)
+    if (config.allowSystemProxy && IsWindows8Point1OrGreater()) {
+        winhttpFlags = WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY;
+    }
 #endif
 
     const char* proxyHosts = nullptr;
