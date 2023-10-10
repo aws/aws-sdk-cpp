@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StringComparisonType::NOT_SET:
+            return {};
           case StringComparisonType::STARTS_WITH:
             return "STARTS_WITH";
           case StringComparisonType::CONTAINS:

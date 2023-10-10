@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShareResourceType::NOT_SET:
+            return {};
           case ShareResourceType::WORKLOAD:
             return "WORKLOAD";
           case ShareResourceType::LENS:

@@ -154,6 +154,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateParamType::NOT_SET:
+            return {};
           case UpdateParamType::Version:
             return "Version";
           case UpdateParamType::PlatformVersion:

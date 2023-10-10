@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceAutoRecoveryState::NOT_SET:
+            return {};
           case InstanceAutoRecoveryState::disabled:
             return "disabled";
           case InstanceAutoRecoveryState::default_:

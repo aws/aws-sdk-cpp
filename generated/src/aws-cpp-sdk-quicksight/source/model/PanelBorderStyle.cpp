@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PanelBorderStyle::NOT_SET:
+            return {};
           case PanelBorderStyle::SOLID:
             return "SOLID";
           case PanelBorderStyle::DASHED:

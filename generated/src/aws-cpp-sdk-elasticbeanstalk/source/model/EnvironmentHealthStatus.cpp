@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentHealthStatus::NOT_SET:
+            return {};
           case EnvironmentHealthStatus::NoData:
             return "NoData";
           case EnvironmentHealthStatus::Unknown:

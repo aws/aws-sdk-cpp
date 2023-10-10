@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableFormat::NOT_SET:
+            return {};
           case TableFormat::Glue:
             return "Glue";
           case TableFormat::Iceberg:

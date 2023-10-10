@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataLocationConstraint::NOT_SET:
+            return {};
           case DataLocationConstraint::AnyLocation:
             return "AnyLocation";
           case DataLocationConstraint::SameContinent:

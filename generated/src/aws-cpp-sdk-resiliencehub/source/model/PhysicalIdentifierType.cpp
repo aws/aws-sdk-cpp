@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhysicalIdentifierType::NOT_SET:
+            return {};
           case PhysicalIdentifierType::Arn:
             return "Arn";
           case PhysicalIdentifierType::Native:

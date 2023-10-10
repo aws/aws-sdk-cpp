@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Partition::NOT_SET:
+            return {};
           case Partition::aws:
             return "aws";
           case Partition::aws_cn:

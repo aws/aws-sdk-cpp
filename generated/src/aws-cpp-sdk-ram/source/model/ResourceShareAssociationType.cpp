@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceShareAssociationType::NOT_SET:
+            return {};
           case ResourceShareAssociationType::PRINCIPAL:
             return "PRINCIPAL";
           case ResourceShareAssociationType::RESOURCE:

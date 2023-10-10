@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Channel::NOT_SET:
+            return {};
           case Channel::VOICE:
             return "VOICE";
           case Channel::CHAT:

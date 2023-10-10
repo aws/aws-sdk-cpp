@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisionTargetType::NOT_SET:
+            return {};
           case ProvisionTargetType::AWS_ACCOUNT:
             return "AWS_ACCOUNT";
           case ProvisionTargetType::ALL_PROVISIONED_ACCOUNTS:

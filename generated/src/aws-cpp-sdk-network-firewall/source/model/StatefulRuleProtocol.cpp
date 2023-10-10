@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatefulRuleProtocol::NOT_SET:
+            return {};
           case StatefulRuleProtocol::IP:
             return "IP";
           case StatefulRuleProtocol::TCP:

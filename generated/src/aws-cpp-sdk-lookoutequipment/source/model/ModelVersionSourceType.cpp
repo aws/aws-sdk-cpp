@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelVersionSourceType::NOT_SET:
+            return {};
           case ModelVersionSourceType::TRAINING:
             return "TRAINING";
           case ModelVersionSourceType::RETRAINING:

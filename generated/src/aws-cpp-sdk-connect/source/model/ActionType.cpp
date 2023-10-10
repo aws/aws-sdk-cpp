@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionType::NOT_SET:
+            return {};
           case ActionType::CREATE_TASK:
             return "CREATE_TASK";
           case ActionType::ASSIGN_CONTACT_CATEGORY:

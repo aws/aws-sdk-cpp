@@ -339,6 +339,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportableAutoScalingGroupField::NOT_SET:
+            return {};
           case ExportableAutoScalingGroupField::AccountId:
             return "AccountId";
           case ExportableAutoScalingGroupField::AutoScalingGroupArn:

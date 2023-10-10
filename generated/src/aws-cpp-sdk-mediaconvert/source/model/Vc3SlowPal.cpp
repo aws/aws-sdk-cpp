@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Vc3SlowPal::NOT_SET:
+            return {};
           case Vc3SlowPal::DISABLED:
             return "DISABLED";
           case Vc3SlowPal::ENABLED:

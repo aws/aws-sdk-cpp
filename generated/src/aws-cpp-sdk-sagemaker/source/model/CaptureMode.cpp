@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CaptureMode::NOT_SET:
+            return {};
           case CaptureMode::Input:
             return "Input";
           case CaptureMode::Output:

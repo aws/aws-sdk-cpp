@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisioningArtifactType::NOT_SET:
+            return {};
           case ProvisioningArtifactType::CLOUD_FORMATION_TEMPLATE:
             return "CLOUD_FORMATION_TEMPLATE";
           case ProvisioningArtifactType::MARKETPLACE_AMI:

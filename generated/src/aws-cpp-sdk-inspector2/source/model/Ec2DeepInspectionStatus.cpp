@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ec2DeepInspectionStatus::NOT_SET:
+            return {};
           case Ec2DeepInspectionStatus::ACTIVATED:
             return "ACTIVATED";
           case Ec2DeepInspectionStatus::DEACTIVATED:

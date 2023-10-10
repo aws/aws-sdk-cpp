@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VariableType::NOT_SET:
+            return {};
           case VariableType::INCIDENT_RECORD_ARN:
             return "INCIDENT_RECORD_ARN";
           case VariableType::INVOLVED_RESOURCES:

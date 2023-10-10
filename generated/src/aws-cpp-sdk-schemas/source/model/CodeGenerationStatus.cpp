@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CodeGenerationStatus::NOT_SET:
+            return {};
           case CodeGenerationStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case CodeGenerationStatus::CREATE_COMPLETE:

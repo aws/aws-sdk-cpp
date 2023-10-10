@@ -149,6 +149,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyUsage::NOT_SET:
+            return {};
           case KeyUsage::TR31_B0_BASE_DERIVATION_KEY:
             return "TR31_B0_BASE_DERIVATION_KEY";
           case KeyUsage::TR31_C0_CARD_VERIFICATION_KEY:

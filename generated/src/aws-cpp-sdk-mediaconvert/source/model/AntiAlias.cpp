@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AntiAlias::NOT_SET:
+            return {};
           case AntiAlias::DISABLED:
             return "DISABLED";
           case AntiAlias::ENABLED:

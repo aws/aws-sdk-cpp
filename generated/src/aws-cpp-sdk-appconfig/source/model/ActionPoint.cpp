@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionPoint::NOT_SET:
+            return {};
           case ActionPoint::PRE_CREATE_HOSTED_CONFIGURATION_VERSION:
             return "PRE_CREATE_HOSTED_CONFIGURATION_VERSION";
           case ActionPoint::PRE_START_DEPLOYMENT:

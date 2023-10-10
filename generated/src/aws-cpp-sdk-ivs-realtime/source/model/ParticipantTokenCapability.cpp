@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParticipantTokenCapability::NOT_SET:
+            return {};
           case ParticipantTokenCapability::PUBLISH:
             return "PUBLISH";
           case ParticipantTokenCapability::SUBSCRIBE:

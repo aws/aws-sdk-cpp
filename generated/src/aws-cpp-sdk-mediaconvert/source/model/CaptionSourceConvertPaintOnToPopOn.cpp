@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CaptionSourceConvertPaintOnToPopOn::NOT_SET:
+            return {};
           case CaptionSourceConvertPaintOnToPopOn::ENABLED:
             return "ENABLED";
           case CaptionSourceConvertPaintOnToPopOn::DISABLED:

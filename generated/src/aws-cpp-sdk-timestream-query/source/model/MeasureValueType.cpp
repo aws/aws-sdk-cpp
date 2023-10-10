@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MeasureValueType::NOT_SET:
+            return {};
           case MeasureValueType::BIGINT:
             return "BIGINT";
           case MeasureValueType::BOOLEAN:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Tenancy::NOT_SET:
+            return {};
           case Tenancy::default_:
             return "default";
           case Tenancy::dedicated:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExternalMetricsSource::NOT_SET:
+            return {};
           case ExternalMetricsSource::Datadog:
             return "Datadog";
           case ExternalMetricsSource::Dynatrace:

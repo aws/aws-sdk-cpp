@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WebserverAccessMode::NOT_SET:
+            return {};
           case WebserverAccessMode::PRIVATE_ONLY:
             return "PRIVATE_ONLY";
           case WebserverAccessMode::PUBLIC_ONLY:

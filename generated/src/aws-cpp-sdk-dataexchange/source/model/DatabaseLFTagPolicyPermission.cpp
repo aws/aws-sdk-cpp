@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatabaseLFTagPolicyPermission::NOT_SET:
+            return {};
           case DatabaseLFTagPolicyPermission::DESCRIBE:
             return "DESCRIBE";
           default:

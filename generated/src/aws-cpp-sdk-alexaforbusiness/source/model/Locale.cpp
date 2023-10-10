@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Locale::NOT_SET:
+            return {};
           case Locale::en_US:
             return "en-US";
           default:

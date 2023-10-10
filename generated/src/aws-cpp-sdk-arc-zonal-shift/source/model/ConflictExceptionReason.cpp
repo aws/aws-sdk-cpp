@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictExceptionReason::NOT_SET:
+            return {};
           case ConflictExceptionReason::ZonalShiftAlreadyExists:
             return "ZonalShiftAlreadyExists";
           case ConflictExceptionReason::ZonalShiftStatusNotActive:

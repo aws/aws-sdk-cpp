@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationItemType::NOT_SET:
+            return {};
           case ConfigurationItemType::SERVER:
             return "SERVER";
           case ConfigurationItemType::PROCESS:

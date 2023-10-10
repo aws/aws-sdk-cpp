@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChecksumMode::NOT_SET:
+            return {};
           case ChecksumMode::ENABLED:
             return "ENABLED";
           default:

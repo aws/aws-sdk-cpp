@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetGroupProtocol::NOT_SET:
+            return {};
           case TargetGroupProtocol::HTTP:
             return "HTTP";
           case TargetGroupProtocol::HTTPS:

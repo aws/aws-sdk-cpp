@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionGroup::NOT_SET:
+            return {};
           case ActionGroup::agentPermissions:
             return "agentPermissions";
           default:

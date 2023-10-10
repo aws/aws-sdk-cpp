@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EdgePackagingJobStatus::NOT_SET:
+            return {};
           case EdgePackagingJobStatus::STARTING:
             return "STARTING";
           case EdgePackagingJobStatus::INPROGRESS:

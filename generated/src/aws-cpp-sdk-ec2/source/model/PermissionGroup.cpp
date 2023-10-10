@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionGroup::NOT_SET:
+            return {};
           case PermissionGroup::all:
             return "all";
           default:

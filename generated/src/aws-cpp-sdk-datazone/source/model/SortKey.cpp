@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortKey::NOT_SET:
+            return {};
           case SortKey::CREATED_AT:
             return "CREATED_AT";
           case SortKey::UPDATED_AT:

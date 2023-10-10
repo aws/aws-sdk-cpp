@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceSyncStatus::NOT_SET:
+            return {};
           case ResourceSyncStatus::INITIATED:
             return "INITIATED";
           case ResourceSyncStatus::IN_PROGRESS:

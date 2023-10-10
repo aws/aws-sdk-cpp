@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceMetadataProtocolState::NOT_SET:
+            return {};
           case InstanceMetadataProtocolState::disabled:
             return "disabled";
           case InstanceMetadataProtocolState::enabled:

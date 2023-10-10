@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CheckProvider::NOT_SET:
+            return {};
           case CheckProvider::TRUSTED_ADVISOR:
             return "TRUSTED_ADVISOR";
           default:

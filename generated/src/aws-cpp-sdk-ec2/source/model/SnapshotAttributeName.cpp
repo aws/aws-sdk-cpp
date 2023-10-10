@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotAttributeName::NOT_SET:
+            return {};
           case SnapshotAttributeName::productCodes:
             return "productCodes";
           case SnapshotAttributeName::createVolumePermission:

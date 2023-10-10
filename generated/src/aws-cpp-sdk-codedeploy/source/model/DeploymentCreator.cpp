@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentCreator::NOT_SET:
+            return {};
           case DeploymentCreator::user:
             return "user";
           case DeploymentCreator::autoscaling:

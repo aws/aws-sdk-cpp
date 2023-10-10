@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotAttributeToSortBy::NOT_SET:
+            return {};
           case SnapshotAttributeToSortBy::SOURCE_TYPE:
             return "SOURCE_TYPE";
           case SnapshotAttributeToSortBy::TOTAL_SIZE:

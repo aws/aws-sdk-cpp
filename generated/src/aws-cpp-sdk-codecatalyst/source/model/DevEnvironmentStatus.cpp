@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DevEnvironmentStatus::NOT_SET:
+            return {};
           case DevEnvironmentStatus::PENDING:
             return "PENDING";
           case DevEnvironmentStatus::RUNNING:

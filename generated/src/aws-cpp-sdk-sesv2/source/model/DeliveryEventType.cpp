@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeliveryEventType::NOT_SET:
+            return {};
           case DeliveryEventType::SEND:
             return "SEND";
           case DeliveryEventType::DELIVERY:

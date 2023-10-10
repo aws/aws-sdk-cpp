@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionStatus::NOT_SET:
+            return {};
           case ExecutionStatus::OPEN:
             return "OPEN";
           case ExecutionStatus::CLOSED:

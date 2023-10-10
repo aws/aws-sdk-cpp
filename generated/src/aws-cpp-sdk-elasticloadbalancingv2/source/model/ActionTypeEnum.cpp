@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionTypeEnum::NOT_SET:
+            return {};
           case ActionTypeEnum::forward:
             return "forward";
           case ActionTypeEnum::authenticate_oidc:

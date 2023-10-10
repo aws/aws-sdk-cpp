@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CompleteWorkflowExecutionFailedCause::NOT_SET:
+            return {};
           case CompleteWorkflowExecutionFailedCause::UNHANDLED_DECISION:
             return "UNHANDLED_DECISION";
           case CompleteWorkflowExecutionFailedCause::OPERATION_NOT_PERMITTED:

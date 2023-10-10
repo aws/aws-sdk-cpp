@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryTransactionEventType::NOT_SET:
+            return {};
           case QueryTransactionEventType::ERC20_TRANSFER:
             return "ERC20_TRANSFER";
           case QueryTransactionEventType::ERC20_MINT:

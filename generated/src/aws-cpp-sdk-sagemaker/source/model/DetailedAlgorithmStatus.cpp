@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetailedAlgorithmStatus::NOT_SET:
+            return {};
           case DetailedAlgorithmStatus::NotStarted:
             return "NotStarted";
           case DetailedAlgorithmStatus::InProgress:

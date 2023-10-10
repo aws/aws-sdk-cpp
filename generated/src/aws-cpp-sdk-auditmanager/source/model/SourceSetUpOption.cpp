@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceSetUpOption::NOT_SET:
+            return {};
           case SourceSetUpOption::System_Controls_Mapping:
             return "System_Controls_Mapping";
           case SourceSetUpOption::Procedural_Controls_Mapping:

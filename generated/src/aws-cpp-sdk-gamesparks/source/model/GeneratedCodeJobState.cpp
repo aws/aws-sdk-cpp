@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GeneratedCodeJobState::NOT_SET:
+            return {};
           case GeneratedCodeJobState::IN_PROGRESS:
             return "IN_PROGRESS";
           case GeneratedCodeJobState::COMPLETED:

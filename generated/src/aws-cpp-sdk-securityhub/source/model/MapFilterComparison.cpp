@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MapFilterComparison::NOT_SET:
+            return {};
           case MapFilterComparison::EQUALS:
             return "EQUALS";
           case MapFilterComparison::NOT_EQUALS:

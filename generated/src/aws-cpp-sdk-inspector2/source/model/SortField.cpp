@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortField::NOT_SET:
+            return {};
           case SortField::AWS_ACCOUNT_ID:
             return "AWS_ACCOUNT_ID";
           case SortField::FINDING_TYPE:

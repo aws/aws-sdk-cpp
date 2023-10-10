@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HudiTargetCompressionType::NOT_SET:
+            return {};
           case HudiTargetCompressionType::gzip:
             return "gzip";
           case HudiTargetCompressionType::lzo:

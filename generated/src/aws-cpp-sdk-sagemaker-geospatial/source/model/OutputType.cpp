@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutputType::NOT_SET:
+            return {};
           case OutputType::INT32:
             return "INT32";
           case OutputType::FLOAT32:

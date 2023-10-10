@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceStatus::NOT_SET:
+            return {};
           case ServiceStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case ServiceStatus::CREATE_FAILED_CLEANUP_IN_PROGRESS:

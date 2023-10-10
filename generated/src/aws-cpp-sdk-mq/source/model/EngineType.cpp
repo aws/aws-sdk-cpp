@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EngineType::NOT_SET:
+            return {};
           case EngineType::ACTIVEMQ:
             return "ACTIVEMQ";
           case EngineType::RABBITMQ:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterKey::NOT_SET:
+            return {};
           case FilterKey::hasAccessTo:
             return "hasAccessTo";
           default:

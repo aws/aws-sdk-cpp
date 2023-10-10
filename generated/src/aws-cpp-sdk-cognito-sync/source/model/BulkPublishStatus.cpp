@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BulkPublishStatus::NOT_SET:
+            return {};
           case BulkPublishStatus::NOT_STARTED:
             return "NOT_STARTED";
           case BulkPublishStatus::IN_PROGRESS:

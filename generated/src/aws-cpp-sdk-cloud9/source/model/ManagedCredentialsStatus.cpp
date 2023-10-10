@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManagedCredentialsStatus::NOT_SET:
+            return {};
           case ManagedCredentialsStatus::ENABLED_ON_CREATE:
             return "ENABLED_ON_CREATE";
           case ManagedCredentialsStatus::ENABLED_BY_OWNER:

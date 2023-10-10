@@ -334,6 +334,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HistoryEventType::NOT_SET:
+            return {};
           case HistoryEventType::ActivityFailed:
             return "ActivityFailed";
           case HistoryEventType::ActivityScheduled:

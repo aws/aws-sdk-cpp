@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserIdentityType::NOT_SET:
+            return {};
           case UserIdentityType::AWSACCOUNT:
             return "AWSACCOUNT";
           case UserIdentityType::AWSSERVICE:

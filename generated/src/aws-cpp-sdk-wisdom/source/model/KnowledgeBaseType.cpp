@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KnowledgeBaseType::NOT_SET:
+            return {};
           case KnowledgeBaseType::EXTERNAL:
             return "EXTERNAL";
           case KnowledgeBaseType::CUSTOM:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateType::NOT_SET:
+            return {};
           case TemplateType::FLEET_PROVISIONING:
             return "FLEET_PROVISIONING";
           case TemplateType::JITP:

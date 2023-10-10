@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShipmentState::NOT_SET:
+            return {};
           case ShipmentState::RECEIVED:
             return "RECEIVED";
           case ShipmentState::RETURNED:

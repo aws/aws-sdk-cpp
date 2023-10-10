@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentMuxType::NOT_SET:
+            return {};
           case ContentMuxType::ContentOnly:
             return "ContentOnly";
           default:

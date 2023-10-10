@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CodegenGenericDataFieldDataType::NOT_SET:
+            return {};
           case CodegenGenericDataFieldDataType::ID:
             return "ID";
           case CodegenGenericDataFieldDataType::String:

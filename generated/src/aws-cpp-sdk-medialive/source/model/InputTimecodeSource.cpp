@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputTimecodeSource::NOT_SET:
+            return {};
           case InputTimecodeSource::ZEROBASED:
             return "ZEROBASED";
           case InputTimecodeSource::EMBEDDED:

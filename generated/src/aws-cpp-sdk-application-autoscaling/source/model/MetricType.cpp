@@ -154,6 +154,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricType::NOT_SET:
+            return {};
           case MetricType::DynamoDBReadCapacityUtilization:
             return "DynamoDBReadCapacityUtilization";
           case MetricType::DynamoDBWriteCapacityUtilization:

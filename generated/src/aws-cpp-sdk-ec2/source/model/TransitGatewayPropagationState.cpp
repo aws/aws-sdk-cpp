@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayPropagationState::NOT_SET:
+            return {};
           case TransitGatewayPropagationState::enabling:
             return "enabling";
           case TransitGatewayPropagationState::enabled:

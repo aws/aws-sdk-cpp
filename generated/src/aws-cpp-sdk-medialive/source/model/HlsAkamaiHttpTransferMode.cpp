@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsAkamaiHttpTransferMode::NOT_SET:
+            return {};
           case HlsAkamaiHttpTransferMode::CHUNKED:
             return "CHUNKED";
           case HlsAkamaiHttpTransferMode::NON_CHUNKED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsAudioOnlyHeader::NOT_SET:
+            return {};
           case HlsAudioOnlyHeader::INCLUDE:
             return "INCLUDE";
           case HlsAudioOnlyHeader::EXCLUDE:

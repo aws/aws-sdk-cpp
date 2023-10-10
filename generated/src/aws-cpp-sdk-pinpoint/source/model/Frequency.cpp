@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Frequency::NOT_SET:
+            return {};
           case Frequency::ONCE:
             return "ONCE";
           case Frequency::HOURLY:

@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScteFilter::NOT_SET:
+            return {};
           case ScteFilter::SPLICE_INSERT:
             return "SPLICE_INSERT";
           case ScteFilter::BREAK:

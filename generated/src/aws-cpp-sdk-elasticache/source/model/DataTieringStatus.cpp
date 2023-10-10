@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataTieringStatus::NOT_SET:
+            return {};
           case DataTieringStatus::enabled:
             return "enabled";
           case DataTieringStatus::disabled:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SampleRangeConversion::NOT_SET:
+            return {};
           case SampleRangeConversion::LIMITED_RANGE_SQUEEZE:
             return "LIMITED_RANGE_SQUEEZE";
           case SampleRangeConversion::NONE:

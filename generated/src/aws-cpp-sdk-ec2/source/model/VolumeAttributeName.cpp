@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VolumeAttributeName::NOT_SET:
+            return {};
           case VolumeAttributeName::autoEnableIO:
             return "autoEnableIO";
           case VolumeAttributeName::productCodes:

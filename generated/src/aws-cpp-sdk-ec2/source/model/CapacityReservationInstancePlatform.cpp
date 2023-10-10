@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityReservationInstancePlatform::NOT_SET:
+            return {};
           case CapacityReservationInstancePlatform::Linux_UNIX:
             return "Linux/UNIX";
           case CapacityReservationInstancePlatform::Red_Hat_Enterprise_Linux:

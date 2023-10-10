@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSource::NOT_SET:
+            return {};
           case DataSource::EVENT:
             return "EVENT";
           case DataSource::MODEL_SCORE:

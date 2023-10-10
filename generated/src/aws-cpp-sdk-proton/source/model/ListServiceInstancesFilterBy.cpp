@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListServiceInstancesFilterBy::NOT_SET:
+            return {};
           case ListServiceInstancesFilterBy::name:
             return "name";
           case ListServiceInstancesFilterBy::deploymentStatus:

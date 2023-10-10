@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SensitivityLevel::NOT_SET:
+            return {};
           case SensitivityLevel::LOW:
             return "LOW";
           case SensitivityLevel::HIGH:

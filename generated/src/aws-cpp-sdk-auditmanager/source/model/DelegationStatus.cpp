@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DelegationStatus::NOT_SET:
+            return {};
           case DelegationStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case DelegationStatus::UNDER_REVIEW:

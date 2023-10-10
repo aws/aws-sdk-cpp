@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotebookOutputOption::NOT_SET:
+            return {};
           case NotebookOutputOption::Allowed:
             return "Allowed";
           case NotebookOutputOption::Disabled:

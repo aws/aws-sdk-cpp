@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Telemetry::NOT_SET:
+            return {};
           case Telemetry::On:
             return "On";
           case Telemetry::Off:

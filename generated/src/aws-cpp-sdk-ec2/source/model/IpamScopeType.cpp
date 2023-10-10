@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamScopeType::NOT_SET:
+            return {};
           case IpamScopeType::public_:
             return "public";
           case IpamScopeType::private_:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppInstanceDataType::NOT_SET:
+            return {};
           case AppInstanceDataType::Channel:
             return "Channel";
           case AppInstanceDataType::ChannelMessage:

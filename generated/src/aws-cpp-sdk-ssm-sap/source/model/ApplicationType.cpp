@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationType::NOT_SET:
+            return {};
           case ApplicationType::HANA:
             return "HANA";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProductCodeValues::NOT_SET:
+            return {};
           case ProductCodeValues::devpay:
             return "devpay";
           case ProductCodeValues::marketplace:

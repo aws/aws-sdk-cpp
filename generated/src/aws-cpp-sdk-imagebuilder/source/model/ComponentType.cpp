@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComponentType::NOT_SET:
+            return {};
           case ComponentType::BUILD:
             return "BUILD";
           case ComponentType::TEST:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TriggerState::NOT_SET:
+            return {};
           case TriggerState::CREATING:
             return "CREATING";
           case TriggerState::CREATED:

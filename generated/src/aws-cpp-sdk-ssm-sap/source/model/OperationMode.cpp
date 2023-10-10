@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationMode::NOT_SET:
+            return {};
           case OperationMode::PRIMARY:
             return "PRIMARY";
           case OperationMode::LOGREPLAY:

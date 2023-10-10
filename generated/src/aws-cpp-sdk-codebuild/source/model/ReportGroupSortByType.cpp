@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportGroupSortByType::NOT_SET:
+            return {};
           case ReportGroupSortByType::NAME:
             return "NAME";
           case ReportGroupSortByType::CREATED_TIME:

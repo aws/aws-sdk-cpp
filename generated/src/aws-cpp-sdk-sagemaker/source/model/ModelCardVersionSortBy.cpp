@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelCardVersionSortBy::NOT_SET:
+            return {};
           case ModelCardVersionSortBy::Version:
             return "Version";
           default:

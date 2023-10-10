@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeliverabilityTestStatus::NOT_SET:
+            return {};
           case DeliverabilityTestStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case DeliverabilityTestStatus::COMPLETED:

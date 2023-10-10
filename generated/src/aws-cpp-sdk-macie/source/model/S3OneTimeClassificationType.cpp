@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3OneTimeClassificationType::NOT_SET:
+            return {};
           case S3OneTimeClassificationType::FULL:
             return "FULL";
           case S3OneTimeClassificationType::NONE:

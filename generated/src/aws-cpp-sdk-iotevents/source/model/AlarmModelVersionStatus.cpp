@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlarmModelVersionStatus::NOT_SET:
+            return {};
           case AlarmModelVersionStatus::ACTIVE:
             return "ACTIVE";
           case AlarmModelVersionStatus::ACTIVATING:

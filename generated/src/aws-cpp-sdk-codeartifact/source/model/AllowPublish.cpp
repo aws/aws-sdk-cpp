@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllowPublish::NOT_SET:
+            return {};
           case AllowPublish::ALLOW:
             return "ALLOW";
           case AllowPublish::BLOCK:

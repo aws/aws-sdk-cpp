@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RepositoryCloneMethod::NOT_SET:
+            return {};
           case RepositoryCloneMethod::SSH:
             return "SSH";
           case RepositoryCloneMethod::TOKEN:

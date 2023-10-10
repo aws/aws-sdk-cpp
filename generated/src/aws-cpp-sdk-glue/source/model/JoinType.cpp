@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JoinType::NOT_SET:
+            return {};
           case JoinType::equijoin:
             return "equijoin";
           case JoinType::left:

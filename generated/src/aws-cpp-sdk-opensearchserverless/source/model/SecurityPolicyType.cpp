@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SecurityPolicyType::NOT_SET:
+            return {};
           case SecurityPolicyType::encryption:
             return "encryption";
           case SecurityPolicyType::network:

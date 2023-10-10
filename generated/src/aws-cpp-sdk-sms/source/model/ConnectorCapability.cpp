@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectorCapability::NOT_SET:
+            return {};
           case ConnectorCapability::VSPHERE:
             return "VSPHERE";
           case ConnectorCapability::SCVMM:

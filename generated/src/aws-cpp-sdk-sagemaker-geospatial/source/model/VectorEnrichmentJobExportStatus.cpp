@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VectorEnrichmentJobExportStatus::NOT_SET:
+            return {};
           case VectorEnrichmentJobExportStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case VectorEnrichmentJobExportStatus::SUCCEEDED:

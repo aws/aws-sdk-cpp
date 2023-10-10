@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetType::NOT_SET:
+            return {};
           case AssetType::ec2_instance:
             return "ec2-instance";
           default:

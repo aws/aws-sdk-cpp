@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationFilterKey::NOT_SET:
+            return {};
           case AssociationFilterKey::InstanceId:
             return "InstanceId";
           case AssociationFilterKey::Name:

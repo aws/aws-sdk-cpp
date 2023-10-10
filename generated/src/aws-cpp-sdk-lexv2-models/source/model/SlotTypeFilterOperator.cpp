@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlotTypeFilterOperator::NOT_SET:
+            return {};
           case SlotTypeFilterOperator::CO:
             return "CO";
           case SlotTypeFilterOperator::EQ:

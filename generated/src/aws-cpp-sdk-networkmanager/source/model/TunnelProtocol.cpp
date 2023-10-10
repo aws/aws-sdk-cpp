@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TunnelProtocol::NOT_SET:
+            return {};
           case TunnelProtocol::GRE:
             return "GRE";
           default:

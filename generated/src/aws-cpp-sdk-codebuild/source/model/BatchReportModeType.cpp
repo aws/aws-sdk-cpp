@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchReportModeType::NOT_SET:
+            return {};
           case BatchReportModeType::REPORT_INDIVIDUAL_BUILDS:
             return "REPORT_INDIVIDUAL_BUILDS";
           case BatchReportModeType::REPORT_AGGREGATED_BATCH:

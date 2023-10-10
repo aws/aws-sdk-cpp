@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioNormalizationAlgorithm::NOT_SET:
+            return {};
           case AudioNormalizationAlgorithm::ITU_BS_1770_1:
             return "ITU_BS_1770_1";
           case AudioNormalizationAlgorithm::ITU_BS_1770_2:

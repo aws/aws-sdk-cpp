@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentStatus::NOT_SET:
+            return {};
           case EnvironmentStatus::Aborting:
             return "Aborting";
           case EnvironmentStatus::Launching:

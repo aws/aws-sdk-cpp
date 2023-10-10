@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventSourceName::NOT_SET:
+            return {};
           case EventSourceName::OnPostCallAnalysisAvailable:
             return "OnPostCallAnalysisAvailable";
           case EventSourceName::OnRealTimeCallAnalysisAvailable:

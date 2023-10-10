@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetType::NOT_SET:
+            return {};
           case AssetType::S3_SNAPSHOT:
             return "S3_SNAPSHOT";
           case AssetType::REDSHIFT_DATA_SHARE:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManagedAgentName::NOT_SET:
+            return {};
           case ManagedAgentName::ExecuteCommandAgent:
             return "ExecuteCommandAgent";
           default:

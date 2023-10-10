@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelCardProcessingStatus::NOT_SET:
+            return {};
           case ModelCardProcessingStatus::DeleteInProgress:
             return "DeleteInProgress";
           case ModelCardProcessingStatus::DeletePending:

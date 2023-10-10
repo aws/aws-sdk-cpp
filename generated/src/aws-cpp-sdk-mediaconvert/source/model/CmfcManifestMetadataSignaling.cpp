@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmfcManifestMetadataSignaling::NOT_SET:
+            return {};
           case CmfcManifestMetadataSignaling::ENABLED:
             return "ENABLED";
           case CmfcManifestMetadataSignaling::DISABLED:

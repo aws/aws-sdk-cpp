@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LongTermPricingType::NOT_SET:
+            return {};
           case LongTermPricingType::OneYear:
             return "OneYear";
           case LongTermPricingType::ThreeYear:

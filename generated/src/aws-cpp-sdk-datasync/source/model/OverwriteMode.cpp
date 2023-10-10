@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OverwriteMode::NOT_SET:
+            return {};
           case OverwriteMode::ALWAYS:
             return "ALWAYS";
           case OverwriteMode::NEVER:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupSearchType::NOT_SET:
+            return {};
           case GroupSearchType::SSO_GROUP:
             return "SSO_GROUP";
           case GroupSearchType::DATAZONE_SSO_GROUP:

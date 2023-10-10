@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamView::NOT_SET:
+            return {};
           case StreamView::APP:
             return "APP";
           case StreamView::DESKTOP:

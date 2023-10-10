@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SyncJobState::NOT_SET:
+            return {};
           case SyncJobState::CREATING:
             return "CREATING";
           case SyncJobState::INITIALIZING:

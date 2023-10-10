@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientVpnRouteStatusCode::NOT_SET:
+            return {};
           case ClientVpnRouteStatusCode::creating:
             return "creating";
           case ClientVpnRouteStatusCode::active:

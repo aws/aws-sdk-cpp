@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceQuotaTemplateAssociationStatus::NOT_SET:
+            return {};
           case ServiceQuotaTemplateAssociationStatus::ASSOCIATED:
             return "ASSOCIATED";
           case ServiceQuotaTemplateAssociationStatus::DISASSOCIATED:

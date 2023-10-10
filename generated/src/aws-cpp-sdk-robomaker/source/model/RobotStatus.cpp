@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RobotStatus::NOT_SET:
+            return {};
           case RobotStatus::Available:
             return "Available";
           case RobotStatus::Registered:

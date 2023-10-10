@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamResourceType::NOT_SET:
+            return {};
           case IpamResourceType::vpc:
             return "vpc";
           case IpamResourceType::subnet:

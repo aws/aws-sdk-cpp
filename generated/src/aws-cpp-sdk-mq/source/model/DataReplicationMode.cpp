@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataReplicationMode::NOT_SET:
+            return {};
           case DataReplicationMode::NONE:
             return "NONE";
           case DataReplicationMode::CRDR:

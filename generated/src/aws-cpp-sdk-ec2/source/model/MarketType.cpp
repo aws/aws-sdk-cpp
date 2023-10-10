@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MarketType::NOT_SET:
+            return {};
           case MarketType::spot:
             return "spot";
           default:

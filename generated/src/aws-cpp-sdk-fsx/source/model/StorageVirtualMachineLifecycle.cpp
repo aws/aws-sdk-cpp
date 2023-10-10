@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageVirtualMachineLifecycle::NOT_SET:
+            return {};
           case StorageVirtualMachineLifecycle::CREATED:
             return "CREATED";
           case StorageVirtualMachineLifecycle::CREATING:

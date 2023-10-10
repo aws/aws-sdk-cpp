@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlacementGroupState::NOT_SET:
+            return {};
           case PlacementGroupState::pending:
             return "pending";
           case PlacementGroupState::available:

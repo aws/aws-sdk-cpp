@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case State::NOT_SET:
+            return {};
           case State::PendingAcceptance:
             return "PendingAcceptance";
           case State::Pending:

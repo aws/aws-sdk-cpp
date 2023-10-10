@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociatedTranscriptFilterName::NOT_SET:
+            return {};
           case AssociatedTranscriptFilterName::IntentId:
             return "IntentId";
           case AssociatedTranscriptFilterName::SlotTypeId:

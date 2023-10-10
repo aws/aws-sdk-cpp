@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265AlternateTransferFunctionSei::NOT_SET:
+            return {};
           case H265AlternateTransferFunctionSei::DISABLED:
             return "DISABLED";
           case H265AlternateTransferFunctionSei::ENABLED:

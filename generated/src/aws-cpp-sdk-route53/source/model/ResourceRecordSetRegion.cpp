@@ -189,6 +189,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceRecordSetRegion::NOT_SET:
+            return {};
           case ResourceRecordSetRegion::us_east_1:
             return "us-east-1";
           case ResourceRecordSetRegion::us_east_2:

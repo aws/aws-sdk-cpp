@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SavingsPlanRateServiceCode::NOT_SET:
+            return {};
           case SavingsPlanRateServiceCode::AmazonEC2:
             return "AmazonEC2";
           case SavingsPlanRateServiceCode::AmazonECS:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationType::NOT_SET:
+            return {};
           case RecommendationType::DKIM:
             return "DKIM";
           case RecommendationType::DMARC:

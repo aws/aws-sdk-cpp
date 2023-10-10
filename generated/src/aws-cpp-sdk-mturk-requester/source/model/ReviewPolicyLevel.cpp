@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReviewPolicyLevel::NOT_SET:
+            return {};
           case ReviewPolicyLevel::Assignment:
             return "Assignment";
           case ReviewPolicyLevel::HIT:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchActionCategory::NOT_SET:
+            return {};
           case LaunchActionCategory::MONITORING:
             return "MONITORING";
           case LaunchActionCategory::VALIDATION:

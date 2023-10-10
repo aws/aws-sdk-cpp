@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MultiplexState::NOT_SET:
+            return {};
           case MultiplexState::CREATING:
             return "CREATING";
           case MultiplexState::CREATE_FAILED:

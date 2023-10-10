@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProjectVersionStatus::NOT_SET:
+            return {};
           case ProjectVersionStatus::TRAINING_IN_PROGRESS:
             return "TRAINING_IN_PROGRESS";
           case ProjectVersionStatus::TRAINING_COMPLETED:

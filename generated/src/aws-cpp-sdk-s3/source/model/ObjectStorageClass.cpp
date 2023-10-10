@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectStorageClass::NOT_SET:
+            return {};
           case ObjectStorageClass::STANDARD:
             return "STANDARD";
           case ObjectStorageClass::REDUCED_REDUNDANCY:

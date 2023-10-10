@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MpdTimedMetadataBoxVersion::NOT_SET:
+            return {};
           case MpdTimedMetadataBoxVersion::VERSION_0:
             return "VERSION_0";
           case MpdTimedMetadataBoxVersion::VERSION_1:

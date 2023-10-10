@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdditionalS3DataSourceDataType::NOT_SET:
+            return {};
           case AdditionalS3DataSourceDataType::S3Object:
             return "S3Object";
           default:

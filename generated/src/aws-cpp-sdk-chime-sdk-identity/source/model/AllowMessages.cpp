@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllowMessages::NOT_SET:
+            return {};
           case AllowMessages::ALL:
             return "ALL";
           case AllowMessages::NONE:

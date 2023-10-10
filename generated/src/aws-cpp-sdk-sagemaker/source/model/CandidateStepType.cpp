@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CandidateStepType::NOT_SET:
+            return {};
           case CandidateStepType::AWS_SageMaker_TrainingJob:
             return "AWS::SageMaker::TrainingJob";
           case CandidateStepType::AWS_SageMaker_TransformJob:

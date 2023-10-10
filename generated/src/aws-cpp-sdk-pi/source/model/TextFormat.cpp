@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TextFormat::NOT_SET:
+            return {};
           case TextFormat::PLAIN_TEXT:
             return "PLAIN_TEXT";
           case TextFormat::MARKDOWN:

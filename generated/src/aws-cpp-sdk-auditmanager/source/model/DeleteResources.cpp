@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeleteResources::NOT_SET:
+            return {};
           case DeleteResources::ALL:
             return "ALL";
           case DeleteResources::DEFAULT:

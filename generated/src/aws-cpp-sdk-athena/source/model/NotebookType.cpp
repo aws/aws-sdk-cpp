@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotebookType::NOT_SET:
+            return {};
           case NotebookType::IPYNB:
             return "IPYNB";
           default:

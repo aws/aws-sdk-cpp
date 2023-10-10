@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActiveSpeakerPosition::NOT_SET:
+            return {};
           case ActiveSpeakerPosition::TopLeft:
             return "TopLeft";
           case ActiveSpeakerPosition::TopRight:

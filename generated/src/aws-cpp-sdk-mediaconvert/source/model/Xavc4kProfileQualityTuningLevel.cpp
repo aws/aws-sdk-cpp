@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Xavc4kProfileQualityTuningLevel::NOT_SET:
+            return {};
           case Xavc4kProfileQualityTuningLevel::SINGLE_PASS:
             return "SINGLE_PASS";
           case Xavc4kProfileQualityTuningLevel::SINGLE_PASS_HQ:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservationMaximumBitrate::NOT_SET:
+            return {};
           case ReservationMaximumBitrate::MAX_10_MBPS:
             return "MAX_10_MBPS";
           case ReservationMaximumBitrate::MAX_20_MBPS:

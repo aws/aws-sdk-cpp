@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CodeRepositorySortBy::NOT_SET:
+            return {};
           case CodeRepositorySortBy::Name:
             return "Name";
           case CodeRepositorySortBy::CreationTime:

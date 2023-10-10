@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2FramerateConversionAlgorithm::NOT_SET:
+            return {};
           case Mpeg2FramerateConversionAlgorithm::DUPLICATE_DROP:
             return "DUPLICATE_DROP";
           case Mpeg2FramerateConversionAlgorithm::INTERPOLATE:

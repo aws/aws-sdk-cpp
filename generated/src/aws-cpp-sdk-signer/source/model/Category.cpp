@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Category::NOT_SET:
+            return {};
           case Category::AWSIoT:
             return "AWSIoT";
           default:

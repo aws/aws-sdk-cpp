@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KxAzMode::NOT_SET:
+            return {};
           case KxAzMode::SINGLE:
             return "SINGLE";
           case KxAzMode::MULTI:

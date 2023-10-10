@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImdsSupportValues::NOT_SET:
+            return {};
           case ImdsSupportValues::v2_0:
             return "v2.0";
           default:

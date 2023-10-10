@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceNowBuildVersionType::NOT_SET:
+            return {};
           case ServiceNowBuildVersionType::LONDON:
             return "LONDON";
           case ServiceNowBuildVersionType::OTHERS:

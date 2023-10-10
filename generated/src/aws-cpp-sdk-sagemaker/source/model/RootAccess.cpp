@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RootAccess::NOT_SET:
+            return {};
           case RootAccess::Enabled:
             return "Enabled";
           case RootAccess::Disabled:

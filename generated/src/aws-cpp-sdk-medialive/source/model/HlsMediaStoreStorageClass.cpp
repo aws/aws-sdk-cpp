@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsMediaStoreStorageClass::NOT_SET:
+            return {};
           case HlsMediaStoreStorageClass::TEMPORAL:
             return "TEMPORAL";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectInternetAccess::NOT_SET:
+            return {};
           case DirectInternetAccess::Enabled:
             return "Enabled";
           case DirectInternetAccess::Disabled:

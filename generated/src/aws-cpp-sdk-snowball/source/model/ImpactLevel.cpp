@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImpactLevel::NOT_SET:
+            return {};
           case ImpactLevel::IL2:
             return "IL2";
           case ImpactLevel::IL4:

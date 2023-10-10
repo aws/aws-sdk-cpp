@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpaceStatus::NOT_SET:
+            return {};
           case SpaceStatus::Deleting:
             return "Deleting";
           case SpaceStatus::Failed:

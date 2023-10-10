@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KafkaSaslMechanism::NOT_SET:
+            return {};
           case KafkaSaslMechanism::scram_sha_512:
             return "scram-sha-512";
           case KafkaSaslMechanism::plain:

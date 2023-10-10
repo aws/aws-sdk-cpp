@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamespaceDeletionStatusErrorCodes::NOT_SET:
+            return {};
           case NamespaceDeletionStatusErrorCodes::VALIDATION_FAILED:
             return "VALIDATION_FAILED";
           default:

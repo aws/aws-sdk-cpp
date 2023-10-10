@@ -359,6 +359,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Timezone::NOT_SET:
+            return {};
           case Timezone::UTC:
             return "UTC";
           case Timezone::AFRICA_JOHANNESBURG:

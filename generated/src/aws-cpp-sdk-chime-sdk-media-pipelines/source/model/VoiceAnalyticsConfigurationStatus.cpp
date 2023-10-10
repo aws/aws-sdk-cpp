@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VoiceAnalyticsConfigurationStatus::NOT_SET:
+            return {};
           case VoiceAnalyticsConfigurationStatus::Enabled:
             return "Enabled";
           case VoiceAnalyticsConfigurationStatus::Disabled:

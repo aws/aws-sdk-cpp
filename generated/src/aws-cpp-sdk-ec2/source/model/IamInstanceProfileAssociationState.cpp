@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IamInstanceProfileAssociationState::NOT_SET:
+            return {};
           case IamInstanceProfileAssociationState::associating:
             return "associating";
           case IamInstanceProfileAssociationState::associated:

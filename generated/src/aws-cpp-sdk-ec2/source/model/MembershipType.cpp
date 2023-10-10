@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MembershipType::NOT_SET:
+            return {};
           case MembershipType::static_:
             return "static";
           case MembershipType::igmp:

@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackupJobState::NOT_SET:
+            return {};
           case BackupJobState::CREATED:
             return "CREATED";
           case BackupJobState::PENDING:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte35InputMode::NOT_SET:
+            return {};
           case Scte35InputMode::FIXED:
             return "FIXED";
           case Scte35InputMode::FOLLOW_ACTIVE:

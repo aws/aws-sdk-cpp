@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpotProvisioningAllocationStrategy::NOT_SET:
+            return {};
           case SpotProvisioningAllocationStrategy::capacity_optimized:
             return "capacity-optimized";
           case SpotProvisioningAllocationStrategy::price_capacity_optimized:

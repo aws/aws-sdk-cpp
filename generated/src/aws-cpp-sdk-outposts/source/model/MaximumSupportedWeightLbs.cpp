@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MaximumSupportedWeightLbs::NOT_SET:
+            return {};
           case MaximumSupportedWeightLbs::NO_LIMIT:
             return "NO_LIMIT";
           case MaximumSupportedWeightLbs::MAX_1400_LBS:

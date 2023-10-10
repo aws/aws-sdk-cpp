@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchLoadStatus::NOT_SET:
+            return {};
           case BatchLoadStatus::CREATED:
             return "CREATED";
           case BatchLoadStatus::IN_PROGRESS:

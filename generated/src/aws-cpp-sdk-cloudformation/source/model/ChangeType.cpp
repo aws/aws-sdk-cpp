@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeType::NOT_SET:
+            return {};
           case ChangeType::Resource:
             return "Resource";
           default:

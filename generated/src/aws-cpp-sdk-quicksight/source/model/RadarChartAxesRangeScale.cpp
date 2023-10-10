@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RadarChartAxesRangeScale::NOT_SET:
+            return {};
           case RadarChartAxesRangeScale::AUTO:
             return "AUTO";
           case RadarChartAxesRangeScale::INDEPENDENT:

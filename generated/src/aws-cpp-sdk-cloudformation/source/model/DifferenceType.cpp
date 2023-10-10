@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DifferenceType::NOT_SET:
+            return {};
           case DifferenceType::ADD:
             return "ADD";
           case DifferenceType::REMOVE:

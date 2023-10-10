@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrustDirection::NOT_SET:
+            return {};
           case TrustDirection::One_Way_Outgoing:
             return "One-Way: Outgoing";
           case TrustDirection::One_Way_Incoming:

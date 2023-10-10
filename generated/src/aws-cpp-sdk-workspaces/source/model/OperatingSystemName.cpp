@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperatingSystemName::NOT_SET:
+            return {};
           case OperatingSystemName::AMAZON_LINUX_2:
             return "AMAZON_LINUX_2";
           case OperatingSystemName::UBUNTU_18_04:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PredictiveScalingMode::NOT_SET:
+            return {};
           case PredictiveScalingMode::ForecastAndScale:
             return "ForecastAndScale";
           case PredictiveScalingMode::ForecastOnly:

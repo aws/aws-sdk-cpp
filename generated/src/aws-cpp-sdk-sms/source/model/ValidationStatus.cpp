@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationStatus::NOT_SET:
+            return {};
           case ValidationStatus::READY_FOR_VALIDATION:
             return "READY_FOR_VALIDATION";
           case ValidationStatus::PENDING:

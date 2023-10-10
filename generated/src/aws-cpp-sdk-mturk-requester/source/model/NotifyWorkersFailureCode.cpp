@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotifyWorkersFailureCode::NOT_SET:
+            return {};
           case NotifyWorkersFailureCode::SoftFailure:
             return "SoftFailure";
           case NotifyWorkersFailureCode::HardFailure:

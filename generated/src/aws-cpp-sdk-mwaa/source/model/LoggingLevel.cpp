@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoggingLevel::NOT_SET:
+            return {};
           case LoggingLevel::CRITICAL:
             return "CRITICAL";
           case LoggingLevel::ERROR_:

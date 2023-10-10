@@ -194,6 +194,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportableVolumeField::NOT_SET:
+            return {};
           case ExportableVolumeField::AccountId:
             return "AccountId";
           case ExportableVolumeField::VolumeArn:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FillingType::NOT_SET:
+            return {};
           case FillingType::frontfill:
             return "frontfill";
           case FillingType::middlefill:

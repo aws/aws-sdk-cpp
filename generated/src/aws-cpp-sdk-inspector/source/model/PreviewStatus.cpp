@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PreviewStatus::NOT_SET:
+            return {};
           case PreviewStatus::WORK_IN_PROGRESS:
             return "WORK_IN_PROGRESS";
           case PreviewStatus::COMPLETED:

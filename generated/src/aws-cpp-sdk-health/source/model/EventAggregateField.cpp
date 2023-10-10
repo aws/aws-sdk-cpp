@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventAggregateField::NOT_SET:
+            return {};
           case EventAggregateField::eventTypeCategory:
             return "eventTypeCategory";
           default:

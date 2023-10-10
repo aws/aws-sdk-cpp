@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackupVaultEvent::NOT_SET:
+            return {};
           case BackupVaultEvent::BACKUP_JOB_STARTED:
             return "BACKUP_JOB_STARTED";
           case BackupVaultEvent::BACKUP_JOB_COMPLETED:

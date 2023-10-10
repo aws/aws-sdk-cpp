@@ -514,6 +514,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpenSearchPartitionInstanceType::NOT_SET:
+            return {};
           case OpenSearchPartitionInstanceType::m3_medium_search:
             return "m3.medium.search";
           case OpenSearchPartitionInstanceType::m3_large_search:

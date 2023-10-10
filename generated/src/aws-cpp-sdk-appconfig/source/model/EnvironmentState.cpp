@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentState::NOT_SET:
+            return {};
           case EnvironmentState::READY_FOR_DEPLOYMENT:
             return "READY_FOR_DEPLOYMENT";
           case EnvironmentState::DEPLOYING:

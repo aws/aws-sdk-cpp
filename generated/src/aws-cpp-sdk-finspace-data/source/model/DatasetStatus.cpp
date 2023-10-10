@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasetStatus::NOT_SET:
+            return {};
           case DatasetStatus::PENDING:
             return "PENDING";
           case DatasetStatus::FAILED:

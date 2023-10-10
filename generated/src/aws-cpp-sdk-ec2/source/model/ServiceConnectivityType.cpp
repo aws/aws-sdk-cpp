@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceConnectivityType::NOT_SET:
+            return {};
           case ServiceConnectivityType::ipv4:
             return "ipv4";
           case ServiceConnectivityType::ipv6:

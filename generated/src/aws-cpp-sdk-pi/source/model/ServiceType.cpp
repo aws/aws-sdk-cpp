@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceType::NOT_SET:
+            return {};
           case ServiceType::RDS:
             return "RDS";
           case ServiceType::DOCDB:

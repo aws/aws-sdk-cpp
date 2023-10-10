@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VisualCustomActionTrigger::NOT_SET:
+            return {};
           case VisualCustomActionTrigger::DATA_POINT_CLICK:
             return "DATA_POINT_CLICK";
           case VisualCustomActionTrigger::DATA_POINT_MENU:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265InterlaceMode::NOT_SET:
+            return {};
           case H265InterlaceMode::PROGRESSIVE:
             return "PROGRESSIVE";
           case H265InterlaceMode::TOP_FIELD:

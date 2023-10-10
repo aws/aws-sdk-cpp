@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolverRuleStatus::NOT_SET:
+            return {};
           case ResolverRuleStatus::COMPLETE:
             return "COMPLETE";
           case ResolverRuleStatus::DELETING:

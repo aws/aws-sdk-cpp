@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncodingTypeValue::NOT_SET:
+            return {};
           case EncodingTypeValue::plain:
             return "plain";
           case EncodingTypeValue::plain_dictionary:

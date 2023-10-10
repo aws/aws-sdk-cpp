@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccelerationStatus::NOT_SET:
+            return {};
           case AccelerationStatus::NOT_APPLICABLE:
             return "NOT_APPLICABLE";
           case AccelerationStatus::IN_PROGRESS:

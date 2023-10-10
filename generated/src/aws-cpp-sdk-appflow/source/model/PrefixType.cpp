@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrefixType::NOT_SET:
+            return {};
           case PrefixType::FILENAME:
             return "FILENAME";
           case PrefixType::PATH:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProfilingStatus::NOT_SET:
+            return {};
           case ProfilingStatus::Enabled:
             return "Enabled";
           case ProfilingStatus::Disabled:

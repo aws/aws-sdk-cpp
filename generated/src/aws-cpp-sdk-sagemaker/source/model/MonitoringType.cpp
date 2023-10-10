@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitoringType::NOT_SET:
+            return {};
           case MonitoringType::DataQuality:
             return "DataQuality";
           case MonitoringType::ModelQuality:

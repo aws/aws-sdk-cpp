@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceUsageType::NOT_SET:
+            return {};
           case DeviceUsageType::VOICE:
             return "VOICE";
           default:

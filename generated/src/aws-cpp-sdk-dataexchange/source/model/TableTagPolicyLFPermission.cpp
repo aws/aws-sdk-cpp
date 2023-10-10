@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableTagPolicyLFPermission::NOT_SET:
+            return {};
           case TableTagPolicyLFPermission::DESCRIBE:
             return "DESCRIBE";
           case TableTagPolicyLFPermission::SELECT:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LDAPSType::NOT_SET:
+            return {};
           case LDAPSType::Client:
             return "Client";
           default:

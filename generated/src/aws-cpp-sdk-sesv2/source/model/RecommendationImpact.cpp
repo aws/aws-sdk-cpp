@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationImpact::NOT_SET:
+            return {};
           case RecommendationImpact::LOW:
             return "LOW";
           case RecommendationImpact::HIGH:

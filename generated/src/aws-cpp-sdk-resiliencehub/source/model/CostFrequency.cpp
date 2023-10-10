@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostFrequency::NOT_SET:
+            return {};
           case CostFrequency::Hourly:
             return "Hourly";
           case CostFrequency::Daily:

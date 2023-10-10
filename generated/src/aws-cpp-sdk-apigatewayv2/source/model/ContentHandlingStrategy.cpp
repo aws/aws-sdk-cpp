@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentHandlingStrategy::NOT_SET:
+            return {};
           case ContentHandlingStrategy::CONVERT_TO_BINARY:
             return "CONVERT_TO_BINARY";
           case ContentHandlingStrategy::CONVERT_TO_TEXT:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThirdPartyType::NOT_SET:
+            return {};
           case ThirdPartyType::RESOURCE:
             return "RESOURCE";
           case ThirdPartyType::MODULE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterType::NOT_SET:
+            return {};
           case FilterType::SYSTEM:
             return "SYSTEM";
           case FilterType::ENDPOINT:

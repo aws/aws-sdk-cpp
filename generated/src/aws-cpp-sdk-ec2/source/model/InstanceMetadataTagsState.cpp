@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceMetadataTagsState::NOT_SET:
+            return {};
           case InstanceMetadataTagsState::disabled:
             return "disabled";
           case InstanceMetadataTagsState::enabled:

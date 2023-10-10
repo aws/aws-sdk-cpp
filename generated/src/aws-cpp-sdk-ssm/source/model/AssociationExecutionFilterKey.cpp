@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationExecutionFilterKey::NOT_SET:
+            return {};
           case AssociationExecutionFilterKey::ExecutionId:
             return "ExecutionId";
           case AssociationExecutionFilterKey::Status:

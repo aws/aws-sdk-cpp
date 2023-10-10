@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableFieldIconSetType::NOT_SET:
+            return {};
           case TableFieldIconSetType::LINK:
             return "LINK";
           default:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterIssueCode::NOT_SET:
+            return {};
           case ClusterIssueCode::AccessDenied:
             return "AccessDenied";
           case ClusterIssueCode::ClusterUnreachable:

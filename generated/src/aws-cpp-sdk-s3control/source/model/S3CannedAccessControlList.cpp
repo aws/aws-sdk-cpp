@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3CannedAccessControlList::NOT_SET:
+            return {};
           case S3CannedAccessControlList::private_:
             return "private";
           case S3CannedAccessControlList::public_read:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PeeringType::NOT_SET:
+            return {};
           case PeeringType::TRANSIT_GATEWAY:
             return "TRANSIT_GATEWAY";
           default:

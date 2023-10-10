@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceEventType::NOT_SET:
+            return {};
           case DeviceEventType::CONNECTION_STATUS:
             return "CONNECTION_STATUS";
           case DeviceEventType::DEVICE_STATUS:

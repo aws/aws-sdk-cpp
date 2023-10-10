@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Question::NOT_SET:
+            return {};
           case Question::UNANSWERED:
             return "UNANSWERED";
           case Question::ANSWERED:

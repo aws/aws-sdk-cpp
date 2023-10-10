@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::AssignmentAccepted:
             return "AssignmentAccepted";
           case EventType::AssignmentAbandoned:

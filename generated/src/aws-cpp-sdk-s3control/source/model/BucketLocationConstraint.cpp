@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BucketLocationConstraint::NOT_SET:
+            return {};
           case BucketLocationConstraint::EU:
             return "EU";
           case BucketLocationConstraint::eu_west_1:

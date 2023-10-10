@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HttpEndpointS3BackupMode::NOT_SET:
+            return {};
           case HttpEndpointS3BackupMode::FailedDataOnly:
             return "FailedDataOnly";
           case HttpEndpointS3BackupMode::AllData:

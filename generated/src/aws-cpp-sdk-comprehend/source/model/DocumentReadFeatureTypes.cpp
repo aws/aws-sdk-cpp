@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentReadFeatureTypes::NOT_SET:
+            return {};
           case DocumentReadFeatureTypes::TABLES:
             return "TABLES";
           case DocumentReadFeatureTypes::FORMS:

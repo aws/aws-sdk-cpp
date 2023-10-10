@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyType::NOT_SET:
+            return {};
           case PolicyType::SERVICE_CONTROL_POLICY:
             return "SERVICE_CONTROL_POLICY";
           case PolicyType::TAG_POLICY:

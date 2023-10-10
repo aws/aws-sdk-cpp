@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterType::NOT_SET:
+            return {};
           case FilterType::TERM_MATCH:
             return "TERM_MATCH";
           default:

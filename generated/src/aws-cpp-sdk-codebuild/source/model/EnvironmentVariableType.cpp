@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentVariableType::NOT_SET:
+            return {};
           case EnvironmentVariableType::PLAINTEXT:
             return "PLAINTEXT";
           case EnvironmentVariableType::PARAMETER_STORE:

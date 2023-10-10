@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelModality::NOT_SET:
+            return {};
           case ModelModality::TEXT:
             return "TEXT";
           case ModelModality::IMAGE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserAssignment::NOT_SET:
+            return {};
           case UserAssignment::AUTOMATIC:
             return "AUTOMATIC";
           case UserAssignment::MANUAL:

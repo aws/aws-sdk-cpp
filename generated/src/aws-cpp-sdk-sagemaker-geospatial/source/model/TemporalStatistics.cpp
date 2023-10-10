@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemporalStatistics::NOT_SET:
+            return {};
           case TemporalStatistics::MEAN:
             return "MEAN";
           case TemporalStatistics::MEDIAN:

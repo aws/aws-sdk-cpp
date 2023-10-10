@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdministrativeActionType::NOT_SET:
+            return {};
           case AdministrativeActionType::FILE_SYSTEM_UPDATE:
             return "FILE_SYSTEM_UPDATE";
           case AdministrativeActionType::STORAGE_OPTIMIZATION:

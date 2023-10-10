@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FunctionResponseType::NOT_SET:
+            return {};
           case FunctionResponseType::ReportBatchItemFailures:
             return "ReportBatchItemFailures";
           default:

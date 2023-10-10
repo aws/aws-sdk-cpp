@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyEncryptionMechanism::NOT_SET:
+            return {};
           case KeyEncryptionMechanism::RSAES_OAEP_SHA_256:
             return "RSAES_OAEP_SHA_256";
           default:

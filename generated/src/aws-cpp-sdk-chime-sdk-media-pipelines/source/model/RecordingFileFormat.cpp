@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordingFileFormat::NOT_SET:
+            return {};
           case RecordingFileFormat::Wav:
             return "Wav";
           case RecordingFileFormat::Opus:

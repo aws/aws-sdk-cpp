@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceType::NOT_SET:
+            return {};
           case DataSourceType::ApplicationDiscoveryService:
             return "ApplicationDiscoveryService";
           case DataSourceType::MPA:

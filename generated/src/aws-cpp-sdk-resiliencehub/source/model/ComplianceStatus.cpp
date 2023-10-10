@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComplianceStatus::NOT_SET:
+            return {};
           case ComplianceStatus::PolicyBreached:
             return "PolicyBreached";
           case ComplianceStatus::PolicyMet:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdminStatus::NOT_SET:
+            return {};
           case AdminStatus::ENABLED:
             return "ENABLED";
           case AdminStatus::DISABLING_IN_PROGRESS:

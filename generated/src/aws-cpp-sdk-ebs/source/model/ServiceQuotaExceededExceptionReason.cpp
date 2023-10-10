@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceQuotaExceededExceptionReason::NOT_SET:
+            return {};
           case ServiceQuotaExceededExceptionReason::DEPENDENCY_SERVICE_QUOTA_EXCEEDED:
             return "DEPENDENCY_SERVICE_QUOTA_EXCEEDED";
           default:

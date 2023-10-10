@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PropagateTags::NOT_SET:
+            return {};
           case PropagateTags::TASK_DEFINITION:
             return "TASK_DEFINITION";
           case PropagateTags::SERVICE:

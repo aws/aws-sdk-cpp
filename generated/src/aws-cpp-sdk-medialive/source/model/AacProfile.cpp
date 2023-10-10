@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AacProfile::NOT_SET:
+            return {};
           case AacProfile::HEV1:
             return "HEV1";
           case AacProfile::HEV2:

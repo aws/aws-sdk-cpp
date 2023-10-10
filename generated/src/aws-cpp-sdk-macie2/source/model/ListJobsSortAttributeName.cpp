@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListJobsSortAttributeName::NOT_SET:
+            return {};
           case ListJobsSortAttributeName::createdAt:
             return "createdAt";
           case ListJobsSortAttributeName::jobStatus:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SignalDecoderType::NOT_SET:
+            return {};
           case SignalDecoderType::CAN_SIGNAL:
             return "CAN_SIGNAL";
           case SignalDecoderType::OBD_SIGNAL:

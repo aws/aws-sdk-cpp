@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SNOMEDCTEntityCategory::NOT_SET:
+            return {};
           case SNOMEDCTEntityCategory::MEDICAL_CONDITION:
             return "MEDICAL_CONDITION";
           case SNOMEDCTEntityCategory::ANATOMY:

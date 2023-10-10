@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EdgePresetDeploymentType::NOT_SET:
+            return {};
           case EdgePresetDeploymentType::GreengrassV2Component:
             return "GreengrassV2Component";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemperatureUnit::NOT_SET:
+            return {};
           case TemperatureUnit::FAHRENHEIT:
             return "FAHRENHEIT";
           case TemperatureUnit::CELSIUS:

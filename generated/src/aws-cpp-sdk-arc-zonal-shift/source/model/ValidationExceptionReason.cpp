@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::NOT_SET:
+            return {};
           case ValidationExceptionReason::InvalidExpiresIn:
             return "InvalidExpiresIn";
           case ValidationExceptionReason::InvalidStatus:

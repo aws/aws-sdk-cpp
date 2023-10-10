@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterType::NOT_SET:
+            return {};
           case ClusterType::PROVISIONED:
             return "PROVISIONED";
           case ClusterType::SERVERLESS:

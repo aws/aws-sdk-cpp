@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndpointSettingTypeValue::NOT_SET:
+            return {};
           case EndpointSettingTypeValue::string:
             return "string";
           case EndpointSettingTypeValue::boolean:

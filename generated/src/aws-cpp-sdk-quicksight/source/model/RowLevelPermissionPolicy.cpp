@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RowLevelPermissionPolicy::NOT_SET:
+            return {};
           case RowLevelPermissionPolicy::GRANT_ACCESS:
             return "GRANT_ACCESS";
           case RowLevelPermissionPolicy::DENY_ACCESS:

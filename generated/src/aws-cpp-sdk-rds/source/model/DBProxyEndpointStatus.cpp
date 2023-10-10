@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DBProxyEndpointStatus::NOT_SET:
+            return {};
           case DBProxyEndpointStatus::available:
             return "available";
           case DBProxyEndpointStatus::modifying:

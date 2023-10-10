@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SegmentType::NOT_SET:
+            return {};
           case SegmentType::DIMENSIONAL:
             return "DIMENSIONAL";
           case SegmentType::IMPORT:

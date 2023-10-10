@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChronologicalOrder::NOT_SET:
+            return {};
           case ChronologicalOrder::Reverse:
             return "Reverse";
           case ChronologicalOrder::Forward:

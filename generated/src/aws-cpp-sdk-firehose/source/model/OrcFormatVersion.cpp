@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrcFormatVersion::NOT_SET:
+            return {};
           case OrcFormatVersion::V0_11:
             return "V0_11";
           case OrcFormatVersion::V0_12:

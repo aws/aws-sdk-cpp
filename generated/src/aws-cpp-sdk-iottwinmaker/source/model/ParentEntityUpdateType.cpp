@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParentEntityUpdateType::NOT_SET:
+            return {};
           case ParentEntityUpdateType::UPDATE:
             return "UPDATE";
           case ParentEntityUpdateType::DELETE_:

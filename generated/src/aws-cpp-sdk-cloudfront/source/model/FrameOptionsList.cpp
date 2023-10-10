@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FrameOptionsList::NOT_SET:
+            return {};
           case FrameOptionsList::DENY:
             return "DENY";
           case FrameOptionsList::SAMEORIGIN:

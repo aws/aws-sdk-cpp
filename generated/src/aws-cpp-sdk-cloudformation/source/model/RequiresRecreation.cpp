@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequiresRecreation::NOT_SET:
+            return {};
           case RequiresRecreation::Never:
             return "Never";
           case RequiresRecreation::Conditionally:

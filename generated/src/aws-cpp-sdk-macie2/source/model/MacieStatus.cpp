@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MacieStatus::NOT_SET:
+            return {};
           case MacieStatus::PAUSED:
             return "PAUSED";
           case MacieStatus::ENABLED:

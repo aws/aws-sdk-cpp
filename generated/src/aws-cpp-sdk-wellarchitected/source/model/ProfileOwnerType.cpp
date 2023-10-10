@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProfileOwnerType::NOT_SET:
+            return {};
           case ProfileOwnerType::SELF:
             return "SELF";
           case ProfileOwnerType::SHARED:

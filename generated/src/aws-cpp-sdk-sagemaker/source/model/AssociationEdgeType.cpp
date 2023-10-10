@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationEdgeType::NOT_SET:
+            return {};
           case AssociationEdgeType::ContributedTo:
             return "ContributedTo";
           case AssociationEdgeType::AssociatedWith:

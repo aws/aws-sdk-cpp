@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeleteQueuedReservedInstancesErrorCode::NOT_SET:
+            return {};
           case DeleteQueuedReservedInstancesErrorCode::reserved_instances_id_invalid:
             return "reserved-instances-id-invalid";
           case DeleteQueuedReservedInstancesErrorCode::reserved_instances_not_in_queued_state:

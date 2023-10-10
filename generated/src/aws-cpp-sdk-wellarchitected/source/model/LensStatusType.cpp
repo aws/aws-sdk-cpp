@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LensStatusType::NOT_SET:
+            return {};
           case LensStatusType::ALL:
             return "ALL";
           case LensStatusType::DRAFT:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListBulkImportJobsFilter::NOT_SET:
+            return {};
           case ListBulkImportJobsFilter::ALL:
             return "ALL";
           case ListBulkImportJobsFilter::PENDING:

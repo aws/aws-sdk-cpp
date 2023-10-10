@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CollaborationQueryLogStatus::NOT_SET:
+            return {};
           case CollaborationQueryLogStatus::ENABLED:
             return "ENABLED";
           case CollaborationQueryLogStatus::DISABLED:

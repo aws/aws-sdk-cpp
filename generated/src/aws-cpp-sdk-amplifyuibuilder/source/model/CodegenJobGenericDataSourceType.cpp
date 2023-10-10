@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CodegenJobGenericDataSourceType::NOT_SET:
+            return {};
           case CodegenJobGenericDataSourceType::DataStore:
             return "DataStore";
           default:

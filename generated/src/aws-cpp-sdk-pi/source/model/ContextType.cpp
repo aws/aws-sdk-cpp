@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContextType::NOT_SET:
+            return {};
           case ContextType::CAUSAL:
             return "CAUSAL";
           case ContextType::CONTEXTUAL:

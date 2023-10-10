@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeliveryStreamType::NOT_SET:
+            return {};
           case DeliveryStreamType::DirectPut:
             return "DirectPut";
           case DeliveryStreamType::KinesisStreamAsSource:

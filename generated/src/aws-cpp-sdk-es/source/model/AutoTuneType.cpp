@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoTuneType::NOT_SET:
+            return {};
           case AutoTuneType::SCHEDULED_ACTION:
             return "SCHEDULED_ACTION";
           default:

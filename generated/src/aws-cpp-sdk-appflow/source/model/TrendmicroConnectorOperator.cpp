@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrendmicroConnectorOperator::NOT_SET:
+            return {};
           case TrendmicroConnectorOperator::PROJECTION:
             return "PROJECTION";
           case TrendmicroConnectorOperator::EQUAL_TO:

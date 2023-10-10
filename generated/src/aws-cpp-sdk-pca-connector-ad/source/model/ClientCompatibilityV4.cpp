@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientCompatibilityV4::NOT_SET:
+            return {};
           case ClientCompatibilityV4::WINDOWS_SERVER_2012:
             return "WINDOWS_SERVER_2012";
           case ClientCompatibilityV4::WINDOWS_SERVER_2012_R2:

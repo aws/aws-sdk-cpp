@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HdfsAuthenticationType::NOT_SET:
+            return {};
           case HdfsAuthenticationType::SIMPLE:
             return "SIMPLE";
           case HdfsAuthenticationType::KERBEROS:

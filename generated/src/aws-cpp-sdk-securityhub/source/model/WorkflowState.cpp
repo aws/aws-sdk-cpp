@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowState::NOT_SET:
+            return {};
           case WorkflowState::NEW_:
             return "NEW";
           case WorkflowState::ASSIGNED:

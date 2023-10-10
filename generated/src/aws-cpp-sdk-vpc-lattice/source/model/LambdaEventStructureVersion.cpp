@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaEventStructureVersion::NOT_SET:
+            return {};
           case LambdaEventStructureVersion::V1:
             return "V1";
           case LambdaEventStructureVersion::V2:

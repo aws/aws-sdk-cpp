@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionSeverity::NOT_SET:
+            return {};
           case ActionSeverity::HIGH:
             return "HIGH";
           case ActionSeverity::MEDIUM:

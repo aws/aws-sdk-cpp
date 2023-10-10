@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EC2InstanceState::NOT_SET:
+            return {};
           case EC2InstanceState::PENDING:
             return "PENDING";
           case EC2InstanceState::RUNNING:

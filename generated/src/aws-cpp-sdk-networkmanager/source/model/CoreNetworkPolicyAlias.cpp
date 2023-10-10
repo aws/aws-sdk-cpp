@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CoreNetworkPolicyAlias::NOT_SET:
+            return {};
           case CoreNetworkPolicyAlias::LIVE:
             return "LIVE";
           case CoreNetworkPolicyAlias::LATEST:

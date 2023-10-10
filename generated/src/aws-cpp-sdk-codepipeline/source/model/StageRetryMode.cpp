@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StageRetryMode::NOT_SET:
+            return {};
           case StageRetryMode::FAILED_ACTIONS:
             return "FAILED_ACTIONS";
           default:

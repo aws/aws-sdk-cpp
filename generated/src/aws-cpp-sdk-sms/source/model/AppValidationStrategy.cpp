@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppValidationStrategy::NOT_SET:
+            return {};
           case AppValidationStrategy::SSM:
             return "SSM";
           default:

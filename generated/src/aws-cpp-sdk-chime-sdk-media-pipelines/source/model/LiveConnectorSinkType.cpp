@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LiveConnectorSinkType::NOT_SET:
+            return {};
           case LiveConnectorSinkType::RTMP:
             return "RTMP";
           default:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkInterfaceFailureReason::NOT_SET:
+            return {};
           case NetworkInterfaceFailureReason::DUPLICATE_NETWORK_INTERFACE:
             return "DUPLICATE_NETWORK_INTERFACE";
           case NetworkInterfaceFailureReason::CONFLICTING_NETWORK_INTERFACE:

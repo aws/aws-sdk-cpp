@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerticalTextAlignment::NOT_SET:
+            return {};
           case VerticalTextAlignment::TOP:
             return "TOP";
           case VerticalTextAlignment::MIDDLE:

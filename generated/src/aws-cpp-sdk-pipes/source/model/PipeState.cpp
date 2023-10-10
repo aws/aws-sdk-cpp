@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipeState::NOT_SET:
+            return {};
           case PipeState::RUNNING:
             return "RUNNING";
           case PipeState::STOPPED:

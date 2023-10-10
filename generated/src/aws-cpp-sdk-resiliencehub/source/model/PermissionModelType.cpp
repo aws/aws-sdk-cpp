@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionModelType::NOT_SET:
+            return {};
           case PermissionModelType::LegacyIAMUser:
             return "LegacyIAMUser";
           case PermissionModelType::RoleBased:

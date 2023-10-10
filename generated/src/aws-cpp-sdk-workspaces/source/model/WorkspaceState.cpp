@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkspaceState::NOT_SET:
+            return {};
           case WorkspaceState::PENDING:
             return "PENDING";
           case WorkspaceState::AVAILABLE:

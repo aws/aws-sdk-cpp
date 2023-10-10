@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SensitiveDataItemCategory::NOT_SET:
+            return {};
           case SensitiveDataItemCategory::FINANCIAL_INFORMATION:
             return "FINANCIAL_INFORMATION";
           case SensitiveDataItemCategory::PERSONAL_INFORMATION:

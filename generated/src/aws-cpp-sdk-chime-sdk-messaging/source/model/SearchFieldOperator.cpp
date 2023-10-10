@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchFieldOperator::NOT_SET:
+            return {};
           case SearchFieldOperator::EQUALS:
             return "EQUALS";
           case SearchFieldOperator::INCLUDES:

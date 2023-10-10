@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcEntropyEncoding::NOT_SET:
+            return {};
           case XavcEntropyEncoding::AUTO:
             return "AUTO";
           case XavcEntropyEncoding::CABAC:

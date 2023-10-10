@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequiredAttributeBehavior::NOT_SET:
+            return {};
           case RequiredAttributeBehavior::REQUIRED_ALWAYS:
             return "REQUIRED_ALWAYS";
           case RequiredAttributeBehavior::NOT_REQUIRED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AcceleratorType::NOT_SET:
+            return {};
           case AcceleratorType::gpu:
             return "gpu";
           case AcceleratorType::fpga:

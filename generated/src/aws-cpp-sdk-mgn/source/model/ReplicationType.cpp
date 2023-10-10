@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationType::NOT_SET:
+            return {};
           case ReplicationType::AGENT_BASED:
             return "AGENT_BASED";
           case ReplicationType::SNAPSHOT_SHIPPING:

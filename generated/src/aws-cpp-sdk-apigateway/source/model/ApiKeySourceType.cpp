@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApiKeySourceType::NOT_SET:
+            return {};
           case ApiKeySourceType::HEADER:
             return "HEADER";
           case ApiKeySourceType::AUTHORIZER:

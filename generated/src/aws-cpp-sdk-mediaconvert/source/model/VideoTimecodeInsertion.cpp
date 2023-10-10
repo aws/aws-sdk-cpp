@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VideoTimecodeInsertion::NOT_SET:
+            return {};
           case VideoTimecodeInsertion::DISABLED:
             return "DISABLED";
           case VideoTimecodeInsertion::PIC_TIMING_SEI:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceGroupStateChangeReasonCode::NOT_SET:
+            return {};
           case InstanceGroupStateChangeReasonCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           case InstanceGroupStateChangeReasonCode::VALIDATION_ERROR:

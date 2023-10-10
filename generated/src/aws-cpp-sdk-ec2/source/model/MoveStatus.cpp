@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MoveStatus::NOT_SET:
+            return {};
           case MoveStatus::movingToVpc:
             return "movingToVpc";
           case MoveStatus::restoringToClassic:

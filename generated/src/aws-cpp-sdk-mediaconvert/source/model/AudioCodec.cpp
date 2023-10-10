@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioCodec::NOT_SET:
+            return {};
           case AudioCodec::AAC:
             return "AAC";
           case AudioCodec::MP2:

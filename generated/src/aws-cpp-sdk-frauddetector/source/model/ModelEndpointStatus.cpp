@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelEndpointStatus::NOT_SET:
+            return {};
           case ModelEndpointStatus::ASSOCIATED:
             return "ASSOCIATED";
           case ModelEndpointStatus::DISSOCIATED:

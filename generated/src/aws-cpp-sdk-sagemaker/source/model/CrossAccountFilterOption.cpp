@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CrossAccountFilterOption::NOT_SET:
+            return {};
           case CrossAccountFilterOption::SameAccount:
             return "SameAccount";
           case CrossAccountFilterOption::CrossAccount:

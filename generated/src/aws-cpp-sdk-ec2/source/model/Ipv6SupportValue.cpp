@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ipv6SupportValue::NOT_SET:
+            return {};
           case Ipv6SupportValue::enable:
             return "enable";
           case Ipv6SupportValue::disable:

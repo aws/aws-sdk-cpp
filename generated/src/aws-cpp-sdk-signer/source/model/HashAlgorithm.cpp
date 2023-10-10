@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HashAlgorithm::NOT_SET:
+            return {};
           case HashAlgorithm::SHA1:
             return "SHA1";
           case HashAlgorithm::SHA256:

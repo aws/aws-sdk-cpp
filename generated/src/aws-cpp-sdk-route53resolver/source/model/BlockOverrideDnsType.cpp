@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlockOverrideDnsType::NOT_SET:
+            return {};
           case BlockOverrideDnsType::CNAME:
             return "CNAME";
           default:

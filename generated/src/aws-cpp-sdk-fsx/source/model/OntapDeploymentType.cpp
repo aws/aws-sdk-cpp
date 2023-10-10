@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OntapDeploymentType::NOT_SET:
+            return {};
           case OntapDeploymentType::MULTI_AZ_1:
             return "MULTI_AZ_1";
           case OntapDeploymentType::SINGLE_AZ_1:

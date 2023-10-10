@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WarningCode::NOT_SET:
+            return {};
           case WarningCode::QUERY_LANGUAGE_INVALID_SYNTAX:
             return "QUERY_LANGUAGE_INVALID_SYNTAX";
           default:

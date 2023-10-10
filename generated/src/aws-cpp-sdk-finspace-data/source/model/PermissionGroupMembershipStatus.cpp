@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionGroupMembershipStatus::NOT_SET:
+            return {};
           case PermissionGroupMembershipStatus::ADDITION_IN_PROGRESS:
             return "ADDITION_IN_PROGRESS";
           case PermissionGroupMembershipStatus::ADDITION_SUCCESS:

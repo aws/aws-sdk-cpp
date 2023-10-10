@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RootDeviceType::NOT_SET:
+            return {};
           case RootDeviceType::ebs:
             return "ebs";
           case RootDeviceType::instance_store:

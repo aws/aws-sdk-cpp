@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EngineFamily::NOT_SET:
+            return {};
           case EngineFamily::MYSQL:
             return "MYSQL";
           case EngineFamily::POSTGRESQL:

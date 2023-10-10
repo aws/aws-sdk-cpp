@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportType::NOT_SET:
+            return {};
           case ExportType::FULL_EXPORT:
             return "FULL_EXPORT";
           case ExportType::INCREMENTAL_EXPORT:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AddonIssueCode::NOT_SET:
+            return {};
           case AddonIssueCode::AccessDenied:
             return "AccessDenied";
           case AddonIssueCode::InternalFailure:

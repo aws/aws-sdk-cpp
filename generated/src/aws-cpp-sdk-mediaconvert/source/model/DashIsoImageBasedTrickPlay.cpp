@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoImageBasedTrickPlay::NOT_SET:
+            return {};
           case DashIsoImageBasedTrickPlay::NONE:
             return "NONE";
           case DashIsoImageBasedTrickPlay::THUMBNAIL:

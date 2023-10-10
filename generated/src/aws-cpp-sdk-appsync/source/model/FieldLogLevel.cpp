@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FieldLogLevel::NOT_SET:
+            return {};
           case FieldLogLevel::NONE:
             return "NONE";
           case FieldLogLevel::ERROR_:

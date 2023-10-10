@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BPAStatusMessage::NOT_SET:
+            return {};
           case BPAStatusMessage::DEFAULTED_FOR_SLR_MISSING:
             return "DEFAULTED_FOR_SLR_MISSING";
           case BPAStatusMessage::SYNC_ON_HOLD:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceManagedType::NOT_SET:
+            return {};
           case ResourceManagedType::AWS_MANAGED_THREAT_SIGNATURES:
             return "AWS_MANAGED_THREAT_SIGNATURES";
           case ResourceManagedType::AWS_MANAGED_DOMAIN_LISTS:

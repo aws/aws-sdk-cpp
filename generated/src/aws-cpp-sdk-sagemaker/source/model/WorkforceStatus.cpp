@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkforceStatus::NOT_SET:
+            return {};
           case WorkforceStatus::Initializing:
             return "Initializing";
           case WorkforceStatus::Updating:

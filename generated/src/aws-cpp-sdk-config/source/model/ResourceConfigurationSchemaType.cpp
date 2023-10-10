@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceConfigurationSchemaType::NOT_SET:
+            return {};
           case ResourceConfigurationSchemaType::CFN_RESOURCE_SCHEMA:
             return "CFN_RESOURCE_SCHEMA";
           default:

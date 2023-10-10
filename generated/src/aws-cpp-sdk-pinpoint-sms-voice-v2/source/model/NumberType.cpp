@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NumberType::NOT_SET:
+            return {};
           case NumberType::SHORT_CODE:
             return "SHORT_CODE";
           case NumberType::LONG_CODE:

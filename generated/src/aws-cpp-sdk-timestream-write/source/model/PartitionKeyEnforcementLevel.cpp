@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PartitionKeyEnforcementLevel::NOT_SET:
+            return {};
           case PartitionKeyEnforcementLevel::REQUIRED:
             return "REQUIRED";
           case PartitionKeyEnforcementLevel::OPTIONAL:

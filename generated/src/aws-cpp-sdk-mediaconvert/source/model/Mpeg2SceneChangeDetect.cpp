@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2SceneChangeDetect::NOT_SET:
+            return {};
           case Mpeg2SceneChangeDetect::DISABLED:
             return "DISABLED";
           case Mpeg2SceneChangeDetect::ENABLED:

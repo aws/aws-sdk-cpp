@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OwnerOverride::NOT_SET:
+            return {};
           case OwnerOverride::Destination:
             return "Destination";
           default:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplacePermissionAssociationsWorkStatus::NOT_SET:
+            return {};
           case ReplacePermissionAssociationsWorkStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case ReplacePermissionAssociationsWorkStatus::COMPLETED:

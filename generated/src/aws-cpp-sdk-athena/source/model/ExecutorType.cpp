@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutorType::NOT_SET:
+            return {};
           case ExecutorType::COORDINATOR:
             return "COORDINATOR";
           case ExecutorType::GATEWAY:

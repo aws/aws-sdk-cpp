@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::RESPONSE_PLAN:
             return "RESPONSE_PLAN";
           case ResourceType::INCIDENT_RECORD:

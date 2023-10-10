@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReviewableHITStatus::NOT_SET:
+            return {};
           case ReviewableHITStatus::Reviewable:
             return "Reviewable";
           case ReviewableHITStatus::Reviewing:

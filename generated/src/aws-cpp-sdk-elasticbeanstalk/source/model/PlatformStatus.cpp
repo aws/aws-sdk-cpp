@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlatformStatus::NOT_SET:
+            return {};
           case PlatformStatus::Creating:
             return "Creating";
           case PlatformStatus::Failed:

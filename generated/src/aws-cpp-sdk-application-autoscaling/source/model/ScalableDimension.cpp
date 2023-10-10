@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalableDimension::NOT_SET:
+            return {};
           case ScalableDimension::ecs_service_DesiredCount:
             return "ecs:service:DesiredCount";
           case ScalableDimension::ec2_spot_fleet_request_TargetCapacity:

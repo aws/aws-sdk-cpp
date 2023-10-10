@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpenIdIssuer::NOT_SET:
+            return {};
           case OpenIdIssuer::COGNITO:
             return "COGNITO";
           default:

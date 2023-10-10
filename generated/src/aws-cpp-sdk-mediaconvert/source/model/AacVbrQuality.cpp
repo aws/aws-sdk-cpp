@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AacVbrQuality::NOT_SET:
+            return {};
           case AacVbrQuality::LOW:
             return "LOW";
           case AacVbrQuality::MEDIUM_LOW:

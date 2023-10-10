@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerSideEncryptionType::NOT_SET:
+            return {};
           case ServerSideEncryptionType::CUSTOMER_MANAGED_KEY:
             return "CUSTOMER_MANAGED_KEY";
           case ServerSideEncryptionType::AWS_OWNED_KMS_KEY:

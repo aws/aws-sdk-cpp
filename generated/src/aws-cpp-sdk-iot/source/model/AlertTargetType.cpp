@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlertTargetType::NOT_SET:
+            return {};
           case AlertTargetType::SNS:
             return "SNS";
           default:

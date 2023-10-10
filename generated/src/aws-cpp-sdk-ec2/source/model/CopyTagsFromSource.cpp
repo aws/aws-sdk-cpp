@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CopyTagsFromSource::NOT_SET:
+            return {};
           case CopyTagsFromSource::volume:
             return "volume";
           default:

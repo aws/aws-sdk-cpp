@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AddressTransferStatus::NOT_SET:
+            return {};
           case AddressTransferStatus::pending:
             return "pending";
           case AddressTransferStatus::disabled:

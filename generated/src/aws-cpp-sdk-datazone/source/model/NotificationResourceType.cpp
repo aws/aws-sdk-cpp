@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationResourceType::NOT_SET:
+            return {};
           case NotificationResourceType::PROJECT:
             return "PROJECT";
           default:

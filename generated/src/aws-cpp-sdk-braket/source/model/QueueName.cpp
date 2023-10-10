@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueueName::NOT_SET:
+            return {};
           case QueueName::QUANTUM_TASKS_QUEUE:
             return "QUANTUM_TASKS_QUEUE";
           case QueueName::JOBS_QUEUE:

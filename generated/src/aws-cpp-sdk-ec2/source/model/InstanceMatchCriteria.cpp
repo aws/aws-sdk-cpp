@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceMatchCriteria::NOT_SET:
+            return {};
           case InstanceMatchCriteria::open:
             return "open";
           case InstanceMatchCriteria::targeted:

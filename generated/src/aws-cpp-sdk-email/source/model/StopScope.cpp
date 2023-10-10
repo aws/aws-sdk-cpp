@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StopScope::NOT_SET:
+            return {};
           case StopScope::RuleSet:
             return "RuleSet";
           default:

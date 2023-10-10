@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrimaryValueDisplayType::NOT_SET:
+            return {};
           case PrimaryValueDisplayType::HIDDEN:
             return "HIDDEN";
           case PrimaryValueDisplayType::COMPARISON:

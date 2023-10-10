@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationPreferenceName::NOT_SET:
+            return {};
           case RecommendationPreferenceName::EnhancedInfrastructureMetrics:
             return "EnhancedInfrastructureMetrics";
           case RecommendationPreferenceName::InferredWorkloadTypes:

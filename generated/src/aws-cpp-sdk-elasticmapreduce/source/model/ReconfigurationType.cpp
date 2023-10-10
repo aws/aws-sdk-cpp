@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReconfigurationType::NOT_SET:
+            return {};
           case ReconfigurationType::OVERWRITE:
             return "OVERWRITE";
           case ReconfigurationType::MERGE:

@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnowballCapacity::NOT_SET:
+            return {};
           case SnowballCapacity::T50:
             return "T50";
           case SnowballCapacity::T80:

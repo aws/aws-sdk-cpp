@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceReportedStatus::NOT_SET:
+            return {};
           case DeviceReportedStatus::STOPPING:
             return "STOPPING";
           case DeviceReportedStatus::STOPPED:

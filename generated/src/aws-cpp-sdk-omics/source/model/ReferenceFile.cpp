@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReferenceFile::NOT_SET:
+            return {};
           case ReferenceFile::SOURCE:
             return "SOURCE";
           case ReferenceFile::INDEX:

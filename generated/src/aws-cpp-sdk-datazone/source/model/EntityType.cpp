@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntityType::NOT_SET:
+            return {};
           case EntityType::ASSET:
             return "ASSET";
           default:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FolderContentType::NOT_SET:
+            return {};
           case FolderContentType::ALL:
             return "ALL";
           case FolderContentType::DOCUMENT:

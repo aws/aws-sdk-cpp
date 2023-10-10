@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComplianceQueryOperatorType::NOT_SET:
+            return {};
           case ComplianceQueryOperatorType::EQUAL:
             return "EQUAL";
           case ComplianceQueryOperatorType::NOT_EQUAL:

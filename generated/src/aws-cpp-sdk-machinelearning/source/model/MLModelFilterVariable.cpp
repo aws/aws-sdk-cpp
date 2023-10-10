@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MLModelFilterVariable::NOT_SET:
+            return {};
           case MLModelFilterVariable::CreatedAt:
             return "CreatedAt";
           case MLModelFilterVariable::LastUpdatedAt:

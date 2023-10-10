@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SSEType::NOT_SET:
+            return {};
           case SSEType::sse_ebs:
             return "sse-ebs";
           case SSEType::sse_kms:

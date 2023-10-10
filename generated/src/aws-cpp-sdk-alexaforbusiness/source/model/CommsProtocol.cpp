@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CommsProtocol::NOT_SET:
+            return {};
           case CommsProtocol::SIP:
             return "SIP";
           case CommsProtocol::SIPS:

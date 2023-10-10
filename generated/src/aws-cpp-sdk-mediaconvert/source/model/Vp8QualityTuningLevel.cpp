@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Vp8QualityTuningLevel::NOT_SET:
+            return {};
           case Vp8QualityTuningLevel::MULTI_PASS:
             return "MULTI_PASS";
           case Vp8QualityTuningLevel::MULTI_PASS_HQ:

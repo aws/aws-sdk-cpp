@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthorizationStatus::NOT_SET:
+            return {};
           case AuthorizationStatus::Authorized:
             return "Authorized";
           case AuthorizationStatus::Revoking:

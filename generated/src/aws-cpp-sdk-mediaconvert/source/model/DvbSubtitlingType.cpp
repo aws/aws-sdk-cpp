@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubtitlingType::NOT_SET:
+            return {};
           case DvbSubtitlingType::HEARING_IMPAIRED:
             return "HEARING_IMPAIRED";
           case DvbSubtitlingType::STANDARD:

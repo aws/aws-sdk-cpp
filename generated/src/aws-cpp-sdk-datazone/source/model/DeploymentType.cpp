@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentType::NOT_SET:
+            return {};
           case DeploymentType::CREATE:
             return "CREATE";
           case DeploymentType::UPDATE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CanvasOrientation::NOT_SET:
+            return {};
           case CanvasOrientation::Landscape:
             return "Landscape";
           case CanvasOrientation::Portrait:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlertCategory::NOT_SET:
+            return {};
           case AlertCategory::SCHEDULING_ERROR:
             return "SCHEDULING_ERROR";
           case AlertCategory::PLAYBACK_WARNING:

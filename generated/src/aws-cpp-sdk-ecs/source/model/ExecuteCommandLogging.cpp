@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecuteCommandLogging::NOT_SET:
+            return {};
           case ExecuteCommandLogging::NONE:
             return "NONE";
           case ExecuteCommandLogging::DEFAULT:

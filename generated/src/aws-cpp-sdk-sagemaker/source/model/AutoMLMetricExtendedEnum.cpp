@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLMetricExtendedEnum::NOT_SET:
+            return {};
           case AutoMLMetricExtendedEnum::Accuracy:
             return "Accuracy";
           case AutoMLMetricExtendedEnum::MSE:

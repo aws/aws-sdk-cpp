@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkloadImprovementStatus::NOT_SET:
+            return {};
           case WorkloadImprovementStatus::NOT_APPLICABLE:
             return "NOT_APPLICABLE";
           case WorkloadImprovementStatus::NOT_STARTED:

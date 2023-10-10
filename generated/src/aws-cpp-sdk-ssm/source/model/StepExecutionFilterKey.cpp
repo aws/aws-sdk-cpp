@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StepExecutionFilterKey::NOT_SET:
+            return {};
           case StepExecutionFilterKey::StartTimeBefore:
             return "StartTimeBefore";
           case StepExecutionFilterKey::StartTimeAfter:

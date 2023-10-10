@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputPolicy::NOT_SET:
+            return {};
           case InputPolicy::ALLOWED:
             return "ALLOWED";
           case InputPolicy::DISALLOWED:

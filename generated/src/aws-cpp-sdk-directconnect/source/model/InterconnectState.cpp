@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InterconnectState::NOT_SET:
+            return {};
           case InterconnectState::requested:
             return "requested";
           case InterconnectState::pending:

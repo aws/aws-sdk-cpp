@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageFormatValue::NOT_SET:
+            return {};
           case MessageFormatValue::json:
             return "json";
           case MessageFormatValue::json_unformatted:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VersionControlType::NOT_SET:
+            return {};
           case VersionControlType::GITHUB:
             return "GITHUB";
           case VersionControlType::GITHUB_ENTERPRISE:

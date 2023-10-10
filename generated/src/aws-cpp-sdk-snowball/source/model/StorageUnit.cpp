@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageUnit::NOT_SET:
+            return {};
           case StorageUnit::TB:
             return "TB";
           default:

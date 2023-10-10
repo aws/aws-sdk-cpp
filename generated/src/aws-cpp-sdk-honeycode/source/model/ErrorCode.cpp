@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::ACCESS_DENIED:
             return "ACCESS_DENIED";
           case ErrorCode::INVALID_URL_ERROR:

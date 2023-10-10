@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectTags::NOT_SET:
+            return {};
           case ObjectTags::PRESERVE:
             return "PRESERVE";
           case ObjectTags::NONE:

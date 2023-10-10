@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetStatus::NOT_SET:
+            return {};
           case FleetStatus::NEW_:
             return "NEW";
           case FleetStatus::DOWNLOADING:

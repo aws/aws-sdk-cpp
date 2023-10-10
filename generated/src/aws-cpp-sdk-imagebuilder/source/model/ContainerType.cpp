@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerType::NOT_SET:
+            return {};
           case ContainerType::DOCKER:
             return "DOCKER";
           default:

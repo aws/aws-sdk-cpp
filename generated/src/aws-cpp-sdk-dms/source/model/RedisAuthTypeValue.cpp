@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RedisAuthTypeValue::NOT_SET:
+            return {};
           case RedisAuthTypeValue::none:
             return "none";
           case RedisAuthTypeValue::auth_role:

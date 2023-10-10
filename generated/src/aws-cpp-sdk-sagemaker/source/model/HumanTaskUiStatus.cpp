@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HumanTaskUiStatus::NOT_SET:
+            return {};
           case HumanTaskUiStatus::Active:
             return "Active";
           case HumanTaskUiStatus::Deleting:

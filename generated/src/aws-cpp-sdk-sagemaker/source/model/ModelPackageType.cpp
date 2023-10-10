@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelPackageType::NOT_SET:
+            return {};
           case ModelPackageType::Versioned:
             return "Versioned";
           case ModelPackageType::Unversioned:

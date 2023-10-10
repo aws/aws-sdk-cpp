@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLJobObjectiveType::NOT_SET:
+            return {};
           case AutoMLJobObjectiveType::Maximize:
             return "Maximize";
           case AutoMLJobObjectiveType::Minimize:

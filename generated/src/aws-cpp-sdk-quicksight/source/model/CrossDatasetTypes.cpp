@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CrossDatasetTypes::NOT_SET:
+            return {};
           case CrossDatasetTypes::ALL_DATASETS:
             return "ALL_DATASETS";
           case CrossDatasetTypes::SINGLE_DATASET:

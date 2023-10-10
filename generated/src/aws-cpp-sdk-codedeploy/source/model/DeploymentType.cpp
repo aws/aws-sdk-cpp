@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentType::NOT_SET:
+            return {};
           case DeploymentType::IN_PLACE:
             return "IN_PLACE";
           case DeploymentType::BLUE_GREEN:

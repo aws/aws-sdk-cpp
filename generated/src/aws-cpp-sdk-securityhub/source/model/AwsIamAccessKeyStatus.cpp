@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AwsIamAccessKeyStatus::NOT_SET:
+            return {};
           case AwsIamAccessKeyStatus::Active:
             return "Active";
           case AwsIamAccessKeyStatus::Inactive:

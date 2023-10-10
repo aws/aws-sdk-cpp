@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IncrementalRunType::NOT_SET:
+            return {};
           case IncrementalRunType::IMMEDIATE:
             return "IMMEDIATE";
           default:

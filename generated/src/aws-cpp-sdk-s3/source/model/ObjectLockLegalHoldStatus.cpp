@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectLockLegalHoldStatus::NOT_SET:
+            return {};
           case ObjectLockLegalHoldStatus::ON:
             return "ON";
           case ObjectLockLegalHoldStatus::OFF:

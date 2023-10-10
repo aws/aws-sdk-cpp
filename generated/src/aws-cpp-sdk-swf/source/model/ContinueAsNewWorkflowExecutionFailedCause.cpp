@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContinueAsNewWorkflowExecutionFailedCause::NOT_SET:
+            return {};
           case ContinueAsNewWorkflowExecutionFailedCause::UNHANDLED_DECISION:
             return "UNHANDLED_DECISION";
           case ContinueAsNewWorkflowExecutionFailedCause::WORKFLOW_TYPE_DEPRECATED:

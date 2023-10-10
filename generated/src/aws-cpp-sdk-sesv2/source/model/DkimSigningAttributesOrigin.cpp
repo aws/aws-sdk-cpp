@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DkimSigningAttributesOrigin::NOT_SET:
+            return {};
           case DkimSigningAttributesOrigin::AWS_SES:
             return "AWS_SES";
           case DkimSigningAttributesOrigin::EXTERNAL:

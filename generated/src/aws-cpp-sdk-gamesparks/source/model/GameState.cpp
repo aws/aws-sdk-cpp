@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameState::NOT_SET:
+            return {};
           case GameState::ACTIVE:
             return "ACTIVE";
           case GameState::DELETING:

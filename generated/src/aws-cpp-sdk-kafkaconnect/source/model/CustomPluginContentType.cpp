@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomPluginContentType::NOT_SET:
+            return {};
           case CustomPluginContentType::JAR:
             return "JAR";
           case CustomPluginContentType::ZIP:

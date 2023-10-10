@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubResourceType::NOT_SET:
+            return {};
           case SubResourceType::IP:
             return "IP";
           case SubResourceType::URL:

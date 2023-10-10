@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CACertificateStatus::NOT_SET:
+            return {};
           case CACertificateStatus::ACTIVE:
             return "ACTIVE";
           case CACertificateStatus::INACTIVE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsNodeType::NOT_SET:
+            return {};
           case AnalyticsNodeType::Inner:
             return "Inner";
           case AnalyticsNodeType::Exit:

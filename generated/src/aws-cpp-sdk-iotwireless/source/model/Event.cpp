@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Event::NOT_SET:
+            return {};
           case Event::discovered:
             return "discovered";
           case Event::lost:

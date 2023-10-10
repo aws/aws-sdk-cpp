@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsAribCaptionsPidControl::NOT_SET:
+            return {};
           case M2tsAribCaptionsPidControl::AUTO:
             return "AUTO";
           case M2tsAribCaptionsPidControl::USE_CONFIGURED:

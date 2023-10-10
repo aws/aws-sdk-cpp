@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaggingDirective::NOT_SET:
+            return {};
           case TaggingDirective::COPY:
             return "COPY";
           case TaggingDirective::REPLACE:

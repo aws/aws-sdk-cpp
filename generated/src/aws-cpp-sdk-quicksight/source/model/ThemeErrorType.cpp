@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThemeErrorType::NOT_SET:
+            return {};
           case ThemeErrorType::INTERNAL_FAILURE:
             return "INTERNAL_FAILURE";
           default:

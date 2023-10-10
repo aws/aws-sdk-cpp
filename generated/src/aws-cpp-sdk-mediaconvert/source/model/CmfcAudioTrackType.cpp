@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmfcAudioTrackType::NOT_SET:
+            return {};
           case CmfcAudioTrackType::ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT:
             return "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT";
           case CmfcAudioTrackType::ALTERNATE_AUDIO_AUTO_SELECT:

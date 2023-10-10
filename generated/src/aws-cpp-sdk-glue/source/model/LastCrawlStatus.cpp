@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LastCrawlStatus::NOT_SET:
+            return {};
           case LastCrawlStatus::SUCCEEDED:
             return "SUCCEEDED";
           case LastCrawlStatus::CANCELLED:

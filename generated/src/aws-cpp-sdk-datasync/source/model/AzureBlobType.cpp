@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AzureBlobType::NOT_SET:
+            return {};
           case AzureBlobType::BLOCK:
             return "BLOCK";
           default:

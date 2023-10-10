@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConstantType::NOT_SET:
+            return {};
           case ConstantType::SINGULAR:
             return "SINGULAR";
           case ConstantType::RANGE:

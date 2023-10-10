@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportScope::NOT_SET:
+            return {};
           case ReportScope::FAILED_FILES_ONLY:
             return "FAILED_FILES_ONLY";
           default:

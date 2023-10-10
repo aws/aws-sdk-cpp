@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplianceModeSupportValue::NOT_SET:
+            return {};
           case ApplianceModeSupportValue::enable:
             return "enable";
           case ApplianceModeSupportValue::disable:

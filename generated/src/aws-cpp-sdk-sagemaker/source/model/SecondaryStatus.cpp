@@ -119,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SecondaryStatus::NOT_SET:
+            return {};
           case SecondaryStatus::Starting:
             return "Starting";
           case SecondaryStatus::LaunchingMLInstances:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionAfterCompletion::NOT_SET:
+            return {};
           case ActionAfterCompletion::NONE:
             return "NONE";
           case ActionAfterCompletion::DELETE_:

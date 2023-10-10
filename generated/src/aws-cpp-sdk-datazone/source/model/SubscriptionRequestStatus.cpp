@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubscriptionRequestStatus::NOT_SET:
+            return {};
           case SubscriptionRequestStatus::PENDING:
             return "PENDING";
           case SubscriptionRequestStatus::ACCEPTED:

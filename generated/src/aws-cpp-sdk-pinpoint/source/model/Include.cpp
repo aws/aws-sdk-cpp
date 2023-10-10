@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Include::NOT_SET:
+            return {};
           case Include::ALL:
             return "ALL";
           case Include::ANY:

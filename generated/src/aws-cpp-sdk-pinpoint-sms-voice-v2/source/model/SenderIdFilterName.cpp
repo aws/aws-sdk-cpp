@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SenderIdFilterName::NOT_SET:
+            return {};
           case SenderIdFilterName::sender_id:
             return "sender-id";
           case SenderIdFilterName::iso_country_code:

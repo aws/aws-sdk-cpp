@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountFilterType::NOT_SET:
+            return {};
           case AccountFilterType::NONE:
             return "NONE";
           case AccountFilterType::INTERSECTION:

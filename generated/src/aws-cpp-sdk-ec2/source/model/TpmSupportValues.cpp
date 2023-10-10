@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TpmSupportValues::NOT_SET:
+            return {};
           case TpmSupportValues::v2_0:
             return "v2.0";
           default:

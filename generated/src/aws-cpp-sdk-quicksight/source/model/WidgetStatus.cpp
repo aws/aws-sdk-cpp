@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WidgetStatus::NOT_SET:
+            return {};
           case WidgetStatus::ENABLED:
             return "ENABLED";
           case WidgetStatus::DISABLED:

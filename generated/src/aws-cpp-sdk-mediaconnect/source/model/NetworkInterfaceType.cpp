@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkInterfaceType::NOT_SET:
+            return {};
           case NetworkInterfaceType::ena:
             return "ena";
           case NetworkInterfaceType::efa:

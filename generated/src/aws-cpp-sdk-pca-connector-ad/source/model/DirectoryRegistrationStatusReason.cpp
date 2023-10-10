@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectoryRegistrationStatusReason::NOT_SET:
+            return {};
           case DirectoryRegistrationStatusReason::DIRECTORY_ACCESS_DENIED:
             return "DIRECTORY_ACCESS_DENIED";
           case DirectoryRegistrationStatusReason::DIRECTORY_RESOURCE_NOT_FOUND:

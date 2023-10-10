@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BulkDeploymentStatus::NOT_SET:
+            return {};
           case BulkDeploymentStatus::Initializing:
             return "Initializing";
           case BulkDeploymentStatus::Running:

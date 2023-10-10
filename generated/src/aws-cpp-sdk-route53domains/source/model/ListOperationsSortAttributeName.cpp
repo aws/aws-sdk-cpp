@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListOperationsSortAttributeName::NOT_SET:
+            return {};
           case ListOperationsSortAttributeName::SubmittedDate:
             return "SubmittedDate";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestExecutionSortAttribute::NOT_SET:
+            return {};
           case TestExecutionSortAttribute::TestSetName:
             return "TestSetName";
           case TestExecutionSortAttribute::CreationDateTime:

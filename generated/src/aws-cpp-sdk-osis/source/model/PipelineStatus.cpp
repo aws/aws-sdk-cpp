@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipelineStatus::NOT_SET:
+            return {};
           case PipelineStatus::CREATING:
             return "CREATING";
           case PipelineStatus::ACTIVE:

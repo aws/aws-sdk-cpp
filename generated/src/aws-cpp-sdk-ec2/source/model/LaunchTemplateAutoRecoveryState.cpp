@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchTemplateAutoRecoveryState::NOT_SET:
+            return {};
           case LaunchTemplateAutoRecoveryState::default_:
             return "default";
           case LaunchTemplateAutoRecoveryState::disabled:

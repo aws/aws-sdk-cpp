@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArrayJobDependency::NOT_SET:
+            return {};
           case ArrayJobDependency::N_TO_N:
             return "N_TO_N";
           case ArrayJobDependency::SEQUENTIAL:

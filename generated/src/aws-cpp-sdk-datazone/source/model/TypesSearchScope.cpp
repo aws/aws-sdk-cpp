@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TypesSearchScope::NOT_SET:
+            return {};
           case TypesSearchScope::ASSET_TYPE:
             return "ASSET_TYPE";
           case TypesSearchScope::FORM_TYPE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParquetVersionValue::NOT_SET:
+            return {};
           case ParquetVersionValue::parquet_1_0:
             return "parquet-1-0";
           case ParquetVersionValue::parquet_2_0:

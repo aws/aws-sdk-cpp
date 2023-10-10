@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageStatisticType::NOT_SET:
+            return {};
           case UsageStatisticType::SUM_BY_ACCOUNT:
             return "SUM_BY_ACCOUNT";
           case UsageStatisticType::SUM_BY_DATA_SOURCE:

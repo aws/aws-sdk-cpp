@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduleLambdaFunctionFailedCause::NOT_SET:
+            return {};
           case ScheduleLambdaFunctionFailedCause::ID_ALREADY_IN_USE:
             return "ID_ALREADY_IN_USE";
           case ScheduleLambdaFunctionFailedCause::OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RobotDeploymentStep::NOT_SET:
+            return {};
           case RobotDeploymentStep::Validating:
             return "Validating";
           case RobotDeploymentStep::DownloadingExtracting:

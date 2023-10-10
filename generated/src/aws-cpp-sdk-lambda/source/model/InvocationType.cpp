@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InvocationType::NOT_SET:
+            return {};
           case InvocationType::Event:
             return "Event";
           case InvocationType::RequestResponse:

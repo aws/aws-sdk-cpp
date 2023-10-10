@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrgFeature::NOT_SET:
+            return {};
           case OrgFeature::S3_DATA_EVENTS:
             return "S3_DATA_EVENTS";
           case OrgFeature::EKS_AUDIT_LOGS:

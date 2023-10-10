@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceDefenderIndexingMode::NOT_SET:
+            return {};
           case DeviceDefenderIndexingMode::OFF:
             return "OFF";
           case DeviceDefenderIndexingMode::VIOLATIONS:

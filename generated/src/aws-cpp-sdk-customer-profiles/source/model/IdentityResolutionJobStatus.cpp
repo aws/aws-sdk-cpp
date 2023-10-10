@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IdentityResolutionJobStatus::NOT_SET:
+            return {};
           case IdentityResolutionJobStatus::PENDING:
             return "PENDING";
           case IdentityResolutionJobStatus::PREPROCESSING:

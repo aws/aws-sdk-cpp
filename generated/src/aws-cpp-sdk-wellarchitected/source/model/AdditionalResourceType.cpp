@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdditionalResourceType::NOT_SET:
+            return {};
           case AdditionalResourceType::HELPFUL_RESOURCE:
             return "HELPFUL_RESOURCE";
           case AdditionalResourceType::IMPROVEMENT_PLAN:

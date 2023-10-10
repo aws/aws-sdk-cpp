@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TlsPolicy::NOT_SET:
+            return {};
           case TlsPolicy::Require:
             return "Require";
           case TlsPolicy::Optional:

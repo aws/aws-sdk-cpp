@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlayerSessionStatus::NOT_SET:
+            return {};
           case PlayerSessionStatus::RESERVED:
             return "RESERVED";
           case PlayerSessionStatus::ACTIVE:

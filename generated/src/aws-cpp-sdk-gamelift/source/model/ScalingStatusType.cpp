@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingStatusType::NOT_SET:
+            return {};
           case ScalingStatusType::ACTIVE:
             return "ACTIVE";
           case ScalingStatusType::UPDATE_REQUESTED:

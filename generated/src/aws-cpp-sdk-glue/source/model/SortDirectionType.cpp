@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortDirectionType::NOT_SET:
+            return {};
           case SortDirectionType::DESCENDING:
             return "DESCENDING";
           case SortDirectionType::ASCENDING:

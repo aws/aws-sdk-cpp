@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DecryptionMode::NOT_SET:
+            return {};
           case DecryptionMode::AES_CTR:
             return "AES_CTR";
           case DecryptionMode::AES_CBC:

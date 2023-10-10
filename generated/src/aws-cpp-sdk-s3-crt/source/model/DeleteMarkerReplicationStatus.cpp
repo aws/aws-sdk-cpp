@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeleteMarkerReplicationStatus::NOT_SET:
+            return {};
           case DeleteMarkerReplicationStatus::Enabled:
             return "Enabled";
           case DeleteMarkerReplicationStatus::Disabled:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessingS3CompressionType::NOT_SET:
+            return {};
           case ProcessingS3CompressionType::None:
             return "None";
           case ProcessingS3CompressionType::Gzip:

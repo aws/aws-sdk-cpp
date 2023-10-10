@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudWatchEventSource::NOT_SET:
+            return {};
           case CloudWatchEventSource::EC2:
             return "EC2";
           case CloudWatchEventSource::CODE_DEPLOY:

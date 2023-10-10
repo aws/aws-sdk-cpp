@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3ObjectLockMode::NOT_SET:
+            return {};
           case S3ObjectLockMode::COMPLIANCE:
             return "COMPLIANCE";
           case S3ObjectLockMode::GOVERNANCE:

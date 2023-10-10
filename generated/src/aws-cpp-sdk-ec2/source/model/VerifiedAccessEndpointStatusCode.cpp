@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerifiedAccessEndpointStatusCode::NOT_SET:
+            return {};
           case VerifiedAccessEndpointStatusCode::pending:
             return "pending";
           case VerifiedAccessEndpointStatusCode::active:

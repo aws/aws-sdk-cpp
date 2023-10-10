@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceRegionScopeFilter::NOT_SET:
+            return {};
           case ResourceRegionScopeFilter::ALL:
             return "ALL";
           case ResourceRegionScopeFilter::REGIONAL:

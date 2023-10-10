@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceErrorInfoType::NOT_SET:
+            return {};
           case DataSourceErrorInfoType::ACCESS_DENIED:
             return "ACCESS_DENIED";
           case DataSourceErrorInfoType::COPY_SOURCE_NOT_FOUND:

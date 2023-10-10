@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmfcKlvMetadata::NOT_SET:
+            return {};
           case CmfcKlvMetadata::PASSTHROUGH:
             return "PASSTHROUGH";
           case CmfcKlvMetadata::NONE:

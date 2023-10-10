@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowExport::NOT_SET:
+            return {};
           case WorkflowExport::DEFINITION:
             return "DEFINITION";
           default:

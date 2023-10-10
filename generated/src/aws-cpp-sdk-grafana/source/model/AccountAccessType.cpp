@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountAccessType::NOT_SET:
+            return {};
           case AccountAccessType::CURRENT_ACCOUNT:
             return "CURRENT_ACCOUNT";
           case AccountAccessType::ORGANIZATION:

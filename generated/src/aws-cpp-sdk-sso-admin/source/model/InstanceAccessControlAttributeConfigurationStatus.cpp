@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceAccessControlAttributeConfigurationStatus::NOT_SET:
+            return {};
           case InstanceAccessControlAttributeConfigurationStatus::ENABLED:
             return "ENABLED";
           case InstanceAccessControlAttributeConfigurationStatus::CREATION_IN_PROGRESS:

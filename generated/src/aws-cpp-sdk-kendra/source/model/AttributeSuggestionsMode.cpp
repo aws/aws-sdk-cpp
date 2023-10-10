@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttributeSuggestionsMode::NOT_SET:
+            return {};
           case AttributeSuggestionsMode::ACTIVE:
             return "ACTIVE";
           case AttributeSuggestionsMode::INACTIVE:

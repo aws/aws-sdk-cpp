@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CategoryFilterType::NOT_SET:
+            return {};
           case CategoryFilterType::CUSTOM_FILTER:
             return "CUSTOM_FILTER";
           case CategoryFilterType::CUSTOM_FILTER_LIST:

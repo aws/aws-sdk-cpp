@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HomogeneousTargetDatabaseEngine::NOT_SET:
+            return {};
           case HomogeneousTargetDatabaseEngine::None_specified:
             return "None specified";
           default:

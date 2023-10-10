@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeatureType::NOT_SET:
+            return {};
           case FeatureType::TABLES:
             return "TABLES";
           case FeatureType::FORMS:
