@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceRegionScope::NOT_SET:
+            return {};
           case ResourceRegionScope::REGIONAL:
             return "REGIONAL";
           case ResourceRegionScope::GLOBAL:

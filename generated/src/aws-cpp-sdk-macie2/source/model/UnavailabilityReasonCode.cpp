@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnavailabilityReasonCode::NOT_SET:
+            return {};
           case UnavailabilityReasonCode::OBJECT_EXCEEDS_SIZE_QUOTA:
             return "OBJECT_EXCEEDS_SIZE_QUOTA";
           case UnavailabilityReasonCode::UNSUPPORTED_OBJECT_TYPE:

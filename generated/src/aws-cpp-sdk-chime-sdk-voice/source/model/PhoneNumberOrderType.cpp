@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberOrderType::NOT_SET:
+            return {};
           case PhoneNumberOrderType::New:
             return "New";
           case PhoneNumberOrderType::Porting:

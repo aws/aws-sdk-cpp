@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduledAutoTuneSeverityType::NOT_SET:
+            return {};
           case ScheduledAutoTuneSeverityType::LOW:
             return "LOW";
           case ScheduledAutoTuneSeverityType::MEDIUM:

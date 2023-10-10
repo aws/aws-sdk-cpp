@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SchemaElement::NOT_SET:
+            return {};
           case SchemaElement::RESOURCES:
             return "RESOURCES";
           case SchemaElement::SPLIT_COST_ALLOCATION_DATA:

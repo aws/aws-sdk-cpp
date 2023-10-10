@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcConnectionState::NOT_SET:
+            return {};
           case VpcConnectionState::CREATING:
             return "CREATING";
           case VpcConnectionState::AVAILABLE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mtime::NOT_SET:
+            return {};
           case Mtime::NONE:
             return "NONE";
           case Mtime::PRESERVE:

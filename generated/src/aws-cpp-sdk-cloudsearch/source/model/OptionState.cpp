@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OptionState::NOT_SET:
+            return {};
           case OptionState::RequiresIndexDocuments:
             return "RequiresIndexDocuments";
           case OptionState::Processing:

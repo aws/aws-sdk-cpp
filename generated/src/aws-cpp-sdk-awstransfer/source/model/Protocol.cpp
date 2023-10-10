@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Protocol::NOT_SET:
+            return {};
           case Protocol::SFTP:
             return "SFTP";
           case Protocol::FTP:

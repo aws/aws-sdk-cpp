@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetSamplingRate::NOT_SET:
+            return {};
           case TargetSamplingRate::PT1S:
             return "PT1S";
           case TargetSamplingRate::PT5S:

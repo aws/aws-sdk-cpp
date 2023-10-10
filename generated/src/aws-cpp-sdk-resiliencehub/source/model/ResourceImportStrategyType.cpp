@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceImportStrategyType::NOT_SET:
+            return {};
           case ResourceImportStrategyType::AddOnly:
             return "AddOnly";
           case ResourceImportStrategyType::ReplaceAll:

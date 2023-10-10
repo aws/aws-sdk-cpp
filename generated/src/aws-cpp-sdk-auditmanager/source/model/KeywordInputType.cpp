@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeywordInputType::NOT_SET:
+            return {};
           case KeywordInputType::SELECT_FROM_LIST:
             return "SELECT_FROM_LIST";
           case KeywordInputType::UPLOAD_FILE:

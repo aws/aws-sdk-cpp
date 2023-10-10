@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpaceSortKey::NOT_SET:
+            return {};
           case SpaceSortKey::CreationTime:
             return "CreationTime";
           case SpaceSortKey::LastModifiedTime:

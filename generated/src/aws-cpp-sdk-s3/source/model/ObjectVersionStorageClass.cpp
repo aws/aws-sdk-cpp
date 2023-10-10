@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectVersionStorageClass::NOT_SET:
+            return {};
           case ObjectVersionStorageClass::STANDARD:
             return "STANDARD";
           default:

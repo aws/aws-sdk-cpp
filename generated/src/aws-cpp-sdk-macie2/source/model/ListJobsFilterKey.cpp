@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListJobsFilterKey::NOT_SET:
+            return {};
           case ListJobsFilterKey::jobType:
             return "jobType";
           case ListJobsFilterKey::jobStatus:

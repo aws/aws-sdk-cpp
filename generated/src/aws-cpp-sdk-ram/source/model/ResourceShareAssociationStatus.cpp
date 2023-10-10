@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceShareAssociationStatus::NOT_SET:
+            return {};
           case ResourceShareAssociationStatus::ASSOCIATING:
             return "ASSOCIATING";
           case ResourceShareAssociationStatus::ASSOCIATED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TlsSessionResumptionMode::NOT_SET:
+            return {};
           case TlsSessionResumptionMode::DISABLED:
             return "DISABLED";
           case TlsSessionResumptionMode::ENABLED:

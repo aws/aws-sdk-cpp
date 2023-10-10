@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResiliencyPolicyTier::NOT_SET:
+            return {};
           case ResiliencyPolicyTier::MissionCritical:
             return "MissionCritical";
           case ResiliencyPolicyTier::Critical:

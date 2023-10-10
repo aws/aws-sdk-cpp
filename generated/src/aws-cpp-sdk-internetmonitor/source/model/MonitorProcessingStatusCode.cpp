@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitorProcessingStatusCode::NOT_SET:
+            return {};
           case MonitorProcessingStatusCode::OK:
             return "OK";
           case MonitorProcessingStatusCode::INACTIVE:

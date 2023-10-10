@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SavingsPlanPaymentOption::NOT_SET:
+            return {};
           case SavingsPlanPaymentOption::All_Upfront:
             return "All Upfront";
           case SavingsPlanPaymentOption::Partial_Upfront:

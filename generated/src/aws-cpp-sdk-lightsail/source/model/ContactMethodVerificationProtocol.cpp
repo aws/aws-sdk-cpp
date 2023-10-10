@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactMethodVerificationProtocol::NOT_SET:
+            return {};
           case ContactMethodVerificationProtocol::Email:
             return "Email";
           default:

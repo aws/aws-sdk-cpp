@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mode::NOT_SET:
+            return {};
           case Mode::DELIVERY:
             return "DELIVERY";
           case Mode::FILTER:

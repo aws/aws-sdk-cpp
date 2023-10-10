@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageClassType::NOT_SET:
+            return {};
           case UsageClassType::spot:
             return "spot";
           case UsageClassType::on_demand:

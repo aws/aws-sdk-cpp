@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FiberOpticCableType::NOT_SET:
+            return {};
           case FiberOpticCableType::SINGLE_MODE:
             return "SINGLE_MODE";
           case FiberOpticCableType::MULTI_MODE:

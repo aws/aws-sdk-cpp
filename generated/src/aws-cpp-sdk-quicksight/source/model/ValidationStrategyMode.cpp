@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationStrategyMode::NOT_SET:
+            return {};
           case ValidationStrategyMode::STRICT:
             return "STRICT";
           case ValidationStrategyMode::LENIENT:

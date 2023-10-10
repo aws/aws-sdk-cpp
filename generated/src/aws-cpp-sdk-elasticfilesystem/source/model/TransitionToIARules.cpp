@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitionToIARules::NOT_SET:
+            return {};
           case TransitionToIARules::AFTER_7_DAYS:
             return "AFTER_7_DAYS";
           case TransitionToIARules::AFTER_14_DAYS:

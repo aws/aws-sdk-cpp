@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LicenseType::NOT_SET:
+            return {};
           case LicenseType::ENTERPRISE:
             return "ENTERPRISE";
           case LicenseType::ENTERPRISE_FREE_TRIAL:

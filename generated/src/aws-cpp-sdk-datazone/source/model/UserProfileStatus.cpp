@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserProfileStatus::NOT_SET:
+            return {};
           case UserProfileStatus::ASSIGNED:
             return "ASSIGNED";
           case UserProfileStatus::NOT_ASSIGNED:

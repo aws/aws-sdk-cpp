@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OnDemandCapacityReservationUsageStrategy::NOT_SET:
+            return {};
           case OnDemandCapacityReservationUsageStrategy::use_capacity_reservations_first:
             return "use-capacity-reservations-first";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiskIopsConfigurationMode::NOT_SET:
+            return {};
           case DiskIopsConfigurationMode::AUTOMATIC:
             return "AUTOMATIC";
           case DiskIopsConfigurationMode::USER_PROVISIONED:

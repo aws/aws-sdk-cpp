@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortFieldProject::NOT_SET:
+            return {};
           case SortFieldProject::NAME:
             return "NAME";
           default:

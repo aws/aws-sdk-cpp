@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcPeeringConnectionStateReasonCode::NOT_SET:
+            return {};
           case VpcPeeringConnectionStateReasonCode::initiating_request:
             return "initiating-request";
           case VpcPeeringConnectionStateReasonCode::pending_acceptance:

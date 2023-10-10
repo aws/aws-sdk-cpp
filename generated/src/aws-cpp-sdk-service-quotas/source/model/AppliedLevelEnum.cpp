@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppliedLevelEnum::NOT_SET:
+            return {};
           case AppliedLevelEnum::ACCOUNT:
             return "ACCOUNT";
           case AppliedLevelEnum::RESOURCE:

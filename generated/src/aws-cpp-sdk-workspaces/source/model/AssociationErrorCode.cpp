@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationErrorCode::NOT_SET:
+            return {};
           case AssociationErrorCode::ValidationError_InsufficientDiskSpace:
             return "ValidationError.InsufficientDiskSpace";
           case AssociationErrorCode::ValidationError_InsufficientMemory:

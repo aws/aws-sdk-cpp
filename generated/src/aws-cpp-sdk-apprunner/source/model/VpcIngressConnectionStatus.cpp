@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcIngressConnectionStatus::NOT_SET:
+            return {};
           case VpcIngressConnectionStatus::AVAILABLE:
             return "AVAILABLE";
           case VpcIngressConnectionStatus::PENDING_CREATION:

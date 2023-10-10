@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetCapacityUnitType::NOT_SET:
+            return {};
           case TargetCapacityUnitType::vcpu:
             return "vcpu";
           case TargetCapacityUnitType::memory_mib:

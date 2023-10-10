@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileHeaderInfo::NOT_SET:
+            return {};
           case FileHeaderInfo::USE:
             return "USE";
           case FileHeaderInfo::IGNORE:

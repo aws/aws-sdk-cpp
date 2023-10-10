@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceNowConnectorOperator::NOT_SET:
+            return {};
           case ServiceNowConnectorOperator::PROJECTION:
             return "PROJECTION";
           case ServiceNowConnectorOperator::CONTAINS:

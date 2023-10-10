@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OAuthGrantType::NOT_SET:
+            return {};
           case OAuthGrantType::CODE:
             return "CODE";
           case OAuthGrantType::IMPLICIT:

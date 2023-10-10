@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataRepositoryTaskFilterName::NOT_SET:
+            return {};
           case DataRepositoryTaskFilterName::file_system_id:
             return "file-system-id";
           case DataRepositoryTaskFilterName::task_lifecycle:

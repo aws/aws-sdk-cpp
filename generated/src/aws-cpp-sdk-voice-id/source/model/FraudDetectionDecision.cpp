@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FraudDetectionDecision::NOT_SET:
+            return {};
           case FraudDetectionDecision::HIGH_RISK:
             return "HIGH_RISK";
           case FraudDetectionDecision::LOW_RISK:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoScalingType::NOT_SET:
+            return {};
           case AutoScalingType::load:
             return "load";
           case AutoScalingType::timer:

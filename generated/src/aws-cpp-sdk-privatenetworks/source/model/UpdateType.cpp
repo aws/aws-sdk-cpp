@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateType::NOT_SET:
+            return {};
           case UpdateType::REPLACE:
             return "REPLACE";
           case UpdateType::RETURN:

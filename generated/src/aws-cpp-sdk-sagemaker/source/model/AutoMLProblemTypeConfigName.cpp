@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLProblemTypeConfigName::NOT_SET:
+            return {};
           case AutoMLProblemTypeConfigName::ImageClassification:
             return "ImageClassification";
           case AutoMLProblemTypeConfigName::TextClassification:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FormTypeStatus::NOT_SET:
+            return {};
           case FormTypeStatus::ENABLED:
             return "ENABLED";
           case FormTypeStatus::DISABLED:

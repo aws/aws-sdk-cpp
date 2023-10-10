@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FunnelChartMeasureDataLabelStyle::NOT_SET:
+            return {};
           case FunnelChartMeasureDataLabelStyle::VALUE_ONLY:
             return "VALUE_ONLY";
           case FunnelChartMeasureDataLabelStyle::PERCENTAGE_BY_FIRST_STAGE:

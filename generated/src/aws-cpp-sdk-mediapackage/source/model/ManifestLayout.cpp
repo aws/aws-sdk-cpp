@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManifestLayout::NOT_SET:
+            return {};
           case ManifestLayout::FULL:
             return "FULL";
           case ManifestLayout::COMPACT:

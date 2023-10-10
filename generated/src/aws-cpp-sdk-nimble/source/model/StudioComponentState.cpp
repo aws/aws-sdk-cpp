@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioComponentState::NOT_SET:
+            return {};
           case StudioComponentState::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case StudioComponentState::READY:

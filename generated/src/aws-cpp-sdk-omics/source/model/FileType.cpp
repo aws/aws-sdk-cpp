@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileType::NOT_SET:
+            return {};
           case FileType::FASTQ:
             return "FASTQ";
           case FileType::BAM:

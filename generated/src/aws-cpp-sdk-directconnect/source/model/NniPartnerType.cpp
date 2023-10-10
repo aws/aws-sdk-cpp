@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NniPartnerType::NOT_SET:
+            return {};
           case NniPartnerType::v1:
             return "v1";
           case NniPartnerType::v2:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasetStatusMessageCode::NOT_SET:
+            return {};
           case DatasetStatusMessageCode::SUCCESS:
             return "SUCCESS";
           case DatasetStatusMessageCode::SERVICE_ERROR:

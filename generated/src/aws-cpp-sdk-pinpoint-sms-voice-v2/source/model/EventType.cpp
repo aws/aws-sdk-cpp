@@ -164,6 +164,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::ALL:
             return "ALL";
           case EventType::TEXT_ALL:

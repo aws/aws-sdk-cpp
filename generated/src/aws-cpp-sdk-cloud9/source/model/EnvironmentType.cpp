@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentType::NOT_SET:
+            return {};
           case EnvironmentType::ssh:
             return "ssh";
           case EnvironmentType::ec2:

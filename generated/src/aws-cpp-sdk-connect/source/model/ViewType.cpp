@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ViewType::NOT_SET:
+            return {};
           case ViewType::CUSTOMER_MANAGED:
             return "CUSTOMER_MANAGED";
           case ViewType::AWS_MANAGED:

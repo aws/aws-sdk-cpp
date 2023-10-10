@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SafeguardPolicy::NOT_SET:
+            return {};
           case SafeguardPolicy::rely_on_sql_server_replication_agent:
             return "rely-on-sql-server-replication-agent";
           case SafeguardPolicy::exclusive_automatic_truncation:

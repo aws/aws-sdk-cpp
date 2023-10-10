@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EBSFilterName::NOT_SET:
+            return {};
           case EBSFilterName::Finding:
             return "Finding";
           default:

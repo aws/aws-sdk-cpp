@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IAMAuthMode::NOT_SET:
+            return {};
           case IAMAuthMode::DISABLED:
             return "DISABLED";
           case IAMAuthMode::REQUIRED:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubOcrLanguage::NOT_SET:
+            return {};
           case DvbSubOcrLanguage::DEU:
             return "DEU";
           case DvbSubOcrLanguage::ENG:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationStatusName::NOT_SET:
+            return {};
           case AssociationStatusName::Pending:
             return "Pending";
           case AssociationStatusName::Success:

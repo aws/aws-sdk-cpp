@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingAdjustmentType::NOT_SET:
+            return {};
           case ScalingAdjustmentType::ChangeInCapacity:
             return "ChangeInCapacity";
           case ScalingAdjustmentType::ExactCapacity:

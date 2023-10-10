@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlaybackInterruptionReason::NOT_SET:
+            return {};
           case PlaybackInterruptionReason::DTMF_START_DETECTED:
             return "DTMF_START_DETECTED";
           case PlaybackInterruptionReason::TEXT_DETECTED:

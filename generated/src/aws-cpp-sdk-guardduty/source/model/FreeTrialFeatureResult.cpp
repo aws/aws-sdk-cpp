@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FreeTrialFeatureResult::NOT_SET:
+            return {};
           case FreeTrialFeatureResult::FLOW_LOGS:
             return "FLOW_LOGS";
           case FreeTrialFeatureResult::CLOUD_TRAIL:

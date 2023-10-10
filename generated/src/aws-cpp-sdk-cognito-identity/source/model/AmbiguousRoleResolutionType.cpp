@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AmbiguousRoleResolutionType::NOT_SET:
+            return {};
           case AmbiguousRoleResolutionType::AuthenticatedRole:
             return "AuthenticatedRole";
           case AmbiguousRoleResolutionType::Deny:

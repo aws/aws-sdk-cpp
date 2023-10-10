@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DynatraceConnectorOperator::NOT_SET:
+            return {};
           case DynatraceConnectorOperator::PROJECTION:
             return "PROJECTION";
           case DynatraceConnectorOperator::BETWEEN:

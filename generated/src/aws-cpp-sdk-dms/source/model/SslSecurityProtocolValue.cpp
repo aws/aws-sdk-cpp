@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SslSecurityProtocolValue::NOT_SET:
+            return {};
           case SslSecurityProtocolValue::plaintext:
             return "plaintext";
           case SslSecurityProtocolValue::ssl_encryption:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationType::NOT_SET:
+            return {};
           case NotificationType::TASK:
             return "TASK";
           case NotificationType::EVENT:

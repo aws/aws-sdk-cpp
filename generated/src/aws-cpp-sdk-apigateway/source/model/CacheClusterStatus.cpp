@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CacheClusterStatus::NOT_SET:
+            return {};
           case CacheClusterStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case CacheClusterStatus::AVAILABLE:

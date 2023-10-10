@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageVersionAction::NOT_SET:
+            return {};
           case PackageVersionAction::PUBLISH:
             return "PUBLISH";
           case PackageVersionAction::DEPRECATE:

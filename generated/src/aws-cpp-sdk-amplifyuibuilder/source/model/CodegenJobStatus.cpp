@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CodegenJobStatus::NOT_SET:
+            return {};
           case CodegenJobStatus::in_progress:
             return "in_progress";
           case CodegenJobStatus::failed:

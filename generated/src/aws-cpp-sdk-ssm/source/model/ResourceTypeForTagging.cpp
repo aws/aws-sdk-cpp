@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceTypeForTagging::NOT_SET:
+            return {};
           case ResourceTypeForTagging::Document:
             return "Document";
           case ResourceTypeForTagging::ManagedInstance:

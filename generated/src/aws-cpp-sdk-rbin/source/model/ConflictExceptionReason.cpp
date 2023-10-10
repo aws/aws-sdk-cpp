@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictExceptionReason::NOT_SET:
+            return {};
           case ConflictExceptionReason::INVALID_RULE_STATE:
             return "INVALID_RULE_STATE";
           default:

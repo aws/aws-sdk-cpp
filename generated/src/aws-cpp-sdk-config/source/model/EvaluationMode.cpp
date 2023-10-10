@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvaluationMode::NOT_SET:
+            return {};
           case EvaluationMode::DETECTIVE:
             return "DETECTIVE";
           case EvaluationMode::PROACTIVE:

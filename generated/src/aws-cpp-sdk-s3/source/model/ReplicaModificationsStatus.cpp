@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicaModificationsStatus::NOT_SET:
+            return {};
           case ReplicaModificationsStatus::Enabled:
             return "Enabled";
           case ReplicaModificationsStatus::Disabled:

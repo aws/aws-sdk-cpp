@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2DynamicSubGop::NOT_SET:
+            return {};
           case Mpeg2DynamicSubGop::ADAPTIVE:
             return "ADAPTIVE";
           case Mpeg2DynamicSubGop::STATIC_:

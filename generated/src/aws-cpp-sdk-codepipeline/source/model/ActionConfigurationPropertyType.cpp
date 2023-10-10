@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionConfigurationPropertyType::NOT_SET:
+            return {};
           case ActionConfigurationPropertyType::String:
             return "String";
           case ActionConfigurationPropertyType::Number:

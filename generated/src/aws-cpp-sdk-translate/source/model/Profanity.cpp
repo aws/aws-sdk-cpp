@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Profanity::NOT_SET:
+            return {};
           case Profanity::MASK:
             return "MASK";
           default:

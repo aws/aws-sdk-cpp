@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MpdManifestMetadataSignaling::NOT_SET:
+            return {};
           case MpdManifestMetadataSignaling::ENABLED:
             return "ENABLED";
           case MpdManifestMetadataSignaling::DISABLED:

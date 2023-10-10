@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioMuxType::NOT_SET:
+            return {};
           case AudioMuxType::AudioOnly:
             return "AudioOnly";
           case AudioMuxType::AudioWithActiveSpeakerVideo:

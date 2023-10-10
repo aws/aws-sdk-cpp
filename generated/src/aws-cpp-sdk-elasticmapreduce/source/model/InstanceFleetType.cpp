@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceFleetType::NOT_SET:
+            return {};
           case InstanceFleetType::MASTER:
             return "MASTER";
           case InstanceFleetType::CORE:

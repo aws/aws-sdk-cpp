@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScaleInProtectedInstances::NOT_SET:
+            return {};
           case ScaleInProtectedInstances::Refresh:
             return "Refresh";
           case ScaleInProtectedInstances::Ignore:

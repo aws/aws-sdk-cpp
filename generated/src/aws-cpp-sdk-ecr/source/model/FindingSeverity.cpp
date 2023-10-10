@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingSeverity::NOT_SET:
+            return {};
           case FindingSeverity::INFORMATIONAL:
             return "INFORMATIONAL";
           case FindingSeverity::LOW:

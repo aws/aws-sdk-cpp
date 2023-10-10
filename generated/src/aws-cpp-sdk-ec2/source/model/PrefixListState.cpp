@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrefixListState::NOT_SET:
+            return {};
           case PrefixListState::create_in_progress:
             return "create-in-progress";
           case PrefixListState::create_complete:

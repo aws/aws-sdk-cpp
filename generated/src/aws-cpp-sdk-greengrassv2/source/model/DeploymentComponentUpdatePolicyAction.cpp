@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentComponentUpdatePolicyAction::NOT_SET:
+            return {};
           case DeploymentComponentUpdatePolicyAction::NOTIFY_COMPONENTS:
             return "NOTIFY_COMPONENTS";
           case DeploymentComponentUpdatePolicyAction::SKIP_NOTIFY_COMPONENTS:

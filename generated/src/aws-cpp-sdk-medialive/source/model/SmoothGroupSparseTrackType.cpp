@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmoothGroupSparseTrackType::NOT_SET:
+            return {};
           case SmoothGroupSparseTrackType::NONE:
             return "NONE";
           case SmoothGroupSparseTrackType::SCTE_35:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3Permission::NOT_SET:
+            return {};
           case S3Permission::FULL_CONTROL:
             return "FULL_CONTROL";
           case S3Permission::READ:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VocabularyState::NOT_SET:
+            return {};
           case VocabularyState::CREATION_IN_PROGRESS:
             return "CREATION_IN_PROGRESS";
           case VocabularyState::ACTIVE:

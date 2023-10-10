@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TextWrap::NOT_SET:
+            return {};
           case TextWrap::NONE:
             return "NONE";
           case TextWrap::WRAP:

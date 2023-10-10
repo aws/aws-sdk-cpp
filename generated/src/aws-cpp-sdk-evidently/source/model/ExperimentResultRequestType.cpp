@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExperimentResultRequestType::NOT_SET:
+            return {};
           case ExperimentResultRequestType::BaseStat:
             return "BaseStat";
           case ExperimentResultRequestType::TreatmentEffect:

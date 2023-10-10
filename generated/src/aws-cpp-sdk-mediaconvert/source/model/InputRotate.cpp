@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputRotate::NOT_SET:
+            return {};
           case InputRotate::DEGREE_0:
             return "DEGREE_0";
           case InputRotate::DEGREES_90:

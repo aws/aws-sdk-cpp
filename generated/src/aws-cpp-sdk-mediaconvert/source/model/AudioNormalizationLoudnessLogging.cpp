@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioNormalizationLoudnessLogging::NOT_SET:
+            return {};
           case AudioNormalizationLoudnessLogging::LOG:
             return "LOG";
           case AudioNormalizationLoudnessLogging::DONT_LOG:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Type::NOT_SET:
+            return {};
           case Type::ACCOUNT:
             return "ACCOUNT";
           case Type::ORGANIZATION:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectStorageServerProtocol::NOT_SET:
+            return {};
           case ObjectStorageServerProtocol::HTTPS:
             return "HTTPS";
           case ObjectStorageServerProtocol::HTTP:

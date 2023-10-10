@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeType::NOT_SET:
+            return {};
           case NodeType::BROKER:
             return "BROKER";
           default:

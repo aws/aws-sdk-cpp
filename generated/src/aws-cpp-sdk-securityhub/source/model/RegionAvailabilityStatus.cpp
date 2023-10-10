@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegionAvailabilityStatus::NOT_SET:
+            return {};
           case RegionAvailabilityStatus::AVAILABLE:
             return "AVAILABLE";
           case RegionAvailabilityStatus::UNAVAILABLE:

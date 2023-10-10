@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RtmpCaptionData::NOT_SET:
+            return {};
           case RtmpCaptionData::ALL:
             return "ALL";
           case RtmpCaptionData::FIELD1_608:

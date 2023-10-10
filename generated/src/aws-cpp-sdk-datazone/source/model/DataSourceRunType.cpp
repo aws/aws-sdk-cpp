@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceRunType::NOT_SET:
+            return {};
           case DataSourceRunType::PRIORITIZED:
             return "PRIORITIZED";
           case DataSourceRunType::SCHEDULED:

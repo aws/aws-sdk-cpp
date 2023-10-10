@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterExpressionType::NOT_SET:
+            return {};
           case FilterExpressionType::INCLUDE:
             return "INCLUDE";
           case FilterExpressionType::EXCLUDE:

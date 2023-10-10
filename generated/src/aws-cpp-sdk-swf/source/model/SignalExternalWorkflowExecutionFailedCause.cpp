@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SignalExternalWorkflowExecutionFailedCause::NOT_SET:
+            return {};
           case SignalExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION:
             return "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION";
           case SignalExternalWorkflowExecutionFailedCause::SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED:

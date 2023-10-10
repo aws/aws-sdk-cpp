@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StandbyInstances::NOT_SET:
+            return {};
           case StandbyInstances::Terminate:
             return "Terminate";
           case StandbyInstances::Ignore:

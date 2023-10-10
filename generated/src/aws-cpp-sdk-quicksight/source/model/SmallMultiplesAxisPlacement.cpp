@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmallMultiplesAxisPlacement::NOT_SET:
+            return {};
           case SmallMultiplesAxisPlacement::OUTSIDE:
             return "OUTSIDE";
           case SmallMultiplesAxisPlacement::INSIDE:

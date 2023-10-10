@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectoryConfigurationStatus::NOT_SET:
+            return {};
           case DirectoryConfigurationStatus::Requested:
             return "Requested";
           case DirectoryConfigurationStatus::Updating:

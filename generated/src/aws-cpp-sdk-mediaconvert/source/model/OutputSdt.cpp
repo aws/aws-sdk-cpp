@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutputSdt::NOT_SET:
+            return {};
           case OutputSdt::SDT_FOLLOW:
             return "SDT_FOLLOW";
           case OutputSdt::SDT_FOLLOW_IF_PRESENT:

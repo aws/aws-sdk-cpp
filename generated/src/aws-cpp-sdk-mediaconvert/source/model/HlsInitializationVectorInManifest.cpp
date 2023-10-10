@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsInitializationVectorInManifest::NOT_SET:
+            return {};
           case HlsInitializationVectorInManifest::INCLUDE:
             return "INCLUDE";
           case HlsInitializationVectorInManifest::EXCLUDE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionType::NOT_SET:
+            return {};
           case EncryptionType::KMS_BASED_ENCRYPTION:
             return "KMS_BASED_ENCRYPTION";
           case EncryptionType::FLEETWISE_DEFAULT_ENCRYPTION:

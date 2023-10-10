@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecoveryInstanceDataReplicationState::NOT_SET:
+            return {};
           case RecoveryInstanceDataReplicationState::STOPPED:
             return "STOPPED";
           case RecoveryInstanceDataReplicationState::INITIATING:

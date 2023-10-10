@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MovPaddingControl::NOT_SET:
+            return {};
           case MovPaddingControl::OMNEON:
             return "OMNEON";
           case MovPaddingControl::NONE:

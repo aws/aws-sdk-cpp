@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BalancingStrategy::NOT_SET:
+            return {};
           case BalancingStrategy::SPOT_ONLY:
             return "SPOT_ONLY";
           case BalancingStrategy::SPOT_PREFERRED:

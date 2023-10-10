@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ButtonAction::NOT_SET:
+            return {};
           case ButtonAction::LINK:
             return "LINK";
           case ButtonAction::DEEP_LINK:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficDistributionGroupStatus::NOT_SET:
+            return {};
           case TrafficDistributionGroupStatus::CREATION_IN_PROGRESS:
             return "CREATION_IN_PROGRESS";
           case TrafficDistributionGroupStatus::ACTIVE:

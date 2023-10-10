@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoPlacement::NOT_SET:
+            return {};
           case AutoPlacement::on:
             return "on";
           case AutoPlacement::off:

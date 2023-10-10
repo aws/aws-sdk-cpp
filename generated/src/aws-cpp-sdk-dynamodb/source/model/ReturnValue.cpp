@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReturnValue::NOT_SET:
+            return {};
           case ReturnValue::NONE:
             return "NONE";
           case ReturnValue::ALL_OLD:

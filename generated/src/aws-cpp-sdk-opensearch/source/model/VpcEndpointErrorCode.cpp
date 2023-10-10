@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcEndpointErrorCode::NOT_SET:
+            return {};
           case VpcEndpointErrorCode::ENDPOINT_NOT_FOUND:
             return "ENDPOINT_NOT_FOUND";
           case VpcEndpointErrorCode::SERVER_ERROR:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MxfProfile::NOT_SET:
+            return {};
           case MxfProfile::D_10:
             return "D_10";
           case MxfProfile::XDCAM:

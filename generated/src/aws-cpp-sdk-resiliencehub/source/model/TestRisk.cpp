@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestRisk::NOT_SET:
+            return {};
           case TestRisk::Small:
             return "Small";
           case TestRisk::Medium:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduledQueryRunStatus::NOT_SET:
+            return {};
           case ScheduledQueryRunStatus::AUTO_TRIGGER_SUCCESS:
             return "AUTO_TRIGGER_SUCCESS";
           case ScheduledQueryRunStatus::AUTO_TRIGGER_FAILURE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExcludeRecommendationReason::NOT_SET:
+            return {};
           case ExcludeRecommendationReason::AlreadyImplemented:
             return "AlreadyImplemented";
           case ExcludeRecommendationReason::NotRelevant:

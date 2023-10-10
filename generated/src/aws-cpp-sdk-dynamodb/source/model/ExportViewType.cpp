@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportViewType::NOT_SET:
+            return {};
           case ExportViewType::NEW_IMAGE:
             return "NEW_IMAGE";
           case ExportViewType::NEW_AND_OLD_IMAGES:

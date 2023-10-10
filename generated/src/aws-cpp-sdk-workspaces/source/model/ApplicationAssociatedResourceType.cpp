@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationAssociatedResourceType::NOT_SET:
+            return {};
           case ApplicationAssociatedResourceType::WORKSPACE:
             return "WORKSPACE";
           case ApplicationAssociatedResourceType::BUNDLE:

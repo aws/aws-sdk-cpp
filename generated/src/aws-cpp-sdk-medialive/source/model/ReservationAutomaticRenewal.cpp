@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservationAutomaticRenewal::NOT_SET:
+            return {};
           case ReservationAutomaticRenewal::DISABLED:
             return "DISABLED";
           case ReservationAutomaticRenewal::ENABLED:

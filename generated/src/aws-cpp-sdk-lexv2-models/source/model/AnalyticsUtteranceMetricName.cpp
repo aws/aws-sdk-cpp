@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsUtteranceMetricName::NOT_SET:
+            return {};
           case AnalyticsUtteranceMetricName::Count:
             return "Count";
           case AnalyticsUtteranceMetricName::Missed:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InspectorEvent::NOT_SET:
+            return {};
           case InspectorEvent::ASSESSMENT_RUN_STARTED:
             return "ASSESSMENT_RUN_STARTED";
           case InspectorEvent::ASSESSMENT_RUN_COMPLETED:

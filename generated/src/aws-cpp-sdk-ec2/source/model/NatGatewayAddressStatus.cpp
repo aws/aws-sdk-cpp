@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NatGatewayAddressStatus::NOT_SET:
+            return {};
           case NatGatewayAddressStatus::assigning:
             return "assigning";
           case NatGatewayAddressStatus::unassigning:

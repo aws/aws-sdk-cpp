@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudHsmObjectState::NOT_SET:
+            return {};
           case CloudHsmObjectState::READY:
             return "READY";
           case CloudHsmObjectState::UPDATING:

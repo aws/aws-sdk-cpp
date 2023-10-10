@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdditionalOptionKeys::NOT_SET:
+            return {};
           case AdditionalOptionKeys::performanceTuning_caching:
             return "performanceTuning.caching";
           default:

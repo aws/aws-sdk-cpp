@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReachabilityStatus::NOT_SET:
+            return {};
           case ReachabilityStatus::PENDING:
             return "PENDING";
           case ReachabilityStatus::DONE:

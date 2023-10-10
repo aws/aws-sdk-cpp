@@ -359,6 +359,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportableInstanceField::NOT_SET:
+            return {};
           case ExportableInstanceField::AccountId:
             return "AccountId";
           case ExportableInstanceField::InstanceArn:

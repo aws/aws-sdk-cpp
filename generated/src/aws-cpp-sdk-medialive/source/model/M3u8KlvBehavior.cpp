@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M3u8KlvBehavior::NOT_SET:
+            return {};
           case M3u8KlvBehavior::NO_PASSTHROUGH:
             return "NO_PASSTHROUGH";
           case M3u8KlvBehavior::PASSTHROUGH:

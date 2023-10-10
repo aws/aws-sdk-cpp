@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::ScheduledAssessmentFailure:
             return "ScheduledAssessmentFailure";
           case EventType::DriftDetected:

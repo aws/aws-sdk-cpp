@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginRequestPolicyType::NOT_SET:
+            return {};
           case OriginRequestPolicyType::managed:
             return "managed";
           case OriginRequestPolicyType::custom:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpeakerStatus::NOT_SET:
+            return {};
           case SpeakerStatus::ENROLLED:
             return "ENROLLED";
           case SpeakerStatus::EXPIRED:

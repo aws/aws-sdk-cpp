@@ -159,6 +159,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlockType::NOT_SET:
+            return {};
           case BlockType::KEY_VALUE_SET:
             return "KEY_VALUE_SET";
           case BlockType::PAGE:

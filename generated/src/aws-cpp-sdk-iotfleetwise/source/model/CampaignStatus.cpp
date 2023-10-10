@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CampaignStatus::NOT_SET:
+            return {};
           case CampaignStatus::CREATING:
             return "CREATING";
           case CampaignStatus::WAITING_FOR_APPROVAL:

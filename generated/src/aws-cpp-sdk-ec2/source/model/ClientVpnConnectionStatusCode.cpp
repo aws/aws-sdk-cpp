@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientVpnConnectionStatusCode::NOT_SET:
+            return {};
           case ClientVpnConnectionStatusCode::active:
             return "active";
           case ClientVpnConnectionStatusCode::failed_to_terminate:

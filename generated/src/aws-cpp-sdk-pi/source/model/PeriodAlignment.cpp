@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PeriodAlignment::NOT_SET:
+            return {};
           case PeriodAlignment::END_TIME:
             return "END_TIME";
           case PeriodAlignment::START_TIME:

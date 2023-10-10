@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserProfileType::NOT_SET:
+            return {};
           case UserProfileType::IAM:
             return "IAM";
           case UserProfileType::SSO:

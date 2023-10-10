@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterType::NOT_SET:
+            return {};
           case ParameterType::SMALLINT:
             return "SMALLINT";
           case ParameterType::INTEGER:

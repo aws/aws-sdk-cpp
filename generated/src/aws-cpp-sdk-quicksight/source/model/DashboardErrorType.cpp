@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashboardErrorType::NOT_SET:
+            return {};
           case DashboardErrorType::ACCESS_DENIED:
             return "ACCESS_DENIED";
           case DashboardErrorType::SOURCE_NOT_FOUND:

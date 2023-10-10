@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TriggerType::NOT_SET:
+            return {};
           case TriggerType::CreatePipeline:
             return "CreatePipeline";
           case TriggerType::StartPipelineExecution:

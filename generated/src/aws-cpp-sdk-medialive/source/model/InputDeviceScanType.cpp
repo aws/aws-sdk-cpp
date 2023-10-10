@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDeviceScanType::NOT_SET:
+            return {};
           case InputDeviceScanType::INTERLACED:
             return "INTERLACED";
           case InputDeviceScanType::PROGRESSIVE:

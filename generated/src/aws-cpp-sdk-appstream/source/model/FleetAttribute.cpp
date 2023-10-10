@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetAttribute::NOT_SET:
+            return {};
           case FleetAttribute::VPC_CONFIGURATION:
             return "VPC_CONFIGURATION";
           case FleetAttribute::VPC_CONFIGURATION_SECURITY_GROUP_IDS:

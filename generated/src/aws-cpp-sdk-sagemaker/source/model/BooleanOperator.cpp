@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BooleanOperator::NOT_SET:
+            return {};
           case BooleanOperator::And:
             return "And";
           case BooleanOperator::Or:

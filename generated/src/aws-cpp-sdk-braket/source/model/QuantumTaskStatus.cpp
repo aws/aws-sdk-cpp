@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QuantumTaskStatus::NOT_SET:
+            return {};
           case QuantumTaskStatus::CREATED:
             return "CREATED";
           case QuantumTaskStatus::QUEUED:

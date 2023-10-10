@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThumbnailConfigurationStorage::NOT_SET:
+            return {};
           case ThumbnailConfigurationStorage::SEQUENTIAL:
             return "SEQUENTIAL";
           case ThumbnailConfigurationStorage::LATEST:

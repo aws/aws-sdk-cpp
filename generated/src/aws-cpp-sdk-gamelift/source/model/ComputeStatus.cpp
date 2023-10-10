@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComputeStatus::NOT_SET:
+            return {};
           case ComputeStatus::PENDING:
             return "PENDING";
           case ComputeStatus::ACTIVE:

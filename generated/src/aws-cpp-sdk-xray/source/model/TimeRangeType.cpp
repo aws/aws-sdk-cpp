@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeRangeType::NOT_SET:
+            return {};
           case TimeRangeType::TraceId:
             return "TraceId";
           case TimeRangeType::Event:

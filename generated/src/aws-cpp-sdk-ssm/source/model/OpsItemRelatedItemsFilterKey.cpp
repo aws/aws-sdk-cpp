@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpsItemRelatedItemsFilterKey::NOT_SET:
+            return {};
           case OpsItemRelatedItemsFilterKey::ResourceType:
             return "ResourceType";
           case OpsItemRelatedItemsFilterKey::AssociationId:

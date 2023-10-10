@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchResourceType::NOT_SET:
+            return {};
           case SearchResourceType::FOLDER:
             return "FOLDER";
           case SearchResourceType::DOCUMENT:

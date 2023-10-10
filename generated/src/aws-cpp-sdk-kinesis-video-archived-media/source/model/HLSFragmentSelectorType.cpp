@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HLSFragmentSelectorType::NOT_SET:
+            return {};
           case HLSFragmentSelectorType::PRODUCER_TIMESTAMP:
             return "PRODUCER_TIMESTAMP";
           case HLSFragmentSelectorType::SERVER_TIMESTAMP:

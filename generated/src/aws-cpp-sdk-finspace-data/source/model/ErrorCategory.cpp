@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCategory::NOT_SET:
+            return {};
           case ErrorCategory::VALIDATION:
             return "VALIDATION";
           case ErrorCategory::SERVICE_QUOTA_EXCEEDED:

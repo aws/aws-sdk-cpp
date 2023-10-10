@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LayoutOption::NOT_SET:
+            return {};
           case LayoutOption::GridView:
             return "GridView";
           default:

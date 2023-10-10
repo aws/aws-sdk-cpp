@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleExecutionMode::NOT_SET:
+            return {};
           case RuleExecutionMode::ALL_MATCHED:
             return "ALL_MATCHED";
           case RuleExecutionMode::FIRST_MATCHED:

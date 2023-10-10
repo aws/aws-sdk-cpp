@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FaceSearchSortBy::NOT_SET:
+            return {};
           case FaceSearchSortBy::INDEX:
             return "INDEX";
           case FaceSearchSortBy::TIMESTAMP:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtectionGroupAggregation::NOT_SET:
+            return {};
           case ProtectionGroupAggregation::SUM:
             return "SUM";
           case ProtectionGroupAggregation::MEAN:

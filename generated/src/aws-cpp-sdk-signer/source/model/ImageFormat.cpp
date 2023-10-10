@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageFormat::NOT_SET:
+            return {};
           case ImageFormat::JSON:
             return "JSON";
           case ImageFormat::JSONEmbedded:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeProgressStageStatuses::NOT_SET:
+            return {};
           case ChangeProgressStageStatuses::PENDING:
             return "PENDING";
           case ChangeProgressStageStatuses::IN_PROGRESS:

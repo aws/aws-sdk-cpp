@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthorizationType::NOT_SET:
+            return {};
           case AuthorizationType::AWS_IAM:
             return "AWS_IAM";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpnEcmpSupportValue::NOT_SET:
+            return {};
           case VpnEcmpSupportValue::enable:
             return "enable";
           case VpnEcmpSupportValue::disable:

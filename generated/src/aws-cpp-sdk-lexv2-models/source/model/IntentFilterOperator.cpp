@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntentFilterOperator::NOT_SET:
+            return {};
           case IntentFilterOperator::CO:
             return "CO";
           case IntentFilterOperator::EQ:

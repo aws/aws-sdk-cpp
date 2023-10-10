@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AgentHealthCode::NOT_SET:
+            return {};
           case AgentHealthCode::IDLE:
             return "IDLE";
           case AgentHealthCode::RUNNING:

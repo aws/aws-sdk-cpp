@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorldGenerationJobErrorCode::NOT_SET:
+            return {};
           case WorldGenerationJobErrorCode::InternalServiceError:
             return "InternalServiceError";
           case WorldGenerationJobErrorCode::LimitExceeded:

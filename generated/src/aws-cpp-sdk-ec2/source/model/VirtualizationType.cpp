@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VirtualizationType::NOT_SET:
+            return {};
           case VirtualizationType::hvm:
             return "hvm";
           case VirtualizationType::paravirtual:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2IntraDcPrecision::NOT_SET:
+            return {};
           case Mpeg2IntraDcPrecision::AUTO:
             return "AUTO";
           case Mpeg2IntraDcPrecision::INTRA_DC_PRECISION_8:

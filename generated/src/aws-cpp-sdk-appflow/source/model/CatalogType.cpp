@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CatalogType::NOT_SET:
+            return {};
           case CatalogType::GLUE:
             return "GLUE";
           default:

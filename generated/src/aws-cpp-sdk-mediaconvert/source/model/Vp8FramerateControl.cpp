@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Vp8FramerateControl::NOT_SET:
+            return {};
           case Vp8FramerateControl::INITIALIZE_FROM_SOURCE:
             return "INITIALIZE_FROM_SOURCE";
           case Vp8FramerateControl::SPECIFIED:

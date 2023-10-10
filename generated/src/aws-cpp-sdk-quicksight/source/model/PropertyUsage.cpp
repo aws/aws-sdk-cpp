@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PropertyUsage::NOT_SET:
+            return {};
           case PropertyUsage::INHERIT:
             return "INHERIT";
           case PropertyUsage::DIMENSION:

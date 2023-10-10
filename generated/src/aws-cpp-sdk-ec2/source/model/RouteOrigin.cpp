@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RouteOrigin::NOT_SET:
+            return {};
           case RouteOrigin::CreateRouteTable:
             return "CreateRouteTable";
           case RouteOrigin::CreateRoute:

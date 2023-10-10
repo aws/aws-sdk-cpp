@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2FramerateControl::NOT_SET:
+            return {};
           case Mpeg2FramerateControl::INITIALIZE_FROM_SOURCE:
             return "INITIALIZE_FROM_SOURCE";
           case Mpeg2FramerateControl::SPECIFIED:

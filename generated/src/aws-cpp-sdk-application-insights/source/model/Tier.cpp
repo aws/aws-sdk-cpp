@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Tier::NOT_SET:
+            return {};
           case Tier::CUSTOM:
             return "CUSTOM";
           case Tier::DEFAULT:

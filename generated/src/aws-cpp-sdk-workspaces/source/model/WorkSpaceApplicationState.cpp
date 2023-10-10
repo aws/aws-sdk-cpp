@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkSpaceApplicationState::NOT_SET:
+            return {};
           case WorkSpaceApplicationState::PENDING:
             return "PENDING";
           case WorkSpaceApplicationState::ERROR_:

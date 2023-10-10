@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntegrationType::NOT_SET:
+            return {};
           case IntegrationType::EVENT:
             return "EVENT";
           case IntegrationType::VOICE_ID:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsManifestDurationFormat::NOT_SET:
+            return {};
           case HlsManifestDurationFormat::FLOATING_POINT:
             return "FLOATING_POINT";
           case HlsManifestDurationFormat::INTEGER:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperatingSystem::NOT_SET:
+            return {};
           case OperatingSystem::WINDOWS_2012:
             return "WINDOWS_2012";
           case OperatingSystem::AMAZON_LINUX:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComparisonOperatorType::NOT_SET:
+            return {};
           case ComparisonOperatorType::GreaterThanOrEqualToThreshold:
             return "GreaterThanOrEqualToThreshold";
           case ComparisonOperatorType::GreaterThanThreshold:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ec2Platform::NOT_SET:
+            return {};
           case Ec2Platform::WINDOWS:
             return "WINDOWS";
           case Ec2Platform::LINUX:

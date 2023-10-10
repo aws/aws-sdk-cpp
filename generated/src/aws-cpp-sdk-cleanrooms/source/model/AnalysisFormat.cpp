@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalysisFormat::NOT_SET:
+            return {};
           case AnalysisFormat::SQL:
             return "SQL";
           default:

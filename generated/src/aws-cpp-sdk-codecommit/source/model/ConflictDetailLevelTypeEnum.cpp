@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictDetailLevelTypeEnum::NOT_SET:
+            return {};
           case ConflictDetailLevelTypeEnum::FILE_LEVEL:
             return "FILE_LEVEL";
           case ConflictDetailLevelTypeEnum::LINE_LEVEL:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PricingMode::NOT_SET:
+            return {};
           case PricingMode::BASIC:
             return "BASIC";
           case PricingMode::STANDARD:

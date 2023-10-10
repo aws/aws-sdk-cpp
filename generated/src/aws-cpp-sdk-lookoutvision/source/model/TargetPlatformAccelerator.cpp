@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetPlatformAccelerator::NOT_SET:
+            return {};
           case TargetPlatformAccelerator::NVIDIA:
             return "NVIDIA";
           default:

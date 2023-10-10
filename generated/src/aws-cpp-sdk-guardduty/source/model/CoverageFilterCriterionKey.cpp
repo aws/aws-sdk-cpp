@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CoverageFilterCriterionKey::NOT_SET:
+            return {};
           case CoverageFilterCriterionKey::ACCOUNT_ID:
             return "ACCOUNT_ID";
           case CoverageFilterCriterionKey::CLUSTER_NAME:

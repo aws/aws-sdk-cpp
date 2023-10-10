@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VariationValueType::NOT_SET:
+            return {};
           case VariationValueType::STRING:
             return "STRING";
           case VariationValueType::LONG:

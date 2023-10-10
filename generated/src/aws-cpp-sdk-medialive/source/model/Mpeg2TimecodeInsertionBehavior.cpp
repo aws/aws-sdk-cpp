@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2TimecodeInsertionBehavior::NOT_SET:
+            return {};
           case Mpeg2TimecodeInsertionBehavior::DISABLED:
             return "DISABLED";
           case Mpeg2TimecodeInsertionBehavior::GOP_TIMECODE:

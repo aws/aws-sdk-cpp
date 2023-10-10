@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RunStatus::NOT_SET:
+            return {};
           case RunStatus::PENDING:
             return "PENDING";
           case RunStatus::STARTING:

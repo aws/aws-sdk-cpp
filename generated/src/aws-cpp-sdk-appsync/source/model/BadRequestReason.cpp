@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BadRequestReason::NOT_SET:
+            return {};
           case BadRequestReason::CODE_ERROR:
             return "CODE_ERROR";
           default:

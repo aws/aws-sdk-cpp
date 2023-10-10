@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WirelessGatewayType::NOT_SET:
+            return {};
           case WirelessGatewayType::LoRaWAN:
             return "LoRaWAN";
           default:

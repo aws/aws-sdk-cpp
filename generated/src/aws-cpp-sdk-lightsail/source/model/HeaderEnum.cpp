@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HeaderEnum::NOT_SET:
+            return {};
           case HeaderEnum::Accept:
             return "Accept";
           case HeaderEnum::Accept_Charset:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MarketType::NOT_SET:
+            return {};
           case MarketType::ON_DEMAND:
             return "ON_DEMAND";
           case MarketType::SPOT:

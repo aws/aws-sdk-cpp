@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelSource::NOT_SET:
+            return {};
           case ModelSource::SAGEMAKER:
             return "SAGEMAKER";
           default:

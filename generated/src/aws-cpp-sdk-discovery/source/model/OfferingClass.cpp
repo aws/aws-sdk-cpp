@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OfferingClass::NOT_SET:
+            return {};
           case OfferingClass::STANDARD:
             return "STANDARD";
           case OfferingClass::CONVERTIBLE:

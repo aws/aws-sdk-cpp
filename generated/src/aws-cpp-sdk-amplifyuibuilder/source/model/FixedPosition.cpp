@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FixedPosition::NOT_SET:
+            return {};
           case FixedPosition::first:
             return "first";
           default:

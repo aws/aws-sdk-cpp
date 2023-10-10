@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelType::NOT_SET:
+            return {};
           case ModelType::DOCUMENT_CLASSIFIER:
             return "DOCUMENT_CLASSIFIER";
           case ModelType::ENTITY_RECOGNIZER:

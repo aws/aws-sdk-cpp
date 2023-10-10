@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsCcDescriptor::NOT_SET:
+            return {};
           case M2tsCcDescriptor::DISABLED:
             return "DISABLED";
           case M2tsCcDescriptor::ENABLED:

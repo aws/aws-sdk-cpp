@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RejectRuleBehavior::NOT_SET:
+            return {};
           case RejectRuleBehavior::ALL:
             return "ALL";
           case RejectRuleBehavior::NONE:

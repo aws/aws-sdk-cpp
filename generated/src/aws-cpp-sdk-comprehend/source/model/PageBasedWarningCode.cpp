@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PageBasedWarningCode::NOT_SET:
+            return {};
           case PageBasedWarningCode::INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL:
             return "INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL";
           case PageBasedWarningCode::INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL:

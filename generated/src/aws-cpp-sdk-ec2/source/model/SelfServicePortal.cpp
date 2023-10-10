@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SelfServicePortal::NOT_SET:
+            return {};
           case SelfServicePortal::enabled:
             return "enabled";
           case SelfServicePortal::disabled:

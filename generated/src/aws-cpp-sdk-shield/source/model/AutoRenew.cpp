@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoRenew::NOT_SET:
+            return {};
           case AutoRenew::ENABLED:
             return "ENABLED";
           case AutoRenew::DISABLED:

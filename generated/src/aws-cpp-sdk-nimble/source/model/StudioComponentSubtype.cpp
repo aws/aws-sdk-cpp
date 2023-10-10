@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioComponentSubtype::NOT_SET:
+            return {};
           case StudioComponentSubtype::AWS_MANAGED_MICROSOFT_AD:
             return "AWS_MANAGED_MICROSOFT_AD";
           case StudioComponentSubtype::AMAZON_FSX_FOR_WINDOWS:

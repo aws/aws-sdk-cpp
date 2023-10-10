@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnrollmentStatus::NOT_SET:
+            return {};
           case EnrollmentStatus::INITIALIZED:
             return "INITIALIZED";
           case EnrollmentStatus::PENDING:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortLineageGroupsBy::NOT_SET:
+            return {};
           case SortLineageGroupsBy::Name:
             return "Name";
           case SortLineageGroupsBy::CreationTime:

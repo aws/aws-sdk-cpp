@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SupportedAdditionalProcessorFeature::NOT_SET:
+            return {};
           case SupportedAdditionalProcessorFeature::amd_sev_snp:
             return "amd-sev-snp";
           default:

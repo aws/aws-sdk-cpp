@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociatedResourceType::NOT_SET:
+            return {};
           case AssociatedResourceType::CLOUDFRONT:
             return "CLOUDFRONT";
           default:

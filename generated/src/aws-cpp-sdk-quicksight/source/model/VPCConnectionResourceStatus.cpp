@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VPCConnectionResourceStatus::NOT_SET:
+            return {};
           case VPCConnectionResourceStatus::CREATION_IN_PROGRESS:
             return "CREATION_IN_PROGRESS";
           case VPCConnectionResourceStatus::CREATION_SUCCESSFUL:

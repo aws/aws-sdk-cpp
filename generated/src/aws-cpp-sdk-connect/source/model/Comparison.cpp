@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Comparison::NOT_SET:
+            return {};
           case Comparison::LT:
             return "LT";
           default:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComparisonOperator::NOT_SET:
+            return {};
           case ComparisonOperator::BEGINS_WITH:
             return "BEGINS_WITH";
           default:

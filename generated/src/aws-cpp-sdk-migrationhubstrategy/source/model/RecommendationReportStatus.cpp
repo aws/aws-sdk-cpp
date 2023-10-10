@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationReportStatus::NOT_SET:
+            return {};
           case RecommendationReportStatus::FAILED:
             return "FAILED";
           case RecommendationReportStatus::IN_PROGRESS:

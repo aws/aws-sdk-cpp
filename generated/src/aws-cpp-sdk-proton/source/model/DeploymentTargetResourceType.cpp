@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentTargetResourceType::NOT_SET:
+            return {};
           case DeploymentTargetResourceType::ENVIRONMENT:
             return "ENVIRONMENT";
           case DeploymentTargetResourceType::SERVICE_PIPELINE:

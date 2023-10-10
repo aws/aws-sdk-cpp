@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentModerationSortBy::NOT_SET:
+            return {};
           case ContentModerationSortBy::NAME:
             return "NAME";
           case ContentModerationSortBy::TIMESTAMP:

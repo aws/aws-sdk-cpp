@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RestoreJobStatus::NOT_SET:
+            return {};
           case RestoreJobStatus::PENDING:
             return "PENDING";
           case RestoreJobStatus::RUNNING:

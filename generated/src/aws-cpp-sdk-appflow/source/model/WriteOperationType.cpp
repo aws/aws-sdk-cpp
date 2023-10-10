@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WriteOperationType::NOT_SET:
+            return {};
           case WriteOperationType::INSERT:
             return "INSERT";
           case WriteOperationType::UPSERT:

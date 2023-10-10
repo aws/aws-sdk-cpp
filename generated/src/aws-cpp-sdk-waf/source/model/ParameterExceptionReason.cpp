@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterExceptionReason::NOT_SET:
+            return {};
           case ParameterExceptionReason::INVALID_OPTION:
             return "INVALID_OPTION";
           case ParameterExceptionReason::ILLEGAL_COMBINATION:

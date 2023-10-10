@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceLifecycleType::NOT_SET:
+            return {};
           case InstanceLifecycleType::spot:
             return "spot";
           case InstanceLifecycleType::scheduled:

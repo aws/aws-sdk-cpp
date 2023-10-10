@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CaseSensitivity::NOT_SET:
+            return {};
           case CaseSensitivity::ClientSpecified:
             return "ClientSpecified";
           case CaseSensitivity::CaseSensitive:

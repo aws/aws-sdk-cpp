@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessorParameterName::NOT_SET:
+            return {};
           case ProcessorParameterName::LambdaArn:
             return "LambdaArn";
           case ProcessorParameterName::NumberOfRetries:

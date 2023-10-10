@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReusableDelegationSetLimitType::NOT_SET:
+            return {};
           case ReusableDelegationSetLimitType::MAX_ZONES_BY_REUSABLE_DELEGATION_SET:
             return "MAX_ZONES_BY_REUSABLE_DELEGATION_SET";
           default:

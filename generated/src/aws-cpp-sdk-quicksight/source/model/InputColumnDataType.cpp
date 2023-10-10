@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputColumnDataType::NOT_SET:
+            return {};
           case InputColumnDataType::STRING:
             return "STRING";
           case InputColumnDataType::INTEGER:

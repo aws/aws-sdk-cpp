@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatisticsAutoGenerationMode::NOT_SET:
+            return {};
           case StatisticsAutoGenerationMode::disableAutoCompute:
             return "disableAutoCompute";
           case StatisticsAutoGenerationMode::enableAutoCompute:

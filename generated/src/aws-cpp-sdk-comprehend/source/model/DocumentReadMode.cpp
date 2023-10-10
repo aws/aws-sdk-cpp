@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentReadMode::NOT_SET:
+            return {};
           case DocumentReadMode::SERVICE_DEFAULT:
             return "SERVICE_DEFAULT";
           case DocumentReadMode::FORCE_DOCUMENT_READ_ACTION:

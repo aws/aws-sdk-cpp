@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FieldType::NOT_SET:
+            return {};
           case FieldType::Text:
             return "Text";
           case FieldType::Number:

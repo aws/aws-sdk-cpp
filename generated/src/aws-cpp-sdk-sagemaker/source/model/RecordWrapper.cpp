@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordWrapper::NOT_SET:
+            return {};
           case RecordWrapper::None:
             return "None";
           case RecordWrapper::RecordIO:

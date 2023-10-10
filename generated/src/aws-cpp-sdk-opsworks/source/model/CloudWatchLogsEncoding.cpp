@@ -499,6 +499,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudWatchLogsEncoding::NOT_SET:
+            return {};
           case CloudWatchLogsEncoding::ascii:
             return "ascii";
           case CloudWatchLogsEncoding::big5:

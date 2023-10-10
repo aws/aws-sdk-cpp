@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TracingVendor::NOT_SET:
+            return {};
           case TracingVendor::AWSXRAY:
             return "AWSXRAY";
           default:

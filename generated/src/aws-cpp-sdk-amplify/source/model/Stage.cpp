@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Stage::NOT_SET:
+            return {};
           case Stage::PRODUCTION:
             return "PRODUCTION";
           case Stage::BETA:

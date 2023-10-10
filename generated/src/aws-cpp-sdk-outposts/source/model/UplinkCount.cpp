@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UplinkCount::NOT_SET:
+            return {};
           case UplinkCount::UPLINK_COUNT_1:
             return "UPLINK_COUNT_1";
           case UplinkCount::UPLINK_COUNT_2:

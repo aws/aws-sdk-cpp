@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SettingName::NOT_SET:
+            return {};
           case SettingName::serviceLongArnFormat:
             return "serviceLongArnFormat";
           case SettingName::taskLongArnFormat:

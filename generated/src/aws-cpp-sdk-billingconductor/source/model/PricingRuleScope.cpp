@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PricingRuleScope::NOT_SET:
+            return {};
           case PricingRuleScope::GLOBAL:
             return "GLOBAL";
           case PricingRuleScope::SERVICE:

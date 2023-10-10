@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationSourceType::NOT_SET:
+            return {};
           case RecommendationSourceType::Ec2Instance:
             return "Ec2Instance";
           case RecommendationSourceType::AutoScalingGroup:

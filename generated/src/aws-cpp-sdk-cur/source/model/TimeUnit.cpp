@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeUnit::NOT_SET:
+            return {};
           case TimeUnit::HOURLY:
             return "HOURLY";
           case TimeUnit::DAILY:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::DUPLICATE_IDENTIFIER:
             return "DUPLICATE_IDENTIFIER";
           case ErrorCode::ITEM_DOES_NOT_EXIST:

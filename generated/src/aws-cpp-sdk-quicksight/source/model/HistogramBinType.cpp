@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HistogramBinType::NOT_SET:
+            return {};
           case HistogramBinType::BIN_COUNT:
             return "BIN_COUNT";
           case HistogramBinType::BIN_WIDTH:

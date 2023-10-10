@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InferenceSchedulerStatus::NOT_SET:
+            return {};
           case InferenceSchedulerStatus::PENDING:
             return "PENDING";
           case InferenceSchedulerStatus::RUNNING:

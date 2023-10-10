@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsManifestCompression::NOT_SET:
+            return {};
           case HlsManifestCompression::GZIP:
             return "GZIP";
           case HlsManifestCompression::NONE:

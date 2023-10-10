@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentTarget::NOT_SET:
+            return {};
           case DeploymentTarget::GREENGRASS:
             return "GREENGRASS";
           case DeploymentTarget::CLOUD:

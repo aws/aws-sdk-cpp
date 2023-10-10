@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoAcceptSharedAttachmentsValue::NOT_SET:
+            return {};
           case AutoAcceptSharedAttachmentsValue::enable:
             return "enable";
           case AutoAcceptSharedAttachmentsValue::disable:

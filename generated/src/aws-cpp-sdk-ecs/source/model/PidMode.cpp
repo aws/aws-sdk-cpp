@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PidMode::NOT_SET:
+            return {};
           case PidMode::host:
             return "host";
           case PidMode::task:

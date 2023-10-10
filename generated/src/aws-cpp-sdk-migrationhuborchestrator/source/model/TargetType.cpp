@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetType::NOT_SET:
+            return {};
           case TargetType::SINGLE:
             return "SINGLE";
           case TargetType::ALL:

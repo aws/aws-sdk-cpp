@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipelineId::NOT_SET:
+            return {};
           case PipelineId::PIPELINE_0:
             return "PIPELINE_0";
           case PipelineId::PIPELINE_1:

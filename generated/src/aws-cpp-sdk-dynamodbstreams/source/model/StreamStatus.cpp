@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamStatus::NOT_SET:
+            return {};
           case StreamStatus::ENABLING:
             return "ENABLING";
           case StreamStatus::ENABLED:

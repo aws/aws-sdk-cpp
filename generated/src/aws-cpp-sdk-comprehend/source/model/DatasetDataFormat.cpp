@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasetDataFormat::NOT_SET:
+            return {};
           case DatasetDataFormat::COMPREHEND_CSV:
             return "COMPREHEND_CSV";
           case DatasetDataFormat::AUGMENTED_MANIFEST:

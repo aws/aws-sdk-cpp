@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HookStatus::NOT_SET:
+            return {};
           case HookStatus::HOOK_IN_PROGRESS:
             return "HOOK_IN_PROGRESS";
           case HookStatus::HOOK_COMPLETE_SUCCEEDED:

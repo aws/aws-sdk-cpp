@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DefaultRouteTablePropagationValue::NOT_SET:
+            return {};
           case DefaultRouteTablePropagationValue::enable:
             return "enable";
           case DefaultRouteTablePropagationValue::disable:

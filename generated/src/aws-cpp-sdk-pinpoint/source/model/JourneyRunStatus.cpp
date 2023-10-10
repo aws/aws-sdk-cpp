@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JourneyRunStatus::NOT_SET:
+            return {};
           case JourneyRunStatus::SCHEDULED:
             return "SCHEDULED";
           case JourneyRunStatus::RUNNING:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SagemakerServicecatalogStatus::NOT_SET:
+            return {};
           case SagemakerServicecatalogStatus::Enabled:
             return "Enabled";
           case SagemakerServicecatalogStatus::Disabled:

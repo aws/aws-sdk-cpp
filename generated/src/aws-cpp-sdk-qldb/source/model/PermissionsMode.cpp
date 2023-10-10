@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionsMode::NOT_SET:
+            return {};
           case PermissionsMode::ALLOW_ALL:
             return "ALLOW_ALL";
           case PermissionsMode::STANDARD:

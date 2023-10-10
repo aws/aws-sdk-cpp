@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotebookInstanceAcceleratorType::NOT_SET:
+            return {};
           case NotebookInstanceAcceleratorType::ml_eia1_medium:
             return "ml.eia1.medium";
           case NotebookInstanceAcceleratorType::ml_eia1_large:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EphemerisInvalidReason::NOT_SET:
+            return {};
           case EphemerisInvalidReason::METADATA_INVALID:
             return "METADATA_INVALID";
           case EphemerisInvalidReason::TIME_RANGE_INVALID:

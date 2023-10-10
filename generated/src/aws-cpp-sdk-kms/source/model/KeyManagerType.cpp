@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyManagerType::NOT_SET:
+            return {};
           case KeyManagerType::AWS:
             return "AWS";
           case KeyManagerType::CUSTOMER:

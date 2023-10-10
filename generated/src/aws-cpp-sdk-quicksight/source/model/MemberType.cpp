@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MemberType::NOT_SET:
+            return {};
           case MemberType::DASHBOARD:
             return "DASHBOARD";
           case MemberType::ANALYSIS:

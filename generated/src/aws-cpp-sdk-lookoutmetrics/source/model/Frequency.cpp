@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Frequency::NOT_SET:
+            return {};
           case Frequency::P1D:
             return "P1D";
           case Frequency::PT1H:

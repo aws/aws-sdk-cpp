@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerProtocol::NOT_SET:
+            return {};
           case LoadBalancerProtocol::HTTP_HTTPS:
             return "HTTP_HTTPS";
           case LoadBalancerProtocol::HTTP:

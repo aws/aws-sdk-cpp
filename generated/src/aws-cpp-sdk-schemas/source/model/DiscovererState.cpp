@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiscovererState::NOT_SET:
+            return {};
           case DiscovererState::STARTED:
             return "STARTED";
           case DiscovererState::STOPPED:

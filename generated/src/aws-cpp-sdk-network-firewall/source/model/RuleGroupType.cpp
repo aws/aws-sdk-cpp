@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleGroupType::NOT_SET:
+            return {};
           case RuleGroupType::STATELESS:
             return "STATELESS";
           case RuleGroupType::STATEFUL:

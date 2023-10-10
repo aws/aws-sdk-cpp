@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataReplicationState::NOT_SET:
+            return {};
           case DataReplicationState::STOPPED:
             return "STOPPED";
           case DataReplicationState::INITIATING:

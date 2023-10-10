@@ -169,6 +169,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SummaryKeyType::NOT_SET:
+            return {};
           case SummaryKeyType::Users:
             return "Users";
           case SummaryKeyType::UsersQuota:

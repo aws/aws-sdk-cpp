@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ETagAlgorithm::NOT_SET:
+            return {};
           case ETagAlgorithm::FASTQ_MD5up:
             return "FASTQ_MD5up";
           case ETagAlgorithm::BAM_MD5up:

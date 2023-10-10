@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerServiceMetricName::NOT_SET:
+            return {};
           case ContainerServiceMetricName::CPUUtilization:
             return "CPUUtilization";
           case ContainerServiceMetricName::MemoryUtilization:

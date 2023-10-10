@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264LookAheadRateControl::NOT_SET:
+            return {};
           case H264LookAheadRateControl::HIGH:
             return "HIGH";
           case H264LookAheadRateControl::LOW:

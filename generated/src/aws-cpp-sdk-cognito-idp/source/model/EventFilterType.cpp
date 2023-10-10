@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventFilterType::NOT_SET:
+            return {};
           case EventFilterType::SIGN_IN:
             return "SIGN_IN";
           case EventFilterType::PASSWORD_CHANGE:

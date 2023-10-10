@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ItemSelection::NOT_SET:
+            return {};
           case ItemSelection::none:
             return "none";
           case ItemSelection::whitelist:

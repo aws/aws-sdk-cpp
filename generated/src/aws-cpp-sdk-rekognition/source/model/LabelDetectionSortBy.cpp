@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LabelDetectionSortBy::NOT_SET:
+            return {};
           case LabelDetectionSortBy::NAME:
             return "NAME";
           case LabelDetectionSortBy::TIMESTAMP:

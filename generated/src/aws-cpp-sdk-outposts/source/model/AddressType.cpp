@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AddressType::NOT_SET:
+            return {};
           case AddressType::SHIPPING_ADDRESS:
             return "SHIPPING_ADDRESS";
           case AddressType::OPERATING_ADDRESS:

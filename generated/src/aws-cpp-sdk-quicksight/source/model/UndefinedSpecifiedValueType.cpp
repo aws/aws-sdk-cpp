@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UndefinedSpecifiedValueType::NOT_SET:
+            return {};
           case UndefinedSpecifiedValueType::LEAST:
             return "LEAST";
           case UndefinedSpecifiedValueType::MOST:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntityStatusCode::NOT_SET:
+            return {};
           case EntityStatusCode::IMPAIRED:
             return "IMPAIRED";
           case EntityStatusCode::UNIMPAIRED:

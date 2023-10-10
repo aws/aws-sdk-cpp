@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QuerySuggestionsStatus::NOT_SET:
+            return {};
           case QuerySuggestionsStatus::ACTIVE:
             return "ACTIVE";
           case QuerySuggestionsStatus::UPDATING:

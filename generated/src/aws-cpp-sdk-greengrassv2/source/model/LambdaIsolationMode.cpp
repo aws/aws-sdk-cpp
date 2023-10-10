@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaIsolationMode::NOT_SET:
+            return {};
           case LambdaIsolationMode::GreengrassContainer:
             return "GreengrassContainer";
           case LambdaIsolationMode::NoContainer:

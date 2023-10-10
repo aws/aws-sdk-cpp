@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalysisMethod::NOT_SET:
+            return {};
           case AnalysisMethod::DIRECT_QUERY:
             return "DIRECT_QUERY";
           default:

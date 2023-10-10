@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BucketMetricName::NOT_SET:
+            return {};
           case BucketMetricName::BucketSizeBytes:
             return "BucketSizeBytes";
           case BucketMetricName::NumberOfObjects:

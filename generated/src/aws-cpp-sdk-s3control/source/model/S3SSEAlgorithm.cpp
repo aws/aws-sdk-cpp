@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3SSEAlgorithm::NOT_SET:
+            return {};
           case S3SSEAlgorithm::AES256:
             return "AES256";
           case S3SSEAlgorithm::KMS:

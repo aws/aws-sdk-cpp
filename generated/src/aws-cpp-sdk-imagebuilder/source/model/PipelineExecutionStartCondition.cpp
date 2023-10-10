@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipelineExecutionStartCondition::NOT_SET:
+            return {};
           case PipelineExecutionStartCondition::EXPRESSION_MATCH_ONLY:
             return "EXPRESSION_MATCH_ONLY";
           case PipelineExecutionStartCondition::EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE:

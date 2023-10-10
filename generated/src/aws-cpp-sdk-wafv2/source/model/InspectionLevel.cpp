@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InspectionLevel::NOT_SET:
+            return {};
           case InspectionLevel::COMMON:
             return "COMMON";
           case InspectionLevel::TARGETED:

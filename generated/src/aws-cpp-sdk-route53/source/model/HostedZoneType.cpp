@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HostedZoneType::NOT_SET:
+            return {};
           case HostedZoneType::PrivateHostedZone:
             return "PrivateHostedZone";
           default:

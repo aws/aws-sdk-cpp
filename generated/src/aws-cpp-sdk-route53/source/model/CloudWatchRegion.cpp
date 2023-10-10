@@ -214,6 +214,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudWatchRegion::NOT_SET:
+            return {};
           case CloudWatchRegion::us_east_1:
             return "us-east-1";
           case CloudWatchRegion::us_east_2:

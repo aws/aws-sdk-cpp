@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StopType::NOT_SET:
+            return {};
           case StopType::Complete:
             return "Complete";
           case StopType::Cancel:

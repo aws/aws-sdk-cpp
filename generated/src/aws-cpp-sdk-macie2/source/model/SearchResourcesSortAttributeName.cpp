@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchResourcesSortAttributeName::NOT_SET:
+            return {};
           case SearchResourcesSortAttributeName::ACCOUNT_ID:
             return "ACCOUNT_ID";
           case SearchResourcesSortAttributeName::RESOURCE_NAME:

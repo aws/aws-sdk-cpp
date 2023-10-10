@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceStatus::NOT_SET:
+            return {};
           case ResourceStatus::ACTIVE:
             return "ACTIVE";
           case ResourceStatus::DELETING:

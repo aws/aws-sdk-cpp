@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PortType::NOT_SET:
+            return {};
           case PortType::BOOLEAN:
             return "BOOLEAN";
           case PortType::STRING:

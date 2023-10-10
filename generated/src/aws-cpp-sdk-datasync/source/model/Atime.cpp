@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Atime::NOT_SET:
+            return {};
           case Atime::NONE:
             return "NONE";
           case Atime::BEST_EFFORT:

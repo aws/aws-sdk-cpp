@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchResourcesComparator::NOT_SET:
+            return {};
           case SearchResourcesComparator::EQ:
             return "EQ";
           case SearchResourcesComparator::NE:

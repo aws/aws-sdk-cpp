@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelCustomizationJobStatus::NOT_SET:
+            return {};
           case ModelCustomizationJobStatus::InProgress:
             return "InProgress";
           case ModelCustomizationJobStatus::Completed:

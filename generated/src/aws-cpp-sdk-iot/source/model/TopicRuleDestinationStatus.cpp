@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TopicRuleDestinationStatus::NOT_SET:
+            return {};
           case TopicRuleDestinationStatus::ENABLED:
             return "ENABLED";
           case TopicRuleDestinationStatus::IN_PROGRESS:

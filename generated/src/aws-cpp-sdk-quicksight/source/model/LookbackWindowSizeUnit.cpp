@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LookbackWindowSizeUnit::NOT_SET:
+            return {};
           case LookbackWindowSizeUnit::HOUR:
             return "HOUR";
           case LookbackWindowSizeUnit::DAY:

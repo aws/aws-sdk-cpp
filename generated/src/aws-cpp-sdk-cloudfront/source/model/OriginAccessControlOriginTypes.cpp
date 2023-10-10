@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginAccessControlOriginTypes::NOT_SET:
+            return {};
           case OriginAccessControlOriginTypes::s3:
             return "s3";
           case OriginAccessControlOriginTypes::mediastore:

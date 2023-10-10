@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::cache_cluster:
             return "cache-cluster";
           case SourceType::cache_parameter_group:

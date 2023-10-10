@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationStepType::NOT_SET:
+            return {};
           case RecommendationStepType::BENCHMARK:
             return "BENCHMARK";
           default:

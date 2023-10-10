@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FolderType::NOT_SET:
+            return {};
           case FolderType::SHARED:
             return "SHARED";
           default:

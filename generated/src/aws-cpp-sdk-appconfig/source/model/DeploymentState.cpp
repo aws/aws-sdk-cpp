@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentState::NOT_SET:
+            return {};
           case DeploymentState::BAKING:
             return "BAKING";
           case DeploymentState::VALIDATING:

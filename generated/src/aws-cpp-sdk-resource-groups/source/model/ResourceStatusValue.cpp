@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceStatusValue::NOT_SET:
+            return {};
           case ResourceStatusValue::PENDING:
             return "PENDING";
           default:

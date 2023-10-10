@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatabaseOutputMode::NOT_SET:
+            return {};
           case DatabaseOutputMode::NEW_TABLE:
             return "NEW_TABLE";
           default:

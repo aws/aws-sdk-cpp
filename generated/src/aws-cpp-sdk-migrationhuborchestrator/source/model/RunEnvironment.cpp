@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RunEnvironment::NOT_SET:
+            return {};
           case RunEnvironment::AWS:
             return "AWS";
           case RunEnvironment::ONPREMISE:

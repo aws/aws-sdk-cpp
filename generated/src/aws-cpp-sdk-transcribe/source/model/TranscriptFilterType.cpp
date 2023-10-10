@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscriptFilterType::NOT_SET:
+            return {};
           case TranscriptFilterType::EXACT:
             return "EXACT";
           default:

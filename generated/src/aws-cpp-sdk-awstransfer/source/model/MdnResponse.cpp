@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MdnResponse::NOT_SET:
+            return {};
           case MdnResponse::SYNC:
             return "SYNC";
           case MdnResponse::NONE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VolumeStatusName::NOT_SET:
+            return {};
           case VolumeStatusName::io_enabled:
             return "io-enabled";
           case VolumeStatusName::io_performance:

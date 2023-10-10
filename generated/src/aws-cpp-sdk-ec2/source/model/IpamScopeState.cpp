@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamScopeState::NOT_SET:
+            return {};
           case IpamScopeState::create_in_progress:
             return "create-in-progress";
           case IpamScopeState::create_complete:

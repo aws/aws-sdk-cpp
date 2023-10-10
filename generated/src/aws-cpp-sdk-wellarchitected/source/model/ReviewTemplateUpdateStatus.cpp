@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReviewTemplateUpdateStatus::NOT_SET:
+            return {};
           case ReviewTemplateUpdateStatus::CURRENT:
             return "CURRENT";
           case ReviewTemplateUpdateStatus::LENS_NOT_CURRENT:

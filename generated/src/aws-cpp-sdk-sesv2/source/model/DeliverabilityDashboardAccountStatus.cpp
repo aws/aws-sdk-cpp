@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeliverabilityDashboardAccountStatus::NOT_SET:
+            return {};
           case DeliverabilityDashboardAccountStatus::ACTIVE:
             return "ACTIVE";
           case DeliverabilityDashboardAccountStatus::PENDING_EXPIRATION:

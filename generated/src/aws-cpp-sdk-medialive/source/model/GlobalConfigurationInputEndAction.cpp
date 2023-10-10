@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GlobalConfigurationInputEndAction::NOT_SET:
+            return {};
           case GlobalConfigurationInputEndAction::NONE:
             return "NONE";
           case GlobalConfigurationInputEndAction::SWITCH_AND_LOOP_INPUTS:

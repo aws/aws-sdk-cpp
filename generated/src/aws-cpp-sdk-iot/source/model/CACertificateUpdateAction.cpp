@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CACertificateUpdateAction::NOT_SET:
+            return {};
           case CACertificateUpdateAction::DEACTIVATE:
             return "DEACTIVATE";
           default:

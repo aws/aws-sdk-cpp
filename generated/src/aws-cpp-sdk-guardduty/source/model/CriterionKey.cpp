@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CriterionKey::NOT_SET:
+            return {};
           case CriterionKey::EC2_INSTANCE_ARN:
             return "EC2_INSTANCE_ARN";
           case CriterionKey::SCAN_ID:

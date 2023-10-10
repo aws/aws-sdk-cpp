@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceStatus::NOT_SET:
+            return {};
           case ResourceStatus::AVAILABLE:
             return "AVAILABLE";
           case ResourceStatus::ZONAL_RESOURCE_INACCESSIBLE:

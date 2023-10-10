@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableDataImportJobStatus::NOT_SET:
+            return {};
           case TableDataImportJobStatus::SUBMITTED:
             return "SUBMITTED";
           case TableDataImportJobStatus::IN_PROGRESS:

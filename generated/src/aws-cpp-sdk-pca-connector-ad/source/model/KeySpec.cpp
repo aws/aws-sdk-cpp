@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeySpec::NOT_SET:
+            return {};
           case KeySpec::KEY_EXCHANGE:
             return "KEY_EXCHANGE";
           case KeySpec::SIGNATURE:

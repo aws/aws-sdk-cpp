@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::AWS_CloudWatch_Metric:
             return "AWS::CloudWatch::Metric";
           case ResourceType::AWS_Logs_LogGroup:

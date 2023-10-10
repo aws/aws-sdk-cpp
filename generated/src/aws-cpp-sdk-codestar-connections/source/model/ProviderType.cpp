@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProviderType::NOT_SET:
+            return {};
           case ProviderType::Bitbucket:
             return "Bitbucket";
           case ProviderType::GitHub:

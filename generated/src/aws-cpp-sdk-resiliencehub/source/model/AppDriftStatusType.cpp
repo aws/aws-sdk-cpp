@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppDriftStatusType::NOT_SET:
+            return {};
           case AppDriftStatusType::NotChecked:
             return "NotChecked";
           case AppDriftStatusType::NotDetected:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageType::NOT_SET:
+            return {};
           case StorageType::Standard:
             return "Standard";
           case StorageType::InMemory:

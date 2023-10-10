@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReferenceType::NOT_SET:
+            return {};
           case ReferenceType::URL:
             return "URL";
           case ReferenceType::ATTACHMENT:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BurninSubtitleTeletextSpacing::NOT_SET:
+            return {};
           case BurninSubtitleTeletextSpacing::FIXED_GRID:
             return "FIXED_GRID";
           case BurninSubtitleTeletextSpacing::PROPORTIONAL:

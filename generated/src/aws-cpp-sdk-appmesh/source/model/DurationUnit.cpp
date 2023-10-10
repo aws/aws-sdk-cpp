@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DurationUnit::NOT_SET:
+            return {};
           case DurationUnit::s:
             return "s";
           case DurationUnit::ms:

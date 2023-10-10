@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DryRunMode::NOT_SET:
+            return {};
           case DryRunMode::Basic:
             return "Basic";
           case DryRunMode::Verbose:

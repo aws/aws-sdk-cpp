@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeType::NOT_SET:
+            return {};
           case ChangeType::IMMEDIATE:
             return "IMMEDIATE";
           case ChangeType::REQUIRES_REBOOT:

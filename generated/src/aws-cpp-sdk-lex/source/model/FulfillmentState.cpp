@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FulfillmentState::NOT_SET:
+            return {};
           case FulfillmentState::Fulfilled:
             return "Fulfilled";
           case FulfillmentState::Failed:

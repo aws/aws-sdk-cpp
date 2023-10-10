@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateType::NOT_SET:
+            return {};
           case UpdateType::VersionUpdate:
             return "VersionUpdate";
           case UpdateType::EndpointAccessUpdate:

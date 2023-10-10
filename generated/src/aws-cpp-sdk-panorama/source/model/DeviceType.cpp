@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceType::NOT_SET:
+            return {};
           case DeviceType::PANORAMA_APPLIANCE_DEVELOPER_KIT:
             return "PANORAMA_APPLIANCE_DEVELOPER_KIT";
           case DeviceType::PANORAMA_APPLIANCE:

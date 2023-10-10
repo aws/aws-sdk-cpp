@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CrawlState::NOT_SET:
+            return {};
           case CrawlState::RUNNING:
             return "RUNNING";
           case CrawlState::CANCELLING:

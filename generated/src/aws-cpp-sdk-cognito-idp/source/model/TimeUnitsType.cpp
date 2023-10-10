@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeUnitsType::NOT_SET:
+            return {};
           case TimeUnitsType::seconds:
             return "seconds";
           case TimeUnitsType::minutes:

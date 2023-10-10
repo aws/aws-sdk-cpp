@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DolbyEProgramSelection::NOT_SET:
+            return {};
           case DolbyEProgramSelection::ALL_CHANNELS:
             return "ALL_CHANNELS";
           case DolbyEProgramSelection::PROGRAM_1:

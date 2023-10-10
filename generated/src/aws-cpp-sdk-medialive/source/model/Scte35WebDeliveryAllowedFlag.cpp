@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte35WebDeliveryAllowedFlag::NOT_SET:
+            return {};
           case Scte35WebDeliveryAllowedFlag::WEB_DELIVERY_NOT_ALLOWED:
             return "WEB_DELIVERY_NOT_ALLOWED";
           case Scte35WebDeliveryAllowedFlag::WEB_DELIVERY_ALLOWED:

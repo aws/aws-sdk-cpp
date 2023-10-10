@@ -189,6 +189,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BucketLocationConstraint::NOT_SET:
+            return {};
           case BucketLocationConstraint::af_south_1:
             return "af-south-1";
           case BucketLocationConstraint::ap_east_1:

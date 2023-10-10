@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionType::NOT_SET:
+            return {};
           case EncryptionType::CUSTOMER_MANAGED_KMS_KEY:
             return "CUSTOMER_MANAGED_KMS_KEY";
           case EncryptionType::AWS_OWNED_KMS_KEY:

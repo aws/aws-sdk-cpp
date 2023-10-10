@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamespaceType::NOT_SET:
+            return {};
           case NamespaceType::DNS_PUBLIC:
             return "DNS_PUBLIC";
           case NamespaceType::DNS_PRIVATE:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IteratorType::NOT_SET:
+            return {};
           case IteratorType::AT_SEQUENCE_NUMBER:
             return "AT_SEQUENCE_NUMBER";
           case IteratorType::AFTER_SEQUENCE_NUMBER:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyAlgorithm::NOT_SET:
+            return {};
           case KeyAlgorithm::TDES_2KEY:
             return "TDES_2KEY";
           case KeyAlgorithm::TDES_3KEY:

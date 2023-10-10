@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppBlockBuilderState::NOT_SET:
+            return {};
           case AppBlockBuilderState::STARTING:
             return "STARTING";
           case AppBlockBuilderState::RUNNING:

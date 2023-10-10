@@ -309,6 +309,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::WorkflowExecutionStarted:
             return "WorkflowExecutionStarted";
           case EventType::WorkflowExecutionCancelRequested:

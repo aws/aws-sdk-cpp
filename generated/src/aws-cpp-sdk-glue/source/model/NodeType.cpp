@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeType::NOT_SET:
+            return {};
           case NodeType::CRAWLER:
             return "CRAWLER";
           case NodeType::JOB:

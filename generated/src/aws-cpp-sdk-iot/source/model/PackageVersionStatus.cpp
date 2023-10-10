@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageVersionStatus::NOT_SET:
+            return {};
           case PackageVersionStatus::DRAFT:
             return "DRAFT";
           case PackageVersionStatus::PUBLISHED:

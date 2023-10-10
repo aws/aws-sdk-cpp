@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceField::NOT_SET:
+            return {};
           case ServiceField::TAGS:
             return "TAGS";
           default:

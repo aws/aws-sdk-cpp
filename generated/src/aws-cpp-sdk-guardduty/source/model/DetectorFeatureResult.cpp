@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetectorFeatureResult::NOT_SET:
+            return {};
           case DetectorFeatureResult::FLOW_LOGS:
             return "FLOW_LOGS";
           case DetectorFeatureResult::CLOUD_TRAIL:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutocommitPeriodType::NOT_SET:
+            return {};
           case AutocommitPeriodType::MINUTES:
             return "MINUTES";
           case AutocommitPeriodType::HOURS:

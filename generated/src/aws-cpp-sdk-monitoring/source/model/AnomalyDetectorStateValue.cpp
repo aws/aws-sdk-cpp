@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnomalyDetectorStateValue::NOT_SET:
+            return {};
           case AnomalyDetectorStateValue::PENDING_TRAINING:
             return "PENDING_TRAINING";
           case AnomalyDetectorStateValue::TRAINED_INSUFFICIENT_DATA:

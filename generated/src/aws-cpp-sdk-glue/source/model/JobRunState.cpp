@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobRunState::NOT_SET:
+            return {};
           case JobRunState::STARTING:
             return "STARTING";
           case JobRunState::RUNNING:

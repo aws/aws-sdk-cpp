@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrefixFormat::NOT_SET:
+            return {};
           case PrefixFormat::YEAR:
             return "YEAR";
           case PrefixFormat::MONTH:

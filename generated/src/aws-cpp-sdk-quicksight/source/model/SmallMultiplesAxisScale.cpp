@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmallMultiplesAxisScale::NOT_SET:
+            return {};
           case SmallMultiplesAxisScale::SHARED:
             return "SHARED";
           case SmallMultiplesAxisScale::INDEPENDENT:

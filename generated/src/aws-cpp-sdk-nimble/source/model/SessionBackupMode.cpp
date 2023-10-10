@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SessionBackupMode::NOT_SET:
+            return {};
           case SessionBackupMode::AUTOMATIC:
             return "AUTOMATIC";
           case SessionBackupMode::DEACTIVATED:

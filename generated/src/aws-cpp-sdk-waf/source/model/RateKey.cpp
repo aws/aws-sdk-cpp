@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RateKey::NOT_SET:
+            return {};
           case RateKey::IP:
             return "IP";
           default:

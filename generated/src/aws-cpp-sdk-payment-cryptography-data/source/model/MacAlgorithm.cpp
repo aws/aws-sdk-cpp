@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MacAlgorithm::NOT_SET:
+            return {};
           case MacAlgorithm::ISO9797_ALGORITHM1:
             return "ISO9797_ALGORITHM1";
           case MacAlgorithm::ISO9797_ALGORITHM3:

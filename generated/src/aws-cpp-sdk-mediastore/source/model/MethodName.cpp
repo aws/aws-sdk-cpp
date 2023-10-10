@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MethodName::NOT_SET:
+            return {};
           case MethodName::PUT:
             return "PUT";
           case MethodName::GET_:

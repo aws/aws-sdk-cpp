@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UplinkGbps::NOT_SET:
+            return {};
           case UplinkGbps::UPLINK_1G:
             return "UPLINK_1G";
           case UplinkGbps::UPLINK_10G:

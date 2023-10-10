@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RepositoryAssociationState::NOT_SET:
+            return {};
           case RepositoryAssociationState::Associated:
             return "Associated";
           case RepositoryAssociationState::Associating:

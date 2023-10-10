@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationRole::NOT_SET:
+            return {};
           case NotificationRole::PROJECT_OWNER:
             return "PROJECT_OWNER";
           case NotificationRole::PROJECT_CONTRIBUTOR:

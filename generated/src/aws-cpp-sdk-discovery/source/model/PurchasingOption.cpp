@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PurchasingOption::NOT_SET:
+            return {};
           case PurchasingOption::ALL_UPFRONT:
             return "ALL_UPFRONT";
           case PurchasingOption::PARTIAL_UPFRONT:

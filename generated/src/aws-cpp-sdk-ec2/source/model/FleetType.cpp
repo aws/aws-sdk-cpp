@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetType::NOT_SET:
+            return {};
           case FleetType::request:
             return "request";
           case FleetType::maintain:

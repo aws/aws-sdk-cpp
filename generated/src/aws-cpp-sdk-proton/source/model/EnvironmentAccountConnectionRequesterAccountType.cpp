@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentAccountConnectionRequesterAccountType::NOT_SET:
+            return {};
           case EnvironmentAccountConnectionRequesterAccountType::MANAGEMENT_ACCOUNT:
             return "MANAGEMENT_ACCOUNT";
           case EnvironmentAccountConnectionRequesterAccountType::ENVIRONMENT_ACCOUNT:

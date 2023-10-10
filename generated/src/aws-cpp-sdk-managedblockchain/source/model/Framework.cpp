@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Framework::NOT_SET:
+            return {};
           case Framework::HYPERLEDGER_FABRIC:
             return "HYPERLEDGER_FABRIC";
           case Framework::ETHEREUM:

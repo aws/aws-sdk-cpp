@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionErrorType::NOT_SET:
+            return {};
           case ExecutionErrorType::PERMISSION_DENIED:
             return "PERMISSION_DENIED";
           case ExecutionErrorType::CUSTOM_STEP_FAILED:

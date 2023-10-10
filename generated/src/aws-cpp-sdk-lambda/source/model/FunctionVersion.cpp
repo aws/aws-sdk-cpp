@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FunctionVersion::NOT_SET:
+            return {};
           case FunctionVersion::ALL:
             return "ALL";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SelectedTooltipType::NOT_SET:
+            return {};
           case SelectedTooltipType::BASIC:
             return "BASIC";
           case SelectedTooltipType::DETAILED:

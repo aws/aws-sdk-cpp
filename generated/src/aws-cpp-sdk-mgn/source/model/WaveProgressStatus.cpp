@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WaveProgressStatus::NOT_SET:
+            return {};
           case WaveProgressStatus::NOT_STARTED:
             return "NOT_STARTED";
           case WaveProgressStatus::IN_PROGRESS:

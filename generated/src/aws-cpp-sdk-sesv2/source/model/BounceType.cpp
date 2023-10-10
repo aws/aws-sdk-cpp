@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BounceType::NOT_SET:
+            return {};
           case BounceType::UNDETERMINED:
             return "UNDETERMINED";
           case BounceType::TRANSIENT:

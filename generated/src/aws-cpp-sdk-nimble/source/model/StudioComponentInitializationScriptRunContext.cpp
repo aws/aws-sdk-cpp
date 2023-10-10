@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioComponentInitializationScriptRunContext::NOT_SET:
+            return {};
           case StudioComponentInitializationScriptRunContext::SYSTEM_INITIALIZATION:
             return "SYSTEM_INITIALIZATION";
           case StudioComponentInitializationScriptRunContext::USER_INITIALIZATION:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobStatus::NOT_SET:
+            return {};
           case JobStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case JobStatus::SUCCEEDED:

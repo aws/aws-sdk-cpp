@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BillingTagsSource::NOT_SET:
+            return {};
           case BillingTagsSource::QUEUE:
             return "QUEUE";
           case BillingTagsSource::PRESET:

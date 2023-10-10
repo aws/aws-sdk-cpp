@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentStatus::NOT_SET:
+            return {};
           case DocumentStatus::Creating:
             return "Creating";
           case DocumentStatus::Active:

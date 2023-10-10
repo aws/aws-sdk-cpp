@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComputeLimitsUnitType::NOT_SET:
+            return {};
           case ComputeLimitsUnitType::InstanceFleetUnits:
             return "InstanceFleetUnits";
           case ComputeLimitsUnitType::Instances:

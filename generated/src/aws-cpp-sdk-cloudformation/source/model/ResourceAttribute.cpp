@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceAttribute::NOT_SET:
+            return {};
           case ResourceAttribute::Properties:
             return "Properties";
           case ResourceAttribute::Metadata:

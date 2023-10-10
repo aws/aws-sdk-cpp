@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationTemplateStatus::NOT_SET:
+            return {};
           case RecommendationTemplateStatus::Pending:
             return "Pending";
           case RecommendationTemplateStatus::InProgress:

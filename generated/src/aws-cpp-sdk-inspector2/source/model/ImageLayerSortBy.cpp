@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageLayerSortBy::NOT_SET:
+            return {};
           case ImageLayerSortBy::CRITICAL:
             return "CRITICAL";
           case ImageLayerSortBy::HIGH:

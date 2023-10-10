@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FirstBoot::NOT_SET:
+            return {};
           case FirstBoot::WAITING:
             return "WAITING";
           case FirstBoot::SUCCEEDED:

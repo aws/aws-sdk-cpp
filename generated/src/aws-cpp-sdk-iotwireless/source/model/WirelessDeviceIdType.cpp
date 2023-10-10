@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WirelessDeviceIdType::NOT_SET:
+            return {};
           case WirelessDeviceIdType::WirelessDeviceId:
             return "WirelessDeviceId";
           case WirelessDeviceIdType::DevEui:

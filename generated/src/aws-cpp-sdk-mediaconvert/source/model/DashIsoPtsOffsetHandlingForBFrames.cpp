@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoPtsOffsetHandlingForBFrames::NOT_SET:
+            return {};
           case DashIsoPtsOffsetHandlingForBFrames::ZERO_BASED:
             return "ZERO_BASED";
           case DashIsoPtsOffsetHandlingForBFrames::MATCH_INITIAL_PTS:

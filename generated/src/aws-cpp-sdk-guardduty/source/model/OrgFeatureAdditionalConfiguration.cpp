@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrgFeatureAdditionalConfiguration::NOT_SET:
+            return {};
           case OrgFeatureAdditionalConfiguration::EKS_ADDON_MANAGEMENT:
             return "EKS_ADDON_MANAGEMENT";
           default:

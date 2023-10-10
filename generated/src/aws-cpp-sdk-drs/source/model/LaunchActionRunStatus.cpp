@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchActionRunStatus::NOT_SET:
+            return {};
           case LaunchActionRunStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case LaunchActionRunStatus::SUCCEEDED:

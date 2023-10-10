@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SingularConnectorOperator::NOT_SET:
+            return {};
           case SingularConnectorOperator::PROJECTION:
             return "PROJECTION";
           case SingularConnectorOperator::EQUAL_TO:

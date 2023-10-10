@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryType::NOT_SET:
+            return {};
           case QueryType::TAG_FILTERS_1_0:
             return "TAG_FILTERS_1_0";
           case QueryType::CLOUDFORMATION_STACK_1_0:

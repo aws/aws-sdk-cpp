@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RunExport::NOT_SET:
+            return {};
           case RunExport::DEFINITION:
             return "DEFINITION";
           default:

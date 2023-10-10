@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsSessionMetricName::NOT_SET:
+            return {};
           case AnalyticsSessionMetricName::Count:
             return "Count";
           case AnalyticsSessionMetricName::Success:

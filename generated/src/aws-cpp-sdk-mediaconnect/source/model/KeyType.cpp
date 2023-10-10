@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyType::NOT_SET:
+            return {};
           case KeyType::speke:
             return "speke";
           case KeyType::static_key:

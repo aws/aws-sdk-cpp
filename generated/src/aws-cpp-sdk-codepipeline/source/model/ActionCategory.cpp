@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionCategory::NOT_SET:
+            return {};
           case ActionCategory::Source:
             return "Source";
           case ActionCategory::Build:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdvancedInputFilterAddTexture::NOT_SET:
+            return {};
           case AdvancedInputFilterAddTexture::ENABLED:
             return "ENABLED";
           case AdvancedInputFilterAddTexture::DISABLED:

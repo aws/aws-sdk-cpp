@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StartLambdaFunctionFailedCause::NOT_SET:
+            return {};
           case StartLambdaFunctionFailedCause::ASSUME_ROLE_FAILED:
             return "ASSUME_ROLE_FAILED";
           default:

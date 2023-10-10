@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogAnomalyType::NOT_SET:
+            return {};
           case LogAnomalyType::KEYWORD:
             return "KEYWORD";
           case LogAnomalyType::KEYWORD_TOKEN:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RtmpCacheFullBehavior::NOT_SET:
+            return {};
           case RtmpCacheFullBehavior::DISCONNECT_IMMEDIATELY:
             return "DISCONNECT_IMMEDIATELY";
           case RtmpCacheFullBehavior::WAIT_FOR_SERVER:

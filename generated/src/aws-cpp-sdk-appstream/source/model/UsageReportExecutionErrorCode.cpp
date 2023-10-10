@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageReportExecutionErrorCode::NOT_SET:
+            return {};
           case UsageReportExecutionErrorCode::RESOURCE_NOT_FOUND:
             return "RESOURCE_NOT_FOUND";
           case UsageReportExecutionErrorCode::ACCESS_DENIED:

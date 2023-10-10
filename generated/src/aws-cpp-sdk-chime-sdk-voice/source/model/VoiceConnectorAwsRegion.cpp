@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VoiceConnectorAwsRegion::NOT_SET:
+            return {};
           case VoiceConnectorAwsRegion::us_east_1:
             return "us-east-1";
           case VoiceConnectorAwsRegion::us_west_2:

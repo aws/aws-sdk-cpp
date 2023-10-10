@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterType::NOT_SET:
+            return {};
           case ParameterType::Datetime:
             return "Datetime";
           case ParameterType::Number:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Tier::NOT_SET:
+            return {};
           case Tier::BASIC:
             return "BASIC";
           case Tier::STANDARD:

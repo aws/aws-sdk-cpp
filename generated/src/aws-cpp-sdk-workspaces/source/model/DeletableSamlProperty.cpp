@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeletableSamlProperty::NOT_SET:
+            return {};
           case DeletableSamlProperty::SAML_PROPERTIES_USER_ACCESS_URL:
             return "SAML_PROPERTIES_USER_ACCESS_URL";
           case DeletableSamlProperty::SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME:

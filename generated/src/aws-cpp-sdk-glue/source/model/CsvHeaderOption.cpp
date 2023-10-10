@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CsvHeaderOption::NOT_SET:
+            return {};
           case CsvHeaderOption::UNKNOWN:
             return "UNKNOWN";
           case CsvHeaderOption::PRESENT:

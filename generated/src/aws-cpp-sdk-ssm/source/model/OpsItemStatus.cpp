@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpsItemStatus::NOT_SET:
+            return {};
           case OpsItemStatus::Open:
             return "Open";
           case OpsItemStatus::InProgress:

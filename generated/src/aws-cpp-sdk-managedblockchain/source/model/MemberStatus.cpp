@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MemberStatus::NOT_SET:
+            return {};
           case MemberStatus::CREATING:
             return "CREATING";
           case MemberStatus::AVAILABLE:

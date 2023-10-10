@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NielsenWatermarkTimezones::NOT_SET:
+            return {};
           case NielsenWatermarkTimezones::AMERICA_PUERTO_RICO:
             return "AMERICA_PUERTO_RICO";
           case NielsenWatermarkTimezones::US_ALASKA:

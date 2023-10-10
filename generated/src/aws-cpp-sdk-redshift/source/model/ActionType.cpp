@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionType::NOT_SET:
+            return {};
           case ActionType::restore_cluster:
             return "restore-cluster";
           case ActionType::recommend_node_config:

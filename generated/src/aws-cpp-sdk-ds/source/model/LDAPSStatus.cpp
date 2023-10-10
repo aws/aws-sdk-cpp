@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LDAPSStatus::NOT_SET:
+            return {};
           case LDAPSStatus::Enabling:
             return "Enabling";
           case LDAPSStatus::Enabled:

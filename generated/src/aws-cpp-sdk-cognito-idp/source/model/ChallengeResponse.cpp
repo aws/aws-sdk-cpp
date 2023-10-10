@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChallengeResponse::NOT_SET:
+            return {};
           case ChallengeResponse::Success:
             return "Success";
           case ChallengeResponse::Failure:

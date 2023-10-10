@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobTemplateListBy::NOT_SET:
+            return {};
           case JobTemplateListBy::NAME:
             return "NAME";
           case JobTemplateListBy::CREATION_DATE:

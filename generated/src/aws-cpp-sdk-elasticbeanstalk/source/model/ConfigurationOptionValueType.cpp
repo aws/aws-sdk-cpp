@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationOptionValueType::NOT_SET:
+            return {};
           case ConfigurationOptionValueType::Scalar:
             return "Scalar";
           case ConfigurationOptionValueType::List:

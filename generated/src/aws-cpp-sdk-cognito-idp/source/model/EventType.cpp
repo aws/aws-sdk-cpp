@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::SignIn:
             return "SignIn";
           case EventType::SignUp:

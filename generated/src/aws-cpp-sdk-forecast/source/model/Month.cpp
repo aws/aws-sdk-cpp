@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Month::NOT_SET:
+            return {};
           case Month::JANUARY:
             return "JANUARY";
           case Month::FEBRUARY:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BodyParsingFallbackBehavior::NOT_SET:
+            return {};
           case BodyParsingFallbackBehavior::MATCH:
             return "MATCH";
           case BodyParsingFallbackBehavior::NO_MATCH:

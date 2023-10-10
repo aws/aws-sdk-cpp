@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerProviderType::NOT_SET:
+            return {};
           case ContainerProviderType::EKS:
             return "EKS";
           default:

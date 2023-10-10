@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OAuthFlowType::NOT_SET:
+            return {};
           case OAuthFlowType::code:
             return "code";
           case OAuthFlowType::implicit:

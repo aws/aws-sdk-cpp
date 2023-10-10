@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryNetwork::NOT_SET:
+            return {};
           case QueryNetwork::ETHEREUM_MAINNET:
             return "ETHEREUM_MAINNET";
           case QueryNetwork::BITCOIN_MAINNET:

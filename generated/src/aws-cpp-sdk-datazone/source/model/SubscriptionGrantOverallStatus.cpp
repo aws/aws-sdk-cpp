@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubscriptionGrantOverallStatus::NOT_SET:
+            return {};
           case SubscriptionGrantOverallStatus::PENDING:
             return "PENDING";
           case SubscriptionGrantOverallStatus::IN_PROGRESS:

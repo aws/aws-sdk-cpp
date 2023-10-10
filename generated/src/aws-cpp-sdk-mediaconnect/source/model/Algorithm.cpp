@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Algorithm::NOT_SET:
+            return {};
           case Algorithm::aes128:
             return "aes128";
           case Algorithm::aes192:

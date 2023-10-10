@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RespondsTo::NOT_SET:
+            return {};
           case RespondsTo::STANDARD_MESSAGES:
             return "STANDARD_MESSAGES";
           default:

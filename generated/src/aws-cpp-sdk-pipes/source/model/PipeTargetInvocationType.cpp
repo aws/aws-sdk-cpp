@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipeTargetInvocationType::NOT_SET:
+            return {};
           case PipeTargetInvocationType::REQUEST_RESPONSE:
             return "REQUEST_RESPONSE";
           case PipeTargetInvocationType::FIRE_AND_FORGET:

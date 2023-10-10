@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TypeTestsStatus::NOT_SET:
+            return {};
           case TypeTestsStatus::PASSED:
             return "PASSED";
           case TypeTestsStatus::FAILED:

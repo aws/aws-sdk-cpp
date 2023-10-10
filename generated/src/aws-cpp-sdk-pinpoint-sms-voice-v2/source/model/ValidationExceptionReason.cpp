@@ -159,6 +159,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::NOT_SET:
+            return {};
           case ValidationExceptionReason::UNKNOWN_OPERATION:
             return "UNKNOWN_OPERATION";
           case ValidationExceptionReason::CANNOT_PARSE:

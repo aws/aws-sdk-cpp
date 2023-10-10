@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExcessCapacityTerminationPolicy::NOT_SET:
+            return {};
           case ExcessCapacityTerminationPolicy::noTermination:
             return "noTermination";
           case ExcessCapacityTerminationPolicy::default_:

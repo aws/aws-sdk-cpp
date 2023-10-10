@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InventoryOptionalField::NOT_SET:
+            return {};
           case InventoryOptionalField::Size:
             return "Size";
           case InventoryOptionalField::LastModifiedDate:

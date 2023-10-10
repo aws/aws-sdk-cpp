@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentType::NOT_SET:
+            return {};
           case ContentType::PII:
             return "PII";
           default:

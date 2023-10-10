@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HookTargetType::NOT_SET:
+            return {};
           case HookTargetType::RESOURCE:
             return "RESOURCE";
           default:

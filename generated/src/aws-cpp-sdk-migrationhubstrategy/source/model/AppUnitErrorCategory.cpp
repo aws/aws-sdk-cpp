@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppUnitErrorCategory::NOT_SET:
+            return {};
           case AppUnitErrorCategory::CREDENTIAL_ERROR:
             return "CREDENTIAL_ERROR";
           case AppUnitErrorCategory::CONNECTIVITY_ERROR:

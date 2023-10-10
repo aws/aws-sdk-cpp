@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCause::NOT_SET:
+            return {};
           case ErrorCause::KINESIS_STREAM_NOT_FOUND:
             return "KINESIS_STREAM_NOT_FOUND";
           case ErrorCause::IAM_PERMISSION_REVOKED:

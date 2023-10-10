@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceServiceName::NOT_SET:
+            return {};
           case DeviceServiceName::NFS_ON_DEVICE_SERVICE:
             return "NFS_ON_DEVICE_SERVICE";
           case DeviceServiceName::S3_ON_DEVICE_SERVICE:

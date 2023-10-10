@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataRepositoryTaskType::NOT_SET:
+            return {};
           case DataRepositoryTaskType::EXPORT_TO_REPOSITORY:
             return "EXPORT_TO_REPOSITORY";
           case DataRepositoryTaskType::IMPORT_METADATA_FROM_REPOSITORY:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfluenceVersion::NOT_SET:
+            return {};
           case ConfluenceVersion::CLOUD:
             return "CLOUD";
           case ConfluenceVersion::SERVER:

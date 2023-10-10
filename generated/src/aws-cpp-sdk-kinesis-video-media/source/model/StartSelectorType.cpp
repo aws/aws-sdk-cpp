@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StartSelectorType::NOT_SET:
+            return {};
           case StartSelectorType::FRAGMENT_NUMBER:
             return "FRAGMENT_NUMBER";
           case StartSelectorType::SERVER_TIMESTAMP:

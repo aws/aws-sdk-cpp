@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetType::NOT_SET:
+            return {};
           case TargetType::GATEWAY:
             return "GATEWAY";
           case TargetType::CARRIER_GATEWAY:

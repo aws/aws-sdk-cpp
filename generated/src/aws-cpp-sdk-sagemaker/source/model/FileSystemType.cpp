@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileSystemType::NOT_SET:
+            return {};
           case FileSystemType::EFS:
             return "EFS";
           case FileSystemType::FSxLustre:

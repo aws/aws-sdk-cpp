@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameServerGroupDeleteOption::NOT_SET:
+            return {};
           case GameServerGroupDeleteOption::SAFE_DELETE:
             return "SAFE_DELETE";
           case GameServerGroupDeleteOption::FORCE_DELETE:

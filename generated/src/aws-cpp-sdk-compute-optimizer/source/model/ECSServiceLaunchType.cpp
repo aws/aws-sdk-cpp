@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ECSServiceLaunchType::NOT_SET:
+            return {};
           case ECSServiceLaunchType::EC2:
             return "EC2";
           case ECSServiceLaunchType::Fargate:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TeletextPageType::NOT_SET:
+            return {};
           case TeletextPageType::PAGE_TYPE_INITIAL:
             return "PAGE_TYPE_INITIAL";
           case TeletextPageType::PAGE_TYPE_SUBTITLE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InventorySearchScope::NOT_SET:
+            return {};
           case InventorySearchScope::ASSET:
             return "ASSET";
           case InventorySearchScope::GLOSSARY:

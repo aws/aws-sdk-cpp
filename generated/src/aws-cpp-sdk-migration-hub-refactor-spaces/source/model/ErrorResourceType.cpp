@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorResourceType::NOT_SET:
+            return {};
           case ErrorResourceType::ENVIRONMENT:
             return "ENVIRONMENT";
           case ErrorResourceType::APPLICATION:

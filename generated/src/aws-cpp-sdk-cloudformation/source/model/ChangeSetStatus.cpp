@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeSetStatus::NOT_SET:
+            return {};
           case ChangeSetStatus::CREATE_PENDING:
             return "CREATE_PENDING";
           case ChangeSetStatus::CREATE_IN_PROGRESS:

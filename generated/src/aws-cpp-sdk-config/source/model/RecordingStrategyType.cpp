@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordingStrategyType::NOT_SET:
+            return {};
           case RecordingStrategyType::ALL_SUPPORTED_RESOURCE_TYPES:
             return "ALL_SUPPORTED_RESOURCE_TYPES";
           case RecordingStrategyType::INCLUSION_BY_RESOURCE_TYPES:

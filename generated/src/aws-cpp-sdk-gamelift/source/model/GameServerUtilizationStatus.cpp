@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameServerUtilizationStatus::NOT_SET:
+            return {};
           case GameServerUtilizationStatus::AVAILABLE:
             return "AVAILABLE";
           case GameServerUtilizationStatus::UTILIZED:

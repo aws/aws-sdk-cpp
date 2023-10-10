@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NumberScale::NOT_SET:
+            return {};
           case NumberScale::NONE:
             return "NONE";
           case NumberScale::AUTO:

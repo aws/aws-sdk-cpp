@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiskState::NOT_SET:
+            return {};
           case DiskState::pending:
             return "pending";
           case DiskState::error:

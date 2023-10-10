@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SamlConfigurationStatus::NOT_SET:
+            return {};
           case SamlConfigurationStatus::CONFIGURED:
             return "CONFIGURED";
           case SamlConfigurationStatus::NOT_CONFIGURED:

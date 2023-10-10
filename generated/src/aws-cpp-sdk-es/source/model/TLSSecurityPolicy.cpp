@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TLSSecurityPolicy::NOT_SET:
+            return {};
           case TLSSecurityPolicy::Policy_Min_TLS_1_0_2019_07:
             return "Policy-Min-TLS-1-0-2019-07";
           case TLSSecurityPolicy::Policy_Min_TLS_1_2_2019_07:

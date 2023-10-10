@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentReviewAction::NOT_SET:
+            return {};
           case DocumentReviewAction::SendForReview:
             return "SendForReview";
           case DocumentReviewAction::UpdateReview:

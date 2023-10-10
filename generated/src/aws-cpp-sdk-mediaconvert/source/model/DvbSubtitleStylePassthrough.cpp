@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubtitleStylePassthrough::NOT_SET:
+            return {};
           case DvbSubtitleStylePassthrough::ENABLED:
             return "ENABLED";
           case DvbSubtitleStylePassthrough::DISABLED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GeoRestrictionType::NOT_SET:
+            return {};
           case GeoRestrictionType::blacklist:
             return "blacklist";
           case GeoRestrictionType::whitelist:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticationMethodOption::NOT_SET:
+            return {};
           case AuthenticationMethodOption::IAM_AND_QUICKSIGHT:
             return "IAM_AND_QUICKSIGHT";
           case AuthenticationMethodOption::IAM_ONLY:

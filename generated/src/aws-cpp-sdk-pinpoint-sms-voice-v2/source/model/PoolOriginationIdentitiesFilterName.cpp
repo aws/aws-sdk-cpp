@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PoolOriginationIdentitiesFilterName::NOT_SET:
+            return {};
           case PoolOriginationIdentitiesFilterName::iso_country_code:
             return "iso-country-code";
           case PoolOriginationIdentitiesFilterName::number_capability:

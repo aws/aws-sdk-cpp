@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParquetCompressionType::NOT_SET:
+            return {};
           case ParquetCompressionType::snappy:
             return "snappy";
           case ParquetCompressionType::lzo:

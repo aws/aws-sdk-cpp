@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HubStatus::NOT_SET:
+            return {};
           case HubStatus::InService:
             return "InService";
           case HubStatus::Creating:

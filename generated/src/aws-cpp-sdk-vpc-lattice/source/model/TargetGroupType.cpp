@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetGroupType::NOT_SET:
+            return {};
           case TargetGroupType::IP:
             return "IP";
           case TargetGroupType::LAMBDA:

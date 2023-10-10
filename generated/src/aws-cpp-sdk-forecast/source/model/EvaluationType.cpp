@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvaluationType::NOT_SET:
+            return {};
           case EvaluationType::SUMMARY:
             return "SUMMARY";
           case EvaluationType::COMPUTED:

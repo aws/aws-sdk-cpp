@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ownership::NOT_SET:
+            return {};
           case Ownership::CURRENT_ACCOUNT:
             return "CURRENT_ACCOUNT";
           case Ownership::OTHER_ACCOUNTS:

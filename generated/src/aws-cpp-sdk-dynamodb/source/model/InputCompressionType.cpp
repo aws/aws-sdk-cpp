@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputCompressionType::NOT_SET:
+            return {};
           case InputCompressionType::GZIP:
             return "GZIP";
           case InputCompressionType::ZSTD:

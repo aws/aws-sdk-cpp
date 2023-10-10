@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QuotaContextScope::NOT_SET:
+            return {};
           case QuotaContextScope::RESOURCE:
             return "RESOURCE";
           case QuotaContextScope::ACCOUNT:

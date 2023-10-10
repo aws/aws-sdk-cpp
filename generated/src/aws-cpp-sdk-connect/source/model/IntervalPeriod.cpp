@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntervalPeriod::NOT_SET:
+            return {};
           case IntervalPeriod::FIFTEEN_MIN:
             return "FIFTEEN_MIN";
           case IntervalPeriod::THIRTY_MIN:

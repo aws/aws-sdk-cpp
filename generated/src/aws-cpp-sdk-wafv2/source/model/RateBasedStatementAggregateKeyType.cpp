@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RateBasedStatementAggregateKeyType::NOT_SET:
+            return {};
           case RateBasedStatementAggregateKeyType::IP:
             return "IP";
           case RateBasedStatementAggregateKeyType::FORWARDED_IP:

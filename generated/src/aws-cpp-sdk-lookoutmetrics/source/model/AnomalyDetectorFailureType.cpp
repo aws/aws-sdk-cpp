@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnomalyDetectorFailureType::NOT_SET:
+            return {};
           case AnomalyDetectorFailureType::ACTIVATION_FAILURE:
             return "ACTIVATION_FAILURE";
           case AnomalyDetectorFailureType::BACK_TEST_ACTIVATION_FAILURE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceSignalStatus::NOT_SET:
+            return {};
           case ResourceSignalStatus::SUCCESS:
             return "SUCCESS";
           case ResourceSignalStatus::FAILURE:

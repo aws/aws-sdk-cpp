@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputPreference::NOT_SET:
+            return {};
           case InputPreference::EQUAL_INPUT_PREFERENCE:
             return "EQUAL_INPUT_PREFERENCE";
           case InputPreference::PRIMARY_INPUT_PREFERRED:

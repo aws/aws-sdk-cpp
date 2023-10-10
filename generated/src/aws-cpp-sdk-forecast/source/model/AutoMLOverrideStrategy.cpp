@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLOverrideStrategy::NOT_SET:
+            return {};
           case AutoMLOverrideStrategy::LatencyOptimized:
             return "LatencyOptimized";
           case AutoMLOverrideStrategy::AccuracyOptimized:

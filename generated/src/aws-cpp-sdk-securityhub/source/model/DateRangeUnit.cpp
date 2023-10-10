@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DateRangeUnit::NOT_SET:
+            return {};
           case DateRangeUnit::DAYS:
             return "DAYS";
           default:

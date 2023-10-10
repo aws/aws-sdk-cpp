@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountLimitName::NOT_SET:
+            return {};
           case AccountLimitName::PHONE_NUMBERS:
             return "PHONE_NUMBERS";
           case AccountLimitName::POOLS:

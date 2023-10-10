@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerType::NOT_SET:
+            return {};
           case ContainerType::F4V:
             return "F4V";
           case ContainerType::ISMV:

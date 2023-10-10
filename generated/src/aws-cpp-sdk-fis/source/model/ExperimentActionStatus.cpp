@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExperimentActionStatus::NOT_SET:
+            return {};
           case ExperimentActionStatus::pending:
             return "pending";
           case ExperimentActionStatus::initiating:

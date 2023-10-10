@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GraphSummaryType::NOT_SET:
+            return {};
           case GraphSummaryType::basic:
             return "basic";
           case GraphSummaryType::detailed:

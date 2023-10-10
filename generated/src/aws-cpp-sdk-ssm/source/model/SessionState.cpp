@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SessionState::NOT_SET:
+            return {};
           case SessionState::Active:
             return "Active";
           case SessionState::History:

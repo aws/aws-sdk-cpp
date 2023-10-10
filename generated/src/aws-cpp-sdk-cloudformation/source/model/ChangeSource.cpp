@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeSource::NOT_SET:
+            return {};
           case ChangeSource::ResourceReference:
             return "ResourceReference";
           case ChangeSource::ParameterReference:

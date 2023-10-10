@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashboardFilterAttribute::NOT_SET:
+            return {};
           case DashboardFilterAttribute::QUICKSIGHT_USER:
             return "QUICKSIGHT_USER";
           case DashboardFilterAttribute::QUICKSIGHT_VIEWER_OR_OWNER:

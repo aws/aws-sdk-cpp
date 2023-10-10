@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PaperOrientation::NOT_SET:
+            return {};
           case PaperOrientation::PORTRAIT:
             return "PORTRAIT";
           case PaperOrientation::LANDSCAPE:

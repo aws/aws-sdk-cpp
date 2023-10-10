@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComputeAssetState::NOT_SET:
+            return {};
           case ComputeAssetState::ACTIVE:
             return "ACTIVE";
           case ComputeAssetState::ISOLATED:

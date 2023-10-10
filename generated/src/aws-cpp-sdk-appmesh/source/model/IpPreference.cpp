@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpPreference::NOT_SET:
+            return {};
           case IpPreference::IPv6_PREFERRED:
             return "IPv6_PREFERRED";
           case IpPreference::IPv4_PREFERRED:

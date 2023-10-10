@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HybridJobAdditionalAttributeName::NOT_SET:
+            return {};
           case HybridJobAdditionalAttributeName::QueueInfo:
             return "QueueInfo";
           default:

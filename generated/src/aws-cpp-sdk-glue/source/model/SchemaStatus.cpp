@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SchemaStatus::NOT_SET:
+            return {};
           case SchemaStatus::AVAILABLE:
             return "AVAILABLE";
           case SchemaStatus::PENDING:

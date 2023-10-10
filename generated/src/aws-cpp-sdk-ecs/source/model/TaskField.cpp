@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskField::NOT_SET:
+            return {};
           case TaskField::TAGS:
             return "TAGS";
           default:

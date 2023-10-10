@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpotInstanceType::NOT_SET:
+            return {};
           case SpotInstanceType::one_time:
             return "one-time";
           case SpotInstanceType::persistent:

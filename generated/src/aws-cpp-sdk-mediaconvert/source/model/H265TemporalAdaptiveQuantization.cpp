@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265TemporalAdaptiveQuantization::NOT_SET:
+            return {};
           case H265TemporalAdaptiveQuantization::DISABLED:
             return "DISABLED";
           case H265TemporalAdaptiveQuantization::ENABLED:

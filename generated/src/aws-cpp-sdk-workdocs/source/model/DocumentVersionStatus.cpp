@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentVersionStatus::NOT_SET:
+            return {};
           case DocumentVersionStatus::ACTIVE:
             return "ACTIVE";
           default:

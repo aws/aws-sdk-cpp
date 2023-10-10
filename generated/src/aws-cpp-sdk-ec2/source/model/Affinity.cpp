@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Affinity::NOT_SET:
+            return {};
           case Affinity::default_:
             return "default";
           case Affinity::host:

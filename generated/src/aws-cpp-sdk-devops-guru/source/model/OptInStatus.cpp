@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OptInStatus::NOT_SET:
+            return {};
           case OptInStatus::ENABLED:
             return "ENABLED";
           case OptInStatus::DISABLED:

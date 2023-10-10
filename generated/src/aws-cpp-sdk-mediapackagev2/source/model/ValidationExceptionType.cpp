@@ -209,6 +209,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionType::NOT_SET:
+            return {};
           case ValidationExceptionType::CONTAINER_TYPE_IMMUTABLE:
             return "CONTAINER_TYPE_IMMUTABLE";
           case ValidationExceptionType::INVALID_PAGINATION_TOKEN:

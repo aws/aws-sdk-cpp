@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IPSetDescriptorType::NOT_SET:
+            return {};
           case IPSetDescriptorType::IPV4:
             return "IPV4";
           case IPSetDescriptorType::IPV6:

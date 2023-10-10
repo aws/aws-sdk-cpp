@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomDomainAssociationStatus::NOT_SET:
+            return {};
           case CustomDomainAssociationStatus::CREATING:
             return "CREATING";
           case CustomDomainAssociationStatus::CREATE_FAILED:

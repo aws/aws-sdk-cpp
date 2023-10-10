@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RunRetentionMode::NOT_SET:
+            return {};
           case RunRetentionMode::RETAIN:
             return "RETAIN";
           case RunRetentionMode::REMOVE:

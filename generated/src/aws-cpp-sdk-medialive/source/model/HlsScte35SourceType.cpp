@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsScte35SourceType::NOT_SET:
+            return {};
           case HlsScte35SourceType::MANIFEST:
             return "MANIFEST";
           case HlsScte35SourceType::SEGMENTS:

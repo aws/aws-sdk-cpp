@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchResourcesSimpleCriterionKey::NOT_SET:
+            return {};
           case SearchResourcesSimpleCriterionKey::ACCOUNT_ID:
             return "ACCOUNT_ID";
           case SearchResourcesSimpleCriterionKey::S3_BUCKET_NAME:

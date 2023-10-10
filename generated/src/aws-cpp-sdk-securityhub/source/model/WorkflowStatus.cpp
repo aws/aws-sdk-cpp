@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowStatus::NOT_SET:
+            return {};
           case WorkflowStatus::NEW_:
             return "NEW";
           case WorkflowStatus::NOTIFIED:

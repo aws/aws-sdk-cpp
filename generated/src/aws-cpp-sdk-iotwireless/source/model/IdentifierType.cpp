@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IdentifierType::NOT_SET:
+            return {};
           case IdentifierType::PartnerAccountId:
             return "PartnerAccountId";
           case IdentifierType::DevEui:

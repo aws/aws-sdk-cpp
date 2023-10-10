@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactNamespace::NOT_SET:
+            return {};
           case ArtifactNamespace::NONE:
             return "NONE";
           case ArtifactNamespace::BUILD_ID:

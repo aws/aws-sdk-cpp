@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CdiInputResolution::NOT_SET:
+            return {};
           case CdiInputResolution::SD:
             return "SD";
           case CdiInputResolution::HD:

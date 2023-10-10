@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TunnelStatus::NOT_SET:
+            return {};
           case TunnelStatus::OPEN:
             return "OPEN";
           case TunnelStatus::CLOSED:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecurringChargeFrequency::NOT_SET:
+            return {};
           case RecurringChargeFrequency::Hourly:
             return "Hourly";
           default:

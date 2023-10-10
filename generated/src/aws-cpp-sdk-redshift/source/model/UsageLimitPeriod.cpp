@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageLimitPeriod::NOT_SET:
+            return {};
           case UsageLimitPeriod::daily:
             return "daily";
           case UsageLimitPeriod::weekly:

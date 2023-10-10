@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SecurityStyle::NOT_SET:
+            return {};
           case SecurityStyle::UNIX:
             return "UNIX";
           case SecurityStyle::NTFS:

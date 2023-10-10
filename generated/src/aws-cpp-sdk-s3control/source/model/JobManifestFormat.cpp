@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobManifestFormat::NOT_SET:
+            return {};
           case JobManifestFormat::S3BatchOperations_CSV_20180820:
             return "S3BatchOperations_CSV_20180820";
           case JobManifestFormat::S3InventoryReport_CSV_20161130:

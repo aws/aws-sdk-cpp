@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolutionType::NOT_SET:
+            return {};
           case ResolutionType::RULE_MATCHING:
             return "RULE_MATCHING";
           case ResolutionType::ML_MATCHING:

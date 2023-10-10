@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamOrder::NOT_SET:
+            return {};
           case StreamOrder::ORIGINAL:
             return "ORIGINAL";
           case StreamOrder::VIDEO_BITRATE_ASCENDING:

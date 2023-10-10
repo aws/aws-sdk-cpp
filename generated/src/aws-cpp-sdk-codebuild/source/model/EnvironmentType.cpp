@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentType::NOT_SET:
+            return {};
           case EnvironmentType::WINDOWS_CONTAINER:
             return "WINDOWS_CONTAINER";
           case EnvironmentType::LINUX_CONTAINER:

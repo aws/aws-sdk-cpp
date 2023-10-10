@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SessionPersistenceMode::NOT_SET:
+            return {};
           case SessionPersistenceMode::DEACTIVATED:
             return "DEACTIVATED";
           case SessionPersistenceMode::ACTIVATED:
