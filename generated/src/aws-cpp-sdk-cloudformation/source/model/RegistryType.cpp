@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegistryType::NOT_SET:
+            return {};
           case RegistryType::RESOURCE:
             return "RESOURCE";
           case RegistryType::MODULE:

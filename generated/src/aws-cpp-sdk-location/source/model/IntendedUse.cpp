@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntendedUse::NOT_SET:
+            return {};
           case IntendedUse::SingleUse:
             return "SingleUse";
           case IntendedUse::Storage:

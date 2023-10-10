@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceRememberedStatusType::NOT_SET:
+            return {};
           case DeviceRememberedStatusType::remembered:
             return "remembered";
           case DeviceRememberedStatusType::not_remembered:

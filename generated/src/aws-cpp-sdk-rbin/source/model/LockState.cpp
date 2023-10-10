@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LockState::NOT_SET:
+            return {};
           case LockState::locked:
             return "locked";
           case LockState::pending_unlock:

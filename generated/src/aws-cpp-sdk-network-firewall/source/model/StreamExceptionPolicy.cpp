@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamExceptionPolicy::NOT_SET:
+            return {};
           case StreamExceptionPolicy::DROP:
             return "DROP";
           case StreamExceptionPolicy::CONTINUE:

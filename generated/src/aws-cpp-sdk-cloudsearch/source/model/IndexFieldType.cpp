@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IndexFieldType::NOT_SET:
+            return {};
           case IndexFieldType::int_:
             return "int";
           case IndexFieldType::double_:

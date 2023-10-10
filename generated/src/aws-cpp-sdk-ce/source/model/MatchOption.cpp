@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MatchOption::NOT_SET:
+            return {};
           case MatchOption::EQUALS:
             return "EQUALS";
           case MatchOption::ABSENT:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TitleSortBy::NOT_SET:
+            return {};
           case TitleSortBy::CRITICAL:
             return "CRITICAL";
           case TitleSortBy::HIGH:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RetentionPeriodType::NOT_SET:
+            return {};
           case RetentionPeriodType::SECONDS:
             return "SECONDS";
           case RetentionPeriodType::MINUTES:

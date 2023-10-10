@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColumnOrderingType::NOT_SET:
+            return {};
           case ColumnOrderingType::GREATER_IS_BETTER:
             return "GREATER_IS_BETTER";
           case ColumnOrderingType::LESSER_IS_BETTER:

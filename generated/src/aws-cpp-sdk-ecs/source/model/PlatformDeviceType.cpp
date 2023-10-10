@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlatformDeviceType::NOT_SET:
+            return {};
           case PlatformDeviceType::GPU:
             return "GPU";
           default:

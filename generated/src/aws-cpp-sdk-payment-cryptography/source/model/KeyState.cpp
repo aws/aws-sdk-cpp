@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyState::NOT_SET:
+            return {};
           case KeyState::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case KeyState::CREATE_COMPLETE:

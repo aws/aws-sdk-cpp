@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputFormat::NOT_SET:
+            return {};
           case InputFormat::ONE_DOC_PER_FILE:
             return "ONE_DOC_PER_FILE";
           case InputFormat::ONE_DOC_PER_LINE:

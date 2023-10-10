@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RoutingStrategyType::NOT_SET:
+            return {};
           case RoutingStrategyType::SIMPLE:
             return "SIMPLE";
           case RoutingStrategyType::TERMINAL:

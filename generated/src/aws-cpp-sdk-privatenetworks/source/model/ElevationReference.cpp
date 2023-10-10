@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ElevationReference::NOT_SET:
+            return {};
           case ElevationReference::AGL:
             return "AGL";
           case ElevationReference::AMSL:

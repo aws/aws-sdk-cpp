@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MembershipQueryLogStatus::NOT_SET:
+            return {};
           case MembershipQueryLogStatus::ENABLED:
             return "ENABLED";
           case MembershipQueryLogStatus::DISABLED:

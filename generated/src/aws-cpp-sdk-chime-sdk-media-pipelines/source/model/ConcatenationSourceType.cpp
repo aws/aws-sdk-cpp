@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConcatenationSourceType::NOT_SET:
+            return {};
           case ConcatenationSourceType::MediaCapturePipeline:
             return "MediaCapturePipeline";
           default:

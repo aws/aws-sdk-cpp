@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchEntryCompletionStatus::NOT_SET:
+            return {};
           case BatchEntryCompletionStatus::SUCCESS:
             return "SUCCESS";
           case BatchEntryCompletionStatus::ERROR_:

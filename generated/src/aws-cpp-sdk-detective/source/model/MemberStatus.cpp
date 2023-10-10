@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MemberStatus::NOT_SET:
+            return {};
           case MemberStatus::INVITED:
             return "INVITED";
           case MemberStatus::VERIFICATION_IN_PROGRESS:

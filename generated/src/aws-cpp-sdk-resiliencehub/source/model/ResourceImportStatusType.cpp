@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceImportStatusType::NOT_SET:
+            return {};
           case ResourceImportStatusType::Pending:
             return "Pending";
           case ResourceImportStatusType::InProgress:

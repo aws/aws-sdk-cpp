@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowExecutionCancelRequestedCause::NOT_SET:
+            return {};
           case WorkflowExecutionCancelRequestedCause::CHILD_POLICY_APPLIED:
             return "CHILD_POLICY_APPLIED";
           default:

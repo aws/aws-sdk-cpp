@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsArib::NOT_SET:
+            return {};
           case M2tsArib::DISABLED:
             return "DISABLED";
           case M2tsArib::ENABLED:

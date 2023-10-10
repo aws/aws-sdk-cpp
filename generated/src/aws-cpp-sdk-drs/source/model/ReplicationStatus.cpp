@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationStatus::NOT_SET:
+            return {};
           case ReplicationStatus::STOPPED:
             return "STOPPED";
           case ReplicationStatus::IN_PROGRESS:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentHashType::NOT_SET:
+            return {};
           case DocumentHashType::Sha256:
             return "Sha256";
           case DocumentHashType::Sha1:

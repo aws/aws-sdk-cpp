@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DefaultRouteTableAssociationValue::NOT_SET:
+            return {};
           case DefaultRouteTableAssociationValue::enable:
             return "enable";
           case DefaultRouteTableAssociationValue::disable:

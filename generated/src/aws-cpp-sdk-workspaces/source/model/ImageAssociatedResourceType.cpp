@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageAssociatedResourceType::NOT_SET:
+            return {};
           case ImageAssociatedResourceType::APPLICATION:
             return "APPLICATION";
           default:

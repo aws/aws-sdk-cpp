@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamPoolAllocationResourceType::NOT_SET:
+            return {};
           case IpamPoolAllocationResourceType::ipam_pool:
             return "ipam-pool";
           case IpamPoolAllocationResourceType::vpc:

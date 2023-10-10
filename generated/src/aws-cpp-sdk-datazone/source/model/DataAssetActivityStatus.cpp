@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataAssetActivityStatus::NOT_SET:
+            return {};
           case DataAssetActivityStatus::FAILED:
             return "FAILED";
           case DataAssetActivityStatus::PUBLISHING_FAILED:

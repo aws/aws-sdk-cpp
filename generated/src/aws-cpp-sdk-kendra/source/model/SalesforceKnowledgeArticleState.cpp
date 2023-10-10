@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SalesforceKnowledgeArticleState::NOT_SET:
+            return {};
           case SalesforceKnowledgeArticleState::DRAFT:
             return "DRAFT";
           case SalesforceKnowledgeArticleState::PUBLISHED:

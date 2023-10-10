@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutputNotebookFormat::NOT_SET:
+            return {};
           case OutputNotebookFormat::HTML:
             return "HTML";
           default:

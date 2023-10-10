@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllocationStrategy::NOT_SET:
+            return {};
           case AllocationStrategy::lowestPrice:
             return "lowestPrice";
           case AllocationStrategy::diversified:

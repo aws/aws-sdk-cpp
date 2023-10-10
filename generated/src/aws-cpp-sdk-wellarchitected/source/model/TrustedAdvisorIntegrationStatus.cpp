@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrustedAdvisorIntegrationStatus::NOT_SET:
+            return {};
           case TrustedAdvisorIntegrationStatus::ENABLED:
             return "ENABLED";
           case TrustedAdvisorIntegrationStatus::DISABLED:

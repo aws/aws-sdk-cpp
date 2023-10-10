@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DolbyVisionLevel6Mode::NOT_SET:
+            return {};
           case DolbyVisionLevel6Mode::PASSTHROUGH:
             return "PASSTHROUGH";
           case DolbyVisionLevel6Mode::RECALCULATE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportGroupStatusType::NOT_SET:
+            return {};
           case ReportGroupStatusType::ACTIVE:
             return "ACTIVE";
           case ReportGroupStatusType::DELETING:

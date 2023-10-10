@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyType::NOT_SET:
+            return {};
           case PolicyType::RuleBased:
             return "RuleBased";
           case PolicyType::TargetBased:

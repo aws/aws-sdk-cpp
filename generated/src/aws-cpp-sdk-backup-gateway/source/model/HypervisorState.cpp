@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HypervisorState::NOT_SET:
+            return {};
           case HypervisorState::PENDING:
             return "PENDING";
           case HypervisorState::ONLINE:

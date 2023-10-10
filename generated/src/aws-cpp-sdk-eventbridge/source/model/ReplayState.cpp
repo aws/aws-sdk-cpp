@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplayState::NOT_SET:
+            return {};
           case ReplayState::STARTING:
             return "STARTING";
           case ReplayState::RUNNING:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatabaseMode::NOT_SET:
+            return {};
           case DatabaseMode::default_:
             return "default";
           case DatabaseMode::babelfish:

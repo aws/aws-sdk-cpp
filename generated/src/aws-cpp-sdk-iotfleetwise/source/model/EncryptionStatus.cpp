@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionStatus::NOT_SET:
+            return {};
           case EncryptionStatus::PENDING:
             return "PENDING";
           case EncryptionStatus::SUCCESS:

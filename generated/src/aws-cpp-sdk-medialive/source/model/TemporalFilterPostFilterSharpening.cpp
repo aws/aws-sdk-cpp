@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemporalFilterPostFilterSharpening::NOT_SET:
+            return {};
           case TemporalFilterPostFilterSharpening::AUTO:
             return "AUTO";
           case TemporalFilterPostFilterSharpening::DISABLED:

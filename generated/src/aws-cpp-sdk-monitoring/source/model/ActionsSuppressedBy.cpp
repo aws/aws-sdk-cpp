@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionsSuppressedBy::NOT_SET:
+            return {};
           case ActionsSuppressedBy::WaitPeriod:
             return "WaitPeriod";
           case ActionsSuppressedBy::ExtensionPeriod:

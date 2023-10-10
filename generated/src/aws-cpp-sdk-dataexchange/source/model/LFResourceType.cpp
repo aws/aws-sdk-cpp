@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LFResourceType::NOT_SET:
+            return {};
           case LFResourceType::TABLE:
             return "TABLE";
           case LFResourceType::DATABASE:

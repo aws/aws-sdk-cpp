@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265ScanType::NOT_SET:
+            return {};
           case H265ScanType::INTERLACED:
             return "INTERLACED";
           case H265ScanType::PROGRESSIVE:

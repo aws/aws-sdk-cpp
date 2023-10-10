@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JQState::NOT_SET:
+            return {};
           case JQState::ENABLED:
             return "ENABLED";
           case JQState::DISABLED:

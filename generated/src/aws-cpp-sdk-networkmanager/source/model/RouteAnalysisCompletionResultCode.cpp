@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RouteAnalysisCompletionResultCode::NOT_SET:
+            return {};
           case RouteAnalysisCompletionResultCode::CONNECTED:
             return "CONNECTED";
           case RouteAnalysisCompletionResultCode::NOT_CONNECTED:

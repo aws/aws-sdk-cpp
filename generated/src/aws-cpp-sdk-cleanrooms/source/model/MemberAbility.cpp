@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MemberAbility::NOT_SET:
+            return {};
           case MemberAbility::CAN_QUERY:
             return "CAN_QUERY";
           case MemberAbility::CAN_RECEIVE_RESULTS:

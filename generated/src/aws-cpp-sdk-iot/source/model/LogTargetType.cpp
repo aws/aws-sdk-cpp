@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogTargetType::NOT_SET:
+            return {};
           case LogTargetType::DEFAULT:
             return "DEFAULT";
           case LogTargetType::THING_GROUP:

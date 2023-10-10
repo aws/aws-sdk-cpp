@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessorType::NOT_SET:
+            return {};
           case AccessorType::BILLING_TOKEN:
             return "BILLING_TOKEN";
           default:

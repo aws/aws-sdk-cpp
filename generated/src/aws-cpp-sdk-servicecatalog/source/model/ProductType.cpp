@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProductType::NOT_SET:
+            return {};
           case ProductType::CLOUD_FORMATION_TEMPLATE:
             return "CLOUD_FORMATION_TEMPLATE";
           case ProductType::MARKETPLACE:

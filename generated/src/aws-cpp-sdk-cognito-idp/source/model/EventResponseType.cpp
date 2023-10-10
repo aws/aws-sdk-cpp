@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventResponseType::NOT_SET:
+            return {};
           case EventResponseType::Pass:
             return "Pass";
           case EventResponseType::Fail:

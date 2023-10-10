@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationDeploymentStatus::NOT_SET:
+            return {};
           case ConfigurationDeploymentStatus::deployed:
             return "deployed";
           case ConfigurationDeploymentStatus::pending:

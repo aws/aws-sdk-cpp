@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImscStylePassthrough::NOT_SET:
+            return {};
           case ImscStylePassthrough::ENABLED:
             return "ENABLED";
           case ImscStylePassthrough::DISABLED:

@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FuotaDeviceStatus::NOT_SET:
+            return {};
           case FuotaDeviceStatus::Initial:
             return "Initial";
           case FuotaDeviceStatus::Package_Not_Supported:

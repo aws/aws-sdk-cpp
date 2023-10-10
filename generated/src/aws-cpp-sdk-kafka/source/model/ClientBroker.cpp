@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientBroker::NOT_SET:
+            return {};
           case ClientBroker::TLS:
             return "TLS";
           case ClientBroker::TLS_PLAINTEXT:

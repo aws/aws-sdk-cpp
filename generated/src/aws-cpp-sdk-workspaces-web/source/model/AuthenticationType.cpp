@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticationType::NOT_SET:
+            return {};
           case AuthenticationType::Standard:
             return "Standard";
           case AuthenticationType::IAM_Identity_Center:

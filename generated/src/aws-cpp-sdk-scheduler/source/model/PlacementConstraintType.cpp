@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlacementConstraintType::NOT_SET:
+            return {};
           case PlacementConstraintType::distinctInstance:
             return "distinctInstance";
           case PlacementConstraintType::memberOf:

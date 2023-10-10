@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HorizontalTextAlignment::NOT_SET:
+            return {};
           case HorizontalTextAlignment::LEFT:
             return "LEFT";
           case HorizontalTextAlignment::CENTER:

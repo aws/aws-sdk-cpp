@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SummaryStatus::NOT_SET:
+            return {};
           case SummaryStatus::ok:
             return "ok";
           case SummaryStatus::impaired:

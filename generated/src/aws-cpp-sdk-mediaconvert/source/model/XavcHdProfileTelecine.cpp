@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcHdProfileTelecine::NOT_SET:
+            return {};
           case XavcHdProfileTelecine::NONE:
             return "NONE";
           case XavcHdProfileTelecine::HARD:

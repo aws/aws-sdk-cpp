@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutputFormat::NOT_SET:
+            return {};
           case OutputFormat::json:
             return "json";
           case OutputFormat::mp3:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocationFilterName::NOT_SET:
+            return {};
           case LocationFilterName::LocationUri:
             return "LocationUri";
           case LocationFilterName::LocationType:

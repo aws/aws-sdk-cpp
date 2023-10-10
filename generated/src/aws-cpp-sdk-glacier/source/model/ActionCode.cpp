@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionCode::NOT_SET:
+            return {};
           case ActionCode::ArchiveRetrieval:
             return "ArchiveRetrieval";
           case ActionCode::InventoryRetrieval:

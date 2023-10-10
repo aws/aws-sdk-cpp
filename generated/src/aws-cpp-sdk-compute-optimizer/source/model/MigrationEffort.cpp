@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MigrationEffort::NOT_SET:
+            return {};
           case MigrationEffort::VeryLow:
             return "VeryLow";
           case MigrationEffort::Low:

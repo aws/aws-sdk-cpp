@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessibilityType::NOT_SET:
+            return {};
           case AccessibilityType::DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES:
             return "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES";
           case AccessibilityType::IMPLEMENTS_ACCESSIBILITY_FEATURES:

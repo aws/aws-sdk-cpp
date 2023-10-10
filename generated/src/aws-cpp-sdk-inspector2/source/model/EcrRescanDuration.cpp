@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EcrRescanDuration::NOT_SET:
+            return {};
           case EcrRescanDuration::LIFETIME:
             return "LIFETIME";
           case EcrRescanDuration::DAYS_30:

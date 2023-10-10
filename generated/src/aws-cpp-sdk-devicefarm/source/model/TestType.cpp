@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestType::NOT_SET:
+            return {};
           case TestType::BUILTIN_FUZZ:
             return "BUILTIN_FUZZ";
           case TestType::BUILTIN_EXPLORER:

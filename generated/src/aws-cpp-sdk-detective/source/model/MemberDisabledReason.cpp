@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MemberDisabledReason::NOT_SET:
+            return {};
           case MemberDisabledReason::VOLUME_TOO_HIGH:
             return "VOLUME_TOO_HIGH";
           case MemberDisabledReason::VOLUME_UNKNOWN:

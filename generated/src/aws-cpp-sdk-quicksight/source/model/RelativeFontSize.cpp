@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelativeFontSize::NOT_SET:
+            return {};
           case RelativeFontSize::EXTRA_SMALL:
             return "EXTRA_SMALL";
           case RelativeFontSize::SMALL:

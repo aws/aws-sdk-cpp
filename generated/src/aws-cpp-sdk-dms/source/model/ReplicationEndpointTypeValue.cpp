@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationEndpointTypeValue::NOT_SET:
+            return {};
           case ReplicationEndpointTypeValue::source:
             return "source";
           case ReplicationEndpointTypeValue::target:

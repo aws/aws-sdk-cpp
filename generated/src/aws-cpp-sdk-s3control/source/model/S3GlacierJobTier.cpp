@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3GlacierJobTier::NOT_SET:
+            return {};
           case S3GlacierJobTier::BULK:
             return "BULK";
           case S3GlacierJobTier::STANDARD:

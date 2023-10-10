@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReleaseStatusValues::NOT_SET:
+            return {};
           case ReleaseStatusValues::beta:
             return "beta";
           case ReleaseStatusValues::prod:

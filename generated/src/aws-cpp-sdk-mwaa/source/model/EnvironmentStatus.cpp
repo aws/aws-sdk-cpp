@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentStatus::NOT_SET:
+            return {};
           case EnvironmentStatus::CREATING:
             return "CREATING";
           case EnvironmentStatus::CREATE_FAILED:

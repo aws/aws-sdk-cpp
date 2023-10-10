@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupFilterAttribute::NOT_SET:
+            return {};
           case GroupFilterAttribute::GROUP_NAME:
             return "GROUP_NAME";
           default:

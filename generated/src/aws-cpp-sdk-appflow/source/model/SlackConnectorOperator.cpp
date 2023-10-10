@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlackConnectorOperator::NOT_SET:
+            return {};
           case SlackConnectorOperator::PROJECTION:
             return "PROJECTION";
           case SlackConnectorOperator::LESS_THAN:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Accelerators::NOT_SET:
+            return {};
           case Accelerators::GPU:
             return "GPU";
           default:

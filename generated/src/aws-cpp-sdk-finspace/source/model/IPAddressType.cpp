@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IPAddressType::NOT_SET:
+            return {};
           case IPAddressType::IP_V4:
             return "IP_V4";
           default:

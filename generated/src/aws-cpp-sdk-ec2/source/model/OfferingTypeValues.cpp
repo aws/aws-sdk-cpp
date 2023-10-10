@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OfferingTypeValues::NOT_SET:
+            return {};
           case OfferingTypeValues::Heavy_Utilization:
             return "Heavy Utilization";
           case OfferingTypeValues::Medium_Utilization:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientVpnEndpointStatusCode::NOT_SET:
+            return {};
           case ClientVpnEndpointStatusCode::pending_associate:
             return "pending-associate";
           case ClientVpnEndpointStatusCode::available:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManagementType::NOT_SET:
+            return {};
           case ManagementType::AUTO_MANAGED:
             return "AUTO_MANAGED";
           case ManagementType::MANUAL:

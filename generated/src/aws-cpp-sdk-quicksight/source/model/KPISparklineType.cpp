@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KPISparklineType::NOT_SET:
+            return {};
           case KPISparklineType::LINE:
             return "LINE";
           case KPISparklineType::AREA:

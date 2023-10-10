@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatusUpdateInterval::NOT_SET:
+            return {};
           case StatusUpdateInterval::SECONDS_10:
             return "SECONDS_10";
           case StatusUpdateInterval::SECONDS_12:

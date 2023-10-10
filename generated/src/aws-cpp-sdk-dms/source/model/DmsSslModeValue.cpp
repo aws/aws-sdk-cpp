@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DmsSslModeValue::NOT_SET:
+            return {};
           case DmsSslModeValue::none:
             return "none";
           case DmsSslModeValue::require:

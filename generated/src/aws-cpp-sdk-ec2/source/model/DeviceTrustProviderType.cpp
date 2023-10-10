@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceTrustProviderType::NOT_SET:
+            return {};
           case DeviceTrustProviderType::jamf:
             return "jamf";
           case DeviceTrustProviderType::crowdstrike:

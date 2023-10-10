@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyType::NOT_SET:
+            return {};
           case PolicyType::IDENTITY_POLICY:
             return "IDENTITY_POLICY";
           case PolicyType::RESOURCE_POLICY:

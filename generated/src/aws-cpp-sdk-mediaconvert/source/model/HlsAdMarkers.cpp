@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsAdMarkers::NOT_SET:
+            return {};
           case HlsAdMarkers::ELEMENTAL:
             return "ELEMENTAL";
           case HlsAdMarkers::ELEMENTAL_SCTE35:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolverKind::NOT_SET:
+            return {};
           case ResolverKind::UNIT:
             return "UNIT";
           case ResolverKind::PIPELINE:

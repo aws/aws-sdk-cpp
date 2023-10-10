@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mp4FreeSpaceBox::NOT_SET:
+            return {};
           case Mp4FreeSpaceBox::INCLUDE:
             return "INCLUDE";
           case Mp4FreeSpaceBox::EXCLUDE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageSelectionStrategy::NOT_SET:
+            return {};
           case MessageSelectionStrategy::Random:
             return "Random";
           case MessageSelectionStrategy::Ordered:

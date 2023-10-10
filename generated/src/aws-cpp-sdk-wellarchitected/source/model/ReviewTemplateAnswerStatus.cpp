@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReviewTemplateAnswerStatus::NOT_SET:
+            return {};
           case ReviewTemplateAnswerStatus::UNANSWERED:
             return "UNANSWERED";
           case ReviewTemplateAnswerStatus::ANSWERED:

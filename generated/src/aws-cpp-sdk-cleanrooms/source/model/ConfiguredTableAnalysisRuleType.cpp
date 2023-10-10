@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfiguredTableAnalysisRuleType::NOT_SET:
+            return {};
           case ConfiguredTableAnalysisRuleType::AGGREGATION:
             return "AGGREGATION";
           case ConfiguredTableAnalysisRuleType::LIST:

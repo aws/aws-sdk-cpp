@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppLaunchConfigurationStatus::NOT_SET:
+            return {};
           case AppLaunchConfigurationStatus::NOT_CONFIGURED:
             return "NOT_CONFIGURED";
           case AppLaunchConfigurationStatus::CONFIGURED:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlgorithmSpec::NOT_SET:
+            return {};
           case AlgorithmSpec::RSAES_PKCS1_V1_5:
             return "RSAES_PKCS1_V1_5";
           case AlgorithmSpec::RSAES_OAEP_SHA_1:

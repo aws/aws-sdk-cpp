@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SsmDocumentType::NOT_SET:
+            return {};
           case SsmDocumentType::AUTOMATION:
             return "AUTOMATION";
           case SsmDocumentType::COMMAND:

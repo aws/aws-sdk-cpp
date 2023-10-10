@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingStatus::NOT_SET:
+            return {};
           case FindingStatus::ACTIVE:
             return "ACTIVE";
           case FindingStatus::ARCHIVED:

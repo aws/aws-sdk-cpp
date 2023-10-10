@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Format::NOT_SET:
+            return {};
           case Format::URLEncoded:
             return "URLEncoded";
           default:

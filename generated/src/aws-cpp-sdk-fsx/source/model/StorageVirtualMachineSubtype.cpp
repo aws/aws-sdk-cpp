@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageVirtualMachineSubtype::NOT_SET:
+            return {};
           case StorageVirtualMachineSubtype::DEFAULT:
             return "DEFAULT";
           case StorageVirtualMachineSubtype::DP_DESTINATION:

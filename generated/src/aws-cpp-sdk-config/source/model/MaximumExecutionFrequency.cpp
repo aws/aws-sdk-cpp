@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MaximumExecutionFrequency::NOT_SET:
+            return {};
           case MaximumExecutionFrequency::One_Hour:
             return "One_Hour";
           case MaximumExecutionFrequency::Three_Hours:

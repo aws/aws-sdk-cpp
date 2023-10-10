@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchDeleteImportDataErrorCode::NOT_SET:
+            return {};
           case BatchDeleteImportDataErrorCode::NOT_FOUND:
             return "NOT_FOUND";
           case BatchDeleteImportDataErrorCode::INTERNAL_SERVER_ERROR:

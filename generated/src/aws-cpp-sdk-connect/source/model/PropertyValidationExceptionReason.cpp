@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PropertyValidationExceptionReason::NOT_SET:
+            return {};
           case PropertyValidationExceptionReason::INVALID_FORMAT:
             return "INVALID_FORMAT";
           case PropertyValidationExceptionReason::UNIQUE_CONSTRAINT_VIOLATED:

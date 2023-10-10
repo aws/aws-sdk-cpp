@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelState::NOT_SET:
+            return {};
           case ChannelState::RUNNING:
             return "RUNNING";
           case ChannelState::STOPPED:

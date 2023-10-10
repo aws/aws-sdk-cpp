@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResultCode::NOT_SET:
+            return {};
           case ResultCode::SUCCESS:
             return "SUCCESS";
           case ResultCode::INVALID_ROLE_FAILURE:

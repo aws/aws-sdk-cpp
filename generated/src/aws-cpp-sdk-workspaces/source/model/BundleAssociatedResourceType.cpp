@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BundleAssociatedResourceType::NOT_SET:
+            return {};
           case BundleAssociatedResourceType::APPLICATION:
             return "APPLICATION";
           default:

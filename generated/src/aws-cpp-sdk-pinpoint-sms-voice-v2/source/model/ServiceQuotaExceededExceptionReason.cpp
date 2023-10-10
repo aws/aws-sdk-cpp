@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceQuotaExceededExceptionReason::NOT_SET:
+            return {};
           case ServiceQuotaExceededExceptionReason::CONFIGURATION_SETS_PER_ACCOUNT:
             return "CONFIGURATION_SETS_PER_ACCOUNT";
           case ServiceQuotaExceededExceptionReason::DAILY_DESTINATION_CALL_LIMIT:

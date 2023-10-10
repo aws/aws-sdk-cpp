@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChildPolicy::NOT_SET:
+            return {};
           case ChildPolicy::TERMINATE:
             return "TERMINATE";
           case ChildPolicy::REQUEST_CANCEL:

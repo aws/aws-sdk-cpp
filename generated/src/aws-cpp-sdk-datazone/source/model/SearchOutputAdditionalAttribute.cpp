@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchOutputAdditionalAttribute::NOT_SET:
+            return {};
           case SearchOutputAdditionalAttribute::FORMS:
             return "FORMS";
           default:

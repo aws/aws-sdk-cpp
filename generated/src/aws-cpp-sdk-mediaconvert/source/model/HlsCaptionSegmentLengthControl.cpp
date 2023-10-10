@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsCaptionSegmentLengthControl::NOT_SET:
+            return {};
           case HlsCaptionSegmentLengthControl::LARGE_SEGMENTS:
             return "LARGE_SEGMENTS";
           case HlsCaptionSegmentLengthControl::MATCH_VIDEO:

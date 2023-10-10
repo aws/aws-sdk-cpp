@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerTlsCertificateStatus::NOT_SET:
+            return {};
           case LoadBalancerTlsCertificateStatus::PENDING_VALIDATION:
             return "PENDING_VALIDATION";
           case LoadBalancerTlsCertificateStatus::ISSUED:

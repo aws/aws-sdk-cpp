@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentInfoType::NOT_SET:
+            return {};
           case EnvironmentInfoType::tail:
             return "tail";
           case EnvironmentInfoType::bundle:

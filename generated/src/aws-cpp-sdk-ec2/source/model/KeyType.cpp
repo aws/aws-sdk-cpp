@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyType::NOT_SET:
+            return {};
           case KeyType::rsa:
             return "rsa";
           case KeyType::ed25519:

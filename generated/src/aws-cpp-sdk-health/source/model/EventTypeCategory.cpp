@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventTypeCategory::NOT_SET:
+            return {};
           case EventTypeCategory::issue:
             return "issue";
           case EventTypeCategory::accountNotification:

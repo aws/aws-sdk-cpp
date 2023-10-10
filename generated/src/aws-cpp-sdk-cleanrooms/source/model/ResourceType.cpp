@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::CONFIGURED_TABLE:
             return "CONFIGURED_TABLE";
           case ResourceType::COLLABORATION:

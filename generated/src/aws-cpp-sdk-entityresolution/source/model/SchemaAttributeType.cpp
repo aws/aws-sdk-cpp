@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SchemaAttributeType::NOT_SET:
+            return {};
           case SchemaAttributeType::NAME:
             return "NAME";
           case SchemaAttributeType::NAME_FIRST:

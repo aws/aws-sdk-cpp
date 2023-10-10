@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryResultType::NOT_SET:
+            return {};
           case QueryResultType::DOCUMENT:
             return "DOCUMENT";
           case QueryResultType::QUESTION_ANSWER:

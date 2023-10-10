@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterStatus::NOT_SET:
+            return {};
           case ClusterStatus::ONLINE:
             return "ONLINE";
           case ClusterStatus::STANDBY:

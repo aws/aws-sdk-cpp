@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportEnvironment::NOT_SET:
+            return {};
           case ExportEnvironment::citrix:
             return "citrix";
           case ExportEnvironment::vmware:

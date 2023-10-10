@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetPlatformOs::NOT_SET:
+            return {};
           case TargetPlatformOs::LINUX:
             return "LINUX";
           default:

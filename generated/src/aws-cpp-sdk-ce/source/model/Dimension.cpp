@@ -209,6 +209,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Dimension::NOT_SET:
+            return {};
           case Dimension::AZ:
             return "AZ";
           case Dimension::INSTANCE_TYPE:

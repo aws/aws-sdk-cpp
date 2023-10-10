@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetBundleExportJobThemePropertyToOverride::NOT_SET:
+            return {};
           case AssetBundleExportJobThemePropertyToOverride::Name:
             return "Name";
           default:

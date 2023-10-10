@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FlatInvocations::NOT_SET:
+            return {};
           case FlatInvocations::Continue:
             return "Continue";
           case FlatInvocations::Stop:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityTypes::NOT_SET:
+            return {};
           case CapacityTypes::ON_DEMAND:
             return "ON_DEMAND";
           case CapacityTypes::SPOT:

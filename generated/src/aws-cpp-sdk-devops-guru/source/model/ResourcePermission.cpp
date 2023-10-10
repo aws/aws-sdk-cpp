@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourcePermission::NOT_SET:
+            return {};
           case ResourcePermission::FULL_PERMISSION:
             return "FULL_PERMISSION";
           case ResourcePermission::MISSING_PERMISSION:

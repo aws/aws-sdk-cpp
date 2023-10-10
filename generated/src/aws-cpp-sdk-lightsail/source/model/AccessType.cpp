@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessType::NOT_SET:
+            return {};
           case AccessType::public_:
             return "public";
           case AccessType::private_:

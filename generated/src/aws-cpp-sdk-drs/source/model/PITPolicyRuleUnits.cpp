@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PITPolicyRuleUnits::NOT_SET:
+            return {};
           case PITPolicyRuleUnits::MINUTE:
             return "MINUTE";
           case PITPolicyRuleUnits::HOUR:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CollectorHealth::NOT_SET:
+            return {};
           case CollectorHealth::COLLECTOR_HEALTHY:
             return "COLLECTOR_HEALTHY";
           case CollectorHealth::COLLECTOR_UNHEALTHY:

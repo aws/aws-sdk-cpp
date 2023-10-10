@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DynamoKeyType::NOT_SET:
+            return {};
           case DynamoKeyType::STRING:
             return "STRING";
           case DynamoKeyType::NUMBER:

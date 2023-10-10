@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SimulationSoftwareSuiteType::NOT_SET:
+            return {};
           case SimulationSoftwareSuiteType::Gazebo:
             return "Gazebo";
           case SimulationSoftwareSuiteType::RosbagPlay:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte27OcrLanguage::NOT_SET:
+            return {};
           case Scte27OcrLanguage::DEU:
             return "DEU";
           case Scte27OcrLanguage::ENG:

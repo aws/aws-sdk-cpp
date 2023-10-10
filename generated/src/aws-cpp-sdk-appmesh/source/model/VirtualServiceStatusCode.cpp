@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VirtualServiceStatusCode::NOT_SET:
+            return {};
           case VirtualServiceStatusCode::ACTIVE:
             return "ACTIVE";
           case VirtualServiceStatusCode::INACTIVE:

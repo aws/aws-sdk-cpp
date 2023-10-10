@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowExecutionTimeoutType::NOT_SET:
+            return {};
           case WorkflowExecutionTimeoutType::START_TO_CLOSE:
             return "START_TO_CLOSE";
           default:

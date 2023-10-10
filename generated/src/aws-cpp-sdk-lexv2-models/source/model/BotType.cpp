@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BotType::NOT_SET:
+            return {};
           case BotType::Bot:
             return "Bot";
           case BotType::BotNetwork:

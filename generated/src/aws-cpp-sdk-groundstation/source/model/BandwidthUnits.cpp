@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BandwidthUnits::NOT_SET:
+            return {};
           case BandwidthUnits::GHz:
             return "GHz";
           case BandwidthUnits::MHz:

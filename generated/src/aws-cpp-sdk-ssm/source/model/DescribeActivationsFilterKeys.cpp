@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DescribeActivationsFilterKeys::NOT_SET:
+            return {};
           case DescribeActivationsFilterKeys::ActivationIds:
             return "ActivationIds";
           case DescribeActivationsFilterKeys::DefaultInstanceName:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvcIntraUhdQualityTuningLevel::NOT_SET:
+            return {};
           case AvcIntraUhdQualityTuningLevel::SINGLE_PASS:
             return "SINGLE_PASS";
           case AvcIntraUhdQualityTuningLevel::MULTI_PASS:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EngagementEventType::NOT_SET:
+            return {};
           case EngagementEventType::OPEN:
             return "OPEN";
           case EngagementEventType::CLICK:

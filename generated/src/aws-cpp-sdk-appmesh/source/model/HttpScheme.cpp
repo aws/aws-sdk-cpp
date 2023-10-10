@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HttpScheme::NOT_SET:
+            return {};
           case HttpScheme::http:
             return "http";
           case HttpScheme::https:

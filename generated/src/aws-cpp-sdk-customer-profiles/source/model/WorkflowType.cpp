@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowType::NOT_SET:
+            return {};
           case WorkflowType::APPFLOW_INTEGRATION:
             return "APPFLOW_INTEGRATION";
           default:

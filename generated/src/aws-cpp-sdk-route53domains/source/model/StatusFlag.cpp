@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatusFlag::NOT_SET:
+            return {};
           case StatusFlag::PENDING_ACCEPTANCE:
             return "PENDING_ACCEPTANCE";
           case StatusFlag::PENDING_CUSTOMER_ACTION:

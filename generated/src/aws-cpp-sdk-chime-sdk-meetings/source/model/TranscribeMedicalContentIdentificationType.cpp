@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscribeMedicalContentIdentificationType::NOT_SET:
+            return {};
           case TranscribeMedicalContentIdentificationType::PHI:
             return "PHI";
           default:

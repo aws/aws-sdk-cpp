@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegionStatus::NOT_SET:
+            return {};
           case RegionStatus::ACTIVE:
             return "ACTIVE";
           case RegionStatus::CREATING:

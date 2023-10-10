@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkerType::NOT_SET:
+            return {};
           case WorkerType::Standard:
             return "Standard";
           case WorkerType::G_1X:

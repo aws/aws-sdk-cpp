@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetInstanceMatchCriteria::NOT_SET:
+            return {};
           case FleetInstanceMatchCriteria::open:
             return "open";
           default:

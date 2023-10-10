@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::NOT_SET:
+            return {};
           case AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Prefix:
             return "Prefix";
           case AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::Suffix:

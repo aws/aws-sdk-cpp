@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AddOnType::NOT_SET:
+            return {};
           case AddOnType::AutoSnapshot:
             return "AutoSnapshot";
           case AddOnType::StopInstanceOnIdle:

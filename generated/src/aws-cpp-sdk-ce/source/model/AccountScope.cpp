@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountScope::NOT_SET:
+            return {};
           case AccountScope::PAYER:
             return "PAYER";
           case AccountScope::LINKED:

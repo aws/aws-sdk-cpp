@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ForwardValues::NOT_SET:
+            return {};
           case ForwardValues::none:
             return "none";
           case ForwardValues::allow_list:

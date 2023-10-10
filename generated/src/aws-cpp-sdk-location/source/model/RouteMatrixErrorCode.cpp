@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RouteMatrixErrorCode::NOT_SET:
+            return {};
           case RouteMatrixErrorCode::RouteNotFound:
             return "RouteNotFound";
           case RouteMatrixErrorCode::RouteTooLong:

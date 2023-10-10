@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Permission::NOT_SET:
+            return {};
           case Permission::ro:
             return "ro";
           case Permission::rw:

@@ -339,6 +339,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppInstanceType::NOT_SET:
+            return {};
           case AppInstanceType::system:
             return "system";
           case AppInstanceType::ml_t3_micro:

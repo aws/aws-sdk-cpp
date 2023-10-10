@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskExecutionStatus::NOT_SET:
+            return {};
           case TaskExecutionStatus::QUEUED:
             return "QUEUED";
           case TaskExecutionStatus::LAUNCHING:

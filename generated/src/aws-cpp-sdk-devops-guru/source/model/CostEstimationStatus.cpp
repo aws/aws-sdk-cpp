@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostEstimationStatus::NOT_SET:
+            return {};
           case CostEstimationStatus::ONGOING:
             return "ONGOING";
           case CostEstimationStatus::COMPLETED:

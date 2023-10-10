@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingChangeType::NOT_SET:
+            return {};
           case FindingChangeType::CHANGED:
             return "CHANGED";
           case FindingChangeType::NEW_:

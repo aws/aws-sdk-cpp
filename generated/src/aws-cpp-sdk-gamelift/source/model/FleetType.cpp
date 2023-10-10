@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetType::NOT_SET:
+            return {};
           case FleetType::ON_DEMAND:
             return "ON_DEMAND";
           case FleetType::SPOT:

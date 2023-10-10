@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterField::NOT_SET:
+            return {};
           case ClusterField::ATTACHMENTS:
             return "ATTACHMENTS";
           case ClusterField::CONFIGURATIONS:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FineTuningJobStatus::NOT_SET:
+            return {};
           case FineTuningJobStatus::InProgress:
             return "InProgress";
           case FineTuningJobStatus::Completed:

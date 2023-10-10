@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationTarget::NOT_SET:
+            return {};
           case NotificationTarget::EventBridge:
             return "EventBridge";
           case NotificationTarget::SNS:

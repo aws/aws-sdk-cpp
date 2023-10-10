@@ -159,6 +159,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanStatusReason::NOT_SET:
+            return {};
           case ScanStatusReason::PENDING_INITIAL_SCAN:
             return "PENDING_INITIAL_SCAN";
           case ScanStatusReason::ACCESS_DENIED:

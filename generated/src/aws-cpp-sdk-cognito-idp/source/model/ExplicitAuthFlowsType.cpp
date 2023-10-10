@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExplicitAuthFlowsType::NOT_SET:
+            return {};
           case ExplicitAuthFlowsType::ADMIN_NO_SRP_AUTH:
             return "ADMIN_NO_SRP_AUTH";
           case ExplicitAuthFlowsType::CUSTOM_AUTH_FLOW_ONLY:

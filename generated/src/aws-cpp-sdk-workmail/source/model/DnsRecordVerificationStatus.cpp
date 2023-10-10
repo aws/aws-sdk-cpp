@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DnsRecordVerificationStatus::NOT_SET:
+            return {};
           case DnsRecordVerificationStatus::PENDING:
             return "PENDING";
           case DnsRecordVerificationStatus::VERIFIED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregatedSourceStatusType::NOT_SET:
+            return {};
           case AggregatedSourceStatusType::FAILED:
             return "FAILED";
           case AggregatedSourceStatusType::SUCCEEDED:

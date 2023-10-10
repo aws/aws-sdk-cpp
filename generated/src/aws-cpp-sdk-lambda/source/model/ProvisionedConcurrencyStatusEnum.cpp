@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisionedConcurrencyStatusEnum::NOT_SET:
+            return {};
           case ProvisionedConcurrencyStatusEnum::IN_PROGRESS:
             return "IN_PROGRESS";
           case ProvisionedConcurrencyStatusEnum::READY:

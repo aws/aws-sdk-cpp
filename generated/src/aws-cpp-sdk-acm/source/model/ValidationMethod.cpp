@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationMethod::NOT_SET:
+            return {};
           case ValidationMethod::EMAIL:
             return "EMAIL";
           case ValidationMethod::DNS:

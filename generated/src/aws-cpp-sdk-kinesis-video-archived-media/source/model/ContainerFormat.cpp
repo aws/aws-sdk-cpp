@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerFormat::NOT_SET:
+            return {};
           case ContainerFormat::FRAGMENTED_MP4:
             return "FRAGMENTED_MP4";
           case ContainerFormat::MPEG_TS:

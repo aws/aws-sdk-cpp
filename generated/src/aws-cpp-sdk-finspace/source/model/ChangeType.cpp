@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeType::NOT_SET:
+            return {};
           case ChangeType::PUT:
             return "PUT";
           case ChangeType::DELETE_:

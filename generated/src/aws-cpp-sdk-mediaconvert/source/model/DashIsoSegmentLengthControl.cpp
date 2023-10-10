@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoSegmentLengthControl::NOT_SET:
+            return {};
           case DashIsoSegmentLengthControl::EXACT:
             return "EXACT";
           case DashIsoSegmentLengthControl::GOP_MULTIPLE:

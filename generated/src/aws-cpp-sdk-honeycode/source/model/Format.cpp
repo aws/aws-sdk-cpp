@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Format::NOT_SET:
+            return {};
           case Format::AUTO:
             return "AUTO";
           case Format::NUMBER:

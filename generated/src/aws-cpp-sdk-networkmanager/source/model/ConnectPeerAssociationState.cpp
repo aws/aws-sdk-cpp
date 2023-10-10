@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectPeerAssociationState::NOT_SET:
+            return {};
           case ConnectPeerAssociationState::PENDING:
             return "PENDING";
           case ConnectPeerAssociationState::AVAILABLE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2ColorSpace::NOT_SET:
+            return {};
           case Mpeg2ColorSpace::AUTO:
             return "AUTO";
           case Mpeg2ColorSpace::PASSTHROUGH:

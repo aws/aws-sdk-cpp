@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DriftStatus::NOT_SET:
+            return {};
           case DriftStatus::NotChecked:
             return "NotChecked";
           case DriftStatus::NotDetected:

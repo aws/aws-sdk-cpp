@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentType::NOT_SET:
+            return {};
           case DocumentType::NATIVE_PDF:
             return "NATIVE_PDF";
           case DocumentType::SCANNED_PDF:

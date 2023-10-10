@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EarthObservationJobExportStatus::NOT_SET:
+            return {};
           case EarthObservationJobExportStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case EarthObservationJobExportStatus::SUCCEEDED:

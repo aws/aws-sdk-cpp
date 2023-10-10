@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskStopCode::NOT_SET:
+            return {};
           case TaskStopCode::TaskFailedToStart:
             return "TaskFailedToStart";
           case TaskStopCode::EssentialContainerExited:

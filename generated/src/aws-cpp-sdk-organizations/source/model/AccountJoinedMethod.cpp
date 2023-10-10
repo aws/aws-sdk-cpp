@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountJoinedMethod::NOT_SET:
+            return {};
           case AccountJoinedMethod::INVITED:
             return "INVITED";
           case AccountJoinedMethod::CREATED:

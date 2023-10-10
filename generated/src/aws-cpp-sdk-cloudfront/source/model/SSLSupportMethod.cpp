@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SSLSupportMethod::NOT_SET:
+            return {};
           case SSLSupportMethod::sni_only:
             return "sni-only";
           case SSLSupportMethod::vip:

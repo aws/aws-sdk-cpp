@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerificationStatus::NOT_SET:
+            return {};
           case VerificationStatus::Pending:
             return "Pending";
           case VerificationStatus::Success:

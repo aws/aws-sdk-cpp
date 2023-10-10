@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregatedUtterancesSortAttribute::NOT_SET:
+            return {};
           case AggregatedUtterancesSortAttribute::HitCount:
             return "HitCount";
           case AggregatedUtterancesSortAttribute::MissedCount:

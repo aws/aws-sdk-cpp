@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CachePolicyType::NOT_SET:
+            return {};
           case CachePolicyType::managed:
             return "managed";
           case CachePolicyType::custom:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordType::NOT_SET:
+            return {};
           case RecordType::CNAME:
             return "CNAME";
           default:

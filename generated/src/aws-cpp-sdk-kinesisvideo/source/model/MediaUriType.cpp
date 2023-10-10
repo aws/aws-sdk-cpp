@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaUriType::NOT_SET:
+            return {};
           case MediaUriType::RTSP_URI:
             return "RTSP_URI";
           case MediaUriType::FILE_URI:

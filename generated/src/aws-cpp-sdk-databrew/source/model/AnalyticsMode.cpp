@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsMode::NOT_SET:
+            return {};
           case AnalyticsMode::ENABLE:
             return "ENABLE";
           case AnalyticsMode::DISABLE:

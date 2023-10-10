@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RouteType::NOT_SET:
+            return {};
           case RouteType::PROPAGATED:
             return "PROPAGATED";
           case RouteType::STATIC_:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IngestionMode::NOT_SET:
+            return {};
           case IngestionMode::BULK:
             return "BULK";
           case IngestionMode::PUT:

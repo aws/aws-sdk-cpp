@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SbomReportFormat::NOT_SET:
+            return {};
           case SbomReportFormat::CYCLONEDX_1_4:
             return "CYCLONEDX_1_4";
           case SbomReportFormat::SPDX_2_3:

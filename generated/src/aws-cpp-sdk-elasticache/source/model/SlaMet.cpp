@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlaMet::NOT_SET:
+            return {};
           case SlaMet::yes:
             return "yes";
           case SlaMet::no:

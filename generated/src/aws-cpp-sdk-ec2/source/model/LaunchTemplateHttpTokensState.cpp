@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchTemplateHttpTokensState::NOT_SET:
+            return {};
           case LaunchTemplateHttpTokensState::optional:
             return "optional";
           case LaunchTemplateHttpTokensState::required:

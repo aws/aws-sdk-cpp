@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppLaunchStatus::NOT_SET:
+            return {};
           case AppLaunchStatus::READY_FOR_CONFIGURATION:
             return "READY_FOR_CONFIGURATION";
           case AppLaunchStatus::CONFIGURATION_IN_PROGRESS:

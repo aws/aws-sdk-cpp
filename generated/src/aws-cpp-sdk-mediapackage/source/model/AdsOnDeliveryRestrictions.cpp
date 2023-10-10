@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdsOnDeliveryRestrictions::NOT_SET:
+            return {};
           case AdsOnDeliveryRestrictions::NONE:
             return "NONE";
           case AdsOnDeliveryRestrictions::RESTRICTED:

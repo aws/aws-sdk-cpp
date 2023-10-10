@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequestableNumberType::NOT_SET:
+            return {};
           case RequestableNumberType::LONG_CODE:
             return "LONG_CODE";
           case RequestableNumberType::TOLL_FREE:

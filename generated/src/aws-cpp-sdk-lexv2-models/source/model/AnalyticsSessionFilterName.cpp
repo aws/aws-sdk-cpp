@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsSessionFilterName::NOT_SET:
+            return {};
           case AnalyticsSessionFilterName::BotAliasId:
             return "BotAliasId";
           case AnalyticsSessionFilterName::BotVersion:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DrmSystem::NOT_SET:
+            return {};
           case DrmSystem::CLEAR_KEY_AES_128:
             return "CLEAR_KEY_AES_128";
           case DrmSystem::FAIRPLAY:

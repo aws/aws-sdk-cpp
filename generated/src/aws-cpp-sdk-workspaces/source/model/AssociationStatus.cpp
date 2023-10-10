@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationStatus::NOT_SET:
+            return {};
           case AssociationStatus::NOT_ASSOCIATED:
             return "NOT_ASSOCIATED";
           case AssociationStatus::ASSOCIATED_WITH_OWNER_ACCOUNT:

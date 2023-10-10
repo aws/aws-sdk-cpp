@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactFlowType::NOT_SET:
+            return {};
           case ContactFlowType::CONTACT_FLOW:
             return "CONTACT_FLOW";
           case ContactFlowType::CUSTOMER_QUEUE:

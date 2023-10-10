@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CancellationStatus::NOT_SET:
+            return {};
           case CancellationStatus::CANCELLING:
             return "CANCELLING";
           case CancellationStatus::CANCELLED:

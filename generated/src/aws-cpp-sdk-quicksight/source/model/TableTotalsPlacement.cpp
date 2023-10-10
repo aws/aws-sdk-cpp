@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableTotalsPlacement::NOT_SET:
+            return {};
           case TableTotalsPlacement::START:
             return "START";
           case TableTotalsPlacement::END:

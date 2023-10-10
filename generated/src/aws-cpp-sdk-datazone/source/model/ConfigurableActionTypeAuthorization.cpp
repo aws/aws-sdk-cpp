@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurableActionTypeAuthorization::NOT_SET:
+            return {};
           case ConfigurableActionTypeAuthorization::IAM:
             return "IAM";
           case ConfigurableActionTypeAuthorization::HTTPS:

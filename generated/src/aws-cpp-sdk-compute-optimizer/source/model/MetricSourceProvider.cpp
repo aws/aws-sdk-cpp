@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricSourceProvider::NOT_SET:
+            return {};
           case MetricSourceProvider::CloudWatchApplicationInsights:
             return "CloudWatchApplicationInsights";
           default:

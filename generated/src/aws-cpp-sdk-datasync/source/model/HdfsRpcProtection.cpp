@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HdfsRpcProtection::NOT_SET:
+            return {};
           case HdfsRpcProtection::DISABLED:
             return "DISABLED";
           case HdfsRpcProtection::AUTHENTICATION:

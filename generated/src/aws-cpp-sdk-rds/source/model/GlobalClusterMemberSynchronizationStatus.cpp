@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GlobalClusterMemberSynchronizationStatus::NOT_SET:
+            return {};
           case GlobalClusterMemberSynchronizationStatus::connected:
             return "connected";
           case GlobalClusterMemberSynchronizationStatus::pending_resync:

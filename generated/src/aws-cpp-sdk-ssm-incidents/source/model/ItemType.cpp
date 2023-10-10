@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ItemType::NOT_SET:
+            return {};
           case ItemType::ANALYSIS:
             return "ANALYSIS";
           case ItemType::INCIDENT:

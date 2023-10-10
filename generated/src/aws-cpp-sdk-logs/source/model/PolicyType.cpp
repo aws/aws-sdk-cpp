@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyType::NOT_SET:
+            return {};
           case PolicyType::DATA_PROTECTION_POLICY:
             return "DATA_PROTECTION_POLICY";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingBehavior::NOT_SET:
+            return {};
           case ScalingBehavior::DEFAULT:
             return "DEFAULT";
           case ScalingBehavior::STRETCH_TO_OUTPUT:

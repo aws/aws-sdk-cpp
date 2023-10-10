@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RestoreOpenZFSVolumeOption::NOT_SET:
+            return {};
           case RestoreOpenZFSVolumeOption::DELETE_INTERMEDIATE_SNAPSHOTS:
             return "DELETE_INTERMEDIATE_SNAPSHOTS";
           case RestoreOpenZFSVolumeOption::DELETE_CLONED_VOLUMES:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceAction::NOT_SET:
+            return {};
           case InstanceAction::TERMINATE:
             return "TERMINATE";
           case InstanceAction::KEEP_ALIVE:

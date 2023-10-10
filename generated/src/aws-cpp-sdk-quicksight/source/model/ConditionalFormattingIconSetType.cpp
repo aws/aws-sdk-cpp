@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConditionalFormattingIconSetType::NOT_SET:
+            return {};
           case ConditionalFormattingIconSetType::PLUS_MINUS:
             return "PLUS_MINUS";
           case ConditionalFormattingIconSetType::CHECK_X:

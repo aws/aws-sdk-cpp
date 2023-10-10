@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Protocol::NOT_SET:
+            return {};
           case Protocol::MqttV3_1_1:
             return "MqttV3_1_1";
           case Protocol::MqttV5:

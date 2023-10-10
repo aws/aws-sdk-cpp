@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceRecordSetFailover::NOT_SET:
+            return {};
           case ResourceRecordSetFailover::PRIMARY:
             return "PRIMARY";
           case ResourceRecordSetFailover::SECONDARY:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetStatus::NOT_SET:
+            return {};
           case FleetStatus::CREATING:
             return "CREATING";
           case FleetStatus::ACTIVE:

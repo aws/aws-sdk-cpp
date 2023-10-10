@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsDiscontinuityTags::NOT_SET:
+            return {};
           case HlsDiscontinuityTags::INSERT:
             return "INSERT";
           case HlsDiscontinuityTags::NEVER_INSERT:

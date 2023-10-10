@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvaluationFormVersionStatus::NOT_SET:
+            return {};
           case EvaluationFormVersionStatus::DRAFT:
             return "DRAFT";
           case EvaluationFormVersionStatus::ACTIVE:

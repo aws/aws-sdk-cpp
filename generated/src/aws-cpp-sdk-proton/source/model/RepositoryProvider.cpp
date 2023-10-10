@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RepositoryProvider::NOT_SET:
+            return {};
           case RepositoryProvider::GITHUB:
             return "GITHUB";
           case RepositoryProvider::GITHUB_ENTERPRISE:

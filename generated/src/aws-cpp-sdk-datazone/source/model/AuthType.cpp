@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthType::NOT_SET:
+            return {};
           case AuthType::IAM_IDC:
             return "IAM_IDC";
           case AuthType::DISABLED:

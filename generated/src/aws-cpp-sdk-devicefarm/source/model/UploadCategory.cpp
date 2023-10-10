@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UploadCategory::NOT_SET:
+            return {};
           case UploadCategory::CURATED:
             return "CURATED";
           case UploadCategory::PRIVATE_:

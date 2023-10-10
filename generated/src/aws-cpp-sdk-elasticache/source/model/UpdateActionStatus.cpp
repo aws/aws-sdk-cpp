@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateActionStatus::NOT_SET:
+            return {};
           case UpdateActionStatus::not_applied:
             return "not-applied";
           case UpdateActionStatus::waiting_to_start:

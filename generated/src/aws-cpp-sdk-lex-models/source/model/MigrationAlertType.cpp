@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MigrationAlertType::NOT_SET:
+            return {};
           case MigrationAlertType::ERROR_:
             return "ERROR";
           case MigrationAlertType::WARN:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BareMetal::NOT_SET:
+            return {};
           case BareMetal::included:
             return "included";
           case BareMetal::required:

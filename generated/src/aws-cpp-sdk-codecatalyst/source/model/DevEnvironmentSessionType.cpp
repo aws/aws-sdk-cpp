@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DevEnvironmentSessionType::NOT_SET:
+            return {};
           case DevEnvironmentSessionType::SSM:
             return "SSM";
           case DevEnvironmentSessionType::SSH:

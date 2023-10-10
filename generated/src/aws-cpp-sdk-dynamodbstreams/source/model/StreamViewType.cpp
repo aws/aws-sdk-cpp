@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamViewType::NOT_SET:
+            return {};
           case StreamViewType::NEW_IMAGE:
             return "NEW_IMAGE";
           case StreamViewType::OLD_IMAGE:

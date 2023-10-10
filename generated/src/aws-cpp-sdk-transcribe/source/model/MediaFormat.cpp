@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaFormat::NOT_SET:
+            return {};
           case MediaFormat::mp3:
             return "mp3";
           case MediaFormat::mp4:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestExecutionStatus::NOT_SET:
+            return {};
           case TestExecutionStatus::Pending:
             return "Pending";
           case TestExecutionStatus::Waiting:

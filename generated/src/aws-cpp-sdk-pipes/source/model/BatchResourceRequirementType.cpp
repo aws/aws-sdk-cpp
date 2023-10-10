@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchResourceRequirementType::NOT_SET:
+            return {};
           case BatchResourceRequirementType::GPU:
             return "GPU";
           case BatchResourceRequirementType::MEMORY:

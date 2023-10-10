@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpsItemEventFilterKey::NOT_SET:
+            return {};
           case OpsItemEventFilterKey::OpsItemId:
             return "OpsItemId";
           default:

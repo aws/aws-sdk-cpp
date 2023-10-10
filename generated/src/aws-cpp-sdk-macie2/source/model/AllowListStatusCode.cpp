@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllowListStatusCode::NOT_SET:
+            return {};
           case AllowListStatusCode::OK:
             return "OK";
           case AllowListStatusCode::S3_OBJECT_NOT_FOUND:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayMulitcastDomainAssociationState::NOT_SET:
+            return {};
           case TransitGatewayMulitcastDomainAssociationState::pendingAcceptance:
             return "pendingAcceptance";
           case TransitGatewayMulitcastDomainAssociationState::associating:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventDataStoreStatus::NOT_SET:
+            return {};
           case EventDataStoreStatus::CREATED:
             return "CREATED";
           case EventDataStoreStatus::ENABLED:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Action::NOT_SET:
+            return {};
           case Action::CLIPBOARD_COPY_FROM_LOCAL_DEVICE:
             return "CLIPBOARD_COPY_FROM_LOCAL_DEVICE";
           case Action::CLIPBOARD_COPY_TO_LOCAL_DEVICE:

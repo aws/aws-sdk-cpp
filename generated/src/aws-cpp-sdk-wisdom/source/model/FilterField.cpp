@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterField::NOT_SET:
+            return {};
           case FilterField::NAME:
             return "NAME";
           default:

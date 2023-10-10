@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoPromotionResult::NOT_SET:
+            return {};
           case AutoPromotionResult::MODEL_PROMOTED:
             return "MODEL_PROMOTED";
           case AutoPromotionResult::MODEL_NOT_PROMOTED:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlueprintStatus::NOT_SET:
+            return {};
           case BlueprintStatus::CREATING:
             return "CREATING";
           case BlueprintStatus::ACTIVE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutdatedInstancesStrategy::NOT_SET:
+            return {};
           case OutdatedInstancesStrategy::UPDATE:
             return "UPDATE";
           case OutdatedInstancesStrategy::IGNORE:

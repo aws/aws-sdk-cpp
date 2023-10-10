@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScopeFilterKey::NOT_SET:
+            return {};
           case ScopeFilterKey::OBJECT_EXTENSION:
             return "OBJECT_EXTENSION";
           case ScopeFilterKey::OBJECT_LAST_MODIFIED_DATE:

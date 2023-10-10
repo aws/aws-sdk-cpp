@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubnetCidrReservationType::NOT_SET:
+            return {};
           case SubnetCidrReservationType::prefix:
             return "prefix";
           case SubnetCidrReservationType::explicit_:

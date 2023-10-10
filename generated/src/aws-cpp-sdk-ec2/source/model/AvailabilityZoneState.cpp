@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvailabilityZoneState::NOT_SET:
+            return {};
           case AvailabilityZoneState::available:
             return "available";
           case AvailabilityZoneState::information:

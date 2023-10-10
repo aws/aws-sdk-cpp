@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionModels::NOT_SET:
+            return {};
           case PermissionModels::SERVICE_MANAGED:
             return "SERVICE_MANAGED";
           case PermissionModels::SELF_MANAGED:

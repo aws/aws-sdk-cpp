@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Platform::NOT_SET:
+            return {};
           case Platform::WEB:
             return "WEB";
           case Platform::WEB_DYNAMIC:

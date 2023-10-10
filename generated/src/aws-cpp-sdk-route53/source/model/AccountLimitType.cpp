@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountLimitType::NOT_SET:
+            return {};
           case AccountLimitType::MAX_HEALTH_CHECKS_BY_OWNER:
             return "MAX_HEALTH_CHECKS_BY_OWNER";
           case AccountLimitType::MAX_HOSTED_ZONES_BY_OWNER:

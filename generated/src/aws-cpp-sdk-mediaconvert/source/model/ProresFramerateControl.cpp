@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProresFramerateControl::NOT_SET:
+            return {};
           case ProresFramerateControl::INITIALIZE_FROM_SOURCE:
             return "INITIALIZE_FROM_SOURCE";
           case ProresFramerateControl::SPECIFIED:

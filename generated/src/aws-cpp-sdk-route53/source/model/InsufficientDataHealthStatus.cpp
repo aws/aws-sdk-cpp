@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InsufficientDataHealthStatus::NOT_SET:
+            return {};
           case InsufficientDataHealthStatus::Healthy:
             return "Healthy";
           case InsufficientDataHealthStatus::Unhealthy:

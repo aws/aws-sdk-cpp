@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventName::NOT_SET:
+            return {};
           case EventName::JOINED:
             return "JOINED";
           case EventName::LEFT:

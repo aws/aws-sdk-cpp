@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingStatusCode::NOT_SET:
+            return {};
           case ScalingStatusCode::Inactive:
             return "Inactive";
           case ScalingStatusCode::PartiallyActive:

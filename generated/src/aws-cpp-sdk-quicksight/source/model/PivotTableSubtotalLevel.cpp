@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PivotTableSubtotalLevel::NOT_SET:
+            return {};
           case PivotTableSubtotalLevel::ALL:
             return "ALL";
           case PivotTableSubtotalLevel::CUSTOM:

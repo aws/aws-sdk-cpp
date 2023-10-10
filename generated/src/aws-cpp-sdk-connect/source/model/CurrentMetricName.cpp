@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CurrentMetricName::NOT_SET:
+            return {};
           case CurrentMetricName::AGENTS_ONLINE:
             return "AGENTS_ONLINE";
           case CurrentMetricName::AGENTS_AVAILABLE:

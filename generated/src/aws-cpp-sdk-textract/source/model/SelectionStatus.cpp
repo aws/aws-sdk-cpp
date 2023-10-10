@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SelectionStatus::NOT_SET:
+            return {};
           case SelectionStatus::SELECTED:
             return "SELECTED";
           case SelectionStatus::NOT_SELECTED:

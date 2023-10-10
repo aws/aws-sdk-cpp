@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModificationStateEnum::NOT_SET:
+            return {};
           case ModificationStateEnum::UPDATE_INITIATED:
             return "UPDATE_INITIATED";
           case ModificationStateEnum::UPDATE_IN_PROGRESS:

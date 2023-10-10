@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BrokerStorageType::NOT_SET:
+            return {};
           case BrokerStorageType::EBS:
             return "EBS";
           case BrokerStorageType::EFS:

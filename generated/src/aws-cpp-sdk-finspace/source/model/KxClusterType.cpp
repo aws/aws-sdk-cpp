@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KxClusterType::NOT_SET:
+            return {};
           case KxClusterType::HDB:
             return "HDB";
           case KxClusterType::RDB:

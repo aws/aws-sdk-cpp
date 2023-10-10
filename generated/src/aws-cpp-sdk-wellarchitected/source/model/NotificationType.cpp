@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationType::NOT_SET:
+            return {};
           case NotificationType::LENS_VERSION_UPGRADED:
             return "LENS_VERSION_UPGRADED";
           case NotificationType::LENS_VERSION_DEPRECATED:

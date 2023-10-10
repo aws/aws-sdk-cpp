@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FraudDetectionReason::NOT_SET:
+            return {};
           case FraudDetectionReason::KNOWN_FRAUDSTER:
             return "KNOWN_FRAUDSTER";
           case FraudDetectionReason::VOICE_SPOOFING:

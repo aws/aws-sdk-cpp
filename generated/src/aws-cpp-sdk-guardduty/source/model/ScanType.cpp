@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanType::NOT_SET:
+            return {};
           case ScanType::GUARDDUTY_INITIATED:
             return "GUARDDUTY_INITIATED";
           case ScanType::ON_DEMAND:

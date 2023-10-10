@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskStatus::NOT_SET:
+            return {};
           case TaskStatus::SCHEDULED:
             return "SCHEDULED";
           case TaskStatus::STARTED:

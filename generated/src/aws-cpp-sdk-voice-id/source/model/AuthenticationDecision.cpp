@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticationDecision::NOT_SET:
+            return {};
           case AuthenticationDecision::ACCEPT:
             return "ACCEPT";
           case AuthenticationDecision::REJECT:

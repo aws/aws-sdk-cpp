@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte35SpliceInsertNoRegionalBlackoutBehavior::NOT_SET:
+            return {};
           case Scte35SpliceInsertNoRegionalBlackoutBehavior::FOLLOW:
             return "FOLLOW";
           case Scte35SpliceInsertNoRegionalBlackoutBehavior::IGNORE:

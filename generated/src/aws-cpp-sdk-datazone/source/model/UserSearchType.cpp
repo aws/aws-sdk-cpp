@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserSearchType::NOT_SET:
+            return {};
           case UserSearchType::SSO_USER:
             return "SSO_USER";
           case UserSearchType::DATAZONE_USER:

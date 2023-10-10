@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthTokenUpdateStatus::NOT_SET:
+            return {};
           case AuthTokenUpdateStatus::SETTING:
             return "SETTING";
           case AuthTokenUpdateStatus::ROTATING:

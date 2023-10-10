@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkSpaceAssociatedResourceType::NOT_SET:
+            return {};
           case WorkSpaceAssociatedResourceType::APPLICATION:
             return "APPLICATION";
           default:

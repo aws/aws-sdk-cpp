@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceType::NOT_SET:
+            return {};
           case InstanceType::dev_standard1_small:
             return "dev.standard1.small";
           case InstanceType::dev_standard1_medium:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CollectionType::NOT_SET:
+            return {};
           case CollectionType::List:
             return "List";
           case CollectionType::Set:

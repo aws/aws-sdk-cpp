@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TriggerEventType::NOT_SET:
+            return {};
           case TriggerEventType::DeploymentStart:
             return "DeploymentStart";
           case TriggerEventType::DeploymentSuccess:

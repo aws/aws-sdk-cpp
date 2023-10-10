@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConversationMode::NOT_SET:
+            return {};
           case ConversationMode::AUDIO:
             return "AUDIO";
           case ConversationMode::TEXT:

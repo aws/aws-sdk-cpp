@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetWorkspaceState::NOT_SET:
+            return {};
           case TargetWorkspaceState::AVAILABLE:
             return "AVAILABLE";
           case TargetWorkspaceState::ADMIN_MAINTENANCE:

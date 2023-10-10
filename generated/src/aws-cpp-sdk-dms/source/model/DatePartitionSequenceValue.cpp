@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatePartitionSequenceValue::NOT_SET:
+            return {};
           case DatePartitionSequenceValue::YYYYMMDD:
             return "YYYYMMDD";
           case DatePartitionSequenceValue::YYYYMMDDHH:

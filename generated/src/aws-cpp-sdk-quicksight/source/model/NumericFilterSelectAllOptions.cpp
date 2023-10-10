@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NumericFilterSelectAllOptions::NOT_SET:
+            return {};
           case NumericFilterSelectAllOptions::FILTER_ALL_VALUES:
             return "FILTER_ALL_VALUES";
           default:

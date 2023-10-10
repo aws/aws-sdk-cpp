@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentFileType::NOT_SET:
+            return {};
           case EnvironmentFileType::s3:
             return "s3";
           default:

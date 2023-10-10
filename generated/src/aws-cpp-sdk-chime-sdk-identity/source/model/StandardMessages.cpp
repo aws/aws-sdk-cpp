@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StandardMessages::NOT_SET:
+            return {};
           case StandardMessages::AUTO:
             return "AUTO";
           case StandardMessages::ALL:

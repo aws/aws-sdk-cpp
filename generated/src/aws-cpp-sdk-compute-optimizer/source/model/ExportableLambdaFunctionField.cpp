@@ -174,6 +174,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportableLambdaFunctionField::NOT_SET:
+            return {};
           case ExportableLambdaFunctionField::AccountId:
             return "AccountId";
           case ExportableLambdaFunctionField::FunctionArn:

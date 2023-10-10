@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeywordFilterName::NOT_SET:
+            return {};
           case KeywordFilterName::keyword_action:
             return "keyword-action";
           default:

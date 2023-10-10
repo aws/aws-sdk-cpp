@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FederationMode::NOT_SET:
+            return {};
           case FederationMode::FEDERATED:
             return "FEDERATED";
           case FederationMode::LOCAL:

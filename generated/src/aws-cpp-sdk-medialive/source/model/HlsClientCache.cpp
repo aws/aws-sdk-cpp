@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsClientCache::NOT_SET:
+            return {};
           case HlsClientCache::DISABLED:
             return "DISABLED";
           case HlsClientCache::ENABLED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceInterruptionBehavior::NOT_SET:
+            return {};
           case InstanceInterruptionBehavior::hibernate:
             return "hibernate";
           case InstanceInterruptionBehavior::stop:

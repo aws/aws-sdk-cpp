@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NumberCapability::NOT_SET:
+            return {};
           case NumberCapability::SMS:
             return "SMS";
           case NumberCapability::MMS:

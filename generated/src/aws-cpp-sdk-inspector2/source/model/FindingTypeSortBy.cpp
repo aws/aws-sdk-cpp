@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingTypeSortBy::NOT_SET:
+            return {};
           case FindingTypeSortBy::CRITICAL:
             return "CRITICAL";
           case FindingTypeSortBy::HIGH:

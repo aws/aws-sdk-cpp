@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatadogConnectorOperator::NOT_SET:
+            return {};
           case DatadogConnectorOperator::PROJECTION:
             return "PROJECTION";
           case DatadogConnectorOperator::BETWEEN:

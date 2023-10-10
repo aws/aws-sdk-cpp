@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelApprovalStatus::NOT_SET:
+            return {};
           case ModelApprovalStatus::Approved:
             return "Approved";
           case ModelApprovalStatus::Rejected:

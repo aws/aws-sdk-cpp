@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FirewallRuleGroupAssociationStatus::NOT_SET:
+            return {};
           case FirewallRuleGroupAssociationStatus::COMPLETE:
             return "COMPLETE";
           case FirewallRuleGroupAssociationStatus::DELETING:

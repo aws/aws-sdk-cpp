@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SheetControlDateTimePickerType::NOT_SET:
+            return {};
           case SheetControlDateTimePickerType::SINGLE_VALUED:
             return "SINGLE_VALUED";
           case SheetControlDateTimePickerType::DATE_RANGE:

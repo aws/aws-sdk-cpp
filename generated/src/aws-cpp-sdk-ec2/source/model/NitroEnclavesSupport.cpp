@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NitroEnclavesSupport::NOT_SET:
+            return {};
           case NitroEnclavesSupport::unsupported:
             return "unsupported";
           case NitroEnclavesSupport::supported:

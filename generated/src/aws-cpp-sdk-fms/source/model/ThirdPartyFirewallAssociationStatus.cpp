@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThirdPartyFirewallAssociationStatus::NOT_SET:
+            return {};
           case ThirdPartyFirewallAssociationStatus::ONBOARDING:
             return "ONBOARDING";
           case ThirdPartyFirewallAssociationStatus::ONBOARD_COMPLETE:

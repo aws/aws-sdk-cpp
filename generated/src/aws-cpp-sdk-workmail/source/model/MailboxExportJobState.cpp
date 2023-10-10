@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MailboxExportJobState::NOT_SET:
+            return {};
           case MailboxExportJobState::RUNNING:
             return "RUNNING";
           case MailboxExportJobState::COMPLETED:

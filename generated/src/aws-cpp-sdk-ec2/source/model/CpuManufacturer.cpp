@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CpuManufacturer::NOT_SET:
+            return {};
           case CpuManufacturer::intel:
             return "intel";
           case CpuManufacturer::amd:

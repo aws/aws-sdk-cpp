@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CompressionFormat::NOT_SET:
+            return {};
           case CompressionFormat::GZIP:
             return "GZIP";
           case CompressionFormat::LZ4:

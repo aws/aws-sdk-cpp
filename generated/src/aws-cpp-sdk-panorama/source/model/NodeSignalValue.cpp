@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeSignalValue::NOT_SET:
+            return {};
           case NodeSignalValue::PAUSE:
             return "PAUSE";
           case NodeSignalValue::RESUME:

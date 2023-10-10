@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberFilterName::NOT_SET:
+            return {};
           case PhoneNumberFilterName::status:
             return "status";
           case PhoneNumberFilterName::iso_country_code:

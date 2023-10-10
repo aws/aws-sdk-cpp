@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Reason::NOT_SET:
+            return {};
           case Reason::EXCEEDS_MAX_FACES:
             return "EXCEEDS_MAX_FACES";
           case Reason::EXTREME_POSE:

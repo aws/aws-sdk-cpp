@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpAddressStatus::NOT_SET:
+            return {};
           case IpAddressStatus::CREATING:
             return "CREATING";
           case IpAddressStatus::FAILED_CREATION:

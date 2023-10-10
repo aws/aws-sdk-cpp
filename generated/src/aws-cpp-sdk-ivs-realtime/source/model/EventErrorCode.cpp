@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventErrorCode::NOT_SET:
+            return {};
           case EventErrorCode::INSUFFICIENT_CAPABILITIES:
             return "INSUFFICIENT_CAPABILITIES";
           case EventErrorCode::QUOTA_EXCEEDED:

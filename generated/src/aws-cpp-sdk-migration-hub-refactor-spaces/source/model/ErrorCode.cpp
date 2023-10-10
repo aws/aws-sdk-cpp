@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::INVALID_RESOURCE_STATE:
             return "INVALID_RESOURCE_STATE";
           case ErrorCode::RESOURCE_LIMIT_EXCEEDED:

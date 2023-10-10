@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelCustomization::NOT_SET:
+            return {};
           case ModelCustomization::FINE_TUNING:
             return "FINE_TUNING";
           default:

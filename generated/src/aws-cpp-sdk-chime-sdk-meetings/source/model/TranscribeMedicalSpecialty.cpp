@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscribeMedicalSpecialty::NOT_SET:
+            return {};
           case TranscribeMedicalSpecialty::PRIMARYCARE:
             return "PRIMARYCARE";
           case TranscribeMedicalSpecialty::CARDIOLOGY:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncodingType::NOT_SET:
+            return {};
           case EncodingType::binary:
             return "binary";
           case EncodingType::json:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ControlSetStatus::NOT_SET:
+            return {};
           case ControlSetStatus::ACTIVE:
             return "ACTIVE";
           case ControlSetStatus::UNDER_REVIEW:

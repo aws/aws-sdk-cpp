@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyUsageName::NOT_SET:
+            return {};
           case KeyUsageName::DIGITAL_SIGNATURE:
             return "DIGITAL_SIGNATURE";
           case KeyUsageName::NON_REPUDIATION:

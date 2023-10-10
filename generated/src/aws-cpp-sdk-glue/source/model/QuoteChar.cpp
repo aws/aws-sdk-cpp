@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QuoteChar::NOT_SET:
+            return {};
           case QuoteChar::quote:
             return "quote";
           case QuoteChar::quillemet:

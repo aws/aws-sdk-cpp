@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionType::NOT_SET:
+            return {};
           case EncryptionType::PGP:
             return "PGP";
           default:

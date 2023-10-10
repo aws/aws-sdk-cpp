@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfluenceBlogFieldName::NOT_SET:
+            return {};
           case ConfluenceBlogFieldName::AUTHOR:
             return "AUTHOR";
           case ConfluenceBlogFieldName::DISPLAY_URL:

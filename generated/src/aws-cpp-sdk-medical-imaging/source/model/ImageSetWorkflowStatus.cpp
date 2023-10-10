@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageSetWorkflowStatus::NOT_SET:
+            return {};
           case ImageSetWorkflowStatus::CREATED:
             return "CREATED";
           case ImageSetWorkflowStatus::COPIED:

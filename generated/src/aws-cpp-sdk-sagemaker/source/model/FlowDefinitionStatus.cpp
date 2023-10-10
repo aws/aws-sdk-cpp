@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FlowDefinitionStatus::NOT_SET:
+            return {};
           case FlowDefinitionStatus::Initializing:
             return "Initializing";
           case FlowDefinitionStatus::Active:

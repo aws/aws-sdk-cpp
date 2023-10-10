@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::INITIATED_CALL:
             return "INITIATED_CALL";
           case EventType::RINGING:

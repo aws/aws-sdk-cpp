@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeletionTaskStatusType::NOT_SET:
+            return {};
           case DeletionTaskStatusType::SUCCEEDED:
             return "SUCCEEDED";
           case DeletionTaskStatusType::IN_PROGRESS:

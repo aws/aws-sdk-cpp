@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QuantumTaskAdditionalAttributeName::NOT_SET:
+            return {};
           case QuantumTaskAdditionalAttributeName::QueueInfo:
             return "QueueInfo";
           default:

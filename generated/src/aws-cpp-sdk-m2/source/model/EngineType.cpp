@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EngineType::NOT_SET:
+            return {};
           case EngineType::microfocus:
             return "microfocus";
           case EngineType::bluage:

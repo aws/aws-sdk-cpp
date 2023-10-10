@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientDeviceType::NOT_SET:
+            return {};
           case ClientDeviceType::DeviceTypeWindows:
             return "DeviceTypeWindows";
           case ClientDeviceType::DeviceTypeOsx:

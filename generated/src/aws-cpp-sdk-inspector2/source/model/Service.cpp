@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Service::NOT_SET:
+            return {};
           case Service::EC2:
             return "EC2";
           case Service::ECR:

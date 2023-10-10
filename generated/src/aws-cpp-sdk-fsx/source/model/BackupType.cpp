@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackupType::NOT_SET:
+            return {};
           case BackupType::AUTOMATIC:
             return "AUTOMATIC";
           case BackupType::USER_INITIATED:

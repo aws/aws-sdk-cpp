@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::aws_evidently_evaluation:
             return "aws.evidently.evaluation";
           case EventType::aws_evidently_custom:

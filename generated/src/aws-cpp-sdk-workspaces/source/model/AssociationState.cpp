@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationState::NOT_SET:
+            return {};
           case AssociationState::PENDING_INSTALL:
             return "PENDING_INSTALL";
           case AssociationState::PENDING_INSTALL_DEPLOYMENT:

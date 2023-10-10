@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaPipelineElementStatus::NOT_SET:
+            return {};
           case MediaPipelineElementStatus::NotStarted:
             return "NotStarted";
           case MediaPipelineElementStatus::NotSupported:

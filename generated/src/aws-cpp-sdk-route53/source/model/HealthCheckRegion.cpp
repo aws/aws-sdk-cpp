@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HealthCheckRegion::NOT_SET:
+            return {};
           case HealthCheckRegion::us_east_1:
             return "us-east-1";
           case HealthCheckRegion::us_west_1:

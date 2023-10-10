@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaFunctionRecommendationFinding::NOT_SET:
+            return {};
           case LambdaFunctionRecommendationFinding::Optimized:
             return "Optimized";
           case LambdaFunctionRecommendationFinding::NotOptimized:

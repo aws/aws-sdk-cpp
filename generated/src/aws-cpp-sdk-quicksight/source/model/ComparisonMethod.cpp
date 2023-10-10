@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComparisonMethod::NOT_SET:
+            return {};
           case ComparisonMethod::DIFFERENCE:
             return "DIFFERENCE";
           case ComparisonMethod::PERCENT_DIFFERENCE:

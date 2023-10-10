@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcEndpointStatus::NOT_SET:
+            return {};
           case VpcEndpointStatus::CREATING:
             return "CREATING";
           case VpcEndpointStatus::CREATE_FAILED:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpSetFormat::NOT_SET:
+            return {};
           case IpSetFormat::TXT:
             return "TXT";
           case IpSetFormat::STIX:

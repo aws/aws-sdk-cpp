@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventClass::NOT_SET:
+            return {};
           case EventClass::INFRASTRUCTURE:
             return "INFRASTRUCTURE";
           case EventClass::DEPLOYMENT:

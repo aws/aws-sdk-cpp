@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::SALESFORCE:
             return "SALESFORCE";
           case SourceType::ZENDESK:

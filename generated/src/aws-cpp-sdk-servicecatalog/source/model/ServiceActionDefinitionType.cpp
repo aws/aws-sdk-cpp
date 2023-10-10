@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceActionDefinitionType::NOT_SET:
+            return {};
           case ServiceActionDefinitionType::SSM_AUTOMATION:
             return "SSM_AUTOMATION";
           default:

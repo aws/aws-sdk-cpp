@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayAttachmentResourceType::NOT_SET:
+            return {};
           case TransitGatewayAttachmentResourceType::vpc:
             return "vpc";
           case TransitGatewayAttachmentResourceType::vpn:

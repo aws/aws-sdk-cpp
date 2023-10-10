@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GlossaryTermStatus::NOT_SET:
+            return {};
           case GlossaryTermStatus::ENABLED:
             return "ENABLED";
           case GlossaryTermStatus::DISABLED:

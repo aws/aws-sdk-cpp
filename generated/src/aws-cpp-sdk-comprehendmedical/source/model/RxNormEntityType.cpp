@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RxNormEntityType::NOT_SET:
+            return {};
           case RxNormEntityType::BRAND_NAME:
             return "BRAND_NAME";
           case RxNormEntityType::GENERIC_NAME:

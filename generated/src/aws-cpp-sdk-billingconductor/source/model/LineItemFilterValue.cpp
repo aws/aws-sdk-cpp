@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LineItemFilterValue::NOT_SET:
+            return {};
           case LineItemFilterValue::SAVINGS_PLAN_NEGATION:
             return "SAVINGS_PLAN_NEGATION";
           default:

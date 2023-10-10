@@ -159,6 +159,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectorType::NOT_SET:
+            return {};
           case ConnectorType::Salesforce:
             return "Salesforce";
           case ConnectorType::Singular:

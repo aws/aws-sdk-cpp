@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchTemplateInstanceMetadataEndpointState::NOT_SET:
+            return {};
           case LaunchTemplateInstanceMetadataEndpointState::disabled:
             return "disabled";
           case LaunchTemplateInstanceMetadataEndpointState::enabled:

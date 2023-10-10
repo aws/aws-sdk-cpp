@@ -169,6 +169,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueueAttributeName::NOT_SET:
+            return {};
           case QueueAttributeName::All:
             return "All";
           case QueueAttributeName::Policy:

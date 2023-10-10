@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KnowledgeBaseStatus::NOT_SET:
+            return {};
           case KnowledgeBaseStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case KnowledgeBaseStatus::CREATE_FAILED:

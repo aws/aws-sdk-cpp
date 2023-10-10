@@ -374,6 +374,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationPolicyType::NOT_SET:
+            return {};
           case ApplicationPolicyType::ALL_APPLICATION_POLICIES:
             return "ALL_APPLICATION_POLICIES";
           case ApplicationPolicyType::ANY_PURPOSE:

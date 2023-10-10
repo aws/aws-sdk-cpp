@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AddonStatus::NOT_SET:
+            return {};
           case AddonStatus::CREATING:
             return "CREATING";
           case AddonStatus::ACTIVE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QuickConnectType::NOT_SET:
+            return {};
           case QuickConnectType::USER:
             return "USER";
           case QuickConnectType::QUEUE:

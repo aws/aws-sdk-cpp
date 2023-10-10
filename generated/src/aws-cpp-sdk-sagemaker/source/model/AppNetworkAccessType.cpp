@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppNetworkAccessType::NOT_SET:
+            return {};
           case AppNetworkAccessType::PublicInternetOnly:
             return "PublicInternetOnly";
           case AppNetworkAccessType::VpcOnly:

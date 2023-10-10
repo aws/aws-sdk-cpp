@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfluenceAuthenticationType::NOT_SET:
+            return {};
           case ConfluenceAuthenticationType::HTTP_BASIC:
             return "HTTP_BASIC";
           case ConfluenceAuthenticationType::PAT:

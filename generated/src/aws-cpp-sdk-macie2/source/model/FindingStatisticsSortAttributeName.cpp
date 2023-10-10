@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingStatisticsSortAttributeName::NOT_SET:
+            return {};
           case FindingStatisticsSortAttributeName::groupKey:
             return "groupKey";
           case FindingStatisticsSortAttributeName::count:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubscriptionGrantStatus::NOT_SET:
+            return {};
           case SubscriptionGrantStatus::GRANT_PENDING:
             return "GRANT_PENDING";
           case SubscriptionGrantStatus::REVOKE_PENDING:

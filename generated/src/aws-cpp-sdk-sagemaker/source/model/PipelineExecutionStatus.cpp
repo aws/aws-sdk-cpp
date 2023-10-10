@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PipelineExecutionStatus::NOT_SET:
+            return {};
           case PipelineExecutionStatus::Executing:
             return "Executing";
           case PipelineExecutionStatus::Stopping:

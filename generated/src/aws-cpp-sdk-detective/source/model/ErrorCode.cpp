@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::INVALID_GRAPH_ARN:
             return "INVALID_GRAPH_ARN";
           case ErrorCode::INVALID_REQUEST_BODY:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FolderName::NOT_SET:
+            return {};
           case FolderName::INBOX:
             return "INBOX";
           case FolderName::DELETED_ITEMS:

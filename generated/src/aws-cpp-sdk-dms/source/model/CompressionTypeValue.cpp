@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CompressionTypeValue::NOT_SET:
+            return {};
           case CompressionTypeValue::none:
             return "none";
           case CompressionTypeValue::gzip:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComponentDependencyType::NOT_SET:
+            return {};
           case ComponentDependencyType::HARD:
             return "HARD";
           case ComponentDependencyType::SOFT:

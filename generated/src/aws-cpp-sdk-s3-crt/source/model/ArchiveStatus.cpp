@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArchiveStatus::NOT_SET:
+            return {};
           case ArchiveStatus::ARCHIVE_ACCESS:
             return "ARCHIVE_ACCESS";
           case ArchiveStatus::DEEP_ARCHIVE_ACCESS:

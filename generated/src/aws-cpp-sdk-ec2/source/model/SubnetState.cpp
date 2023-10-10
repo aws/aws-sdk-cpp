@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubnetState::NOT_SET:
+            return {};
           case SubnetState::pending:
             return "pending";
           case SubnetState::available:

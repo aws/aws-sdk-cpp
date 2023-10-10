@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterNullOption::NOT_SET:
+            return {};
           case FilterNullOption::ALL_VALUES:
             return "ALL_VALUES";
           case FilterNullOption::NULLS_ONLY:

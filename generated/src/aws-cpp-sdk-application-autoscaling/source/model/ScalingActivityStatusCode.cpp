@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingActivityStatusCode::NOT_SET:
+            return {};
           case ScalingActivityStatusCode::Pending:
             return "Pending";
           case ScalingActivityStatusCode::InProgress:

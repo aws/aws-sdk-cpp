@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectLambdaAccessPointAliasStatus::NOT_SET:
+            return {};
           case ObjectLambdaAccessPointAliasStatus::PROVISIONING:
             return "PROVISIONING";
           case ObjectLambdaAccessPointAliasStatus::READY:

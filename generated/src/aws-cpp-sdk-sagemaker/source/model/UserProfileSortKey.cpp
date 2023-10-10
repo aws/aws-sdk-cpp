@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserProfileSortKey::NOT_SET:
+            return {};
           case UserProfileSortKey::CreationTime:
             return "CreationTime";
           case UserProfileSortKey::LastModifiedTime:

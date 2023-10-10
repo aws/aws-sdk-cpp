@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetType::NOT_SET:
+            return {};
           case TargetType::AWS_ACCOUNT:
             return "AWS_ACCOUNT";
           default:

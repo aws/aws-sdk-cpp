@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsAudioInterval::NOT_SET:
+            return {};
           case M2tsAudioInterval::VIDEO_AND_FIXED_INTERVALS:
             return "VIDEO_AND_FIXED_INTERVALS";
           case M2tsAudioInterval::VIDEO_INTERVAL:

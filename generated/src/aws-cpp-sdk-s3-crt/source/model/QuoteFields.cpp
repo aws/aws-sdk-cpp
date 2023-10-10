@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QuoteFields::NOT_SET:
+            return {};
           case QuoteFields::ALWAYS:
             return "ALWAYS";
           case QuoteFields::ASNEEDED:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SyntaxLanguageCode::NOT_SET:
+            return {};
           case SyntaxLanguageCode::en:
             return "en";
           case SyntaxLanguageCode::es:

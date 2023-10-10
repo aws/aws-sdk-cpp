@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MovClapAtom::NOT_SET:
+            return {};
           case MovClapAtom::INCLUDE:
             return "INCLUDE";
           case MovClapAtom::EXCLUDE:

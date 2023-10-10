@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TraversalType::NOT_SET:
+            return {};
           case TraversalType::PATH_TO_ROOT:
             return "PATH_TO_ROOT";
           default:

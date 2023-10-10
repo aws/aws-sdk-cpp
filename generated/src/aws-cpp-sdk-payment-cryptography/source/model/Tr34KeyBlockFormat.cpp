@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Tr34KeyBlockFormat::NOT_SET:
+            return {};
           case Tr34KeyBlockFormat::X9_TR34_2012:
             return "X9_TR34_2012";
           default:

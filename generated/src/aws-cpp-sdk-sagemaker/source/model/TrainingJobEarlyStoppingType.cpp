@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrainingJobEarlyStoppingType::NOT_SET:
+            return {};
           case TrainingJobEarlyStoppingType::Off:
             return "Off";
           case TrainingJobEarlyStoppingType::Auto:

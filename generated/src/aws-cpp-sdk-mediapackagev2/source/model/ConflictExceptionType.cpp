@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictExceptionType::NOT_SET:
+            return {};
           case ConflictExceptionType::RESOURCE_IN_USE:
             return "RESOURCE_IN_USE";
           case ConflictExceptionType::RESOURCE_ALREADY_EXISTS:

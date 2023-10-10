@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentType::NOT_SET:
+            return {};
           case ContentType::image_jpeg:
             return "image/jpeg";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SuppressionListReason::NOT_SET:
+            return {};
           case SuppressionListReason::BOUNCE:
             return "BOUNCE";
           case SuppressionListReason::COMPLAINT:

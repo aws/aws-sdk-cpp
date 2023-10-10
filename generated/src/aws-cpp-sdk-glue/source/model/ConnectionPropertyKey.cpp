@@ -234,6 +234,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionPropertyKey::NOT_SET:
+            return {};
           case ConnectionPropertyKey::HOST:
             return "HOST";
           case ConnectionPropertyKey::PORT:

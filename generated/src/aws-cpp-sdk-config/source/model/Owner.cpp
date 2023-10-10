@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Owner::NOT_SET:
+            return {};
           case Owner::CUSTOM_LAMBDA:
             return "CUSTOM_LAMBDA";
           case Owner::AWS:

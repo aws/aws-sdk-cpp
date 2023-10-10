@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequestCancelActivityTaskFailedCause::NOT_SET:
+            return {};
           case RequestCancelActivityTaskFailedCause::ACTIVITY_ID_UNKNOWN:
             return "ACTIVITY_ID_UNKNOWN";
           case RequestCancelActivityTaskFailedCause::OPERATION_NOT_PERMITTED:

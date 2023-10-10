@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentState::NOT_SET:
+            return {};
           case DeploymentState::PENDING:
             return "PENDING";
           case DeploymentState::IN_PROGRESS:

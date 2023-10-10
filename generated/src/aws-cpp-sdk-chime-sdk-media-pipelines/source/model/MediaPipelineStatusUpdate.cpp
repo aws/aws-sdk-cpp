@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaPipelineStatusUpdate::NOT_SET:
+            return {};
           case MediaPipelineStatusUpdate::Pause:
             return "Pause";
           case MediaPipelineStatusUpdate::Resume:

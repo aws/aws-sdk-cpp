@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppType::NOT_SET:
+            return {};
           case AppType::JupyterServer:
             return "JupyterServer";
           case AppType::KernelGateway:

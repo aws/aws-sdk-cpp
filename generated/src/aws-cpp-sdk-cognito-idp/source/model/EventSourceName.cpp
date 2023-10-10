@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventSourceName::NOT_SET:
+            return {};
           case EventSourceName::userNotification:
             return "userNotification";
           default:

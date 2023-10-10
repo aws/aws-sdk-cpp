@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CommentBodyTextType::NOT_SET:
+            return {};
           case CommentBodyTextType::Text_Plain:
             return "Text/Plain";
           default:

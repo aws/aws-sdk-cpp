@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceControlProvider::NOT_SET:
+            return {};
           case SourceControlProvider::GITHUB:
             return "GITHUB";
           case SourceControlProvider::AWS_CODE_COMMIT:

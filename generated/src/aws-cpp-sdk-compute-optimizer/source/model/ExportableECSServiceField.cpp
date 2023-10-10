@@ -159,6 +159,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportableECSServiceField::NOT_SET:
+            return {};
           case ExportableECSServiceField::AccountId:
             return "AccountId";
           case ExportableECSServiceField::ServiceArn:

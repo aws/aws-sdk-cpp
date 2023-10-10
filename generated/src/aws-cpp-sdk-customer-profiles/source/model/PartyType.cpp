@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PartyType::NOT_SET:
+            return {};
           case PartyType::INDIVIDUAL:
             return "INDIVIDUAL";
           case PartyType::BUSINESS:

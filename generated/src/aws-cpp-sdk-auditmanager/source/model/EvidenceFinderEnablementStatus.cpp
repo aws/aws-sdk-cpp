@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvidenceFinderEnablementStatus::NOT_SET:
+            return {};
           case EvidenceFinderEnablementStatus::ENABLED:
             return "ENABLED";
           case EvidenceFinderEnablementStatus::DISABLED:

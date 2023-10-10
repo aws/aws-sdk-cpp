@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ControlFindingGenerator::NOT_SET:
+            return {};
           case ControlFindingGenerator::STANDARD_CONTROL:
             return "STANDARD_CONTROL";
           case ControlFindingGenerator::SECURITY_CONTROL:

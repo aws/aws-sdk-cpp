@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailureReason::NOT_SET:
+            return {};
           case FailureReason::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           case FailureReason::USER_ERROR:

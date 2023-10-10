@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationConfigurationEbsEncryption::NOT_SET:
+            return {};
           case ReplicationConfigurationEbsEncryption::DEFAULT:
             return "DEFAULT";
           case ReplicationConfigurationEbsEncryption::CUSTOM:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SetStatOption::NOT_SET:
+            return {};
           case SetStatOption::DEFAULT:
             return "DEFAULT";
           case SetStatOption::ENABLE_NO_OP:

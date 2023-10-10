@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GraphQLApiType::NOT_SET:
+            return {};
           case GraphQLApiType::GRAPHQL:
             return "GRAPHQL";
           case GraphQLApiType::MERGED:

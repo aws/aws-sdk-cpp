@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LicenseConversionTaskStatus::NOT_SET:
+            return {};
           case LicenseConversionTaskStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case LicenseConversionTaskStatus::SUCCEEDED:

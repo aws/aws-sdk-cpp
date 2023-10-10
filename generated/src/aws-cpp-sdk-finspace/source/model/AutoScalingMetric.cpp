@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoScalingMetric::NOT_SET:
+            return {};
           case AutoScalingMetric::CPU_UTILIZATION_PERCENTAGE:
             return "CPU_UTILIZATION_PERCENTAGE";
           default:

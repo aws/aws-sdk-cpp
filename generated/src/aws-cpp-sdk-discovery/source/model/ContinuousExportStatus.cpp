@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContinuousExportStatus::NOT_SET:
+            return {};
           case ContinuousExportStatus::START_IN_PROGRESS:
             return "START_IN_PROGRESS";
           case ContinuousExportStatus::START_FAILED:

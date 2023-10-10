@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateAgentLogLevel::NOT_SET:
+            return {};
           case UpdateAgentLogLevel::NONE:
             return "NONE";
           case UpdateAgentLogLevel::TRACE:

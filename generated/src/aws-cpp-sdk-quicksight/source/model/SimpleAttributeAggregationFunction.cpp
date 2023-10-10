@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SimpleAttributeAggregationFunction::NOT_SET:
+            return {};
           case SimpleAttributeAggregationFunction::UNIQUE_VALUE:
             return "UNIQUE_VALUE";
           default:

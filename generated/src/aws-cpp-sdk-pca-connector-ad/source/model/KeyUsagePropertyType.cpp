@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyUsagePropertyType::NOT_SET:
+            return {};
           case KeyUsagePropertyType::ALL:
             return "ALL";
           default:

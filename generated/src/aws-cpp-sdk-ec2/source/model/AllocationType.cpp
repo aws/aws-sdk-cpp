@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllocationType::NOT_SET:
+            return {};
           case AllocationType::used:
             return "used";
           default:

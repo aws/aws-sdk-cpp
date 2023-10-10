@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QualityFilter::NOT_SET:
+            return {};
           case QualityFilter::NONE:
             return "NONE";
           case QualityFilter::AUTO:

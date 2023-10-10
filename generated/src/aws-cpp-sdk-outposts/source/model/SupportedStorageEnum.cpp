@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SupportedStorageEnum::NOT_SET:
+            return {};
           case SupportedStorageEnum::EBS:
             return "EBS";
           case SupportedStorageEnum::S3:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlotTypeFilterName::NOT_SET:
+            return {};
           case SlotTypeFilterName::SlotTypeName:
             return "SlotTypeName";
           case SlotTypeFilterName::ExternalSourceType:

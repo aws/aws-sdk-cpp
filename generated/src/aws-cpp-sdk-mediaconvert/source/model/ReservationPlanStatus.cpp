@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservationPlanStatus::NOT_SET:
+            return {};
           case ReservationPlanStatus::ACTIVE:
             return "ACTIVE";
           case ReservationPlanStatus::EXPIRED:

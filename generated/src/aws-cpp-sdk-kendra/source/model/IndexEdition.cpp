@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IndexEdition::NOT_SET:
+            return {};
           case IndexEdition::DEVELOPER_EDITION:
             return "DEVELOPER_EDITION";
           case IndexEdition::ENTERPRISE_EDITION:

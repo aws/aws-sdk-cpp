@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyLocation::NOT_SET:
+            return {};
           case KeyLocation::URL:
             return "URL";
           case KeyLocation::SECRET_MANAGER:

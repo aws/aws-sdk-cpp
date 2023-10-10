@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransferOption::NOT_SET:
+            return {};
           case TransferOption::IMPORT:
             return "IMPORT";
           case TransferOption::EXPORT:

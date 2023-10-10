@@ -159,6 +159,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StateReasonCode::NOT_SET:
+            return {};
           case StateReasonCode::Idle:
             return "Idle";
           case StateReasonCode::Creating:

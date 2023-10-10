@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocaleType::NOT_SET:
+            return {};
           case LocaleType::en:
             return "en";
           case LocaleType::fr:

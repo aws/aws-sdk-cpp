@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CEStatus::NOT_SET:
+            return {};
           case CEStatus::CREATING:
             return "CREATING";
           case CEStatus::UPDATING:

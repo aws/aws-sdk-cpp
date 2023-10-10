@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateStatus::NOT_SET:
+            return {};
           case TemplateStatus::CREATED:
             return "CREATED";
           default:

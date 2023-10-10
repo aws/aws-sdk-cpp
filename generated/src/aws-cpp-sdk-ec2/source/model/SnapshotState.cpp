@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotState::NOT_SET:
+            return {};
           case SnapshotState::pending:
             return "pending";
           case SnapshotState::completed:

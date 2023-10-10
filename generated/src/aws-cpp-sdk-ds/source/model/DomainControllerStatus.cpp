@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainControllerStatus::NOT_SET:
+            return {};
           case DomainControllerStatus::Creating:
             return "Creating";
           case DomainControllerStatus::Active:

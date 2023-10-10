@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDeviceOutputType::NOT_SET:
+            return {};
           case InputDeviceOutputType::NONE:
             return "NONE";
           case InputDeviceOutputType::MEDIALIVE_INPUT:

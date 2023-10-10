@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StepStatus::NOT_SET:
+            return {};
           case StepStatus::AWAITING_DEPENDENCIES:
             return "AWAITING_DEPENDENCIES";
           case StepStatus::READY:

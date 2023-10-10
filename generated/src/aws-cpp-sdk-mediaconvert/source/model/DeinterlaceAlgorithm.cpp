@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeinterlaceAlgorithm::NOT_SET:
+            return {};
           case DeinterlaceAlgorithm::INTERPOLATE:
             return "INTERPOLATE";
           case DeinterlaceAlgorithm::INTERPOLATE_TICKER:

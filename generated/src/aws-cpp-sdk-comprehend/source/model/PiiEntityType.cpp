@@ -224,6 +224,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PiiEntityType::NOT_SET:
+            return {};
           case PiiEntityType::BANK_ACCOUNT_NUMBER:
             return "BANK_ACCOUNT_NUMBER";
           case PiiEntityType::BANK_ROUTING:

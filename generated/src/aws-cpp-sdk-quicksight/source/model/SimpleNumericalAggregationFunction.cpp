@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SimpleNumericalAggregationFunction::NOT_SET:
+            return {};
           case SimpleNumericalAggregationFunction::SUM:
             return "SUM";
           case SimpleNumericalAggregationFunction::AVERAGE:

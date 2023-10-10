@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CreationType::NOT_SET:
+            return {};
           case CreationType::IMPORT:
             return "IMPORT";
           case CreationType::UPLOAD:

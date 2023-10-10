@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DownlinkMode::NOT_SET:
+            return {};
           case DownlinkMode::SEQUENTIAL:
             return "SEQUENTIAL";
           case DownlinkMode::CONCURRENT:

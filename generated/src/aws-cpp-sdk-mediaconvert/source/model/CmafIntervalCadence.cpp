@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafIntervalCadence::NOT_SET:
+            return {};
           case CmafIntervalCadence::FOLLOW_IFRAME:
             return "FOLLOW_IFRAME";
           case CmafIntervalCadence::FOLLOW_CUSTOM:

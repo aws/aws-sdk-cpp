@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageType::NOT_SET:
+            return {};
           case MessageType::CUSTOM_COMMAND_ID_NOTIFY:
             return "CUSTOM_COMMAND_ID_NOTIFY";
           case MessageType::CUSTOM_COMMAND_ID_GET:

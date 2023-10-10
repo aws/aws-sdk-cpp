@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicateTo::NOT_SET:
+            return {};
           case ReplicateTo::NONE:
             return "NONE";
           case ReplicateTo::SSM_DOCUMENT:

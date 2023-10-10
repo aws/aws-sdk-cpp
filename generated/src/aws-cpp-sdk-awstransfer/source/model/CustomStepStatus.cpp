@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomStepStatus::NOT_SET:
+            return {};
           case CustomStepStatus::SUCCESS:
             return "SUCCESS";
           case CustomStepStatus::FAILURE:

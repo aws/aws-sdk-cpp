@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScriptType::NOT_SET:
+            return {};
           case ScriptType::SHELL_SCRIPT:
             return "SHELL_SCRIPT";
           case ScriptType::POWERSHELL_SCRIPT:

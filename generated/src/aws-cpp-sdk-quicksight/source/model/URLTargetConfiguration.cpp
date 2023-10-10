@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case URLTargetConfiguration::NOT_SET:
+            return {};
           case URLTargetConfiguration::NEW_TAB:
             return "NEW_TAB";
           case URLTargetConfiguration::NEW_WINDOW:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SamlStatusEnum::NOT_SET:
+            return {};
           case SamlStatusEnum::DISABLED:
             return "DISABLED";
           case SamlStatusEnum::ENABLED:

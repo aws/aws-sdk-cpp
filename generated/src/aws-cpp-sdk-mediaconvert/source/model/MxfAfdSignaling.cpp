@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MxfAfdSignaling::NOT_SET:
+            return {};
           case MxfAfdSignaling::NO_COPY:
             return "NO_COPY";
           case MxfAfdSignaling::COPY_FROM_VIDEO:

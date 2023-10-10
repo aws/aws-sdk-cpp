@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyClass::NOT_SET:
+            return {};
           case KeyClass::SYMMETRIC_KEY:
             return "SYMMETRIC_KEY";
           case KeyClass::ASYMMETRIC_KEY_PAIR:

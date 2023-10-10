@@ -209,6 +209,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetDevice::NOT_SET:
+            return {};
           case TargetDevice::lambda:
             return "lambda";
           case TargetDevice::ml_m4:

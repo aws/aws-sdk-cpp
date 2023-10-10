@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentType::NOT_SET:
+            return {};
           case DocumentType::Command:
             return "Command";
           case DocumentType::Policy:

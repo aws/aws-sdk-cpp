@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GeoMatchLevel::NOT_SET:
+            return {};
           case GeoMatchLevel::Country:
             return "Country";
           case GeoMatchLevel::AreaCode:

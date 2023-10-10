@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatisticType::NOT_SET:
+            return {};
           case StatisticType::p50:
             return "p50";
           default:

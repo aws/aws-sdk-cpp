@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequiredFlag::NOT_SET:
+            return {};
           case RequiredFlag::ENABLED:
             return "ENABLED";
           case RequiredFlag::DISABLED:

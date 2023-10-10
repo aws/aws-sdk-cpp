@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PowerPhase::NOT_SET:
+            return {};
           case PowerPhase::SINGLE_PHASE:
             return "SINGLE_PHASE";
           case PowerPhase::THREE_PHASE:

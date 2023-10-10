@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackInstanceStatus::NOT_SET:
+            return {};
           case StackInstanceStatus::CURRENT:
             return "CURRENT";
           case StackInstanceStatus::OUTDATED:

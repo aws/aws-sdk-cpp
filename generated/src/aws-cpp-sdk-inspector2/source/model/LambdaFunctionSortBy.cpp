@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaFunctionSortBy::NOT_SET:
+            return {};
           case LambdaFunctionSortBy::CRITICAL:
             return "CRITICAL";
           case LambdaFunctionSortBy::HIGH:

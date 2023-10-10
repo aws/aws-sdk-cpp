@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProfileType::NOT_SET:
+            return {};
           case ProfileType::LOCAL:
             return "LOCAL";
           case ProfileType::PARTNER:

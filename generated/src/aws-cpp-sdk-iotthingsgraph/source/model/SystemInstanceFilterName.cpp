@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SystemInstanceFilterName::NOT_SET:
+            return {};
           case SystemInstanceFilterName::SYSTEM_TEMPLATE_ID:
             return "SYSTEM_TEMPLATE_ID";
           case SystemInstanceFilterName::STATUS:

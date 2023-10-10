@@ -479,6 +479,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameServerGroupInstanceType::NOT_SET:
+            return {};
           case GameServerGroupInstanceType::c4_large:
             return "c4.large";
           case GameServerGroupInstanceType::c4_xlarge:

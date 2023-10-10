@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventSourceValues::NOT_SET:
+            return {};
           case EventSourceValues::MANAGED_CWE:
             return "MANAGED_CWE";
           default:

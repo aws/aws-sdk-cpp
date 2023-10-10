@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265EndOfStreamMarkers::NOT_SET:
+            return {};
           case H265EndOfStreamMarkers::INCLUDE:
             return "INCLUDE";
           case H265EndOfStreamMarkers::SUPPRESS:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BotType::NOT_SET:
+            return {};
           case BotType::ChatBot:
             return "ChatBot";
           default:

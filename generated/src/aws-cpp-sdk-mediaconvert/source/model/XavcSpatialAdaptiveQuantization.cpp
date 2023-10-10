@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcSpatialAdaptiveQuantization::NOT_SET:
+            return {};
           case XavcSpatialAdaptiveQuantization::DISABLED:
             return "DISABLED";
           case XavcSpatialAdaptiveQuantization::ENABLED:

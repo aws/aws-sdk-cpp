@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskStatus::NOT_SET:
+            return {};
           case TaskStatus::AVAILABLE:
             return "AVAILABLE";
           case TaskStatus::CREATING:

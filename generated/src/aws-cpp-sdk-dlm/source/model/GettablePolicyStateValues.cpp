@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GettablePolicyStateValues::NOT_SET:
+            return {};
           case GettablePolicyStateValues::ENABLED:
             return "ENABLED";
           case GettablePolicyStateValues::DISABLED:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplacementTypeEnum::NOT_SET:
+            return {};
           case ReplacementTypeEnum::KEEP_BASE:
             return "KEEP_BASE";
           case ReplacementTypeEnum::KEEP_SOURCE:

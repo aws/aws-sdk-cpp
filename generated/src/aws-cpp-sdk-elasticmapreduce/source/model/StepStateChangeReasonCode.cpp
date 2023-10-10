@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StepStateChangeReasonCode::NOT_SET:
+            return {};
           case StepStateChangeReasonCode::NONE:
             return "NONE";
           default:

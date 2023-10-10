@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RepositoryAccessMode::NOT_SET:
+            return {};
           case RepositoryAccessMode::Platform:
             return "Platform";
           case RepositoryAccessMode::Vpc:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DropFrameTimecode::NOT_SET:
+            return {};
           case DropFrameTimecode::DISABLED:
             return "DISABLED";
           case DropFrameTimecode::ENABLED:

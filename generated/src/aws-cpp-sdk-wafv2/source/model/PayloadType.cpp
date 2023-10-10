@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PayloadType::NOT_SET:
+            return {};
           case PayloadType::JSON:
             return "JSON";
           case PayloadType::FORM_ENCODED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StyleType::NOT_SET:
+            return {};
           case StyleType::Default:
             return "Default";
           case StyleType::SpellByLetter:

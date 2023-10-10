@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsSegmentationMarkers::NOT_SET:
+            return {};
           case M2tsSegmentationMarkers::EBP:
             return "EBP";
           case M2tsSegmentationMarkers::EBP_LEGACY:

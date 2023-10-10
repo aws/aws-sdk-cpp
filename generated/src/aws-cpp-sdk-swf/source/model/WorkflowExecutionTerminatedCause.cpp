@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowExecutionTerminatedCause::NOT_SET:
+            return {};
           case WorkflowExecutionTerminatedCause::CHILD_POLICY_APPLIED:
             return "CHILD_POLICY_APPLIED";
           case WorkflowExecutionTerminatedCause::EVENT_LIMIT_EXCEEDED:

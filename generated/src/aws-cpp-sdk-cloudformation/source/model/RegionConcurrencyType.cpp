@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegionConcurrencyType::NOT_SET:
+            return {};
           case RegionConcurrencyType::SEQUENTIAL:
             return "SEQUENTIAL";
           case RegionConcurrencyType::PARALLEL:

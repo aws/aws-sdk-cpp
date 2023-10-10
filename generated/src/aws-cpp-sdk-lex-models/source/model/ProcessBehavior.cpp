@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessBehavior::NOT_SET:
+            return {};
           case ProcessBehavior::SAVE:
             return "SAVE";
           case ProcessBehavior::BUILD:

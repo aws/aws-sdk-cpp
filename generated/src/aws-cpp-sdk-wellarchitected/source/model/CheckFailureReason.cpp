@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CheckFailureReason::NOT_SET:
+            return {};
           case CheckFailureReason::ASSUME_ROLE_ERROR:
             return "ASSUME_ROLE_ERROR";
           case CheckFailureReason::ACCESS_DENIED:

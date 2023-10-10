@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BinaryAnalyzerName::NOT_SET:
+            return {};
           case BinaryAnalyzerName::DLL_ANALYZER:
             return "DLL_ANALYZER";
           case BinaryAnalyzerName::BYTECODE_ANALYZER:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientAuthenticationType::NOT_SET:
+            return {};
           case ClientAuthenticationType::SmartCard:
             return "SmartCard";
           case ClientAuthenticationType::SmartCardOrPassword:

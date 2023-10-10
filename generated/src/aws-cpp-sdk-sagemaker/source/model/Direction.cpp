@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Direction::NOT_SET:
+            return {};
           case Direction::Both:
             return "Both";
           case Direction::Ascendants:

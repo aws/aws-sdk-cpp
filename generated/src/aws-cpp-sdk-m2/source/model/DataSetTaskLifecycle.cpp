@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSetTaskLifecycle::NOT_SET:
+            return {};
           case DataSetTaskLifecycle::Creating:
             return "Creating";
           case DataSetTaskLifecycle::Running:

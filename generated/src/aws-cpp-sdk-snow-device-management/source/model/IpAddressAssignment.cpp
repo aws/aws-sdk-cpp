@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpAddressAssignment::NOT_SET:
+            return {};
           case IpAddressAssignment::DHCP:
             return "DHCP";
           case IpAddressAssignment::STATIC_:

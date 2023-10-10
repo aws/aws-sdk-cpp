@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SiteState::NOT_SET:
+            return {};
           case SiteState::PENDING:
             return "PENDING";
           case SiteState::AVAILABLE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataIdentifierSeverity::NOT_SET:
+            return {};
           case DataIdentifierSeverity::LOW:
             return "LOW";
           case DataIdentifierSeverity::MEDIUM:

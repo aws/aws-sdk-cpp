@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateType::NOT_SET:
+            return {};
           case UpdateType::OS:
             return "OS";
           default:

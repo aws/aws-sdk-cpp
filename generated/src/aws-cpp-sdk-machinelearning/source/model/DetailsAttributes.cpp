@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetailsAttributes::NOT_SET:
+            return {};
           case DetailsAttributes::PredictiveModelType:
             return "PredictiveModelType";
           case DetailsAttributes::Algorithm:

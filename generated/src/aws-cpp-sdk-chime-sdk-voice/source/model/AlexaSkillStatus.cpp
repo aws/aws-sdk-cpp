@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlexaSkillStatus::NOT_SET:
+            return {};
           case AlexaSkillStatus::ACTIVE:
             return "ACTIVE";
           case AlexaSkillStatus::INACTIVE:

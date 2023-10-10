@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationDiscoveryStatus::NOT_SET:
+            return {};
           case ApplicationDiscoveryStatus::SUCCESS:
             return "SUCCESS";
           case ApplicationDiscoveryStatus::REGISTRATION_FAILED:

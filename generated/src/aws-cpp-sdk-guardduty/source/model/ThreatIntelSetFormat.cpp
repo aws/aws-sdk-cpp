@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThreatIntelSetFormat::NOT_SET:
+            return {};
           case ThreatIntelSetFormat::TXT:
             return "TXT";
           case ThreatIntelSetFormat::STIX:

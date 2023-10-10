@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TokenProviders::NOT_SET:
+            return {};
           case TokenProviders::figma:
             return "figma";
           default:

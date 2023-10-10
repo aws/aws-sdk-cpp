@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataQualityMetricType::NOT_SET:
+            return {};
           case DataQualityMetricType::COLUMN_COMPLETENESS:
             return "COLUMN_COMPLETENESS";
           case DataQualityMetricType::DIMENSION_UNIQUENESS:

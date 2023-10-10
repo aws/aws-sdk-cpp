@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThreatIntelSetStatus::NOT_SET:
+            return {};
           case ThreatIntelSetStatus::INACTIVE:
             return "INACTIVE";
           case ThreatIntelSetStatus::ACTIVATING:

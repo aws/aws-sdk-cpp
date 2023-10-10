@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessorType::NOT_SET:
+            return {};
           case ProcessorType::RecordDeAggregation:
             return "RecordDeAggregation";
           case ProcessorType::Decompression:

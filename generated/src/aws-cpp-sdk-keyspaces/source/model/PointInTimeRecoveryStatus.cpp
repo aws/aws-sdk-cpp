@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PointInTimeRecoveryStatus::NOT_SET:
+            return {};
           case PointInTimeRecoveryStatus::ENABLED:
             return "ENABLED";
           case PointInTimeRecoveryStatus::DISABLED:

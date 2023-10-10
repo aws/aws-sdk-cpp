@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InferenceDataImportStrategy::NOT_SET:
+            return {};
           case InferenceDataImportStrategy::NO_IMPORT:
             return "NO_IMPORT";
           case InferenceDataImportStrategy::ADD_WHEN_EMPTY:

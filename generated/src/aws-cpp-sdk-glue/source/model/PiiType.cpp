@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PiiType::NOT_SET:
+            return {};
           case PiiType::RowAudit:
             return "RowAudit";
           case PiiType::RowMasking:

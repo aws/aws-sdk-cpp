@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WirelessGatewayTaskDefinitionType::NOT_SET:
+            return {};
           case WirelessGatewayTaskDefinitionType::UPDATE:
             return "UPDATE";
           default:

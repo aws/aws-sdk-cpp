@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceTypeNotFound::NOT_SET:
+            return {};
           case ResourceTypeNotFound::CHANNEL_GROUP:
             return "CHANNEL_GROUP";
           case ResourceTypeNotFound::CHANNEL:

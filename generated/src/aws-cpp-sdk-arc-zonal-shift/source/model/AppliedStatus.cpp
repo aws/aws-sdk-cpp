@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppliedStatus::NOT_SET:
+            return {};
           case AppliedStatus::APPLIED:
             return "APPLIED";
           case AppliedStatus::NOT_APPLIED:

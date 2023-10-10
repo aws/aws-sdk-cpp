@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TokenType::NOT_SET:
+            return {};
           case TokenType::REFRESH_TOKEN:
             return "REFRESH_TOKEN";
           default:

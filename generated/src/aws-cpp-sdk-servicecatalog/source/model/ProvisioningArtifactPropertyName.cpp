@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisioningArtifactPropertyName::NOT_SET:
+            return {};
           case ProvisioningArtifactPropertyName::Id:
             return "Id";
           default:

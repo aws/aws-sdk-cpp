@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProjectState::NOT_SET:
+            return {};
           case ProjectState::NORMAL:
             return "NORMAL";
           case ProjectState::SYNCING:

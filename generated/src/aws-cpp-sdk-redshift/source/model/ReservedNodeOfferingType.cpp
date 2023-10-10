@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservedNodeOfferingType::NOT_SET:
+            return {};
           case ReservedNodeOfferingType::Regular:
             return "Regular";
           case ReservedNodeOfferingType::Upgradable:

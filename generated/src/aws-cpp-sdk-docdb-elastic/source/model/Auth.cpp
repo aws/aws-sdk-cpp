@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Auth::NOT_SET:
+            return {};
           case Auth::PLAIN_TEXT:
             return "PLAIN_TEXT";
           case Auth::SECRET_ARN:

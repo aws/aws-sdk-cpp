@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientVpnEndpointAttributeStatusCode::NOT_SET:
+            return {};
           case ClientVpnEndpointAttributeStatusCode::applying:
             return "applying";
           case ClientVpnEndpointAttributeStatusCode::applied:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitorCapability::NOT_SET:
+            return {};
           case MonitorCapability::SILENT_MONITOR:
             return "SILENT_MONITOR";
           case MonitorCapability::BARGE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InferenceType::NOT_SET:
+            return {};
           case InferenceType::ON_DEMAND:
             return "ON_DEMAND";
           case InferenceType::PROVISIONED:

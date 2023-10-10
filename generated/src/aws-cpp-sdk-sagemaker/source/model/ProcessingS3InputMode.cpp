@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessingS3InputMode::NOT_SET:
+            return {};
           case ProcessingS3InputMode::Pipe:
             return "Pipe";
           case ProcessingS3InputMode::File:

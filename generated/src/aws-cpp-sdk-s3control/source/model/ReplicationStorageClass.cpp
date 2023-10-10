@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationStorageClass::NOT_SET:
+            return {};
           case ReplicationStorageClass::STANDARD:
             return "STANDARD";
           case ReplicationStorageClass::REDUCED_REDUNDANCY:

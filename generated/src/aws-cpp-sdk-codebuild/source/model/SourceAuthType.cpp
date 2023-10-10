@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceAuthType::NOT_SET:
+            return {};
           case SourceAuthType::OAUTH:
             return "OAUTH";
           default:

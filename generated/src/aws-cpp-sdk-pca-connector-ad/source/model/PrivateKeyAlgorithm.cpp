@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrivateKeyAlgorithm::NOT_SET:
+            return {};
           case PrivateKeyAlgorithm::RSA:
             return "RSA";
           case PrivateKeyAlgorithm::ECDH_P256:

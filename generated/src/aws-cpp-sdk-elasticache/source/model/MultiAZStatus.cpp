@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MultiAZStatus::NOT_SET:
+            return {};
           case MultiAZStatus::enabled:
             return "enabled";
           case MultiAZStatus::disabled:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AngleUnits::NOT_SET:
+            return {};
           case AngleUnits::DEGREE_ANGLE:
             return "DEGREE_ANGLE";
           case AngleUnits::RADIAN:

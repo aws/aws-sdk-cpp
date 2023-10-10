@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlaybackMode::NOT_SET:
+            return {};
           case PlaybackMode::LOOP:
             return "LOOP";
           case PlaybackMode::LINEAR:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportStatus::NOT_SET:
+            return {};
           case ExportStatus::InProgress:
             return "InProgress";
           case ExportStatus::Completed:

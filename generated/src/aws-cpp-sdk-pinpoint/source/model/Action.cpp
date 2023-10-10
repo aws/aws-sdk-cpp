@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Action::NOT_SET:
+            return {};
           case Action::OPEN_APP:
             return "OPEN_APP";
           case Action::DEEP_LINK:

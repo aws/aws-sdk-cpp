@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Status::NOT_SET:
+            return {};
           case Status::IGNORE:
             return "IGNORE";
           case Status::RESOLVED:

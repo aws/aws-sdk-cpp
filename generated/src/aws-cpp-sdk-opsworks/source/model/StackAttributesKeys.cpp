@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackAttributesKeys::NOT_SET:
+            return {};
           case StackAttributesKeys::Color:
             return "Color";
           default:

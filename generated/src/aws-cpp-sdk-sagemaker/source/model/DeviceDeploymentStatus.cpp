@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceDeploymentStatus::NOT_SET:
+            return {};
           case DeviceDeploymentStatus::READYTODEPLOY:
             return "READYTODEPLOY";
           case DeviceDeploymentStatus::INPROGRESS:

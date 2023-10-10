@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageRecordResultStatus::NOT_SET:
+            return {};
           case UsageRecordResultStatus::Success:
             return "Success";
           case UsageRecordResultStatus::CustomerNotSubscribed:

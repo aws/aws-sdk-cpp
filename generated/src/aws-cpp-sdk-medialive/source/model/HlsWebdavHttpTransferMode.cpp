@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsWebdavHttpTransferMode::NOT_SET:
+            return {};
           case HlsWebdavHttpTransferMode::CHUNKED:
             return "CHUNKED";
           case HlsWebdavHttpTransferMode::NON_CHUNKED:

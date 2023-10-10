@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentLifecycle::NOT_SET:
+            return {};
           case DeploymentLifecycle::Deploying:
             return "Deploying";
           case DeploymentLifecycle::Succeeded:

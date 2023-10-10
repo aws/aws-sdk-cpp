@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColumnStatisticsType::NOT_SET:
+            return {};
           case ColumnStatisticsType::BOOLEAN:
             return "BOOLEAN";
           case ColumnStatisticsType::DATE:

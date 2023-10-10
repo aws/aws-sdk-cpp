@@ -309,6 +309,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InvalidInputErrorCode::NOT_SET:
+            return {};
           case InvalidInputErrorCode::INVALID_ASSESSMENT_TARGET_ARN:
             return "INVALID_ASSESSMENT_TARGET_ARN";
           case InvalidInputErrorCode::INVALID_ASSESSMENT_TEMPLATE_ARN:

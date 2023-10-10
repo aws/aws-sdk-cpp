@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppAuthorizationStatus::NOT_SET:
+            return {};
           case AppAuthorizationStatus::PendingConnect:
             return "PendingConnect";
           case AppAuthorizationStatus::Connected:

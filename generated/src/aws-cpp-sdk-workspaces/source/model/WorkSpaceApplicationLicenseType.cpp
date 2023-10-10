@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkSpaceApplicationLicenseType::NOT_SET:
+            return {};
           case WorkSpaceApplicationLicenseType::LICENSED:
             return "LICENSED";
           case WorkSpaceApplicationLicenseType::UNLICENSED:

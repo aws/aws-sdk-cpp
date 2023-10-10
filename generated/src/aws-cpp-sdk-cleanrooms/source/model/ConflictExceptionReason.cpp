@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictExceptionReason::NOT_SET:
+            return {};
           case ConflictExceptionReason::ALREADY_EXISTS:
             return "ALREADY_EXISTS";
           case ConflictExceptionReason::SUBRESOURCES_EXIST:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LineageType::NOT_SET:
+            return {};
           case LineageType::TrialComponent:
             return "TrialComponent";
           case LineageType::Artifact:
